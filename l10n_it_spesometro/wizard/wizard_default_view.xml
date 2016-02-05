@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_spesometro_default_view" model="ir.ui.view">
+            <field name="name">Spesometro default</field>
+            <field name="model">wizard.spesometro.default</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dati comunicazione" version="7.0">
+					<group>
+						<label colspan="4" string="Attenzione! I fornitori utility devono essere esclusi manualmente"/>
+						<label colspan="4" string="Verificare classificazione conti imposte"/>
+						<label colspan="4" string="Impostare sezionali da includere/escludere"/>
+					</group>
+					<field invisible="1" name="state" />
+					<group states="step1">
+						<h3><label colspan="4" string="Premi il bottone [update] per configurazione di default"/></h3>
+					</group>
+					<group states="step2">
+          				<field name="log1" readonly="1" />   
+          				<field name="log2" readonly="1" />   
+          			</group>
+					<footer states="step1">
+						<button string="Cancel" special="cancel"/>
+            			<button name="setting_default" string="Update" type="object" />
+          			</footer>
+          			<footer states="step2">
+						<button string="Exit" special="cancel"/>
+          			</footer>
+				</form>
+            </field>
+        </record>
+        
+      	<record id="wizard_spesometro_default_action" model="ir.actions.act_window">
+            <field name="name">Spesometro default</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.spesometro.default</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_spesometro_default_view"/>
+        </record>
+         
+        <menuitem id="menu_spesometro_default" action="wizard_spesometro_default_action"
+            name="Impostazione Default" parent="menu_spesometro_main"/>
+    </data>
+</openerp>

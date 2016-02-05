@@ -1,0 +1,6 @@
+# Sample for partners exclusion in Spesometro
+# Because utility purchasers must not be inserted in fiscal comunication,
+#  they have to be marked for exclusion
+# Insert here list of purchaser names, based on regex
+[partner]
+partner_utility=vodafone.*,.*telecom.*,wind.*,.*h3g.*,enel.*,eni.*,edison.*,iren.*,bt italia.*

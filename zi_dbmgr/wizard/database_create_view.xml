@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="zi_dbmgr_db_create_database_wizard" model="ir.ui.view">
+            <field name="name">Create Database</field>
+            <field name="model">zi.dbmgr.db.create.database.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Database">
+                    <group>
+                        <field name="name"/>
+                        <field name="user_password"/>
+                        <field name="lang" widget="selection"/>
+                        <field name="demo"/>
+                     </group>
+                     <separator colspan="4"/>
+                     <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                     <button icon="gtk-ok" name="execute" string="Create Database" type="object"/>
+                </form>
+            </field>
+        </record>
+        
+      	<record id="zi_dbmgr_db_create_database_action" model="ir.actions.act_window">
+            <field name="name">Create Database</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zi.dbmgr.db.create.database.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="zi_dbmgr_db_create_database_wizard"/>
+        </record>
+        
+        <menuitem action="zi_dbmgr_db_create_database_action" id="menu_zi_dbmgr_db_create_database_wizard" parent="menu_zi_dbmgr_db"/>
+         
+    </data>
+</openerp>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="account_account_zi_iv_dir" model="ir.ui.view">
+			<field name="name">account.account.zi_iv_dir</field>
+			<field name="model">account.account</field>
+			<field name="inherit_id" ref="account.view_account_form"/>
+			<field name="arch" type="xml">
+				<field name="active" position="after">
+					<field name="zi_iv_dir"/>
+				</field>
+			</field>
+		</record>
+		<record id="account_account_zi_remark" model="ir.ui.view">
+			<field name="name">account.account.zi_remark</field>
+			<field name="model">account.account</field>
+			<field name="inherit_id" ref="account.view_account_form"/>
+			<field name="arch" type="xml">
+				<field name="parent_id" position="before">
+					<field name="zi_remark"/>
+				</field>
+			</field>
+		</record>
+
+		<record id="account_account_template_zi_iv_dir" model="ir.ui.view">
+			<field name="name">account.account.template.zi_iv_dir</field>
+			<field name="model">account.account.template</field>
+			<field name="inherit_id" ref="account.view_account_template_form"/>
+			<field name="arch" type="xml">
+				<field name="user_type" position="after">
+					<field name="zi_iv_dir"/>
+				</field>
+			</field>
+		</record>
+		<record id="account_account_template_zi_remark" model="ir.ui.view">
+			<field name="name">account.account.template.zi_remark</field>
+			<field name="model">account.account.template</field>
+			<field name="inherit_id" ref="account.view_account_template_form"/>
+			<field name="arch" type="xml">
+				<field name="parent_id" position="before">
+					<field name="zi_remark"/>
+				</field>
+			</field>
+		</record>
+
+		<record id="account_tax_zi_remark" model="ir.ui.view">
+			<field name="name">account.tax.zi_remark</field>
+			<field name="model">account.tax</field>
+			<field name="inherit_id" ref="account.view_tax_form"/>
+			<field name="arch" type="xml">
+				<field name="description" position="after">
+					<field name="zi_remark"/>
+				</field>
+			</field>
+		</record>
+		<record id="account_tax_template_zi_remark" model="ir.ui.view">
+			<field name="name">account.tax.template.zi_remark</field>
+			<field name="model">account.tax.template</field>
+			<field name="inherit_id" ref="account.view_account_tax_template_form"/>
+			<field name="arch" type="xml">
+				<field name="type_tax_use" position="after">
+					<field name="zi_remark"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

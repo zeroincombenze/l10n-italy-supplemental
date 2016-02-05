@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Menu tree  -->
+        <menuitem id="menu_uty_service" name="Utility Service" parent="base.menu_custom" sequence="25"/>
+        <menuitem id="menu_uty_service_db" name="Utility Database" parent="menu_uty_service" sequence="25"/>
+                        
+
+        <!-- Tree view  --> 
+        <record id="zeroincombenze_zi_alignment_tree_view" model="ir.ui.view">
+            <field name="name">zeroincombenze.zi.alignment.tree.view</field>
+            <field name="model">zeroincombenze.zi.alignment</field>
+            <field name="arch" type="xml">
+
+                <tree string="DB Alignment" version="7.0">
+                    <field name="sequence"/>
+                    <field name="new_db_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form view -->
+        <record id="zeroincombenze_zi_alignment_form_view" model="ir.ui.view">
+            <field name="name">zeroincombenze.zi.alignment.form.view</field>
+            <field name="model">zeroincombenze.zi.alignment</field>
+            <field name="arch" type="xml">
+
+                <form string="DB Alignment">
+                    <group string="New Database">
+                        <group>
+                            <field name="new_db_name"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        
+        <!-- Menu item -->
+        <record id="zeroincombenze_zi_alignment_action" model="ir.actions.act_window">
+            <field name="name">DB Alignment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">zeroincombenze.zi.alignment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="zeroincombenze_zi_alignment_tree_view"/>
+            <field name="help"></field>
+        </record>
+
+
+        <!-- Menu action -->
+        <menuitem action="zeroincombenze_zi_alignment_action" 
+           id="menu_zeroincombenze_zi_dbalign" 
+           parent="menu_uty_service_db"
+           sequence ="100"
+        />
+
+    </data>
+</openerp>

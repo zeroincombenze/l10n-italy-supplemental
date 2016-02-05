@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+        <menuitem id="menu_zi_dbmgr" name="Utility Service" parent="base.menu_custom" sequence="25"/>
+        <menuitem id="menu_zi_dbmgr_db" name="Utility Database" parent="menu_zi_dbmgr" sequence="25"/>
+        
+    	<!-- 
+        DB - config
+         -->
+        <record id="zi_dbmgr_db_config_tree_view" model="ir.ui.view">
+            <field name="name">zi.dbmgr.db.config.tree.view</field>
+            <field name="model">zi.dbmgr.db.config</field>
+            <field name="arch" type="xml">
+            	
+                <tree string="Utility Database Config" version="7.0">
+                    <field name="sequence"/>
+                    <field name="new_db_name_prefix"/>
+                    <field name="new_db_name_count_lenght"/>
+                    <field name="new_db_name_next_count"/>
+                    <field name="new_db_name_rule"/>
+                    <field name="new_db_name_suffix"/>
+                    <field name="new_db_name"/>
+                    <field name="new_db_user_password"/>
+                    <field name="new_db_lang"/>
+                    <field name="new_db_name_email"/>
+                    <field name="new_db_demo"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="zi_dbmgr_db_config_form_view" model="ir.ui.view">
+            <field name="name">zi.dbmgr.db.config.form.view</field>
+            <field name="model">zi.dbmgr.db.config</field>
+            <field name="arch" type="xml">
+                <form string="Utility Database Config">
+                    <group string="New Database">
+                        <group>
+	                        <field name="new_db_name_prefix"/>
+		                    <field name="new_db_name_count_lenght"/>
+		                    <field name="new_db_name_next_count"/>
+		                    <field name="new_db_name_rule"/>
+	                        <field name="new_db_name_suffix"/>
+	                    </group>
+	                    <group>
+		                    <field name="new_db_user_password"/>
+		                    <field name="new_db_lang" widget="selection"/>
+		                    <field name="new_db_name_email"/>
+		                    <field name="new_db_demo"/>
+		                    <field name="new_db_name"/>
+	                    </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="zi_dbmgr_db_config_action" model="ir.actions.act_window">
+			<field name="name">Database Configuration</field>
+			<field name="type">ir.actions.act_window</field>
+	        <field name="res_model">zi.dbmgr.db.config</field>
+	        <field name="view_mode">tree,form</field>
+	        <field name="view_id" ref="zi_dbmgr_db_config_tree_view"/>
+	        <field name="help"></field>
+    	</record>
+    	    	
+    	<menuitem action="zi_dbmgr_db_config_action" 
+    	    id="menu_zi_dbmgr_db_configuration" 
+    	    parent="menu_zi_dbmgr_db"
+    	    sequence ="100"/>
+    	 
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+,,,,,,,
+"group_zi_dbmgr_db_config_user","zi_dbmgr_db_config user","model_zi_dbmgr_db_config","base.group_user",1,0,0,0
+"group_zi_dbmgr_db_config_manager","zi_dbmgr_db_config manager","model_zi_dbmgr_db_config","base.group_user",1,1,1,1
+"group_zi_dbmgr_db_user","zi_dbmgr_db user","model_zi_dbmgr_db","base.group_user",1,0,0,0
+"group_zi_dbmgr_db_manager","zi_dbmgr_db manager","model_zi_dbmgr_db","base.group_user",1,1,1,1

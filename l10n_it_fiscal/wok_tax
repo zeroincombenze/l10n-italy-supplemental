@@ -1,0 +1,974 @@
+##############################################################################
+#
+#    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
+#    All Rights Reserved
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+# set -x
+# 
+# Cooking italian tax codes to get them ready to use  [V1.00]
+# ===========================================================
+# 
+# Ingredients
+# -----------
+# 
+# Separator. May be "\t" "," ";"
+s=","
+# CSV tax code file
+flcsvtc="./data/account.tax.template.csv"
+# CSV tax tree file
+flcsvtt="./data/account.tax.code.template.csv"
+# CSV fiscal position file
+flcsvfp="./data/account.fiscal.position.template.csv"
+# chart of account name
+ycoa="l10n_chart_it_zeroincombenze"
+# tax tree name
+ytt="vat_code_chart_root"
+# ICA compatibility mode
+yICA=0
+# VAT tax tree code prefix
+if [ $yICA -gt 0 ]
+then
+  yttp="IV"
+else
+  yttp="IT"
+fi
+# VAT Ind. suffix
+if [ $yICA -gt 0 ]
+then
+  yi1="AO"
+else
+  yi1="a0"
+fi
+# VAT Ind. suffix
+if [ $yICA -gt 0 ]
+then
+  yi2="ind"
+else
+  yi2="i"
+fi
+# VAT Ded. suffix
+if [ $yICA -gt 0 ]
+then
+  yi3="det"
+else
+  yi3="d"
+fi
+# VAT Ind. suffix
+if [ $yICA -gt 0 ]
+then
+  yi4="det"
+else
+  yi4="d"
+fi
+# VAT Ind. suffix
+yi5=""
+# VAT ind.quote suffix
+yqi="a"
+# VAT det.quote suffix
+yqd="b"
+# VAT rate prefix
+yqp=""
+# VAT to spin-off suffix
+if [ $yICA -gt 0 ]
+then
+  yxv="v INC"
+else
+  yxv="vINC"
+fi 
+# VAT account ammount suffix
+if [ $yICA -gt 0 ]
+then
+  ytca="I"
+else
+  ytca="D"
+fi
+# VAT account cash ammount suffix
+if [ $yICA -gt 0 ]
+then
+  ytcca="I"
+else
+  ytcca="D"
+fi
+# VAT account unded. ammount suffix
+if [ $yICA -gt 0 ]
+then
+  ytcua="I"
+else
+  ytcua="I"
+fi
+# VAT account tax suffix
+if [ $yICA -gt 0 ]
+then
+  ytct=""
+else
+  ytct="V"
+fi
+# VAT account cash tax suffix
+if [ $yICA -gt 0 ]
+then
+  ytcct=""
+else
+  ytcct="V"
+fi
+# VAT account unded. tax suffix
+ytcut="N"
+# Purchase VAT acount 
+ypa="153010"
+# Purchase cash VAT acount
+ypca="153030"
+# Purchase UE VAT acount
+ypUEa="153050"
+# Sale VAT account
+ysa="260010"
+# Sale cash VAT account
+ysca="260030"
+# Sale UE VAT acount
+ysUEa="260050"
+# Recipe
+recipe="22 4 10 20 21 a1 a2 a7 a7t a8a a8c2 a9 a10 a10c5 a13 a15 a17 a17c2 a17c6 a36 a37 a38 a41 l244 l98"
+#
+# Stove
+# -----
+#
+# Translate spur -> account
+# $1 = spur / $2 = vrate|null / $3 sub|null
+xtl_spur2acc () {
+  if [ "$1" == "$yxv" ]						# Price included
+  then
+    echo "$ysa"							# Selling VAT account
+  elif [ "$1" == "v" ]						# v=Sell
+  then
+    if [ "$2" == "a17c2" -o "$2" == "a17c6" -o "$2" == "a38" ]	# IntraUE codes
+    then
+      echo "$ysUEa"						# IntraUE selling VAT account
+    else
+      echo "$ysa"						# Selling VAT account
+    fi
+  elif [ "$1" == "s" ]						# Selling cash VAT
+  then
+    echo "$ysca"						# Selling cash VAT account
+  elif [ "$1" == "a" ]						# a=Purchase
+  then
+    if [ "$2" == "a17c2" -o "$2" == "a17c6" -o "$2" == "a38" ]	# IntraUE codes
+    then
+      echo "$ypUEa"						# IntraUE purchase VAT account
+    else
+      echo "$ypa"						# Purchase VAT account
+    fi
+  elif [ "$1" == "c" ]						# Purchase cash VAT
+  then
+    echo "$ypca"						# Purchase cash VAT account
+  else								# Here undeductible purchase
+    if [ "$3" ==  "$yqd" ]					# Deductible rate
+    then
+      echo "$ypa"						# Purchase VAT account for deductible rate
+    else
+      echo ""							# No purchare VAT account -> expensive account
+    fi
+  fi
+}
+#
+# Translate spur -> sale/purchase
+# $1 = spur
+xtl_spur2sp () {
+  if [ "$1" == "$yxv" ]
+  then
+    echo "sale"
+  elif [ "$1" == "v" ]
+  then
+    echo "sale"
+  elif [ "$1" == "s" ]
+  then
+    echo "sale"
+  elif [ "$1" == "a" ]
+  then
+    echo "purchase"
+  elif [ "$1" == "c" ]
+  then
+    echo "purchase"
+  else
+    echo "purchase"
+  fi
+}
+#
+# Translate spur -> receivable/payable
+# $1 = spur / $2 = a|t (Amount,Tax) / $3 sub|null
+xtl_spur2ipr () {
+  if [ "$1" == "$yxv" ]
+  then
+    echo "riscossa"
+  elif [ "$1" == "v" ]
+  then
+    echo "riscossa"
+  elif [ "$1" == "s" ]
+  then
+    echo "sospesa"
+  elif [ "$1" == "a" ]
+  then
+    echo "pagata"
+  elif [ "$1" == "c" ]
+  then
+    echo "dapagare"
+  else
+    if [ "$2" != "a" -a "$3" == "$yqi" ]
+    then
+      echo "pagata_ind"
+    else
+      echo "pagata"
+    fi
+  fi
+}
+# Translate spur -> Credit/Debit
+# $1 = spur
+xtl_spur2CD () {
+  if [ "$1" == "$yxv" ]
+  then
+    echo $yttp"D"
+  elif [ "$1" == "v" ]
+  then
+    echo $yttp"D"
+  elif [ "$1" == "s" ]
+  then
+    echo $yttp"S"
+  elif [ "$1" == "a" ]
+  then
+    echo $yttp"C"
+  elif [ "$1" == "c" ]
+  then
+    echo $yttp"P"
+  else
+    echo $yttp"C"
+  fi
+}
+#
+# Translate rate code -> id
+# $1 = vrate / $2 = spur|null / $3 sub|null
+xtl_vrate2id () {
+  if [ "$2" == "0" ]
+  then
+    t=$yi1
+  else
+    t=$2
+  fi
+  if [ "$1" == "a36" -o  "$1" == "a37" ]
+  then
+    echo "l41""$1""$t""$3"
+  elif [ "$1" == "l98" ]
+  then
+    echo "$1""a27""$t""$3"
+  else
+    echo "$1""$t""$3"
+  fi
+}
+#
+# Translate rate code -> percent
+# $1 = vrate
+xtl_vrate2perc () {
+  if [ "$1" == "a17c2" -o "$1" == "a17c6" -o "$1" == "a38" ]
+  then
+    echo "0.22"
+  else
+    t=$(($1))
+    if [ $t -gt 0 ]
+    then
+      t="0"$1
+      echo "0."${t: -2}
+    else
+      echo ""
+    fi
+  fi
+}
+#
+# Translate rate code -> description
+# $1 = vrate / $2 = spur|null
+xtl_vrate2des () {
+  if [ "$1" == "a1" ]
+  then
+    echo "fuori campo IVA (art.1 DPR633)"
+  elif [ "$1" == "a2" ]
+  then
+    echo "Escluso IVA (art.2 DPR633)"
+  elif [ "$1" == "a7" ]
+  then
+    echo "N.I. art.7 DPR633"
+  elif [ "$1" == "a7t" ]
+  then
+    echo "NI art.7ter DPR633 (servizi xUE)"
+  elif [ "$1" == "a8a" ]
+  then
+    echo "N.I. art.8a DPR633 (Dogana)"
+  elif [ "$1" == "a8c2" ]
+  then
+    echo "N.I. art.8c2 DPR633 (lett.Intento)"
+  elif [ "$1" == "a9" ]
+  then
+    echo "N.I. art.9 DPR633"
+  elif [ "$1" == "a10" ]
+  then
+    echo "esente art.10 DPR633"
+  elif [ "$1" == "a10c5" ]
+  then
+    echo "esente art.10n27-quinques DPR633"
+  elif [ "$1" == "a13" ]
+  then
+    echo "escluso art.13 DPR633"
+  elif [ "$1" == "a15" ]
+  then
+    echo "escluso art.15 DPR633"
+  elif [ "$1" == "a17" ]
+  then
+    echo "FC IVA Art.17 DPR633"
+  elif [ "$1" == "a17c2" ]
+  then
+    if [ "$2" == "v" ]
+    then
+      echo "Rev. charge art.17c2 DPR633"
+    else
+      echo "N.I. art.17c2 DPR633"
+    fi
+  elif [ "$1" == "a17c6" ]
+  then
+    if [ "$2" == "v" ]
+    then
+      echo "Rev. charge art.17c6 DPR633"
+    else
+      echo "N.I. art.17c6 DPR633"
+    fi
+  elif [ "$1" == "a36" ]
+  then
+    echo "N.Sogg. reg.Marg. (art.36 L41/95)"
+  elif [ "$1" == "a37" ]
+  then
+    echo "Op.UE reg.Margine (art.37 L41/95)"
+  elif [ "$1" == "a38" ]
+  then
+    if [ "$2" == "v" ]
+    then
+      echo "Rev. charge art.38 L.427/93"
+    else
+      echo "N.I. art.38 L.427/93"
+    fi
+  elif [ "$1" == "a41" ]
+  then
+    echo "N.I. art.41 L.427/93"
+  elif [ "$1" == "l244" ]
+  then
+    echo "art.1c96-117 L.244/07 (reg.Minimo)"
+  elif [ "$1" == "l98" ]
+  then
+    echo "senza IVA art.27 L.98/11"
+  else
+    echo ""
+  fi
+}
+#
+# Set taxable name template from prefix
+# $1 = root|px|null (px-> vrate[spur])/ $2 = ipr|null / $3 = suffix|null
+set_p_tpl () {
+      if [ -n  "$1" ]
+      then
+        if [ "$1" == "root" ]
+        then
+          echo "template_impcode_"$2
+        else
+          echo "template_impcode_"$2"_"$1$3$4
+        fi
+      else
+        echo ""
+      fi
+}
+#
+# Set tax name template from prefix
+# $1 = root|px|null (px-> vrate[spur])/ $2 = ipr|null / $3 = suffix|null
+set_v_tpl () {
+      if [ -n  "$1" ]
+      then
+        if [ "$1" == "root" ]
+        then
+          echo "template_ivacode_"$2
+        else
+          echo "template_ivacode_"$2"_"$1$3$4
+        fi
+      else
+        echo ""
+      fi
+}
+#
+# Set taxable code template
+# $1 = vrate / $2 = spur|null / $3 sub|null / $4 = suffix|null / $5 = spur substitution
+set_p_code () {
+  t2=""
+  if [ "$2" == "$yxv" ]                                         # Price included
+  then
+    t=""							# Null (included in selling code)
+  elif [ "$2" == "v" ]						# v=Sell
+  then
+    t="$ytca"							# Amount prefix 
+  elif [ "$2" == "s" ]						# Cash VAT selling
+  then
+    t="$ytcca"							# Cash VAT amount prefix
+  elif [ "$2" == "a" ]						# a=Purchase
+  then
+    t="$ytca"							# Amount prefix
+  elif [ "$2" == "c" ]						# Cash VAT purchase
+  then
+    t="$ytcca"							# Cash VAT amount prefix
+  else								# Here undeductible purchase
+    if [ "$3" ==  "$yqd" ]					# Deductible rate
+    then
+      t="$ytca"							# Amount prefix
+    else
+      t="$ytcua"						# Undeductible amount prefix
+    fi
+    if [ "$2" == "0" ]						# 0% deductible / 100% undeductible
+    then
+      t2="$4"							# Amount prefix + special suffix
+    elif [ "$2" == "100" ]					# 100% undeductible rate
+    then
+      t2="$4"
+    else
+      if [ -n "$5" ]
+      then
+        t2="$4""$5"
+      else
+        t2="$4""$2"
+      fi
+    fi
+  fi
+  if [ $yICA -gt 0 ]
+  then
+    echo $(xtl_spur2CD "$2")$(xtl_vrate2id "$1" "$t$t2")
+  else
+    if [ "$t2" == "$yi2" ]
+    then
+      t2=""
+    fi
+    if [ -n "$1" ]
+    then
+      echo $(xtl_spur2CD "$2")$(xtl_vrate2id "$1" "$t2$t")
+    else
+      echo $(xtl_spur2CD "$2")$(xtl_vrate2id "0" "$t2$t")
+    fi
+  fi
+}
+#
+# Set tax code template
+# $1 = vrate / $2 = spur|null / $3 sub|null / $4 = suffix|null / $5 = spur substitution
+set_v_code () {
+  t2=""
+  if [ "$2" == "$yxv" ]                                         # Price included
+  then
+    t=""							# Null (included in selling code)
+  elif [ "$2" == "v" ]						# v=Sell
+  then
+    t="$ytct"							# Selling VAT prefix
+  elif [ "$2" == "s" ]						# Cash VAT selling
+  then
+    t="$ytcct"							# Cash VAT prefix
+  elif [ "$2" == "a" ]						# a=Purchase
+  then
+    t="$ytct"							# Purchase VAT prefix
+  elif [ "$2" == "c" ]						# Cash VAT purchase
+  then
+    t="$ytcct"							# Cash VAT prefix
+  else								# Here undeductible purchase
+    if [ "$3" ==  "$yqd" ]					# Deductible rate
+    then
+      t="$ytct"							# Purchase VAT prefix
+    else
+      t="$ytcut"						# Purchase undeductible VAT prefix
+    fi
+    if [ "$2" == "0" ]						# 0% deductible / 100% undeductible
+    then
+      if [ $yICA -gt 0 -a "$4" == "$yi2" ]
+      then
+        t=""
+        t2="$4"
+      else
+        t2="$4"
+      fi
+    elif [ "$2" == "100" ]
+    then
+      t2="$4"
+    else
+      if [ -n "$5" ]
+      then
+        t2="$4""$5"
+      else
+        t2="$4""$2"
+      fi
+    fi
+  fi
+  if [ $yICA -gt 0 ]
+  then
+    echo $(xtl_spur2CD "$2")$(xtl_vrate2id "$1" "$t$t2")
+  else
+    if [ "$t2" == "$yi2" ]
+    then
+      t2=""
+    fi
+    if [ -n "$1" ]
+    then
+      echo $(xtl_spur2CD "$2")$(xtl_vrate2id "$1" "$t2$t")
+    else
+      echo $(xtl_spur2CD "$2")$(xtl_vrate2id "0" "$t2$t")
+    fi
+  fi
+}
+#
+#
+# Translate rate code -> description
+xtl_vpos2des () {
+  if [ "$1" == "it" ]
+  then
+    echo "Italia"
+  elif [ "$1" == "ue" ]
+  then
+    echo "Regime UE"
+  elif [ "$1" == "extra" ]
+  then
+    echo "Extra-UE"
+  elif [ "$1" == "serv" ]
+  then
+    echo "Utility"
+  elif [ "$1" == "agt" ]
+  then
+    echo "Agriturismo L.413"
+  elif [ "$1" == "l185" ]
+  then
+    echo "IVA per cassa art.7 L.185/08"
+  elif [ "$1" == "a6" ]
+  then
+    echo "IVA in sosp. art.6 DPR633/72"
+  else
+    echo ""
+  fi
+}
+#
+#
+wout_tc () {
+  ls="\t"
+  if [ "$9" == "sale" ]
+  then
+    vsign="-1"
+    csign="1"
+  else
+    vsign="1"
+    csign="-1"
+  fi
+
+  printf "%s$ls%-32s$ls%s$ls%s$ls%s$ls%s$ls%s$ls%s$ls%-12s$ls%s$ls%s\n" "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9" "${10}" "${11}"
+  printf "\"%s\"$s\"%s\"$s\"%s\"$s\"%s\"$s%s$s%s$s%s$s%s$s\"%s\"" "$1" "$1" "$ycoa" "$2" "$3" "$4" "$5" "$6" "$7">>$flcsvtc
+  printf "$s%s$s%s$s%s$s%s$s%s$s%s$s%s$s%s$s%s" "$8" "$8" "$9" "${10}" "${11}" "${10}" "${11}" "$vsign" "$vsign">>$flcsvtc
+  printf "$s%s$s%s$s%s\n" "${12}" "$csign" "$csign">>$flcsvtc
+}
+#
+wout_hdr_tc () {
+hdrctc="id,description,chart_template_id:id,name,sequence,amount,parent_id:id,child_depend,type,account_collected_id:id,account_paid_id:id,type_tax_use,base_code_id:id,tax_code_id:id,ref_base_code_id:id,ref_tax_code_id:id,ref_base_sign,ref_tax_sign,price_include,base_sign,tax_sign"
+
+echo "$hdrctc">$flcsvtc
+
+}
+#
+#
+wout_tt () {
+  printf "%s$s%s$s\"%s\"$s%s\n" "$1" "$2" "$3" "$4">>$flcsvtt
+}
+#
+wout_hdr_tt () {
+hdrctt="code,id,name,parent_id:id"
+
+echo "$hdrctt">$flcsvtt
+wout_tt "" "$ytt" "Imposte Italia (V1.00)" ""
+}
+#
+#
+wout_hdr_fp () {
+hdrcfp="name,chart_template_id:id,id"
+
+echo "$hdrcfp">$flcsvfp
+}
+#
+wout_fp () {
+  printf "\"%s\"$s%s$s%s\n" "$1" "$2" "$3">>$flcsvfp
+}
+#
+# Cooking
+# -------
+#
+wout_hdr_tc 
+#
+wout_hdr_tt
+#
+wout_hdr_fp
+#
+#
+for spur in a v c s 0
+do
+  if [ "$spur" == "0" ]
+  then
+    ipr=$(xtl_spur2ipr "$spur" "t" "$yqi")
+    ctiv=$(set_v_tpl "root" "$ipr")
+    ct=$(set_v_code "" "$spur" "$yqi")
+  else
+    ipr=$(xtl_spur2ipr "$spur" "t")
+    ctiv=$(set_v_tpl "root" "$ipr")  
+    ct=$(set_v_code "" "$spur" "")
+  fi
+  if [ "$spur" == "v" ]
+  then
+     des="IVA a debito"
+  elif [ "$spur" == "s" ]
+  then
+     des="IVA deb.sosp."
+  elif [ "$spur" == "a" ]
+  then
+     des="IVA a credito"
+  elif [ "$spur" == "c" ]
+  then
+     des="IVA cred.sosp."
+  else
+     des="IVA indetraibile"
+  fi
+  wout_tt "$ct" "$ctiv" "$des" "$ytt" ""
+#
+  ipr=$(xtl_spur2ipr "$spur" "a")
+  ctip=$(set_p_tpl "root" "$ipr")
+  ct=$(set_p_code "" "$spur")
+  if [ "$spur" != "0" ]
+  then
+    wout_tt "$ct" "$ctip" "Imponibile $des" "$ytt" ""
+  fi
+done
+#
+#
+for vpos in it ue extra serv agt l185 a6
+do
+  des=$(xtl_vpos2des "$vpos")
+  wout_fp "$des" "$ycoa" "$vpos"
+done
+#
+#
+sqctr=1
+for vrate in $recipe
+do
+  perc=$(xtl_vrate2perc "$vrate")
+  rdes=$(xtl_vrate2des "$vrate")
+#
+  for spur in a v "$yxv" c s 0 10 15 20 40 50 70 80 90
+  do
+    tpb="percent"
+    if [ -z "$perc" -o "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+    then
+      rdes=$(xtl_vrate2des "$vrate" "$spur")
+      seq="$sqctr"
+    else
+      let seq=80-$vrate  
+    fi
+    child="False"
+    cppx=""
+    cvpx=""
+    tf=1
+    if [ "$spur" != "a" -a "$spur" != "v" ]
+    then
+      if [ -z "$perc" -o "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+      then
+        tf=0
+      fi
+    fi
+    if [ $vrate == "4" ]
+    then
+      if [ "$spur" != "a" -a "$spur" != "v" -a "$spur" != "$yxv" -a "$spur" != "50" -a "$spur" != "0" ]
+      then
+        tf=0
+      fi
+    elif [ $vrate == "10" ]
+    then
+      if [ "$spur" != "a" -a "$spur" != "v" -a "$spur" != "$yxv" -a "$spur" != "50" -a "$spur" != "0" ]
+      then
+        tf=0
+     fi
+    elif [ $vrate == "20" ]
+    then
+      if [ "$spur" == "10" -o "$spur" == "70" -o "$spur" == "80" -o "$spur" == "90" -o "$spur" == "s"  -o "$spur" == "c" ]
+      then
+        tf=0
+      fi
+    elif [ $vrate == "21" ]
+    then
+      if [ "$spur" == "10" -o "$spur" == "15"  -o "$spur" == "s" -o "$spur" == "c" ]
+      then
+        tf=0
+      fi
+    elif [ $vrate == "22" ]
+    then
+      if [ "$spur" == "10" -o "$spur" == "15" -o "$spur" == "40" -o "$spur" == "90" ]
+      then
+        tf=0
+      fi
+    fi
+#
+    if [ $tf -gt 0 ]
+    then
+      let sqctr=$sqctr+1
+      princ="False"
+      tf=0
+      cto=$(xtl_spur2acc "$spur" "$vrate")
+      sp=$(xtl_spur2sp "$spur")
+      ipr=$(xtl_spur2ipr "$spur")
+      vcode=$(xtl_vrate2id "$vrate" "$spur")
+      if [ "$spur" == "$yxv" ]
+      then
+        des="IVA "$vrate"% da scorporare"
+        cppx=$vrate
+        cvpx=$vrate
+        princ="True"
+      elif [ "$spur" == "v" ]
+      then
+        if [ "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+        then
+          des="$rdes"
+        elif [ -n "$perc" ]
+        then
+          des="IVA "$vrate"% su vendite"
+        else
+          des="Vend.""$rdes"
+        fi
+        cppx=$vrate
+        cvpx=$vrate
+      elif [ "$spur" == "s" ]
+      then
+        if [ -n "$perc" ]
+        then
+          des="IVA "$vrate"% sosp. da Vend."
+        else
+          des="Vend.Sosp."$rdes
+        fi
+        cppx=$vrate
+        cvpx=$vrate
+      elif [ "$spur" == "a" ]
+      then
+        if [ "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+        then
+          des="$rdes"
+        elif [ -n "$perc" ]
+        then
+          des="IVA "$vrate"% da acquisti"
+        else
+          des="Acq."$rdes
+        fi
+        cppx=$vrate
+        cvpx=$vrate
+      elif [ "$spur" == "c" ]
+      then
+        if [ -n "$perc" ]
+        then
+          des="IVA "$vrate"% sosp. da Acq."
+        else
+          des="Acq.Sosp."$rdes
+        fi
+        cppx=$vrate
+        cvpx=$vrate
+      else
+        tf=1
+        child="True"
+        pind=$((100-spur))
+        if [ "$spur" == "0" ]
+        then
+          des="IVA "$vrate"% indetraibile"
+          cppx=$vrate$yi2
+          cvpx=""
+        else
+          des="IVA "$vrate"% detraibile ""$spur""%"
+          cppx=$vrate$yi3"$spur"
+          cvpx=""
+        fi
+      fi
+      if [ -z $perc ]
+      then
+        cto=""
+        cvpx=""
+      fi
+      ctip=$(set_p_tpl "$cppx" "$ipr")
+      ctiv=$(set_v_tpl "$cvpx" "$ipr")
+#
+      wout_tc "$vcode" "${des^}" "$seq" "$perc" "" "$child" "$tpb" "$cto" "$sp" "$ctip" "$ctiv" "$princ"
+#
+#
+      if [ "$spur" != "$yxv" ]
+      then
+        ipr=$(xtl_spur2ipr "$spur" "a")
+        prnt_ctip=$(set_p_tpl "root" "$ipr")
+        ipr=$(xtl_spur2ipr "$spur" "t")
+        prnt_ctiv=$(set_v_tpl "root" "$ipr")
+        ipr=$(xtl_spur2ipr "$spur")
+        vtpcode=$(set_p_code "$vrate" "$spur")
+        vtvcode=$(set_v_code "$vrate" "$spur")
+#
+        if [ -n "$ctiv" ]
+        then
+          if [ "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+          then
+            wout_tt "$vtvcode" "$ctiv" "IVA $des" "$prnt_ctiv"
+          else
+            wout_tt "$vtvcode" "$ctiv" "${des^}" "$prnt_ctiv"
+          fi
+        fi
+        if [ "$spur" == "a" -o "$spur" == "v" -o "$spur" == "s" -o "$spur" == "c" ]
+        then
+          if [ -n "$ctip" ]
+          then
+            if [ -z "$perc" ]
+            then
+              wout_tt "$vtpcode" "$ctip" "${des^}" "$prnt_ctip"
+            elif [ "$vrate" == "a17c2" -o "$vrate" == "a17c6" -o "$vrate" == "a38" ]
+            then
+              wout_tt "$vtpcode" "$ctip" "${rdes^}" "$prnt_ctip"
+            else
+              wout_tt "$vtpcode" "$ctip" "Imponibile $des" "$prnt_ctip"
+            fi
+          fi
+        fi 
+      fi
+#
+#
+      if [ $tf -gt 0 ]                                     # subcode (no-deductible)
+      then
+        cvpx=$vrate
+
+        for sub in $yqi $yqd
+        do
+          ttf=1
+          child="False"
+          scode=$(xtl_vrate2id "$vrate" "$spur" "$sub")
+          cto=$(xtl_spur2acc "$spur" "$vrate" "$sub")
+
+          if [ $sub == $yqd ]
+          then
+            seq="200"
+            des="IVA "$vrate"% (quota "$spur"% detr.)"
+            ppi=""
+            tpb="balance"
+#            cto=$(xtl_spur2acc "$spur" "$vrate" "$sub")
+            if [ "$spur" == "0" ]
+            then
+              ttf=0
+
+              iprp=$(xtl_spur2ipr "$spur" "a" "$sub")
+              prnt_ctip=$(set_p_tpl "root" "$iprp")
+              ctip=""
+              vtpcode=$(set_p_code "$vrate" "$spur" "$sub" "$yi2")    # Strange behaviour
+
+              iprv=$(xtl_spur2ipr "$spur" "t" "$sub")
+              prnt_ctiv=$(set_v_tpl "root" "$iprv")
+              vtvcode=$(set_v_code "$vrate" "$spur" "$sub" "$yi3")
+              ctiv=$(set_v_tpl "$cvpx" "$ipr" "$yi2")            # Strange behaviour: should be yi3
+
+            else
+              iprp=$(xtl_spur2ipr "$spur" "a" "$sub")
+              prnt_ctip=$(set_p_tpl "root" "$iprp")
+              ctip=""
+              vtpcode=$(set_p_code "$vrate" "$spur" "$sub" "$yi3")
+
+              iprv=$(xtl_spur2ipr "$spur" "t" "$sub")
+              prnt_ctiv=$(set_v_tpl "root" "$iprv")
+              vtvcode=$(set_v_code "$vrate" "$spur" "$sub" "$yi3")
+              ctiv=$(set_v_tpl "$cvpx" "$ipr" "$yi3" "$spur")
+            fi
+          else
+            seq="100"
+            des="IVA "$vrate"% (quota "$pind"% indet.)"
+            tpb="percent"
+#            cto=""
+            if [ $pind == "100" ]
+            then
+              ppi="1"
+
+              des="IVA "$vrate"% ("$pind"% indetraibile)"
+              iprp=$(xtl_spur2ipr "$spur" "a" "$sub")
+              prnt_ctip=$(set_p_tpl "root" "$iprp")
+              ctip=""
+              if [ $yICA -gt 0 ]
+              then
+                vtpcode=$(set_p_code "$vrate" "$spur" "$sub" "$yi2")
+              else
+                vtpcode=$(set_p_code "$vrate" "$pind" "$sub" "$yi2")
+              fi
+              iprv=$(xtl_spur2ipr "$spur" "t" "$sub")
+              prnt_ctiv=$(set_v_tpl "root" "$iprv")
+              if [ $yICA -gt 0 ]
+              then
+                vtvcode=$(set_v_code "$vrate" "$spur" "$sub" "$yi2")
+              else
+                vtvcode=$(set_v_code "$vrate" "$pind" "$sub" "$yi2")
+              fi
+              ctiv=$(set_v_tpl "$cvpx" "$ipr" "$yi2")
+            else
+              ttf=-1                                       # IC strange rule
+              ppi="0."$pind
+
+              iprp=$(xtl_spur2ipr "$spur" "a" "$sub")
+              prnt_ctip=$(set_p_tpl "root" "$iprp")
+              ctip=""
+              if [ $yICA -gt 0 ]
+              then
+                vtpcode=$(set_p_code "$vrate" "$spur" "$sub" "$yi4")
+              else
+                vtpcode=$(set_p_code "$vrate" "$spur" "$sub" "$yi4")
+#                vtpcode=$(set_p_code "$vrate" "$pind" "$sub" "$yi2")
+              fi
+              iprv=$(xtl_spur2ipr "$spur" "t" "$sub")
+              prnt_ctiv=$(set_v_tpl "root" "$iprv")
+              if [ $yICA -gt 0 ]
+              then
+                vtvcode=$(set_v_code "$vrate" "$spur" "$sub" "$yi4")
+              else
+                vtvcode=$(set_v_code "$vrate" "$spur" "$sub" "$yi4")
+#                vtvcode=$(set_v_code "$vrate" "$pind" "$sub" "$yi2")
+              fi
+              ctiv=$(set_v_tpl "$cvpx" "$ipr" $yi2 "$pind")
+            fi
+          fi
+          wout_tc "$scode" "${des^}" "$seq" "$ppi" "$vcode" "$child" "$tpb" "$cto" "$sp" "$ctip" "$ctiv" "$princ"
+#
+          if [ $ttf -ne 0 ]
+          then
+            if [ -n "$ctiv" ]
+            then
+              wout_tt "$vtvcode" "$ctiv" "${des^}" "$prnt_ctiv"
+            fi
+            if [ $ttf -gt 0 ]
+            then
+              if [ -z "$ctip" ]
+              then
+                ctip=$(set_p_tpl "$cppx" "$ipr")
+              fi
+              if [ "$spur" == "0" ]
+              then
+                des="Imponibile IVA "$vrate"% indetraibile"
+              else
+                des="Imponibile IVA "$vrate"% ("$spur"% detr.)"
+              fi
+              wout_tt "$vtpcode" "$ctip" "$des" "$prnt_ctip"
+            fi
+          fi
+        done
+      fi
+    fi
+  done
+done
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<record id="zi_cliente_attivo_form" model="ir.ui.view">
+			<field name="name">zi.cliente.attivo.form</field>
+			<field name="model">res.cliente_attivo</field>
+			<field name="arch" type="xml">
+				<form string="Clienti Attivi">
+					<field name="name"/>
+					<field name="year"/>
+					<field name="period_0"/>
+					<field name="period_1"/>
+					<field name="period_2"/>
+					<field name="period_3"/>
+					<field name="period_4"/>
+					<field name="period_5"/>
+					<field name="period_6"/>
+					<field name="period_7"/>
+					<field name="period_8"/>
+					<field name="period_9"/>
+					<field name="period_10"/>
+					<field name="period_11"/>
+					<field name="period_12"/>
+				</form>
+			</field>
+		</record>
+		<record id="zi_cliente_attivo_tree" model="ir.ui.view">
+			<field name="name">zi.cliente.attivo.tree</field>
+			<field name="model">res.cliente_attivo</field>
+			<field name="arch" type="xml">
+				<tree string="Clienti Attivi">
+					<field name="name"/>
+					<field name="year"/>
+					<field name="period_0"/>
+					<field name="period_1"/>
+					<field name="period_2"/>
+					<field name="period_3"/>
+					<field name="period_4"/>
+					<field name="period_5"/>
+					<field name="period_6"/>
+					<field name="period_7"/>
+					<field name="period_8"/>
+					<field name="period_9"/>
+					<field name="period_10"/>
+					<field name="period_11"/>
+					<field name="period_12"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_zi_cliente_attivo" model="ir.actions.act_window">
+            <field name="name">Clienti Attivi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.cliente_attivo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+              Clienti Attivi zeroincombenze
+            </field>
+        </record>
+
+		<menuitem id="zi_cliente_attivo_menu" action="action_zi_cliente_attivo" parent="base.menu_users" sequence="99"/>
+
+	</data>
+</openerp>

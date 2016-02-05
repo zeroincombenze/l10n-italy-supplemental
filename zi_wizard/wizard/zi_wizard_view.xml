@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="zi_wizard_idea_cleanup" model="ir.ui.view">
+			<field name="name">idea.cleanup.wizard.form</field>
+			<field name="model">idea.cleanup.wizard</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Idea Cleanup Wizard">
+					<label colspan="4" string="Select the age of ideas to cleanup"/>
+					<field name="idea_age" string="Age (days)"/>
+					<group colspan="4">
+						<button string="Cancel" special="cancel"/>
+						<button string="Cleanup" name="cleanup" type="object"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="zi_action_idea_cleanup_wizard" model="ir.actions.act_window">
+			<field name="name">Cleanup</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">idea.cleanup.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		
+		<menuitem action="zi_action_idea_cleanup_wizard" id="menu_zi_wizard" parent="base.menu_localisation" sequence="99"/>
+		
+	</data>
+</openerp>
