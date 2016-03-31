@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
 #    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
-#    
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
 #    by the Free Software Foundation, either version 3 of the License, or
@@ -46,8 +46,8 @@ Funzionalità:
     'author': 'Alessandro Camilli',
     'website': 'http://www.odoo-italia.org',
     'license': 'AGPL-3',
-#    "depends" : ['account', 'l10n_it_base'],
-    "depends" : ['account', 'l10n_it_bbone'],
+    "depends" : ['account', 'l10n_it_base'],
+#    "depends" : ['account', 'l10n_it_bbone'],
     "data" : [
               'security/ir.model.access.csv',
               'spesometro_view.xml',
