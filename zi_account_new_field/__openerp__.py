@@ -38,6 +38,6 @@
     'data': ['zi_account_new_field_view.xml'
     ],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

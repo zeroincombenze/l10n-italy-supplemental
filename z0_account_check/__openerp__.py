@@ -34,6 +34,6 @@
     'website': 'http://www.zeroincombenze.it',
     'data': ['view/check4account_view.xml'],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

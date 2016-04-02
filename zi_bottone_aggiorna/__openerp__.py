@@ -24,11 +24,11 @@
     'depends': ['base', 'sale', 'purchase', 'account'],
     'author': 'SHS-AV s.r.l.',
     'description': """
-    Aggiunge il bottone Aggiorna nell'header delle seguenti viste: \n 
-    - Ordine di vendita : sale.order.form \n 
-    - Ordine di acquisto : purchase.order.form \n 
-    - Fatture Clienti : account.invoice.form \n 
-    - Fatture Fornitori : account.invoice.supplier.form \n 
+    Aggiunge il bottone Aggiorna nell'header delle seguenti viste: \n
+    - Ordine di vendita : sale.order.form \n
+    - Ordine di acquisto : purchase.order.form \n
+    - Fatture Clienti : account.invoice.form \n
+    - Fatture Fornitori : account.invoice.supplier.form \n
     """,
     'license': 'AGPL-3',
     'category': 'zeroincombenze',
@@ -36,6 +36,6 @@
     'data': ['zi_bottone_aggiorna.xml'
     ],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

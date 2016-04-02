@@ -35,6 +35,6 @@ Nuovo menu per la gestione dei Clienti Attivi in Configurazione - Utenti - Clien
     'data': ['zi_cliente_attivo_view.xml'],
     'demo_xml': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }

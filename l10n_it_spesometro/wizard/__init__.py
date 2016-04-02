@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
 #    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
@@ -20,6 +20,6 @@
 #
 ##############################################################################
 
-import wizard_crea_comunicazione
-import wizard_default
-import wizard_export
+from . import wizard_crea_comunicazione
+from . import wizard_default
+from . import wizard_export

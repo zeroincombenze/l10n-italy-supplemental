@@ -57,7 +57,7 @@ CBI-EU STIP-MO-001 00.04.00
     ],
     'demo': [],
     'update_xml': [],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'images': [],
 }

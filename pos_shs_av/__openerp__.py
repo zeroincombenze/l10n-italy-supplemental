@@ -34,7 +34,7 @@ This module is used for create, select customer and pricelist associated with cu
     'qweb': ['static/src/xml/pos_customer.xml'],
     'js': ['static/src/js/pos_customer.js'],
     'css': ['static/src/css/pos_customer.css'],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

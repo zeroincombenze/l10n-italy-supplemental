@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
 #    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
@@ -20,54 +20,48 @@
 #
 ##############################################################################
 
-from osv import fields,osv
+from osv import fields, osv
 import os.path
 import os
-from tools.translate import _
-import time
 import csv
 import ConfigParser
 import re
 
 
-
-class partner_update_wizard(osv.TransientModel): 
+class partner_update_wizard(osv.TransientModel):
 
     _name = "wizard.spesometro.default"
-    
+
     _columns = {
 
-        'state': fields.selection([('step1', 'step1'),('step2', 'step2')]),
-        'log1' : fields.text('Log1'),
-        'log2' : fields.text('Log2')
-    }    
+        'state': fields.selection([('step1', 'step1'), ('step2', 'step2')]),
+        'log1': fields.text('Log1'),
+        'log2': fields.text('Log2')
+    }
 
     _defaults = {
-        'state' : 'step1'
-    } 
+        'state': 'step1'
+    }
 
-
-
-
-    
     def setting_default(self, cr, uid, ids, context=None):
         d = {
-            "partner_utility": "vodafone.*,.*telecom.*,wind.*,.*h3g.*,enel.*,eni.*,edison.*,iren.*"
-            }
+            "partner_utility": "vodafone.*,.*telecom.*,wind.*,.*h3g.*,"
+                               "enel.*,eni.*,edison.*,iren.*"
+        }
         cfg_obj = ConfigParser.SafeConfigParser(d)
         cfg_fn = "wiz_default.conf"
-        cfg_ffn=os.path.abspath(os.path.join(__file__, '../../conf', cfg_fn))
+        cfg_ffn = os.path.abspath(os.path.join(__file__, '../../conf', cfg_fn))
         cfg_obj.read(cfg_ffn)
 
         user = self.pool.get('res.users').browse(cr, uid, uid)
-        
+
         log2 = u""
         tax_code_obj = self.pool.get('account.tax.code')
         csv.register_dialect('csv', delimiter=',',
-                            quotechar='\"',
-                            quoting=csv.QUOTE_MINIMAL)
+                             quotechar='\"',
+                             quoting=csv.QUOTE_MINIMAL)
         csv_fn = "account.tax.code.csv"
-        csv_ffn=os.path.abspath(os.path.join(__file__, '../../conf', csv_fn))
+        csv_ffn = os.path.abspath(os.path.join(__file__, '../../conf', csv_fn))
         ffound = False
         try:
             csv_fd = open(csv_ffn, 'rb')
@@ -75,8 +69,8 @@ class partner_update_wizard(osv.TransientModel):
         except:
             pass
         if ffound:
-            flds=['code', 'spesometro_escludi']
-            csv_obj = csv.DictReader(csv_fd, fieldnames=[], restkey='undef_name', dialect='csv')
+            csv_obj = csv.DictReader(
+                csv_fd, fieldnames=[], restkey='undef_name', dialect='csv')
             hdr_read = False
             for row in csv_obj:
                 if not hdr_read:
@@ -86,34 +80,40 @@ class partner_update_wizard(osv.TransientModel):
                 tax_code_search = [('company_id.id', '=', user.company_id.id),
                                    ('code', '=', row['code'])]
                 tax_code_ids = tax_code_obj.search(cr, uid, tax_code_search)
-                for tax_code_id in self.pool.get('account.tax.code').browse(cr, uid, tax_code_ids):
-                    if int(row['spesometro_escludi'])!=0:
-                        vals={'spesometro_escludi': True}
-                        tlog="escluso"
+                for tax_code_id in self.pool.get('account.tax.code').\
+                        browse(cr, uid, tax_code_ids):
+                    if int(row['spesometro_escludi']) != 0:
+                        vals = {'spesometro_escludi': True}
+                        tlog = "escluso"
                     else:
-                        vals={'spesometro_escludi': False}
-                        tlog="In dichiarazione"
+                        vals = {'spesometro_escludi': False}
+                        tlog = "In dichiarazione"
                     log2 += u"Tax {0}->{1}\n".format(tax_code_id.code, tlog)
                     id_upd = [tax_code_id.id]
                     tax_code_obj.write(cr, uid, id_upd, vals)
             csv_fd.close()
-  
+
         sect = "partner"
         if not cfg_obj.has_section(sect):
             cfg_obj.add_section(sect)
         partner_regex = cfg_obj.get(sect, "partner_utility").split(',')
 
         log1 = u""
-        log1 += u"Attenzione! I fornitori utility devono essere esclusi manualmente\n\n"
-        italy = self.pool.get('res.country').search(cr, uid, [('code', '=', 'IT')])             
+        log1 += u"Attenzione!" + \
+                " I fornitori utility devono essere esclusi manualmente\n\n"
+        italy = self.pool.get('res.country').search(
+            cr, uid, [('code', '=', 'IT')])
         partner_obj = self.pool.get('res.partner')
         partner_search = [('company_id.id', '=', user.company_id.id),
                           '|',
-                          ('customer','=', True),
-                          ('supplier','=', True)]
-        partner_ids = partner_obj.search(cr, uid, partner_search, context=context)
-        for partner_id in self.pool.get('res.partner').browse(cr, uid, partner_ids):
-            utility=False
+                          ('customer', '=', True),
+                          ('supplier', '=', True)]
+        partner_ids = partner_obj.search(
+            cr, uid, partner_search, context=context)
+        for partner_id in self.pool.get('res.partner').browse(cr,
+                                                              uid,
+                                                              partner_ids):
+            utility = False
             for regex in partner_regex:
                 if re.match(regex, partner_id.name.lower()):
                     utility = True
@@ -121,20 +121,23 @@ class partner_update_wizard(osv.TransientModel):
                 partner_country = partner_id.country_id.id
             else:
                 partner_country = italy[0]
-            vals={}
-            country_id = self.pool.get('res.country').browse(cr, uid, partner_country)
+            vals = {}
+            country_id = self.pool.get('res.country').browse(
+                cr, uid, partner_country)
             if utility:
                 vals = {'spesometro_escludi': True}
                 log1 += u"{0}->Escluso utility\n".format(partner_id.name)
-            elif partner_country==italy[0]:
-                vals = {'spesometro_escludi': False, 'spesometro_operazione': "FA"}
+            elif partner_country == italy[0]:
+                vals = {'spesometro_escludi': False,
+                        'spesometro_operazione': "FA"}
                 log1 += u"{0}->FA\n".format(partner_id.name)
             elif country_id.inue:
                 vals = {'spesometro_escludi': True}
                 partner_id.partner_spesometro_escludi = True
                 log1 += u"{0}->Escluso (UE)\n".format(partner_id.name)
             elif country_id.blacklist:
-                vals = {'spesometro_escludi': True, 'spesometro_operazione': "BL1"}
+                vals = {'spesometro_escludi': True,
+                        'spesometro_operazione': "BL1"}
                 log1 += u"{0}->Blacklist\n".format(partner_id.name)
             else:
                 vals = {'spesometro_escludi': True}
@@ -143,8 +146,8 @@ class partner_update_wizard(osv.TransientModel):
                 id_upd = [partner_id.id]
                 partner_obj.write(cr, uid, id_upd, vals)
 
-
-        self.write(cr, uid, ids, {'state': 'step2', 'log1': log1, 'log2':log2})
+        self.write(cr, uid, ids, {'state': 'step2',
+                                  'log1': log1, 'log2': log2})
         wiz = self.browse(cr, uid, ids, context=context)
         return {
             'type': 'ir.actions.act_window',
@@ -154,5 +157,5 @@ class partner_update_wizard(osv.TransientModel):
             'res_id': wiz[0].id,
             'views': [(False, 'form')],
             'target': 'new',
-            'context' : context,
-             }
+            'context': context,
+        }

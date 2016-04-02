@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#    
+#
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
 #    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
@@ -19,5 +19,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import spesometro
-import wizard
+from . import spesometro
+from . import wizard
