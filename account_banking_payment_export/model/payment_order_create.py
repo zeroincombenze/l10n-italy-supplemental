@@ -148,7 +148,6 @@ class payment_order_create(orm.TransientModel):
             cr, uid, [line.id], payment.mode.id, context)
         # end account banking
         # [ antoniov: 2015-06-23] set name as reference
-        reference = payment.reference
         res = {
             'move_line_id': line.id,
             'amount_currency': amount_currency,

@@ -16,7 +16,9 @@ Warning! Follow modules replace Odoo/OCA standard modules for Italian localizati
 ASAP we will write integration modules but for now you must replace above module if you want to use Italina Credit Transfer.
 
 
+
 [it]
+
 I moduli bancari per l'uso del Bonifico Sepa in Italia sono provvisorimente sostitutivi dei moduli Odoo/OCA.
 Modificheremo al più presto posssibile questi moduli per integrarli con i moduli standara ma, al momento, se volete gestire i bonifici Sepa con Odoo in Italia, doveste sostituire i moduli sopra elencati.
 
