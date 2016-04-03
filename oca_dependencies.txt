@@ -1,1 +1,7 @@
+partner-contact
+account-invoicing
+account-financial-tools
+webkit-tools
+account-payment
+stock-logistics-workflow
 l10n-italy
