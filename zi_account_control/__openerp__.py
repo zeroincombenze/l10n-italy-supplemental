@@ -59,6 +59,6 @@ Ogni codice terminante con la cifra '0' è riservato a Zeroincombenze®.
     'website': 'http://www.zeroincombenze.it',
     'data': [],
     'demo': [],
-    'installable': True,
+    'installable': False,
     'auto_install': True,
 }
