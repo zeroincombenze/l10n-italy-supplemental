@@ -33,6 +33,8 @@ install:
   - travis_install_nightly
   - pip install unidecode==0.04.17
   - pip install PyXB==1.2.4
+  - pip install codicefiscale
+
 
 script:
   - travis_run_tests
