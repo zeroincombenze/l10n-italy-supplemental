@@ -40,15 +40,18 @@ Permette di adempiere all'obbligo di comunicazione dati inerenti le fatture
 clienti e fornitori da inviare all'Agenzia delle Entrate in forma telematica.
 
 Funzionalità:
+
 - Creazione comunicazione in forma Aggregata
+
 - Export file formato Agenzia delle Entrate
 
 """,
     'author': 'Alessandro Camilli',
     'website': 'http://www.odoo-italia.org',
     'license': 'AGPL-3',
-    "depends": ['account', 'l10n_it_base'],
-    #    "depends" : ['account', 'l10n_it_bbone'],
+    "depends": ['account',
+                'l10n_it_base',
+                'l10n_it_fiscalcode'],
     "data": [
               'security/ir.model.access.csv',
               'spesometro_view.xml',
