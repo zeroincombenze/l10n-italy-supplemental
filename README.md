@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=7.0)](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental)
-[![Coverage Status](https://coveralls.io/repos/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=7.0)](https://coveralls.io/r/zeroincombenze/l10n-italy-supplemental?branch=7.0)
-alls.io/github/zeroincombenze/l10n-italy-supplemental?branch=8.0)
+[![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=7.0)
 [![license agpl](https://img.shields.io/badge/licence-AGPL--3-green.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
 
 
