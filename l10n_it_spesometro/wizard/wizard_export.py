@@ -19,8 +19,8 @@
 #
 ##############################################################################
 
-from osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
 from datetime import datetime
 # from StringIO import StringIO
 import base64
@@ -577,8 +577,8 @@ class wizard_spesometro_export(osv.osv_memory):
             if not line.pf_nome or \
                     not line.pf_data_nascita or \
                     not line.pf_comune_stato_nascita or \
-                    not line.pf_provincia_nascita \
-                    or not line.pf_codice_stato_estero:
+                    not line.pf_provincia_nascita or \
+                    not line.pf_codice_stato_estero:
                 raise osv.except_osv(
                     'Error',
                     _('Completare dati persona fisica nel quadro BL'

@@ -20,9 +20,9 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 from openerp.tools.translate import _
-import decimal_precision as dp
+import openerp.addons.decimal_precision as dp
 import datetime
 
 

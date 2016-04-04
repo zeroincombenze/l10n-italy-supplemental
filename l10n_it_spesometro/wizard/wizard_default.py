@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 import os.path
 import os
 import csv
