@@ -4,10 +4,18 @@
 
 
 
-Odoo Italia Modules (Supplemental)
-==================================
+Odoo Italian Supplemental Modules
+=================================
 
-Supplemental Italian modules for odoo (formerly OpenERP) 8.0
+[![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
+
+Spesometro 8.0
+
+[![it](http://www.shs-av.com/wp-content/it_IT.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
+
+Spesometro  7.0
+
+
 
 http://www.odoo-italia.org/
 
