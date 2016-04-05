@@ -24,10 +24,6 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 import openerp.addons.decimal_precision as dp
 import datetime
-import logging
-
-
-_logger = logging.getLogger(__name__)
 
 
 class res_country(orm.Model):
