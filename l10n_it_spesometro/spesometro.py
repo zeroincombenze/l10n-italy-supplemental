@@ -24,6 +24,10 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 import openerp.addons.decimal_precision as dp
 import datetime
+import logging
+
+
+_logger = logging.getLogger(__name__)
 
 
 class res_country(orm.Model):
@@ -928,7 +932,6 @@ class spesometro_comunicazione(orm.Model):
                 operazione = move.partner_id.spesometro_operazione
                 operazione_iva_non_esposta = \
                     move.partner_id.spesometro_IVA_non_esposta
-
             arg = {
                 'comunicazione_id': comunicazione_id,
                 'segno': segno,
@@ -943,6 +946,20 @@ class spesometro_comunicazione(orm.Model):
             # Test operazione da includere nella comunicazione
             if not self.validate_operation(cr, uid, move, invoice, arg):
                 continue
+
+            if quadro == 'FA':
+                self.pool.get('spesometro.comunicazione.line.fa').\
+                    add_line(cr, uid, move, invoice, arg)
+            if quadro == 'SA':
+                self.pool.get('spesometro.comunicazione.line.sa').\
+                    add_line(cr, uid, move, invoice, arg)
+            if quadro == 'BL':
+                self.pool.get('spesometro.comunicazione.line.bl').\
+                    add_line(cr, uid, move, invoice, arg)
+            if quadro == 'SE':
+                self.pool.get('spesometro.comunicazione.line.se').\
+                    add_line(cr, uid, move, invoice, arg)
+
         # Arrotonda importi su valori raggruppati -> troncare i decimali
         if params['formato_dati'] == 'aggregati':
             self.truncate_values(cr, uid, [comunicazione_id])
