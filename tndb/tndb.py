@@ -28,7 +28,6 @@
 """
 
 # import pdb
-import os
 import datetime
 import inspect
 from datetime import datetime
@@ -39,16 +38,8 @@ from datetime import datetime
 # ...
 # tndb.wlog('test' ...)
 
-if os.path.isfile("/var/log/openerp/openerp-server.log"):
-    FLOG = "/var/log/openerp/oe_trace.log"
-elif os.path.isfile("/var/log/odoo/odoo-server.log"):
-    FLOG = "/var/log/odoo/oe_trace.log"
-elif os.path.isdir("/var/log/openerp"):
-    FLOG = "/var/log/openerp/oe_trace.log"
-elif os.path.isdir("/var/log/odoo"):
-    FLOG = "/var/log/odoo/oe_trace.log"
-else:
-    FLOG = "~/oe_trace.log"
+# FLOG = "/var/log/openerp/oe_trace.log"
+FLOG = "/var/log/odoo/oe_trace.log"
 
 
 class tndb():
