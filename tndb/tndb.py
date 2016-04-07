@@ -2,9 +2,6 @@
 ##############################################################################
 #
 #    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
-#    All Rights Reserved
-#
-#    Written by Alessando Camilli (alessandrocamilli@openforce.it).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
+#
 """
     Simple Trace & Debug module V0.3
     Write into specific tracelog located at /var/log/openerp/oe_trace.log

@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 import os.path
 import os
 import csv
@@ -119,6 +119,10 @@ class partner_update_wizard(osv.TransientModel):
                     utility = True
             if partner_id.country_id:
                 partner_country = partner_id.country_id.id
+            elif partner_id.vat:
+                country_code = partner_id.vat[0:2].upper()
+                partner_country = self.pool.get('res.country').\
+                    search(cr, uid, [('code', '=', country_code)])
             else:
                 partner_country = italy[0]
             vals = {}

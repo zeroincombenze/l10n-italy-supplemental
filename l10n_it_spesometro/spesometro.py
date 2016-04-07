@@ -20,9 +20,9 @@
 #
 ##############################################################################
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 from openerp.tools.translate import _
-import decimal_precision as dp
+import openerp.addons.decimal_precision as dp
 import datetime
 
 
@@ -928,7 +928,6 @@ class spesometro_comunicazione(orm.Model):
                 operazione = move.partner_id.spesometro_operazione
                 operazione_iva_non_esposta = \
                     move.partner_id.spesometro_IVA_non_esposta
-
             arg = {
                 'comunicazione_id': comunicazione_id,
                 'segno': segno,

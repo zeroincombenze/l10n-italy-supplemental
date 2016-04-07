@@ -1,6 +1,7 @@
 {
     'name': 'Trace and Debug',
-    'version': '0.4',
+    'description': 'write a specific log and stack',
+    'version': '0.4.1',
     'active': False,
     'installable': True
 }

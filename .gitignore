@@ -1,57 +1,75 @@
+# dotfiles
+.*
+!.gitignore
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
 # C extensions
 *.so
-
-# Distribution / packaging
+# hg stuff
+*.orig
+status
+# odoo filestore
+openerp/filestore
+# maintenance migration scripts
+openerp/addons/base/maintenance
+# generated for windows installer?
+install/win32/*.bat
+install/win32/meta.py
+# various virtualenv / Distribution / packaging
 .Python
+/bin/
+/build/
+/dist/
+/include/
+/lib/
+/lib64/
+/man/
+/share/
+/src/
 env/
-bin/
-build/
 develop-eggs/
-dist/
 eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
 *.egg-info/
 .installed.cfg
 *.egg
+*.egg-info
 
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
 # Unit test / coverage reports
 htmlcov/
 .tox/
-.coverage
+# .coverage
+**/.coverage
 .cache
 nosetests.xml
 coverage.xml
-
+cover/
 # Translations
 *.mo
-
 # Pycharm
 .idea
-
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
-
 # Rope
 .ropeproject
-
-# Sphinx documentation
+# Sphinx documentation & documentation
 docs/_build/
-
-# Backup files
+_build/
+latex/
+html/
+# docs/
+# Backup files & Temporay files
 *~
 *.swp
-
+*.log
+*.bak
+*.out
