@@ -24,13 +24,13 @@
     'summary': 'Base module for PAIN file generation',
     'version': '0.1',
     'license': 'AGPL-3',
-    'author': 'Akretion, Noviat',
+    'author': "Akretion, Noviat,Odoo Community Association (OCA)",
     'website': 'http://openerp-community-association.org/',
     'category': 'Hidden',
     'depends': ['account_banking_payment_export'],
     'external_dependencies': {
         'python': ['unidecode', 'lxml'],
-        },
+    },
     'data': [
         'payment_line_view.xml',
         'payment_mode_view.xml',
@@ -50,7 +50,9 @@ This module is part of the banking addons:
 
 This module was started during the Akretion-Noviat code sprint of
 November 21st 2013 in Epiais les Louvres (France).
+
+Module contains some pieces of code not ISO 20022 but used by Italian Banks.
     ''',
-    'active': False,
+    'active': True,
     'installable': True,
 }
