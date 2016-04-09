@@ -21,7 +21,7 @@
 ##############################################################################
 {
     'name': 'Comunicazione Polivalente (c.d. Spesometro)',
-    'version': '0.2',
+    'version': '0.3',
     'category': 'Localisation/Italy',
     'description': """
 
