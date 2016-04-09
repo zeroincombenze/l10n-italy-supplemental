@@ -36,7 +36,8 @@ class partner_update_wizard(osv.TransientModel):
 
         'state': fields.selection([('step1', 'step1'), ('step2', 'step2')]),
         'log1': fields.text('Log1'),
-        'log2': fields.text('Log2')
+        'log2': fields.text('Log2'),
+        'log3': fields.text('Log3')
     }
 
     _defaults = {
@@ -93,14 +94,60 @@ class partner_update_wizard(osv.TransientModel):
                     tax_code_obj.write(cr, uid, id_upd, vals)
             csv_fd.close()
 
+        log3 = u""
+        account_journal_obj = self.pool.get('account.journal')
+        csv.register_dialect('csv', delimiter=',',
+                             quotechar='\"',
+                             quoting=csv.QUOTE_MINIMAL)
+        csv_fn = "account.journal.csv"
+        csv_ffn = os.path.abspath(os.path.join(__file__, '../../conf', csv_fn))
+        ffound = False
+        try:
+            csv_fd = open(csv_ffn, 'rb')
+            ffound = True
+        except:
+            pass
+        if ffound:
+            csv_obj = csv.DictReader(
+                csv_fd, fieldnames=[], restkey='undef_name', dialect='csv')
+            hdr_read = False
+            for row in csv_obj:
+                if not hdr_read:
+                    csv_obj.fieldnames = row['undef_name']
+                    hdr_read = True
+                    continue
+                account_journal_search = [('company_id.id',
+                                           '=',
+                                           user.company_id.id),
+                                          ('code', '=', row['code'])]
+                account_journal_ids = account_journal_obj.\
+                    search(cr, uid, account_journal_search)
+                for account_journal_id in self.pool.get('account.journal').\
+                        browse(cr, uid, account_journal_ids):
+                    if int(row['spesometro_escludi']) != 0:
+                        vals = {'spesometro_escludi': True}
+                        tlog = "escluso"
+                    else:
+                        vals = {'spesometro_escludi': False}
+                        tlog = "In dichiarazione"
+                    log3 += u"Journal {0}->{1}\n".\
+                        format(account_journal_id.code, tlog)
+                    id_upd = [account_journal_id.id]
+                    account_journal_obj.write(cr, uid, id_upd, vals)
+            csv_fd.close()
+
         sect = "partner"
         if not cfg_obj.has_section(sect):
             cfg_obj.add_section(sect)
         partner_regex = cfg_obj.get(sect, "partner_utility").split(',')
 
-        log1 = u""
-        log1 += u"Attenzione!" + \
-                " I fornitori utility devono essere esclusi manualmente\n\n"
+        log1 = u"Controllate:\n"
+        log1 += u"- I sezionali\n"
+        log1 += u"- Il piano dei conti imposte\n"
+        log1 += u"- I clienti e fornitori\n"
+        log1 += u"per eventuali correzioni di inclusione o esclusione\n"
+        log1 += u"Se effettuate modifiche manuali"
+        log1 += u" non eseguite più questa funzione in futuro!\n\n\n"
         italy = self.pool.get('res.country').search(
             cr, uid, [('code', '=', 'IT')])
         partner_obj = self.pool.get('res.partner')
@@ -119,6 +166,10 @@ class partner_update_wizard(osv.TransientModel):
                     utility = True
             if partner_id.country_id:
                 partner_country = partner_id.country_id.id
+            elif partner_id.vat:
+                country_code = partner_id.vat[0:2].upper()
+                partner_country = self.pool.get('res.country').\
+                    search(cr, uid, [('code', '=', country_code)])
             else:
                 partner_country = italy[0]
             vals = {}
@@ -128,9 +179,14 @@ class partner_update_wizard(osv.TransientModel):
                 vals = {'spesometro_escludi': True}
                 log1 += u"{0}->Escluso utility\n".format(partner_id.name)
             elif partner_country == italy[0]:
-                vals = {'spesometro_escludi': False,
-                        'spesometro_operazione': "FA"}
-                log1 += u"{0}->FA\n".format(partner_id.name)
+                if partner_id.vat and partner_id.vat[2:3] == "9":
+                    vals = {'spesometro_escludi': True}
+                    log1 += u"{0}->Escluso associazione/ente\n".\
+                        format(partner_id.name)
+                else:
+                    vals = {'spesometro_escludi': False,
+                            'spesometro_operazione': "FA"}
+                    log1 += u"{0}->FA\n".format(partner_id.name)
             elif country_id.inue:
                 vals = {'spesometro_escludi': True}
                 partner_id.partner_spesometro_escludi = True
@@ -147,7 +203,9 @@ class partner_update_wizard(osv.TransientModel):
                 partner_obj.write(cr, uid, id_upd, vals)
 
         self.write(cr, uid, ids, {'state': 'step2',
-                                  'log1': log1, 'log2': log2})
+                                  'log1': log1,
+                                  'log2': log2,
+                                  'log3': log3})
         wiz = self.browse(cr, uid, ids, context=context)
         return {
             'type': 'ir.actions.act_window',

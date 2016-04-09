@@ -2,9 +2,6 @@
 ##############################################################################
 #
 #    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
-#    All Rights Reserved
-#
-#    Written by Alessando Camilli (alessandrocamilli@openforce.it).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
+#
 """
     Simple Trace & Debug module V0.3
     Write into specific tracelog located at /var/log/openerp/oe_trace.log
@@ -28,6 +25,7 @@
 """
 
 # import pdb
+import os
 import datetime
 import inspect
 from datetime import datetime
@@ -38,8 +36,16 @@ from datetime import datetime
 # ...
 # tndb.wlog('test' ...)
 
-# FLOG = "/var/log/openerp/oe_trace.log"
-FLOG = "/var/log/odoo/oe_trace.log"
+if os.path.isfile("/var/log/openerp/openerp-server.log"):
+    FLOG = "/var/log/openerp/oe_trace.log"
+elif os.path.isfile("/var/log/odoo/odoo-server.log"):
+    FLOG = "/var/log/odoo/oe_trace.log"
+elif os.path.isdir("/var/log/openerp"):
+    FLOG = "/var/log/openerp/oe_trace.log"
+elif os.path.isdir("/var/log/odoo"):
+    FLOG = "/var/log/odoo/oe_trace.log"
+else:
+    FLOG = "~/oe_trace.log"
 
 
 class tndb():
