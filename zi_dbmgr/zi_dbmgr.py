@@ -162,13 +162,9 @@ class zi_dbmgr_db(orm.Model):
         Create a new database
         @params:
             - name :
-
             - user_password :
-
             - lang :
-
             - demo :
-
         '''
         tndb.wlog('create_database')
         service_db_config_obj = self.pool['zi.dbmgr.db.config']
