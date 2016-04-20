@@ -26,15 +26,15 @@
 
 {
     'name': 'Account Banking - Payments Export Infrastructure',
-    'version': '0.1.165',
+    'version': '0.1.166',
     'license': 'AGPL-3',
-    'author': 'Banking addons community',
+    'author': "Banking addons community,Odoo Community Association (OCA)",
     'website': 'https://launchpad.net/banking-addons',
     'category': 'Banking addons',
     'depends': [
         'account_payment',
         'base_iban',  # for manual_bank_tranfer
-        ],
+    ],
     'conflicts': [
         # lp:account-payment/account_payment_extension also adds
         # a type field to payment.mode, with a very similar purpose.
@@ -44,7 +44,7 @@
         # Proposal to resolve: make account_payment_extension depend
         # on the present account_banking_payment_export module.
         'account_payment_extension',
-        ],
+    ],
     'data': [
         'view/account_payment.xml',
         'view/bank_payment_manual.xml',

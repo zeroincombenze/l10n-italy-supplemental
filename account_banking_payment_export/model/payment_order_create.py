@@ -127,6 +127,10 @@ class payment_order_create(orm.TransientModel):
                         communication = line.invoice.reference
                     elif line.invoice.supplier_invoice_number:
                         communication = line.invoice.supplier_invoice_number
+                # [antoniov: 2015-11-20] text with invoice number
+                if line.invoice.supplier_invoice_number:
+                    communication = "Doc. " + \
+                        line.invoice.supplier_invoice_number
             else:
                 # Make sure that the communication includes the
                 # customer invoice number (in the case of debit order)
@@ -148,6 +152,7 @@ class payment_order_create(orm.TransientModel):
             cr, uid, [line.id], payment.mode.id, context)
         # end account banking
         # [ antoniov: 2015-06-23] set name as reference
+        # reference = payment.reference
         res = {
             'move_line_id': line.id,
             'amount_currency': amount_currency,
@@ -187,7 +192,6 @@ class payment_order_create(orm.TransientModel):
         payment = self.pool['payment.order'].browse(
             cr, uid, context['active_id'], context=context)
         # Populate the current payment with new lines:
-        # pdb.set_trace()
         for line in self.pool['account.move.line'].browse(
                 cr, uid, line_ids, context=context):
             vals = self._prepare_payment_line(
