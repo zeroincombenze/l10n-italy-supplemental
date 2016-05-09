@@ -34,11 +34,14 @@ class banking_export_sepa(orm.Model):
     def _generate_filename(self, cr, uid, ids, name, arg, context=None):
         res = {}
         for sepa_file in self.browse(cr, uid, ids, context=context):
-            ref = sepa_file.payment_order_ids[0].reference
-            if ref:
-                label = unidecode(ref.replace('/', '-'))
+            if not sepa_file.payment_order_ids:
+                label = 'no payment order'
             else:
-                label = 'error'
+                ref = sepa_file.payment_order_ids[0].reference
+                if ref:
+                    label = unidecode(ref.replace('/', '-'))
+                else:
+                    label = 'error'
             res[sepa_file.id] = 'sct_%s.xml' % label
         return res
 
@@ -60,12 +63,14 @@ class banking_export_sepa(orm.Model):
             "line for all the wire transfers of the SEPA XML file ; "
             "if false, the bank statement will display one debit line "
             "per wire transfer of the SEPA XML file."),
-        'charge_bearer': fields.selection([
-            ('SLEV', 'Following Service Level'),
-            ('SHAR', 'Shared'),
-            ('CRED', 'Borne by Creditor'),
-            ('DEBT', 'Borne by Debtor'),
-            ], 'Charge Bearer', readonly=True,
+        'charge_bearer': fields.selection(
+            [
+                ('SLEV', 'Following Service Level'),
+                ('SHAR', 'Shared'),
+                ('CRED', 'Borne by Creditor'),
+                ('DEBT', 'Borne by Debtor'),
+            ],
+            'Charge Bearer', readonly=True,
             help="Following service level : transaction charges are to be "
             "applied following the rules agreed in the service level and/or "
             "scheme (SEPA Core messages must use this). Shared : "
@@ -79,10 +84,12 @@ class banking_export_sepa(orm.Model):
         'filename': fields.function(
             _generate_filename, type='char', size=256, string='Filename',
             readonly=True),
-        'state': fields.selection([
-            ('draft', 'Draft'),
-            ('sent', 'Sent'),
-            ], 'State', readonly=True),
+        'state': fields.selection(
+            [
+                ('draft', 'Draft'),
+                ('sent', 'Sent'),
+            ],
+            'State', readonly=True),
     }
 
     _defaults = {
