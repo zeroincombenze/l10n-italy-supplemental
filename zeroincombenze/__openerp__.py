@@ -36,7 +36,7 @@
                 'account_invoice_entry_date',
                 'l10n_it_partially_deductible_vat',
                 'zi_account_control',
-                'zi_headers_webkit',
+                # 'zi_headers_webkit',
                 # 'zi_invoice_webkit',
                 # 'zi_purchase_order_webkit',
                 # 'zi_sale_order_webkit',
@@ -56,11 +56,11 @@ Please, wait for completion: might be required a bit of time
 \n
 [IT] zeroincombenze® installatore
 ---------------------------------
-Questo modulo è un contenitore per mantenere insieme tutti i moduli
-necessari all'installazione standard di zeroincombenze®.
+Questo modulo è un contenitore per mantenere insieme tutti i moduli necessari
+all'installazione standard di zeroincombenze®.
 L'installazione di questo modulo, installa tutti i moduli necessari.
 
-Attenzione! L'installazione dei modulo potrebbe richiedere un po' di tempo.
+Attenzione! L'installazione di tutti i moduli potrebbe richiedere tempo.
     """,
     'license': 'AGPL-3',
     'category': 'Hidden',
@@ -73,7 +73,7 @@ Attenzione! L'installazione dei modulo potrebbe richiedere un po' di tempo.
     'demo': [],
     'init_xml': ['data/res_users.xml'],
     'update_xml': [],
-    'installable': False,
+    'installable': True,
     'auto_install': True,
     'images': [],
     'js': ['static/src/js/announcement.js'],

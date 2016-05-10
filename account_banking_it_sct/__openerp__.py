@@ -1,9 +1,8 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    SEPA Credit Transfer module for OpenERP
-#    Copyright (C) 2010-2013 Akretion (http://www.akretion.com)
-#    @author: Alexis de Lattre <alexis.delattre@akretion.com>
+#    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
+#    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,5 +19,24 @@
 #
 ##############################################################################
 
-from . import wizard
-from . import account_banking_sepa
+{
+    'name': 'Italian SEPA Credit Transfer',
+    'summary': 'Create SEPA XML files for Italian Credit Transfers',
+    'version': '0.2',
+    'author': 'SHS-AV s.r.l.',
+    'maintainer': 'Antonio Maria Vigliotti',
+    'license': 'AGPL-3',
+    'category': 'Banking addons',
+    'depends': ['account_banking_sepa_credit_transfer'],
+    'data': [
+        'wizard/export_sepa_view.xml',
+        'data/payment_type_sepa_sct.xml',
+    ],
+    'description': '''
+This module is Italian Localization to export payment orders
+in SEPA XML file format.
+Italian Banks use a no standard V4 PAIN format by CBI
+    ''',
+    'active': True,
+    'installable': True,
+}

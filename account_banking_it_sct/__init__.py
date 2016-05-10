@@ -1,7 +1,8 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Akretion (http://www.akretion.com/)
+#    SEPA Credit Transfer module for OpenERP
+#    Copyright (C) 2010-2013 Akretion (http://www.akretion.com)
 #    @author: Alexis de Lattre <alexis.delattre@akretion.com>
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,15 +20,5 @@
 #
 ##############################################################################
 
-
-def migrate(cr, version):
-    if not version:
-        return
-    cr.execute(
-        "UPDATE payment_line SET communication = communication2, "
-        "communication2 = null "
-        "FROM payment_order "
-        "WHERE payment_line.order_id = payment_order.id "
-        "AND payment_order.state in ('draft', 'open') "
-        "AND payment_line.state = 'normal' "
-        "AND communication2 is not null")
+from . import account_banking_sepa
+from . import wizard
