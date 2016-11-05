@@ -28,6 +28,7 @@ Functionalities:
 
 - Documento di trasporto
 
+(Da Odoo 8.0 è rimpiazzato con il modulo l10n_it_ddt)
 """,
     'author': "OpenERP Italian Community,Odoo Community Association (OCA)",
     'website': 'http://www.openerp-italia.org',

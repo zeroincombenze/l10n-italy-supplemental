@@ -28,9 +28,12 @@
     'category': 'Reports/Webkit',
     'description': """
 This module adds the webkit DDT report
+
+(Da Odoo 8.0 è rimpiazzato con il modulo l10n_it_ddt)
     """,
     'author': "Agile Business Group,Odoo Community Association (OCA)",
     'website': 'http://www.agilebg.com',
+    'license': 'AGPL-3',
     'depends': ['report_webkit', 'l10n_it_sale', 'base_headers_webkit'],
     'data': ['report.xml'],
     'installable': True,

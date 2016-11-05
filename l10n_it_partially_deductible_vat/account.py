@@ -22,7 +22,7 @@
 #
 #
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 from decimal import Decimal, ROUND_HALF_UP
 import time
 from openerp.tools.translate import _
@@ -32,13 +32,17 @@ class account_tax(osv.osv):
 
     _inherit = 'account.tax'
 
+# See Bug #1335867
+# [antoniov: 2014-06-30] if account_tax.type is 'balance',
+#   'amount' value is unpredictable. Random bug!
     def _have_same_rate(self, account_taxes):
         rate = None
-        for acc_tax in account_taxes:
-            if rate is None:
-                rate = acc_tax.amount
-            elif rate != acc_tax.amount:
-                return False
+        for account_tax in account_taxes:
+            if account_tax.type != 'balance':
+                if rate is None:
+                    rate = account_tax.amount
+                elif rate != account_tax.amount:
+                    return False
         return True
 
     def get_main_tax(self, tax):
@@ -85,14 +89,17 @@ class account_tax(osv.osv):
             _('Error'),
             _('No taxes associated to tax code %s') % str(tax_code.name))
 
-    def compute_all(
-        self, cr, uid, taxes, price_unit, quantity, product=None, partner=None,
-        force_excluded=False
-    ):
-        res = super(
-            account_tax, self).compute_all(
-                cr, uid, taxes, price_unit, quantity, product, partner,
-                force_excluded)
+    def compute_all(self, cr, uid, taxes, price_unit, quantity, product=None,
+                    partner=None, force_excluded=False):
+        res = super(account_tax,
+                    self).compute_all(cr,
+                                      uid,
+                                      taxes,
+                                      price_unit,
+                                      quantity,
+                                      product,
+                                      partner,
+                                      force_excluded)
 
         precision = self.pool.get(
             'decimal.precision').precision_get(cr, uid, 'Account')
@@ -211,15 +218,14 @@ class account_invoice_tax(osv.osv):
                 tax = tax_obj.get_main_tax(ded_tax)
                 for inv_tax_2 in tax_grouped.values():
                     # parte indetraibile
-                    if inv_tax_2[
-                        'base_code_id'
-                    ] and not inv_tax_2[
-                        'tax_code_id'
-                    ]:
+                    if inv_tax_2['base_code_id'] and \
+                            not inv_tax_2['tax_code_id']:
                         main_tax = tax_obj.get_main_tax(
                             tax_obj.get_account_tax_by_base_code(
                                 tax_code_obj.browse(
-                                    cr, uid, inv_tax_2['base_code_id'])))
+                                    cr,
+                                    uid,
+                                    inv_tax_2['base_code_id'])))
                         # Se hanno la stessa tassa
                         # (Il get_account_tax_by* potrebbe in generale
                         # ritornare una qualunque
@@ -281,11 +287,14 @@ class account_tax_code(osv.osv):
     _inherit = 'account.tax.code'
 
     _columns = {
-        'base_tax_ids': fields.one2many(
-            'account.tax', 'base_code_id', 'Base Taxes'),
-        'tax_ids': fields.one2many('account.tax', 'tax_code_id', 'Taxes'),
-        'ref_base_tax_ids': fields.one2many(
-            'account.tax', 'ref_base_code_id', 'Ref Base Taxes'),
-        'ref_tax_ids': fields.one2many(
-            'account.tax', 'ref_tax_code_id', 'Ref Taxes'),
+        'base_tax_ids':
+            fields.one2many('account.tax', 'base_code_id', 'Base Taxes'),
+        'tax_ids':
+            fields.one2many('account.tax', 'tax_code_id', 'Taxes'),
+        'ref_base_tax_ids':
+            fields.one2many('account.tax',
+                            'ref_base_code_id',
+                            'Ref Base Taxes'),
+        'ref_tax_ids':
+            fields.one2many('account.tax', 'ref_tax_code_id', 'Ref Taxes'),
     }
