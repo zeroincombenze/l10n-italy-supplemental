@@ -20,20 +20,3 @@
 openerp_announcement = function(instance) {
 
 };
-
-
-
-function LHready() {
-    if(document.readyState == "complete") {
-        (function(){
-            var lh=document.createElement("script");
-            lh.type="text/javascript";
-            lh.async=true;
-            lh.src="//server.livehelp.it/widgetjs/72663/802.js?x=" + 1*new Date();
-            var node=document.getElementsByTagName("script")[0];
-            node.parentNode.insertBefore(lh,node);
-         })();
-     } else {
-        setTimeout('LHready()',150);
-     }
-} LHready();

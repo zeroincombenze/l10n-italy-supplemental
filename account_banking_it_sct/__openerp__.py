@@ -38,5 +38,5 @@ in SEPA XML file format.
 Italian Banks use a no standard V4 PAIN format by CBI
     ''',
     'active': True,
-    'installable': True,
+    'installable': False,
 }
