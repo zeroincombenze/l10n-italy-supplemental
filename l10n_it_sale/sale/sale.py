@@ -62,4 +62,5 @@ class sale_order(orm.Model):
                     })
         return True
 
+
 sale_order()

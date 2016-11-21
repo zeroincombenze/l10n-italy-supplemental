@@ -34,6 +34,8 @@ class res_region(osv.osv):
             required=True),
         'country_id': fields.many2one('res.country', 'Country'),
     }
+
+
 res_region()
 
 
@@ -49,6 +51,7 @@ class res_province(osv.osv):
             required=True),
         'region': fields.many2one('res.region', 'Region'),
     }
+
 
 res_province()
 

@@ -33,4 +33,6 @@ class res_partner(orm.Model):
             'stock.picking.transportation_reason',
             'Reason for transportation'),
     }
+
+
 res_partner()

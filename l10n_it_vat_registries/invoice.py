@@ -176,6 +176,7 @@ class Parser(report_sxw.rml_parse):
         return super(Parser, self).set_context(
             objects, data, ids, report_type=report_type)
 
+
 report_sxw.report_sxw(
     'report.registro_iva_vendite',
     'registro_iva_vendite',

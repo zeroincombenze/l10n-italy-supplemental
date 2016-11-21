@@ -156,4 +156,5 @@ class emissione_riba(orm.TransientModel):
             'res_id': rd_id or False,
         }
 
+
 emissione_riba()

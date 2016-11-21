@@ -105,7 +105,7 @@ To contribute to this module, please visit http://odoo-community.org.
         'security/ir.model.access.csv',
     ],
     "demo": ['demo/account_invoice_fatturapa.xml'],
-    "installable": True,
+    "installable": False,
     'external_dependencies': {
         'python': ['pyxb'],
     }

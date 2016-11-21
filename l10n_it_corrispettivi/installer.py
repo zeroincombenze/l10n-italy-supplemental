@@ -61,4 +61,5 @@ class corrispettivi_config_data(osv.osv_memory):
                 'corrispettivi': True,
             })
 
+
 corrispettivi_config_data()

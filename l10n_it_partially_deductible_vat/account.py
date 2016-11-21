@@ -123,6 +123,7 @@ class account_tax(osv.osv):
 
         return res
 
+
 account_tax()
 
 

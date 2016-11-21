@@ -116,6 +116,7 @@ class account_invoice(osv.osv):
         'account_id': _get_account,
     }
 
+
 account_invoice()
 
 
@@ -124,6 +125,8 @@ class account_journal(osv.osv):
     _columns = {
         'corrispettivi': fields.boolean('Corrispettivi'),
     }
+
+
 account_journal()
 
 
@@ -132,4 +135,6 @@ class res_partner(osv.osv):
     _columns = {
         'corrispettivi': fields.boolean('Corrispettivi'),
     }
+
+
 res_partner()

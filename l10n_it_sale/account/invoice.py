@@ -57,4 +57,5 @@ class account_invoice(orm.Model):
             ] = partner.transportation_reason_id.id
         return result
 
+
 account_invoice()

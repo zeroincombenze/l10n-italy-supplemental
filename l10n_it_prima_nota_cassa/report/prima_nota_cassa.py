@@ -295,6 +295,7 @@ class print_prima_nota_cassa(report_sxw.rml_parse, common_report_header):
             return 'Journal & Partner'
         return 'Date'
 
+
 report_sxw.report_sxw(
     'report.account.print.prima_nota_cassa',
     'account.account',

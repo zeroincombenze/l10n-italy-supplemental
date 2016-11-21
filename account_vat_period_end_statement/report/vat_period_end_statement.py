@@ -119,6 +119,7 @@ class print_vat_period_end_statement(report_sxw.rml_parse):
         })
         self.context = context
 
+
 report_sxw.report_sxw(
     'report.account.print.vat.period.end.statement',
     'account.vat.period.end.statement',

@@ -89,5 +89,5 @@ To contribute to this module, please visit http://odoo-community.org.
         'wizard/import_notification_view.xml',
         'security/ir.model.access.csv',
     ],
-    "installable": True
+    "installable": False
 }
