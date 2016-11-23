@@ -55,4 +55,7 @@ docs/_build/
 *~
 *.swp
 
+# unit test generated files
 stdout.log
+oca__*
+z0i__*
