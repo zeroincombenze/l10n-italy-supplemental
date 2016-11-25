@@ -41,6 +41,8 @@ class res_region(osv.osv):
             required=True),
         'country_id': fields.many2one('res.country', 'Country'),
     }
+
+
 res_region()
 
 
@@ -58,6 +60,7 @@ class res_province(osv.osv):
         'region': fields.many2one('res.region', 'Region'),
     }
 
+
 res_province()
 
 
@@ -68,6 +71,8 @@ class res_country_state(osv.osv):
         'eurostat_code': fields.char('EUROSTAT Code', size=16,
                                      help='EUROSTAT Code.'),
     }
+
+
 res_country_state()
 
 
@@ -128,6 +133,8 @@ class res_city(osv.osv):
             res = {'value': {'province_id': None, }}
 
         return res
+
+
 res_city()
 
 
@@ -139,6 +146,7 @@ class res_users(osv.osv):
             'Address Warning Messages',
             help='This user can/can\'t see all the address warning messages'),
     }
+
 
 res_users()
 
@@ -181,6 +189,8 @@ class res_country(osv.osv):
             'Multizone ZIP code', size=1,
             help='Number of digits in multizone ZIP code by this country'),
     }
+
+
 res_country()
 
 
@@ -278,6 +288,7 @@ class res_partner(osv.osv):
             'context': context,
         }
 
+
 res_partner()
 
 
@@ -299,6 +310,7 @@ class res_company(osv.osv):
 # Based on table res.city but city can be changed by user.
     def on_change_city(self, cr, uid, ids, country_id, zip_code, city):
         return on_change_city(cr, uid, ids, country_id, zip_code, city)
+
 
 res_company()
 

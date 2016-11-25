@@ -46,6 +46,7 @@ class AccountInvoice_Report(report_sxw.rml_parse):
         else:
             return False
 
+
 report_sxw.report_sxw('report.invoice_wht',
                       'account.invoice',
                       'zi_invoice_wht/report/account.report_invoice_wht.mako',
