@@ -19,13 +19,16 @@ This module does nothing, it is a just a simple example of Odoo Module
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '9.0.0.1.0',
+    'version': '10.0.0.1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
-    'data': [],
+    'data': [
+        "views/midea_partner_view.xml",
+        "security/ir.model.access.csv",
+    ],
     "qweb": [],
     "demo": [],
     "test": [],
