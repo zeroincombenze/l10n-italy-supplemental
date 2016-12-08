@@ -73,3 +73,6 @@ html/
 *.log
 *.bak
 *.out
+stdout.log
+oca__*
+z0i__*
