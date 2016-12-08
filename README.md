@@ -21,11 +21,14 @@ Translation Status
 Localizzazione Italiana Odoo
 ============================
 
-Localizzazione Italiana per odoo (già OpenERP) 7.0 a cura di Zeroincombenze®
+Localizzazione Italiana per odoo (già OpenERP) 7.0 a cura di **Zeroincombenze®**
 
 Differenze rispetto localizzazione ufficiale Odoo/OCA:
 
-- Piano dei conti e codici IVA personalizzati
+- Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental/](https://github.com/zeroincombenze/l10n-italy-supplemental)
+- Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental/](https://github.com/zeroincombenze/l10n-italy-supplemental)
+- Classificazione comuni italiani aggiornata ai nuovi comuni
+
 
 
 [![chat with us](http://www.shs-av.com/wp-content/chat_with_us.png)](https://www.zeroincombenze.it/chi-siamo/contatti/)
