@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=7.0)](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental)
 [![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=7.0)
 [![license agpl](https://img.shields.io/badge/licence-AGPL--3-green.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
-[![try it](https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-7.svg)](erp7.zeroincombenze.it)
+[![try it](https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-7.svg)](http://erp7.zeroincombenze.it)
 
 
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
