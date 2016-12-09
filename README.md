@@ -17,6 +17,7 @@ Warning! Follow modules replace Odoo/OCA standard modules for Italian localizati
 - account_banking_sepa_credit_transfer
 
 ASAP we will write integration modules but for now you must replace above modules if you want to use Italina Credit Transfer.
+
 ----
 
 **zeroincombenze®** (Trademark of SHS-AV s.r.l.) distributes **Odoo** on its own
