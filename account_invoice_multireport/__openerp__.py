@@ -68,5 +68,5 @@ Trovate un esempio di fattura in questo modulo.
     "demo": [],
     "test": [],
     "active": False,
-    'installable': True
+    'installable': False
 }
