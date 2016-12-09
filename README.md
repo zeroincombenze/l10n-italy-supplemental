@@ -22,7 +22,7 @@ ASAP we will write integration modules but for now you must replace above module
 
 **zeroincombenze®** (Trademark of SHS-AV s.r.l.) distributes **Odoo** on its own
 Cloud infrastructure and promotes the Odoo widespread use. Zeroincombenze® distribution
-is mainly based on Odoo with some supplemental modules, all free license released.
+is mainly based on OCA version of Odoo with some supplemental modules, all free license released.
 
 **OCA**, or the **Odoo Community Association**, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
@@ -48,9 +48,9 @@ Le banche italiane non usano lo standard Sepa ma una variante definita del conso
 ----
 
 **zeroincombenze®** (marchio registrato da SHS-AV s.r.l.) distribuisce **Odoo**
-tramiote una propria piattaforma Cloud e promuove l'utilizzao di Odoo in tutto il
-mondo. La distribuzione Zeroincombenze® è basata principalmente su Odoo con alcuni
-moduli aggiuntivi, tutti rilasciati con licenza libera.
+tramite una propria piattaforma Cloud e promuove l'utilizzo di Odoo in tutto il
+mondo. La distribuzione Zeroincombenze® è basata principalmente su Odoo versione OCA
+con alcuni moduli aggiuntivi, tutti rilasciati con licenza libera.
 
 http://wiki.zeroincombenze.org/it/Odoo
 
