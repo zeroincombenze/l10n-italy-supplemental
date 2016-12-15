@@ -25,9 +25,9 @@ Localizzazione Italiana per odoo (già OpenERP) 7.0 a cura di **Zeroincombenze®
 
 Differenze rispetto localizzazione ufficiale Odoo/OCA:
 
-- Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental/](https://github.com/zeroincombenze/l10n-italy-supplemental)
-- Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental/](https://github.com/zeroincombenze/l10n-italy-supplemental)
-- Classificazione comuni italiani aggiornata ai nuovi comuni
+- Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
+- Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
+- Classificazione [comuni italiani](http://www.shs-av.com/variazione-denominazione-comuni-italiani-2014/) aggiornata ai nuovi comuni
 
 
 
