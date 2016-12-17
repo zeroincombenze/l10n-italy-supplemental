@@ -39,18 +39,17 @@ Le banche italiane non usano lo standard Sepa ma una variante definita del conso
 
 ----
 
-**Odoo** is a trademark of [https://www.odoo.com/](Odoo S.A.)
+**Odoo** is a trademark of [Odoo S.A.](https://www.odoo.com/)
 
-**OCA**, or the [http://odoo-community.org/](Odoo Community Association), is a nonprofit organization whose
+**OCA**, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-**zeroincombenze®** is a trademark of [http://www.shs-av.com/](SHS-AV s.r.l.)
+**zeroincombenze®** is a trademark of [SHS-AV s.r.l.](http://www.shs-av.com/)
 which distributes Odoo on its own cloud infrastructure and promotes the Odoo widespread use.
-[http://wiki.zeroincombenze.org/en/Odoo](Zeroincombenze® distribution)
+[Zeroincombenze® distribution](http://wiki.zeroincombenze.org/en/Odoo)
 is mainly based on OCA version of Odoo with some supplemental modules, all free license released.
 
-[//]: # (end copyright)
 [//]: # (end copyright)
 
 
