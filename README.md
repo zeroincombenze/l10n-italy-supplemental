@@ -2,6 +2,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=7.0)
 [![license agpl](https://img.shields.io/badge/licence-AGPL--3-green.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
 [![try it](https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-7.svg)](http://erp7.zeroincombenze.it)
+[![codecov](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/7.0/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental)
+[![Tech Doc]((https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-7.svg))](http://wiki.zeroincombenze.org/en/Odoo/dev/)
 
 
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
@@ -62,3 +64,21 @@ http://odoo-community.org/
 
 
 [![chat with us](http://www.shs-av.com/wp-content/chat_with_us.png)](https://www.zeroincombenze.it/chi-siamo/contatti/)
+
+[//]: # (copyright)
+
+----
+
+**Odoo** is a trademark of [https://www.odoo.com/](Odoo S.A.)
+
+**OCA**, or the [http://odoo-community.org/](Odoo Community Association), is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+**zeroincombenze®** is a trademark of [http://www.shs-av.com/](SHS-AV s.r.l.)
+which distributes Odoo on its own cloud infrastructure and promotes the Odoo widespread use.
+[http://wiki.zeroincombenze.org/en/Odoo](Zeroincombenze® distribution)
+is mainly based on OCA version of Odoo with some supplemental modules, all free license released.
+
+[//]: # (end copyright)
+
