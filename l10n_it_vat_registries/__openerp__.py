@@ -32,7 +32,7 @@ http://wiki.openerp-italia.org/doku.php/moduli/l10n_it_tax_journal""",
     'license': 'AGPL-3',
     "depends": [
         'report_webkit',
-        'l10n_it_base',
+        'l10n_it_bbone',
         'l10n_it_fiscalcode',
         'l10n_it_partially_deductible_vat'],
     "init_xml": [
