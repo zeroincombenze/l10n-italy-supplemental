@@ -39,7 +39,7 @@
 Table based check works well for Italy, France, Spain and other countries.\n
 It works bad for UK.
 However without validation any address data can be loaded.\n
-Warning: might be some conflict with module l10n_it_base\n
+Warning: might be some conflict with module l10n_it_bbone\n
 \n
 [IT] Localizzazione italiana per Clienti, Fornitori e Società.
 ---------------------------------------------------------------
@@ -48,7 +48,7 @@ ma non adattabile al Regno Unito.\n
 In ogni caso è possibile caricare qualsiasi dato, senza validazione.\n
 Attenzione:
 questo modulo potrebbe entrare in conflitto con la localizzazione italiana
-(l10n_it_base)\n
+(l10n_it_bbone)\n
 """,
     'author': 'OpenERP Italian Community',
     'maintainer': 'Antonio Maria Vigliotti',
