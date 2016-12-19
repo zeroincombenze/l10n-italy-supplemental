@@ -59,4 +59,5 @@ Everytime, every Odoo DB and customized code can be replicated on local server.
 [//]: # (end copyright)
 
 
+
 [![chat with us](http://www.shs-av.com/wp-content/chat_with_us.png)](https://www.zeroincombenze.it/chi-siamo/contatti/)
