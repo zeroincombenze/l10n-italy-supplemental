@@ -13,5 +13,5 @@
     'license': 'AGPL-3',
     'depends': ['base', 'account'],
     'active': False,
-    'installable': True
+    'installable': False
 }

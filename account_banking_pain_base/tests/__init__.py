@@ -19,24 +19,8 @@
 #
 ##############################################################################
 
-{
-    'name': 'Italian SEPA Credit Transfer',
-    'summary': 'Create SEPA XML files for Italian Credit Transfers',
-    'version': '0.2',
-    'author': 'SHS-AV s.r.l.',
-    'maintainer': 'Antonio Maria Vigliotti',
-    'license': 'AGPL-3',
-    'category': 'Banking addons',
-    'depends': ['account_banking_sepa_credit_transfer'],
-    'data': [
-        'wizard/export_sepa_view.xml',
-        'data/payment_type_sepa_sct.xml',
-    ],
-    'description': '''
-This module is Italian Localization to export payment orders
-in SEPA XML file format.
-Italian Banks use a no standard V4 PAIN format by CBI
-    ''',
-    'active': False,
-    'installable': False,
-}
+from . import test_company
+
+checks = [
+    test_company,
+]

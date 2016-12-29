@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=7.0)](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental)
-[![license agpl](https://img.shields.io/badge/licence-AGPL--3-green.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
+[![license agpl](https://img.shields.io/badge/licence-AGPL--3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
 [![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=7.0)
 [![codecov](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/7.0/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental)
 [![Tech Doc](https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-7.svg)](http://wiki.zeroincombenze.org/en/Odoo/dev/)
@@ -32,8 +32,10 @@ Differenze rispetto localizzazione ufficiale Odoo/OCA:
 - Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
 - Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
 - Classificazione [comuni italiani](http://www.shs-av.com/variazione-denominazione-comuni-italiani-2014/) aggiornata ai nuovi comuni
-- [https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/l10n_it_spesometro](Modulo Spesometro) con auto setup per ridurre i tempi di attivazione
-- Modulo bonifici SEPA 7.0 non ancora ufficializzato in quanto per l'uso del Bonifico Sepa in Italia è provvisorimente sostitutivo del relativo modulo Odoo/OCA.
+- [Modulo Spesometro](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/l10n_it_spesometro) con auto setup per ridurre i tempi di attivazione
+- [account_banking_pain_base](https://github.com/zeroincombenze/l10n-italy-supplemental) sostituisce il relativo modulo [Odoo/OCA](https://github.com/OCA/bank-payment/tree/7.0/account_banking_pain_base)
+
+- Modulo bonifici SEPA 7.0 non ancora ufficializzato in quanto per l'uso del Bonifico Sepa in Italia è provvisorimente sostitutivo del relativo modulo .
 
 Modificheremo al più presto posssibile questi moduli per integrarli con i moduli standard ma, al momento, se volete gestire i bonifici Sepa con Odoo in Italia, dovete sostituire i moduli sopra elencati.
 

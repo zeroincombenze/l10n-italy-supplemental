@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'active': True,            # Auto-installable when create!!
+    'active': False,
     'name': 'zeroincombenze®',
     'version': '0.1',
     'depends': ['l10n_it_fiscal',
