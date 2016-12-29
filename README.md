@@ -29,8 +29,8 @@ Moduli Italiani aggiuntivi
 
 Differenze rispetto localizzazione ufficiale Odoo/OCA:
 
-- Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
-- Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental)
+- Basato su [piano dei conti](https://www.zeroincombenze.it/il-piano-dei-conti-2/) personalizzato  in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/l10n_it_fiscal)
+- Basato su [codici IVA](http://wiki.zeroincombenze.org/it/Odoo/7.0/man/codici_IVA) personalizzati in [l10n-italy-supplemental](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/l10n_it_fiscal)
 - Classificazione [comuni italiani](http://www.shs-av.com/variazione-denominazione-comuni-italiani-2014/) aggiornata ai nuovi comuni
 - [Modulo Spesometro](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/l10n_it_spesometro) con auto setup per ridurre i tempi di attivazione
 - [account_banking_pain_base](https://github.com/zeroincombenze/l10n-italy-supplemental) sostituisce il relativo modulo [Odoo/OCA](https://github.com/OCA/bank-payment/tree/7.0/account_banking_pain_base)
