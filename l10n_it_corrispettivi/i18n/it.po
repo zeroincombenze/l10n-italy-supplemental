@@ -1,0 +1,307 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * l10n_it_corrispettivi
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: l10n-italy (7.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-25 16:46+0000\n"
+"PO-Revision-Date: 2015-11-25 16:47+0000\n"
+"Last-Translator: Maxime Chambreuil <maxime.chambreuil@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/oca/OCA-l10n-italy-7-0/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Draft Invoices"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Accounting Period"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Other Info"
+msgstr "Altre informazioni"
+
+#. module: l10n_it_corrispettivi
+#: field:corrispettivi.config.data,default_credit_account_id:0
+msgid "Default credit account"
+msgstr "Conto di credito di default"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Responsible"
+msgstr "Responsabile"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "State"
+msgstr "Stato"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Refund "
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Draft Refund "
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Invoice Lines"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "Skip"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: model:ir.model,name:l10n_it_corrispettivi.model_corrispettivi_config_data
+msgid "corrispettivi.config.data"
+msgstr "corrispettivi.config.data"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "(update)"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: model:ir.model,name:l10n_it_corrispettivi.model_account_journal
+msgid "Journal"
+msgstr "Sezionale"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "force period"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid ""
+"This button only appears when the state of the invoice is 'paid' (showing "
+"that it has been fully reconciled) and auto-computed boolean 'reconciled' is"
+" False (depicting that it's not the case anymore). In other words, the "
+"invoice has been dereconciled and it does not fit anymore the 'paid' state. "
+"You should press this button to re-open it and let it continue its normal "
+"process after having resolved the eventual exceptions it may have created."
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Reset to Draft"
+msgstr "Reimposta a \"Bozza\""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Date"
+msgstr "Data"
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "Corrispettivi Configuration"
+msgstr "Configurazione Corrispettivi"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Invoice "
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Open/Paid"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Additional notes..."
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0 field:account.invoice,corrispettivo:0
+msgid "Corrispettivo"
+msgstr "Corrispettivo"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Search Corrispettivi"
+msgstr "Cerca Corrispettivi"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Taxes"
+msgstr "Imposte"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0 field:account.journal,corrispettivi:0
+#: model:ir.actions.act_window,name:l10n_it_corrispettivi.action_corrispettivi_tree
+#: model:ir.ui.menu,name:l10n_it_corrispettivi.menu_action_corrispettivi_tree
+#: field:res.partner,corrispettivi:0
+msgid "Corrispettivi"
+msgstr "Corrispettivi"
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "Configure corrispettivi"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: code:addons/l10n_it_corrispettivi/account.py:79
+#: code:addons/l10n_it_corrispettivi/account.py:95
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Draft Invoice "
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "Continue"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Payments"
+msgstr "Pagamenti"
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "Select data to configure Corrispettivi module."
+msgstr "Selezionare i dati con cui configurare il modulo Corrispettivi"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Approve"
+msgstr "Approva"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Validate"
+msgstr "Valida"
+
+#. module: l10n_it_corrispettivi
+#: help:corrispettivi.config.data,default_credit_account_id:0
+#: help:corrispettivi.config.data,default_debit_account_id:0
+msgid "If doubtful, use income account"
+msgstr "Se incerti, utilizzare il conto vendite"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Residual Amount"
+msgstr "Ammontare residuo"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Unpaid"
+msgstr "Non pagato"
+
+#. module: l10n_it_corrispettivi
+#: field:corrispettivi.config.data,default_debit_account_id:0
+msgid "Default debit account"
+msgstr "Conto di debito di default"
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "title"
+msgstr "Titolo"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "My invoices"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:corrispettivi.config.data:0
+msgid "or"
+msgstr "o"
+
+#. module: l10n_it_corrispettivi
+#: model:ir.actions.act_window,name:l10n_it_corrispettivi.action_corrispettivi_config_data
+msgid "Configure Corrispettivi"
+msgstr "Configura Corrispettivi"
+
+#. module: l10n_it_corrispettivi
+#: code:addons/l10n_it_corrispettivi/account.py:80
+#: code:addons/l10n_it_corrispettivi/account.py:96
+#, python-format
+msgid "No partner \"corrispettivi\" found"
+msgstr "Nessun partner di tipo \"corrispettivi\" trovato"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Re-Open"
+msgstr "Riapri"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Customer Reference"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: model:ir.model,name:l10n_it_corrispettivi.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Recompute taxes and total"
+msgstr ""
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: l10n_it_corrispettivi
+#: model:ir.model,name:l10n_it_corrispettivi.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Salesman"
+msgstr "Commerciale"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Total Amount"
+msgstr "Importo Totale"
+
+#. module: l10n_it_corrispettivi
+#: view:account.invoice:0
+msgid "Untaxed Amount"
+msgstr "Importo non tassato"

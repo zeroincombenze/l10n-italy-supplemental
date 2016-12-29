@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # dotfiles
 .*
 !.gitignore
@@ -31,17 +32,40 @@ install/win32/meta.py
 env/
 develop-eggs/
 eggs/
+=======
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+>>>>>>> 827e0e92299f87b219a9d0bb6477984653f3b25d
 parts/
 sdist/
 var/
 *.egg-info/
 .installed.cfg
 *.egg
+<<<<<<< HEAD
 *.egg-info
+=======
+>>>>>>> 827e0e92299f87b219a9d0bb6477984653f3b25d
 
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+<<<<<<< HEAD
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -55,10 +79,28 @@ cover/
 *.mo
 # Pycharm
 .idea
+=======
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Pycharm
+.idea
+
+>>>>>>> 827e0e92299f87b219a9d0bb6477984653f3b25d
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
+<<<<<<< HEAD
 # Rope
 .ropeproject
 # Sphinx documentation & documentation
@@ -73,6 +115,20 @@ html/
 *.log
 *.bak
 *.out
+=======
+
+# Rope
+.ropeproject
+
+# Sphinx documentation
+docs/_build/
+
+# Backup files
+*~
+*.swp
+
+# unit test generated files
+>>>>>>> 827e0e92299f87b219a9d0bb6477984653f3b25d
 stdout.log
 oca__*
 z0i__*

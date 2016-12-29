@@ -4,5 +4,9 @@ account-financial-tools
 webkit-tools
 account-payment
 stock-logistics-workflow
+<<<<<<< HEAD
 l10n-italy
 bank-payment
+=======
+l10n-italy-supplemental https://github.com/zeroincombenze/l10n-italy-supplemental.git 7.0
+>>>>>>> 827e0e92299f87b219a9d0bb6477984653f3b25d
