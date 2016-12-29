@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/zeroincombenze/l10n-italy.svg?branch=7.0)](https://travis-ci.org/zeroincombenze/l10n-italy)
-[![license agpl](https://img.shields.io/badge/licence-AGPL--3-green.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
+[![license agpl](https://img.shields.io/badge/licence-AGPL--3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
 [![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n-italy?branch=7.0)
 [![codecov](https://codecov.io/gh/zeroincombenze/l10n-italy/branch/7.0/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n-italy)
 [![Tech Doc](https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-7.svg)](http://wiki.zeroincombenze.org/en/Odoo/dev/)
@@ -57,8 +57,6 @@ is mainly designed for Italian law and markeplace.
 Everytime, every Odoo DB and customized code can be replicated on local server.
 
 [//]: # (end copyright)
-
-
 
 
 
