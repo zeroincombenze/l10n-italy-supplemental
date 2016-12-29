@@ -35,7 +35,7 @@ Differenze rispetto localizzazione ufficiale Odoo/OCA:
 - Classificazione [comuni italiani](http://www.shs-av.com/variazione-denominazione-comuni-italiani-2014/) aggiornata ai nuovi comuni
 
 Il modulo l10n_it_bbone è basato su [ricerca con CAP] (https://www.zeroincombenze.it/nuova-anagrafica-per-il-software-gestionale/);
-inoltre il campo provincia è modo compatibile con i moduli internazionali (utilizzo del campo state_id al posto del campo personalizzato province) ma per compatibilità con i moduli della Community Italiana, il modulo l10n_it_bbone agisce anche sul campo province.
+inoltre il campo provincia è allineato ai moduli internazionali (utilizzo del campo state_id al posto del campo personalizzato province) ma per compatibilità con i moduli della Community Italiana, il modulo l10n_it_bbone agisce anche sul campo province.
 
 Un wizard di conversione è fornito.
 
@@ -57,6 +57,7 @@ is mainly designed for Italian law and markeplace.
 Everytime, every Odoo DB and customized code can be replicated on local server.
 
 [//]: # (end copyright)
+
 
 
 
