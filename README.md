@@ -36,6 +36,7 @@ Differenze rispetto localizzazione ufficiale Odoo/OCA:
 - [account_banking_pain_base](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/account_banking_pain_base) sostituisce il relativo modulo [Odoo/OCA](https://github.com/OCA/bank-payment/tree/7.0/account_banking_pain_base)
 - [account_banking_payment_export](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/account_banking_payment_export) sostituisce il relativo modulo [Odoo/OCA](https://github.com/OCA/bank-payment/tree/7.0/account_banking_payment_export)
 - Il modulo [account_banking_payment_export](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/account_banking_payment_export) oltre ai pagamenti pubblicati esamina anche quelli non pubblicati
+- [account_banking_sepa_credit_transfer](https://github.com/zeroincombenze/l10n-italy-supplemental/tree/7.0/account_banking_sepa_credit_transfer) sostituisce il relativo modulo [Odoo/OCA](https://github.com/OCA/bank-payment/tree/7.0/account_banking_sepa_credit_transfer)
 
 - Modulo bonifici SEPA 7.0 non ancora ufficializzato in quanto per l'uso del Bonifico Sepa in Italia è provvisorimente sostitutivo del relativo modulo .
 
