@@ -1,0 +1,3 @@
+[submodule "l10n-italy-supplemental"]
+	path = l10n-italy-supplemental
+	url = git@github.com:zeroincombenze/l10n-italy-supplemental.git
