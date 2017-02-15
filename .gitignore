@@ -67,6 +67,6 @@ docs/_build/
 
 # unit test generated files
 stdout.log
-oca__*
-z0i__*
+*.oca
+*.z0i
 l10n-italy-supplemental/

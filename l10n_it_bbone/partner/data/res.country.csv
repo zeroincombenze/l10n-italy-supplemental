@@ -131,7 +131,7 @@ base.li,True,LI,2009-01-01,,base.CHF,,,,2008-01-01,90,True,False
 base.lk,False,LK,,,base.LKR,,,,,85,False,False
 base.lr,True,LR,2009-01-01,,base.LRD,,,,,44,False,False
 base.ls,False,LS,,,base.LSL,,,,,89,False,False
-base.lt,False,LT,,,base.LTL,,2004-05-01,,2008-01-01,259,True,True
+base.lt,False,LT,,,base.EUR,,2004-05-01,,2008-01-01,259,True,True
 base.lu,True,LU,2009-01-01,,base.EUR,,1958-01-01,,2008-01-01,92,True,True
 base.lv,False,LV,,,base.EUR,,2004-05-01,,2008-01-01,258,True,True
 base.ly,False,LY,,,base.LYD,,,,,45,False,False
@@ -188,7 +188,7 @@ base.pw,False,PW,,,base.USD,,,,,216,False,False
 base.py,False,PY,,,base.PYG,,,,,52,False,False
 base.qa,False,QA,,,base.QAR,,,,,168,False,False
 base.re,False,RE,,,base.EUR,,1958-01-01,,2008-01-01,247,True,True
-base.ro,False,RO,,,base.ROL,,2007-01-01,,2008-01-01,61,True,True
+base.ro,False,RO,,,base.RON,,2007-01-01,,2008-01-01,61,True,True
 base.rs,False,RS,,,base.RSD,,,,,288,False,False
 base.ru,False,RU,,,base.RUB,,,,,262,False,False
 base.rw,False,RW,,,base.RWF,,,,,151,False,False
@@ -229,12 +229,12 @@ base.tt,False,TT,,,base.TTD,,,,,120,False,False
 base.tv,True,TV,2009-01-01,,base.AUD,,,,,193,False,False
 base.tw,True,TW,2009-01-01,,base.TWD,,,,,22,False,False
 base.tz,False,TZ,,,base.TZS,,,,,57,False,False
-base.ua,False,UA,,,base.UAG,,,,,263,False,False
+base.ua,False,UA,,,base.UAH,,,,,263,False,False
 base.ug,False,UG,,,base.UGX,,,,,132,False,False
 base.uk,False,GB,,,base.GBP,,1973-01-01,,2008-01-01,31,True,True
 base.um,False,UM,,,base.USD,,,,,252,False,False
 base.us,False,US,,,base.USD,,,,,69,False,False
-base.uy,True,UY,2009-01-01,,base.UYP,,,,,80,False,False
+base.uy,True,UY,2009-01-01,,base.UYU,,,,,80,False,False
 base.uz,False,UZ,,,base.UZS,,,,,271,False,False
 base.va,False,VA,,,base.EUR,,,,,93,False,False
 base.vc,True,VC,2009-01-01,,base.XCD,,,,,196,False,False
