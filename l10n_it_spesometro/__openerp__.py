@@ -50,7 +50,7 @@ Funzionalità:
     'website': 'http://www.odoo-italia.org',
     'license': 'AGPL-3',
     "depends": ['account',
-                'l10n_it_base',
+                'l10n_it_bbone',
                 'l10n_it_fiscalcode'],
     "data": [
               'security/ir.model.access.csv',
