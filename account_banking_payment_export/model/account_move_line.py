@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2004-2014 OpenERP S.A. (http://www.openerp.com/)
+#    Copyright (C) 2004-2014 Odoo S.A. (http://www.odoo.com/)
 #              (C) 2014 Akretion (http://www.akretion.com/)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ from operator import itemgetter
 
 # All the code below aims at fixing one small issue in _to_pay_search()
 # But _to_pay_search() is the search function of the field 'amount_to_pay'
-# which is a field.function and these functions are not inheritable in OpenERP.
+# which is a field.function and these functions are not inheritable in Odoo.
 # So we have to inherit the field 'amount_to_pay' and duplicate the related
 # functions
 # If the patch that I proposed in this bug report

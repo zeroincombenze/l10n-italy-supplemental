@@ -12,7 +12,7 @@
 Odoo Italian Supplemental Modules
 =================================
 
-Supplemental Italian modules for odoo (formerly OpenERP) 7.0
+Supplemental Italian modules for odoo (formerly Odoo) 7.0
 
 Warning! Follow modules replace Odoo/OCA standard modules for Italian localization:
 - account_banking_pain_base
