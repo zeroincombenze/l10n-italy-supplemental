@@ -3,7 +3,7 @@
 #
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
-#    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
+#    Associazione Odoo Italia (<http://www.openerp-italia.org>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published

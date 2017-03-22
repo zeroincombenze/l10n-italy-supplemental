@@ -50,7 +50,7 @@ Attenzione:
 questo modulo potrebbe entrare in conflitto con la localizzazione italiana
 (l10n_it_bbone)\n
 """,
-    'author': 'OpenERP Italian Community',
+    'author': 'Odoo Italian Community',
     'maintainer': 'Antonio Maria Vigliotti',
     'website': 'http://www.zeroincombenze.it',
     'license': 'AGPL-3',
