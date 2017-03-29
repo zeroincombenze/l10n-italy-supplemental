@@ -26,6 +26,7 @@
     'description': """
 Italian fiscal and legal localization
 =====================================
+
 [EN] Chart of Account and Tax codes
 -----------------------------------
 Very detailed Chart of Account, available to any Italian Company.
@@ -39,15 +40,17 @@ Tax codes cover most of variety italian fiscal cases:
 - Simplified regime
 - Cash VAT
 - Subjects without VAT
-\n
+
+
 [IT] Piano dei conti e Codici IVA
 ---------------------------------
-Piano dei conti dettagliato utilizzabile da qualsiasi impresa italiana.
-La struttura può essere ulteriormente espansa dall'utente finale
+Piano dei conti molto dettagliato utilizzabile da qualsiasi impresa italiana.
+La struttura può  essere ulteriormente espansa dall'utente finale
 con l'inserimento di nuovi record.
 
-La codifica è di 6 cifre; l'utente finale non dovrebbe mai inserire
-codici terminanti con '0'.
+La codifica è di 6 cifre;
+l'utente finale non dovrebbe inserire codici terminanti con '0'.
+
 
 I codici IVA coprono una grande varietà di casistiche fiscali:
 
@@ -55,7 +58,8 @@ I codici IVA coprono una grande varietà di casistiche fiscali:
 - Regime semplificato (contribuenti minimi L.244/07)
 - Regime IVA per cassa (L.185/08 e art.6 DPR633/72)
 - Operazioni senza IVA (L.98/11)
-\n
+
+
 See http://www.zeroincombenze.it/il-piano-dei-conti-2/
     """,
     'author': 'SHS-AV s.r.l.',
@@ -70,9 +74,9 @@ See http://www.zeroincombenze.it/il-piano-dei-conti-2/
         'data/account.tax.template.csv',
         'data/account.fiscal.position.template.csv',
         'l10n_chart_it_zeroincombenze.xml',
-        ],
+    ],
     'demo': [],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'images': [],
 }

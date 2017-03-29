@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'active': False,
+    'active': True,            # Auto-installable when create!!
     'name': 'zeroincombenze®',
     'version': '0.1',
     'depends': ['l10n_it_fiscal',
@@ -36,7 +36,7 @@
                 'account_invoice_entry_date',
                 'l10n_it_partially_deductible_vat',
                 'zi_account_control',
-                # 'zi_headers_webkit',
+                'zi_headers_webkit',
                 # 'zi_invoice_webkit',
                 # 'zi_purchase_order_webkit',
                 # 'zi_sale_order_webkit',
@@ -49,18 +49,18 @@ Zeroincombenze®
 [EN] zeroincombenze® installer
 ------------------------------
 This module is a bunch which keeps together all needed modules
-of zeroincombenze® standard installation.
+for zeroincombenze® standard installation.
 Installing this module, full set of modules are installed.
 
 Please, wait for completion: might be required a bit of time
 \n
 [IT] zeroincombenze® installatore
 ---------------------------------
-Questo modulo è un contenitore per mantenere insieme tutti i moduli necessari
-all'installazione standard di zeroincombenze®.
+Questo modulo è un contenitore per mantenere insieme tutti
+i moduli necessari all'installazione standard di zeroincombenze®.
 L'installazione di questo modulo, installa tutti i moduli necessari.
 
-Attenzione! L'installazione di tutti i moduli potrebbe richiedere tempo.
+Attenzione! L'installazione dei moduli potrebbe richiedere un po' di tempo.
     """,
     'license': 'AGPL-3',
     'category': 'Hidden',

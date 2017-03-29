@@ -23,14 +23,14 @@
     'depends': ['base', 'report_webkit'],
     'author': 'SHS-AV s.r.l.',
     'description': """
-    Headers zeroincombenze: \n
-    - zi_header_ordini : zeroincombenze Header Ordini \n
-    - zi_small_header : zeroincombenze Small Header Standard \n
-    - zi_small_footer : zeroincombenze Small Footer Standard \n
-    - zi_header_ordini_datetime : zeroincombenze Header Ordini (Data e Ora) \n
-    - zi_small_header_datetime : zeroincombenze Small Header Standard (Data e Ora) \n
-    - zi_small_footer_datetime : zeroincombenze Small Footer Standard (Data e Ora) \n
+Headers zeroincombenze: \n
+- zi_header_ordini: zeroincombenze Header Ordini \n
+- zi_small_header: zeroincombenze Small Header Standard \n
+- zi_small_footer: zeroincombenze Small Footer Standard \n
 
+- zi_header_ordini_datetime: zeroincombenze Header Ordini (Data e Ora) \n
+- zi_small_header_datetime: zeroincombenze Small Header Std (Data e Ora) \n
+- zi_small_footer_datetime: zeroincombenze Small Footer Std (Data e Ora) \n
     """,
     'license': 'AGPL-3',
     'category': 'zeroincombenze',
@@ -38,6 +38,6 @@
     'init_xml': [],
     'update_xml': ['zi_headers_data.xml'],
     'demo_xml': [],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

@@ -21,52 +21,38 @@
 ##############################################################################
 {
     'name': 'Italian Localization - Base',
-    'version': '0.2',
+    'version': '7.0.0.3.0',
     'category': 'Localization/Italy',
     'description': """
 
-[EN] Italian localization for Partners and Companies.
------------------------------------------------------
+[en] Enhanced localization for Partners and Companies.
+------------------------------------------------------
 
-* Check for ZIP code from table.
-* Check for City from table.
-* Check for District/State from table.
-* Supplied just with Italian data.
-
-* May be easily extended with other countries data.
+This module expands l10n_it_base functionality.
 
 
-Table based check works well for Italy, France, Spain and other countries.\n
-It works bad for UK.
-However without validation any address data can be loaded.\n
-Warning: might be some conflict with module l10n_it_bbone\n
-\n
-[IT] Localizzazione italiana per Clienti, Fornitori e Società.
----------------------------------------------------------------
-Adattabile a numerosi altri paesi, tra cui Francia e Spagna,\n
-ma non adattabile al Regno Unito.\n
-In ogni caso è possibile caricare qualsiasi dato, senza validazione.\n
-Attenzione:
-questo modulo potrebbe entrare in conflitto con la localizzazione italiana
-(l10n_it_bbone)\n
+[it] Localizzazione evoluta per Clienti, Fornitori e Società.
+-------------------------------------------------------------
+
+Espande le funzionalità di l10n_it_base
+
 """,
-    'author': 'Odoo Italian Community',
+    'author': "SHS-AV s.r.l.,"
+              "Odoo Italian Community,Odoo Community Association (OCA)",
     'maintainer': 'Antonio Maria Vigliotti',
     'website': 'http://www.zeroincombenze.it',
     'license': 'AGPL-3',
-    "depends": ['base'],
+    "depends": ['base', 'l10n_it_base'],
     "init_xml": [
     ],
-    "update_xml": ['partner/partner_view.xml',
-                   # 'wizard/partner_update_wizard_view.xml',
+    "update_xml": ['view/city_view.xml',
+                   'view/company_view.xml',
+                   'view/country_view.xml',
+                   'view/state_view.xml',
                    # 'view/fiscalcode_view.xml',
-                   "security/ir.model.access.csv",
-                   'partner/data/res.region.csv',
-                   'partner/data/res.province.csv',
-                   'partner/data/res.country.state.csv',
-                   'partner/data/res.city.csv',
-                   'partner/data/res.partner.title.csv',
-                   'partner/data/res.country.csv'],
+                   # "security/ir.model.access.csv",
+                   'data/res.city.csv',
+                   'data/res.country.csv'],
     "demo_xml": [],
     "active": False,
     "installable": True

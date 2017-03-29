@@ -53,6 +53,6 @@ Il nome è definito da un prefisso, un progressivo numerico e un suffisso.
     # 'js': ['static/src/js/auth_dbmgr_signup.js'],
     'demo': [],
     "active": False,
-    'installable': True
+    'installable': False
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

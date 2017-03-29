@@ -226,8 +226,8 @@ class partner_update_wizard(osv.TransientModel):
                 try:
                     partner_pool.write(cr, uid, partner_id, vals)
                 except:
-                    log1 += u"{0} **PARTITA IVA NON VALIDA**\n".\
-                        format(partner_obj.name)
+                    log1 += u"{0} **PARTITA IVA NON VALIDA**\n".format(
+                        partner_obj.name)
 
         self.write(cr, uid, ids, {'state': 'step2',
                                   'log1': log1,

@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
+#    Copyright (C) 2010 Odoo Italian Community (<http://www.odoo-italia.org>).
+#    Copyright (C) SHS-AV s.r.l. (<http://ww.zeroincombenze.it>)
+#    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,21 +20,16 @@
 #
 ##############################################################################
 
+# import pdb
+from openerp.osv import osv
+from openerp.osv import fields
 
-{'name': 'zeroincombenze - Report Webkit Fatture',
-    'version': '0.1',
-    'category': 'zeroincombenze',
-    'description': """
-    Sostituisce il report Fattura con uno personalizzato da zeroincombenze
-    """,
-    'author': 'SHS-AV s.r.l.',
-    'website': 'http://www.zeroincombenze.it',
-    'depends': ['base', 'account', 'report_webkit', 'zi_headers_webkit'],
-    'data': ['security/ir.model.access.csv',
-             'invoice_report.xml',
-             'view/invoice_view.xml'],
-    'demo_xml': [],
-    'test': [],
-    'installable': False,
-    'active': False,
- }
+
+class res_company(osv.osv):
+    _inherit = 'res.company'
+
+    _columns = {
+        'it_partner_updated': fields.boolean(
+            'Partner Updated',
+            help='Your partners are updated by Italian localization'),
+    }

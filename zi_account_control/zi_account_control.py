@@ -29,10 +29,8 @@ class account_account(orm.Model):
     def create(self, cr, uid, vals, context=None):
         if 'code' in vals:
             if vals['code'][-1] == '0' and uid != 1:
-                raise orm.except_orm(
-                    _('Errore'),
-                    _('Non puoi creare conti che finiscono per zero'))
-
+                raise orm.except_orm(_('Errore'), _(
+                    'Non puoi creare conti che finiscono per zero'))
         return super(account_account, self).create(cr,
                                                    uid,
                                                    vals,
@@ -41,10 +39,8 @@ class account_account(orm.Model):
     def write(self, cr, uid, ids, vals, context=None):
         if 'code' in vals:
             if vals['code'][-1] == '0' and uid != 1:
-                raise orm.except_orm(
-                    _('Errore'),
-                    _('Non puoi creare conti che finiscono per zero'))
-
+                raise orm.except_orm(_('Errore'), _(
+                    'Non puoi creare conti che finiscono per zero'))
         return super(account_account, self).write(cr,
                                                   uid,
                                                   ids,

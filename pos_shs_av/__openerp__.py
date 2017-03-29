@@ -23,7 +23,7 @@
     'version': '1.0',
     'category': 'Point of Sale',
     'description': """
-This module is used for create, select customer and pricelist associated with customer.
+This module can create, select customer and pricelist associated with customer.
 """,
     'author': "Acespritech Solutions Pvt. Ltd.",
     'website': "www.acespritech.com",

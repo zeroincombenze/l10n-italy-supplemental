@@ -19,13 +19,14 @@
 ##############################################################################
 #
 #    Check for SaaS users accounting
-#    Zeroincombenze® users pay for use SaaS. They can record thei own invoices
+#    Zeroincombenze® users can record their own invoices
 #    just for reconciled (payed) months.
 #
 ##############################################################################
 
 from openerp import SUPERUSER_ID
 from openerp.osv import fields, osv, orm
+# from datetime import date
 from openerp.tools.translate import _
 
 
@@ -93,12 +94,25 @@ class account_invoice(osv.osv):
     def cliente_pagante_mese(self, cr, uid, data_da_controllare, nome_data,
                              context=None):
         user = self.pool.get('res.users').browse(cr, uid, uid)
+        MESI = ['Gennaio',
+                'Febbraio',
+                'Marzo',
+                'Aprile',
+                'Maggio',
+                'Giugno',
+                'Luglio',
+                'Agosto',
+                'Settembre',
+                'Ottobre',
+                'Novembre',
+                'Dicembre']
         if uid != SUPERUSER_ID:
             user_login = user.login[0:8]
             if data_da_controllare:
                 year_invoice = int(data_da_controllare[0:4])
+                # Before 2014, records are permitted
                 if year_invoice > 2013:
-                    month_invoice = data_da_controllare[5:7]
+                    month_invoice = int(data_da_controllare[5:7])
                     user_acc_obj = self.pool.get('res.saas_account')
                     user_acc_ids = user_acc_obj.search(
                         cr, uid, [('name', '=', user_login),
@@ -106,70 +120,15 @@ class account_invoice(osv.osv):
                     if user_acc_ids:
                         cli = user_acc_obj.browse(cr, uid, user_acc_ids)[0]
                         if not cli.period_0:
-                            if month_invoice == '01' and not cli.period_1:
+                            period_name = 'period_' + str(month_invoice + 1)
+                            if not cli[period_name]:
                                 raise orm.except_orm(
                                     _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Gennaio', year_invoice))
-                            if month_invoice == '02' and not cli.period_2:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Febbraio', year_invoice))
-                            if month_invoice == '03' and not cli.period_3:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Marzo', year_invoice))
-                            if month_invoice == '04' and not cli.period_4:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Aprile', year_invoice))
-                            if month_invoice == '05' and not cli.period_5:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Maggio', year_invoice))
-                            if month_invoice == '06' and not cli.period_6:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Giugno', year_invoice))
-                            if month_invoice == '07' and not cli.period_7:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Luglio', year_invoice))
-                            if month_invoice == '08' and not cli.period_8:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Agosto', year_invoice))
-                            if month_invoice == '09' and not cli.period_9:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Settembre', year_invoice))
-                            if month_invoice == '10' and not cli.period_10:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Ottobre', year_invoice))
-                            if month_invoice == '11' and not cli.period_11:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Novembre', year_invoice))
-                            if month_invoice == '12' and not cli.period_12:
-                                raise orm.except_orm(
-                                    _('Errore %s') % nome_data,
-                                    _('Non abilitato a registrare in %s %s.') %
-                                    ('Dicmebre', year_invoice))
+                                    _('Il tuo utente non può registrare'
+                                      ' in %s %s.') % (MESI[month_invoice],
+                                                       year_invoice))
                     else:
                         pass
-                        # raise orm.except_orm(_('Errore %s') % nome_data,
-                        #   _('Il tuo utente non è abilitato a registrare!'))
         return True
 
 
@@ -181,9 +140,10 @@ class res_users(osv.Model):
     _inherit = ['res.users']
 
     def __init__(self, pool, cr):
-        # method '__init__' usually takes follow 5 args:
+        # method '__init__' usually takes 5 args:
         # (self, cr, uid, name, context=None)
         # but res_users.__init__ take just 2 args
         super(res_users, self).__init__(pool, cr)
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

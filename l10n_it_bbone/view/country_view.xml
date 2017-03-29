@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+    <record id="res_country_bbone" model="ir.ui.view">
+        <field name="name">res.country.bbone</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <group>
+                    <field name="ufficioiva" />
+                    <field name="ean"/>
+                    <field name="chk4addr"/>
+                    <field name="chk4zip"/>
+                </group>
+                <group col="2">
+                    <field name="inue"/>
+                    <field name="inue_date"/>
+                </group>
+                <group col="2">
+                    <field name="blacklist"/>
+                    <field name="blacklist_date"/>
+                </group>
+                <group col="2">
+                    <field name="insepa"/>
+                    <field name="insepa_date"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>

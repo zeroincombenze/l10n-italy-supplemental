@@ -24,28 +24,33 @@
     'version': '0.1',
     'depends': ['base', 'account'],
     'author': 'SHS-AV s.r.l.',
-    'maintainer': 'Antonio M. Vigliotti',
+    'maintainer': 'Valerio Grosso',
     'description': """
 Zeroincombenze(R)
 =================
 [EN] chart of account code validate
 -----------------------------------
-Zeroincombenze®, with module l10n_it_fiscal, suppplies Italian standard
-chart of account that covers full Italian fiscal laws.
+Zeroincombenze®, with module l10n_it_fiscal,
+suppplies Italian standard chart of account
+which covers full Italian fiscal laws.
+
 However every company should be able to adapt own specific chart of account
 without override schema.
-Every account code ending with '0' is reserved to Zeroincombenze® schema.
+Every chart of account code ending with '0' is reserved
+to Zeroincombenze® schema.
 \n
 
 .. image:: /zi_account_control/static/src/img/icon.jpg
 
 [IT] validazione codici piano dei conti
 ---------------------------------------
-Zeroincombenze®, tramite il modulo l10n_it_fiscal, fornisce
-un piano dei conti standard che copre tutte le esigenze fiscali italiane.
+Zeroincombenze®, tramite il modulo l10n_it_fiscal,
+fornisce un piano dei conti che copre tutte le esigenze fiscali italiane.
+
 Tuttavia, ogni società deve essere in grado di apportare modifiche
 per le proprie specifiche esigenze mantenendo la struttura di codifica.
 Ogni codice terminante con la cifra '0' è riservato a Zeroincombenze®.
+
     """,
     'license': 'AGPL-3',
     'category': 'zeroincombenze',

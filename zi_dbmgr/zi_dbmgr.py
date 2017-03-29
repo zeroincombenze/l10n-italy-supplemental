@@ -27,7 +27,7 @@ from service.web_services import db
 from openerp import addons
 import ConfigParser
 
-from tndb import tndb
+# from tndb import tndb
 
 
 class zi_dbmgr_db_config(orm.Model):
@@ -131,7 +131,6 @@ class zi_dbmgr_db_config(orm.Model):
         return user_acc
 
     def get_config(self, cr, uid, context=None):
-        tndb.wstamp()
         config = False
         domain = [('active', '=', True)]
         conf_ids = self.search(cr, uid, domain, limit=1)
@@ -166,7 +165,6 @@ class zi_dbmgr_db(orm.Model):
             - lang :
             - demo :
         '''
-        tndb.wlog('create_database')
         service_db_config_obj = self.pool['zi.dbmgr.db.config']
         config = service_db_config_obj.get_config(cr, uid, context=None)
 

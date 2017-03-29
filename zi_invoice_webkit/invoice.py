@@ -25,14 +25,14 @@ class InvoiceConditionText(Model):
     """add info condition in the invoice"""
     _name = "account.condition_text"
     _description = "Invoices conditions"
-
     _columns = {
         'name': fields.char('Condition summary', required=True, size=128),
-        'type': fields.selection([('header','Top condition'),
-                                   ('footer', 'Bottom condition')],
-                                    'type', required=True),
+        'type': fields.selection([('header', 'Top condition'),
+                                  ('footer', 'Bottom condition')],
+                                 'type', required=True),
 
         'text': fields.html('Condition', translate=True, required=True)}
+
 
 class AccountInvoice(Model):
     """ Add account.condition_text to invoice"""
@@ -43,11 +43,12 @@ class AccountInvoice(Model):
         """Set the text of the notes in invoices"""
         if not commentid:
             return {}
-        try :
+        try:
             lang = self.browse(cr, uid, inv_id)[0].partner_id.lang
-        except :
+        except:
             lang = 'en_US'
-        cond = self.pool.get('account.condition_text').browse(cr, uid, commentid, {'lang': lang})
+        cond = self.pool.get('account.condition_text').browse(
+            cr, uid, commentid, {'lang': lang})
         return {'value': {key: cond.text}}
 
     def set_header(self, cr, uid, inv_id, commentid):
@@ -56,16 +57,19 @@ class AccountInvoice(Model):
     def set_footer(self, cr, uid, inv_id, commentid):
         return self._set_condition(cr, uid, inv_id, commentid, 'note2')
 
-    _columns = {'text_condition1': fields.many2one('account.condition_text', 'Header condition',
-                                                   domain=[('type', '=', 'header')]),
-                'text_condition2': fields.many2one('account.condition_text', 'Footer condition',
-                                                   domain=[('type', '=', 'footer')]),
+    _columns = {'text_condition1':
+                fields.many2one('account.condition_text',
+                                'Header condition',
+                                domain=[('type', '=', 'header')]),
+                'text_condition2':
+                fields.many2one('account.condition_text',
+                                'Footer condition',
+                                domain=[('type', '=', 'footer')]),
                 'note1': fields.html('Header'),
-                'note2': fields.html('Footer'),}
+                'note2': fields.html('Footer'), }
 
 
 class AccountInvoiceLine(Model):
 
     _inherit = 'account.invoice.line'
-
     _columns = {'formatted_note': fields.html('Formatted Note')}

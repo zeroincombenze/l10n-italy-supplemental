@@ -23,7 +23,6 @@
 
 
 from osv import fields, osv
-# from tools.translate import _
 
 
 class wizard_database_create(osv.osv_memory):
