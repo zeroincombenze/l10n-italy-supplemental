@@ -270,7 +270,7 @@ l10n_it_base.269,Strambinello,l10n_it_base.TO,10010,0125,001268,I969,http://www.
 l10n_it_base.270,Strambino,l10n_it_base.TO,10019,0125,001269,I970,http://www.comuni-italiani.it/001/269/,l10n_it_base.it_TO,base.it,4
 l10n_it_base.271,Susa,l10n_it_base.TO,10059,0122,001270,L013,http://www.comuni-italiani.it/001/270/,l10n_it_base.it_TO,base.it,4
 l10n_it_base.272,Tavagnasco,l10n_it_base.TO,10010,0125,001271,L066,http://www.comuni-italiani.it/001/271/,l10n_it_base.it_TO,base.it,4
-l10n_it_base.273,Torino,l10n_it_base.TO,101xx,011,001272,L219,http://www.comuni-italiani.it/001/272/,l10n_it_base.it_TO,base.it,4
+l10n_it_base.273,Torino,l10n_it_base.TO,101%%,011,001272,L219,http://www.comuni-italiani.it/001/272/,l10n_it_base.it_TO,base.it,4
 l10n_it_base.274,Torrazza Piemonte,l10n_it_base.TO,10037,011,001273,L238,http://www.comuni-italiani.it/001/273/,l10n_it_base.it_TO,base.it,4
 l10n_it_base.275,Torre Canavese,l10n_it_base.TO,10010,0124,001274,L247,http://www.comuni-italiani.it/001/274/,l10n_it_base.it_TO,base.it,4
 l10n_it_base.276,Torre Pellice,l10n_it_base.TO,10066,0121,001275,L277,http://www.comuni-italiani.it/001/275/,l10n_it_base.it_TO,base.it,4
@@ -859,7 +859,7 @@ l10n_it_base.857,Vinchio,l10n_it_base.AT,14040,0141,005120,M058,http://www.comun
 l10n_it_base.858,Montiglio Monferrato,l10n_it_base.AT,14026,0141,005121,M302,http://www.comuni-italiani.it/005/121/,l10n_it_base.it_AT,base.it,4
 l10n_it_base.859,Acqui Terme,l10n_it_base.AL,15011,0144,006001,A052,http://www.comuni-italiani.it/006/001/,l10n_it_base.it_AL,base.it,4
 l10n_it_base.860,Albera Ligure,l10n_it_base.AL,15060,0143,006002,A146,http://www.comuni-italiani.it/006/002/,l10n_it_base.it_AL,base.it,4
-l10n_it_base.861,Alessandria,l10n_it_base.AL,1512x,0131,006003,A182,http://www.comuni-italiani.it/006/003/,l10n_it_base.it_AL,base.it,4
+l10n_it_base.861,Alessandria,l10n_it_base.AL,1512%,0131,006003,A182,http://www.comuni-italiani.it/006/003/,l10n_it_base.it_AL,base.it,4
 l10n_it_base.862,Alfiano Natta,l10n_it_base.AL,15021,0141,006004,A189,http://www.comuni-italiani.it/006/004/,l10n_it_base.it_AL,base.it,4
 l10n_it_base.863,Alice Bel Colle,l10n_it_base.AL,15010,0144,006005,A197,http://www.comuni-italiani.it/006/005/,l10n_it_base.it_AL,base.it,4
 l10n_it_base.864,Alluvioni Cambiò,l10n_it_base.AL,15040,0131,006006,A211,http://www.comuni-italiani.it/006/006/,l10n_it_base.it_AL,base.it,4
@@ -1281,7 +1281,7 @@ l10n_it_base.1279,Davagna,l10n_it_base.GE,16022,010,010021,D255,http://www.comun
 l10n_it_base.1280,Fascia,l10n_it_base.GE,16020,010,010022,D509,http://www.comuni-italiani.it/010/022/,l10n_it_base.it_GE,base.it,4
 l10n_it_base.1281,Favale di Malvaro,l10n_it_base.GE,16040,0185,010023,D512,http://www.comuni-italiani.it/010/023/,l10n_it_base.it_GE,base.it,4
 l10n_it_base.1282,Fontanigorda,l10n_it_base.GE,16023,010,010024,D677,http://www.comuni-italiani.it/010/024/,l10n_it_base.it_GE,base.it,4
-l10n_it_base.1283,Genova,l10n_it_base.GE,161xx,010,010025,D969,http://www.comuni-italiani.it/010/025/,l10n_it_base.it_GE,base.it,4
+l10n_it_base.1283,Genova,l10n_it_base.GE,161%%,010,010025,D969,http://www.comuni-italiani.it/010/025/,l10n_it_base.it_GE,base.it,4
 l10n_it_base.1284,Gorreto,l10n_it_base.GE,16020,010,010026,E109,http://www.comuni-italiani.it/010/026/,l10n_it_base.it_GE,base.it,4
 l10n_it_base.1285,Isola del Cantone,l10n_it_base.GE,16017,010,010027,E341,http://www.comuni-italiani.it/010/027/,l10n_it_base.it_GE,base.it,4
 l10n_it_base.1286,Lavagna,l10n_it_base.GE,16033,0185,010028,E488,http://www.comuni-italiani.it/010/028/,l10n_it_base.it_GE,base.it,4
@@ -1338,7 +1338,7 @@ l10n_it_base.1336,Castelnuovo Magra,l10n_it_base.SP,19033,0187,011011,C240,http:
 l10n_it_base.1337,Deiva Marina,l10n_it_base.SP,19013,0187,011012,D265,http://www.comuni-italiani.it/011/012/,l10n_it_base.it_SP,base.it,4
 l10n_it_base.1338,Follo,l10n_it_base.SP,19020,0187,011013,D655,http://www.comuni-italiani.it/011/013/,l10n_it_base.it_SP,base.it,4
 l10n_it_base.1339,Framura,l10n_it_base.SP,19014,0187,011014,D758,http://www.comuni-italiani.it/011/014/,l10n_it_base.it_SP,base.it,4
-l10n_it_base.1340,La Spezia,l10n_it_base.SP,191xx,0187,011015,E463,http://www.comuni-italiani.it/011/015/,l10n_it_base.it_SP,base.it,4
+l10n_it_base.1340,La Spezia,l10n_it_base.SP,191%%,0187,011015,E463,http://www.comuni-italiani.it/011/015/,l10n_it_base.it_SP,base.it,4
 l10n_it_base.1341,Lerici,l10n_it_base.SP,19032,0187,011016,E542,http://www.comuni-italiani.it/011/016/,l10n_it_base.it_SP,base.it,4
 l10n_it_base.1342,Levanto,l10n_it_base.SP,19015,0187,011017,E560,http://www.comuni-italiani.it/011/017/,l10n_it_base.it_SP,base.it,4
 l10n_it_base.1343,Maissana,l10n_it_base.SP,19010,0187,011018,E842,http://www.comuni-italiani.it/011/018/,l10n_it_base.it_SP,base.it,4
@@ -1813,7 +1813,7 @@ l10n_it_base.1840,Mediglia,l10n_it_base.MI,20060,02,015139,F084,http://www.comun
 l10n_it_base.1841,Melegnano,l10n_it_base.MI,20077,02,015140,F100,http://www.comuni-italiani.it/015/140/,l10n_it_base.it_MI,base.it,4
 l10n_it_base.1842,Melzo,l10n_it_base.MI,20066,02,015142,F119,http://www.comuni-italiani.it/015/142/,l10n_it_base.it_MI,base.it,4
 l10n_it_base.1843,Mesero,l10n_it_base.MI,20010,02,015144,F155,http://www.comuni-italiani.it/015/144/,l10n_it_base.it_MI,base.it,4
-l10n_it_base.1845,Milano,l10n_it_base.MI,201xx,02,015146,F205,http://www.comuni-italiani.it/015/146/,l10n_it_base.it_MI,base.it,4
+l10n_it_base.1845,Milano,l10n_it_base.MI,201%%,02,015146,F205,http://www.comuni-italiani.it/015/146/,l10n_it_base.it_MI,base.it,4
 l10n_it_base.1848,Morimondo,l10n_it_base.MI,20081,02,015150,D033,http://www.comuni-italiani.it/015/150/,l10n_it_base.it_MI,base.it,4
 l10n_it_base.1849,Motta Visconti,l10n_it_base.MI,20086,02,015151,F783,http://www.comuni-italiani.it/015/151/,l10n_it_base.it_MI,base.it,4
 l10n_it_base.1851,Nerviano,l10n_it_base.MI,20014,0331,015154,F874,http://www.comuni-italiani.it/015/154/,l10n_it_base.it_MI,base.it,4
@@ -1899,7 +1899,7 @@ l10n_it_base.1947,Bariano,l10n_it_base.BG,24050,0363,016020,A664,http://www.comu
 l10n_it_base.1948,Barzana,l10n_it_base.BG,24030,035,016021,A684,http://www.comuni-italiani.it/016/021/,l10n_it_base.it_BG,base.it,4
 l10n_it_base.1949,Bedulita,l10n_it_base.BG,24030,035,016022,A732,http://www.comuni-italiani.it/016/022/,l10n_it_base.it_BG,base.it,4
 l10n_it_base.1950,Berbenno,l10n_it_base.BG,24030,035,016023,A786,http://www.comuni-italiani.it/016/023/,l10n_it_base.it_BG,base.it,4
-l10n_it_base.1951,Bergamo,l10n_it_base.BG,241xx,035,016024,A794,http://www.comuni-italiani.it/016/024/,l10n_it_base.it_BG,base.it,4
+l10n_it_base.1951,Bergamo,l10n_it_base.BG,241%%,035,016024,A794,http://www.comuni-italiani.it/016/024/,l10n_it_base.it_BG,base.it,4
 l10n_it_base.1952,Berzo San Fermo,l10n_it_base.BG,24060,035,016025,A815,http://www.comuni-italiani.it/016/025/,l10n_it_base.it_BG,base.it,4
 l10n_it_base.1953,Bianzano,l10n_it_base.BG,24060,035,016026,A846,http://www.comuni-italiani.it/016/026/,l10n_it_base.it_BG,base.it,4
 l10n_it_base.1954,Blello,l10n_it_base.BG,24010,0345,016027,A903,http://www.comuni-italiani.it/016/027/,l10n_it_base.it_BG,base.it,4
@@ -2150,7 +2150,7 @@ l10n_it_base.2196,Bovezzo,l10n_it_base.BS,25073,030,017025,B102,http://www.comun
 l10n_it_base.2197,Brandico,l10n_it_base.BS,25030,030,017026,B120,http://www.comuni-italiani.it/017/026/,l10n_it_base.it_BS,base.it,4
 l10n_it_base.2198,Braone,l10n_it_base.BS,25040,0364,017027,B124,http://www.comuni-italiani.it/017/027/,l10n_it_base.it_BS,base.it,4
 l10n_it_base.2199,Breno,l10n_it_base.BS,25043,0364,017028,B149,http://www.comuni-italiani.it/017/028/,l10n_it_base.it_BS,base.it,4
-l10n_it_base.2200,Brescia,l10n_it_base.BS,251xx,030,017029,B157,http://www.comuni-italiani.it/017/029/,l10n_it_base.it_BS,base.it,4
+l10n_it_base.2200,Brescia,l10n_it_base.BS,251%%,030,017029,B157,http://www.comuni-italiani.it/017/029/,l10n_it_base.it_BS,base.it,4
 l10n_it_base.2201,Brione,l10n_it_base.BS,25060,030,017030,B184,http://www.comuni-italiani.it/017/030/,l10n_it_base.it_BS,base.it,4
 l10n_it_base.2202,Caino,l10n_it_base.BS,25070,030,017031,B365,http://www.comuni-italiani.it/017/031/,l10n_it_base.it_BS,base.it,4
 l10n_it_base.2203,Calcinato,l10n_it_base.BS,25011,030,017032,B394,http://www.comuni-italiani.it/017/032/,l10n_it_base.it_BS,base.it,4
@@ -3021,7 +3021,7 @@ l10n_it_base.3066,Tonadico,l10n_it_base.TN,38054,0439,022201,L201,http://www.com
 l10n_it_base.3067,Torcegno,l10n_it_base.TN,38050,0461,022202,L211,http://www.comuni-italiani.it/022/202/,l10n_it_base.it_TN,base.it,4
 l10n_it_base.3068,Trambileno,l10n_it_base.TN,38068,0464,022203,L322,http://www.comuni-italiani.it/022/203/,l10n_it_base.it_TN,base.it,4
 l10n_it_base.3069,Transacqua,l10n_it_base.TN,38054,0439,022204,L329,http://www.comuni-italiani.it/022/204/,l10n_it_base.it_TN,base.it,4
-l10n_it_base.3070,Trento,l10n_it_base.TN,3812x,0461,022205,L378,http://www.comuni-italiani.it/022/205/,l10n_it_base.it_TN,base.it,4
+l10n_it_base.3070,Trento,l10n_it_base.TN,3812%,0461,022205,L378,http://www.comuni-italiani.it/022/205/,l10n_it_base.it_TN,base.it,4
 l10n_it_base.3071,Tres,l10n_it_base.TN,38010,0463,022206,L385,http://www.comuni-italiani.it/022/206/,l10n_it_base.it_TN,base.it,4
 l10n_it_base.3072,Tuenno,l10n_it_base.TN,38019,0463,022207,L457,http://www.comuni-italiani.it/022/207/,l10n_it_base.it_TN,base.it,4
 l10n_it_base.3073,Valda,l10n_it_base.TN,38030,0461,022208,L550,http://www.comuni-italiani.it/022/208/,l10n_it_base.it_TN,base.it,4
@@ -3135,7 +3135,7 @@ l10n_it_base.3178,Tregnago,l10n_it_base.VR,37039,045,023087,L364,http://www.comu
 l10n_it_base.3179,Trevenzuolo,l10n_it_base.VR,37060,045,023088,L396,http://www.comuni-italiani.it/023/088/,l10n_it_base.it_VR,base.it,4
 l10n_it_base.3180,Valeggio sul Mincio,l10n_it_base.VR,37067,045,023089,L567,http://www.comuni-italiani.it/023/089/,l10n_it_base.it_VR,base.it,4
 l10n_it_base.3181,Velo Veronese,l10n_it_base.VR,37030,045,023090,L722,http://www.comuni-italiani.it/023/090/,l10n_it_base.it_VR,base.it,4
-l10n_it_base.3182,Verona,l10n_it_base.VR,371xx,045,023091,L781,http://www.comuni-italiani.it/023/091/,l10n_it_base.it_VR,base.it,4
+l10n_it_base.3182,Verona,l10n_it_base.VR,371%%,045,023091,L781,http://www.comuni-italiani.it/023/091/,l10n_it_base.it_VR,base.it,4
 l10n_it_base.3183,Veronella,l10n_it_base.VR,37040,0442,023092,D193,http://www.comuni-italiani.it/023/092/,l10n_it_base.it_VR,base.it,4
 l10n_it_base.3184,Vestenanova,l10n_it_base.VR,37030,045,023093,L810,http://www.comuni-italiani.it/023/093/,l10n_it_base.it_VR,base.it,4
 l10n_it_base.3185,Vigasio,l10n_it_base.VR,37068,045,023094,L869,http://www.comuni-italiani.it/023/094/,l10n_it_base.it_VR,base.it,4
@@ -3471,7 +3471,7 @@ l10n_it_base.3512,Spinea,l10n_it_base.VE,30038,041,027038,I908,http://www.comuni
 l10n_it_base.3513,Stra,l10n_it_base.VE,30039,049,027039,I965,http://www.comuni-italiani.it/027/039/,l10n_it_base.it_VE,base.it,4
 l10n_it_base.3514,Teglio Veneto,l10n_it_base.VE,30025,0421,027040,L085,http://www.comuni-italiani.it/027/040/,l10n_it_base.it_VE,base.it,4
 l10n_it_base.3515,Torre di Mosto,l10n_it_base.VE,30020,0421,027041,L267,http://www.comuni-italiani.it/027/041/,l10n_it_base.it_VE,base.it,4
-l10n_it_base.3516,Venezia,l10n_it_base.VE,301xx,041,027042,L736,http://www.comuni-italiani.it/027/042/,l10n_it_base.it_VE,base.it,4
+l10n_it_base.3516,Venezia,l10n_it_base.VE,301%%,041,027042,L736,http://www.comuni-italiani.it/027/042/,l10n_it_base.it_VE,base.it,4
 l10n_it_base.3517,Vigonovo,l10n_it_base.VE,30030,049,027043,L899,http://www.comuni-italiani.it/027/043/,l10n_it_base.it_VE,base.it,4
 l10n_it_base.3518,Cavallino-Treporti,l10n_it_base.VE,30013,041,027044,M308,http://www.comuni-italiani.it/027/044/,l10n_it_base.it_VE,base.it,4
 l10n_it_base.3519,Abano Terme,l10n_it_base.PD,35031,049,028001,A001,http://www.comuni-italiani.it/028/001/,l10n_it_base.it_PD,base.it,4
@@ -3531,7 +3531,7 @@ l10n_it_base.3572,Montagnana,l10n_it_base.PD,35044,0429,028056,F394,http://www.c
 l10n_it_base.3573,Montegrotto Terme,l10n_it_base.PD,35036,049,028057,F529,http://www.comuni-italiani.it/028/057/,l10n_it_base.it_PD,base.it,4
 l10n_it_base.3574,Noventa Padovana,l10n_it_base.PD,35027,049,028058,F962,http://www.comuni-italiani.it/028/058/,l10n_it_base.it_PD,base.it,4
 l10n_it_base.3575,Ospedaletto Euganeo,l10n_it_base.PD,35045,0429,028059,G167,http://www.comuni-italiani.it/028/059/,l10n_it_base.it_PD,base.it,4
-l10n_it_base.3576,Padova,l10n_it_base.PD,351xx,049,028060,G224,http://www.comuni-italiani.it/028/060/,l10n_it_base.it_PD,base.it,4
+l10n_it_base.3576,Padova,l10n_it_base.PD,351%%,049,028060,G224,http://www.comuni-italiani.it/028/060/,l10n_it_base.it_PD,base.it,4
 l10n_it_base.3577,Pernumia,l10n_it_base.PD,35020,0429,028061,G461,http://www.comuni-italiani.it/028/061/,l10n_it_base.it_PD,base.it,4
 l10n_it_base.3578,Piacenza d'Adige,l10n_it_base.PD,35040,0425,028062,G534,http://www.comuni-italiani.it/028/062/,l10n_it_base.it_PD,base.it,4
 l10n_it_base.3579,Piazzola sul Brenta,l10n_it_base.PD,35016,049,028063,G587,http://www.comuni-italiani.it/028/063/,l10n_it_base.it_PD,base.it,4
@@ -3796,7 +3796,7 @@ l10n_it_base.3836,Monrupino,l10n_it_base.TS,34016,040,032002,F378,http://www.com
 l10n_it_base.3837,Muggia,l10n_it_base.TS,34015,040,032003,F795,http://www.comuni-italiani.it/032/003/,l10n_it_base.it_TS,base.it,4
 l10n_it_base.3838,San Dorligo della Valle - Dolina,l10n_it_base.TS,34018,040,032004,D324,http://www.comuni-italiani.it/032/004/,l10n_it_base.it_TS,base.it,4
 l10n_it_base.3839,Sgonico,l10n_it_base.TS,34010,040,032005,I715,http://www.comuni-italiani.it/032/005/,l10n_it_base.it_TS,base.it,4
-l10n_it_base.3840,Trieste,l10n_it_base.TS,341xx,040,032006,L424,http://www.comuni-italiani.it/032/006/,l10n_it_base.it_TS,base.it,4
+l10n_it_base.3840,Trieste,l10n_it_base.TS,341%%,040,032006,L424,http://www.comuni-italiani.it/032/006/,l10n_it_base.it_TS,base.it,4
 l10n_it_base.3841,Agazzano,l10n_it_base.PC,29010,0523,033001,A067,http://www.comuni-italiani.it/033/001/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3842,Alseno,l10n_it_base.PC,29010,0523,033002,A223,http://www.comuni-italiani.it/033/002/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3843,Besenzone,l10n_it_base.PC,29010,0523,033003,A823,http://www.comuni-italiani.it/033/003/,l10n_it_base.it_PC,base.it,4
@@ -3828,7 +3828,7 @@ l10n_it_base.3868,Morfasso,l10n_it_base.PC,29020,0523,033028,F724,http://www.com
 l10n_it_base.3869,Nibbiano,l10n_it_base.PC,29010,0523,033029,F885,http://www.comuni-italiani.it/033/029/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3870,Ottone,l10n_it_base.PC,29026,0523,033030,G195,http://www.comuni-italiani.it/033/030/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3871,Pecorara,l10n_it_base.PC,29010,0523,033031,G399,http://www.comuni-italiani.it/033/031/,l10n_it_base.it_PC,base.it,4
-l10n_it_base.3872,Piacenza,l10n_it_base.PC,2912x,0523,033032,G535,http://www.comuni-italiani.it/033/032/,l10n_it_base.it_PC,base.it,4
+l10n_it_base.3872,Piacenza,l10n_it_base.PC,2912%,0523,033032,G535,http://www.comuni-italiani.it/033/032/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3873,Pianello Val Tidone,l10n_it_base.PC,29010,0523,033033,G557,http://www.comuni-italiani.it/033/033/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3874,Piozzano,l10n_it_base.PC,29010,0523,033034,G696,http://www.comuni-italiani.it/033/034/,l10n_it_base.it_PC,base.it,4
 l10n_it_base.3875,Podenzano,l10n_it_base.PC,29027,0523,033035,G747,http://www.comuni-italiani.it/033/035/,l10n_it_base.it_PC,base.it,4
@@ -3871,7 +3871,7 @@ l10n_it_base.3911,Montechiarugolo,l10n_it_base.PR,43022,0521,034023,F473,http://
 l10n_it_base.3912,Neviano degli Arduini,l10n_it_base.PR,43024,0521,034024,F882,http://www.comuni-italiani.it/034/024/,l10n_it_base.it_PR,base.it,4
 l10n_it_base.3913,Noceto,l10n_it_base.PR,43015,0521,034025,F914,http://www.comuni-italiani.it/034/025/,l10n_it_base.it_PR,base.it,4
 l10n_it_base.3914,Palanzano,l10n_it_base.PR,43025,0521,034026,G255,http://www.comuni-italiani.it/034/026/,l10n_it_base.it_PR,base.it,4
-l10n_it_base.3915,Parma,l10n_it_base.PR,4312x,0521,034027,G337,http://www.comuni-italiani.it/034/027/,l10n_it_base.it_PR,base.it,4
+l10n_it_base.3915,Parma,l10n_it_base.PR,4312%,0521,034027,G337,http://www.comuni-italiani.it/034/027/,l10n_it_base.it_PR,base.it,4
 l10n_it_base.3916,Pellegrino Parmense,l10n_it_base.PR,43047,0524,034028,G424,http://www.comuni-italiani.it/034/028/,l10n_it_base.it_PR,base.it,4
 l10n_it_base.3917,Polesine Parmense,l10n_it_base.PR,43010,0524,034029,G783,http://www.comuni-italiani.it/034/029/,l10n_it_base.it_PR,base.it,4
 l10n_it_base.3918,Roccabianca,l10n_it_base.PR,43010,0521,034030,H384,http://www.comuni-italiani.it/034/030/,l10n_it_base.it_PR,base.it,4
@@ -3925,7 +3925,7 @@ l10n_it_base.3964,Poviglio,l10n_it_base.RE,42028,0522,035029,G947,http://www.com
 l10n_it_base.3965,Quattro Castella,l10n_it_base.RE,42020,0522,035030,H122,http://www.comuni-italiani.it/035/030/,l10n_it_base.it_RE,base.it,4
 l10n_it_base.3966,Ramiseto,l10n_it_base.RE,42030,0522,035031,G654,http://www.comuni-italiani.it/035/031/,l10n_it_base.it_RE,base.it,4
 l10n_it_base.3967,Reggiolo,l10n_it_base.RE,42046,0522,035032,H225,http://www.comuni-italiani.it/035/032/,l10n_it_base.it_RE,base.it,4
-l10n_it_base.3968,Reggio nell'Emilia,l10n_it_base.RE,4212x,0522,035033,H223,http://www.comuni-italiani.it/035/033/,l10n_it_base.it_RE,base.it,4
+l10n_it_base.3968,Reggio nell'Emilia,l10n_it_base.RE,4212%,0522,035033,H223,http://www.comuni-italiani.it/035/033/,l10n_it_base.it_RE,base.it,4
 l10n_it_base.3969,Rio Saliceto,l10n_it_base.RE,42010,0522,035034,H298,http://www.comuni-italiani.it/035/034/,l10n_it_base.it_RE,base.it,4
 l10n_it_base.3970,Rolo,l10n_it_base.RE,42047,0522,035035,H500,http://www.comuni-italiani.it/035/035/,l10n_it_base.it_RE,base.it,4
 l10n_it_base.3971,Rubiera,l10n_it_base.RE,42048,0522,035036,H628,http://www.comuni-italiani.it/035/036/,l10n_it_base.it_RE,base.it,4
@@ -3960,7 +3960,7 @@ l10n_it_base.3999,Maranello,l10n_it_base.MO,41053,0536,036019,E904,http://www.co
 l10n_it_base.4000,Marano sul Panaro,l10n_it_base.MO,41054,059,036020,E905,http://www.comuni-italiani.it/036/020/,l10n_it_base.it_MO,base.it,4
 l10n_it_base.4001,Medolla,l10n_it_base.MO,41036,0535,036021,F087,http://www.comuni-italiani.it/036/021/,l10n_it_base.it_MO,base.it,4
 l10n_it_base.4002,Mirandola,l10n_it_base.MO,41037,0535,036022,F240,http://www.comuni-italiani.it/036/022/,l10n_it_base.it_MO,base.it,4
-l10n_it_base.4003,Modena,l10n_it_base.MO,4112x,059,036023,F257,http://www.comuni-italiani.it/036/023/,l10n_it_base.it_MO,base.it,4
+l10n_it_base.4003,Modena,l10n_it_base.MO,4112%,059,036023,F257,http://www.comuni-italiani.it/036/023/,l10n_it_base.it_MO,base.it,4
 l10n_it_base.4004,Montecreto,l10n_it_base.MO,41025,0536,036024,F484,http://www.comuni-italiani.it/036/024/,l10n_it_base.it_MO,base.it,4
 l10n_it_base.4005,Montefiorino,l10n_it_base.MO,41045,0536,036025,F503,http://www.comuni-italiani.it/036/025/,l10n_it_base.it_MO,base.it,4
 l10n_it_base.4006,Montese,l10n_it_base.MO,41055,059,036026,F642,http://www.comuni-italiani.it/036/026/,l10n_it_base.it_MO,base.it,4
@@ -3990,7 +3990,7 @@ l10n_it_base.4029,Argelato,l10n_it_base.BO,40050,051,037002,A392,http://www.comu
 l10n_it_base.4030,Baricella,l10n_it_base.BO,40052,051,037003,A665,http://www.comuni-italiani.it/037/003/,l10n_it_base.it_BO,base.it,4
 l10n_it_base.4031,Bazzano (ora Valsamoggia),l10n_it_base.BO,40053,051,037004,A726,http://www.comuni-italiani.it/037/004/,l10n_it_base.it_BO,base.it,9
 l10n_it_base.4032,Bentivoglio,l10n_it_base.BO,40010,051,037005,A785,http://www.comuni-italiani.it/037/005/,l10n_it_base.it_BO,base.it,4
-l10n_it_base.4033,Bologna,l10n_it_base.BO,401xx,051,037006,A944,http://www.comuni-italiani.it/037/006/,l10n_it_base.it_BO,base.it,4
+l10n_it_base.4033,Bologna,l10n_it_base.BO,401%%,051,037006,A944,http://www.comuni-italiani.it/037/006/,l10n_it_base.it_BO,base.it,4
 l10n_it_base.4034,Borgo Tossignano,l10n_it_base.BO,40021,0542,037007,B044,http://www.comuni-italiani.it/037/007/,l10n_it_base.it_BO,base.it,4
 l10n_it_base.4035,Budrio,l10n_it_base.BO,40054,051,037008,B249,http://www.comuni-italiani.it/037/008/,l10n_it_base.it_BO,base.it,4
 l10n_it_base.4036,Calderara di Reno,l10n_it_base.BO,40012,051,037009,B399,http://www.comuni-italiani.it/037/009/,l10n_it_base.it_BO,base.it,4
@@ -4053,7 +4053,7 @@ l10n_it_base.4091,Cento,l10n_it_base.FE,44042,051,038004,C469,http://www.comuni-
 l10n_it_base.4092,Codigoro,l10n_it_base.FE,44021,0533,038005,C814,http://www.comuni-italiani.it/038/005/,l10n_it_base.it_FE,base.it,4
 l10n_it_base.4093,Comacchio,l10n_it_base.FE,44022,0533,038006,C912,http://www.comuni-italiani.it/038/006/,l10n_it_base.it_FE,base.it,4
 l10n_it_base.4094,Copparo,l10n_it_base.FE,44034,0532,038007,C980,http://www.comuni-italiani.it/038/007/,l10n_it_base.it_FE,base.it,4
-l10n_it_base.4095,Ferrara,l10n_it_base.FE,4412x,0532,038008,D548,http://www.comuni-italiani.it/038/008/,l10n_it_base.it_FE,base.it,4
+l10n_it_base.4095,Ferrara,l10n_it_base.FE,4412%,0532,038008,D548,http://www.comuni-italiani.it/038/008/,l10n_it_base.it_FE,base.it,4
 l10n_it_base.4096,Formignana,l10n_it_base.FE,44035,0533,038009,D713,http://www.comuni-italiani.it/038/009/,l10n_it_base.it_FE,base.it,4
 l10n_it_base.4097,Jolanda di Savoia,l10n_it_base.FE,44037,0532,038010,E320,http://www.comuni-italiani.it/038/010/,l10n_it_base.it_FE,base.it,4
 l10n_it_base.4098,Lagosanto,l10n_it_base.FE,44023,0533,038011,E410,http://www.comuni-italiani.it/038/011/,l10n_it_base.it_FE,base.it,4
@@ -4086,7 +4086,7 @@ l10n_it_base.4123,Faenza,l10n_it_base.RA,48018,0546,039010,D458,http://www.comun
 l10n_it_base.4124,Fusignano,l10n_it_base.RA,48010,0545,039011,D829,http://www.comuni-italiani.it/039/011/,l10n_it_base.it_RA,base.it,4
 l10n_it_base.4125,Lugo,l10n_it_base.RA,48022,0545,039012,E730,http://www.comuni-italiani.it/039/012/,l10n_it_base.it_RA,base.it,4
 l10n_it_base.4126,Massa Lombarda,l10n_it_base.RA,48024,0545,039013,F029,http://www.comuni-italiani.it/039/013/,l10n_it_base.it_RA,base.it,4
-l10n_it_base.4127,Ravenna,l10n_it_base.RA,4812x,0544,039014,H199,http://www.comuni-italiani.it/039/014/,l10n_it_base.it_RA,base.it,4
+l10n_it_base.4127,Ravenna,l10n_it_base.RA,4812%,0544,039014,H199,http://www.comuni-italiani.it/039/014/,l10n_it_base.it_RA,base.it,4
 l10n_it_base.4128,Riolo Terme,l10n_it_base.RA,48025,0546,039015,H302,http://www.comuni-italiani.it/039/015/,l10n_it_base.it_RA,base.it,4
 l10n_it_base.4129,Russi,l10n_it_base.RA,48026,0544,039016,H642,http://www.comuni-italiani.it/039/016/,l10n_it_base.it_RA,base.it,4
 l10n_it_base.4130,Sant'Agata sul Santerno,l10n_it_base.RA,48020,0545,039017,I196,http://www.comuni-italiani.it/039/017/,l10n_it_base.it_RA,base.it,4
@@ -4095,11 +4095,11 @@ l10n_it_base.4132,Bagno di Romagna,l10n_it_base.FC,47021,0543,040001,A565,http:/
 l10n_it_base.4133,Bertinoro,l10n_it_base.FC,47032,0543,040003,A809,http://www.comuni-italiani.it/040/003/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4134,Borghi,l10n_it_base.FC,47030,0541,040004,B001,http://www.comuni-italiani.it/040/004/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4135,Castrocaro Terme e Terra del Sole,l10n_it_base.FC,47011,0543,040005,C339,http://www.comuni-italiani.it/040/005/,l10n_it_base.it_FC,base.it,4
-l10n_it_base.4136,Cesena,l10n_it_base.FC,4752x,0547,040007,C573,http://www.comuni-italiani.it/040/007/,l10n_it_base.it_FC,base.it,4
+l10n_it_base.4136,Cesena,l10n_it_base.FC,4752%,0547,040007,C573,http://www.comuni-italiani.it/040/007/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4137,Cesenatico,l10n_it_base.FC,47042,0547,040008,C574,http://www.comuni-italiani.it/040/008/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4138,Civitella di Romagna,l10n_it_base.FC,47012,0543,040009,C777,http://www.comuni-italiani.it/040/009/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4139,Dovadola,l10n_it_base.FC,47013,0543,040011,D357,http://www.comuni-italiani.it/040/011/,l10n_it_base.it_FC,base.it,4
-l10n_it_base.4140,Forlì,l10n_it_base.FC,4712x,0543,040012,D704,http://www.comuni-italiani.it/040/012/,l10n_it_base.it_FC,base.it,4
+l10n_it_base.4140,Forlì,l10n_it_base.FC,4712%,0543,040012,D704,http://www.comuni-italiani.it/040/012/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4141,Forlimpopoli,l10n_it_base.FC,47034,0543,040013,D705,http://www.comuni-italiani.it/040/013/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4142,Galeata,l10n_it_base.FC,47010,0543,040014,D867,http://www.comuni-italiani.it/040/014/,l10n_it_base.it_FC,base.it,4
 l10n_it_base.4143,Gambettola,l10n_it_base.FC,47035,0547,040015,D899,http://www.comuni-italiani.it/040/015/,l10n_it_base.it_FC,base.it,4
@@ -4160,7 +4160,7 @@ l10n_it_base.4199,Monte Porzio,l10n_it_base.PU,61040,0721,041038,F589,http://www
 l10n_it_base.4201,Orciano di Pesaro,l10n_it_base.PU,61038,0721,041040,G089,http://www.comuni-italiani.it/041/040/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4202,Peglio,l10n_it_base.PU,61049,0722,041041,G416,http://www.comuni-italiani.it/041/041/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4204,Pergola,l10n_it_base.PU,61045,0721,041043,G453,http://www.comuni-italiani.it/041/043/,l10n_it_base.it_PU,base.it,4
-l10n_it_base.4205,Pesaro,l10n_it_base.PU,6112x,0721,041044,G479,http://www.comuni-italiani.it/041/044/,l10n_it_base.it_PU,base.it,4
+l10n_it_base.4205,Pesaro,l10n_it_base.PU,6112%,0721,041044,G479,http://www.comuni-italiani.it/041/044/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4206,Petriano,l10n_it_base.PU,61020,0722,041045,G514,http://www.comuni-italiani.it/041/045/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4207,Piagge,l10n_it_base.PU,61030,0721,041046,G537,http://www.comuni-italiani.it/041/046/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4208,Piandimeleto,l10n_it_base.PU,61026,0722,041047,G551,http://www.comuni-italiani.it/041/047/,l10n_it_base.it_PU,base.it,4
@@ -4183,7 +4183,7 @@ l10n_it_base.4227,Urbania,l10n_it_base.PU,61049,0722,041066,L498,http://www.comu
 l10n_it_base.4228,Urbino,l10n_it_base.PU,61029,0722,041067,L500,http://www.comuni-italiani.it/041/067/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.8123,Vallefoglia,l10n_it_base.PU,61020,0721,041068,M331,http://www.comuni-italiani.it/041/068/,l10n_it_base.it_PU,base.it,4
 l10n_it_base.4229,Agugliano,l10n_it_base.AN,60020,071,042001,A092,http://www.comuni-italiani.it/042/001/,l10n_it_base.it_AN,base.it,4
-l10n_it_base.4230,Ancona,l10n_it_base.AN,601xx,071,042002,A271,http://www.comuni-italiani.it/042/002/,l10n_it_base.it_AN,base.it,4
+l10n_it_base.4230,Ancona,l10n_it_base.AN,601%%,071,042002,A271,http://www.comuni-italiani.it/042/002/,l10n_it_base.it_AN,base.it,4
 l10n_it_base.4231,Arcevia,l10n_it_base.AN,60011,0731,042003,A366,http://www.comuni-italiani.it/042/003/,l10n_it_base.it_AN,base.it,4
 l10n_it_base.4232,Barbara,l10n_it_base.AN,60010,071,042004,A626,http://www.comuni-italiani.it/042/004/,l10n_it_base.it_AN,base.it,4
 l10n_it_base.4233,Belvedere Ostrense,l10n_it_base.AN,60030,0731,042005,A769,http://www.comuni-italiani.it/042/005/,l10n_it_base.it_AN,base.it,4
@@ -4411,7 +4411,7 @@ l10n_it_base.4492,Dicomano,l10n_it_base.FI,50062,055,048013,D299,http://www.comu
 l10n_it_base.4493,Empoli,l10n_it_base.FI,50053,0571,048014,D403,http://www.comuni-italiani.it/048/014/,l10n_it_base.it_FI,base.it,4
 l10n_it_base.4494,Fiesole,l10n_it_base.FI,50014,055,048015,D575,http://www.comuni-italiani.it/048/015/,l10n_it_base.it_FI,base.it,4
 l10n_it_base.4495,Figline Valdarno (ora Figline e Incisa Valdarno),l10n_it_base.FI,50063,055,048016,D583,http://www.comuni-italiani.it/048/016/,l10n_it_base.it_FI,base.it,9
-l10n_it_base.4496,Firenze,l10n_it_base.FI,501xx,055,048017,D612,http://www.comuni-italiani.it/048/017/,l10n_it_base.it_FI,base.it,4
+l10n_it_base.4496,Firenze,l10n_it_base.FI,501%%,055,048017,D612,http://www.comuni-italiani.it/048/017/,l10n_it_base.it_FI,base.it,4
 l10n_it_base.4497,Firenzuola,l10n_it_base.FI,50033,055,048018,D613,http://www.comuni-italiani.it/048/018/,l10n_it_base.it_FI,base.it,4
 l10n_it_base.4498,Fucecchio,l10n_it_base.FI,50054,0571,048019,D815,http://www.comuni-italiani.it/048/019/,l10n_it_base.it_FI,base.it,4
 l10n_it_base.4499,Gambassi Terme,l10n_it_base.FI,50050,0571,048020,D895,http://www.comuni-italiani.it/048/020/,l10n_it_base.it_FI,base.it,4
@@ -4451,7 +4451,7 @@ l10n_it_base.4530,Capraia Isola,l10n_it_base.LI,57032,0586,049005,B685,http://ww
 l10n_it_base.4531,Castagneto Carducci,l10n_it_base.LI,57022,0565,049006,C044,http://www.comuni-italiani.it/049/006/,l10n_it_base.it_LI,base.it,4
 l10n_it_base.4532,Cecina,l10n_it_base.LI,57023,0586,049007,C415,http://www.comuni-italiani.it/049/007/,l10n_it_base.it_LI,base.it,4
 l10n_it_base.4533,Collesalvetti,l10n_it_base.LI,57014,0586,049008,C869,http://www.comuni-italiani.it/049/008/,l10n_it_base.it_LI,base.it,4
-l10n_it_base.4534,Livorno,l10n_it_base.LI,571xx,0586,049009,E625,http://www.comuni-italiani.it/049/009/,l10n_it_base.it_LI,base.it,4
+l10n_it_base.4534,Livorno,l10n_it_base.LI,571%%,0586,049009,E625,http://www.comuni-italiani.it/049/009/,l10n_it_base.it_LI,base.it,4
 l10n_it_base.4535,Marciana,l10n_it_base.LI,57030,0565,049010,E930,http://www.comuni-italiani.it/049/010/,l10n_it_base.it_LI,base.it,4
 l10n_it_base.4536,Marciana Marina,l10n_it_base.LI,57033,0565,049011,E931,http://www.comuni-italiani.it/049/011/,l10n_it_base.it_LI,base.it,4
 l10n_it_base.4537,Piombino,l10n_it_base.LI,57025,0565,049012,G687,http://www.comuni-italiani.it/049/012/,l10n_it_base.it_LI,base.it,4
@@ -4488,7 +4488,7 @@ l10n_it_base.4567,Montopoli in Val d'Arno,l10n_it_base.PI,56020,0571,050022,F686
 l10n_it_base.4568,Orciano Pisano,l10n_it_base.PI,56040,050,050023,G090,http://www.comuni-italiani.it/050/023/,l10n_it_base.it_PI,base.it,4
 l10n_it_base.4569,Palaia,l10n_it_base.PI,56036,0587,050024,G254,http://www.comuni-italiani.it/050/024/,l10n_it_base.it_PI,base.it,4
 l10n_it_base.4570,Peccioli,l10n_it_base.PI,56037,0587,050025,G395,http://www.comuni-italiani.it/050/025/,l10n_it_base.it_PI,base.it,4
-l10n_it_base.4571,Pisa,l10n_it_base.PI,5612x,050,050026,G702,http://www.comuni-italiani.it/050/026/,l10n_it_base.it_PI,base.it,4
+l10n_it_base.4571,Pisa,l10n_it_base.PI,5612%,050,050026,G702,http://www.comuni-italiani.it/050/026/,l10n_it_base.it_PI,base.it,4
 l10n_it_base.4572,Pomarance,l10n_it_base.PI,56045,0588,050027,G804,http://www.comuni-italiani.it/050/027/,l10n_it_base.it_PI,base.it,4
 l10n_it_base.4573,Ponsacco,l10n_it_base.PI,56038,0587,050028,G822,http://www.comuni-italiani.it/050/028/,l10n_it_base.it_PI,base.it,4
 l10n_it_base.4574,Pontedera,l10n_it_base.PI,56025,0587,050029,G843,http://www.comuni-italiani.it/050/029/,l10n_it_base.it_PI,base.it,4
@@ -4647,7 +4647,7 @@ l10n_it_base.4722,Norcia,l10n_it_base.PG,06046,0743,054035,F935,http://www.comun
 l10n_it_base.4723,Paciano,l10n_it_base.PG,06060,075,054036,G212,http://www.comuni-italiani.it/054/036/,l10n_it_base.it_PG,base.it,4
 l10n_it_base.4724,Panicale,l10n_it_base.PG,06064,075,054037,G308,http://www.comuni-italiani.it/054/037/,l10n_it_base.it_PG,base.it,4
 l10n_it_base.4725,Passignano sul Trasimeno,l10n_it_base.PG,06065,075,054038,G359,http://www.comuni-italiani.it/054/038/,l10n_it_base.it_PG,base.it,4
-l10n_it_base.4726,Perugia,l10n_it_base.PG,061xx,075,054039,G478,http://www.comuni-italiani.it/054/039/,l10n_it_base.it_PG,base.it,4
+l10n_it_base.4726,Perugia,l10n_it_base.PG,061%%,075,054039,G478,http://www.comuni-italiani.it/054/039/,l10n_it_base.it_PG,base.it,4
 l10n_it_base.4727,Piegaro,l10n_it_base.PG,06066,075,054040,G601,http://www.comuni-italiani.it/054/040/,l10n_it_base.it_PG,base.it,4
 l10n_it_base.4728,Pietralunga,l10n_it_base.PG,06026,075,054041,G618,http://www.comuni-italiani.it/054/041/,l10n_it_base.it_PG,base.it,4
 l10n_it_base.4729,Poggiodomo,l10n_it_base.PG,06040,0743,054042,G758,http://www.comuni-italiani.it/054/042/,l10n_it_base.it_PG,base.it,4
@@ -4924,7 +4924,7 @@ l10n_it_base.4999,Roccagiovine,l10n_it_base.RM,00020,0774,058087,H411,http://www
 l10n_it_base.5000,Rocca Priora,l10n_it_base.RM,00040,06,058088,H432,http://www.comuni-italiani.it/058/088/,l10n_it_base.it_RM,base.it,4
 l10n_it_base.5001,Rocca Santo Stefano,l10n_it_base.RM,00030,06,058089,H441,http://www.comuni-italiani.it/058/089/,l10n_it_base.it_RM,base.it,4
 l10n_it_base.5002,Roiate,l10n_it_base.RM,00030,06,058090,H494,http://www.comuni-italiani.it/058/090/,l10n_it_base.it_RM,base.it,4
-l10n_it_base.5003,Roma,l10n_it_base.RM,001xx,06,058091,H501,http://www.comuni-italiani.it/058/091/,l10n_it_base.it_RM,base.it,4
+l10n_it_base.5003,Roma,l10n_it_base.RM,001%%,06,058091,H501,http://www.comuni-italiani.it/058/091/,l10n_it_base.it_RM,base.it,4
 l10n_it_base.5004,Roviano,l10n_it_base.RM,00027,0774,058092,H618,http://www.comuni-italiani.it/058/092/,l10n_it_base.it_RM,base.it,4
 l10n_it_base.5005,Sacrofano,l10n_it_base.RM,00060,06,058093,H658,http://www.comuni-italiani.it/058/093/,l10n_it_base.it_RM,base.it,4
 l10n_it_base.5006,Sambuci,l10n_it_base.RM,00020,0774,058094,H745,http://www.comuni-italiani.it/058/094/,l10n_it_base.it_RM,base.it,4
@@ -5309,7 +5309,7 @@ l10n_it_base.5384,Melito di Napoli,l10n_it_base.NA,80017,081,063045,F111,http://
 l10n_it_base.5385,Meta,l10n_it_base.NA,80062,081,063046,F162,http://www.comuni-italiani.it/063/046/,l10n_it_base.it_NA,base.it,4
 l10n_it_base.5386,Monte di Procida,l10n_it_base.NA,80070,081,063047,F488,http://www.comuni-italiani.it/063/047/,l10n_it_base.it_NA,base.it,4
 l10n_it_base.5387,Mugnano di Napoli,l10n_it_base.NA,80018,081,063048,F799,http://www.comuni-italiani.it/063/048/,l10n_it_base.it_NA,base.it,4
-l10n_it_base.5388,Napoli,l10n_it_base.NA,801xx,081,063049,F839,http://www.comuni-italiani.it/063/049/,l10n_it_base.it_NA,base.it,4
+l10n_it_base.5388,Napoli,l10n_it_base.NA,801%%,081,063049,F839,http://www.comuni-italiani.it/063/049/,l10n_it_base.it_NA,base.it,4
 l10n_it_base.5389,Nola,l10n_it_base.NA,80035,081,063050,F924,http://www.comuni-italiani.it/063/050/,l10n_it_base.it_NA,base.it,4
 l10n_it_base.5390,Ottaviano,l10n_it_base.NA,80044,081,063051,G190,http://www.comuni-italiani.it/063/051/,l10n_it_base.it_NA,base.it,4
 l10n_it_base.5391,Palma Campania,l10n_it_base.NA,80036,081,063052,G283,http://www.comuni-italiani.it/063/052/,l10n_it_base.it_NA,base.it,4
@@ -5588,7 +5588,7 @@ l10n_it_base.5662,Rutino,l10n_it_base.SA,84070,0974,065112,H644,http://www.comun
 l10n_it_base.5663,Sacco,l10n_it_base.SA,84070,0974,065113,H654,http://www.comuni-italiani.it/065/113/,l10n_it_base.it_SA,base.it,4
 l10n_it_base.5664,Sala Consilina,l10n_it_base.SA,84036,0975,065114,H683,http://www.comuni-italiani.it/065/114/,l10n_it_base.it_SA,base.it,4
 l10n_it_base.5665,Salento,l10n_it_base.SA,84070,0974,065115,H686,http://www.comuni-italiani.it/065/115/,l10n_it_base.it_SA,base.it,4
-l10n_it_base.5666,Salerno,l10n_it_base.SA,841xx,089,065116,H703,http://www.comuni-italiani.it/065/116/,l10n_it_base.it_SA,base.it,4
+l10n_it_base.5666,Salerno,l10n_it_base.SA,841%%,089,065116,H703,http://www.comuni-italiani.it/065/116/,l10n_it_base.it_SA,base.it,4
 l10n_it_base.5667,Salvitelle,l10n_it_base.SA,84020,0975,065117,H732,http://www.comuni-italiani.it/065/117/,l10n_it_base.it_SA,base.it,4
 l10n_it_base.5668,San Cipriano Picentino,l10n_it_base.SA,84099,089,065118,H800,http://www.comuni-italiani.it/065/118/,l10n_it_base.it_SA,base.it,4
 l10n_it_base.5669,San Giovanni a Piro,l10n_it_base.SA,84070,0974,065119,H907,http://www.comuni-italiani.it/065/119/,l10n_it_base.it_SA,base.it,4
@@ -5813,7 +5813,7 @@ l10n_it_base.5887,Montesilvano,l10n_it_base.PE,65015,085,068024,F646,http://www.
 l10n_it_base.5888,Moscufo,l10n_it_base.PE,65010,085,068025,F765,http://www.comuni-italiani.it/068/025/,l10n_it_base.it_PE,base.it,4
 l10n_it_base.5889,Nocciano,l10n_it_base.PE,65010,085,068026,F908,http://www.comuni-italiani.it/068/026/,l10n_it_base.it_PE,base.it,4
 l10n_it_base.5890,Penne,l10n_it_base.PE,65017,085,068027,G438,http://www.comuni-italiani.it/068/027/,l10n_it_base.it_PE,base.it,4
-l10n_it_base.5891,Pescara,l10n_it_base.PE,6512x,085,068028,G482,http://www.comuni-italiani.it/068/028/,l10n_it_base.it_PE,base.it,4
+l10n_it_base.5891,Pescara,l10n_it_base.PE,6512%,085,068028,G482,http://www.comuni-italiani.it/068/028/,l10n_it_base.it_PE,base.it,4
 l10n_it_base.5892,Pescosansonesco,l10n_it_base.PE,65020,085,068029,G499,http://www.comuni-italiani.it/068/029/,l10n_it_base.it_PE,base.it,4
 l10n_it_base.5893,Pianella,l10n_it_base.PE,65019,085,068030,G555,http://www.comuni-italiani.it/068/030/,l10n_it_base.it_PE,base.it,4
 l10n_it_base.5894,Picciano,l10n_it_base.PE,65010,085,068031,G589,http://www.comuni-italiani.it/068/031/,l10n_it_base.it_PE,base.it,4
@@ -6043,7 +6043,7 @@ l10n_it_base.6117,Cerignola,l10n_it_base.FG,71042,0885,071020,C514,http://www.co
 l10n_it_base.6118,Chieuti,l10n_it_base.FG,71010,0882,071021,C633,http://www.comuni-italiani.it/071/021/,l10n_it_base.it_FG,base.it,4
 l10n_it_base.6119,Deliceto,l10n_it_base.FG,71026,0881,071022,D269,http://www.comuni-italiani.it/071/022/,l10n_it_base.it_FG,base.it,4
 l10n_it_base.6120,Faeto,l10n_it_base.FG,71020,0881,071023,D459,http://www.comuni-italiani.it/071/023/,l10n_it_base.it_FG,base.it,4
-l10n_it_base.6121,Foggia,l10n_it_base.FG,7112x,0881,071024,D643,http://www.comuni-italiani.it/071/024/,l10n_it_base.it_FG,base.it,4
+l10n_it_base.6121,Foggia,l10n_it_base.FG,7112%,0881,071024,D643,http://www.comuni-italiani.it/071/024/,l10n_it_base.it_FG,base.it,4
 l10n_it_base.6122,Ischitella,l10n_it_base.FG,71010,0884,071025,E332,http://www.comuni-italiani.it/071/025/,l10n_it_base.it_FG,base.it,4
 l10n_it_base.6123,Isole Tremiti,l10n_it_base.FG,71040,0882,071026,E363,http://www.comuni-italiani.it/071/026/,l10n_it_base.it_FG,base.it,4
 l10n_it_base.6124,Lesina,l10n_it_base.FG,71010,0882,071027,E549,http://www.comuni-italiani.it/071/027/,l10n_it_base.it_FG,base.it,4
@@ -6085,7 +6085,7 @@ l10n_it_base.6162,Acquaviva delle Fonti,l10n_it_base.BA,70021,080,072001,A048,ht
 l10n_it_base.6163,Adelfia,l10n_it_base.BA,70010,080,072002,A055,http://www.comuni-italiani.it/072/002/,l10n_it_base.it_BA,base.it,4
 l10n_it_base.6164,Alberobello,l10n_it_base.BA,70011,080,072003,A149,http://www.comuni-italiani.it/072/003/,l10n_it_base.it_BA,base.it,4
 l10n_it_base.6165,Altamura,l10n_it_base.BA,70022,080,072004,A225,http://www.comuni-italiani.it/072/004/,l10n_it_base.it_BA,base.it,4
-l10n_it_base.6167,Bari,l10n_it_base.BA,701xx,080,072006,A662,http://www.comuni-italiani.it/072/006/,l10n_it_base.it_BA,base.it,4
+l10n_it_base.6167,Bari,l10n_it_base.BA,701%%,080,072006,A662,http://www.comuni-italiani.it/072/006/,l10n_it_base.it_BA,base.it,4
 l10n_it_base.6169,Binetto,l10n_it_base.BA,70020,080,072008,A874,http://www.comuni-italiani.it/072/008/,l10n_it_base.it_BA,base.it,4
 l10n_it_base.6171,Bitetto,l10n_it_base.BA,70020,080,072010,A892,http://www.comuni-italiani.it/072/010/,l10n_it_base.it_BA,base.it,4
 l10n_it_base.6172,Bitonto,l10n_it_base.BA,70032,080,072011,A893,http://www.comuni-italiani.it/072/011/,l10n_it_base.it_BA,base.it,4
@@ -6148,7 +6148,7 @@ l10n_it_base.6232,Roccaforzata,l10n_it_base.TA,74020,099,073023,H409,http://www.
 l10n_it_base.6233,San Giorgio Ionico,l10n_it_base.TA,74027,099,073024,H882,http://www.comuni-italiani.it/073/024/,l10n_it_base.it_TA,base.it,4
 l10n_it_base.6234,San Marzano di San Giuseppe,l10n_it_base.TA,74020,099,073025,I018,http://www.comuni-italiani.it/073/025/,l10n_it_base.it_TA,base.it,4
 l10n_it_base.6235,Sava,l10n_it_base.TA,74028,099,073026,I467,http://www.comuni-italiani.it/073/026/,l10n_it_base.it_TA,base.it,4
-l10n_it_base.6236,Taranto,l10n_it_base.TA,7412x,099,073027,L049,http://www.comuni-italiani.it/073/027/,l10n_it_base.it_TA,base.it,4
+l10n_it_base.6236,Taranto,l10n_it_base.TA,7412%,099,073027,L049,http://www.comuni-italiani.it/073/027/,l10n_it_base.it_TA,base.it,4
 l10n_it_base.6237,Torricella,l10n_it_base.TA,74020,099,073028,L294,http://www.comuni-italiani.it/073/028/,l10n_it_base.it_TA,base.it,4
 l10n_it_base.6238,Statte,l10n_it_base.TA,74010,099,073029,M298,http://www.comuni-italiani.it/073/029/,l10n_it_base.it_TA,base.it,4
 l10n_it_base.6239,Brindisi,l10n_it_base.BR,72100,0831,074001,B180,http://www.comuni-italiani.it/074/001/,l10n_it_base.it_BR,base.it,4
@@ -6696,7 +6696,7 @@ l10n_it_base.6780,Placanica,l10n_it_base.RC,89040,0964,080059,G729,http://www.co
 l10n_it_base.6781,Platì,l10n_it_base.RC,89039,0964,080060,G735,http://www.comuni-italiani.it/080/060/,l10n_it_base.it_RC,base.it,4
 l10n_it_base.6782,Polistena,l10n_it_base.RC,89024,0966,080061,G791,http://www.comuni-italiani.it/080/061/,l10n_it_base.it_RC,base.it,4
 l10n_it_base.6783,Portigliola,l10n_it_base.RC,89040,0964,080062,G905,http://www.comuni-italiani.it/080/062/,l10n_it_base.it_RC,base.it,4
-l10n_it_base.6784,Reggio di Calabria,l10n_it_base.RC,891xx,0965,080063,H224,http://www.comuni-italiani.it/080/063/,l10n_it_base.it_RC,base.it,4
+l10n_it_base.6784,Reggio di Calabria,l10n_it_base.RC,891%%,0965,080063,H224,http://www.comuni-italiani.it/080/063/,l10n_it_base.it_RC,base.it,4
 l10n_it_base.6785,Riace,l10n_it_base.RC,89040,0964,080064,H265,http://www.comuni-italiani.it/080/064/,l10n_it_base.it_RC,base.it,4
 l10n_it_base.6786,Rizziconi,l10n_it_base.RC,89016,0966,080065,H359,http://www.comuni-italiani.it/080/065/,l10n_it_base.it_RC,base.it,4
 l10n_it_base.6787,Roccaforte del Greco,l10n_it_base.RC,89060,0965,080066,H408,http://www.comuni-italiani.it/080/066/,l10n_it_base.it_RC,base.it,4
@@ -6807,7 +6807,7 @@ l10n_it_base.6891,Monreale,l10n_it_base.PA,90046,091,082049,F377,http://www.comu
 l10n_it_base.6892,Montelepre,l10n_it_base.PA,90040,091,082050,F544,http://www.comuni-italiani.it/082/050/,l10n_it_base.it_PA,base.it,4
 l10n_it_base.6893,Montemaggiore Belsito,l10n_it_base.PA,90020,091,082051,F553,http://www.comuni-italiani.it/082/051/,l10n_it_base.it_PA,base.it,4
 l10n_it_base.6894,Palazzo Adriano,l10n_it_base.PA,90030,091,082052,G263,http://www.comuni-italiani.it/082/052/,l10n_it_base.it_PA,base.it,4
-l10n_it_base.6895,Palermo,l10n_it_base.PA,901xx,091,082053,G273,http://www.comuni-italiani.it/082/053/,l10n_it_base.it_PA,base.it,4
+l10n_it_base.6895,Palermo,l10n_it_base.PA,901%%,091,082053,G273,http://www.comuni-italiani.it/082/053/,l10n_it_base.it_PA,base.it,4
 l10n_it_base.6896,Partinico,l10n_it_base.PA,90047,091,082054,G348,http://www.comuni-italiani.it/082/054/,l10n_it_base.it_PA,base.it,4
 l10n_it_base.6897,Petralia Soprana,l10n_it_base.PA,90026,0921,082055,G510,http://www.comuni-italiani.it/082/055/,l10n_it_base.it_PA,base.it,4
 l10n_it_base.6898,Petralia Sottana,l10n_it_base.PA,90027,0921,082056,G511,http://www.comuni-italiani.it/082/056/,l10n_it_base.it_PA,base.it,4
@@ -6884,7 +6884,7 @@ l10n_it_base.6968,Malvagna,l10n_it_base.ME,98030,0942,083044,E869,http://www.com
 l10n_it_base.6969,Mandanici,l10n_it_base.ME,98020,0942,083045,E876,http://www.comuni-italiani.it/083/045/,l10n_it_base.it_ME,base.it,4
 l10n_it_base.6970,Mazzarrà Sant'Andrea,l10n_it_base.ME,98056,0941,083046,F066,http://www.comuni-italiani.it/083/046/,l10n_it_base.it_ME,base.it,4
 l10n_it_base.6971,Merì,l10n_it_base.ME,98040,090,083047,F147,http://www.comuni-italiani.it/083/047/,l10n_it_base.it_ME,base.it,4
-l10n_it_base.6972,Messina,l10n_it_base.ME,981xx,090,083048,F158,http://www.comuni-italiani.it/083/048/,l10n_it_base.it_ME,base.it,4
+l10n_it_base.6972,Messina,l10n_it_base.ME,981%%,090,083048,F158,http://www.comuni-italiani.it/083/048/,l10n_it_base.it_ME,base.it,4
 l10n_it_base.6973,Milazzo,l10n_it_base.ME,98057,090,083049,F206,http://www.comuni-italiani.it/083/049/,l10n_it_base.it_ME,base.it,4
 l10n_it_base.6974,Militello Rosmarino,l10n_it_base.ME,98070,0941,083050,F210,http://www.comuni-italiani.it/083/050/,l10n_it_base.it_ME,base.it,4
 l10n_it_base.6975,Mirto,l10n_it_base.ME,98070,0941,083051,F242,http://www.comuni-italiani.it/083/051/,l10n_it_base.it_ME,base.it,4
@@ -7044,7 +7044,7 @@ l10n_it_base.7128,Caltagirone,l10n_it_base.CT,95041,0933,087011,B428,http://www.
 l10n_it_base.7129,Camporotondo Etneo,l10n_it_base.CT,95040,095,087012,B561,http://www.comuni-italiani.it/087/012/,l10n_it_base.it_CT,base.it,4
 l10n_it_base.7130,Castel di Iudica,l10n_it_base.CT,95040,095,087013,C091,http://www.comuni-italiani.it/087/013/,l10n_it_base.it_CT,base.it,4
 l10n_it_base.7131,Castiglione di Sicilia,l10n_it_base.CT,95012,0942,087014,C297,http://www.comuni-italiani.it/087/014/,l10n_it_base.it_CT,base.it,4
-l10n_it_base.7132,Catania,l10n_it_base.CT,951xx,095,087015,C351,http://www.comuni-italiani.it/087/015/,l10n_it_base.it_CT,base.it,4
+l10n_it_base.7132,Catania,l10n_it_base.CT,951%%,095,087015,C351,http://www.comuni-italiani.it/087/015/,l10n_it_base.it_CT,base.it,4
 l10n_it_base.7133,Fiumefreddo di Sicilia,l10n_it_base.CT,95013,095,087016,D623,http://www.comuni-italiani.it/087/016/,l10n_it_base.it_CT,base.it,4
 l10n_it_base.7134,Giarre,l10n_it_base.CT,95014,095,087017,E017,http://www.comuni-italiani.it/087/017/,l10n_it_base.it_CT,base.it,4
 l10n_it_base.7135,Grammichele,l10n_it_base.CT,95042,0933,087018,E133,http://www.comuni-italiani.it/087/018/,l10n_it_base.it_CT,base.it,4
@@ -7244,7 +7244,7 @@ l10n_it_base.7328,Assemini,l10n_it_base.CA,09032,070,092003,A474,http://www.comu
 l10n_it_base.7329,Ballao,l10n_it_base.CA,09040,070,092004,A597,http://www.comuni-italiani.it/092/004/,l10n_it_base.it_CA,base.it,4
 l10n_it_base.7330,Barrali,l10n_it_base.CA,09040,070,092005,A677,http://www.comuni-italiani.it/092/005/,l10n_it_base.it_CA,base.it,4
 l10n_it_base.7331,Burcei,l10n_it_base.CA,09040,070,092008,B274,http://www.comuni-italiani.it/092/008/,l10n_it_base.it_CA,base.it,4
-l10n_it_base.7332,Cagliari,l10n_it_base.CA,091xx,070,092009,B354,http://www.comuni-italiani.it/092/009/,l10n_it_base.it_CA,base.it,4
+l10n_it_base.7332,Cagliari,l10n_it_base.CA,091%%,070,092009,B354,http://www.comuni-italiani.it/092/009/,l10n_it_base.it_CA,base.it,4
 l10n_it_base.7333,Capoterra,l10n_it_base.CA,09012,070,092011,B675,http://www.comuni-italiani.it/092/011/,l10n_it_base.it_CA,base.it,4
 l10n_it_base.7334,Decimomannu,l10n_it_base.CA,09033,070,092015,D259,http://www.comuni-italiani.it/092/015/,l10n_it_base.it_CA,base.it,4
 l10n_it_base.7335,Decimoputzu,l10n_it_base.CA,09010,070,092016,D260,http://www.comuni-italiani.it/092/016/,l10n_it_base.it_CA,base.it,4
@@ -7748,7 +7748,7 @@ l10n_it_base.7831,Montescudo,l10n_it_base.RN,47854,0541,099010,F641,http://www.c
 l10n_it_base.7832,Morciano di Romagna,l10n_it_base.RN,47833,0541,099011,F715,http://www.comuni-italiani.it/099/011/,l10n_it_base.it_RN,base.it,4
 l10n_it_base.7833,Poggio Berni (ora Poggio Torriana),l10n_it_base.RN,47824,0541,099012,G755,http://www.comuni-italiani.it/099/012/,l10n_it_base.it_RN,base.it,9
 l10n_it_base.7834,Riccione,l10n_it_base.RN,47838,0541,099013,H274,http://www.comuni-italiani.it/099/013/,l10n_it_base.it_RN,base.it,4
-l10n_it_base.7835,Rimini,l10n_it_base.RN,4792x,0541,099014,H294,http://www.comuni-italiani.it/099/014/,l10n_it_base.it_RN,base.it,4
+l10n_it_base.7835,Rimini,l10n_it_base.RN,4792%,0541,099014,H294,http://www.comuni-italiani.it/099/014/,l10n_it_base.it_RN,base.it,4
 l10n_it_base.7836,Saludecio,l10n_it_base.RN,47835,0541,099015,H724,http://www.comuni-italiani.it/099/015/,l10n_it_base.it_RN,base.it,4
 l10n_it_base.7837,San Clemente,l10n_it_base.RN,47832,0541,099016,H801,http://www.comuni-italiani.it/099/016/,l10n_it_base.it_RN,base.it,4
 l10n_it_base.7838,San Giovanni in Marignano,l10n_it_base.RN,47842,0541,099017,H921,http://www.comuni-italiani.it/099/017/,l10n_it_base.it_RN,base.it,4
@@ -7918,7 +7918,7 @@ l10n_it_base.7993,Trontano,l10n_it_base.VB,28859,0324,103068,L450,http://www.com
 l10n_it_base.7994,Valstrona,l10n_it_base.VB,28897,0323,103069,L651,http://www.comuni-italiani.it/103/069/,l10n_it_base.it_VB,base.it,4
 l10n_it_base.7995,Vanzone con San Carlo,l10n_it_base.VB,28879,0324,103070,L666,http://www.comuni-italiani.it/103/070/,l10n_it_base.it_VB,base.it,4
 l10n_it_base.7996,Varzo,l10n_it_base.VB,28868,0324,103071,L691,http://www.comuni-italiani.it/103/071/,l10n_it_base.it_VB,base.it,4
-l10n_it_base.7997,Verbania,l10n_it_base.VB,2892x,0323,103072,L746,http://www.comuni-italiani.it/103/072/,l10n_it_base.it_VB,base.it,4
+l10n_it_base.7997,Verbania,l10n_it_base.VB,2892%,0323,103072,L746,http://www.comuni-italiani.it/103/072/,l10n_it_base.it_VB,base.it,4
 l10n_it_base.7998,Viganella,l10n_it_base.VB,28841,0324,103073,L864,http://www.comuni-italiani.it/103/073/,l10n_it_base.it_VB,base.it,4
 l10n_it_base.7999,Vignone,l10n_it_base.VB,28819,0323,103074,L889,http://www.comuni-italiani.it/103/074/,l10n_it_base.it_VB,base.it,4
 l10n_it_base.8000,Villadossola,l10n_it_base.VB,28844,0324,103075,L906,http://www.comuni-italiani.it/103/075/,l10n_it_base.it_VB,base.it,4

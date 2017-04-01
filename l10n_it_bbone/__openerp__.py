@@ -25,16 +25,23 @@
     'category': 'Localization/Italy',
     'description': """
 
-[en] Enhanced localization for Partners and Companies.
-------------------------------------------------------
+Enhanced localization for Partners and Companies.
+-------------------------------------------------
 
-This module expands l10n_it_base functionality.
+[en]  This module expands l10n_it_base functionality.
+
+Warning! This module works better with Zeroincombenze® version of l10n_it_base
+See https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
 
 
-[it] Localizzazione evoluta per Clienti, Fornitori e Società.
--------------------------------------------------------------
+Localizzazione evoluta per Clienti, Fornitori e Società.
+--------------------------------------------------------
 
-Espande le funzionalità di l10n_it_base
+[it]  Espande le funzionalità di l10n_it_base
+
+Attenzione! Questo modulo funziona meglio in conginzione con la versione
+Zeroincombenze® di l10n_it_base
+https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
 
 """,
     'author': "SHS-AV s.r.l.,"
@@ -54,6 +61,8 @@ Espande le funzionalità di l10n_it_base
                    'data/res.city.csv',
                    'data/res.country.csv'],
     "demo_xml": [],
+    "test": ['test/res_partner.yml',
+             ],
     "active": False,
     "installable": True
 }
