@@ -59,6 +59,7 @@ https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
                    # 'view/fiscalcode_view.xml',
                    # "security/ir.model.access.csv",
                    'data/res.city.csv',
+                   'data/res.country.state.csv',
                    'data/res.country.csv'],
     "demo_xml": [],
     "test": ['test/res_partner.yml',
