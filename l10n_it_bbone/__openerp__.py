@@ -49,7 +49,7 @@ https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
     'maintainer': 'Antonio Maria Vigliotti',
     'website': 'http://www.zeroincombenze.it',
     'license': 'AGPL-3',
-    "depends": ['base', 'l10n_it_base'],
+    "depends": ['l10n_it_base'],
     "init_xml": [
     ],
     "update_xml": ['view/city_view.xml',
