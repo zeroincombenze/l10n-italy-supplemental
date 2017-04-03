@@ -21,19 +21,19 @@
 ##############################################################################
 {
     'name': 'Comunicazione Polivalente (c.d. Spesometro)',
-    'version': '0.3',
+    'version': '7.0.0.3.1',
     'category': 'Localisation/Italy',
     'description': """
 
 Comunicazione Polivalente (Spesometro)
 ======================================
-[EN] Fiscal communication called Spesometro
+[en] Fiscal communication called Spesometro
 -------------------------------------------
 
 This software is just for Italian Fiscal Law.
 It is not usable in another country.
 
-[IT] Comunicazione fiscale Spesometro
+[it] Comunicazione fiscale Spesometro
 -------------------------------------
 
 Permette di adempiere all'obbligo di comunicazione dati inerenti le fatture
@@ -50,7 +50,7 @@ Funzionalità:
     'website': 'http://www.odoo-italia.org',
     'license': 'AGPL-3',
     "depends": ['account',
-                'l10n_it_bbone',
+                'l10n_it_base',
                 'l10n_it_fiscalcode'],
     "data": [
               'security/ir.model.access.csv',
@@ -64,4 +64,3 @@ Funzionalità:
     "active": False,
     "installable": True
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

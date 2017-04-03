@@ -1,1 +1,0 @@
-/opt/openerp/dev/Makefile
