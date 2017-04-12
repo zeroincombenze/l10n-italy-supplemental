@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_company_form_inherit_country_id">
+        <field name="name">company.form.country_id</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <data>
+                <field name="country_id" position="replace"/>
+                <field name="street" position="before">
+                    <field name="country_id" placeholder="Country"
+                           class="oe_no_button"
+                           on_change="on_change_country(country_id)"
+                           options='{"no_open": True}'
+                           required="1"/>
+                </field>
+            </data>
+        </field>
+    </record>
+
+<!--
+    <record model="ir.ui.view" id="view_company_form_inherit_zip">
+        <field name="name">company.form.zip</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="zip" position="replace"/>
+            <field name="city" position="replace"/>
+            <field name="street2" position="after">
+                <div class="zi_custom_address">
+                    <field name="zip" placeholder="ZIP" style="width: 20%%"/>
+                    <field name="city" placeholder="City" style="width: 79%%"/>
+                </div>
+            </field>
+            <field name="state_id" position="replace"/>
+            <field name="city" position="after">
+                <div class="province_format">
+                    <field name="state_id" placeholder="Province" style="width: 64%%"
+                           class="oe_no_button"
+                           options='{"no_open": True}' />
+                    <field name="region" placeholder="Region" style="width: 45%%"/>
+                </div>
+            </field>
+        </field>
+    </record>
+-->
+
+</data>
+</openerp>

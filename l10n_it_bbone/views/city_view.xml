@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+    <record id="view_res_city_tree" model="ir.ui.view">
+        <field name="name">res.city.tree</field>
+        <field name="model">res.city</field>
+        <field name="inherit_id" ref="l10n_it_base.view_res_city_tree"/>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="country_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_city_form" model="ir.ui.view">
+        <field name="name">res.city.form</field>
+        <field name="model">res.city</field>
+        <field name="inherit_id" ref="l10n_it_base.view_res_city_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="name" position="before" colspan="2">>
+                <field name="country_id"/>
+            </field>
+            <field name="istat_code" position="after" colspan="2">
+                <field name="state_id" search="1"/>
+                <field name="nuts"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_city" model="ir.actions.act_window">
+        <field name="name">Cities</field>
+        <field name="res_model">res.city</field>
+        <field name="view_type">form</field>
+    </record>
+
+    <menuitem action="action_city" id="menu_city_partner" parent="base.menu_localisation"/>
+
+</data>
+</openerp>

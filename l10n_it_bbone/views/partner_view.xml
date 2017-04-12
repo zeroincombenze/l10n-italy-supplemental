@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+    <!-- Field inserted just for compatibility, use birthdate -->
+    <record model="ir.ui.view" id="view_partner_form_inherit_zip">
+        <field name="name">partner.form.zip</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <field name="title" position="after">
+                <field name="birthdate" readonly="1"/>
+                <field name="birthday" widget="date"/>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>
