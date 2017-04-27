@@ -49,7 +49,7 @@ class res_config_settings(orm.TransientModel):
             return name
         return False
 
-    def set_geocity(self, cr, uid, ids, name, value, context=None):
+    def fill_geocity(self, cr, uid, ids, name, value, context=None):
         """Set values of geolocalization from country, zip, city
         and other fields."""
         # tndb.wstamp(name, value)
@@ -296,8 +296,8 @@ class res_city(osv.osv):
         context = self.new_ctx(country_id, state_id,
                                province, region, context=context)
         config_obj = self.pool.get('res.config.settings')
-        return config_obj.set_geocity(cr, uid, ids, 'country_id', country_id,
-                                      context=context)
+        return config_obj.fill_geocity(cr, uid, ids, 'country_id', country_id,
+                                       context=context)
 
     def on_change_state(self, cr, uid, ids,
                         country_id, state_id, province, region,
@@ -305,8 +305,8 @@ class res_city(osv.osv):
         context = self.new_ctx(country_id, state_id,
                                province, region, context=context)
         config_obj = self.pool.get('res.config.settings')
-        return config_obj.set_geocity(cr, uid, ids, 'state_id', state_id,
-                                      context=context)
+        return config_obj.fill_geocity(cr, uid, ids, 'state_id', state_id,
+                                       context=context)
 
     def on_change_province(self, cr, uid, ids,
                            country_id, state_id, province, region,
@@ -314,8 +314,8 @@ class res_city(osv.osv):
         context = self.new_ctx(country_id, state_id,
                                province, region, context=context)
         config_obj = self.pool.get('res.config.settings')
-        return config_obj.set_geocity(cr, uid, ids, 'province_id', province,
-                                      context=context)
+        return config_obj.fill_geocity(cr, uid, ids, 'province_id', province,
+                                       context=context)
 
     def on_change_region(self, cr, uid, ids,
                          country_id, state_id, province, region,
@@ -323,5 +323,5 @@ class res_city(osv.osv):
         context = self.new_ctx(country_id, state_id,
                                province, region, context=context)
         config_obj = self.pool.get('res.config.settings')
-        return config_obj.set_geocity(cr, uid, ids, 'region_id', region,
-                                      context=context)
+        return config_obj.fill_geocity(cr, uid, ids, 'region_id', region,
+                                       context=context)

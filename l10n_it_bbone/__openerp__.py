@@ -21,7 +21,7 @@
 ##############################################################################
 {
     'name': 'Italian Localization - Base',
-    'version': '7.0.0.3.0',
+    'version': '7.0.0.3.1',
     'category': 'Localization/Italy',
     'description': """
 
