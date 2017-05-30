@@ -91,4 +91,4 @@ class tndb():
             txt = txt + ":" + str(inspect.stack()[i][2])
             txt = txt + " " + inspect.stack()[i][3] + "()" + "\n"
             sep += "  "
-        tndb.wlog(txt, args)
+        # tndb.wlog(txt, args)
