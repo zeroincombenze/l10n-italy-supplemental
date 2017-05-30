@@ -18,16 +18,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 {
     'name': 'Italy - Fiscal localization by zeroincombenze(R)',
-    'version': '0.2',
+    'version': '7.0.0.2.0',
     'category': 'Localization/Account Charts',
     'description': """
 Italian fiscal and legal localization
 =====================================
 
-[EN] Chart of Account and Tax codes
+
+(en) Chart of Account and Tax codes
 -----------------------------------
 Very detailed Chart of Account, available to any Italian Company.
 Tree structure may be expanded by end-user, adding new records.
@@ -42,7 +42,7 @@ Tax codes cover most of variety italian fiscal cases:
 - Subjects without VAT
 
 
-[IT] Piano dei conti e Codici IVA
+(it) Piano dei conti e Codici IVA
 ---------------------------------
 Piano dei conti molto dettagliato utilizzabile da qualsiasi impresa italiana.
 La struttura può  essere ulteriormente espansa dall'utente finale

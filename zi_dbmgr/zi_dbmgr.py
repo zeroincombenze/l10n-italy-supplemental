@@ -21,8 +21,8 @@
 #
 ##############################################################################
 
-from osv import fields, orm
-from tools.translate import _
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 from service.web_services import db
 from openerp import addons
 import ConfigParser
@@ -171,17 +171,17 @@ class zi_dbmgr_db(orm.Model):
         # Configuration setting
         if not params:
             params = {}
-        if 'name' not in params \
-                or not params['name']:
+        if 'name' not in params or \
+                not params['name']:
             params['name'] = config.new_db_name
-        if 'user_password' not in params \
-                or not params['user_password']:
+        if 'user_password' not in params or \
+                not params['user_password']:
             params['user_password'] = config.new_db_user_password
-        if 'lang' not in params \
-                or not params['lang']:
+        if 'lang' not in params or \
+                not params['lang']:
             params['lang'] = config.new_db_lang.code
-        if 'demo' not in params \
-                or not params['demo']:
+        if 'demo' not in params or \
+                not params['demo']:
             params['demo'] = config.new_db_demo
 
         # Creation
