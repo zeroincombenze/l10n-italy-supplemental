@@ -5,7 +5,7 @@
 #                Odoo-Italia.org Community
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from osv import fields, orm
+from openerp.osv import fields, orm
 # from openerp.addons.l10n_it_vat_settlement.bindings.vat_settlement_v_1_0 import (
 from l10n_it_pyxb_bindings.bindings.vat_settlement_v_1_0 import (
     Fornitura,
@@ -37,7 +37,7 @@ FirmaDichiarazione = False
 identificativo_software = '61'
 
 
-class WizardVatSettlement(osv.osv_memory):
+class WizardVatSettlement(orm.TransientModel):
     _name = "wizard.vat.settlement"
 
     _columns = {

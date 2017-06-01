@@ -21,7 +21,6 @@ import pyxb.binding.datatypes
 from . import _cm as _ImportedBinding__cm
 
 # TODO: remove absolute path
-# common = '/Users/andrei/Programming/lp/LibrERP/l10n_it_pyxb_bindings/common'
 common = addons.get_module_resource('l10n_it_pyxb_bindings',
                                     'common')
 
@@ -92,7 +91,6 @@ def CreateFromDOM(node, default_namespace=None):
     return pyxb.binding.basis.element.AnyCreateFromDOM(node, default_namespace)
 
 
-# Atomic simple type:
 class Eventi_Ecc_Type (pyxb.binding.datatypes.string, pyxb.binding.basis.enumeration_mixin):
 
     """An atomic simple type."""

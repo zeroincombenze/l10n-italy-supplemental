@@ -17,7 +17,6 @@ from openerp import addons
 
 # Import bindings for namespaces imported into schema
 import pyxb.binding.datatypes
-
 _GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:cb93820a-397e-11e7-bf8c-a820664035f5')
 
 # Version of PyXB used to generate the bindings
@@ -85,7 +84,6 @@ def CreateFromDOM(node, default_namespace=None):
     return pyxb.binding.basis.element.AnyCreateFromDOM(node, default_namespace)
 
 
-# Atomic simple type:
 class Identificativo_Type (pyxb.binding.datatypes.string):
 
     """An atomic simple type."""

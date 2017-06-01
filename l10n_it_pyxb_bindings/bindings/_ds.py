@@ -16,7 +16,6 @@ import pyxb.utils.six as _six
 
 # Import bindings for namespaces imported into schema
 import pyxb.binding.datatypes
-
 _GenerationUID = pyxb.utils.utility.UniqueIdentifier(
     'urn:uuid:cb93820a-397e-11e7-bf8c-a820664035f5')
 

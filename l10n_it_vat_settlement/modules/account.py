@@ -5,11 +5,11 @@
 #                Odoo-Italia.org Community
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from osv import fields, orm
-from tools.translate import _
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class AccountVatPeriodEndStatement(osv.osv):
+class AccountVatPeriodEndStatement(orm.Model):
     _inherit = 'account.vat.period.end.statement'
 
     def action_cancel(self, cr, uid, ids, context=None):
@@ -36,7 +36,7 @@ class AccountVatPeriodEndStatement(osv.osv):
             cr, uid, ids, defaults, context)
 
 
-class AccountVatSettlementAttachment(osv.osv):
+class AccountVatSettlementAttachment(orm.Model):
     _name = "account.vat.settlement.attachment"
     _description = "Vat Settlement Export File"
     _inherits = {'ir.attachment': 'ir_attachment_id'}

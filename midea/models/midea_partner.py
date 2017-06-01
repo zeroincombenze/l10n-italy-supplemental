@@ -4,7 +4,7 @@
 #                Odoo Community Association (OCA)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from osv import osv, fields
+from openerp.osv import osv, fields
 
 
 class midea_partner(osv.Model):
