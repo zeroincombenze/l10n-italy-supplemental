@@ -33,7 +33,7 @@ Functionalities:
     'author': 'Alessandro Camilli',
     'website': 'http://www.odoo-italia.org',
     'license': 'AGPL-3',
-    "depends": ['account', 'l10n_it_base', 'l10n_it_account'],
+    "depends": ['account', 'l10n_it_bbone', 'l10n_it_account'],
     "data": [
               'security/ir.model.access.csv',
               'spesometro_view.xml',

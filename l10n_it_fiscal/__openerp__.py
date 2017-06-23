@@ -73,7 +73,7 @@ See http://www.zeroincombenze.it/il-piano-dei-conti-2/
         'account_chart.xml',
         'data/account.tax.template.csv',
         'data/account.fiscal.position.template.csv',
-        'l10n_chart_it_zeroincombenze.xml',
+        # 'l10n_chart_it_zeroincombenze.xml',
     ],
     'demo': [],
     'installable': True,
