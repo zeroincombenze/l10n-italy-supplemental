@@ -82,7 +82,6 @@
     country_id = False
     zip = partner.zip
     city = partner.city
-    print "<<<",partner.city,">>>"
     assert partner.city == 'San Secondo', "Invalid city[2]!"
     state_id = False
     province = False

@@ -28,20 +28,20 @@
 Enhanced localization for Partners and Companies.
 -------------------------------------------------
 
-[en]  This module expands l10n_it_base functionality.
+[en]  This module expands l10n_it_bbone functionality.
 
-Warning! This module works better with Zeroincombenze® version of l10n_it_base
-See https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
+Warning! This module works better with Zeroincombenze® version of l10n_it_bbone
+See https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_bbone
 
 
 Localizzazione evoluta per Clienti, Fornitori e Società.
 --------------------------------------------------------
 
-[it]  Espande le funzionalità di l10n_it_base
+[it]  Espande le funzionalità di l10n_it_bbone
 
 Attenzione! Questo modulo funziona meglio in conginzione con la versione
-Zeroincombenze® di l10n_it_base
-https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
+Zeroincombenze® di l10n_it_bbone
+https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_bbone
 
 """,
     'author': "SHS-AV s.r.l.,"

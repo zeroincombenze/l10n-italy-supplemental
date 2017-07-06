@@ -24,7 +24,7 @@
     'name': 'zeroincombenze®',
     'version': '0.1',
     'depends': ['l10n_it_fiscal',
-                'l10n_it_base',
+                'l10n_it_bbone',
                 'l10n_it_bbone',
                 'base_iban',
                 'account_cancel',
