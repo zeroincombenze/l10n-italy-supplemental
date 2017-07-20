@@ -85,5 +85,5 @@
         * display the maturity date of the move lines when you are in
           the wizard to select the lines to pay
 ''',
-    'installable': True,
+    'installable': False,
 }

@@ -145,9 +145,8 @@ class banking_export_pain(orm.AbstractModel):
                 % str(e))
         return True
 
-    def finalize_sepa_file_creation(
-            self, cr, uid, ids, xml_root, total_amount, transactions_count,
-            gen_args, context=None):
+    def _declare_sepa_file_header(
+            self, cr, uid, ids, xml_root, gen_args, context=None):
         xml_string = etree.tostring(
             xml_root, pretty_print=True, encoding='UTF-8',
             xml_declaration=True)
@@ -162,6 +161,13 @@ class banking_export_pain(orm.AbstractModel):
             "Generated SEPA XML file in format %s below"
             % gen_args['pain_flavor'])
         logger.debug(xml_string)
+        return xml_string
+
+    def finalize_sepa_file_creation(
+            self, cr, uid, ids, xml_root, total_amount, transactions_count,
+            gen_args, context=None):
+        xml_string = self._declare_sepa_file_header(
+            cr, uid, ids, xml_root, gen_args, context=context)
         self._validate_xml(cr, uid, xml_string, gen_args, context=context)
 
         file_id = gen_args['file_obj'].create(
@@ -184,7 +190,7 @@ class banking_export_pain(orm.AbstractModel):
             'res_model': self._name,
             'res_id': ids[0],
             'target': 'new',
-            }
+        }
         return action
 
     def generate_group_header_block(
@@ -277,6 +283,15 @@ class banking_export_pain(orm.AbstractModel):
         requested_date_2_17.text = requested_date
         return payment_info_2_0, nb_of_transactions_2_4, control_sum_2_5
 
+    def _get_initiating_party_issuer(self, cr, uid, gen_args, context=None):
+        initiating_party_issuer = self.pool['res.company'].\
+            _get_initiating_party_issuer(
+            cr, uid, context)
+        if not initiating_party_issuer:
+            initiating_party_issuer = gen_args['sepa_export'].\
+                payment_order_ids[0].company_id.initiating_party_issuer
+        return initiating_party_issuer
+
     def generate_initiating_party_block(
             self, cr, uid, parent_node, gen_args, context=None):
         # [antoniov: 2015-06-29] Country identification for Italian CBI
@@ -297,9 +312,8 @@ class banking_export_pain(orm.AbstractModel):
                 cr, uid,
                 gen_args['sepa_export'].payment_order_ids[0].company_id.id,
                 context=context)
-        initiating_party_issuer = self.pool['res.company'].\
-            _get_initiating_party_issuer(
-            cr, uid, context)
+        initiating_party_issuer = self._get_initiating_party_issuer(
+            cr, uid, gen_args, context=context)
         if initiating_party_identifier:
             iniparty_id = etree.SubElement(initiating_party_1_8, 'Id')
             iniparty_org_id = etree.SubElement(iniparty_id, 'OrgId')

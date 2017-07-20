@@ -58,5 +58,5 @@ Module contains some pieces of code not ISO 20022 but used by Italian Banks.
     #     'test/test_company.yml',
     # ],
     'active': False,
-    'installable': True,
+    'installable': False,
 }
