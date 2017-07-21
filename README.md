@@ -3,15 +3,15 @@
 [![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=6.1)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=6.1)
 [![codecov](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/6.1/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/6.1)
 [![OCA_project](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-oca-6.svg)](https://github.com/OCA/l10n-italy-supplemental/tree/6.1)
-[![Tech Doc](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/dev/6.1)
-[![Help](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/6.1/l10n-italy-supplemental)
+[![Tech Doc](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/6.1/dev)
+[![Help](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/6.1/man/FI)
 [![try it](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-6.svg)](http://erp6.zeroincombenze.it)
 
 
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
+================================================================================================
 
 Odoo Italian Supplemental Modules
-=================================
 
 Supplemental Italian modules for odoo (formerly OpenERP) 6.1
 
@@ -19,7 +19,6 @@ Supplemental Italian modules for odoo (formerly OpenERP) 6.1
 [![it](http://www.shs-av.com/wp-content/it_IT.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Moduli Italiani aggiuntivi
-==========================
 
 Differenze rispetto localizzazione ufficiale Odoo/OCA:
 
