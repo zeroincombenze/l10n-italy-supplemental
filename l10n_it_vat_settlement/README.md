@@ -1,18 +1,20 @@
-[![Build Status](https://travis-ci.org/zeroincombenze/l10n_it_vat_settlement.svg?branch=7.0)](https://travis-ci.org/zeroincombenze/l10n_it_vat_settlement)
+[![Build Status](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=6.1)](https://travis-ci.org/zeroincombenze/l10n-italy-supplemental)
 [![license agpl](https://img.shields.io/badge/licence-AGPL--3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0.html)
-[![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n_it_vat_settlement/badge.svg?branch=7.0)](https://coveralls.io/github/zeroincombenze/l10n_it_vat_settlement?branch=7.0)
-[![codecov](https://codecov.io/gh/zeroincombenze/l10n_it_vat_settlement/branch/7.0/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n_it_vat_settlement/branch/7.0)
-[![OCA_project](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-oca-7.svg)](https://github.com/OCA/l10n_it_vat_settlement/tree/7.0)
-[![Tech Doc](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-7.svg)](http://wiki.zeroincombenze.org/en/Odoo/dev/7.0)
-[![Help](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-7.svg)](http://wiki.zeroincombenze.org/en/Odoo/7.0/l10n-italy-supplemental)
-[![try it](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-7.svg)](http://erp7.zeroincombenze.it)
+[![Coverage Status](https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=6.1)](https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=6.1)
+[![codecov](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/6.1/graph/badge.svg)](https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/6.1)
+[![OCA_project](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-oca-6.svg)](https://github.com/OCA/l10n-italy-supplemental/tree/6.1)
+[![Tech Doc](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/6.1/dev)
+[![Help](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-6.svg)](http://wiki.zeroincombenze.org/en/Odoo/6.1/man/FI)
+[![try it](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-6.svg)](http://erp6.zeroincombenze.it)
+
+
+[![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Description
 ===========
 VAT Settlement for Italian localization 
 
 Authors
-=======
 
     - Antonio M. Vigliotti 
     - Andrei Levin

@@ -70,3 +70,4 @@ stdout.log
 *.oca
 *.z0i
 l10n-italy-supplemental/
+.gitrepname
