@@ -84,4 +84,27 @@ is mainly designed for Italian law and markeplace.
 Everytime, every Odoo DB and customized code can be deployed on local server too.
 
 [//]: # (end copyright)
+[//]: # (addons)
+
+
+Available addons
+----------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[l10n_it_base_prov](l10n_it_base_prov/) | 0.2 |  N/D  | Italy - Italian districts/provinces
+[l10n_it_bbone](l10n_it_bbone/) | 8.0.0.2.0 |  N/D  | Italian Localization - Base
+[l10n_it_fiscal](l10n_it_fiscal/) | 0.2 |  N/D  | Italy - Fiscal localization by zeroincombenze(R)
+[l10n_it_spesometro](l10n_it_spesometro/) | 0.3 |  N/D  | Comunicazione Polivalente (c.d. Spesometro)
+[midea](midea/) | 8.0.0.1.0 |  N/D  | Odoo Module Example
+[tndb](tndb/) | 0.4.1 |  N/D  | Trace and Debug
+
+
+Unported addons
+---------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[account_invoice_multireport](account_invoice_multireport/) | 8.0.0.1.0 (unported) |  N/D  | Manage invoice multiple reports
+
+[//]: # (end addons)
+
 [![chat with us](https://www.shs-av.com/wp-content/chat_with_us.gif)](https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b)
