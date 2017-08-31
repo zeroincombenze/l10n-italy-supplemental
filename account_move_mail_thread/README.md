@@ -42,4 +42,8 @@ Everytime, every Odoo DB and customized code can be deployed on local server too
 
 [//]: # (end copyright)
 
+[//]: # (addons)
+
+[//]: # (end addons)
+
 [![chat with us](https://www.shs-av.com/wp-content/chat_with_us.gif)](https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b)

@@ -69,4 +69,42 @@ Everytime, every Odoo DB and customized code can be deployed on local server too
 
 
 
+[//]: # (addons)
+
+
+Available addons
+----------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[account_banking_sepa_credit_transfer](account_banking_sepa_credit_transfer/) | 0.2 |  N/D  | Create SEPA XML files for Credit Transfers
+[account_move_mail_thread](account_move_mail_thread/) | 7.0.0.1.0 |  N/D  | Add mail thread to account move
+[l10n_it_bbone](l10n_it_bbone/) | 7.0.0.3.1 |  N/D  | Italian Localization - Base
+[l10n_it_fiscal](l10n_it_fiscal/) | 7.0.0.2.0 |  N/D  | Italy - Fiscal localization by zeroincombenze(R)
+[l10n_it_spesometro](l10n_it_spesometro/) | 7.0.0.3.1 |  N/D  | Comunicazione Polivalente (c.d. Spesometro)
+[midea](midea/) | 7.0.0.1.0 |  N/D  | Odoo Module Example
+[tndb](tndb/) | 0.4.1 |  N/D  | Trace and Debug
+[zeroincombenze](zeroincombenze/) | 0.1 |  N/D  | zeroincombenze®
+[zi_account_control](zi_account_control/) | 0.1 |  N/D  | zeroincombenze - Controlli su codici PdC
+[zi_headers_webkit](zi_headers_webkit/) | 0.1 |  N/D  | zeroincombenze - Webkit Headers
+[zi_invoice_wht](zi_invoice_wht/) | 0.1 |  N/D  | zeroincombenze - Invoice with withholding tax Report
+
+
+Unported addons
+---------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[account_banking_it_sct](account_banking_it_sct/) | 0.2 (unported) |  N/D  | Create SEPA XML files for Italian Credit Transfers
+[account_banking_pain_base](account_banking_pain_base/) | 0.1 (unported) |  N/D  | Base module for PAIN file generation
+[account_banking_payment_export](account_banking_payment_export/) | 0.1.165 (unported) |  N/D  | Account Banking - Payments Export Infrastructure
+[invoice_from_mail](invoice_from_mail/) | 0.1 (unported) |  N/D  | Invoice from mail
+[l10n_it_sepa_cuc](l10n_it_sepa_cuc/) | 0.1 (unported) |  N/D  | sepa italian cuc
+[pos_shs_av](pos_shs_av/) | 1.0 (unported) |  N/D  | Point of Sale with Customer selection, Pricelist
+[z0_account_check](z0_account_check/) | 0.1 (unported) |  N/D  | Account check by Zeroincombenze
+[zi_cliente_attivo](zi_cliente_attivo/) | 0.1 (unported) |  N/D  | zeroincombenze - Cliente Attivo
+[zi_dbmgr](zi_dbmgr/) | 0.2 (unported) |  N/D  | zi_dbmgr
+[zi_invoice_webkit](zi_invoice_webkit/) | 0.1 (unported) |  N/D  | zeroincombenze - Report Webkit Fatture
+[zi_wizard](zi_wizard/) | 0.1 (unported) |  N/D  | zi_wizard
+
+[//]: # (end addons)
+
 [![chat with us](https://www.shs-av.com/wp-content/chat_with_us.gif)](https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b)
