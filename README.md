@@ -49,4 +49,20 @@ Everytime, every Odoo DB and customized code can be deployed on local server too
 
 
 
+[//]: # (addons)
+
+
+Available addons
+----------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[l10n_it_fiscal](l10n_it_fiscal/) | 0.2 | Same | Italy - Fiscal localization by zeroincombenze(R)
+[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 | Same | Electronic invoices
+[l10n_it_spesometro](l10n_it_spesometro/) | 0.2 | Same | Spesometro - Comunicazione art.21
+[l10n_it_vat_settlement](l10n_it_vat_settlement/) | 7.0.0.1.0 | Same | Italian Localisation - VAT Settlement
+[midea](midea/) | 7.0.0.1.0 | Same | Odoo Module Example
+[tndb](tndb/) | 0.4.1 | Same | Trace and Debug
+
+[//]: # (end addons)
+
 [![chat with us](https://www.shs-av.com/wp-content/chat_with_us.gif)](https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b)
