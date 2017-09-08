@@ -8,7 +8,7 @@
 [![try it](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-6.svg)](http://erp6.zeroincombenze.it)
 
 
-[![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
+[![en](https://github.com/zeroincombenze/grymb/blob/master/flags/en_US.png)](https://www.facebook.com/groups/openerp.italia/)
 ================================================================================================
 ================================================================================================
 
@@ -17,7 +17,7 @@ Odoo Italian Supplemental Modules
 Supplemental Italian modules for odoo (formerly OpenERP) 6.1
 
 
-[![it](http://www.shs-av.com/wp-content/it_IT.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
+[![it](https://github.com/zeroincombenze/grymb/blob/master/flags/it_IT.png)](https://www.facebook.com/groups/openerp.italia/)
 
 Moduli Italiani aggiuntivi
 ==========================
@@ -56,12 +56,12 @@ Available addons
 ----------------
 addon | version | OCA version | summary
 --- | --- | --- | ---
-[l10n_it_fiscal](l10n_it_fiscal/) | 0.2 | Same | Italy - Fiscal localization by zeroincombenze(R)
-[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 | Same | Electronic invoices
-[l10n_it_spesometro](l10n_it_spesometro/) | 0.2 | Same | Spesometro - Comunicazione art.21
-[l10n_it_vat_settlement](l10n_it_vat_settlement/) | 7.0.0.1.0 | Same | Italian Localisation - VAT Settlement
-[midea](midea/) | 7.0.0.1.0 | Same | Odoo Module Example
-[tndb](tndb/) | 0.4.1 | Same | Trace and Debug
+[l10n_it_fiscal](l10n_it_fiscal/) | 0.2 | :repeat: | Italy - Fiscal localization by zeroincombenze(R)
+[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 | :repeat: | Electronic invoices
+[l10n_it_spesometro](l10n_it_spesometro/) | 0.2 | :repeat: | Spesometro - Comunicazione art.21
+[l10n_it_vat_settlement](l10n_it_vat_settlement/) | 7.0.0.1.0 | :repeat: | Italian Localisation - VAT Settlement
+[midea](midea/) | 7.0.0.1.0 | :repeat: | Odoo Module Example
+[tndb](tndb/) | 0.4.1 | :repeat: | Trace and Debug
 
 [//]: # (end addons)
 
