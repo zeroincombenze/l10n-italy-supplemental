@@ -82,7 +82,6 @@ addon | version | OCA version | summary
 [l10n_it_spesometro](l10n_it_spesometro/) | 7.0.0.3.1 | :repeat: | Comunicazione Polivalente (c.d. Spesometro)
 [midea](midea/) | 7.0.0.1.0 | :repeat: | Odoo Module Example
 [tndb](tndb/) | 0.4.1 | :repeat: | Trace and Debug
-[zeroincombenze](zeroincombenze/) | 0.1 | :repeat: | zeroincombenze®
 [zi_account_control](zi_account_control/) | 0.1 | :repeat: | zeroincombenze - Controlli su codici PdC
 [zi_headers_webkit](zi_headers_webkit/) | 0.1 | :repeat: | zeroincombenze - Webkit Headers
 [zi_invoice_wht](zi_invoice_wht/) | 0.1 | :repeat: | zeroincombenze - Invoice with withholding tax Report
@@ -99,6 +98,7 @@ addon | version | OCA version | summary
 [l10n_it_sepa_cuc](l10n_it_sepa_cuc/) | 0.1 (unported) | :repeat: | sepa italian cuc
 [pos_shs_av](pos_shs_av/) | 1.0 (unported) | :repeat: | Point of Sale with Customer selection, Pricelist
 [z0_account_check](z0_account_check/) | 0.1 (unported) | :repeat: | Account check by Zeroincombenze
+[zeroincombenze](zeroincombenze/) | 0.1 (unported) | 0.1 | zeroincombenze®
 [zi_cliente_attivo](zi_cliente_attivo/) | 0.1 (unported) | :repeat: | zeroincombenze - Cliente Attivo
 [zi_dbmgr](zi_dbmgr/) | 0.2 (unported) | :repeat: | zi_dbmgr
 [zi_invoice_webkit](zi_invoice_webkit/) | 0.1 (unported) | :repeat: | zeroincombenze - Report Webkit Fatture

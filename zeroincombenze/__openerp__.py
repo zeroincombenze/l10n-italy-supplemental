@@ -73,7 +73,7 @@ Attenzione! L'installazione dei moduli potrebbe richiedere un po' di tempo.
     'demo': [],
     'init_xml': ['data/res_users.xml'],
     'update_xml': [],
-    'installable': True,
+    'installable': False,
     'auto_install': True,
     'images': [],
     'js': ['static/src/js/announcement.js'],
