@@ -57,11 +57,17 @@ Available addons
 addon | version | OCA version | summary
 --- | --- | --- | ---
 [l10n_it_fiscal](l10n_it_fiscal/) | 0.2 | :repeat: | Italy - Fiscal localization by zeroincombenze(R)
-[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 | :repeat: | Electronic invoices
 [l10n_it_spesometro](l10n_it_spesometro/) | 0.2 | :repeat: | Spesometro - Comunicazione art.21
 [l10n_it_vat_settlement](l10n_it_vat_settlement/) | 7.0.0.1.0 | :repeat: | Italian Localisation - VAT Settlement
 [midea](midea/) | 7.0.0.1.0 | :repeat: | Odoo Module Example
 [tndb](tndb/) | 0.4.1 | :repeat: | Trace and Debug
+
+
+Unported addons
+---------------
+addon | version | OCA version | summary
+--- | --- | --- | ---
+[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 (unported) | 7.0.0.1.0 | Electronic invoices
 
 [//]: # (end addons)
 

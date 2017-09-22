@@ -18,7 +18,7 @@
     'demo': [],
     'test': [],
     'active': False,
-    'installable': True,
+    'installable': False,
     'external_dependencies': {
         'python': ['pyxb'],
     },
