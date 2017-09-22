@@ -67,7 +67,7 @@ Unported addons
 ---------------
 addon | version | OCA version | summary
 --- | --- | --- | ---
-[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 (unported) | 7.0.0.1.0 | Electronic invoices
+[l10n_it_pyxb_bindings](l10n_it_pyxb_bindings/) | 7.0.0.1.0 (unported) | :repeat: | Electronic invoices
 
 [//]: # (end addons)
 
