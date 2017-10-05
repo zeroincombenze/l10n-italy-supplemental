@@ -13,6 +13,7 @@
 ================================================================================================
 
 Odoo Italian Supplemental Modules
+=================================
 
 Supplemental Italian modules for odoo (formerly OpenERP) 7.0
 
@@ -76,7 +77,6 @@ Available addons
 ----------------
 addon | version | OCA version | summary
 --- | --- | --- | ---
-[account_banking_sepa_credit_transfer](account_banking_sepa_credit_transfer/) | 0.2 | :repeat: | Create SEPA XML files for Credit Transfers
 [account_move_mail_thread](account_move_mail_thread/) | 7.0.0.1.0 | :repeat: | Add mail thread to account move
 [l10n_it_bbone](l10n_it_bbone/) | 7.0.0.3.1 | :repeat: | Italian Localization - Base
 [l10n_it_spesometro](l10n_it_spesometro/) | 7.0.0.3.1 | :repeat: | Comunicazione Polivalente (c.d. Spesometro)
@@ -92,13 +92,11 @@ Unported addons
 addon | version | OCA version | summary
 --- | --- | --- | ---
 [account_banking_it_sct](account_banking_it_sct/) | 0.2 (unported) | :repeat: | Create SEPA XML files for Italian Credit Transfers
-[account_banking_pain_base](account_banking_pain_base/) | 0.1 (unported) | :repeat: | Base module for PAIN file generation
 [account_banking_payment_export](account_banking_payment_export/) | 0.1.165 (unported) | :repeat: | Account Banking - Payments Export Infrastructure
 [invoice_from_mail](invoice_from_mail/) | 0.1 (unported) | :repeat: | Invoice from mail
-[l10n_it_sepa_cuc](l10n_it_sepa_cuc/) | 0.1 (unported) | :repeat: | sepa italian cuc
 [pos_shs_av](pos_shs_av/) | 1.0 (unported) | :repeat: | Point of Sale with Customer selection, Pricelist
 [z0_account_check](z0_account_check/) | 0.1 (unported) | :repeat: | Account check by Zeroincombenze
-[zeroincombenze](zeroincombenze/) | 0.1 (unported) | 0.1 | zeroincombenze®
+[zeroincombenze](zeroincombenze/) | 0.1 (unported) | :repeat: | zeroincombenze®
 [zi_cliente_attivo](zi_cliente_attivo/) | 0.1 (unported) | :repeat: | zeroincombenze - Cliente Attivo
 [zi_dbmgr](zi_dbmgr/) | 0.2 (unported) | :repeat: | zi_dbmgr
 [zi_invoice_webkit](zi_invoice_webkit/) | 0.1 (unported) | :repeat: | zeroincombenze - Report Webkit Fatture
