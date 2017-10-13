@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#
+#    
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
-#    Associazione Odoo Italia (<http://www.odoo-italia.org>)
-#
+#    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
+#    
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
 #    by the Free Software Foundation, either version 3 of the License, or
@@ -31,17 +31,19 @@ Functionalities:
 
 """,
     'author': 'Alessandro Camilli',
-    'website': 'http://www.odoo-italia.org',
+    'website': 'http://www.openerp-italia.org',
     'license': 'AGPL-3',
-    "depends": ['account', 'l10n_it_bbone', 'l10n_it_account'],
-    "data": [
+    "depends" : ['account', 'l10n_it_base', 'l10n_it_account'],
+    "data" : [
               'security/ir.model.access.csv',
               'spesometro_view.xml',
               'wizard/wizard_crea_comunicazione_view.xml',
               'wizard/wizard_default_view.xml',
               'wizard/wizard_export_view.xml',
-    ],
-    "demo": [],
+        ],
+    "demo" : [],
     "active": False,
     "installable": True
 }
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

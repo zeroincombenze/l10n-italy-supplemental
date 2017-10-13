@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#
+#    
 #    Author: Alessandro Camilli (a.camilli@yahoo.it)
 #    Copyright (C) 2014
-#    Associazione Odoo Italia (<http://www.odoo-italia.org>)
+#    Associazione OpenERP Italia (<http://www.openerp-italia.org>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -20,44 +20,46 @@
 #
 ##############################################################################
 
-from openerp.osv import fields
+from osv import fields,osv
+from tools.translate import _
+import time
 
-
-class wizard_spesometro_default(orm.TransientModel):
-
+class wizard_spesometro_default(osv.osv_memory):
+    
     def default_get(self, cr, uid, fields, context=None):
-
+        
         res = super(wizard_spesometro_default, self).default_get(cr, uid, fields, context=context)
         res = {
-            'partner_spesometro_escludi': False,
-            'partner_spesometro_operazione': 'FA'
-        }
+               'partner_spesometro_escludi' : False,
+               'partner_spesometro_operazione' : 'FA'
+               }
         return res
 
     _name = "wizard.spesometro.default"
-
+    
     _columns = {
         'partner_spesometro_escludi': fields.boolean('Da Escludere'),
-        'partner_spesometro_operazione': fields.selection((('FA', 'Operazioni documentate da fattura'),
-                                                           ('SA', 'Operazioni senza fattura'),
-                                                           ('BL1', 'Operazioni con paesi con fiscalità privilegiata'),
-                                                           ('BL2', 'Operazioni con soggetti non residenti'),
-                                                           ('BL3', 'Acquisti di servizi da soggetti non residenti')),
-                                                          'Operazione'),
+        'partner_spesometro_operazione': fields.selection((('FA','Operazioni documentate da fattura'), 
+                                  ('SA','Operazioni senza fattura'),
+                                  ('BL1','Operazioni con paesi con fiscalità privilegiata'),
+                                  ('BL2','Operazioni con soggetti non residenti'),
+                                  ('BL3','Acquisti di servizi da soggetti non residenti')),
+                   'Operazione' ),
     }
-
+    
+    
     def setting_default(self, cr, uid, ids, context=None):
-
+        
         partners_obj = self.pool.get('res.partner')
         wizard = self.read(cr, uid, ids)[0]
         vals = {
             'spesometro_escludi': wizard.get('partner_spesometro_escludi'),
             'spesometro_operazione': wizard.get('partner_spesometro_operazione'),
-        }
-
-        partners_ids = partners_obj.search(cr, uid, [('id', '!=', 0)], context=context)
+            }
+        
+        partners_ids = partners_obj.search(cr, uid, [('id','!=', 0)], context=context)
         partners_obj.write(cr, uid, partners_ids, vals)
-
+        
         return {
             'type': 'ir.actions.act_window_close',
         }
