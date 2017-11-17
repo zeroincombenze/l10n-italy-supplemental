@@ -6,6 +6,9 @@ python:
 sudo: false
 cache: pip
 
+git:
+  submodules: false
+
 addons:
   apt:
     packages:
@@ -25,9 +28,14 @@ env:
 virtualenv:
   system_site_packages: true
 
-install:
-  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+before_install:
+  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --depth=1
+  - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+
+install:
+  # - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  # - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
   - pip install unidecode
   - pip install PyXB==1.2.4
