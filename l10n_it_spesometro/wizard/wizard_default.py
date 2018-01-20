@@ -67,7 +67,7 @@ class partner_update_wizard(osv.TransientModel):
         try:
             csv_fd = open(csv_ffn, 'rb')
             ffound = True
-        except:
+        except BaseException:
             pass
         if ffound:
             csv_obj = csv.DictReader(
@@ -105,7 +105,7 @@ class partner_update_wizard(osv.TransientModel):
         try:
             csv_fd = open(csv_ffn, 'rb')
             ffound = True
-        except:
+        except BaseException:
             pass
         if ffound:
             csv_obj = csv.DictReader(
