@@ -7,7 +7,31 @@
 [![Help](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-7.svg)](http://wiki.zeroincombenze.org/en/Odoo/7.0/man/FI)
 [![try it](http://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-7.svg)](http://erp7.zeroincombenze.it)
 
-[![en](https://github.com/zeroincombenze/grymb/blob/master/flags/en_US.png)](https://www.facebook.com/groups/openerp.italia/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Add mail thread to account move
 ===============================
@@ -16,10 +40,8 @@ This module add mail thread feature to account move.
 Like invoices, user can write notes or sen messages to followers.
 
 
-[![it](https://github.com/zeroincombenze/grymb/blob/master/flags/it_IT.png)](https://www.facebook.com/groups/openerp.italia/)
 
 Messaggi di posta in registrazioni contabili
-============================================
 
 Questo modulo aggiunge i messaggi di posta nelle registrazioni di contabilità.
 Come avviene nelle fatture diventa possibile inserire note o inviare messaggi agli utenti.

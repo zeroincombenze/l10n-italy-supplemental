@@ -21,23 +21,27 @@
 ##############################################################################
 {
     'name': 'Comunicazione Polivalente (c.d. Spesometro)',
-    'version': '7.0.0.3.1',
+    'version': '7.0.0.3.2',
     'category': 'Localisation/Italy',
     'description': """
 
-Comunicazione Polivalente (Spesometro)
-======================================
-[en] Fiscal communication called Spesometro
--------------------------------------------
+Comunicazione Polivalente (Spesometro) < 2017
+=============================================
+
+(en) Fiscal communication called Spesometro (deprecated)
+--------------------------------------------------------
 
 This software is just for Italian Fiscal Law.
 It is not usable in another country.
+Since 2017 becames "VAT Communication"
 
-[it] Comunicazione fiscale Spesometro
--------------------------------------
+
+(it) Comunicazione fiscale Spesometro (ante 2017)
+-------------------------------------------------
 
 Permette di adempiere all'obbligo di comunicazione dati inerenti le fatture
 clienti e fornitori da inviare all'Agenzia delle Entrate in forma telematica.
+Obbligo valido prima del 2017. Dal 2017 è diventato "Comunicazione IVA"
 
 Funzionalità:
 

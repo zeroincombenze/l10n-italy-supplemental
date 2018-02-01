@@ -20,7 +20,6 @@
 #
 ##############################################################################
 
-# import pdb
 from openerp.osv import osv, orm
 from openerp.osv import fields
 

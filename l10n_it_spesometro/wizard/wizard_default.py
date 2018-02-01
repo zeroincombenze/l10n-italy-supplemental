@@ -67,7 +67,7 @@ class partner_update_wizard(osv.TransientModel):
         try:
             csv_fd = open(csv_ffn, 'rb')
             ffound = True
-        except:
+        except BaseException:
             pass
         if ffound:
             csv_obj = csv.DictReader(
@@ -105,7 +105,7 @@ class partner_update_wizard(osv.TransientModel):
         try:
             csv_fd = open(csv_ffn, 'rb')
             ffound = True
-        except:
+        except BaseException:
             pass
         if ffound:
             csv_obj = csv.DictReader(
@@ -178,7 +178,7 @@ class partner_update_wizard(osv.TransientModel):
                 partner_obj = partner_pool.browse(cr,
                                                   uid,
                                                   partner_id)
-            except:
+            except BaseException:
                 continue
             utility = False
             for regex in partner_regex:
@@ -225,7 +225,7 @@ class partner_update_wizard(osv.TransientModel):
             if len(vals):
                 try:
                     partner_pool.write(cr, uid, partner_id, vals)
-                except:
+                except BaseException:
                     log1 += u"{0} **PARTITA IVA NON VALIDA**\n".format(
                         partner_obj.name)
 

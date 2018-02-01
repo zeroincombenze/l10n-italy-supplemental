@@ -40,7 +40,6 @@ class partner_update_wizard(osv.TransientModel):
 # It looks for partners to update and update them.
 # It returns a log file with evidence of operations done.
     def partner_update(self, cr, uid, ids, context=None):
-        #        pdb.set_trace()
         log = ''
         user = pooler.get_pool(cr.dbname).get('res.users').browse(cr, uid, uid)
         italy = pooler.get_pool(cr.dbname).get('res.country').search(

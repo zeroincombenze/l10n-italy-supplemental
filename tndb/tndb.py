@@ -23,8 +23,6 @@
     Write into specific tracelog located at /var/log/openerp/oe_trace.log
     Messages are recorded by tndb.wlog
 """
-
-# import pdb
 import os
 import datetime
 import inspect
@@ -62,7 +60,7 @@ class tndb():
                     txt = txt + sp + arg
                 else:
                     txt = txt + sp + str(arg).encode('utf-8')
-            except:
+            except BaseException:
                 x = unichr(0x3b1) + unichr(0x3b2) + unichr(0x3b3)
                 txt = txt + sp + x.encode('utf-8')
             sp = ' '
