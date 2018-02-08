@@ -32,6 +32,8 @@
 
 
 
+
+
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Odoo Italian Supplemental Modules
@@ -99,9 +101,9 @@ addon | version | OCA version | summary
 --- | --- | --- | ---
 [account_move_mail_thread](account_move_mail_thread/) | 7.0.0.1.0 | :repeat: | Add mail thread to account move
 [l10n_it_bbone](l10n_it_bbone/) | 7.0.0.3.1 | :repeat: | Italian Localization - Base
-[l10n_it_spesometro](l10n_it_spesometro/) | 7.0.0.3.2 | 7.0.0.3.1 | Comunicazione Polivalente (c.d. Spesometro)
+[l10n_it_spesometro](l10n_it_spesometro/) | 7.0.0.3.2 | :repeat: | Comunicazione Polivalente (c.d. Spesometro)
 [midea](midea/) | 7.0.0.1.0 | :repeat: | Odoo Module Example
-[tndb](tndb/) | 0.4.2 | 0.4.1 | Trace and Debug
+[tndb](tndb/) | 0.4.2 | :repeat: | Trace and Debug
 [wep_db](wep_db/) | 7.0.0.1.0 | :x: | Wep DB completly but keep some records
 [zi_account_control](zi_account_control/) | 0.1 | :repeat: | zeroincombenze - Controlli su codici PdC
 [zi_headers_webkit](zi_headers_webkit/) | 0.1 | :repeat: | zeroincombenze - Webkit Headers
