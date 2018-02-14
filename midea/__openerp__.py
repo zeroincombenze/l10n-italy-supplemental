@@ -18,7 +18,7 @@ This module does nothing, it is a just a simple example of Odoo Module
     'author': "SHS-AV s.r.l.",
     'website': "https://www.zeroincombenze.it/",
 
-    'category': 'Generic Modules/Accounting',
+    'category': 'Technical Settings',
     'version': '8.0.0.1.0',
 
     # any module necessary for this one to work correctly
