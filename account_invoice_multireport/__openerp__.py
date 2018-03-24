@@ -47,7 +47,7 @@ Trovate un esempio di fattura in questo modulo.
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '8.0.0.1.0',
+    'version': '8.0.0.2.0',
 
     # any module necessary for this one to work correctly
     'depends': ['account', 'sale'],
@@ -64,9 +64,6 @@ Trovate un esempio di fattura in questo modulo.
              'data/account.invoice.reportname.csv',
              'security/ir.model.access.csv',
              ],
-    "qweb": [],
-    "demo": [],
-    "test": [],
     "active": False,
     'installable': False
 }

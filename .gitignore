@@ -59,3 +59,5 @@ stdout.log
 *.oca
 *.z0i
 .gitrepname
+_old_*
+

@@ -19,20 +19,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 import string
-# import pdb
-from openerp.osv import osv
+#import pdb
+from openerp import models
+from openerp import api
+from openerp import fields
 from openerp.osv import fields
 from openerp import pooler
 from openerp.tools.translate import _
+from openerp.exceptions import Warning as UserError
 
 
 _ERR_ZIP_STATE_ID = 'Inconsistent District/State with selected ZIP code.'
 _ERR_STATE_ID = 'Inconsistent Country with selected District/State.'
 
 
-class res_region(osv.osv):
+class ResRegion(models.Model):
     _name = 'res.region'
     _description = 'Region'
     _columns = {
@@ -43,11 +45,11 @@ class res_region(osv.osv):
     }
 
 
-res_region()
+ResRegion()
 
 
 # Deprecated: used just for previous version of Italian localization
-class res_province(osv.osv):
+class ResProvince(models.Model):
     _name = 'res.province'
     _description = 'Province'
     _columns = {
@@ -61,10 +63,10 @@ class res_province(osv.osv):
     }
 
 
-res_province()
+ResProvince()
 
 
-class res_country_state(osv.osv):
+class ResCountryState(models.Model):
     _inherit = 'res.country.state'
 
     _columns = {
@@ -73,10 +75,10 @@ class res_country_state(osv.osv):
     }
 
 
-res_country_state()
+ResCountryState()
 
 
-class res_city(osv.osv):
+class ResCity(models.Model):
     _name = 'res.city'
     _description = 'City'
     _columns = {
@@ -135,10 +137,10 @@ class res_city(osv.osv):
         return res
 
 
-res_city()
+ResCity()
 
 
-class res_users(osv.osv):
+class ResUsers(models.Model):
     _inherit = 'res.users'
 
     _columns = {
@@ -148,10 +150,10 @@ class res_users(osv.osv):
     }
 
 
-res_users()
+ResUsers()
 
 
-class res_country(osv.osv):
+class ResCountry(models.Model):
     _inherit = 'res.country'
 
     _columns = {
@@ -191,10 +193,10 @@ class res_country(osv.osv):
     }
 
 
-res_country()
+ResCountry()
 
 
-class res_partner(osv.osv):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     _columns = {
@@ -232,8 +234,12 @@ class res_partner(osv.osv):
                 res = {'value': {'province': None, 'region': None, }}
         else:
             res = {'value': {'province': None, 'region': None, }}
-
         return res
+
+# Returns the website lowercase upon changing the website textbox
+    @api.onchange('website')
+    def on_change_website(self):
+        self.website = self.website.lower()
 
 # Call zip code validate and load values in city and state_id
 # Based on table res.city
@@ -259,23 +265,23 @@ class res_partner(osv.osv):
                 if country_obj.chk4addr > 0:
                     verif_zip = vals.get('zip', None)
                     if verif_zip and not zip_in_state_id(cr, uid, vals):
-                        raise osv.except_osv(_('Error!'),
-                                             _(_ERR_ZIP_STATE_ID))
+                        raise UserError(_('Error!'),         # pragma: no cover
+                                        _(_ERR_ZIP_STATE_ID))
                     verif_state_id = vals.get('state_id', None)
                     if verif_state_id:
                         state_obj = self.pool.get('res.country.state').\
                             browse(cr, uid, int(verif_state_id))
                         if int(verif_country_id) != int(state_obj.country_id):
-                            raise osv.except_osv(_('Error!'),
-                                                 _(_ERR_STATE_ID))
+                            raise UserError(_('Error!'),     # pragma: no cover
+                                            _(_ERR_STATE_ID))
 
     def create(self, cr, uid, vals, context=None):
         self._set_vals_city_data2(cr, uid, None, vals)
-        return super(res_partner, self).create(cr, uid, vals, context)
+        return super(ResPartner, self).create(cr, uid, vals, context)
 
     def write(self, cr, uid, ids, vals, context=None):
         self._set_vals_city_data2(cr, uid, ids, vals)
-        return super(res_partner, self).write(cr, uid, ids, vals, context)
+        return super(ResPartner, self).write(cr, uid, ids, vals, context)
 
     def partner_update_wizard(self, cr, uid, ids, context=None):
         return {
@@ -289,10 +295,10 @@ class res_partner(osv.osv):
         }
 
 
-res_partner()
+ResPartner()
 
 
-class res_company(osv.osv):
+class ResCompany(models.Model):
 
     _inherit = 'res.company'
     _columns = {
@@ -312,7 +318,7 @@ class res_company(osv.osv):
         return on_change_city(cr, uid, ids, country_id, zip_code, city)
 
 
-res_company()
+ResCompany()
 
 
 def set_def_country(cr, uid, vals, ids):
@@ -493,7 +499,7 @@ def on_change_zip(cr, uid, ids, country_id, zip_code, city):
             city_obj = pooler.get_pool(cr.dbname)\
                 .get('res.city').browse(cr, uid, city_ids[0])
             res = {'value': {
-                'city':  city_obj.name,
+                'city': city_obj.name,
                 'state_id': (city_obj.state_id and
                              city_obj.state_id.id or False),
             }
@@ -525,7 +531,7 @@ def on_change_zip(cr, uid, ids, country_id, zip_code, city):
                                                 uid,
                                                 city_ids[0])
                     res = {'value': {
-                        'city':  city_obj.name,
+                        'city': city_obj.name,
                         'state_id': (
                             city_obj.state_id and
                             city_obj.state_id.id or False
@@ -533,9 +539,8 @@ def on_change_zip(cr, uid, ids, country_id, zip_code, city):
                     }
                     }
                 else:
-                    raise osv.\
-                        except_osv(_('Error!'),
-                                   _('No City with selected ZIP code.'))
+                    raise UserError(_('Error!'),             # pragma: no cover
+                                    _('No City with selected ZIP code.'))
             else:
                 if user_obj.partner_warning_messages:
                     msg = _('Unknown ZIP code')

@@ -38,6 +38,14 @@
 
 
 
+
+
+
+
+
+
+
+
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Odoo Italian Supplemental Modules
@@ -120,8 +128,7 @@ addon | version | OCA version | summary
 --- | --- | --- | ---
 [account_invoice_line_form](account_invoice_line_form/) | 8.0.0.1.0 | :repeat: | Invoice lines easy editor
 [l10n_it_base_prov](l10n_it_base_prov/) | 0.2 | :repeat: | Italy - Italian districts/provinces
-[l10n_it_bbone](l10n_it_bbone/) | 8.0.0.2.0 | :repeat: | Italian Localization - Base
-[l10n_it_spesometro](l10n_it_spesometro/) | 0.3 | :repeat: | Comunicazione Polivalente (c.d. Spesometro)
+[l10n_it_bbone](l10n_it_bbone/) | 8.0.0.2.1 | 8.0.0.2.0 | Italian Localization - Base
 [midea](midea/) | 8.0.0.1.0 | :repeat: | Odoo Module Example
 [purchase_order_line_form](purchase_order_line_form/) | 8.0.0.1.0 | :x: | Purchase Order lines easy editor
 [stock_parzial_move](stock_parzial_move/) | 8.0.0.1.0 | :repeat: | Stock Parzial Move
@@ -132,7 +139,8 @@ Unported addons
 ---------------
 addon | version | OCA version | summary
 --- | --- | --- | ---
-[account_invoice_multireport](account_invoice_multireport/) | 8.0.0.1.0 (unported) | :repeat: | Manage invoice multiple reports
+[account_invoice_multireport](account_invoice_multireport/) | 8.0.0.2.0 (unported) | 8.0.0.1.0 (unported) | Manage invoice multiple reports
+[l10n_it_spesometro](l10n_it_spesometro/) | 0.3 (unported) | 0.3 | Comunicazione Polivalente (c.d. Spesometro)
 
 [//]: # (end addons)
 

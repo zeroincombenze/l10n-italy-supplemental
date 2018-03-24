@@ -30,27 +30,22 @@
 
 [![icon](static/src/img/icon.png)](https://travis-ci.org/zeroincombenze)
 
-Stock parzial move
-==================
+Purchase Order Line Form
+========================
 
-This module permits splitting of a picking in more pickings just diminishing
-the number of products, when create a delivery from Sale Order.
-
+Edit easily invoice line in separate view.
 
 
 
-Movimentazione parziale stock
+Modifica linee ordine fornitore
 
-Questo modulo permette di di dividere una consegna in più parti, diminuendo
-il numero dei prodotti quando si crea da ordine di vendita.
-
+Modifica facilmente le linee di ordine fornitore in una vista separata.
 
 ### Funzionalità & Certificati
 
 Funzione | Status | Note
 --- | --- | ---
-Consegne da ordini di vendita | :white_check_mark: | Consegna parziale
-Consegne da ordini di vendita | :white_check_mark: | Consegna parziale con chiusura
+Ordine fornitore | :white_check_mark: | Ok
 
 
 Installation
@@ -59,10 +54,10 @@ Installation
 These instruction are just an example to remember what you have to do:
 
     git clone https://github.com/zeroincombenze/l10n-italy-supplemental
-    for module in stock_parzial_move; do
+    for module in purchare_order_line_form; do
         mv ODOO_DIR/l10n-italy/$module BACKUP_DIR/
         cp -R l10n-italy/$module ODOO_DIR/l10n-italy/
-    sudo service odoo-server restart -i stock_parzial_move -d MYDB
+    sudo service odoo-server restart -i purchare_order_line_form -d MYDB
 
 From UI: go to Setup > Module > Install
 
@@ -92,13 +87,14 @@ Credits
 
 ### Contributors
 
-* Andrei Levin <andrei.levin@didotech.com>
+* Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
 
 ### Funders
 
 This module has been financially supported by
 
-* Didotech srl <http://www.didotech.com>
+* SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+
 
 ### Maintainer
 

@@ -20,6 +20,13 @@
 #
 ##############################################################################
 
-from . import fiscalcode
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from . import res_partner
+# Due to some incompatbility, check for Italian base module installation
+# if pool.get('ir.module.module').search(cr, uid, [('name',
+# '=ilike', 'l10n_it_base')]):
+#    L10N_IT_BASE_INSTALLED = True
+# else:
+#    L10N_IT_BASE_INSTALLED = False
+# enable wizard if you have to convert old data of l10n_it_base
+# into new OCA standard
+# import wizard

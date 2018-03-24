@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from . import partner
+from . import model
 # import model
 # Due to some incompatbility, check for Italian base module installation
 # if pool.get('ir.module.module').search(cr, uid, [('name',
@@ -31,4 +31,3 @@ from . import partner
 # enable wizard if you have to convert old data of l10n_it_base
 # into new OCA standard
 # import wizard
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

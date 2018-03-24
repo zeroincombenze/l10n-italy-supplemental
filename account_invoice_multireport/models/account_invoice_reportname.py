@@ -86,6 +86,12 @@ class account_invoice_reportname(orm.Model):
             help="Apply rule only if fiscal position matches"
                  " invoice position; may be useful to print"
                  " models to satisfy some fiscal law."),
+        'section_id': fields.many2one(
+            'crm.case.section',
+            'If sales team',
+            help="Apply rule only if sales team matches"
+                 " invoice position; may be useful to print"
+                 " models to customize sale documents."),
         'since_date': fields.date('From date'),
         'until_date': fields.date('To date'),
         'active': fields.boolean(
@@ -110,6 +116,9 @@ class account_invoice_reportname(orm.Model):
                 # check for selection
                 if rule.journal_id and \
                         rule.journal_id.id != invoice.journal_id.id:
+                    continue
+                elif rule.section_id and \
+                        rule.section_id.id != invoice.section_id.id:
                     continue
                 elif rule.partner_id and \
                         rule.partner_id.id != invoice.partner_id.id:

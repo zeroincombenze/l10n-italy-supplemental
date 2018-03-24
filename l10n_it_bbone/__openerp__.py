@@ -21,7 +21,7 @@
 ##############################################################################
 {
     'name': 'Italian Localization - Base',
-    'version': '8.0.0.2.0',
+    'version': '8.0.0.2.1',
     'category': 'Localization/Italy',
     'description': """
 
@@ -32,6 +32,7 @@
 * Check for City from table.
 * Check for District/State from table.
 * Supplied just with Italian data.
+
 
 * May be easily extended with other countries data.
 
@@ -53,16 +54,15 @@ In ogni caso è possibile caricare qualsiasi dato, senza validazione.\n
     "depends": ['base'],
     "init_xml": [
     ],
-    "update_xml": ['partner/partner_view.xml',
-                   # 'wizard/partner_update_wizard_view.xml',
-                   # 'view/fiscalcode_view.xml',
-                   "security/ir.model.access.csv",
-                   'partner/data/res.region.csv',
-                   'partner/data/res.province.csv',
-                   'partner/data/res.country.state.csv',
-                   'partner/data/res.city.csv',
-                   'partner/data/res.partner.title.csv',
-                   'partner/data/res.country.csv'],
+    "data": ['views/res_partner_view.xml',
+             # 'wizard/partner_update_wizard_view.xml',
+             "security/ir.model.access.csv",
+             'data/res.region.csv',
+             'data/res.province.csv',
+             'data/res.country.state.csv',
+             'data/res.city.csv',
+             'data/res.partner.title.csv',
+             'data/res.country.csv'],
     "demo_xml": [],
     "active": False,
     "installable": True
