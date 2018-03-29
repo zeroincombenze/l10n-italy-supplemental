@@ -40,7 +40,6 @@ before_install:
 
 install:
   - ln -s ${HOME}/build/${ODOO_REPO} ${HOME}/${ODOO_REPO#*/}-${VERSION}
-  - pip install -r ${HOME}/maintainer-quality-tools/requirements.txt
   - pip install -q QUnitSuite flake8 coveralls pylint "pywebdav<0.9.8"
   - export INCLUDE=$(getaddons.py -m ${HOME}/build/${ODOO_REPO}/openerp/addons ${HOME}/build/${ODOO_REPO}/addons)
   # tests of document_ftp and delivery fail. The following two are excluded because they depend on delivery
