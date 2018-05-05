@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record model="ir.ui.view" id="midea.partner">
+        <record model="ir.ui.view" id="partner">
             <field name="name">Midea partner</field>
             <field name="model">midea.partner</field>
             <field name="type">form</field>
@@ -16,7 +16,7 @@
             </field>
         </record>
 
-        <record id="midea.action_test" model="ir.actions.act_window">
+        <record id="action_test" model="ir.actions.act_window">
             <field name="name">My idea test record</field>
             <field name="res_model">midea.partner</field>
             <field name="view_mode">tree,form</field>

@@ -1,6 +1,0 @@
-name,reportname,purpose,priority,action,active
-odoo,account.report_invoice,Odoo standard invoice report,999,odoo,true
-myinvoice,account_invoice_multireport.invoice_report,Customized invoice report (example),950,report,true
-invoice+delivery,account_invoice_multireport.invoice_delivery_report,Customized invoice report (example),940,report,true
-company,,Report by company default (example),900,company,true
-customer,,Report by customer default (example),850,customer,true

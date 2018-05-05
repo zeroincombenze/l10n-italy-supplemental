@@ -20,10 +20,9 @@
 #
 ##############################################################################
 import string
-#import pdb
+# import pdb
 from openerp import models
 from openerp import api
-from openerp import fields
 from openerp.osv import fields
 from openerp import pooler
 from openerp.tools.translate import _

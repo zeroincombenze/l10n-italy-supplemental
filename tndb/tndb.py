@@ -48,7 +48,7 @@ else:
     FLOG = "~/oe_trace.log"
 
 
-class tndb():
+class Tndb():
 
     @staticmethod
     def wlog(*args):
@@ -62,7 +62,7 @@ class tndb():
                     txt = txt + sp + arg
                 else:
                     txt = txt + sp + str(arg).encode('utf-8')
-            except BaseException:
+            except BaseException:                            # pragma: no cover
                 x = unichr(0x3b1) + unichr(0x3b2) + unichr(0x3b3)
                 txt = txt + sp + x.encode('utf-8')
             sp = ' '
@@ -91,4 +91,4 @@ class tndb():
             txt = txt + ":" + str(inspect.stack()[i][2])
             txt = txt + " " + inspect.stack()[i][3] + "()" + "\n"
             sep += "  "
-        tndb.wlog(txt, args)
+        # tndb.wlog(txt, args)
