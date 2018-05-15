@@ -56,5 +56,6 @@ docs/_build/
 *.swp
 .local_dist_pkg.conf
 stdout.log
-oca__*
-z0i__*
+*.oca
+*.z0i
+.gitrepname
