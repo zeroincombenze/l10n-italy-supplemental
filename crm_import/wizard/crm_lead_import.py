@@ -8,12 +8,12 @@
 import csv
 import base64
 from openerp import osv, fields, models, api
+import logging
 _logger = logging.getLogger(__name__)
 try:
     from os0 import os0
 except (ImportError, IOError) as err:
     _logger.debug(err)
-
 
 
 class CrmLeadImport(models.Model):

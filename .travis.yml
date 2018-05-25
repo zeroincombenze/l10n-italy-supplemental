@@ -37,7 +37,10 @@ before_install:
   - pip install urllib3[secure] --upgrade; true
 # Use Zeroincombenze(R) tools
   - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
+  - dir ${HOME}
+  - dir ${HOME}/tools
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
+  - dir ${HOME}
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 
 install:
