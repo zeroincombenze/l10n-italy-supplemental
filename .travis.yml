@@ -43,6 +43,7 @@ before_install:
   - dir ${HOME}
   - dir ${HOME}/tools
   - dir ${HOME}/maintainer-quality-tools
+  - dir ${HOME}/maintainer-quality-tools/travis
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 
 install:
