@@ -29,6 +29,8 @@ addons:
       - expect-dev
       - python-setuptools
 #     Search your packages here:
+#       ME}/tools
+#
 #       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
 #     For wkhtmltopdf, see the env section below
 
@@ -37,10 +39,10 @@ before_install:
   - pip install urllib3[secure] --upgrade; true
 # Use Zeroincombenze(R) tools
   - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
-  - dir ${HOME}
-  - dir ${HOME}/tools
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
   - dir ${HOME}
+  - dir ${HOME}/tools
+  - dir ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 
 install:
