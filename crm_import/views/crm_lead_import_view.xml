@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+    <record id="crm_lead_import_view" model="ir.ui.view">
+        <field name="name">Import CRM leads</field>
+        <field name="model">crm.lead.import</field>
+        <field name="arch" type="xml">
+            <form string="CRM leads import">
+                <group colspan="4" col="4">
+                    <field name="filename" readonly="1" invisible="1" />
+                    <field name="content_base64" filename="filename"
+                           required="True" widget="binary"/>
+                    <field name="name" required="1"/>
+                    <field name="overwrite_existing"/>
+                </group>
+                <footer>
+                    <button name="import_file" string="Import" type="object" class="oe_highlight"/>
+                            or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_crm_lead_import" model="ir.actions.act_window">
+        <field name="name">Import CRM leads</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.lead.import</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="crm_lead_import_view"/>
+    </record>
+
+    <menuitem id="menu_crm_lead_import"
+              parent="base.menu_sales"
+              sequence="99"
+              groups="base.group_sale_salesman"
+              action="action_crm_lead_import"/>
+
+</data>
+</openerp>
+

@@ -1,0 +1,104 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_import
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-24 09:14+0000\n"
+"PO-Revision-Date: 2018-05-24 09:14+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_import
+#: view:crm.lead.import:crm_import.crm_lead_import_view
+msgid "CRM leads import"
+msgstr "Importa contatti CRM"
+
+#. module: crm_import
+#: view:crm.lead.import:crm_import.crm_lead_import_view
+msgid "Cancel"
+msgstr "Cancella"
+
+#. module: crm_import
+#: field:crm.lead.import,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: crm_import
+#: field:crm.lead.import,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: crm_import
+#: field:crm.lead.import,content_base64:0
+msgid "Data File path"
+msgstr "Percordo file"
+
+#. module: crm_import
+#: field:crm.lead.import,file:0
+msgid "File"
+msgstr "File"
+
+#. module: crm_import
+#: field:crm.lead.import,file_name:0
+#: field:crm.lead.import,filename:0
+msgid "File Name"
+msgstr "Nome del File"
+
+#. module: crm_import
+#: field:crm.lead.import,file_type:0
+msgid "File Type"
+msgstr "File Type"
+
+#. module: crm_import
+#: help:crm.lead.import,file:0
+msgid "File to check and/or import, raw binary (not base64)"
+msgstr "File da testare e/o importare, formato binari (non base64)"
+
+#. module: crm_import
+#: field:crm.lead.import,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_import
+#: view:crm.lead.import:crm_import.crm_lead_import_view
+msgid "Import"
+msgstr "Importa"
+
+#. module: crm_import
+#: model:ir.actions.act_window,name:crm_import.action_crm_lead_import
+#: model:ir.ui.menu,name:crm_import.menu_crm_lead_import
+msgid "Import CRM leads"
+msgstr "Importa contatti CRM"
+
+#. module: crm_import
+#: field:crm.lead.import,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: crm_import
+#: field:crm.lead.import,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: crm_import
+#: field:crm.lead.import,res_model:0
+msgid "Model"
+msgstr "Model"
+
+#. module: crm_import
+#: field:crm.lead.import,name:0
+msgid "Name"
+msgstr "Identificazione"
+
+#. module: crm_import
+#: view:crm.lead.import:crm_import.crm_lead_import_view
+msgid "or"
+msgstr "o"
+
