@@ -9,6 +9,9 @@ cache:
 python:
   - "2.7"
 
+virtualenv:
+  system_site_packages: true
+
 git:
   submodules: false
 
@@ -41,9 +44,9 @@ before_install:
   - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+  - travis_install_env
 
 install:
-  - travis_install_env
   # tests of document_ftp and delivery fail. The following two are excluded because they depend on delivery
   - export EXCLUDE=hw_scanner,hw_escpos,document_ftp,delivery,stock_invoice_directly,claim_from_delivery,litoservice_report,vg7_report
   - export INSTALL_OPTIONS="--without-demo=account"
@@ -65,9 +68,6 @@ env:
 # tests)
 #  - TESTS="1.0" ODOO_REPO="odoo/odoo" UNIT_TEST="1"
 #  - TESTS="1.0" ODOO_REPO="OCA/OCB" UNIT_TEST="1"
-
-virtualenv:
-  system_site_packages: true
 
 script:
   - travis_run_tests
