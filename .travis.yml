@@ -40,16 +40,12 @@ before_install:
 # Use Zeroincombenze(R) tools
   - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
-  - dir ${HOME}
-  - dir ${HOME}/tools
-  - dir ${HOME}/maintainer-quality-tools
-  - dir ${HOME}/maintainer-quality-tools/travis
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 
 install:
   - travis_install_env
   # tests of document_ftp and delivery fail. The following two are excluded because they depend on delivery
-  - export EXCLUDE=hw_scanner,hw_escpos,document_ftp,delivery,stock_invoice_directly,claim_from_delivery
+  - export EXCLUDE=hw_scanner,hw_escpos,document_ftp,delivery,stock_invoice_directly,claim_from_delivery,litoservice_report
   - export INSTALL_OPTIONS="--without-demo=account"
   # - cp ${HOME}/maintainer-quality-tools/cfg/.coveragerc .
   # - export INCLUDE=$(getaddons.py -m ${HOME}/build/${ODOO_REPO}/openerp/addons ${HOME}/build/${ODOO_REPO}/addons)
