@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_rule_multireport
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-28 10:00+0000\n"
+"PO-Revision-Date: 2018-06-28 12:02+0200\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: it\n"
+"X-Generator: Poedit 2.0.8\n"
+
+#. module: base_rule_multireport
+#: model:ir.model,name:base_rule_multireport.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: base_rule_multireport
+#: field:res.company,custom_header:0
+msgid "Custom Header"
+msgstr "Intestazione personalizzata"
+
+#. module: base_rule_multireport
+#: help:res.company,preferred_invoice_model_id:0
+msgid "Default customer-invoice model"
+msgstr "Default customer-invoice model"
+
+#. module: base_rule_multireport
+#: field:res.company,cf_in_header:0
+msgid "Fiscalcode in Header"
+msgstr "Stampa CF in intestazione"
+
+#. module: base_rule_multireport
+#: view:res.company:base_rule_multireport.view_company_form_multireport
+msgid "Invoicing"
+msgstr "Fatturazione"
+
+#. module: base_rule_multireport
+#: field:res.company,preferred_invoice_model_id:0
+msgid "Preferred report"
+msgstr "Modello preferenziale"
+
+#. module: base_rule_multireport
+#: help:res.company,cf_in_header:0
+msgid "Print customer fiscalcode in Header, if set, after vatnumber"
+msgstr "Stampa il Codice Fiscale nell'intestazione del cliente, se presente"

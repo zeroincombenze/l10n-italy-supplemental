@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record id="crm_leads_phonecall_views" model="ir.ui.view">
+        <field name="name">crm.leads.phonecall.view</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@string='Internal Notes']" position="after">
+                    <page string="Calls">
+                        <field name="crm_phonecall_ids"/>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</data>
+</openerp>
+

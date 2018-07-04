@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016-2018 Zeroincombenze(R) (http://www.zeroincombenze.it)
+  @author: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+-->
+<openerp>
+    <data>
+
+        <record id="view_base_rule_multireport_tree" model="ir.ui.view">
+            <field name="name">base.rule.multireport.tree</field>
+            <field name="model">base.rule.multireport</field>
+            <field name="arch" type="xml">
+                <tree string="Document report selection rules" version="7.0">
+                    <field name="model"/>
+                    <field name="active"/>
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="reportname"/>
+                    <field name="action"/>
+                    <field name="purpose"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_base_base_rule_multireport_form" model="ir.ui.view">
+            <field name="name">base.rule.multireport.form</field>
+            <field name="model">base.rule.multireport</field>
+            <field name="arch" type="xml">
+                <form string="Document report selection rules" version="7.0">
+                    <group name="main">
+                        <group string="Technical values">
+                            <field name="name"/>
+                            <field name="reportname"/>
+                        </group>
+                        <group string="Selection criteria">
+                            <field name="model"/>
+                            <field name="active"/>
+                            <field name="priority"/>
+                            <field name="journal_id"/>
+                            <field name="partner_id"/>
+                            <field name="position_id"/>
+                            <field name="lang"/>
+                            <field name="since_date"/>
+                            <field name="until_date"/>
+                            <field name="section_id"/>
+                        </group>
+                        <group string="User configuration values">
+                            <field name="purpose"/>
+                            <field name="action"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_base_rule_multireport" model="ir.actions.act_window">
+            <field name="name">Document report selection rules</field>
+            <field name="res_model">base.rule.multireport</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_base_rule_multireport"
+            action="action_base_rule_multireport"
+            parent="account.menu_configuration_misc"
+        />
+
+    </data>
+</openerp>
