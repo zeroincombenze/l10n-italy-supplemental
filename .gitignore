@@ -74,3 +74,6 @@ html/
 *.bak
 *.out
 l10n-italy-supplemental/
+stdout.log
+*.oca
+*.z0i
