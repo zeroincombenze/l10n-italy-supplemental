@@ -82,6 +82,8 @@
 
 
 
+
+
 [![en](http://www.shs-av.com/wp-content/en_US.png)](http://wiki.zeroincombenze.org/it/Odoo/7.0/man)
 
 Odoo Italian Supplemental Modules
@@ -111,10 +113,10 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
 **zeroincombenze®** is a trademark of [SHS-AV s.r.l.](http://www.shs-av.com/)
-which distributes and promotes **Odoo** ready-to-use on its own cloud infrastructure.
-[Zeroincombenze® distribution](http://wiki.zeroincombenze.org/en/Odoo)
+which distributes and promotes **Odoo** ready-to-use on own cloud infrastructure.
+[Zeroincombenze® distribution of Odoo](http://wiki.zeroincombenze.org/en/Odoo)
 is mainly designed for Italian law and markeplace.
-Everytime, every Odoo DB and customized code can be deployed on local server too.
+Users can download from [Zeroincombenze® distribution](https://github.com/zeroincombenze/OCB) and deploy on local server.
 
 [//]: # (end copyright)
 
@@ -123,20 +125,22 @@ Everytime, every Odoo DB and customized code can be deployed on local server too
 
 Available addons
 ----------------
-addon | version | OCA version | summary
---- | --- | --- | ---
-[l10n_it_base_prov](l10n_it_base_prov/) | 0.2 | :repeat: | Italy - Italian districts/provinces
-[l10n_it_spesometro](l10n_it_spesometro/) | 0.3 | :repeat: | Comunicazione Polivalente (c.d. Spesometro)
-[midea](midea/) | 8.0.0.1.0 | :repeat: | Odoo Module Example
-[tndb](tndb/) | 0.4.1 | :repeat: | Trace and Debug
+addon | version | summary
+--- | --- | ---
+[l10n_it_base_prov](l10n_it_base_prov/) | 0.2 | Italy - Italian districts/provinces
+[l10n_it_spesometro](l10n_it_spesometro/) | 0.3 | Comunicazione Polivalente (c.d. Spesometro)
+[midea](midea/) | 8.0.0.1.0 | Odoo Module Example
+[tndb](tndb/) | 0.4.1 | Trace and Debug
 
 
 Unported addons
 ---------------
-addon | version | OCA version | summary
---- | --- | --- | ---
-[account_invoice_multireport](account_invoice_multireport/) | 8.0.0.1.0 (unported) | :repeat: | Manage invoice multiple reports
+addon | version | summary
+--- | --- | ---
+[account_invoice_multireport](account_invoice_multireport/) | 8.0.0.1.0 (unported) | Manage invoice multiple reports
 
 [//]: # (end addons)
+
+
 
 [![chat with us](https://www.shs-av.com/wp-content/chat_with_us.gif)](https://tawk.to/85d4f6e06e68dd4e358797643fe5ee67540e408b)
