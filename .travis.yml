@@ -1,4 +1,6 @@
-# __version__=0.1.2
+# Odoo yaml template for travis-ci
+# __version__=0.2.1.63
+
 language: python
 sudo: false
 cache:
@@ -19,43 +21,39 @@ addons:
   apt:
     sources:
       - pov-wkhtmltopdf
-#    Search your sources alias here:
-#      https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
+#   Search your sources alias here:
+#     https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
     packages:
       - python-dev
       - libxml2-dev
       - libxslt1-dev
       - zlib1g-dev
+      - curl
+      - nodejs
+      - npm
       - python-ldap
       - python-psycopg2
       - python-simplejson
       - expect-dev
       - python-setuptools
-#     Search your packages here:
-#       ME}/tools
-#
-#       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
-#     For wkhtmltopdf, see the env section below
+#   Search your packages here:
+#     https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
 
 before_install:
   - export TRAVIS_DEBUG_MODE="1"
   - pip install urllib3[secure] --upgrade; true
-# Use Zeroincombenze(R) tools
-  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
+  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --depth=1
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
-  - travis_install_env
 
 install:
-  # tests of document_ftp and delivery fail. The following two are excluded because they depend on delivery
-  - export EXCLUDE=hw_scanner,hw_escpos,document_ftp,delivery,stock_invoice_directly,claim_from_delivery,litoservice_report,vg7_report
-  - export INSTALL_OPTIONS="--without-demo=account"
-  # - cp ${HOME}/maintainer-quality-tools/cfg/.coveragerc .
-  # - export INCLUDE=$(getaddons.py -m ${HOME}/build/${ODOO_REPO}/openerp/addons ${HOME}/build/${ODOO_REPO}/addons)
+  - travis_install_env
+  - export EXCLUDE=hw_scanner,hw_escpos,document_ftp,delivery,stock_invoice_directly,claim_from_delivery,litoservice_report
+  # - export INCLUDE=$(getaddons.py -m ${HOME}/build/${ODOO_REPO}/odoo/addons ${HOME}/build/${ODOO_REPO}/addons)
 
 env:
   global:
-  - VERSION="8.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
+  - VERSION="8.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0" ODOO_REPO="$TRAVIS_REPO_SLUG"
 
   matrix:
   - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
@@ -68,6 +66,7 @@ env:
 # tests)
 #  - TESTS="1.0" ODOO_REPO="odoo/odoo" UNIT_TEST="1"
 #  - TESTS="1.0" ODOO_REPO="OCA/OCB" UNIT_TEST="1"
+#  - TESTS="1.0" ODOO_REPO="zeroincombenze/OCB" UNIT_TEST="1"
 
 script:
   - travis_run_tests

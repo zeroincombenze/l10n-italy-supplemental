@@ -1,25 +1,10 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Copyright (C) SHS-AV s.r.l. (<http://www.zeroincombenze.it>)
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-from openerp.osv import models, fields
+# Copyright 2016 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+#                Odoo Italian Community
+#                Odoo Community Association (OCA)
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from openerp import fields, models
 from openerp import api
-# import pdb
 
 
 RPT_ACTION = [('odoo', 'odoo'),
@@ -37,75 +22,74 @@ def _lang_get(self):
 class BaseRuleMultireport(models.Model):
     _name = "base.rule.multireport"
     _description = "Rules to select report name"
-    _columns = {
-        'name': fields.char(
-            'Rule Name',
-            required=True,
-            help="Brief name of document to print"),
-        'model_id': fields.many2one(
-            'ir.model', 'Related Document Model',
-            required=True,
-            domain=[('osv_memory', '=', False)],
-            help="Model to apply this rule"),
-        'model': fields.related(
-            'model_id', 'model', type="char", string='Model'),
-        'reportname': fields.char(
-            'Internal report name',
-            readonly=True,
-            help="Set the report name formatted as module.reportname;"
-                 " i.e: 'account.report_invoice' like"
-                 " Odoo standard report name."
-                 " This field is applied if action is 'report'."),
-        'purpose': fields.char(
-            'Purpose',
-            help="Report purpose: why, when use this report."),
-        'sequence': fields.integer(
-            'sequence',
-            help="Rules are evaluated startin from lower sequence. "
-                 "Please, use values above 1000 for default rules, "
-                 "from 100 to 1000 for ordinary rules."
-                 "Sequences below 100 must be very important!"),
-        'action': fields.selection(
-            RPT_ACTION,
-            'report action',
-            help="Set 'report' to get the internal report name field,"
-                 " 'company' to get preferred model of company (if any),"
-                 " 'customer' to get preferred model of customer (if any),"
-                 " 'odoo' to execute Odoo standard document printing."),
-        'journal_id': fields.many2one(
-            'account.journal',
-            'If journal',
-            help="Apply rule only if journal matches document;"
-                 " may be useful to print commercial invoices"
-                 " like Italian 'Fattura Accompagnatoria'."),
-        'partner_id': fields.many2one(
-            'res.partner',
-            'If customer',
-            help="Apply rule only if invoice of customer;"
-                 " may be useful to print specific model for customer."),
-        'lang': fields.selection(
-            _lang_get,
-            'If language',
-            help="Apply rule only if language matches customer;"
-                 " may be useful to print untranslated report models."),
-        'position_id': fields.many2one(
-            'account.fiscal.position',
-            'If fiscal position',
-            help="Apply rule only if fiscal position matches"
-                 " invoice position; may be useful to print"
-                 " models to satisfy some fiscal law."),
-        'section_id': fields.many2one(
-            'crm.case.section',
-            'If sales team',
-            help="Apply rule only if sales team matches"
-                 " invoice position; may be useful to print"
-                 " models to customize sale documents."),
-        'since_date': fields.date('From date'),
-        'until_date': fields.date('To date'),
-        'active': fields.boolean(
-            'Active',
-            help="Rule is evaluated only if is active.")
-    }
+
+    name = fields.Char(
+        'Rule Name',
+        required=True,
+        help="Brief name of document to print")
+    model_id = fields.Many2one(
+        'ir.model', 'Related Document Model',
+        required=True,
+        domain=[('osv_memory', '=', False)],
+        help="Model to apply this rule")
+    model = fields.related(
+        'model_id', 'model', type="char", string='Model')
+    reportname = fields.Char(
+        'Internal report name',
+        readonly=True,
+        help="Set the report name formatted as module.reportname;"
+             " i.e: 'account.report_invoice' like"
+             " Odoo standard report name."
+             " This field is applied if action is 'report'.")
+    purpose = fields.Char(
+        'Purpose',
+        help="Report purpose: why, when use this report.")
+    sequence = fields.Integer(
+        'sequence',
+        help="Rules are evaluated startin from lower sequence. "
+             "Please, use values above 1000 for default rules, "
+             "from 100 to 1000 for ordinary rules."
+             "Sequences below 100 must be very important!")
+    action = fields.Selection(
+        RPT_ACTION,
+        'report action',
+        help="Set 'report' to get the internal report name field,"
+             " 'company' to get preferred model of company (if any),"
+             " 'customer' to get preferred model of customer (if any),"
+             " 'odoo' to execute Odoo standard document printing.")
+    journal_id = fields.Many2one(
+        'account.journal',
+        'If journal',
+        help="Apply rule only if journal matches document;"
+             " may be useful to print commercial invoices"
+             " like Italian 'Fattura Accompagnatoria'.")
+    partner_id = fields.Many2one(
+        'res.partner',
+        'If customer',
+        help="Apply rule only if invoice of customer;"
+             " may be useful to print specific model for customer.")
+    lang = fields.Selection(
+        _lang_get,
+        'If language',
+        help="Apply rule only if language matches customer;"
+             " may be useful to print untranslated report models.")
+    position_id = fields.Many2one(
+        'account.fiscal.position',
+        'If fiscal position',
+        help="Apply rule only if fiscal position matches"
+             " invoice position; may be useful to print"
+             " models to satisfy some fiscal law.")
+    section_id = fields.many2one(
+        'crm.case.section',
+        'If sales team',
+        help="Apply rule only if sales team matches"
+             " invoice position; may be useful to print"
+             " models to customize sale documents.")
+    since_date = fields.Date('From date')
+    until_date = fields.Date('To date')
+    active = fields.Boolean(
+        'Active',
+        help="Rule is evaluated only if is active.")
 
     @api.model
     def get_reportname(self, invoice):

@@ -57,16 +57,16 @@ Trovate un esempio di fattura in questo modulo.
 
     # always loaded
     'data': [
-    # 'views/base_rule_reportname_view.xml'
-    # 'data/base_rule.reportname.csv',
-    # 'rule_multireport.xml',
-    'report/header-footer.xml',
-    # 'report/invoice-report.xml',
-    # 'report/invoice-delivery-report.xml',
-    'views/res_company_view.xml',
-    # 'views/res_partner_view.xml',
-    # 'views/account_invoice_view.xml',
-    # 'security/ir.model.access.csv',
+        # 'views/base_rule_reportname_view.xml'
+        # 'data/base_rule.reportname.csv',
+        # 'rule_multireport.xml',
+        'report/header-footer.xml',
+        # 'report/invoice-report.xml',
+        # 'report/invoice-delivery-report.xml',
+        'views/res_company_view.xml',
+        'views/res_partner_view.xml',
+        # 'views/account_invoice_view.xml',
+        # 'security/ir.model.access.csv',
     ],
     'installable': True
 }
