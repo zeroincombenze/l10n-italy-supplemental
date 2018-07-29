@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="external_layout">
+    <!-- Multicompany -->
+    <t t-if="not o and doc">
+        <t t-set="o" t-value="doc"/>
+    </t>
+    <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"></t>
+    </t>
+    <t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"></t>
+    </t>
+    <t t-set="company_partner" t-value="company.partner_id"></t>
+    <t t-call="refocus_report.external_layout_header" />
+    <t t-raw="0" />
+    <t t-call="refocus_report.external_layout_footer" />
+</template>
+
+<template id="external_layout_header">
+    <div class="header">
+        <div class="row col-xs-3">
+            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 75px;"/>
+        </div>
+    </div>
+</template>
+
+<template id="external_layout_footer">
+    <!-- <div class="footer" style="border-top: 1px solid black; line-height: 6pt">  -->
+    <div><br></br></div>
+    <div class="footer" style="line-height: 8pt">
+        <p></p>
+        <p><strong><span t-field="company.partner_id.name"/></strong> | <span t-field="company.partner_id.street"/> - <span t-field="company.partner_id.zip"/> <span t-field="company.partner_id.city"/> - Italia | web: refocus.media | VAT: <span t-field="company.partner_id.vat"/></p>
+        <p>PEC: <span t-field="company_partner.pec_mail"/> - <span t-field="company_partner.rea_office.code"/>-<span t-field="company_partner.rea_code"/> - CF e Iscr. Reg. Impr.: <span t-field="company.partner_id.fiscalcode"/> - Cap. Sociale: <span t-field="company_partner.rea_capital" t-options='{"widget": "monetary", "display_currency": company.currency_id}'/></p>
+        <p class="text-right"><span>Pag.: <span class="page"/>/<span class="topage"/></span></p>
+    </div>
+</template>
+
+</odoo>
+

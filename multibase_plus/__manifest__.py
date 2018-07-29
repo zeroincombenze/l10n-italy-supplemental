@@ -33,13 +33,13 @@ Legend:
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Base',
-    'version': '10.0.0.1.0',
+    'version': '10.0.0.1.1',
 
     'depends': ['base',
                 'sale'],
 
     'data': [
-        "views/sale_order_views.xml",
+        "views/sale_order_view.xml",
         "views/account_invoice_view.xml",
     ],
     'installable': True
