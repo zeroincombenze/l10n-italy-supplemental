@@ -1,2 +1,2 @@
 l10n-italy
-purchase-workflow
+purchase-workflow https://github.com/OCA/purchase-workflow.git
