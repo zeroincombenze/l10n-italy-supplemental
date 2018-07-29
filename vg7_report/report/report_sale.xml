@@ -6,6 +6,7 @@
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
         <div class="page">
             <div class="oe_structure"/>
+            <!--
             <div class="row">
                 <div class="col-xs-5 col-xs-offset-7" style="line-height: 6pt">
                     <br></br>
@@ -42,6 +43,7 @@
                     <p t-field="doc.payment_term_id"/>
                 </div>
             </div>
+            -->
 
             <!-- Is there a discount on at least one line? -->
             <t t-set="display_discount" t-value="any([l.discount for l in doc.order_line])"/>
@@ -115,6 +117,11 @@
                         </t>
                     </tbody>
                 </table>
+                <!-- TODO: remove -->
+                <div name="payment_term" t-if="doc.payment_term_id" class="col-xs-3">
+                    <strong>Payment Terms:</strong>
+                    <p t-field="doc.payment_term_id"/>
+                </div>
 
                 <t t-if="page_index &lt; page_size - 1" groups="sale.group_sale_layout">
                     <p style="page-break-before:always;"> </p>
