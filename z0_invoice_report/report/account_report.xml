@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <report
+           id="account.account_invoices"
+           model="account.invoice"
+           name="account.invoice"
+           rml="z0_invoice_report/report/account_invoice.rml"
+           string="Invoice with fiscalcode"
+           attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+           attachment_use="False"
+           usage="default"
+           />
+</data>
+</openerp>

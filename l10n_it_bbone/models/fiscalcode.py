@@ -44,6 +44,3 @@ class res_partner(osv.osv):
     _constraints = [(check_4_fiscalcode,
                      "The fiscal code doesn't seem to be correct.",
                      ["fiscalcode"])]
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="ir_save_table_tree">
+            <field name="name">ir.save.table.tree</field>
+            <field name="model">ir.save.table</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Tables to Save List">
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="model_id" />
+                    <field name="use_id"/>
+                    <field name="field_id"
+                           attrs="{'readonly': [('use_id', '=', True),]}"
+                    />
+                    <field name="operator"/>
+                    <field name="value"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ir_save_table_view">
+            <field name="name">ir.save.table.form</field>
+            <field name="model">ir.save.table</field>
+            <field name="type">form</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Tables to Save List">
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="model_id"/>
+                    <field name="use_id"/>
+                    <field name="field_id"
+                           attrs="{'readonly': [('use_id', '=', True),]}"
+                    />
+                    <field name="operator"/>
+                    <field name="value"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wep_db" model="ir.actions.act_window">
+            <field name="name">Delete All DB Record!!</field>
+            <field name="res_model">ir.save.table</field>
+        </record>
+
+        <menuitem id="menu_wep_db" name="Wep DB"
+                  parent="base.menu_administration" sequence="750" />
+        <menuitem id="menu_wep_db_records" name="Delete All Records"
+                  action="action_wep_db"
+                  parent="menu_wep_db" sequence="50"/>
+
+    </data>
+</openerp>

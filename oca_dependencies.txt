@@ -5,6 +5,5 @@ webkit-tools
 account-payment
 stock-logistics-workflow
 # l10n-italy
-l10n-italy https://github.com/zeroincombenze/l10n-italy.git 7.0
+l10n-italy https://github.com/zeroincombenze/l10n-italy.git
 bank-payment
-l10n-italy-supplemental https://github.com/zeroincombenze/l10n-italy-supplemental.git 7.0
