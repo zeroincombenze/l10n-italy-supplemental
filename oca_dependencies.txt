@@ -1,3 +1,2 @@
 l10n-italy
 purchase-workflow
-uncovered
