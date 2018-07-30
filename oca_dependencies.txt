@@ -1,4 +1,4 @@
 l10n-italy
-purchase-workflow https://github.com/OCA/purchase-workflow.git
-sale-workflow https://github.com/OCA/sale-workflow.git
-stock-logistics-transport https://github.com/OCA/stock-logistics-transport.git
+# purchase-workflow https://github.com/OCA/purchase-workflow.git
+# sale-workflow https://github.com/OCA/sale-workflow.git
+# stock-logistics-transport https://github.com/OCA/stock-logistics-transport.git
