@@ -58,7 +58,8 @@
                     </div>
                     <div class="col-xs-4" t-if="o.payment_term_id and not o.payment_term_id.riba">
                         <p><strong>IBAN:</strong></p>
-                        <p>IT11 T020 0812 8170 0010 5084 186</p>
+                        <!-- <p>IT11 T020 0812 8170 0010 5084 186</p> -->
+                        <p>IT75 V020 0812 8240 0010 5084 186</p>
                     </div>
                     <div class="col-xs-4" t-if="(not o.payment_term_id or o.payment_term_id.riba) and o.partner_bank_id">
                         <p><strong>IBAN:</strong></p>

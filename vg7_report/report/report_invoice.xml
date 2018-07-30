@@ -2,6 +2,7 @@
 <odoo>
 <data>
 
+    <!-- See account_report.xml in account module -->
     <record id="account.account_invoices" model="ir.actions.report.xml">
         <field name="paperformat_id" ref="vg7_report.vg7_paperformat"/>
     </record>
@@ -11,61 +12,10 @@
             <!-- <t t-call="report.external_layout"> -->
             <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
             <div class="page">
-                <div class="row">
-                    <div name="invoice_address" class="col-xs-5 col-xs-offset-7" style="line-height: 6pt">
-                        <br></br>
-                        <p>
-                            <strong><p t-field="o.partner_id.name"/></strong>
-                            <address t-field="o.partner_id"
-                                     t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
-                        </p>
-                        <p t-if="o.partner_id.vat">Partita IVA: <span t-field="o.partner_id.vat"/></p>
-                    </div>
-                </div>
-
-                <div class="row mt32 mb32" style="line-height: 6pt">
-                    <div class="col-xs-3">
-                        <p><strong>Doc.Type &amp; Number</strong></p>
-                        <p>
-                            <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                            <span t-if="o.type == 'out_refund'">Refund</span>
-                            <span t-if="o.type == 'in_refund'">Supplier Refund</span>
-                            <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
-                            <span t-field="o.number"/>
-                        </p>
-                    </div>
-                    <div class="col-xs-2" t-if="o.date_invoice">
-                        <p><strong>Doc. Date:</strong></p>
-                        <p t-field="o.date_invoice"/>
-                    </div>
-                    <div class="col-xs-3">
-                        <p><strong>Payment Term:</strong></p>
-                        <p t-if="o.payment_term_id.note" t-field="o.payment_term_id.note"/>
-                        <p t-if="not o.payment_term_id.note" t-field="o.payment_term_id"/>
-                    </div>
-                    <div class="col-xs-4" t-if="o.payment_term_id and not o.payment_term_id.riba">
-                        <p><strong>IBAN:</strong></p>
-                        <p>IT11 T020 0812 8170 0010 5084 186</p>
-                    </div>
-                    <div class="col-xs-4" t-if="(not o.payment_term_id or o.payment_term_id.riba) and o.partner_bank_id">
-                        <p><strong>IBAN:</strong></p>
-                        <p t-field="o.partner_bank_id.display_name"/>
-                    </div>
-                    <div class="col-xs-4" t-if="(not o.payment_term_id or o.payment_term_id.riba) and not o.partner_bank_id and o.partner_id.bank_ids">
-                        <p><strong>IBAN:</strong></p>
-                        <p>
-                            <t t-foreach="o.partner_id.bank_ids" t-as="bank"><span t-field="bank.display_name"/></t>
-                        </p>
-                    </div>
-                </div>
 
                 <!-- Is there a discount on at least one line? -->
                 <t t-set="display_discount" t-value="any([l.discount for l in o.invoice_line_ids])"/>
                 <t t-set="last_order" t-value="''"/>
-                <t t-set="last_end_user_id" t-value="0"/>
 
                 <table class="table table-condensed">
                     <thead>
@@ -83,10 +33,9 @@
                         <tr t-foreach="o.invoice_line_ids" t-as="l">
                             <td>
                                 <div>
-                                    <t t-if="last_order != l.sale_line_ids.order_id.client_order_ref">
+                                    <t t-if="l.sale_line_ids.order_id.client_order_ref and last_order != l.sale_line_ids.order_id.client_order_ref">
                                         <strong>Your Order N: <span t-field="l.sale_line_ids.order_id.client_order_ref"/> - <span t-field="l.sale_line_ids.order_id.date_order" t-options="{'widget': 'date'}"/></strong>
                                         <t t-set="last_order" t-value="l.sale_line_ids.order_id.client_order_ref"/>
-                                        <t t-if="last_end_user_id != l.sale_line_ids.end_user_id.id"></t>
                                     </t>
                                 </div>
                                 <div t-field="l.name"/>
@@ -121,19 +70,19 @@
                     <div class="col-xs-4 pull-right">
                         <table class="table table-condensed">
                             <tr class="border-black">
-                                <td><strong>Subtotal</strong></td>
+                                <td><strong>Totale Imponibile</strong></td>
                                 <td class="text-right">
                                     <span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
                             <tr class="border-black">
-                                <td><strong>Taxes</strong></td>
+                                <td><strong>Totale IVA</strong></td>
                                 <td class="text-right">
                                     <span t-field="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
                             </tr>
                             <tr class="border-black">
-                                <td><strong>Invoice Total</strong></td>
+                                <td><strong>Totale Fattura</strong></td>
                                 <td class="text-right">
                                     <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                 </td>
@@ -149,8 +98,8 @@
                             <thead>
                                 <tr>
                                     <th>VAT</th>
-                                    <th class="text-right">Subtotal</th>
-                                    <th class="text-right">Taxes</th>
+                                    <th class="text-right">Imponibile</th>
+                                    <th class="text-right">IVA</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -176,8 +125,6 @@
                     <!-- <strong>Fiscal Position Remark:</strong> -->
                     <span t-field="o.fiscal_position_id.note"/>
                 </p>
-                <p t-if="o.partner_id.lang == 'it_IT'">Thank you for your trust</p>
-                <p t-if="o.partner_id.lang != 'it_IT'">Country of origin: Italy</p>
             </div>
         </t>
     </template>

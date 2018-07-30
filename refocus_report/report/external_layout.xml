@@ -32,7 +32,7 @@
     <div class="footer" style="line-height: 8pt">
         <p></p>
         <p><strong><span t-field="company.partner_id.name"/></strong> | <span t-field="company.partner_id.street"/> - <span t-field="company.partner_id.zip"/> <span t-field="company.partner_id.city"/> - Italia | web: refocus.media | VAT: <span t-field="company.partner_id.vat"/></p>
-        <p>PEC: <span t-field="company_partner.pec_mail"/> - <span t-field="company_partner.rea_office.code"/>-<span t-field="company_partner.rea_code"/> - CF e Iscr. Reg. Impr.: <span t-field="company.partner_id.fiscalcode"/> - Cap. Sociale: <span t-field="company_partner.rea_capital" t-options='{"widget": "monetary", "display_currency": company.currency_id}'/></p>
+        <p>PEC: <span t-field="company_partner.pec_mail"/> - <span t-field="company_partner.rea_office.code"/>-<span t-field="company_partner.rea_code"/> - CF e Iscr. Reg. Impr.: <span t-field="company.partner_id.fiscalcode"/> - Cap. Sociale: <span t-field="company_partner.rea_capital" t-options='{"widget": "monetary", "display_currency": company.currency_id}'/> i.v.</p>
         <p class="text-right"><span>Pag.: <span class="page"/>/<span class="topage"/></span></p>
     </div>
 </template>
