@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2018 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
-    'name': "sale_z0tricky",
+    'name': "account_invoice_add_sale_order",
 
-    'summary': """Add sale order to invoice""",
+    'summary': """Add sale order to sale account invoice""",
 
     'description': """
 Add sale order to invoice
 -------------------------
 
-Add sale order to invoice
+Add sale order when editing sale invoice like Odoo standard
+purchase invoice.
+Sale order state is updated conseguently.
     """,
 
     'author': "SHS-AV s.r.l.",
@@ -23,7 +25,6 @@ Add sale order to invoice
 
     'data': [
         "views/account_invoice_views.xml",
-        # "security/ir.model.access.csv",
     ],
     'installable': True
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_partner_sale_reseller_form" model="ir.ui.view">
         <field name="name">res.partner.sale.reseller</field>
         <field name="model">res.partner</field>
@@ -23,6 +24,18 @@
                     </group>
                 </xpath>
             </data>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_end_user" model="ir.ui.view">
+        <field name="name">res.partner.filter.end.user</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <filter name="end_user" string="End Users"
+                        domain="[('end_user','=',True)]"/>
+            </filter>
         </field>
     </record>
 

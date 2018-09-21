@@ -3,7 +3,7 @@
 
 {
     'name': 'profile_vg7_report',
-    'version': '10.0.0.1.0',
+    'version': '10.0.0.1.1',
     'category': 'Report Templates',
     'author': 'SHS-AV s.r.l.',
     'website': 'http://www.zeroincombenze.it',

@@ -25,9 +25,12 @@
                 <img class="company_logo" t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"/>
             </div>
         </div>
-        <div class="row col-xs-12" style="color: gray;">
-            <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style=""/>
-        </div>
+        <t t-if="not company.custom_header">
+            <div class="row col-xs-12" style="color: gray;">
+                <div t-field="company.partner_id" t-field-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': true}" style=""/>
+                <div t-field="company.vat"/>
+            </div>
+        </t>
         <div class="row header_partner" style="font-size:140%;">
             <div t-if="o._name == 'sale.order'">
                 <div t-if="o.state in ('draft', 'sent')" class="col-xs-7 large" style="color: orange;">

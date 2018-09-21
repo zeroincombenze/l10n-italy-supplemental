@@ -7,7 +7,7 @@
     'author': 'SHS-AV s.r.l.',
     'website': 'http://www.zeroincombenze.it',
     'summary': 'Manage Sale Resellers',
-    'version': '10.0.1.5.1',
+    'version': '10.0.1.5.2',
     'description': """
 Manager Sale Resellers
 ======================

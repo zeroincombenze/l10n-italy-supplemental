@@ -21,5 +21,16 @@
     </field>
 </record>
 
+<record id="z0_order_pivot" model="ir.ui.view">
+    <field name="name">sale.order.pivot.reseller</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_sale_order_pivot"/>
+    <field name="arch" type="xml">
+        <field name="amount_total" position="after">
+            <field name="margin" type="measure"/>
+        </field>
+    </field>
+</record>
+
 </odoo>
 
