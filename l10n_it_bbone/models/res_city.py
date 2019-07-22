@@ -30,7 +30,6 @@ FLDS_LIST = ['country_id', 'state_id', 'province_id', 'region_id']
 class res_config_settings(orm.TransientModel):
     _inherit = 'res.config.settings'
     _columns = {
-        'country_id': fields.many2one('res.country'),
         'zip': fields.many2one('res.city'),
         'city': fields.many2one('res.city',
                                 domain="[('country_id', '=', country_id)]"),
@@ -263,17 +262,6 @@ class res_config_settings(orm.TransientModel):
 class res_city(osv.osv):
     _inherit = 'res.city'
 
-    _columns = {
-        'country_id': fields.many2one('res.country',
-                                      'Country',
-                                      help='Country encoded by ISO-3166.'),
-        'state_id': fields.many2one(
-            'res.country.state',
-            'District',
-            help='Upper administration (Province, District or Federal State).',
-            domain="[('country_id', '=', country_id)]"),
-        'nuts': fields.integer('NUTS', size=1),
-    }
 
     def new_ctx(self,
                 country_id, zip, city, state_id, province_id, region_id,

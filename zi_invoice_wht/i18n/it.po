@@ -1,176 +1,209 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* zi_invoice_wht
+# * zi_invoice_wht
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: Odoo (7.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-05 07:40+0000\n"
 "PO-Revision-Date: 2013-08-05 09:41+0100\n"
-"Last-Translator: Mario Riva <mario.riva@gmail.com>\n"
-"Language-Team: \n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
+"Generated-By: Babel 2.3.4\n"
 
 #. module: zi_invoice_wht
 #: field:account.condition_text,name:0
+#: field:account.condition_text,name
 msgid "Condition summary"
 msgstr "Sommario condizioni"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:350
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:350
 msgid "Bank account"
 msgstr "IBAN"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:212
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:212
 msgid "Cancelled Invoice"
 msgstr "Fattura annullata"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:329
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:329
 msgid "Thank you for your prompt payment"
 msgstr "Grazie per il Vostro rapido pagamento"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:341
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:341
 msgid "Customer VAT No"
 msgstr "Partita IVA del cliente"
 
 #. module: zi_invoice_wht
 #: field:account.invoice,text_condition2:0
+#: field:account.invoice,text_condition2
 msgid "Footer condition"
 msgstr "Footer condition"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:224
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:224
 msgid "Subject : "
 msgstr "Oggetto : "
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:352
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:352
 msgid "Our VAT No"
 msgstr "Nostro Partita IVA"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:216
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:216
 msgid "Supplier Invoice"
 msgstr "Fattura fornitore"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:256
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:256
 msgid "Unit Price"
-msgstr "Prezzo unitario"
+msgstr "Prezzo Unitario"
 
 #. module: zi_invoice_wht
 #: view:account.invoice:0
+#: view:account.invoice
 msgid "Your bottom conditions here"
 msgstr "Your bottom conditions here"
 
 #. module: zi_invoice_wht
 #: field:account.invoice,text_condition1:0
+#: field:account.invoice,text_condition1
 msgid "Header condition"
 msgstr "Header condition"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:258
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:258
 msgid "Disc.(%)"
 msgstr "Sconto.(%)"
 
 #. module: zi_invoice_wht
 #: view:account.invoice:0
+#: view:account.invoice
 msgid "Conditions"
 msgstr "Condizioni"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:293
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:293
 msgid "Taxes:"
-msgstr "IVA:"
+msgstr "IV"
 
 #. module: zi_invoice_wht
 #: selection:account.condition_text,type:0
+#: selection:account.condition_text,type
 msgid "Top condition"
 msgstr "Top condition"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:253
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:253
 msgid "Description"
 msgstr "Descrizione"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:233
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:233
 msgid "Our reference"
 msgstr "Riferimento"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:208
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:208
 msgid "PRO-FORMA"
 msgstr "PRO-FORMA"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:229
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:229
 msgid "Invoice Date"
-msgstr "Data fattura"
+msgstr "Data Fattura"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:356
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:356
 msgid "BIC"
 msgstr "BIC"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:313
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:313
 msgid "Base"
 msgstr "Base"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:285
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:285
 msgid "Net :"
 msgstr "Netto :"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:314
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:314
 msgid "Tax"
 msgstr "IVA"
 
 #. module: zi_invoice_wht
 #: field:account.condition_text,type:0
+#: field:account.condition_text,type
 msgid "type"
-msgstr "Tipo"
+msgstr "tipo"
 
 #. module: zi_invoice_wht
 #: field:account.condition_text,text:0
+#: field:account.condition_text,text
 msgid "Condition"
 msgstr "Condizione"
 
 #. module: zi_invoice_wht
 #: view:account.invoice:0
+#: view:account.invoice
 msgid "Your top conditions here"
 msgstr "Your top conditions here"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:231
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:231
 msgid "Responsible"
 msgstr "Responsabile"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:230
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:230
 msgid "Due Date"
 msgstr "Data di scadenza"
 
 #. module: zi_invoice_wht
 #: field:account.invoice,note2:0
+#: field:account.invoice,note2
 msgid "Footer"
 msgstr "Footer"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:255
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:255
 msgid "UoM"
 msgstr "UoM"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:257
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:257
 msgid "Taxes"
 msgstr "IVA"
@@ -188,11 +221,13 @@ msgstr "Modello Prodotto"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:210
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:210
 msgid "Draft Invoice"
-msgstr "Proposta di parcella"
+msgstr "Bozza fattura"
 
 #. module: zi_invoice_wht
 #: field:account.invoice.line,formatted_note:0
+#: field:account.invoice.line,formatted_note
 msgid "Formatted Note"
 msgstr "Note Formattate"
 
@@ -203,23 +238,27 @@ msgstr "Condizioni fatture"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:218
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:218
 msgid "Refund"
-msgstr "Rimborso"
+msgstr "Nota credito"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:301
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:301
 msgid "Total:"
 msgstr "Totale:"
 
 #. module: zi_invoice_wht
 #: view:account.condition_text:0
+#: view:account.condition_text
 msgid "Invoice condition text"
 msgstr "Invoice condition text"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:232
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:232
 msgid "Payment Term"
-msgstr "Pagamento"
+msgstr "Termine di pagamento"
 
 #. module: zi_invoice_wht
 #: model:ir.model,name:zi_invoice_wht.model_account_invoice_line
@@ -228,20 +267,24 @@ msgstr "Riga Fattura"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:254
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:254
 msgid "Qty"
 msgstr "Qtà"
 
 #. module: zi_invoice_wht
 #: field:account.invoice,note1:0
+#: field:account.invoice,note1
 msgid "Header"
 msgstr "Header"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:312
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:312
 msgid "Rate"
-msgstr "Imposte"
+msgstr "Aliquota"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:338
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:338
 msgid "Bank"
 msgstr "Banca"
@@ -249,21 +292,26 @@ msgstr "Banca"
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:214
 #: model:ir.model,name:zi_invoice_wht.model_account_invoice
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:214
 msgid "Invoice"
 msgstr "Fattura"
 
 #. module: zi_invoice_wht
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:220
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:220
 msgid "Supplier Refund"
 msgstr "Rimborso fornitore"
 
 #. module: zi_invoice_wht
 #: report:addons/zi_invoice_wht/report/account_invoice.mako:259
+#: report:addons/zi_invoice_wht/report/account_invoice.mako:259
 msgid "Net Sub Total"
 msgstr "Sub Totale Netto"
 
 #. module: zi_invoice_wht
 #: selection:account.condition_text,type:0
+#: selection:account.condition_text,type
 msgid "Bottom condition"
 msgstr "Bottom condition"
+
 

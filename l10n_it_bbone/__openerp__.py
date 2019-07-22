@@ -21,7 +21,7 @@
 ##############################################################################
 {
     'name': 'Italian Localization - Base',
-    'version': '7.0.0.3.1',
+    'version': '7.0.0.3.2',
     'category': 'Localization/Italy',
     'description': """
 
@@ -52,21 +52,22 @@ https://github.com/zeroincombenze/l10n-italy/tree/7.0/l10n_it_base
     "depends": ['l10n_it_base'],
     "init_xml": [
     ],
-    "update_xml": ['views/city_view.xml',
-                   'views/company_view.xml',
-                   'views/country_view.xml',
-                   'views/partner_view.xml',
-                   'views/state_view.xml',
+    "update_xml": [# 'views/city_view.xml',
+                   # 'views/company_view.xml',
+                   # 'views/country_view.xml',
+                   # 'views/partner_view.xml',
+                   # 'views/state_view.xml',
                    # 'view/fiscalcode_view.xml',
                    # "security/ir.model.access.csv",
-                   'data/res.city.csv',
+                   # 'data/res.city.csv',
                    # 'data/res.country.state.csv',
-                   'data/res.country.csv'],
+                   # 'data/res.country.csv'
+                   ],
     "demo_xml": [],
     "test": ['test/res_partner.yml',
              ],
     "active": False,
-    "installable": True
+    "installable": False
 }
 
 # http://www.istat.it/strumenti/definizioni/comuni/
