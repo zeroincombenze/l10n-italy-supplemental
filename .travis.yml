@@ -1,5 +1,5 @@
 # Odoo yaml template for travis-ci
-# __version__=0.2.1.63
+# __version__=0.2.2
 
 language: python
 sudo: false
@@ -16,6 +16,11 @@ virtualenv:
 
 git:
   submodules: false
+  depth: false
+
+services:
+  - postgresql
+  - xvfb
 
 addons:
   apt:
@@ -28,20 +33,14 @@ addons:
       - libxml2-dev
       - libxslt1-dev
       - zlib1g-dev
-      - curl
-      - nodejs
-      - npm
-      - python-ldap
-      - python-psycopg2
-      - python-simplejson
       - expect-dev
-      - python-setuptools
+      - libffi-dev
+      - libssl-dev
 #   Search your packages here:
 #     https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
 
 before_install:
-  - export TRAVIS_DEBUG_MODE="1"
-  - pip install urllib3[secure] --upgrade; true
+  # Use Zeroincombenze(R) tools
   - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --depth=1
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
@@ -53,12 +52,15 @@ install:
 
 env:
   global:
-  - VERSION="7.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0" ODOO_REPO="$TRAVIS_REPO_SLUG"
+  - TRAVIS_DEBUG_MODE="3"
+  - WKHTMLTOPDF_VERSION="0.12.1"
+  - VERSION="7.0" TESTS="0" LINT_CHECK="0" ODOO_TNLBOT="0"
+
 
   matrix:
-  - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
-  - TESTS="1" ODOO_REPO="odoo/odoo"
-  - TESTS="1" ODOO_REPO="OCA/OCB"
+  # - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
+  - TESTS="0" ODOO_REPO="odoo/odoo"
+  - TESTS="0" ODOO_REPO="OCA/OCB"
   - TESTS="1" ODOO_REPO="zeroincombenze/OCB"
 # either use the two lines above or the two below. Don't change the default if
 # it's not necessary (it is only necessary if modules in your repository can't
@@ -73,3 +75,4 @@ script:
 
 after_success:
   - travis_after_tests_success
+
