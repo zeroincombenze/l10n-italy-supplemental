@@ -29,6 +29,11 @@
         <field name="amount_total" position="after">
             <field name="margin" type="measure"/>
         </field>
+        <!-- 
+        <pivot string="Sales Orders">
+            <field name="hs_code" type="col"/>
+        </pivot>
+         -->
     </field>
 </record>
 

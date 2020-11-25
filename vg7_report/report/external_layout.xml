@@ -1,148 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<template id="external_layout">
-    <!-- Multicompany -->
-    <t t-if="not o and doc">
-        <t t-set="o" t-value="doc"/>
-    </t>
-    <t t-if="o and 'company_id' in o">
-        <t t-set="company" t-value="o.company_id"></t>
-    </t>
-    <t t-if="not o or not 'company_id' in o">
-        <t t-set="company" t-value="res_company"></t>
-    </t>
-    <t t-set="company_partner" t-value="company.partner_id"></t>
-    <t t-call="vg7_report.external_layout_header" />
-    <t t-raw="0" />
-    <t t-call="vg7_report.external_layout_footer" />
-</template>
+    <template id="external_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <t t-set="company_partner" t-value="company.partner_id"></t>
+        <t t-call="vg7_report.external_layout_header" />
+        <t t-raw="0" />
+        <t t-call="vg7_report.external_layout_footer" />
+    </template>
 
-<template id="external_layout_header">
-    <div class="header">
-        <div class="row">
-            <div class="col-xs-12 logo">
-                <img class="company_logo" t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"/>
+    <template id="external_layout_header">
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-12 logo">
+                    <img class="company_logo" t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"/>
+                </div>
             </div>
+            <!-- 
+            <t t-if="not company.custom_header">
+                <div class="row col-xs-12" style="color: gray;">
+                    <div t-field="company.partner_id" t-field-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': true}" style=""/>
+                    <div t-field="company.vat"/>
+                </div>
+            </t>
+            -->
+            <div class="row header_partner" style="font-size:140%;">
+                <div t-if="o._name == 'sale.order'">
+                    <div t-if="o.state in ('draft', 'sent')" class="col-xs-7 large" style="color: orange;">
+                        <span>Preventivo di vendita n. </span>
+                        <span t-field="o.name"/>
+                        <p t-if="o.date_order"> del <span t-field="o.date_order"/></p>
+                    </div>
+                    <div t-if="o.state in ('sale', 'manual', 'progress', 'done')" class="col-xs-7 large" style="color: red;">
+                        <span >Ordine di vendita n. </span>
+                        <span t-field="o.name"/>
+                        <p t-if="o.date_order"> del <span t-field="o.date_order"/></p>
+                    </div>
+                </div>
+
+                <div t-if="o._name == 'account.invoice'">
+                    <div class="col-xs-7 large" style="color: #90BF3F;" name="doctype">
+                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Fattura di vendita n. </span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Fattura in bozza</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                        <span t-if="o.type == 'out_refund'">Nota di Credito</span>
+                        <span t-if="o.type == 'in_refund'">Nota di Credito Fornitore</span>
+                        <span t-if="o.type == 'in_invoice'">Fattura fornitore</span>
+                        <span t-field="o.number"/>
+                        <p t-if="o.date_invoice"> del <span t-field="o.date_invoice"/></p>
+                        <!--<p t-if="o.reference" style="font-size: smaller;" class="reference">-->
+                        <!--Riferimento Ordine N. <span t-field="o.reference"/> del-->
+                    </div>
+                </div>
+
+                <!--<div class="col-xs-1"></div>-->
+                <div class="col-xs-5 small col-xs-offset-7" style="margin-top: -20px;">
+                    <div>Spettabile</div>
+                    <span t-if="o._name == 'sale.order'">
+                        <strong><span t-field="o.partner_id.name"/></strong><br/>
+                    </span>
+                    <div t-if="o._name == 'account.invoice'">
+                        <span t-if="o.partner_id.parent_id"><strong><span t-field="o.partner_id.parent_id.name"/></strong><br/></span>
+                        <span t-if="not o.partner_id.parent_id"><strong><span t-field="o.partner_id.name"/></strong><br/></span>
+                    </div>
+                    <span t-if="o.partner_id.street"><span t-field="o.partner_id.street"/><br/></span>
+                    <span t-if="o.partner_id.street2"><span t-field="o.partner_id.street2"/><br/></span>
+                    <span t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/></span>
+                    <span t-field="o.partner_id.city"/>
+                    <span t-if="o.partner_id.state_id">(<span t-field="o.partner_id.state_id.code"/>)</span>
+                    <span t-if="o.partner_id.country_id"> <span t-field="o.partner_id.country_id.name"/><br/></span>
+
+                    <span t-if="o.partner_id.vat">Partita IVA: <span t-field="o.partner_id.vat"/><br/></span>
+                    <span t-if="not o.partner_id.vat and o.partner_id.parent_id and o.partner_id.parent_id.vat">
+                          Partita IVA: <span t-field="o.partner_id.parent_id.vat"/><br/>
+                    </span>
+                    <span t-if="o.partner_id.fiscalcode">Codice Fiscale: <span t-field="o.partner_id.fiscalcode"/><br/></span>
+                    <span t-if="not o.partner_id.fiscalcode and o.partner_id.parent_id and o.partner_id.parent_id.fiscalcode">
+                          Codice Fiscale: <span t-field="o.partner_id.parent_id.fiscalcode"/><br/>
+                    </span>
+                    <!-- <span t-if="o.partner_id.phone"><strong>T: </strong><span t-field="o.partner_id.phone"/><br/></span> -->
+                    <span t-if="o.partner_id.phone"><i class="fa fa-phone-square"/> <span t-field="o.partner_id.phone"/><br/></span>
+                    <span t-if="not o.partner_id.phone and o.partner_id.parent_id and o.partner_id.parent_id.phone">
+                        <i class="fa fa-phone-square"/> <strong></strong><span t-field="o.partner_id.parent_id.phone"/><br/>
+                        <!-- <strong>T: </strong><span t-field="o.partner_id.parent_id.phone"/><br/> -->
+                    </span>
+                    <span t-if="o.partner_id.fax"><i class="fa fa-print"/> <span t-field="o.partner_id.fax"/><br/></span>
+                    <span t-if="not o.partner_id.fax and o.partner_id.parent_id and o.partner_id.parent_id.fax">
+                        <i class="fa fa-print"/> <span t-field="o.partner_id.parent_id.fax"/><br/>
+                    </span>
+                    <span t-if="o.partner_id.email"><i class="fa fa-envelope"/> <span t-field="o.partner_id.email"/><br/></span>
+                    <span t-if="not o.partner_id.email and o.partner_id.parent_id and o.partner_id.parent_id.email">
+                        <i class="fa fa-envelope"/> <span t-field="o.partner_id.parent_id.email"/><br/>
+                    </span>
+                    <span t-if="o.partner_id.website"><i class="fa fa-globe"/> <span t-field="o.partner_id.website"/></span>
+                    <span t-if="not o.partner_id.website and o.partner_id.parent_id and o.partner_id.parent_id.website">
+                        <i class="fa fa-globe"/> <span t-field="o.partner_id.parent_id.website"/>
+                    </span>
+                    <br/><br/>
+                </div>
+            </div>
+
+
+
         </div>
-        <t t-if="not company.custom_header">
-            <div class="row col-xs-12" style="color: gray;">
-                <div t-field="company.partner_id" t-field-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': true}" style=""/>
-                <div t-field="company.vat"/>
+    </template>
+
+    <template id="external_layout_footer">
+        <!-- <div class="footer" style="border-top: 1px solid black; line-height: 6pt"> -->
+        <t t-name="vg7.external_layout_footer">
+            <div class="footer">
+                <div class="text-left small" style="border-top: 1px solid black;">
+                    <div class="col-xs-9">
+                        <br />
+                        <span t-if="company.phone">Phone: <span t-field="company.phone"/></span>
+                        <span t-if="company.fax and company.phone">&amp;bull;</span>
+                        <span t-if="company.fax">Fax: <span t-field="company.fax"/></span>
+                        <span t-if="company.email">&amp;bull;</span>
+                        <span t-if="company.email">Email: <span t-field="company.email"/></span>
+                        <span t-if="company.website">&amp;bull;</span>
+                        <span t-if="company.website">Website: <span t-field="company.website"/></span>
+                        <t t-if="company.custom_footer">
+                            <span t-raw="company.rml_footer"/>
+                        </t>
+                    </div>
+                    <div class="col-xs-3">
+                        <br />
+                        <ul class="list-inline text-right small">
+                            <li><span class="page"/></li>
+                            <li>/</li>
+                            <li><span class="topage"/></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </t>
-        <div class="row header_partner" style="font-size:140%;">
-            <div t-if="o._name == 'sale.order'">
-                <div t-if="o.state in ('draft', 'sent')" class="col-xs-7 large" style="color: orange;">
-                    <span>Preventivo di vendita n. </span>
-                    <span t-field="o.name"/>
-                    <p t-if="o.date_order"> del <span t-field="o.date_order"/></p>
-                </div>
-                <div t-if="o.state in ('sale', 'manual', 'progress', 'done')" class="col-xs-7 large" style="color: red;">
-                    <span >Ordine di vendita n. </span>
-                    <span t-field="o.name"/>
-                    <p t-if="o.date_order"> del <span t-field="o.date_order"/></p>
-                </div>
-            </div>
-
-            <div t-if="o._name == 'account.invoice'">
-                <div class="col-xs-7 large" style="color: #90BF3F;">
-                    <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Fattura di vendita n. </span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Fattura in bozza</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                    <span t-if="o.type == 'out_refund'">Nota di Credito</span>
-                    <span t-if="o.type == 'in_refund'">Nota di Credito Fornitore</span>
-                    <span t-if="o.type == 'in_invoice'">Fattura fornitore</span>
-                    <span t-field="o.number"/>
-                    <p t-if="o.date_invoice"> del <span t-field="o.date_invoice"/></p>
-                    <!--<p t-if="o.reference" style="font-size: smaller;" class="reference">-->
-                    <!--Riferimento Ordine N. <span t-field="o.reference"/> del-->
-                </div>
-            </div>
-
-            <!--<div class="col-xs-1"></div>-->
-            <div class="col-xs-5 small col-xs-offset-7" style="margin-top: -20px;">
-                <div>Spettabile</div>
-                <span t-if="o._name == 'sale.order'">
-                    <strong><span t-field="o.partner_id.name"/></strong><br/>
-                </span>
-                <div t-if="o._name == 'account.invoice'">
-                    <span t-if="o.partner_id.parent_id"><strong><span t-field="o.partner_id.parent_id.name"/></strong><br/></span>
-                    <span t-if="not o.partner_id.parent_id"><strong><span t-field="o.partner_id.name"/></strong><br/></span>
-                </div>
-                <span t-if="o.partner_id.street"><span t-field="o.partner_id.street"/><br/></span>
-                <span t-if="o.partner_id.street2"><span t-field="o.partner_id.street2"/><br/></span>
-                <span t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/></span>
-                <span t-field="o.partner_id.city"/>
-                <span t-if="o.partner_id.state_id">(<span t-field="o.partner_id.state_id.code"/>)</span>
-                <span t-if="o.partner_id.country_id"> <span t-field="o.partner_id.country_id.name"/><br/></span>
-
-                <span t-if="o.partner_id.vat">Partita IVA: <span t-field="o.partner_id.vat"/><br/></span>
-                <span t-if="not o.partner_id.vat and o.partner_id.parent_id and o.partner_id.parent_id.vat">
-                      Partita IVA: <span t-field="o.partner_id.parent_id.vat"/><br/>
-                </span>
-                <span t-if="o.partner_id.fiscalcode">Codice Fiscale: <span t-field="o.partner_id.fiscalcode"/><br/></span>
-                <span t-if="not o.partner_id.fiscalcode and o.partner_id.parent_id and o.partner_id.parent_id.fiscalcode">
-                      Codice Fiscale: <span t-field="o.partner_id.parent_id.fiscalcode"/><br/>
-                </span>
-                <!-- <span t-if="o.partner_id.phone"><strong>T: </strong><span t-field="o.partner_id.phone"/><br/></span> -->
-                <span t-if="o.partner_id.phone"><i class="fa fa-phone-square"/> <span t-field="o.partner_id.phone"/><br/></span>
-                <span t-if="not o.partner_id.phone and o.partner_id.parent_id and o.partner_id.parent_id.phone">
-                   <i class="fa fa-phone-square"/> <strong></strong><span t-field="o.partner_id.parent_id.phone"/><br/>
-                   <!-- <strong>T: </strong><span t-field="o.partner_id.parent_id.phone"/><br/> -->
-                </span>
-                <span t-if="o.partner_id.fax"><i class="fa fa-print"/> <span t-field="o.partner_id.fax"/><br/></span>
-                <span t-if="not o.partner_id.fax and o.partner_id.parent_id and o.partner_id.parent_id.fax">
-                    <i class="fa fa-print"/> <span t-field="o.partner_id.parent_id.fax"/><br/>
-                </span>
-                <span t-if="o.partner_id.email"><i class="fa fa-envelope"/> <span t-field="o.partner_id.email"/><br/></span>
-                <span t-if="not o.partner_id.email and o.partner_id.parent_id and o.partner_id.parent_id.email">
-                    <i class="fa fa-envelope"/> <span t-field="o.partner_id.parent_id.email"/><br/>
-                </span>
-                <span t-if="o.partner_id.website"><i class="fa fa-globe"/> <span t-field="o.partner_id.website"/></span>
-                <span t-if="not o.partner_id.website and o.partner_id.parent_id and o.partner_id.parent_id.website">
-                    <i class="fa fa-globe"/> <span t-field="o.partner_id.parent_id.website"/>
-                </span>
-                <br/><br/>
-            </div>
-        </div>
-
-
-
-    </div>
-</template>
-
-<template id="external_layout_footer">
-    <!-- <div class="footer" style="border-top: 1px solid black; line-height: 6pt"> -->
-    <t t-name="vg7.external_layout_footer">
-        <div class="footer">
-            <div class="text-left small" style="border-top: 1px solid black;">
-                <div class="col-xs-9">
-                    <br />
-                    <span t-if="company.phone">Phone: <span t-field="company.phone"/></span>
-                    <span t-if="company.fax and company.phone">&amp;bull;</span>
-                    <span t-if="company.fax">Fax: <span t-field="company.fax"/></span>
-                    <span t-if="company.email">&amp;bull;</span>
-                    <span t-if="company.email">Email: <span t-field="company.email"/></span>
-                    <span t-if="company.website">&amp;bull;</span>
-                    <span t-if="company.website">Website: <span t-field="company.website"/></span>
-                    <t t-if="company.custom_footer">
-                        <span t-raw="company.rml_footer"/>
-                    </t>
-                </div>
-                <div class="col-xs-3">
-                    <br />
-                    <ul class="list-inline text-right small">
-                        <li><span class="page"/></li>
-                        <li>/</li>
-                        <li><span class="topage"/></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </t>
-</template>
+    </template>
 
 </odoo>
 

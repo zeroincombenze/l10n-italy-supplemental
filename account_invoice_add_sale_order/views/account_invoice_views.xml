@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <field name="payment_term_id" position="after">
                  <field name="sale_id"
-                        attrs="{'readonly': [('state','not in',['draft'])], 'invisible': ['|', ('state', '=', 'paid'), ('type', '=', 'out_refund')]}"
+                        attrs="{'readonly': [('state','not in',['draft'])], 'invisible': ['|', ('state', '=', 'paid')]}"
                         class="oe_edit_only"
                         options="{'no_create': True}"/>
             </field>

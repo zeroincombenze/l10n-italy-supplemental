@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<data>
 
     <record id="account.account_invoices" model="ir.actions.report.xml">
         <field name="paperformat_id" ref="refocus_report.refocus_paperformat"/>
@@ -19,13 +18,13 @@
                             <address t-field="o.partner_id"
                                     t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
                         </p>
-                        <p t-if="o.partner_id.vat">Partita IVA: <span t-field="o.partner_id.vat"/></p>
+                        <p t-if="o.partner_id.vat">VAT Number: <span t-field="o.partner_id.vat"/></p>
                     </div>
                 </div>
 
                 <div class="row mt32 mb32" style="line-height: 6pt">
-                    <div class="col-xs-3">
-                        <p><strong>Doc.Type &amp; Number</strong></p>
+                    <div class="col-xs-3" name="doctype">
+                        <p><strong>Document type &amp; Numer</strong></p>
                         <p>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
@@ -41,16 +40,6 @@
                         <p><strong>Doc. Date:</strong></p>
                         <p t-field="o.date_invoice"/>
                     </div>
-                    <!--
-                    <div class="col-xs-3" t-if="o.partner_id.ref">
-                        <p><strong>Customer Reference:</strong></p>
-                        <p t-field="o.partner_id.ref"/>
-                    </div>
-                    <div class="col-xs-3" t-if="o.reference">
-                        <p><strong>Reference:</strong></p>
-                        <p t-field="o.reference"/>
-                    </div>
-                    -->
                     <div class="col-xs-3">
                         <p><strong>Payment Term:</strong></p>
                         <p t-if="o.payment_term_id.note" t-field="o.payment_term_id.note"/>
@@ -58,7 +47,6 @@
                     </div>
                     <div class="col-xs-4" t-if="o.payment_term_id and not o.payment_term_id.riba">
                         <p><strong>IBAN:</strong></p>
-                        <!-- <p>IT11 T020 0812 8170 0010 5084 186</p> -->
                         <p>IT75 V020 0812 8240 0010 5084 186</p>
                     </div>
                     <div class="col-xs-4" t-if="(not o.payment_term_id or o.payment_term_id.riba) and o.partner_bank_id">
@@ -193,7 +181,7 @@
                     <!-- <strong>Fiscal Position Remark:</strong>  -->
                     <span t-field="o.fiscal_position_id.note"/>
                 </p>
-                <p t-if="o.partner_id.lang == 'it_IT'">Thank you for your trust</p>
+                <!-- <p t-if="o.partner_id.lang == 'it_IT'">Thank you for your trust</p> -->
                 <p t-if="o.partner_id.lang != 'it_IT'">Country of origin: Italy</p>
             </div>
         </t>
@@ -209,14 +197,27 @@
         </xpath>
     </template>
 
-    <template id="account_invoice_report_duplicate" inherit_id="account.report_invoice_document" primary="True">
-        <xpath expr="//h2" position="replace">
-            <h2>
-                <span>Duplicate</span>
-                <span t-if="o.type == 'out_refund'">refund</span>
-                <span t-if="o.type == 'out_invoice'">invoice</span>
-                <span t-field="o.number"/>
-            </h2>
+    <template id="account_invoice_report_duplicate" inherit_id="refocus_report.report_invoice_document" primary="True">
+        <xpath expr="//div[@name='doctype']" position="replace">
+                    <div class="col-xs-3" name="doctype">
+                        <!-- <p><strong>Doc.Type &amp; Number</strong></p> -->
+                        <p><strong>Tipo &amp; Numero documento</strong></p>
+                        <p>
+                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Ft.Cortesia</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                        <span t-if="o.type == 'out_refund'">NC Cortesia</span>
+                        <span t-if="o.type == 'in_refund'">Supplier Refund</span>
+                        <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+                        <span t-field="o.number"/>
+                        </p>
+                    </div>
+        </xpath>
+        <xpath expr="//div[@class='page']/p[last()]" position="after">
+            <div>
+                <p>Documento non valido ai fini fiscali. L'originale è disponibile all'indirizzo PEC o codice SdI fornito oppure nell'area riservata.</p>
+            </div>
         </xpath>
     </template>
 
@@ -227,6 +228,14 @@
             </t>
         </t>
     </template>
-</data>
-</odoo>
 
+    <report
+           id="refocus_report.account_invoice_action_report_duplicate"
+           model="account.invoice"
+           string="Ft. di cortesia"
+           report_type="qweb-pdf"
+           name="refocus_report.account_invoice_report_duplicate_main"
+           file="refocus_report.report_invoice_duplicate"
+           attachment_use="False"
+           />
+</odoo>

@@ -12,7 +12,7 @@ python:
   - "2.7"
 
 virtualenv:
-  system_site_packages: true
+  system_site_packages: false
 
 git:
   submodules: false
@@ -20,31 +20,30 @@ git:
 addons:
   apt:
     sources:
-      - pov-wkhtmltopdf
-#   Search your sources alias here:
-#     https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
+      # Search your sources alias here:
+      # https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
     packages:
-      - python-dev
-      - libxml2-dev
-      - libxslt1-dev
-      - zlib1g-dev
-      - curl
-      - nodejs
-      - npm
-      - python-ldap
-      - python-psycopg2
-      - python-simplejson
+      # - build-essential                 # Pre-installed
+      # - curl                            # Pre-installed
       - expect-dev
-      - python-setuptools
-#   Search your packages here:
-#     https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
+      # - less-plugin-clean-css           # Pre-installed
+      # - lessc                           # Pre-installed
+      - libevent-dev
+      - libffi-dev
+      - libssl-dev
+      # - nodejs                          # Pre-installed
+      # - npm                             # Pre-installed
+      - python-dev
+      # - python-setuptools               # Pre-installed
+      # - wkhtmltopdf                     # Pre-installed
+      - zlib1g
 
 before_install:
-  - export TRAVIS_DEBUG_MODE="1"
-  - pip install urllib3[secure] --upgrade; true
-  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --depth=1
+  # Use Zeroincombenze(R) tools
+  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
+  - ${HOME}/tools/install_tools.sh -qopt
+  - source ${HOME}/dev/activate_tools
   - mv ${HOME}/tools/maintainer-quality-tools ${HOME}
-  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
 
 install:
   - travis_install_env
@@ -53,10 +52,11 @@ install:
 
 env:
   global:
+  - TRAVIS_DEBUG_MODE="2"
   - VERSION="10.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0" ODOO_REPO="$TRAVIS_REPO_SLUG"
 
   matrix:
-  - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
+  # - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
   - TESTS="1" ODOO_REPO="odoo/odoo"
   - TESTS="1" ODOO_REPO="OCA/OCB"
   - TESTS="1" ODOO_REPO="zeroincombenze/OCB"

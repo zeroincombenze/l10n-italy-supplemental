@@ -19,5 +19,5 @@
         'report/report_sale.xml',
         'report/purchase_order_templates.xml',
         'report/purchase_quotation_templates.xml',],
-    "installable": True,
+    "installable": False,
 }

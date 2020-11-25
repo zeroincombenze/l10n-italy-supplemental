@@ -4,10 +4,10 @@
     <record id="view_partner_sale_reseller_form" model="ir.ui.view">
         <field name="name">res.partner.sale.reseller</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base_geolocalize.view_crm_partner_geo_form"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <data>
-                <xpath expr="//page[@name='geo_location']" position="inside">
+                <xpath expr="//page[@name='sales_purchases']" position="inside">
                     <group>
                         <separator string="Partner Classification" colspan="2"/>
                         <group>

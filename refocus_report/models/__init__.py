@@ -4,3 +4,4 @@
 # from . import sale
 # from . import account_invoice
 from . import res_company
+from . import sale_report

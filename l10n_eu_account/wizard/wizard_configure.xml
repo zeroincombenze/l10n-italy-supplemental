@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="eu_account_configure_view" model="ir.ui.view">
+        <field name="name">eu_account.configure.wizard.form</field>
+        <field name="model">eu_account.configure.wizard</field>
+        <field name="arch" type="xml">
+            <form string='Setup EU account'>
+                <p>
+                  Configure EU compliant rules for local account.
+                </p>
+                <footer>
+                    <button string="Configure"
+                            name="configure_eu_account"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_eu_account_configure" model="ir.actions.act_window">
+        <field name="name">Configure EU account base</field>
+        <field name="res_model">eu_account.configure.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="eu_account_configure_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="open_eu_account_configure" model="ir.actions.todo">
+        <field name="action_id" ref="action_eu_account_configure"/>
+        <field name="type">automatic</field>
+    </record>
+
+</odoo>
+

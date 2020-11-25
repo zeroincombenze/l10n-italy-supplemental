@@ -19,9 +19,13 @@ Sale order state is updated conseguently.
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.0',
+    'version': '10.0.0.1.1',
 
-    'depends': ['account', 'sale'],
+    'depends': [
+        'account',
+        'sale',
+        'multibase_plus',
+    ],
 
     'data': [
         "views/account_invoice_views.xml",

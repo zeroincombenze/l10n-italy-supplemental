@@ -3,7 +3,7 @@
 
 {
     'name': 'Refocus reports',
-    'version': '10.0.0.1.3',
+    'version': '10.0.0.1.7',
     'category': 'Report Templates',
     'author': 'SHS-AV s.r.l.',
     'website': 'http://www.zeroincombenze.it',

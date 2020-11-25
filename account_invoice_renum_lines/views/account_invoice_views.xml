@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_invoice_form_renumber" model="ir.ui.view">
+        <field name="name">account.invoice.renumber</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_proforma2" position="before">
+                <button name="action_renumber_invoice_lines"
+                        type="object" states="draft,open"
+                        string="Renumber lines"/>
+            </button>
+        </field>
+    </record>
+
+</odoo>

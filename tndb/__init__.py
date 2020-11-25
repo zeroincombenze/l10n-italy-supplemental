@@ -1,1 +1,0 @@
-from .tndb import tndb
