@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="account.action_account_moves_all_a" model="ir.actions.act_window">
+            <field name="context">{'nodelete': '1', 'nocreate': '1', 'noduplicate': '1'}</field>
+        </record>
+
+        <record model="ir.ui.view" id="account_invoice_form_onchange_fiscal_position">
+			<field name="name">account.invoice.form.onchange.fiscal.position</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+				<field name="fiscal_position" position="replace">
+                    <field name="fiscal_position" on_change="onchange_fiscal_position(journal_id, fiscal_position, type, context)"/>
+                    <!--<button name="button_change_fiscal_position" states="draft" string="Change"-->
+                        <!--type="object" groups="base.group_user" icon="terp-stock_effects-object-colorize"/>-->
+				</field>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="account_invoice_supplier_form_onchange_fiscal_position">
+			<field name="name">account.invoice.supplier.form.onchange.fiscal.position</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form"/>
+			<field name="arch" type="xml">
+				<field name="fiscal_position" position="replace">
+                    <field name="fiscal_position" widget="selection" on_change="onchange_fiscal_position(journal_id, fiscal_position, type, context)" />
+                    <!--<button name="button_change_fiscal_position" states="draft" string="Change"-->
+                        <!--type="object" groups="base.group_user" icon="terp-stock_effects-object-colorize"/>-->
+				</field>
+			</field>
+		</record>
+
+        <record id="view_invoice_form_picking_origin" model="ir.ui.view">
+            <field name="name">account.invoice.picking_origin</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Sale / Stock Picking" colspan="4" groups="account.group_account_user">
+
+                        <separator string="Sale" colspan="4"/>
+                        <field name="sale_order_ids" nolabel="1" colspan="4">
+                            <tree>
+                                <field name="shop_id"/>
+                                <field name="name"/>
+                                <field name="date_order"/>
+                                <field name="client_order_ref"/>
+                                <field name="amount_untaxed" sum="SUM"/>
+                            </tree>
+                        </field>
+
+                        <separator string="Stock Picking" colspan="4"/>
+                        <field name="stock_picking_ids" nolabel="1"
+                               context="{'view_print': True, 'type':'out', 'form_view_ref':'stock.view_picking_out_form', 'tree_view_ref':'stock.view_picking_out_tree'}"/>
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_invoice_form_picking_in_origin" model="ir.ui.view">
+            <field name="name">account.invoice.picking_in_origin</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="In Stock Picking" colspan="4" groups="account.group_account_user">
+                        <separator string="In Stock Picking" colspan="4"/>
+                        <field name="stock_picking_ids" nolabel="1"
+                               context="{'view_print': True, 'type':'in', 'form_view_ref':'stock.view_picking_in_form', 'tree_view_ref':'stock.view_picking_in_tree'}"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="invoice_tree_reg_date" model="ir.ui.view">
+            <field name="name">account.invoice.tree.reg_date</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="date_invoice" position="after">
+                    <field name="supplier_invoice_number" invisible="context.get('type') == 'out_invoice'"/>
+                </field>
+                <field name="date_invoice" position="before">
+                    <field name="error_invoice" invisible="1" />
+                    <button name="show_error" string="" type="object" icon="gtk-dialog-error" attrs="{'invisible': [('error_invoice', '!=', True)]}" />
+                </field>
+            </field>
+        </record>
+
+        <record id="invoice_line_analytic" model="ir.ui.view">
+            <field name="name">account.invoice.tree.analytic</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+
+                <field name="account_id" position="after">
+                    <field domain="[('type','&lt;&gt;','view'), ('company_id', '=', parent.company_id), ('parent_id', '!=', False)]" name="account_analytic_id" groups="analytic.group_analytic_accounting"/>
+                </field>
+                <field name="price_subtotal" position="after">
+                    <field name="tax_list" />
+                </field>
+            </field>
+        </record>
+
+        <record id="invoice_supplier_form_reg_date" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.reg_date</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="date_invoice" position="after">
+                    <field name="supplier_invoice_number" attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

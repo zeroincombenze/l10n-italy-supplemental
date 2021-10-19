@@ -1,0 +1,10 @@
+name = 'openerp-web'
+version = '6.1.1'
+description = "Web Client of LibrERP, the Libre Open Source ERPe"
+long_description = "LibrERP Web is the web client of the Open Source ERP, a free enterprise management software"
+author = "Didotech SRL"
+author_email = "info@didotech.com"
+support_email = 'support@didotech.com'
+url = "http://www.librerp.com/"
+download_url = ''
+license = "AGPL"

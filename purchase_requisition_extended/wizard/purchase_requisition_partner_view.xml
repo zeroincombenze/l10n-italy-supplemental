@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+        <record id="view_purchase_requisition_partner" model="ir.ui.view">
+            <field name="name">Purchase Requisition</field>
+            <field name="model">purchase.requisition.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_partner"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace" >
+                    <field name="partner_id" on_change="onchange_partner_id(partner_id)" domain="[('supplier', '=', True)]" context="{'search_default_supplier':1,'default_supplier':1,'default_customer':0}" options="{&quot;quick_create&quot;: false}"  />
+                </field>
+                <field name="partner_address_id" position="after" >
+                    <label string="Just Supplier for product" />
+                    <field name="supplier_ids" colspan="2" nolabel="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem id="hr.menu_hr_root" groups="base.group_hr_user"/>
+    </data>
+</openerp>

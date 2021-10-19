@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.requirement.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//separator[@string='Invoices']"  position="before">
+                    <separator colspan="4" string="Order Requirements"/>
+                    <field colspan="4" name="sale_order_requirement_ids" nolabel="1" groups="stock.group_stock_user"/>
+                    <separator colspan="4" string="Production Order"/>
+                    <field colspan="4" name="mrp_production_ids" nolabel="1" context="{'view_print': True}" groups="stock.group_stock_user"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form/notebook" position="inside">
+                    <page string="Order Requirement Line">
+                        <field colspan="4" name="order_requirement_line_ids" nolabel="1" />
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_order_note_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.requirement-note.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <field colspan="4" name="note" nolabel="1" position="after">
+                    <separator colspan="4" string="Internal Note"/>
+                    <field colspan="4" name="internal_note" nolabel="1"/>
+                </field>
+
+            </field>
+        </record>
+    
+    </data>
+</openerp>

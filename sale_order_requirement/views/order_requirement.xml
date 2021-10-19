@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_order_requirement_search" model="ir.ui.view">
+            <field name="name">order.requirement.search</field>
+            <field name="model">order.requirement</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Order Requirement">
+                    <filter icon="terp-document-new" string="To Deploy" domain="[('state','=','draft')]" />
+                    <filter icon="terp-check" string="Done" domain="[('state','=','done')]"/>
+                    <separator orientation="vertical"/>
+                    <field name="product_id" filter_domain="['|', '|', ('product_id','ilike',self),('new_product_id','ilike',self), ('production_product_id', 'ilike', self)]"/>
+                    <field name="note" string="Order/Customer Ref" filter_domain="['|', ('sale_order_id','ilike',self),('client_order_ref','ilike',self)]"/>
+                    <field name="customer_id"/>
+                    <separator orientation="vertical"/>
+                    <field name="date_from" filter_domain="[('date','&gt;=',self)]"/>
+                    <field name="date_to" filter_domain="[('date','&lt;=',self)]"/>
+                    <separator orientation="vertical"/>
+                    <field name="user_id" />
+                    <field name="week_nbr" />
+                    <field name="month" />
+                </search>
+            </field>
+        </record>
+
+        <record id="view_order_requirement_form" model="ir.ui.view">
+            <field name="name">order.requirement.form</field>
+            <field name="model">order.requirement</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Order Requirement">
+                    <field name="sale_order_id"/>
+                    <!--<field name="customer_id" invisible="1"/>-->
+                    <field name="date"/>
+                    <field name="week_nbr" />
+                    <field name="month"/>
+                    <newline/>
+                    <group col="1" colspan="2" string="Note">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                    <group col="1" colspan="2" string="Internal Note">
+                        <field name="internal_note" nolabel="1"/>
+                    </group>
+                    <group col="1" colspan="4">
+                        <field name="order_requirement_line_ids" nolabel="1" context="{'order_id': id}"/>
+                    </group>
+                    <button name="set_state_draft" string="Return to Draft" type="object" icon="gtk-ok" states="done,cancel" />
+                    <newline />
+                    <field name="user_id" />
+                    <field name="state" widget="statusbar" statusbar_colors='{"draft":"red","done":"black","cancel":"grey"}'/>
+                    <button name="action_view_purchase_order" string="View Purchase Order" type="object" icon="STOCK_FULLSCREEN"/>
+                </form>
+           </field>
+        </record>
+
+        <record id="view_order_requirement_tree" model="ir.ui.view">
+            <field name="name">order.requirement.tree</field>
+            <field name="model">order.requirement</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Order Requirement" colors="blue:state == 'draft'; black:state in ('done'); gray:state == 'cancel'">
+                    <field name="id" />
+                    <field name="sale_order_id"/>
+                    <field name="client_order_ref"/>
+                    <field name="date"/>
+                    <field name="user_id" />
+                    <field name="week_nbr" />
+                    <field name="month" />
+                    <field name="state" />
+                    <field name="production_orders_state"/>
+                    <field name="purchase_orders_approved"/>
+                    <field name="purchase_orders_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_order_requirement" model="ir.actions.act_window">
+            <field name="name">Order Requirement</field>
+            <field name="res_model">order.requirement</field>
+            <field name="search_view_id" ref="view_order_requirement_search"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'nodelete': '1', 'noduplicate': '1'}</field>
+        </record>
+
+        <menuitem name="Order Requirement" action="action_view_order_requirement" id="menu_view_order_requirement"
+                  parent="mrp.menu_mrp_manufacturing" sequence="3"/>
+
+        <record id="base.menu_mrp_root" model="ir.ui.menu">
+		    <field name="action" ref=""/>
+	    </record>
+
+    </data>
+</openerp>

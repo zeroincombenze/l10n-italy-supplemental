@@ -1,0 +1,134 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* purchase_requisition_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.4\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2013-05-20 09:38+0000\n"
+"PO-Revision-Date: 2013-05-20 09:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_requisition_extended
+#: view:purchase.requisition:0
+msgid "Products"
+msgstr "Prodotti"
+
+#. module: purchase_requisition_extended
+#: model:ir.model,name:purchase_requisition_extended.model_purchase_requisition_line
+msgid "Purchase Requisition Line"
+msgstr "Linea di richiesta d'acquisto"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.line,approved:0
+msgid "Confirmed"
+msgstr "Confermati"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.line,color:0
+msgid "Color"
+msgstr "Colore"
+
+#. module: purchase_requisition_extended
+#: view:purchase.requisition:0
+msgid "Request to Prefered Suppliers"
+msgstr "Richiesta a Fornitore Preferito"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.line,draft:0
+msgid "Draft"
+msgstr "Preventivi"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.partner,partner_address_id:0
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: purchase_requisition_extended
+#: view:purchase.requisition:0
+msgid "Request to All Suppliers"
+msgstr "Richiesta a tutti i Fornitori"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.partner,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.line,prefered_supplier:0
+msgid "Prefered Supplier"
+msgstr "Fornitore Preferenziale"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition.line,multy_supplier:0
+msgid "Other Supplier"
+msgstr "Altri Fornitori"
+
+#. module: purchase_requisition_extended
+#: model:ir.model,name:purchase_requisition_extended.model_purchase_requisition_partner
+#: model:ir.model,name:purchase_requisition_extended.model_virtual_purchase_requisition_partner
+msgid "Purchase Requisition Partner"
+msgstr "Partner richiesta ordine"
+
+#. module: purchase_requisition_extended
+#: model:ir.model,name:purchase_requisition_extended.model_purchase_requisition
+msgid "Purchase Requisition"
+msgstr "Richiesta d'acquisto"
+
+#. module: purchase_requisition_extended
+#: view:purchase.requisition:0
+msgid "Request a Quotation"
+msgstr "Richiedi preventivo"
+
+#. module: purchase_requisition_extended
+#: code:addons/purchase_requisition_extended/purchase_requisition.py:63
+#: code:addons/purchase_requisition_extended/purchase_requisition.py:77
+#, python-format
+msgid "Missed Supplier !"
+msgstr "Fornitore non presente !"
+
+#. module: purchase_requisition_extended
+#: code:addons/purchase_requisition_extended/purchase_requisition.py:77
+#, python-format
+msgid "There are no Supplier"
+msgstr "Non ci sono fornitori"
+
+#. module: purchase_requisition_extended
+#: code:addons/purchase_requisition_extended/purchase_requisition.py:63
+#, python-format
+msgid "There are no Preferred Supplier"
+msgstr "Non ci sono fornitori preferenziali"
+
+#. modules: purchase_requisition_extended
+#: model:ir.ui.menu,name:base.menu_procurement_management_supplier_name
+msgid "Suppliers"
+msgstr "Fornitori"
+
+#. module: purchase_requisition_extended
+#: field:purchase.requisition,product_id:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: purchase_requisition_extended
+#: view:purchase.requisition:0
+msgid "List Ready"
+msgstr "Lista Completa"
+
+#. modules: purchase_requisition, purchase_requisition_extended
+#: selection:purchase.requisition,state:0
+#: code:addons/purchase_requisition_extended/models/inherit_purchase_requisition.py:36
+#, python-format
+msgid "To Process"
+msgstr "Da Processare"
+
+#. modules: purchase_requisition, purchase_requisition_extended
+#: view:purchase.requisition:0
+#: view:purchase.requisition:0
+msgid "Start"
+msgstr "Inizia a Processare"

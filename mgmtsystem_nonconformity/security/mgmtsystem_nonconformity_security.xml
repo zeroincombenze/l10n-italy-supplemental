@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <record model="res.groups" id="group_mgmtsystem_nonconformity_procedures">
+            <field name="name">View Procedures</field>
+            <field name="category_id" ref="mgmtsystem.module_category_management_system"/>
+        </record>
+
+    </data>
+</openerp>

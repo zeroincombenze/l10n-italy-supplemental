@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_order_form_add_versions" model="ir.ui.view">
+            <field name="name">sale.order.form.add_versions</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group[1]/group[1]/field[@name='name']" position="replace">
+                    <field name="name" readonly="1"/>
+                </xpath>
+                <xpath expr="//form/group[1]/group[1]/field[@name='date_order']" position="after">
+                    <field name="visible_original_quotation" invisible="1" />
+                    <field name="original_quotation_name" readonly="1" attrs="{'invisible':[('visible_original_quotation','=',False)]}" />
+                    <field name="original_quotation_date" readonly="1" attrs="{'invisible':[('visible_original_quotation','=',False)]}" />
+                </xpath>
+                <xpath expr="//form/group[1]/group[1]/field[@name='client_order_ref']" position="after">
+                    <field name="sale_version_id" attrs="{'invisible':[('sale_version_id','=',False)]}" readonly="1"/>
+                    <field name="active" invisible="1"/>
+                </xpath>
+                <!--
+                                    <button
+                                        name="action_previous_version"
+                                        string="Create version"
+                                        type="object"
+                                        icon="gtk-go-forward"
+                                        colspan="2"
+                                        states="draft"
+                                    /> -->
+
+
+                <page string="Other Information" position="after">
+                    <page string="Versions" attrs="{'invisible':[('sale_version_id','=',False)]}">
+                        <field name="version_ids" colspan="4" nolabel="1" readonly="1" context="{'order_state': state}">
+                            <tree string="">
+                                <field name="id" />
+                                <field name="name"/>
+                                <field name="date_order"/>
+                                <field name="user_id"/>
+                                <field name="amount_untaxed" sum="Total Tax Excluded"/>
+                                <field name="amount_total" sum="Total Tax Included"/>
+                                <field name="state"/>
+                                <field name="sale_version_id"/>
+                                <field name="revision_note"/>
+                                <button name="print_order" string="Print" type="object" icon="gtk-print" />
+                                <button name="action_reactivate_version" string="Restore Version" type="object" icon="terp-stage"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_sales_order_filter_edit" model="ir.ui.view">
+            <field name="name">sale.order.list.select_edit</field>
+            <field name="model">sale.order</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace" >
+                    <field name="name" filter_domain="['|', '|', ('name','ilike',self), ('client_order_ref','ilike',self), ('original_quotation_name','ilike',self)]"/>
+                </field>
+                <filter string="Order Date" position="after">
+                    <filter string="Orig. Version" icon="terp-accessories-archiver" domain="[]"
+                            context="{'group_by':'sale_version_id'}"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>

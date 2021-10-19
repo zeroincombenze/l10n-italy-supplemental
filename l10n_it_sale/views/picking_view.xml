@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+        <record id="action_picking_tree" model="ir.actions.act_window">
+            <field name="name">DDT Consegnati</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','out')]</field>
+            <field name="context">{'default_type': 'out', 'contact_display': 'partner_address', 'search_default_done': 1, 'search_default_have_ddt': 1, 'nodelete': '1', 'nocreate': '1', 'noduplicate': '1'}</field>
+            <field name="search_view_id" ref="stock.view_picking_out_search"/>
+            <field name="help">Visualizza solo i DDT consegnati.</field>
+        </record>
+
+        <record id="action_picking_tree_out_view10_waiting" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.view_picking_out_tree"/>
+            <field name="act_window_id" ref="action_picking_tree"/>
+        </record>
+
+        <record id="action_picking_tree_out_view20_waiting" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_picking_out_form"/>
+            <field name="act_window_id" ref="action_picking_tree"/>
+        </record>
+    
+        <menuitem action="action_picking_tree" id="menu_action_picking_tree" parent="stock.menu_stock_warehouse_mgmt" sequence="4"/>
+
+    
+        <record id="stock_picking_form_ddt_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="arch" type="xml">
+                <page string="Additional info" position="attributes">
+                    <attribute name="groups"></attribute>
+                </page>
+                <field name="type" position="attributes">
+                    <attribute name="groups"></attribute>
+                </field>
+                <field name="min_date" position="replace">
+                    <field name="ddt_date"/>
+                    <field name="ddt_number" readonly="1"/>
+                </field>
+                <page string="Additional info" position="after" >
+                    <page string="CIG / CUP" >
+                        <field name="cig" />
+                        <field name="cup" />
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_journal_picking_order_out_inh">
+            <field name="name">stock.picking.journal.view.form.inh</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_journal.sale_journal_picking_order_out"/>
+            <field name="arch" type="xml">
+                <field name="invoice_type_id" position="replace"/>
+                <field name="move_type" position="after">
+                    <field name="invoice_type_id" select="1"/>
+                </field>
+            </field>
+        </record>
+
+
+	    <record id="stock_picking_tree_ddt_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.tree.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_tree"/>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="ddt_number"/>
+                    <field name="ddt_date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_picking_tree__in_ddt_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.tree.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="stock.view_picking_in_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="ddt_in_reference"/>
+                    <field name="ddt_in_date"/>
+                </field>
+            </field>
+        </record>
+
+	    <record id="stock_picking_search_ddt_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.search.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="stock.view_picking_out_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <filter icon="terp-accessories-archiver+" name="have_ddt" string="DDT" domain="[('ddt_number','!=',False)]" />
+                    <separator orientation="vertical"/>
+                    <field name="ddt_number"/>
+                    <field name="ddt_date"/>
+                </field>
+
+            </field>
+        </record>
+
+        <record id="stock_picking_search_ddt_inherit_date" model="ir.ui.view">
+            <field name="name">stock.picking.search.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="stock_picking_filter.view_stock_picking_enhanced_filter_out"/>
+            <field name="arch" type="xml">
+
+                <field name="date_from" position="replace" >
+                    <field name="date_from" filter_domain="[('ddt_date','&gt;=',self)]" string="DDT dal"/>
+                </field>
+
+                <field name="date_to" position="replace" >
+                    <field name="date_to" filter_domain="[('ddt_date','&lt;=',self)]" string="DDT al"/>
+                </field>
+
+            </field>
+        </record>
+
+		
+        <record id="stock_picking_search_ddt_in_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.search.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="stock.view_picking_in_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="ddt_in_reference"/>
+                    <field name="ddt_in_date"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_picking_search_ddt_in_inherit_date" model="ir.ui.view">
+            <field name="name">stock.picking.search.ddt.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="stock_picking_filter.view_stock_picking_enhanced_filter"/>
+            <field name="arch" type="xml">
+                <field name="date_from" position="replace" >
+                    <field name="date_from" filter_domain="[('ddt_in_date','&gt;=',self)]" string="DDT dal"/>
+                </field>
+
+                <field name="date_to" position="replace" >
+                    <field name="date_to" filter_domain="[('ddt_in_date','&lt;=',self)]" string="DDT al"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_view_picking_form_in_ddt" model="ir.ui.view">
+            <field name="name">stock.view.picking.form.ddt</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="arch" type="xml">
+                <field name="backorder_id" position="after">
+                    <field name="ddt_in_reference"/>
+                    <field name="ddt_in_date" attrs="{'required':[ ('ddt_in_reference', '!=', False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_view_picking_form_assign_ddt" model="ir.ui.view">
+            <field name="name">stock.view.picking.form.assign.ddt</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="delivery.view_delivery_order_inherit_stock"/>
+            <field name="arch" type="xml">
+                <button name="%(delivery.report_shipping)d" position="after">
+					<group attrs="{'invisible': ['|', ('ddt_number', '!=', False), ('invoice_state', '=', 'invoiced')]}">
+						<button name="%(action_wizard_assign_ddt)d" string="Assign DDT" states="done" type="action" />
+					</group>
+                </button>
+            </field>
+		</record>
+
+    </data>
+</openerp>

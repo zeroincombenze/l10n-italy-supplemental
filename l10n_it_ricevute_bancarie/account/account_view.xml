@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- ====================================================== -->
+        <!--                     CAMPI AGGIUNTIVI                    -->
+        <!-- ====================================================== -->
+        <record id="view_riba_add_text_field" model="ir.ui.view">
+            <field name="name">account.riba.add.text.field</field>
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="account.view_payment_term_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="riba"/>
+                    <field name="spese_incasso_id"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_res_bank_add_text_field" model="ir.ui.view">
+            <field name="name">res.bank.add.text.field</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                 <field name="bic" position="after">
+                    <field name="banca_estera"/>
+                 </field>
+             </field>
+        </record>
+
+        <record id="view_partner_bank_sia_form" model="ir.ui.view">
+            <field name="name">res.partner.bank.form.sia.inherit</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="acc_number" position="after">
+                    <field name="codice_sia"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="payment_term" position="attributes">
+                    <attribute name="on_change">onchange_payment_term(partner_id, payment_term, invoice_line, fiscal_position, company_id, type, context)</attribute>
+                </field>
+            </field>
+        </record>
+        
+    <!-- Riba da emettere Tree View -->
+
+    <record model="ir.ui.view" id="view_riba_da_emettere_tree">
+        <field name="name">Issue Ri.Ba.</field>
+        <field name="model">account.move.line</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                <field name="row_color" invisible="1"/>
+                <field name="riba_selected" invisible="not context.get('invisible_supplier_riba', False)"/>
+                <button name="action_add" string="Add" type="object" icon="gtk-add"  attrs="{'invisible': [('riba_selected', '=', True)]}" invisible="not context.get('invisible_supplier_riba', False)"/>
+                <button name="action_remove" string="Remove" type="object" icon="gtk-remove"  attrs="{'invisible': [('riba_selected', '!=', True)]}" invisible="not context.get('invisible_supplier_riba', False)"/>
+                <field name="stored_invoice_id" readonly="1"/>
+                <field name="invoice_date" readonly="1"/>
+                <field name="invoice_origin" readonly="1" invisible="context.get('invisible_supplier_riba', False)"/>
+                <field name="partner_id" readonly="1"/>
+                <!--field name="iban" readonly="1"/-->
+                <field name="abi" readonly="1" invisible="context.get('invisible_supplier_riba', False)" />
+                <field name="cab" readonly="1" invisible="context.get('invisible_supplier_riba', False)"/>
+                <field name="cig" readonly="1" invisible="context.get('invisible_supplier_riba', False)"/>
+                <field name="cup" readonly="1" invisible="context.get('invisible_supplier_riba', False)"/>
+                <field name="partner_ref" readonly="1" invisible="context.get('invisible_supplier_riba', False)"/>
+                <field name="riba_bank_id" />
+                <field name="payment_term_id" readonly="1"/>
+                <field name="account_id" readonly="1"/>
+                <field name="debit" readonly="1" sum="Total Debit"/>
+                <field name="credit" readonly="1" sum="Total Credit"/>
+                <field name="residual" readonly="1" sum="Total Amount" />
+                <!--<field name="amount_residual" readonly="1" sum="Total Amount" />-->
+                <field name="date_maturity"/>
+                <field name="riba" invisible="not context.get('view_riba_flag', False)"/>
+                <field name="distinta_line_ids" invisible="1" />
+                <field name="reconcile_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Riba da emettere Filtro -->
+
+    <record id="riba_filter" model="ir.ui.view">
+        <field name="name">Ri.Ba. filter</field>
+        <field name="model">account.move.line</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Search Journal Items">
+                <filter icon="terp-go-today" string="To Issue"
+                    domain="[('distinta_line_ids', '=', False)]" name="da_emettere"/>
+                <filter icon="terp-go-today" string="Issued"
+                    domain="[('distinta_line_ids', '!=', False)]" name="emesse"/>
+                <filter icon="gtk-ok" string="RiBa Selezionate"
+                    domain="[('distinta_line_ids', '=', False), ('riba_selected', '=', True)]" name="selezionate" invisible="not context.get('invisible_supplier_riba', False)"/>
+                <field name="riba_bank_id" readonly="1" invisible="not context.get('invisible_supplier_riba', False)"/>
+                <field name="account_id"/>
+                <field name="partner_id"/>
+                <field name="invoice"/>
+                <field name="invoice_origin"/>
+                <field name="date_maturity"/>
+                <field name="date_from" filter_domain="[('date_maturity','&gt;=',self)]"/>
+                <field name="date_to" filter_domain="[('date_maturity','&lt;=',self)]"/>
+                <newline/>
+                <group expand="0" string="Group by..." colspan="11">
+                    <filter string="Group by customer" icon="terp-personal" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter string="Group by invoice" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'stored_invoice_id'}"/>
+                    <filter string="Group by Bank" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'riba_bank_id'}" invisible="not context.get('invisible_supplier_riba', False)"/>
+                    <filter string="Group by Due Date" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'date_maturity'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Riba da emettere Action -->
+
+    <record model="ir.actions.act_window" id="action_riba_da_emettere">
+        <field name="name">Issue Ri.Ba.</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.move.line</field>
+        <field name="src_model">account.move.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_riba_da_emettere_tree" />
+        <field name="context">{'default_configuration_type': 'customer', 'search_default_da_emettere': 1, 'nodelete': '1', 'nocreate': '1', 'noduplicate': '1', 'order': 'date_maturity asc', 'color': 'date_maturity', 'view_riba_flag': True}</field>
+        <field name="domain">[('riba','=','True'),('account_id.type','=','receivable'), ('reconcile_id', '=', False)]</field>
+        <field name="search_view_id" ref="riba_filter"/>
+    </record>
+
+
+        <menuitem name="Issue Ri.Ba." parent="menu_riba"
+                  id="menu_riba_da_emettere" action="action_riba_da_emettere" sequence="1"/>
+
+<!--        <menuitem name="Issue Ri.Ba." parent="account_due_list.schedule"-->
+<!--                  id="menu_riba_da_emettere_due_list" action="action_riba_da_emettere" sequence="10"/>-->
+
+        <!-- Riba da ricevere Action -->
+
+        <record model="ir.actions.act_window" id="action_riba_da_ricevere">
+            <field name="name">Receive Ri.Ba.</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.move.line</field>
+            <field name="src_model">account.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_riba_da_emettere_tree"/>
+            <field name="context">{'default_configuration_type': 'supplier', 'invisible_supplier_riba': True, 'search_default_da_emettere':1, 'nodelete': '1', 'nocreate': '1', 'noduplicate': '1', 'order': 'date_maturity asc', 'color': 'date_maturity', 'view_riba_flag': True}</field>
+            <field name="domain">['&amp;','|',('riba','=','True'),('unsolved_invoice_ids','!=',False),('account_id.type','=','payable'), ('reconcile_id', '=', False)]</field>
+            <field name="search_view_id" ref="riba_filter"/>
+        </record>
+
+        <menuitem name="Receive Ri.Ba." parent="menu_riba"
+                  id="menu_riba_da_ricevere" action="action_riba_da_ricevere" sequence="1"/>
+
+        <menuitem name="Receive Ri.Ba." parent="account_due_list.schedule"
+                  id="menu_riba_da_emettere_due_list" action="action_riba_da_ricevere" sequence="10"/>
+
+        <!-- Invoice -->
+
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_ids" position="after">
+                    <separator string="Unsolved Ri.Ba." colspan="4"/>
+                    <field name="unsolved_move_line_ids" colspan="4" nolabel="1"/>
+                </field>
+            </field>
+        </record>
+
+<!--        <record model="ir.ui.view" id="invoice_out_form_bank_riba">-->
+<!--            <field name="name">invoice.out.form.bank.riba</field>-->
+<!--            <field name="model">account.invoice</field>-->
+<!--            <field name="inherit_id" ref="account_bank.invoice_out_form_bank_riba"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="bank_riba_id" position="attributes">-->
+<!--                    <attribute name="widget">selection</attribute>-->
+<!--                </field>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="action_invoice_tree1" model="ir.actions.act_window">
+            <field name="name">Unsolved Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_invoice'), ('unsolved_move_line_ids', '!=', False)]</field>
+            <field name="context">{'default_type':'out_invoice', 'type':'out_invoice', 'journal_type': 'sale'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        </record>
+
+
+        <record id="action_invoice_tree1_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="action_invoice_tree1"/>
+        </record>
+
+        <record id="action_invoice_tree1_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.invoice_form"/>
+            <field name="act_window_id" ref="action_invoice_tree1"/>
+        </record>
+        <menuitem name="Unsolved Invoices" parent="menu_riba" 
+            id="menu_invoices" action="action_invoice_tree1" sequence="3"/>
+
+
+        <record model="ir.ui.view" id="view_account_move_riba_form">
+            <field name="name">account.move.riba.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='Journal Items']/field[@name='line_id']/tree/field[@name='state']"
+                       position="before">
+                    <field name="riba"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

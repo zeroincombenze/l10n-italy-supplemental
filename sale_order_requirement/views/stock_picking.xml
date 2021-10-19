@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="search_picking_from_customer_order" model="ir.ui.view">
+            <field name="name">stock.picking.search.sale.order</field>
+            <field name="inherit_id" ref="stock.view_picking_in_search"/>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="sale_order_ids" domain="[('state','in', ['progress', 'manual', 'done'])]"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_tree" model="ir.ui.view">
+            <field name="name">stock.picking.order.board.tree.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock_picking_extended.view_stock_picking_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="picked_rate" position="before">
+                    <field name="purchase_orders_approved"/>
+                    <field name="purchase_orders_state"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.order.board.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock_picking_extended.view_stock_picking_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Moves']/field[@name='move_lines']/tree/field[@name='product_id']"
+                       position="before">
+                    <field name="production_order_ids" invisible="1"/>
+                    <field name="has_bom" invisible="1"/>
+                    <button name="action_view_bom" string="Open BOM" type="object" icon="gtk-zoom-in" attrs="{'invisible': [('has_bom','=',False)]}"/>
+                    <button name="print_bom_explode" string="Print BOM" type="object" icon="gtk-print" attrs="{'invisible': [('has_bom','=',False)]}"/>
+                    <button name="print_production_order" string="Print All production Order" type="object" help="Print All production Order" attrs="{'invisible': [('production_order_ids','=',False)]}"
+                            icon="gtk-print"/>
+                </xpath>
+                <xpath expr="//page[@string='Moves']/field[@name='move_lines']/tree/field[@name='goods_ready']" position="after">
+                    <field name="sale_id" invisible="0"/>
+                    <field name="purchase_orders_approved"/>
+                    <field name="purchase_orders_state"/>
+                    <field name="production_order_state" />
+                </xpath>
+                <xpath expr="//page[@string='Moves']/field[@name='move_lines']/form/field[@name='note']" position="after">
+                    <separator string="Production Order" colspan="4"/>
+                    <field name="production_order_ids" nolabel="1" colspan="4"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_in_form" model="ir.ui.view">
+            <field name="name">stock.picking.order.in.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page/field/tree/field[@name='state']" position="after">
+                    <field name="temp_mrp_bom_list"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="search_product_from_bom" model="ir.ui.view">
+            <field name="name">stock.move.search.product.bom</field>
+            <field name="inherit_id" ref="stock_picking_extended.view_stock_move_search"/>
+            <field name="model">stock.move</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="product_bom_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_move_tree" model="ir.ui.view">
+            <field name="name">stock.move.order.board.tree</field>
+            <field name="inherit_id" ref="stock_picking_extended.view_stock_move_tree"/>
+            <field name="model">stock.move</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="line_price_subtotal" position="before">
+                    <field name="purchase_orders_approved" />
+                    <field name="purchase_orders_state" />
+                    <field name="production_order_state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_product_from_bom" model="ir.ui.view">
+            <field name="name">stock.move.form.product.bom</field>
+            <field name="inherit_id" ref="stock_picking_extended.view_stock_move_form"/>
+            <field name="model">stock.move</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="note" position="after">
+                    <field name="temp_mrp_bom_ids" nolabel="1" colspan="4" context="" readonly="1">
+                        <tree string="BoM Structure"
+                              colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                            <field name="row_color" invisible="1"/>
+                            <field name="is_leaf"/>
+                            <field name="id" invisible="1"/>
+                            <field name="bom_id" invisible="1"/>
+                            <field name="level" invisible="1"/>
+                            <field name="product_type" invisible="1"/>
+                            <field name="level_name"/>
+                            <field name="product_id" context="{'line_id':parent.id}" />
+                            <field name="original_qty"/>
+                            <field name="product_qty"
+                                   context="{'line_id':parent.id}"/>
+                            <field name="product_uom" readonly="1"/>
+                            <field name="mrp_routing_id"/>
+                            <!--<field name="stock_availability"/>-->
+                            <!--<field name="spare"/>-->
+                            <!--<field name="is_out_of_stock" invisible="1"/>-->
+                            <!--<field name="cost"/>-->
+                            <field name="temp_mrp_bom_action"/>
+                            <field name="is_manufactured" invisible="1" />
+                            <field name="buy" invisible="1"/>
+                            <field name="supplier_id"/>
+                        </tree>
+                    </field>
+
+
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

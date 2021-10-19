@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_order_form_subscription" model="ir.ui.view">
+            <field name="name">sale.order.form.subscription</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="type">form</field>
+            <field name="priority" eval="31"/>
+            <field name="arch" type="xml">
+                <data>
+                    <button name="cancel" position="before">
+                        <button name="suspend" states="progress" string="Suspend" type="object" icon="gtk-cancel" attrs="{'invisible': ['|', ('have_subscription', '=', False)]}"/>
+                        <button name="reactivate" states="suspended" string="Reactivate suspended order" type="object" icon="gtk-cancel"/>
+                        <button name="close" states="suspended" string="Close order" type="object" icon="gtk-cancel"/>
+                    </button>
+
+                    <field name="shipped" position="after">
+                        <field name="presentation" />
+                        <field name="have_subscription" />
+                        <group attrs="{'invisible': [('have_subscription', '=', 0)]}" >
+                            <!--<field name="automatically_create_new_subscription" string="Self-renewal" attrs="{'invisible': [('have_subscription', '=', 0)], ('state','=','draft')]}" />-->
+                            <field name="automatically_create_new_subscription" string="Self-renewal" attrs="{'invisible': [('have_subscription', '=', 0)]}" />
+                            <newline/>
+                            <field name="order_duration" attrs="{'invisible': [('have_subscription', '=', 0), ('automatically_create_new_subscription', '=', False)], 'required': ['|', ('have_subscription', '=', 1), ('automatically_create_new_subscription', '=', True), ('state', '=', 'draft')], 'readonly': True}" />
+                            <button name="%(action_sale_change_subscriptions)d" type="action" icon="terp-stock_effects-object-colorize" string="Change Subscriptions" attrs="{'invisible':[('state','!=','draft')]}" />
+                        
+                            <field name="order_invoice_duration" attrs="{'invisible': [('have_subscription', '=', 0)], 'required': [('have_subscription', '=', 1), ('state', '=', 'draft')]}" />
+                            <field name="subscription_invoice_day" groups="sale.view_subscription_invoice_day" />
+                            <field name="order_start_date" attrs="{'invisible': [('have_subscription', '=', 0)]}" />
+                        </group>
+                    </field>
+                    <field name="date_confirm" position="after">
+                        <field name="order_end_date" string="Subscription Ending Date" attrs="{'invisible': [('have_subscription', '=', 0)]}" />
+                    </field>
+                    <!--<field name="tax_id" position="replace">-->
+                        <!--<field colspan="4" name="tax_id" nolabel="1" domain="[('parent_id', '=', False)]" attrs="{'readonly': [('layout_type', '!=', 'article')]}"/>-->
+                    <!--</field>-->
+
+                    <xpath expr="/form/notebook/page/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='name']" position="after">
+                        <field name="subscription" />
+                        <field name="product_duration" invisible="1"/>
+                    </xpath>
+
+                    <xpath expr="/form/notebook/page/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='price_subtotal']" position="after">
+                        <field name="suspended" invisible="True" />
+                        <field name="state" invisible="True" />
+                        <field name="invoiced" invisible="True" />
+                        <button name="action_suspend" string="Suspend" type="object" icon="kanban-stop" attrs="{'invisible': ['|', '|', '|', ('subscription', '=', False), ('suspended', '=', True), ('state', '=', 'draft'), ('invoiced', '=', False)]}" />
+                        <button name="action_restore" string="Restore" type="object" icon="kanban-pause" attrs="{'invisible': ['|', '|', ('subscription', '=', False), ('suspended', '=', False), ('state', '=', 'draft')]}" />
+                    </xpath>
+
+                    <xpath expr="/form/notebook/page/field[@name='order_line']/tree[@string='Sales Order Lines']" position="attributes">
+                        <attribute name="colors">grey:suspended == True;black:suspended == False</attribute>
+                    </xpath>
+
+                    <xpath expr="/form/notebook/page/field[@name='order_line']/form[@string='Sales Order Lines']/notebook/page/group/field[@name='name']" position="after">
+                        <field name="subscription" invisible="True" />
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+        <record id="view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree.renew</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Sales Orders" position="replace">
+                    <tree string="Sales Orders" colors="fuchsia:row_color=='fuchsia';grey:row_color=='grey';blue:row_color=='blue';red:row_color=='red';green:row_color=='green';orange:row_color=='orange'">
+                        <field name="name"/>
+                        <field name="date_order"/>
+                        <!--<field name="client_order_ref" groups="base.group_extended"/>-->
+                        <field name="order_end_date" string="Ending Date" />
+                        <field name="partner_id"/>
+                        <field name="user_id" />
+                        <field name="picked_rate" widget="progressbar"/>
+                        <field name="invoiced_rate" widget="progressbar"/>
+                        <field name="amount_untaxed" sum="Total Tax Excluded"/>
+                        <field name="amount_total" sum="Total Tax Included"/>
+                        <field name="state"/>
+                        <field name="row_color" invisible="1" />
+                    </tree>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_subscription_search" model="ir.ui.view">
+            <field name="name">subscription.search</field>
+            <field name="model">sale.order.line</field>
+            <field name="type">search</field>
+            <field name="priority" eval="100"/>
+            <field name="arch" type="xml">
+                <search string="Search Sales Order">
+                    <filter icon="terp-gtk-go-back-rtl" string="Suspended" domain="[('suspended','=', True)]" name="Suspended" help="Suspended Sale Order Line"/>
+                    <field name="order_id"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="user_id"/>
+                    <field name="section_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Product" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_id'}"/>
+                        <filter string="Order" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'order_id'}"/>
+                        <filter string="Customer" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Internal User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Sales Team" icon="terp-personal" domain="[]" context="{'group_by':'section_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_subscription_tree" model="ir.ui.view">
+            <field name="name">subscription.tree</field>
+            <field name="model">sale.order.line</field>
+            <!--<field name="inherit_id" ref="sale.view_order_tree"/>-->
+            <field name="type">tree</field>
+            <field name="priority" eval="100"/>
+            <field name="arch" type="xml">
+                <tree string="Subscriptions">
+                    <field name="order_id"/>
+                    <field name="order_start_date" />
+                    <field name="order_duration" />
+                    <field name="order_end_date" />
+                    <field name="partner_id"/>
+                    <field name="product_id" invisible="1" />
+                    <field name="name" />
+                    <field name="price_unit" />
+                    <field name="price_subtotal" />
+                    <field name="user_id" />
+                    <field name="section_id" />
+                    <field name="suspended" invisible="True" />
+                    <button name="action_dummy" string="Suspend" type="object" icon="STOCK_YES" attrs="{'invisible': [('suspended', '=', True)]}" />
+                    <button name="action_dummy" string="Restore" type="object" icon="kanban-pause" attrs="{'invisible': [('suspended', '=', False)]}" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

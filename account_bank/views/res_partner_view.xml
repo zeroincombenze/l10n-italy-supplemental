@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="res_bank_riba" model="ir.ui.view">
+            <field name="name">res.bank.riba</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_payment_term" position="after">
+                    <separator string="Ri.Ba. properties" colspan="2"/>
+                    <group col="4" colspan="2">
+                        <field name="bank_riba_id" />
+                    </group>
+                    <group col="2" colspan="2">
+                        <field name="company_bank_id" domain="[('company_id', '=', company_id), ('state', '=', 'iban')]" />
+                    </group>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

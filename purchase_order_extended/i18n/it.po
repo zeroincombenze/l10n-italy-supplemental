@@ -1,0 +1,36 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* sale_order_filter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-20 19:50+0000\n"
+"PO-Revision-Date: 2014-02-20 19:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_order_extended
+#: field:purchase.order.line,sequence:0
+msgid "Line #"
+msgstr "Nr. linea"
+
+#. module: purchase_order_extended
+#: field:res.partner,property_payment_term_payable:0
+msgid "Payment Term for Supplier"
+msgstr "Modalità di pagamento per Fornitore"
+
+#. module: purchase_order_extended
+#: help:res.partner,property_payment_term_payable:0
+msgid "This payment term will be used instead of the default one for the current partner for supplier moves."
+msgstr "Questo metodo di pagamento verrà utilizzato rispetto a quello di default per gli acquisti da questo partner."
+
+#. module: purchase_order_extended
+#: field:purchase.order,contact_id:0
+msgid "Contact"
+msgstr "Contatto"

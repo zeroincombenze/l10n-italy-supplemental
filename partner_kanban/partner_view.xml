@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       
+        <!-- Partner Kanban View  -->
+
+    <record model="ir.ui.view" id="partner_kanban_view">
+        <field name="name">Partner Kanban</field>
+        <field name="model">res.partner</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_partner_vignette">
+                            <div class="oe_partner_image">
+                                <a type="edit"><img t-att-src="kanban_image('res.partner', 'partner_logo', record.id.value)" class="oe_partner_picture"/></a>
+                            </div>
+                            <div class="oe_partner_details">
+                                <h4><a type="edit"><field name="name"/></a></h4>
+                                <ul>
+                                    <li t-if="record.city.raw_value"><field name="city"/></li>
+                                    <li t-if="record.country.raw_value"><field name="country"/></li>
+                                    <li t-if="record.phone.raw_value">Tel: <field name="phone"/></li>
+                                    <li t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></li>
+                                    <li t-if="record.email.raw_value"><a t-attf-href="mailto:#{record.email.value}"><field name="email"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            $('.oe_partner_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_partner_picture_wide') } });
+                        </script>
+                    </t>	
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <record id="res_partner_logo_inherit_form" model="ir.ui.view">
+        <field name="name">res.partner.logo.inherit.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">                
+                <field name="name" position="replace">
+                <!--<separator string="Partner" colspan="6" col="1"/>-->
+					<field name="partner_logo" widget="image" nolabel="1" />
+
+                    <field select="1" nolabel="1" name="name"/>
+
+                    <newline/>
+				<separator string="Proprieties" colspan="6" col="1"/>
+                    <newline/>
+			</field>
+    	</field>
+    </record>
+
+    </data>
+</openerp>

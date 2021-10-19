@@ -1,0 +1,597 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_due_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-20 21:44+0000\n"
+"PO-Revision-Date: 2014-03-20 22:47+0100\n"
+"Last-Translator: Sergio Corato <sergiocorato@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Receivable"
+msgstr "Entrate"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Last Month"
+msgstr "Mese Scorso"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Next Month"
+msgstr "Mese Prossimo"
+
+#. module: account_due_list
+#: field:account.move.line,payment_term_type:0
+msgid "Payment Type"
+msgstr "Tipo di Pagamento"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Payment Type"
+msgstr "Tipo di Pagamento"
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: field:account.move.line,residual:0
+msgid "Residual"
+msgstr "Saldo"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Paypal"
+msgstr "Paypal"
+
+#. module: account_due_list
+#: constraint:account.move.line:0
+msgid "Company must be the same for its related account and period."
+msgstr "L'azienda deve essere la stessa per il conto ed il relativo periodo"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Unreconciled"
+msgstr "Non riconciliate"
+
+#. module: account_due_list
+#: view:account.move:0
+msgid "Current balance of move"
+msgstr "Sbilancio della registrazione"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Bonifico Bancario"
+msgstr "Bonifico Bancario"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "F24"
+msgstr "F24"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Ricevuta Bancaria"
+msgstr "Ricevuta Bancaria"
+
+#. module: account_due_list
+#: field:account.move.line,invoice_origin:0
+msgid "Source Doc"
+msgstr "Documento di origine"
+
+#. module: account_due_list
+#: model:ir.ui.menu,name:account_due_list.schedule
+#: view:res.partner:0
+msgid "Schedule"
+msgstr "Scadenzario Pagamenti"
+
+#. module: account_due_list
+#: model:ir.ui.menu,name:account_due_list.menu_action_invoice_payments
+msgid "All Payment"
+msgstr "Tutti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: model:ir.actions.act_window,name:account_due_list.action_invoice_receivable
+#: model:ir.ui.menu,name:account_due_list.menu_action_invoice_receivable
+msgid "Receivable"
+msgstr "Entrate"
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: model:ir.actions.act_window,name:account_due_list.action_invoice_payable
+#: model:ir.ui.menu,name:account_due_list.menu_action_invoice_payable
+msgid "Payable"
+msgstr "Uscite"
+
+#. module: account_due_list
+#: field:account.move.line,invoice_date:0
+msgid "Invoice Date"
+msgstr "Data Fattura"
+
+#. module: account_due_list
+#: view:account.invoice:0
+#: field:account.invoice,to_pay:0
+msgid "To Pay"
+msgstr "Da Pagare"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Total Credit"
+msgstr "Totale AVERE"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Payable"
+msgstr "Uscite"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Rimessa Diretta"
+msgstr "Rimessa Diretta"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Search Payments"
+msgstr "Ricerca pagamenti"
+
+#. module: account_due_list
+#: model:ir.model,name:account_due_list.model_account_move_line
+msgid "Journal Items"
+msgstr "Voci sezionale"
+
+#. module: account_due_list
+#: constraint:account.move.line:0
+msgid "You can not create journal items on an account of type view."
+msgstr "Non è possibile effettuare registrazioni su un conto di tipo vista."
+
+#. module: account_due_list
+#: field:account.move.line,day:0
+msgid "Day"
+msgstr "Giorno"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Receivable payments"
+msgstr "Crediti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Overdue payments"
+msgstr "Pagamenti scaduti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Unreconciled payments"
+msgstr "Partite aperte"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Carta di Credito"
+msgstr "Carta di Credito"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Total Debit"
+msgstr "Totale DARE"
+
+#. module: account_due_list
+#: sql_constraint:account.move.line:0
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr "Valore di credito o debito errato nella registrazione contabile !"
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: model:ir.actions.act_window,name:account_due_list.action_invoice_payments
+msgid "All Payments"
+msgstr "Tutti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Payable payments"
+msgstr "Debiti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Overdue"
+msgstr "Scaduti"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Contrassegno"
+msgstr "Contrassegno"
+
+#. module: account_due_list
+#: constraint:account.move.line:0
+msgid "You can not create journal items on closed account."
+msgstr "Non è possibile creare registrazioni contabili su di un conto chiuso."
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Bonifico Postale"
+msgstr "Bonifico Postale"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Due date"
+msgstr "Data scadenza"
+
+#. module: account_due_list
+#: field:account.move.line,payment_term_id:0
+msgid "Payment Term"
+msgstr "Termine di pagamento"
+
+#. module: account_due_list
+#: constraint:account.move.line:0
+msgid "The selected account of your Journal Entry forces to provide a secondary currency. You should remove the secondary currency on the account or select a multi-currency view on the journal."
+msgstr "Il conto selezionato nella registrazione contabile necessita di una valuta secondaria. Occorre rimuovere la valuta secondaria dal conto oppure selezionare una vista multivaluta nel sezionale."
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Month"
+msgstr "Mese"
+
+#. module: account_due_list
+#: constraint:account.move.line:0
+msgid "The date of your Journal Entry is not in the defined period! You should change the date or remove this constraint from the journal."
+msgstr "La data della registrazione contabile non è presente nel periodo definito! Occorre cambiare la data o rimuovere questo vincolo dal sezionale."
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: field:account.move.line,stored_invoice_id:0
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_due_list
+#: selection:account.move.line,payment_term_type:0
+msgid "Contanti"
+msgstr "Contanti"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_due_list
+#: field:account.move.line,partner_ref:0
+msgid "Partner Ref"
+msgstr "Rif. Partner"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "From Start Current Month"
+msgstr "Dall'inizio del Mese Corrente"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "From Start Current Year"
+msgstr "Dall'inizio dell'Anno Corrente"
+
+#. module: account_due_list
+#: view:account.move.line:0
+#: model:ir.actions.act_window,name:account_due_list.action_account_ordered
+msgid "Account Ledger"
+msgstr "Schede Contabili"
+
+#. module: account_due_list
+#: code:addons/account_due_list/account_move_line.py:67
+#, python-format
+msgid "Incongruent data: move %s has more than one invoice"
+msgstr "Data incongruente: il movimento %s ha più di una fattura"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Sales Orders"
+msgstr "Ordini di Vendita"
+
+#. module: account_due_list
+#: field:account.move.line,date_from:0
+msgid "Date from"
+msgstr "Dal"
+
+#. module: account_due_list
+#: field:account.move.line,date_to:0
+msgid "Date to"
+msgstr "Al"
+
+#. module: account_due_list
+#: field:account.move.line,direction:0
+msgid "Direction"
+msgstr "Verso"
+
+#. module: account_due_list
+#: code:addons/account_due_list/account_move_line.py:67
+#, python-format
+msgid "Error"
+msgstr "Errore"
+
+#. module: account_due_list
+#: model:ir.ui.menu,name:account_due_list.menu_action_account_ledger
+msgid "Account Ledger"
+msgstr "Schede Contabili"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Invoice from"
+msgstr "Fattura dal"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Invoice to"
+msgstr "Fattura al"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Due from"
+msgstr "Dal"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Due to"
+msgstr "Al"
+
+#. module: account_due_list
+#: view:account.move.line:0
+msgid "Open Invoice"
+msgstr "Apri Fattura"
+
+#. module: account_due_list
+#: field:account.move.line,running_balance:0
+msgid "Running Balance"
+msgstr "Saldo Progressivo"
+
+#. module: account_due_list
+#: model:res.groups,name:account_due_list.group_account_invoice_approve_manager
+msgid "Approve To Pay Supplier Invoice / Manager"
+msgstr "Approvazione Pagamento Fatture Fornitori / Manager"
+
+#. module: account_due_list
+#: view:account.invoice:0
+msgid "Disapproves to Pay"
+msgstr "Blocca il Pagamento"
+
+#. module: account_due_list
+#: view:account.invoice:0
+msgid "Approve to Pay"
+msgstr "Approva il Pagamento"
+
+#. module: account_due_list
+#: help:account.invoice,to_pay:0
+msgid "This field will be marked when the purchase manager approve this invoice to be paid, and unmarked if the invoice will be blocked to pay"
+msgstr "Questo campo verrà contrassegnato quando il responsabile acquisti approverà questa fattura e non sarà contrassegnata se la fattura verrà bloccata per il pagamento"
+
+#. module: account
+#: view:account.account:0
+#: view:account.automatic.reconcile:0
+#: field:account.move.line,reconcile_function_id:0
+#: field:account.move.line,reconcile_id:0
+#: view:account.move.line.reconcile:0
+#: view:account.move.line.reconcile.writeoff:0
+msgid "Reconcile"
+msgstr "Riconciliazione"
+
+#. modules: account_due_list
+#: sql_constraint:account.move.line:0
+msgid "Wrong date maturity in accounting entry !"
+msgstr "Data di scadenza Errata"
+
+#. module: account_due_list
+#: code:addons/account_due_list/models/account_move_line.py:262
+#, python-format
+msgid "Date maturity less of date in Journal Entries"
+msgstr "Data di scadenza inferiore alla scrittura contabile"
+
+#. module: account_due_list
+#: field:res.partner,overdue_credit:0
+msgid "Overdue Payment"
+msgstr "Totale Scaduto"
+
+#. module: account_due_list
+#: field:res.partner,last_overdue_credit_activity_date:0
+msgid "Last Activity On"
+msgstr "Ultima Attività Recupero"
+
+#. module: account_due_list
+#: field:res.partner,next_overdue_credit_activity_date:0
+msgid "Next Activity On"
+msgstr "Prossima Attività Recupero"
+
+#. module: account_due_list
+#: view:res.partner:0
+msgid "Overdue Credit"
+msgstr "Con Scaduto"
+
+#. module: account_due_list
+#: view:res.partner:0
+msgid "To Recall for Credit"
+msgstr "Con Richiami entro Oggi"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+msgid "Today"
+msgstr "Oggi"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: model:ir.actions.act_window,name:credit.phonecall_to_phonecall_act
+msgid "Schedule Other Call"
+msgstr "Pianifica altra chiamata"
+
+#. module: account_due_list
+#: code:addons/crm/crm_phonecall.py:216
+#: view:credit.phonecall:0
+#, python-format
+msgid "Phone Call"
+msgstr "Telefonata"
+
+#. module: account_due_list
+#: field:credit.phonecall,state:0
+msgid "State"
+msgstr "Stato"
+
+#. module: account_due_list
+#: field:credit.phonecall,date_action_next:0
+msgid "Next Action"
+msgstr "Prossima Azione"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: field:credit.phonecall,user_id:0
+msgid "Responsible"
+msgstr "Responsabile"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: field:credit.phonecall,create_date:0
+msgid "Creation Date"
+msgstr "Data di Creazione"
+
+#. module: account_due_list
+#: help:credit.phonecall,duration:0
+msgid "Duration in Minutes"
+msgstr "Durata in minuti"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: field:credit.phonecall,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: account_due_list
+#: selection:credit.phonecall,priority:0
+msgid "High"
+msgstr "Alta"
+
+#. module: account_due_list
+#: selection:credit.phonecall,priority:0
+msgid "Highest"
+msgstr "Massima"
+
+#. module: account_due_list
+#: view:credit.phonecall:0 selection:credit.phonecall,state:0
+#: view:res.partner:0
+msgid "Held"
+msgstr "Gestito"
+
+#. module: account_due_list
+#: field:credit.phonecall,priority:0
+msgid "Priority"
+msgstr "Priorità"
+
+#. module: account_due_list
+#: view:credit.phonecall:0 selection:credit.phonecall,state:0
+msgid "Not Held"
+msgstr "Non gestito"
+
+#. module: account_due_list
+#: selection:credit.phonecall,priority:0
+msgid "Low"
+msgstr "Bassa"
+
+#. module: account_due_list
+#: field:credit.phonecall,date_closed:0
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: account_due_list
+#: field:credit.phonecall,partner_phone:0 field:credit.phonecall2phonecall,phone:0
+msgid "Phone"
+msgstr "Telefono"
+
+#. module: account_due_list
+#: field:credit.phonecall,active:0
+msgid "Active"
+msgstr "Attivo"
+
+#. module: account_due_list
+#: field:credit.phonecall,date_action_last:0
+msgid "Last Action"
+msgstr "Ultima Azione"
+
+#. module: account_due_list
+#: field:credit.phonecall,duration:0
+#: field:credit.phonecall.report,duration:0
+msgid "Duration"
+msgstr "Durata"
+
+#. module: account_due_list
+#: field:credit.phonecall,company_id:0
+msgid "Company"
+msgstr "Azienda"
+
+#. module: account_due_list
+#: view:credit.phonecall:0 selection:credit.phonecall,state:0
+#: view:res.partner:0
+msgid "Todo"
+msgstr "Da fare"
+
+#. module: account_due_list
+#: selection:credit.phonecall,state:0
+msgid "Cancelled"
+msgstr "Annullato"
+
+#. module: account_due_list
+#: field:credit.phonecall,name:0 view:res.partner:0
+msgid "Call Summary"
+msgstr "Riepilogo chiamata"
+
+#. module: account_due_list
+#: field:credit.phonecall,email_from:0
+msgid "Email"
+msgstr "Email"
+
+#. module: account_due_list
+#: field:crm.lead,date_open:0 field:credit.phonecall,date_open:0
+msgid "Opened"
+msgstr "Aperto"
+
+#. module: account_due_list
+#: selection:credit.phonecall,state:0
+#, python-format
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: account_due_list
+#: selection:credit.phonecall,priority:0
+msgid "Normal"
+msgstr "Normale"
+
+#. module: account_due_list
+#: field:credit.phonecall,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_due_list
+#: selection:credit.phonecall,priority:0
+msgid "Lowest"
+msgstr "Minima"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: model:ir.actions.act_window,name:credit.crm_case_categ_phone0
+msgid "Phone Calls"
+msgstr "Chiamate Telefoniche"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+#: field:credit.phonecall,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_due_list
+#: view:credit.phonecall:0
+msgid "Contacts"
+msgstr "Contatti"
+

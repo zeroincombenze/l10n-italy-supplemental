@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="project.can_modify_prices" model="res.groups">
+            <field name="name">Project Color based on Total Amount</field>
+        </record>
+
+        <record id="project.color_service_spent_amount" model="res.groups">
+            <field name="name">Project Color based on Service Total Amount</field>
+        </record>
+
+    </data>
+</openerp>

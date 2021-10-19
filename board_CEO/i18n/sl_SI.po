@@ -1,0 +1,183 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* board_CEO
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-28 13:29+0000\n"
+"PO-Revision-Date: 2014-06-28 15:37+0100\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: sl_SI\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#. module: board_CEO
+#: view:crm.helpdesk:0 view:crm.lead:0
+msgid "Reference 2"
+msgstr "Sklic 2"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "Delegated tasks"
+msgstr "Delegirana opravila"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "My tasks"
+msgstr "Moja opravila"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "Helpdesk"
+msgstr "Vložišče/Informacije"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "Pending or unassigned tasks"
+msgstr "Odložena ali nedodeljena opravila"
+
+#. module: board_CEO
+#: view:crm.lead:0
+msgid "State"
+msgstr "Stanje"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_case_oppor
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_oppor
+msgid "Open Opportunities"
+msgstr "Tekoči primeri"
+
+#. module: board_CEO
+#: view:board.board:0
+#: model:ir.actions.act_window,name:board_CEO.ceo_pending_issues
+#: model:ir.ui.menu,name:board_CEO.menu_pending_issues
+msgid "Pending Issues"
+msgstr "Odložene zadeve"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_my_delegated_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_delegated_tasks
+msgid "My Delegated Tasks"
+msgstr "Moja delegirana opravila"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "PROJECTS"
+msgstr "PROJEKTI"
+
+#. module: board_CEO
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_crm
+msgid "CRM"
+msgstr "CRM"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_other_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_other_tasks
+msgid "My Pending Tasks"
+msgstr "Moja odložena opravila"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_unassigned_tasks
+msgid "Unassigned Tasks"
+msgstr "Nedodeljena opravila"
+
+#. module: board_CEO
+#: view:board.board:0 model:ir.actions.act_window,name:board_CEO.ceo_case_lead
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_leads
+msgid "Open Leads"
+msgstr "Tekoče priložnosti"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_closed_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_closed_tasks
+msgid "Finished tasks"
+msgstr "Zaključena opravila"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_helpdesk
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_helpdesk
+msgid "Helpdesk Requests"
+msgstr "Zahtevki"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_projects
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_project
+msgid "Projects"
+msgstr "Projekti"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.open_board_ceo
+#: model:ir.ui.menu,name:board_CEO.menu_board_ceo
+msgid "CEO Dashboard"
+msgstr "CEO preglednica"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_closed_issues
+#: model:ir.ui.menu,name:board_CEO.menu_closed_issues
+msgid "Closed Issues"
+msgstr "Zaključene zadeve"
+
+#. module: board_CEO
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_taskmenu
+msgid "Tasks"
+msgstr "Opravila"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_my_open_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_tasks
+msgid "My Open Tasks"
+msgstr "Moja tekoča opravila"
+
+#. module: board_CEO
+#: view:board.board:0
+#: model:ir.actions.act_window,name:board_CEO.ceo_project_issues
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_issues
+msgid "Open Issues"
+msgstr "Tekoče zadeve"
+
+#. module: board_CEO
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_pna
+msgid "Projects and Analytic"
+msgstr "Projekti in analitika"
+
+#. module: board_CEO
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_pmo
+msgid "Project Management Office"
+msgstr "Urad projektne uprave"
+
+#. module: board_CEO
+#: view:board.board:0 model:ir.actions.act_window,name:board_CEO.ceo_analytic
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_analytic
+msgid "Analytics"
+msgstr "Analitika"
+
+#. module: board_CEO
+#: view:crm.helpdesk:0
+msgid "Deadline"
+msgstr "Rok"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "Open Cases/Opportunities"
+msgstr "Tekoči primeri"
+
+#. module: board_CEO
+#: view:board.board:0
+msgid "CEO board"
+msgstr "CEO preglednica"
+
+#. module: board_CEO
+#: view:crm.helpdesk:0 view:crm.lead:0
+msgid "Reference 1"
+msgstr "Sklic 1"
+
+#. module: board_CEO
+#: model:ir.ui.menu,name:board_CEO.menu_ceo_issmenu
+msgid "Issues"
+msgstr "Zadeve"

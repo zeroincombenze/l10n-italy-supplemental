@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.view" id="product_normal_form_view_ext">
+			<field name="name">product.normal.form.view.ext</field>
+			<field name="model">product.product</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="arch" type="xml">
+                <field name="purchase_ok" position="replace">
+                    <field name="purchase_ok"  on_change="onchange_categ_id('purchase_ok', categ_id, purchase_ok, supply_method, type, is_kit, context)" />
+                </field>
+
+				<field name="categ_id" position="replace">
+                </field>
+                <field name="variants" position="after">
+					<field name="categ_id"  operator="child_of"  on_change="onchange_categ_id('categ_id', categ_id, purchase_ok, supply_method, type, is_kit, context)" />
+				</field>			
+				
+				<field name="type" position="attributes"> 
+					<attribute name="on_change">onchange_categ_id('type', categ_id, purchase_ok, supply_method, type, is_kit, context)</attribute>
+				</field>	
+				<field name="procure_method" position="attributes"> 
+					<attribute name="on_change">onchange_categ_id('procure_method', categ_id, purchase_ok, supply_method, type, is_kit, context)</attribute>
+				</field>
+                <field name="supply_method" position="attributes">
+					<attribute name="on_change">onchange_categ_id('supply_method', categ_id, purchase_ok, supply_method, type, is_kit, context)</attribute>
+				</field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

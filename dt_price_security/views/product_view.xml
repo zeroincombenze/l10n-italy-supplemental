@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_price_security_product_form" model="ir.ui.view">
+            <field name="name">price_security.product.form</field>
+            <field name="priority" eval="30"/>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="list_price" position="replace">
+                        <field name="list_price"
+                               on_change="onchange_list_price(list_price, uos_coeff, context)"/>
+                        <field name="list_price_copy" />
+                    </field>
+                    
+                    <xpath expr="//form//notebook/page[@string='Information']/group[2]">
+                        <field name="can_modify_prices" groups="dt_price_security.can_modify_prices"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

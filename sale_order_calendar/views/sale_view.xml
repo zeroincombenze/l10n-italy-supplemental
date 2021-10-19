@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_sale_order_tree_date" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="date_action_next"/>
+                    <field name="next_activity_id" />
+                </field>
+            </field>
+        </record>
+
+        <record id="sale_order_confirm_view" model="ir.ui.view">
+            <field name="name">sale.order.activity.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority">5</field>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/group[1]" position="attributes">
+                        <attribute name="col">8</attribute>
+                    </xpath>
+                    <xpath expr="//form/group[1]/group[2]" position="after">
+                        <group string="Next Action">
+                            <field name="next_activity_id" widget="selection" nolabel="1" placeholder="What to do..."/>
+                            <label string="on" />
+                            <field name="date_action_next" nolabel="1"/>
+                        </group>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+        <record id="view_sale_order_search_date" model="ir.ui.view">
+            <field name="name">sale.order.search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_order_confirm.view_sales_order_filter_simple"/>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="shop_id" position="before">
+                    <field name="date_from" filter_domain="[('date_action_next','&gt;=',self)]" string="Next Action From"/>
+                    <field name="date_to" filter_domain="[('date_action_next','&lt;=',self)]" string="Next Action To"/>
+                    <field name="next_activity_id" widget="selection"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="sale.view_sale_order_calendar" model="ir.ui.view">
+            <field name="name">sale.order.calendar</field>
+            <field name="model">sale.order</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar string="Sales Orders" color="next_activity_id" date_start="date_action_next">
+                    <field name="partner_id"/>
+                    <field name="amount_total"/>
+                    <field name="state" />
+                </calendar>
+            </field>
+        </record>
+
+    </data>
+</openerp>

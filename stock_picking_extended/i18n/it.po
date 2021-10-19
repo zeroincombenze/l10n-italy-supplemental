@@ -1,0 +1,893 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* stock_picking_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-15 13:42+0000\n"
+"PO-Revision-Date: 2014-11-15 13:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_extended
+#: field:stock.journal,default_invoice_state:0
+msgid "Invoice Control"
+msgstr "Controllo fatture"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_delivery
+msgid "Shipping Orders"
+msgstr "Spedizione Ordini"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_cvendita
+msgid "C/Sell"
+msgstr "C/Vendita"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_cvisione
+msgid "C/Vision"
+msgstr "C/Visione"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_clavorazione
+msgid "C/Processing"
+msgstr "C/Lavorazione"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_cnoleggio
+msgid "C/Rent"
+msgstr "C/Noleggio"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_criparazione
+msgid "C/Repair"
+msgstr "C/Riparazione"
+
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso5
+msgid "Made for Accreditation"
+msgstr "Reso per Accredito"
+
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_cug
+msgid "free loan"
+msgstr "Comodato d'uso Gratuito"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso
+#: view:stock.return.picking:0
+msgid "Return"
+msgstr "Reso"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso1
+msgid "Return to Vendor"
+msgstr "Reso a Fornitore"
+
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_omaggio
+msgid "Tribute"
+msgstr "Omaggio"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso2
+msgid "Made Rental Income"
+msgstr "Reso Conto Noleggio"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso3
+msgid "Account Rendered Vision"
+msgstr "Reso Conto Visione"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso4
+msgid "Return to Repair"
+msgstr "Reso da Riparazione"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso5
+msgid "Made for Accreditation"
+msgstr "Reso per Accredito"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso6
+msgid "Made for Replacement"
+msgstr "Reso per Sostituzione"
+
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_reso7
+msgid "Made in Fixed Guarantee"
+msgstr "Reso Riparato in Garanzia"
+
+#. module: stock
+#: model:stock.journal,name:stock.journal_cg
+msgid "C/repair under warranty"
+msgstr "C/riparazione in garanzia"
+
+
+#. module: stock_picking_extended
+#: view:purchase.order:0
+msgid "Pickings"
+msgstr "Pickings"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/sale/sale.py:45
+#, python-format
+msgid " ref. order n. "
+msgstr " rif. ordine n. "
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/sale/sale.py:45
+#, python-format
+msgid " of "
+msgstr " del "
+
+#. module: stock_picking_extended
+#: field:account.invoice,transportation_condition_id:0
+#: field:stock.picking,transportation_condition_id:0
+#: model:ir.model,name:stock_picking_extended.model_stock_picking_transportation_condition
+msgid "transportation Condition"
+msgstr "Trasporto a cura di"
+
+#. module: stock_picking_extended
+#: field:account.invoice,weight_net:0
+msgid "Net Weight"
+msgstr "Peso Netto"
+
+#. module: stock_picking_extended
+#: field:res.partner.address,default_delivery_partner_address:0
+msgid "Default delivery         address"
+msgstr "Indirizzo di consegna di default"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_stock_picking
+msgid "Picking List"
+msgstr "Lista Prelievo"
+
+#. module: stock_picking_extended
+#: field:purchase.order,incoterm_id:0
+msgid "Incoterm"
+msgstr "Incoterm"
+
+#. module: stock_picking_extended
+#: help:account.invoice,address_delivery_id:0
+#: help:stock.picking,address_delivery_id:0
+msgid "Delivery address of             partner"
+msgstr "Indirizzo di consegna del partner"
+
+#. module: stock_picking_extended
+#: constraint:stock.picking:0
+msgid "Error! For a Partner must be only one DDT reference for year."
+msgstr "Errore! Per un Fornitore il numero di DDT deve essere univoco"
+
+#. module: stock_picking_extended
+#: field:account.invoice,transportation_condition_id:0
+#: field:stock.picking,transportation_condition_id:0
+msgid "Transportation condition"
+msgstr "Condizione Trasporto"
+
+#. module: stock_picking_extended
+#: field:stock.picking,complete_name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: stock_picking_extended
+#: field:account.invoice,address_delivery_id:0
+#: field:stock.picking,address_delivery_id:0
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: stock_picking_extended
+#: field:purchase.order,delivery_address:0
+msgid "Delivery Address"
+msgstr "Indirizzo Destinazione Preventivo"
+
+#. module: stock_picking_extended
+#: view:stock.picking.transportation_condition:0
+msgid "Condition for transportation"
+msgstr "Condizione Di Trasporto"
+
+#. module: stock_picking_extended
+#: selection:stock.journal,default_invoice_state:0
+msgid "To Be Invoiced"
+msgstr "Da Fatturare"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:stock_picking_extended.action_transportation_condition_tree
+#: model:ir.ui.menu,name:stock_picking_extended.menu_action_transportation_condition_tree
+#: view:stock.picking.transportation_condition:0
+msgid "Conditions for transportation"
+msgstr "Trasporto a cura di"
+
+#. module: stock_picking_extended
+#: view:purchase.order:0
+msgid "Picking list"
+msgstr "Picking list"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_stock_journal
+msgid "Stock Journal"
+msgstr "Causale Movimentazione"
+
+#. module: stock_picking_extended
+#: view:account.invoice:0
+msgid "Shipping"
+msgstr "Trasporto"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_purchase_order
+msgid "Purchase Order"
+msgstr "Ordine di Acquisto"
+
+#. module: stock_picking_extended
+#: field:account.invoice,carrier_id:0
+#: field:purchase.order,carrier_id:0
+msgid "Carrier"
+msgstr "Vettore"
+
+#. module: stock_picking_extended
+#: view:account.invoice:0
+msgid "Payments"
+msgstr "Pagamenti"
+
+#. module: stock_picking_extended
+#: view:stock.picking.carriage_condition:0
+#: model:ir.model,name:stock_picking_extended.model_stock_picking_carriage_condition
+#: field:stock.picking.carriage_condition,name:0
+#: field:account.invoice,carriage_condition_id:0
+#: field:res.partner,carriage_condition_id:0
+#: field:sale.order,carriage_condition_id:0
+#: field:purchase.order,carriage_condition_id:0
+#: field:stock.picking,carriage_condition_id:0
+msgid "Carriage Condition"
+msgstr "Porto"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:action_carriage_condition_tree
+#: model:ir.ui.menu,name:menu_action_carriage_condition_tree
+#: view:stock.picking.carriage_condition:0
+#: model:ir.actions.act_window,name:stock_picking_extended.action_carriage_condition_tree
+#: model:ir.ui.menu,name:stock_picking_extended.menu_action_carriage_condition_tree
+#: model:ir.actions.act_window,name:stock_picking_extended.action_carriage_condition_tree
+#: model:ir.ui.menu,name:stock_picking_extended.menu_action_carriage_condition_tree
+#: view:stock.picking.carriage_condition:0
+msgid "Carriage Conditions"
+msgstr "Porto"
+
+#. module: l10n_it_sale
+#: view:sale.order:0
+msgid "Default shipping conditions"
+msgstr "Dati DDT"
+
+#. module: stock_picking_extended
+#: field:account.invoice,number_of_packages:0
+msgid "Number of Packages"
+msgstr "Numero di Colli"
+
+#. module: stock_picking_extended
+#: selection:stock.journal,default_invoice_state:0
+msgid "Not Applicable"
+msgstr "Non Fatturabile"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: stock_picking_extended
+#: field:account.invoice,weight:0
+msgid "Weight"
+msgstr "Peso"
+
+#. module: stock_picking_extended
+#: view:stock.picking.goods_description:0
+#: model:ir.ui.menu,name:stock_picking_extended.action_goods_description_tree
+msgid "Descriptions of Goods"
+msgstr "Aspetto dei Beni"
+
+#. module: stock_picking_extended
+#: field:account.invoice,goods_description_id:0
+#: field:res.partner,goods_description_id:0
+#: field:sale.order,goods_description_id:0
+#: field:stock.picking,goods_description_id:0
+#: model:ir.actions.act_window,name:stock_picking_extended.action_goods_description_tree
+#: model:ir.ui.menu,name:stock_picking_extended.menu_action_good_description_tree
+#: view:stock.picking.goods_description:0
+msgid "Descriptions of Goods"
+msgstr "Aspetto dei Beni"
+
+#. module: stock_picking_extended
+#: field:purchase.order,payment_term:0
+msgid "Payment Term"
+msgstr "Termine di pagamento"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Riga fattura"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea ordine di vendita"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: stock_picking_extended
+#: help:purchase.order,incoterm_id:0
+msgid "International Commercial Terms are a series of predefined commercial terms used in international transactions."
+msgstr "Condizioni commerciali internazionali sono una serie di condizioni commerciali predefiniti utilizzati nelle transazioni internazionali."
+
+#. module: stock_picking_extended
+#: selection:stock.journal,default_invoice_state:0
+msgid "Invoiced"
+msgstr "Fatturato"
+
+#. module: purchase
+#: view:sale.order:0
+#: field:sale.order,minimum_planned_date:0
+#: field:stock.picking,minimum_planned_date:0
+#: field:stock.move,minimum_planned_date:0
+#: view:stock.picking:0
+msgid "Expected Date"
+msgstr "Data prevista"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_stock_picking_transportation_condition
+#: field:stock.picking.transportation_condition,name:0
+msgid "Transportation Condition"
+msgstr "Trasporto a cura di"
+
+#. modules: stock_move_extended
+#: field:stock.move,qty_available:0
+msgid "Quantity On Hand"
+msgstr "Q.tà A Mag"
+
+#. module: stock_move_extended
+#: field:stock.picking,client_order_ref:0
+msgid "Customer Reference"
+msgstr "Numero Ordine Cliente"
+
+#. module: stock_move_extended
+#: help:stock.picking,weight:0
+msgid "The gross weight in Kg."
+msgstr "Il peso lordo in kg."
+
+#. module: stock_move_extended
+#: help:stock.picking,weight:0
+msgid "The net weight in Kg."
+msgstr "Il peso netto in kg."
+
+#. module: stock_move_extended
+#: field:stock.picking,credit_limit:0
+msgid "Remaining Credit Limit"
+msgstr "Fido Residuo"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/stock/picking.py:146
+#, python-format
+msgid "Credit Over Limit"
+msgstr "Fido Superato"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/stock/picking.py:146
+#, python-format
+msgid "Is not possible to confirm because customer exceed the credit limit."
+msgstr "Non è possibile confermare perchè il cliente ha superato il limite"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/stock/picking.py:146
+#, python-format
+msgid "Overdue Limit"
+msgstr "Limite sullo scaduto"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/stock/picking.py:146
+#, python-format
+msgid "Overdue Limit"
+msgstr "Limite sullo scaduto"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/models/inherit_sale_order.py:83
+#, python-format
+msgid "Error"
+msgstr "Errore"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/models/inherit_sale_order.py:83
+#, python-format
+msgid "Is not possible to confirm because order {order} have no Minimum Planned Date"
+msgstr "Non è possibile confermarlo perchè l'ordine {order} non ha una Data di Consegna Minima"
+
+#. module: stock_move_extended
+#: field:res.company,note_on_invoice_line:0
+msgid "Copy Note on Invoice"
+msgstr "Riporta le note in fattura"
+
+#. module: stock_move_extended
+#: field:res.company,required_minimum_planned_date:0
+msgid "Required Expected Date on Sale Order"
+msgstr "Richiede la data di consegna sull'Ordine di Vendita"
+
+#. module: stock_picking_extended
+#: help:res.company,note_on_invoice_line:0
+msgid "Copy on account invoice line the note of picking"
+msgstr "Riporta nelle righe della fattura le note riportate nelle righe"
+
+#. module: stock_move_extended
+#: field:res.company,note_on_stock_move:0
+msgid "Copy Note on Move"
+msgstr "Riporta le note nei movimenti di Magazzino"
+
+#. module: stock_picking_extended
+#: help:res.company,note_on_stock_move:0
+msgid "Copy on stock move the note of sale order line"
+msgstr "Riporta nei movimenti di magazzino le note delle righe ordine di vendita"
+
+#. module: stock_picking_extended
+#: view:res.company:0
+msgid "Product Note of Picking"
+msgstr "Gestione delle note nei movimenti di magazzino"
+
+#. module: stock_picking_extended
+#: field:stock.picking,order_type:0
+msgid "Order Type"
+msgstr "Tipo Ordine"
+
+#. module: stock_picking_extended
+#: field:stock.picking,order_ready:0
+msgid "Order Ready"
+msgstr "Ordine Pronto"
+
+#. modules: stock_picking_extended
+#: field:order.requirement,customer_id:0
+#: field:stock.picking,customer_id:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: stock_picking_extended
+#: field:stock.picking,order_sent:0
+msgid "Order Sent"
+msgstr "Ordine Spedito"
+
+#. modules: stock_picking_extended
+#: field:order.requirement,state:0
+msgid "Order State"
+msgstr "Stato dell'ordine"
+
+#. module: stock_picking_extended
+#: field:stock.picking,amount_total:0
+msgid "Total Amount (VAT Excluded)"
+msgstr "Totale Ordine (IVA esclusa)"
+
+#. module: stock_picking_extended
+#: field:stock.picking,amount_partial:0
+msgid "Partial Amount (VAT Excluded)"
+msgstr "Importo Righe (IVA esclusa)"
+
+#. module: stock_picking_extended
+#: field:stock.picking,payment_term_id:0
+msgid "Payment Term"
+msgstr "Termine di pagamento"
+
+#. modules: stock_picking_extended
+#: field:stock.picking,city:0
+msgid "City"
+msgstr "Comune"
+
+#. modules: stock_picking_extended
+#: field:stock.picking,street:0
+msgid "Street"
+msgstr "Via"
+
+#. modules: stock_picking_extended
+#: field:stock.picking,province:0
+msgid "Province"
+msgstr "Provincia"
+
+#. modules: stock_picking_extended
+#: field:stock.picking,region:0
+msgid "Region"
+msgstr "Regione"
+
+#. module: stock_picking_extended
+#: field:stock.picking,agent:0
+msgid "Agent"
+msgstr "Agente"
+
+#. module: stock_picking_extended
+#: field:stock.picking,board_date:0
+msgid "Order Board Delivery date"
+msgstr "Data Lavagna cons."
+
+#. module: stock_picking_extended
+#: field:stock.picking,creation_date:0
+msgid "Inserted on"
+msgstr "Inserito il"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+#: field:stock.picking,goods_ready:0
+#: field:stock.move,goods_ready:0
+msgid "Goods Ready"
+msgstr "Merce Pronta"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+msgid "Delivery Data"
+msgstr "Delivery Data"
+
+#. module: stock_picking_extended
+#: field:stock.move,week_nbr:0
+#: field:stock.picking,week_nbr:0
+msgid "Week Number"
+msgstr "Settimana n."
+
+#. module: stock_picking_extended
+#: field:stock.picking,minimun_planned_date:0
+msgid "Expected Date"
+msgstr "Data prevista"
+
+#. module: stock_picking_extended
+#: field:stock.picking,picked_rate:0
+msgid "Ready"
+msgstr "Pronto"
+
+#. module: stock_picking_extended
+#: field:stock.move,sale_id:0
+msgid "Sale Order"
+msgstr "Ordine Cliente"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:stock_picking_extended.action_view_stock_picking
+#: model:ir.ui.menu,name:stock_picking_extended.menu_order_board
+#: model:ir.ui.menu,name:stock_picking_extended.menu_view_stock_picking
+#: view:stock.picking:0
+msgid "Order Board"
+msgstr "Lavagna Ordini"
+
+#. module: stock_picking_extended
+#: model:res.groups,name:stock_picking_extended.view_order_board
+msgid "View Order Board"
+msgstr "Vede Lavagna Ordini"
+
+#. modules: stock_picking_extended
+#: selection:stock.picking,order_type:0
+msgid "Client"
+msgstr "Cliente"
+
+#. modules: stock_picking_extended
+#: selection:stock.picking,order_type:0
+msgid "Internal"
+msgstr "Interno"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_stock_picking_goods_description
+#: view:stock.picking.goods_description:0
+#: field:stock.picking.goods_description,name:0
+msgid "Description of Goods"
+msgstr "Aspetto esteriore dei beni"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:stock_picking_extended.action_view_stock_move
+#: model:ir.ui.menu,name:stock_picking_extended.menu_view_stock_move
+#: view:stock.move:0
+msgid "Line Order Board"
+msgstr "Righe Lavagna Ordini"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+msgid "Moves"
+msgstr "Prodotti Richiesti"
+
+#. module: stock_picking_extended
+#: field:purchase.order,carriage_condition_id:0
+#: field:sale.order,carriage_condition_id:0
+#: field:stock.picking,carriage_condition_id:0
+msgid "Carriage condition"
+msgstr "Porto"
+
+#. modules: invoice_immediate, stock_picking_extended
+#: field:account.invoice,goods_description_id:0
+#: field:res.partner,goods_description_id:0
+#: field:sale.order,goods_description_id:0
+#: field:stock.picking,goods_description_id:0
+msgid "Description of goods"
+msgstr "Aspetto Esteriore dei Beni"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+#: field:stock.picking,internal_note:0
+#: field:stock.move,internal_note:0
+msgid "Internal Note"
+msgstr "Nota Interna"
+
+#. module: stock_picking_extended
+#: field:stock.picking,invoice_state:0
+#: field:stock.picking,invoiced_state:0
+msgid "Invoice State"
+msgstr "Stato Fatture"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+msgid "Internal Notes"
+msgstr "Note Interne"
+
+#. module: stock_picking_extended
+#: view:stock.picking:0
+msgid "Delivery Data"
+msgstr "Dati Consegna"
+
+#. module: stock_picking_extended
+#: field:stock.picking,sale_user_id:0
+msgid "Sale User"
+msgstr "Venditore"
+
+#. module: stock_picking_extended
+#: field:stock.move,line_price_subtotal:0
+msgid "Line Amount (VAT Excluded)"
+msgstr "Imponibile Riga"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Next Month"
+msgstr "Mese Prossimo"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Current Month"
+msgstr "Mese Corrente"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Last Month"
+msgstr "Mese Scorso"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Order Delivery"
+msgstr "Data di Consegna"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Note on Picking Line"
+msgstr "Nota nella Riga del DDT"
+
+#. module: stock_picking_extended
+#: code:addons/stock_picking_extended/models/inherit_stock_picking.py:561
+#, python-format
+msgid "Is not possible to add product, use only Sale Order"
+msgstr "Non è possibile aggiungere una riga, va fatto solo creando un Ordine di Vendita"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+msgid "Open Order Board"
+msgstr "Apri Lavagna Ordini"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,real_date:0
+msgid "Real Date"
+msgstr "Data"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: stock_picking_extended
+#: field:stock.move.group,date_from:0
+#: field:print.stock.move.group,date_from:0
+msgid "Date from"
+msgstr "Dal"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,date_to:0
+#: field:print.stock.move.group,date_to:0
+msgid "Date to"
+msgstr "Al"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,origin:0
+msgid "Origin"
+msgstr "Origine"
+
+#. module: stock_picking_extended
+#: selection:stock.move.group,source_location_id:0
+msgid "Sale Order"
+msgstr "Ordine Cliente"
+
+#. module: stock_picking_extended
+#: model:ir.model,name:stock_picking_extended.model_purchase_order
+#: selection:stock.move.group,source_location_id:0
+msgid "Purchase Order"
+msgstr "Ordine di Acquisto"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,stock_balance:0
+msgid "Product Qty on Hand"
+msgstr "Qtà disponibile"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+#: view:stock.move.group:0
+#: view:stock.picking:0
+msgid "Move"
+msgstr "Movimento"
+
+#. module: stock_picking_extended
+#: field:print.stock.move.group,show_journal:0
+msgid "Show Journal"
+msgstr "Mostra Causale"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,average:0
+msgid "Average Price"
+msgstr "Prezzo Medio"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:stock_picking_extended.action_stock_move_group
+#: model:ir.ui.menu,name:stock_picking_extended.menu_stock_move_group
+#: view:stock.move.group:0
+msgid "Move Line"
+msgstr "Righe movimenti"
+
+#. module: stock_picking_extended
+#: field:print.stock.move.group,location_id:0
+#: view:stock.move.group:0
+#: field:stock.move.group,location_id:0
+msgid "Location"
+msgstr "Punto di Stoccaggio"
+
+#. module: stock_picking_extended
+#: view:print.stock.move.group:0
+#: view:stock.picking:0
+msgid "Print"
+msgstr "Stampa"
+
+#. module: stock_picking_extended
+#: field:print.stock.move.group,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,qty_in:0
+msgid "In Qty"
+msgstr "Qtà +"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,qty_out:0
+msgid "Out Qty"
+msgstr "Qtà -"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,average_year:0
+msgid "Average Price Year"
+msgstr "Prezzo Medio per Anno"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,location_amount:0
+msgid "Location Amount"
+msgstr "Ammontare per Locazione"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "Month"
+msgstr "Mese"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "Last Month"
+msgstr "Mese Scorso"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "Search Moves"
+msgstr "Ricerca Movimenti"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,document_date:0
+msgid "Date"
+msgstr "Data Documento"
+
+#. module: stock_picking_extended
+#: field:print.stock.move.group,show_partner:0
+msgid "Show Partner"
+msgstr "Mostra il Partner"
+
+#. module: stock_picking_extended
+#: selection:stock.move.group,source_location_id:0
+msgid "Pos Order"
+msgstr "Pos Order"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "Out"
+msgstr "Uscita"
+
+#. module: stock_picking_extended
+#: view:stock.move.group:0
+msgid "In"
+msgstr "Ingresso"
+
+#. module: stock_picking_extended
+#: field:print.stock.move.group,product_id:0
+#: view:stock.move.group:0
+#: field:stock.move.group,product_id:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,stock_journal_id:0
+msgid "Journal"
+msgstr "Causale"
+
+#. module: stock_picking_extended
+#: view:print.stock.move.group:0
+msgid "Print Stock Move"
+msgstr "Stampa Movimenti Magazzino"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,move_value:0
+msgid "Move Price"
+msgstr "Ammontare Movimento"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,year:0
+msgid "Year"
+msgstr "Anno"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,price:0
+msgid "Price Unit"
+msgstr "Prezzo Unitario"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,location_amount_year:0
+msgid "Location Amount Year"
+msgstr "Ammontare per Locazione Annuale"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,source_location_id:0
+msgid "Source Location"
+msgstr "Locatione Sorgente"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,product_uom:0
+msgid "Product Uom"
+msgstr "UdM"
+
+#. module: stock_picking_extended
+#: field:stock.move.group,categ_id:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: stock_picking_extended
+#: model:ir.actions.act_window,name:stock_picking_extended.action_print_stock_move_group_menu
+#: model:ir.ui.menu,name:stock_picking_extended.menu_print_stock_move_group
+msgid "Stock Movements"
+msgstr "Movimenti di Magazzino"
+
+#. module: stock_picking_extended
+#: model:ir.actions.report.xml,name:stock_picking_extended.report_stock_move_group
+msgid "Products Move by Location"
+msgstr "Movimenti di Magazzino per Locazione"
+
+#. module: stock_picking_extended
+#: view:stock.move:0
+#: field:stock.move,shop_id:0
+msgid "Shop"
+msgstr "Business Unit"

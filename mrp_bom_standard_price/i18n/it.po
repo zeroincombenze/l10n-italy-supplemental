@@ -1,0 +1,65 @@
+# Spanish translation for addons-vauxoo
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the addons-vauxoo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: addons-vauxoo\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-11-07 01:10+0000\n"
+"PO-Revision-Date: 2013-11-07 08:08+0000\n"
+"Last-Translator: hbto [Vauxoo] http://www.vauxoo.com "
+"<humbertoarocha@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-11-13 06:35+0000\n"
+"X-Generator: Launchpad (build 17241)\n"
+
+#. module: mrp_bom_standard_price
+#: model:ir.model,name:mrp_bom_standard_price.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Distinta Base"
+
+#. module: mrp_bom_standard_price
+#: field:mrp.bom,standard_price:0
+msgid "Cost price"
+msgstr "Prezzo di costo"
+
+#. module: mrp_bom_standard_price
+#: field:mrp.bom,list_price:0
+msgid "List Price"
+msgstr "Prezzo di listino"
+
+#. module: mrp_bom_standard_price
+#: field:mrp.bom,cost_price:0
+msgid "Cost Price for Unit of Product"
+msgstr "Prezzo di Costo per Unità di Prodotto"
+
+#. module: mrp_bom_standard_price
+#: field:mrp.bom,bom_cost_price:0
+msgid "Cost Price"
+msgstr "Prezzo di Costo"
+
+#. module: mrp
+#: field:mrp.routing.workcenter,costs_hour:0
+msgid "Cost per hour"
+msgstr "Costo Orario"
+
+#. module: mrp
+#: field:mrp.routing.workcenter,costs_cycle:0
+msgid "Cost per cycle"
+msgstr "Costo per Ciclo"
+
+#. module: mrp
+#: field:mrp.routing.workcenter,cost_efficiency:0
+msgid "Cost Efficiency"
+msgstr "Efficienza Costo"
+
+#. module: mrp
+#: field:mrp.routing.workcenter,total_cost:0
+msgid "Total Cost"
+msgstr "Costo Totale"
+

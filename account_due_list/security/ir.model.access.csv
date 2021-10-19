@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_account_move_line_group_user","account_move_line group_user","account.model_account_move_line","base.group_user",1,0,0,0
+"access_model_account_account_group_user","account_account group_user","account.model_account_account","base.group_user",1,0,0,0
+"access_model_account_invoice_group_user","account_invoice group_user","account.model_account_invoice","base.group_user",1,0,0,0
+"access_model_account_invoice_line_group_user","account_invoice line_group_user","account.model_account_invoice_line","base.group_user",1,0,0,0
+"access_account_invoice_approve_manager","account.invoice","model_account_invoice","group_account_invoice_approve_manager",1,1,1,1
+"access_credit_phonecall_manager","crm.phonecall.manager","model_credit_phonecall","account_due_list.can_view_due_list",1,1,1,1
+"access_credit_phonecall_all","crm.phonecall.all","model_credit_phonecall","base.group_user",1,0,0,0

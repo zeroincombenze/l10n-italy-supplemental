@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_order_requirement_line_form" model="ir.ui.view">
+            <field name="name">order.requirement.line.form</field>
+            <field name="model">order.requirement.line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Order Requirement">
+                    <group colspan="4" col="4">
+                        <field name="product_id"/>
+                        <field name="sale_order_id" />
+                    </group>
+                    <group name="product_availability" colspan="4" col="4">
+                        <field name="stock_availability"/>
+                        <field name="spare"/>
+                    </group>
+
+                    <field name="state" invisible="1"/>
+                    <field name="sale_order_line_id" invisible="1"/>
+
+                    <field name="new_product_id" on_change="onchange_product_id(new_product_id,qty,context)"/>
+                    <field name="qty" on_change="onchange_qty(qty)"/>
+                    <field name="original_cost"/>
+                    <field name="cost"/>
+                    <field name="has_bom" invisible="1"/>
+                    <field name="buy" attrs="{'readonly': ['|', ('is_manufactured','=',True)]}"/>
+                    <field name="is_manufactured" attrs="{'invisible': [('has_bom','=',False)]}"
+                           on_change="onchange_is_manufactured(is_manufactured,new_product_id,qty)"/>
+                    <field name="supplier_id" attrs="{'invisible': [('is_manufactured', '=', True), ('buy', '=', False)],
+                                'required': [('is_manufactured', '=', False), ('buy', '=', True)],
+                                'readonly': [('state','!=','draft')]}"/>
+                    <field name="supplier_ids" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                    <field name="user_id" widget="selection" />
+                    <group colspan="8" col="8" attrs="{'invisible': [('state','!=','draft')]}">
+                        <button name="save_suppliers" string="Save" icon="gtk-save" type="object"/>
+                        <button name="reload_bom" string="Reload &amp; Preview" icon="gtk-refresh" type="object"/>
+                        <button name="confirm_suppliers" string="OK" icon="gtk-apply" type="object"
+                                confirm="Are you sure you want to do this?"/>
+                    </group>
+<!--                    <group colspan="8" col="8" attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False),-->
+<!--                                                                         ('is_manufactured','=',False)]}">-->
+                        <notebook colspan="4">
+                            <page string="Sale Order Line" attrs="{'invisible': [('sale_order_line_id','=',False)]}">
+                                <field name="sale_order_line_description" colspan="4" nolabel="1"/>
+                                <field name="sale_order_line_notes" colspan="4" nolabel="1"/>
+                            </page>
+                            <page string="BOM" attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False), ('is_manufactured','=',False)]}">
+                                <field name="temp_mrp_bom_ids" nolabel="1" colspan="4" context=""
+                                       on_change="onchange_temp_mrp_bom_ids(temp_mrp_bom_ids, context)"
+                                       attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False),
+                                                                 ('is_manufactured','=',False)],
+                                               'readonly':['|',('state','!=','draft'),('is_manufactured','=',False)]}">
+                                    <tree string="BoM Structure" editable="bottom"
+                                        colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                                        <field name="row_color" invisible="1"/>
+                                        <field name="is_leaf"/>
+                                        <field name="id" invisible="1"/>
+                                        <field name="bom_id" invisible="1"/>
+                                        <field name="level" invisible="1"/>
+                                        <field name="product_type" invisible="1"/>
+                                        <field name="level_name"/>
+                                        <field name="product_id" context="{'line_id':parent.id}"
+                                               on_change="onchange_temp_product_id(id,product_id,product_qty,is_manufactured,context)"
+                                               attrs="{'readonly': [('level','=',0)]}"/>
+                                        <field name="original_qty"/>
+
+                                        <!--<button name="action_add" string="Add" type="object" icon="gtk-add"  attrs="{'invisible': [('level', '=', '0')]}" />-->
+
+                                        <field name="product_qty" attrs="{'readonly': [('level','=',0)]}"
+                                               context="{'line_id':parent.id}"
+                                               on_change="onchange_temp_product_qty(product_qty, context)"/>
+
+                                        <!--<button name="action_remove" string="Add" type="object" icon="gtk-remove"  attrs="{'invisible': [('level', '=', '0')]}" />-->
+
+                                        <field name="product_uom" readonly="1"/>
+                                        <field name="mrp_routing_id"/>
+                                        <field name="stock_availability"/>
+                                        <field name="spare"/>
+                                        <field name="is_out_of_stock" invisible="1"/>
+                                        <button name="out_of_stock_button" type="object" icon="gtk-dialog-error" help="Product is out of stock"
+                                                attrs="{'invisible': [('is_out_of_stock','=',False)]}"/>
+                                        <field name="cost"/>
+                                        <field name="temp_mrp_bom_action"/>
+                                        <button name="action_toggle_manufactured" string="Toggle Manufactured" type="object" icon="gtk-properties" attrs="{'invisible': [('level','=',0)]}"/>
+                                        <field name="is_manufactured" invisible="1" attrs="{'readonly': ['|',('level','=',0), ('is_leaf','=',True)]}"/>
+                                        <button name="action_toggle_buy" string="Toggle Buy" type="object" icon="terp-dolar" attrs="{'invisible': ['|',('level','=',0),('is_manufactured','=',True)]}"/>
+                                        <field name="buy" invisible="1" attrs="{'readonly': ['|',('level','=',0), ('is_manufactured','=',True)]}"/>
+                                        <field name="supplier_id" on_change="onchange_supplier_id(supplier_id, context)"
+                                               attrs="{'required': [('is_manufactured', '=', False)],
+                                                    'readonly': ['|',('is_manufactured', '=', True),
+                                                                     ('product_type','!=','product'),
+                                                                     ('level','=',0)]}"/>
+                                        <field name="supplier_ids" invisible="1"/>
+                                        <!--<button name="update_supplier" string="Reload" type="object" icon="gtk-refresh" />-->
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Routing" attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False), ('is_manufactured','=',False)]}">
+                                <field name="temp_mrp_bom_routing_ids" nolabel="1" colspan="4"
+                                    attrs="{'invisible': ['|',('temp_mrp_bom_routing_ids','=',False),('is_manufactured','=',False)]}">
+                                    <tree string="BoM Routing" editable="top"
+                                        colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                                        <field name="row_color" invisible="1"/>
+                                        <field name="mrp_routing_id"/>
+                                        <field name="sequence"/>
+                                        <field name="workcenter_id"/>
+                                        <field name="user_id"/>
+                                        <field name="user_ids" invisible="1"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+<!--                    </group>-->
+                </form>
+           </field>
+        </record>
+
+        <record id="view_order_requirement_line_form_readonly" model="ir.ui.view">
+            <field name="name">order.requirement.line.form</field>
+            <field name="model">order.requirement.line</field>
+            <field name="priority">1</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Order Requirement">
+                    <group colspan="4" col="4">
+                        <field name="product_id"/>
+                        <field name="sale_order_id" />
+                    </group>
+                    <group name="product_availability" colspan="4" col="4">
+                        <field name="stock_availability"/>
+                        <field name="spare"/>
+                    </group>
+
+                    <field name="state" invisible="1"/>
+                    <field name="sale_order_line_id" invisible="1"/>
+
+                    <field name="new_product_id" on_change="onchange_product_id(new_product_id,qty,context)"/>
+                    <field name="qty"/>
+                    <field name="original_cost"/>
+                    <field name="cost"/>
+                    <field name="has_bom" invisible="1"/>
+                    <field name="buy" attrs="{'readonly': ['|', ('is_manufactured','=',True)]}"/>
+                    <field name="is_manufactured" on_change="onchange_is_manufactured(is_manufactured,new_product_id)"/>
+                    <field name="supplier_id" attrs="{'invisible': [('is_manufactured', '=', True)],
+                                'required': [('is_manufactured', '=', False)],
+                                'readonly': [('state','!=','draft')]}"/>
+                    <field name="purchase_order_id" attrs="{'invisible': [('buy','=', False)]}"/>
+                    <field name="id" invisible="1"/>
+                    <field name="user_id" widget="selection" />
+<!--                    <group colspan="8" col="8" attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False),-->
+<!--                                                                         ('is_manufactured','=',False)]}">-->
+                        <notebook colspan="4">
+                            <page string="Sale Order Line" attrs="{'invisible': [('sale_order_line_id','=',False)]}">
+                                <field name="sale_order_line_description" colspan="4" nolabel="1"/>
+                                <field name="sale_order_line_notes" colspan="4" nolabel="1"/>
+                            </page>
+                            <page string="BOM" attrs="{'invisible': ['|',('temp_mrp_bom_ids','=',False), ('is_manufactured','=',False)]}">
+                                <field name="temp_mrp_bom_ids" nolabel="1" colspan="4" readonly="1" widget="one2many_list">
+                                    <tree string="BoM Structure" editable="top"
+                                        colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                                        <field name="row_color" invisible="1"/>
+                                        <field name="is_leaf"/>
+                                        <field name="level_name"/>
+                                        <field name="product_id" readonly="1"/>
+                                        <field name="product_qty" readonly="1"/>
+                                        <field name="product_uom" readonly="1"/>
+                                        <field name="mrp_routing_id"/>
+                                        <!--<field name="stock_availability"/>-->
+                                        <!--<field name="spare"/>-->
+                                        <field name="is_out_of_stock" invisible="1"/>
+                                        <button name="out_of_stock_button" type="object" icon="gtk-dialog-error"
+                                                attrs="{'invisible': [('is_out_of_stock','=',False)]}"/>
+                                        <field name="cost"/>
+                                        <field name="temp_mrp_bom_action"/>
+                                        <field name="is_manufactured" readonly="1" invisible="1"/>
+                                        <field name="buy" readonly="1" invisible="1"/>
+                                        <field name="supplier_id"  readonly="1"/>
+                                        <field name="purchase_order_id" />
+                                        <button string="View" name="action_view_purchase_order" icon="STOCK_FULLSCREEN" type="object" attrs="{'invisible': [('purchase_order_id','=',False)]}"/>
+                                        <field name="mrp_production_id" />
+                                        <button string="View" name="action_view_mrp_production" icon="STOCK_FULLSCREEN" type="object" attrs="{'invisible': [('mrp_production_id','=',False)]}"/>
+                                    </tree>
+                                    <form string="BoM Details">
+                                        <field name="product_id" readonly="1"/>
+                                        <field name="product_qty" readonly="1"/>
+                                        <field name="level"/>
+                                        <field name="is_leaf"/>
+                                        <field name="product_uom" readonly="1"/>
+                                        <field name="mrp_routing_id" attrs="{'invisibile': [('mrp_production_id','=',False)]}"/>
+                                        <field name="stock_availability"/>
+                                        <field name="spare"/>
+                                        <field name="cost"/>
+                                        <field name="is_out_of_stock" />
+                                        <!--<button name="out_of_stock_button" type="object" icon="gtk-dialog-error"-->
+                                        <!--attrs="{'invisible': [('is_out_of_stock','=',False)]}"/>-->
+                                        <!--<button name="OK_stock_button" type="object" icon="STOCK_OK"-->
+                                        <!--attrs="{'invisible': [('is_out_of_stock','!=',False)]}"/>-->
+                                        <field name="is_manufactured" readonly="1"/>
+                                        <newline/>
+                                        <!--<field name="user_id"/>-->
+                                        <field name="purchase_order_id" attrs="{'invisibile': [('purchase_order_id','=',False)]}"/>
+                                        <field name="supplier_id"  readonly="1"/>
+                                        <newline />
+                                        <field name="mrp_production_id" attrs="{'invisibile': [('mrp_production_id','=',False)]}"/>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Routing" attrs="{'invisible': ['|',('temp_mrp_bom_routing_ids','=',False),('is_manufactured','=',False)]}">
+                                <field name="temp_mrp_bom_routing_ids" nolabel="1" colspan="4">
+                                    <tree string="BoM Routing" editable="top"
+                                        colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                                        <field name="row_color" invisible="1"/>
+                                        <field name="mrp_routing_id"/>
+                                        <field name="sequence"/>
+                                        <field name="workcenter_id"/>
+                                        <field name="user_id" readonly="1"/>
+                                        <field name="user_ids" invisible="1"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <!--<page string="Purchase Orders">-->
+                                <!--<field name="purchase_order_ids">-->
+                                    <!--<tree string="Purchase Orders">-->
+                                        <!--&lt;!&ndash;colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<field name="row_color" invisible="1"/>&ndash;&gt;-->
+                                        <!--<field name="name"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                            <!--<page string="Production Orders">-->
+                                <!--<field name="mrp_production_ids">-->
+                                    <!--<tree string="Purchase Orders">-->
+                                        <!--&lt;!&ndash;colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<field name="row_color" invisible="1"/>&ndash;&gt;-->
+                                        <!--<field name="name"/>-->
+                                    <!--</tree>-->
+                                <!--</field>-->
+                            <!--</page>-->
+                        </notebook>
+<!--                    </group>-->
+                </form>
+           </field>
+        </record>
+
+        <record id="view_order_requirement_line_tree" model="ir.ui.view">
+            <field name="name">order.requirement.line.tree</field>
+            <field name="model">order.requirement.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Order Requirement" editable="top"
+                    colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                    <field name="seq" />
+                    <field name="sequence" invisible="1"/>
+                    <field name="row_color" invisible="1"/>
+                    <field name="user_id" />
+                    <button name="action_view_bom" string="Open BOM" type="object" icon="gtk-zoom-in" attrs="{'invisible': [('has_bom','=',False)]}" />
+                    <field name="has_bom" />
+                    <field name="product_id"/>
+                    <field name="new_product_id"/>
+                    <field name="qty" sum="qty"/>
+                    <field name="stock_availability"/>
+                    <field name="spare"/>
+                    <field name="state" />
+                    <field name="sale_order_line_id" invisible="1"/>
+                    <button context="" name="%(action_add_sale_order_line)d" icon="gtk-add" type="action" help="Add Sale Order Line"
+                            attrs="{'invisible': [('sale_order_line_id', '!=', False)]}"/>
+
+                    <button context="" name="action_open_bom" icon="terp-mrp" type="object" help="Start to Work on BOM" states="draft" />
+                    <button name="action_reload_bom" icon="gtk-refresh" type="object" help="Reload BOM"
+                            attrs="{'invisible': [('state','!=','draft')]}"/>
+                    <field name="production_orders_state"/>
+                    <field name="purchase_orders_approved"/>
+                    <field name="purchase_orders_state"/>
+                    <button name="print_production_order" string="Print All production Order" type="object" help="Print All production Order" icon="gtk-print" attrs="{'invisible': [('production_orders_state','=','')]}" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_order_requirement_line" model="ir.actions.act_window">
+            <field name="name">Order Requirement Line</field>
+            <field name="res_model">order.requirement.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_order_requirement_line_form_readonly"/>
+        </record>
+
+    </data>
+</openerp>

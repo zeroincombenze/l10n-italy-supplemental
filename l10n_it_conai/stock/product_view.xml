@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="view_product_category_form_conai" model="ir.ui.view">
+            <field name="name">product.category.form.conai</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="conai_product_id" />
+                </field>
+            </field>
+        </record>
+
+
+
+        <record id="view_stock_move_form_conai_exempt" model="ir.ui.view">
+            <field name="name">stock.move.form.conai.exempt</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="delivery.view_move_withweight_form"/>
+            <field name="arch" type="xml">
+                <field name="weight_net" position="after">
+                    <field name="weight_exempt_conai" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

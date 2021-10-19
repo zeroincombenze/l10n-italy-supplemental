@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Wizard: schermata che chiede percorso del file ed encoding del testo -->
+        <record id="view_partner_import_form" model="ir.ui.view">
+            <field name="name">partner.import.form</field>
+            <field name="model">partner.import</field>
+            <!-- Tipo di vista, ovvero architettura principale della vista, in questo caso è un form -->
+            <field name="type">form</field>
+            <!-- Specifica della struttura della vista usando XML -->
+            <field name="arch" type="xml">
+                <form>
+                    <field name="state" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <!-- Percorso del file -->
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" />
+                        <field name="partner_type" />
+                        <field name="format" />
+                        <field name="strict" />
+                        <newline />
+                        <field name="partner_template_id" widget="selection" />
+                    </group>
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Messaggi' (Vendite -> Configurazione -> Email -> Messaggi)."/>
+                    </group>
+                   
+                   <!-- Separatore --> 
+                    <group colspan="8" col="8">    
+                        <separator string="" colspan="8"/>
+                        <label colspan="6" width="220"/>
+                    </group>
+                    
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Annulla"/>
+                        <button type="object" name="actionCheckEncoding" string="Inizia Importazione" icon="gtk-ok"/>
+                    </group>
+                    
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Chiudi"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Azione per aprire il wizard, questa azione viene associata ad una voce di menu definita in purchase_import_pricelist/partner_properties_view.xml -->
+        <record id="partner_file_import" model="ir.actions.act_window">
+            <field name="name">Importazione Partner (clienti/fornitori) in formato Excel (xls)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partner.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_partner_import_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="data_migration_menu" name="Data Migration" parent="base.menu_config" />
+        <menuitem action="partner_file_import" id="menu_partner_file_import" name="Import Partner" parent="data_migration_menu"/>
+
+        
+        <record id="view_product_import_form" model="ir.ui.view">
+            <field name="name">product.import.form</field>
+            <field name="model">product.import</field>
+            <field name="arch" type="xml">
+                <form string="Products import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+                    <field name="preview_text_original" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" required="True" />
+                        <field name="format" />
+                        <newline />
+                        <field name="update_product_name" />
+                        <field name="update_only" />
+                    </group>
+                    
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Products. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+                   
+                    <!-- Separatore --> 
+                    <group colspan="8" col="8">    
+                        <separator string="" colspan="8"/>
+                        <!--<label colspan="6" width="220"/>-->
+                    </group>
+
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Pulsanti per lo stato "preview" -->
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+                    
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Azione per aprire il wizard, questa azione viene associata ad una voce di menu definita in purchase_import_pricelist/product_properties_view.xml -->
+        <record id="product_file_import" model="ir.actions.act_window">
+            <field name="name">Import Products in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_product_import_form"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem action="product_file_import" id="menu_product_file_import" name="Import Product" parent="data_migration_menu"/>
+
+        <record id="view_picking_import_form" model="ir.ui.view">
+            <field name="name">picking.import.form</field>
+            <field name="model">picking.import</field>
+            <field name="arch" type="xml">
+                <form string="Picking import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+                    <field name="preview_text_original" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" required="True" />
+                        <field name="format" />
+                    </group>
+                    <group colspan="8" col="8" states="import">
+                        <field name="stock_journal_id" on_change="onchange_stock_journal_id(stock_journal_id, context)" />
+                        <field name="address_id"  />
+                    </group>
+                    <group colspan="8" col="8" states="import">
+                        <field name="location_id" />
+                        <newline/>
+                        <field name="location_dest_id" />
+                    </group>
+
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Products. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+
+                    <!-- Separatore -->
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                        <!--<label colspan="6" width="220"/>-->
+                    </group>
+
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Pulsanti per lo stato "preview" -->
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Azione per aprire il wizard, questa azione viene associata ad una voce di menu definita in purchase_import_pricelist/product_properties_view.xml -->
+        <record id="picking_file_import" model="ir.actions.act_window">
+            <field name="name">Import Picking in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">picking.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_picking_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="picking_file_import" id="menu_picking_file_import" name="Import Picking" parent="data_migration_menu"/>
+
+        <record id="view_pricelist_import_form" model="ir.ui.view">
+            <field name="name">pricelist.import.form</field>
+            <field name="model">pricelist.import</field>
+            <field name="arch" type="xml">
+                <form string="Import pricelist from file">
+                    <group >
+                        <field name="state" invisible="1"/>
+                        <field name="preview_text_original" invisible="1"/>
+                        <group colspan="8" col="8" states="import">
+                            <field name="file_name" invisible="1" />
+                            <field name="content_base64" filename="file_name" required="True" />
+                            <field name="format" />
+                        </group>
+                        
+                        <group colspan="8" col="8" states="import">
+                            <field name="pricelist_id" attrs="{'required': [('format', '=', 'FormatOne')], 'invisible': [('format', '=', 'FormatTwo')]}"/>
+                            <field name="pricelist_version_id" attrs="{'required': [('format', '=', 'FormatOne')], 'invisible': [('format', '=', 'FormatTwo')]}" />
+                            <field name="partner_id" attrs="{'required': [('format', '=', 'FormatTwo')], 'invisible': [('format', '=', 'FormatOne')]}"/>
+                        </group>
+                    </group>
+                    
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Pricelist. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+                    
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                    </group>
+            
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start Import Pricelist" icon="gtk-ok"/>
+                    </group>
+                    
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="pricelist_file_import" model="ir.actions.act_window">
+            <field name="name">Import Pricelist in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pricelist.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_pricelist_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="pricelist_file_import" id="menu_pricelist_file_import" name="Import Pricelist" parent="data_migration_menu"/>
+
+        <record id="view_sales_import_form" model="ir.ui.view">
+            <field name="name">sales.import.form</field>
+            <field name="model">sales.import</field>
+            <field name="arch" type="xml">
+                <form string="Import Sales Order from file">
+                    <group>
+                        <field name="state" invisible="1"/>
+                        <field name="preview_text_original" invisible="1"/>
+                        <group colspan="4" col="4" states="import">
+                            <field name="file_name" invisible="1" />
+                            <field name="content_base64" filename="file_name" required="True" />
+                            <field name="format" />
+                            <field name="auto_approve" />
+                            <field name="update_price" />
+                        </group>
+
+                        <group colspan="4" col="4" states="import">
+                            <field name="partner_id" />
+                            <field name="date_order" required="True" />
+                            <field name="shop_id" />
+                            <field name="location_id" />
+
+                        </group>
+                    </group>
+
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Pricelist. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                    </group>
+
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start Import Sales" icon="gtk-ok"/>
+                    </group>
+
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="sales_file_import" model="ir.actions.act_window">
+            <field name="name">Import Sales in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sales.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sales_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="sales_file_import" id="menu_sales_file_import" name="Import Sales" parent="data_migration_menu"/>
+
+        <record id="view_invoice_import_form" model="ir.ui.view">
+            <field name="name">invoice.import.form</field>
+            <field name="model">invoice.import</field>
+            <field name="arch" type="xml">
+                <form string="Import Invoice from file">
+                    <group>
+
+                        <field name="state" invisible="1"/>
+                        <field name="preview_text_original" invisible="1"/>
+                        <group colspan="4" col="4" states="import">
+                            <field name="file_name" invisible="1" />
+                            <field name="content_base64" filename="file_name" required="True" />
+                            <field name="format" />
+                            <!--<field name="auto_approve" />-->
+                            <field name="update_price" attrs="{'invisible': [('format', '=', 'FormatTwo')]}"/>
+                        </group>
+
+                        <group colspan="4" col="4" states="import">
+                            <field name="type" on_change="on_change_type(type, context)" />
+                            <field name="journal_id" attrs="{'readonly': [('type', '=', False)]}"/>
+                            <field name="origin" />
+                            <field name="partner_id" attrs="{'required': [('format', '=', 'FormatOne')], 'invisible': [('format', '=', 'FormatTwo')]}"/>
+                            <field name="date_invoice" attrs="{'required': [('format', '=', 'FormatOne')], 'invisible': [('format', '=', 'FormatTwo')]}" />
+                            <field name="account_id" attrs="{'required': [('format', '=', 'FormatTwo')], 'invisible': [('format', '=', 'FormatOne')]}" />
+                            <field name="location_id" attrs="{'invisible': [('format', '=', 'FormatTwo')]}" />
+                        </group>
+
+                    </group>
+
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Invoice. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                    </group>
+
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start Import Invoice" icon="gtk-ok"/>
+                    </group>
+
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_file_import" model="ir.actions.act_window">
+            <field name="name">Import Invoice in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">invoice.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_invoice_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="invoice_file_import" id="menu_invoice_file_import" name="Import Invoice" parent="data_migration_menu"/>
+
+        <record id="view_inventory_import_form" model="ir.ui.view">
+            <field name="name">inventory.import.form</field>
+            <field name="model">inventory.import</field>
+            <!-- Tipo di vista, ovvero architettura principale della vista, in questo caso è un form -->
+            <field name="type">form</field>
+            <!-- Specifica della struttura della vista usando XML -->
+            <field name="arch" type="xml">
+                <form>
+                    <field name="state" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <!-- Percorso del file -->
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" />
+                        <newline/>
+                        <field name="location_id" />
+                        <field name="date" />
+                        <field name="format" />
+                    </group>
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Messaggi' (Vendite -> Configurazione -> Email -> Messaggi)."/>
+                    </group>
+
+                   <!-- Separatore -->
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                        <label colspan="6" width="220"/>
+                    </group>
+
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Annulla"/>
+                        <button type="object" name="actionCheckEncoding" string="Inizia Importazione" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Chiudi"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Azione per aprire il wizard, questa azione viene associata ad una voce di menu definita in purchase_import_pricelist/partner_properties_view.xml -->
+        <record id="inventory_file_import" model="ir.actions.act_window">
+            <field name="name">Importazione Inventario (clienti/fornitori) in formato Excel (xls)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inventory.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_inventory_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="inventory_file_import" id="menu_inventory_file_import" name="Import Inventory" parent="data_migration_menu"/>
+
+
+        <record id="view_crm_import_form" model="ir.ui.view">
+            <field name="name">crm.import.form</field>
+            <field name="model">crm.import</field>
+            <field name="arch" type="xml">
+                <form string="Crm import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+                    <field name="preview_text_original" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <field name="shop_id" widget="selection" />
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" required="True" />
+                        <field name="format" />
+                    </group>
+
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing Products. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+
+                    <!-- Separatore -->
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                        <!--<label colspan="6" width="220"/>-->
+                    </group>
+
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Pulsanti per lo stato "preview" -->
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Azione per aprire il wizard, questa azione viene associata ad una voce di menu definita in purchase_import_pricelist/product_properties_view.xml -->
+        <record id="crm_file_import" model="ir.actions.act_window">
+            <field name="name">Import CRM in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_crm_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="crm_file_import" id="menu_crm_file_import" name="Import Crm" parent="data_migration_menu"/>
+
+
+        <record id="view_bom_import_form" model="ir.ui.view">
+            <field name="name">bom.import.form</field>
+            <field name="model">bom.import</field>
+            <field name="arch" type="xml">
+                <form string="BOM import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+                    <field name="preview_text_original" invisible="1"/>
+                    <!-- Items visibles in state "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <field name="file_name" invisible="1" />
+                        <field name="content_base64" filename="file_name" required="True" />
+                        <field name="format" />
+                        <!--<field name="update_product_name" />-->
+                    </group>
+
+                    <!-- Items per lo stato end -->
+                    <group colspan="8" col="8" states="end">
+                        <label string="Importing BOM. You will be notified with a message when the import process is finished"/>
+                        <!-- <label string="Import file. Verra segnalata la fine del'importazione, nelle 'Richieste' (Configurazione -> Personalizzazione -> Oggetti Basso Livello -> Richieste -> Richieste)."/> -->
+                    </group>
+
+                    <!-- Separatore -->
+                    <group colspan="8" col="8">
+                        <separator string="" colspan="8"/>
+                        <!--<label colspan="6" width="220"/>-->
+                    </group>
+
+                    <!-- Pulsanti per lo stato "import" -->
+                    <group colspan="8" col="8" states="import">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionCheckEncoding" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Pulsanti per lo stato "preview" -->
+                    <group colspan="8" col="8" states="preview">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="actionStartImport" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visibles in state "end" -->
+                    <group colspan="8" col="8" states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="bom_file_import" model="ir.actions.act_window">
+            <field name="name">Import BOM in .xls format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bom.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_bom_import_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="bom_file_import" id="menu_bom_file_import" name="Import BOM" parent="data_migration_menu"/>
+
+    </data>
+</openerp>

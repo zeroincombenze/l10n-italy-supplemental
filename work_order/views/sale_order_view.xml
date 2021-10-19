@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    
+        <record id="view_project_project_in_sale_order_form" model="ir.ui.view">
+            <field name="name">view_project_in_sale_order_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_order_confirm.sale_order_confirm_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="project_id" position="replace">
+                    <field name="project_project" context="{'model': 'sale.order', 'name': name, 'partner_id': partner_id, 'default_contact_id': partner_order_id, 'default_pricelist_id': pricelist_id}"  groups="project.group_project_user" />
+                </field>
+                <xpath expr="//separator[@string='Invoices']"  position="before">
+                    <group groups="project.group_project_user" >
+                        <separator colspan="4" string="Task" />
+                        <field name="project_task_ids" nolabel="1" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project_project_in_sale_order_form_smart" model="ir.ui.view">
+            <field name="name">view_project_in_sale_order_form_smart</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_order_confirm.view_order_form_smart"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="project_id" position="replace">
+                    <field name="project_project" context="{'model': 'sale.order', 'name': name, 'partner_id': partner_id, 'default_contact_id': partner_order_id, 'default_pricelist_id': pricelist_id}" groups="project.group_project_user" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_shop_project_form" model="ir.ui.view">
+            <field name="name">sale.shop</field>
+            <field name="model">sale.shop</field>
+            <field name="inherit_id" ref="sale.view_shop_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="pricelist_id" position="after">
+                    <field name="project_required" />
+                    <field name="project_manager_id" attrs="{'invisible': [('project_required', '!=', True)]}"/>
+                </field>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

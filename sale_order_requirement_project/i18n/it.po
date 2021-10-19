@@ -1,0 +1,11 @@
+#. module: sale_order_requirement_project
+#: model:ir.ui.menu,name:sale_order_requirement_project.menu_view_order_requirement
+#: view:order.requirement:0
+#: view:order.requirement.line:0
+msgid "Order Requirement"
+msgstr "Fabbisogno Ordine"
+
+#. module: sale_order_requirement
+#: field:order.requirement,project_id:0
+msgid "Project"
+msgstr "Progetto"

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="purchase.purchase_order_tree" model="ir.ui.view">
+            <field name="name">purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="grey:state=='cancel';blue:state in ('draft');orange:state in ('wait','confirmed');red:state in ('approved') and minimum_planned_date &lt; current_date" string="Purchase Order">
+                    <field name="name" string="Reference"/>
+                    <field name="user_id" />
+                    <field name="date_order" />
+                    <field name="partner_id"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    <field name="minimum_planned_date" invisible="context.get('quotation_only', False)"/>
+                    <field name="origin"/>
+                    <field name="invoiced_rate" widget="progressbar" invisible="context.get('quotation_only', False)"/>
+                    <field name="shipped_rate" widget="progressbar" invisible="context.get('quotation_only', False)"/>
+                    <field name="amount_untaxed" sum="Total Untaxed amount"/>
+                    <field name="amount_total" sum="Total amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_request_for_quotation_filter_ext_search_view">
+			<field name="name">view.request.for_quotation.filter.ext.search.view</field>
+			<field name="model">purchase.order</field>
+			<field name="type">search</field>
+			<field name="inherit_id" ref="purchase.view_request_for_quotation_filter" />
+			<field name="arch" type="xml">
+				<field name="create_uid" position="after">
+					<field name="user_id"/>
+				</field>
+				<xpath expr="//search//filter[@string='State']" position="after">
+					<filter string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+				</xpath>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="view_purchase_order_filter_ext_search_view">
+			<field name="name">view.purchase.order.filter.ext.search.view</field>
+			<field name="model">purchase.order</field>
+			<field name="type">search</field>
+			<field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+			<field name="arch" type="xml">
+				<xpath expr="//search//filter[@string='State']" position="after">
+					<filter string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+				</xpath>
+			</field>
+		</record>
+
+
+        <record id="view_purchase_order_form_line_sequenxe" model="ir.ui.view">
+            <field name="name">purchase.order.line.sequence</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='date_planned']" position="before">
+                    <field name="seq"/>
+                    <field name="sequence" groups="base.group_system"/>
+                </xpath>
+                <field name="fiscal_position" position="attributes">
+                    <attribute name="on_change">onchange_fiscal_position(fiscal_position, order_line, context)</attribute>
+                </field>
+                <xpath expr="//field[@name='order_line']" position="attributes">
+                    <attribute name="context">{'default_company_id': company_id, 'order_id': id}</attribute>
+                </xpath>
+                <field name="validator" position="before">
+                    <field name="user_id" />
+                </field>
+                <field name="partner_address_id" position="after">
+                    <field name="contact_id" context="{'address_id': partner_address_id}"
+                        domain="[('address_id', '=', partner_address_id)]"
+                    />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

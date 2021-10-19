@@ -1,0 +1,107 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* project_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-19 14:08+0000\n"
+"PO-Revision-Date: 2013-11-19 14:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_extended
+#: field:project.project,total_invoice:0
+msgid "Invoice Amount"
+msgstr "Totale Fatturato"
+
+#. module: project_extended
+#: field:project.project,total_spent:0
+msgid "Spent Amount"
+msgstr "Totale Speso"
+
+#. module: project_extended
+#: field:project.project,total_service_spent:0
+msgid "Service Spent Amount"
+msgstr "Totale Servizi Speso"
+
+#. module: project_extended
+#: field:project.project,task_count:0
+msgid "Open Tasks"
+msgstr "Attività Aperte"
+
+#. module: project_extended
+#: field:project.project,planned_end_date:0
+msgid "Planned End Date"
+msgstr "Data Fine Attività"
+
+#. module: project_extended
+#: field:project.project,total_sell:0
+msgid "Sell Amount"
+msgstr "Totale Venduto"
+
+#. module: project_extended
+#: field:project.project,total_sell_service:0
+msgid "Service Sell Amount"
+msgstr "Totale Servizi Venduti"
+
+#. module: project_extended
+#: view:project.project:0
+msgid "Tasks"
+msgstr "Attività"
+
+#. module: project_extended
+#: view:project.project:0
+msgid "Order"
+msgstr "Ordini"
+
+#. module: project_extended
+#: view:project.project:0
+msgid "Purchase"
+msgstr "Acquisti"
+
+#. module: project
+#: field:project.task.work,project_id:0
+msgid "Project"
+msgstr "Progetto"
+
+#. module: project_extended
+#: field:project.task.work,to_invoice:0
+msgid "Invoice Task Work"
+msgstr "Rifatturazione al Cliente"
+
+#. modules: project_extended
+#: view:project.project:0
+#: field:project.project,project_task_work_ids:0
+msgid "Project Task Work"
+msgstr "Rapportini Ore"
+
+#. modules: project_extended
+#: constraint:account.analytic.account:0
+#: code:addons/project_extended/models/inherited_account_analytic_account.py:43
+#, python-format
+msgid "Name and Parent must be unique"
+msgstr "Nome e Padre devono essere univoci"
+
+#. modules: project_extended
+#: code:addons/project_extended/models/inherited_project_project.py:67
+#, python-format
+msgid "There are same analytic line"
+msgstr "Ci sono delle righe analitiche"
+
+#. modules: base, document
+#: code:addons/orm.py:2728
+#: code:addons/orm.py:2738
+#: code:addons/document/document.py:250
+#: code:addons/document/document.py:329
+#: code:addons/document/document_directory.py:266
+#: code:addons/document/document_directory.py:271
+#: code:addons/document/document_directory.py:276
+#, python-format
+msgid "ValidateError"
+msgstr "Errore di Convalida"

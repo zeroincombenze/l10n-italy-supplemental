@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="project_issue_form_view" model="ir.ui.view">
+            <field name="name">Project Issue Tracker Form</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="task_id" position="attributes">
+                    <attribute name="required">True</attribute>
+                    <attribute name="domain">[('project_id', '=', project_id), ('state', 'in', ['open', 'working'])]</attribute>
+                </field>
+                <field name="progress" position="replace">
+                    <field name="remaining_hours" readonly="1" widget="float_time" />
+                </field>
+                <xpath expr="//notebook/page[@string='General']" position="after">
+                    <page string="Worklogs" attrs="{'invisible':[('state','in', ['draft'])]}">
+                        <field name="work_ids" colspan="4" nolabel="1"
+                               context="{'default_user_id' : user_id, 'default_task_id' : task_id}"
+                               attrs="{'readonly': [('state','in', ['draft', 'done'])]}">
+                            <tree editable="top" string="Timesheets">
+                                <field name="date"/>
+                                <field name="task_id" required="1" invisible="1"/>
+                                <field name="name"/>
+                                <field name="hours" widget="float_time"/>
+                                <field name="user_id"/>
+                            </tree>
+                        </field>
+                        <separator colspan="4"/>
+                        <group col="8" colspan="4">
+                            <button name="case_cancel" string="Cancel" states="draft,open,pending" type="object"
+                                    icon="gtk-cancel"/>
+                            <button name="case_open" string="Open" states="draft,pending" type="object"
+                                    icon="gtk-go-forward"/>
+                            <button name="case_close" string="Done" states="open,draft,pending" type="object"
+                                    icon="terp-dialog-close"/>
+                            <button name="case_pending" string="Pending" states="draft,open" type="object"
+                                    icon="gtk-media-pause"/>
+                            <button name="case_escalate" string="Escalate" states="open,draft,pending" type="object"
+                                    icon="gtk-go-up"/>
+                            <button name="case_reset" string="Reset to New" states="done,cancel" type="object"
+                                    icon="gtk-convert"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <!-- Move field 'version_id' -->
+                <field name="version_id" position="replace"/>
+                <field name="active" position="after">
+                    <field name="version_id"/>
+                </field>
+
+                <!-- Move field Creation date before 'Assigned to' (user_id) -->
+                <field name="create_date" position="replace"/>
+                <field name="user_id" position="before">
+                    <field name="create_date"/>
+                </field>
+
+                <!-- Add field 'Status' -->
+                <xpath expr="/form/group/group" position="after">
+                    <field name="status_id"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="project_issue_tree_view" model="ir.ui.view">
+            <field name="name">Project Issue Tracker Tree</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_tree_view" />
+            <field name="type">tree</field>
+
+            <field name="arch" type="xml">
+                <!-- Remove 'Progress' column -->
+                <field name="progress" position="replace"/>
+
+                <!-- Remove Version column -->
+                <field name="version_id" position="replace"/>
+
+                <!-- Remove Category column -->
+                <!--
+                    Category field is set to invibile in parent view, so I removed the
+                    field and re-added it to reset invisible and modifiers attributes
+                -->
+                <field name="categ_id" position="replace"/>
+
+                <!-- Re-add field category -->
+                <field name="priority" position="after">
+                    <field name="categ_id"/>
+                </field>
+
+                <field name="categ_id" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="modifiers">{'tree_invisible': false}</attribute>
+                </field>
+
+                <!-- Add field Status after Category -->
+                <field name="categ_id" position="after">
+                    <field name="status_id"/>
+                </field>
+
+            </field>
+        </record>
+
+<!--
+
+
+        <record model="ir.ui.view" id="project_issue_tree_view">
+            <field name="name">Project Issue Tracker Tree</field>
+            <field name="model">project.issue</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Issue Tracker Tree" colors="black:state=='open';blue:state=='pending';grey:state in ('cancel', 'done')">
+                    <field name="id"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="partner_id" groups="base.group_extended"/>
+                    <field name="project_id" />
+                    <field name="priority" string="Priority"/>
+                    <field name="type_id" widget="selection" readonly="1" string="Stages" />
+                    <button name="prev_type" string="Previous" type="object" icon="gtk-go-back" help="Change to Previous Stage"/>
+                    <button name="next_type" string="Next" type="object" icon="gtk-go-forward" help="Change to Next Stage"/>
+                    <field name="version_id" widget="selection"/>
+                    <field name="user_id"/>
+                    <field name="progress" widget="progressbar" attrs="{'invisible':[('task_id','=',False)]}"/>
+                    <field name="state"/>
+                    <button name="case_cancel" string="Cancel" states="draft,open,pending" type="object" icon="gtk-cancel"/>
+                    <button name="case_close" string="Done" states="open,draft,pending" type="object" icon="gtk-jump-to"/>
+                    <button name="case_open" string="Open" states="draft,pending" type="object" icon="gtk-go-forward" help="To Do"/>
+                    <button name="case_pending" string="Pending" states="draft,open" type="object" icon="gtk-media-pause"/>
+                    <button name="case_escalate" string="Escalate" states="open,draft,pending" type="object" icon="gtk-go-up"/>
+                    <button name="case_reset" string="Reset to New" states="done,cancel" type="object" icon="gtk-convert"/>
+                    <field name="categ_id" invisible="1"/>
+                    <field name="task_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+-->
+
+
+        <record model="ir.ui.view" id="project_issue_sheet.project_issue_form_view">
+            <field name="name">Project Issue Tracker Form</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+
+                <!-- Add the "write_date" field -->
+                <field name="create_date" position="before">
+                    <field name="ordering_date"/>
+                </field>
+
+                <field name="project_id" position="attributes">
+                    <attribute name="on_change">on_change_project(project_id, email_from)</attribute>
+                </field>
+                <!--<field name="task_id" position="attributes">-->
+                    <!--<attribute name="on_change">onchange_task_id(task_id, email_from, context)"</attribute>-->
+                <!--</field>-->
+                <xpath expr="/form/notebook" position="before">
+                    <field name="analytic_account_id" domain="[('parent_id','!=',False),('partner_id', '=', partner_id),('type', '!=', 'view')]" on_change="on_change_account_id(analytic_account_id)" invisible="1"/>
+                </xpath>
+                <!--<xpath expr="//notebook/page[@string='Extra Info']" position="before">-->
+                	<!--<page string="Worklogs">-->
+                        <!--<field name="timesheet_ids" colspan="4" nolabel="1" context="{'default_user_id' : user_id, 'default_account_id' : analytic_account_id}">-->
+                            <!--<tree editable="top" string="Timesheets">-->
+                                <!--<field name="name"/>-->
+                                <!--<field name="unit_amount" on_change="on_change_unit_amount(product_id, unit_amount, False, product_uom_id,journal_id)" widget="float_time"/>-->
+                                <!--<field name="account_id" invisible="0" domain="[('partner_id', '=', parent.partner_id)]" on_change="on_change_account_id(account_id)"/>-->
+                                <!--<field name="date"/>-->
+                                <!--<field name="user_id"/>-->
+                                <!--<field invisible="1" name="journal_id"/>-->
+                                <!--<field invisible="1" name="product_id"/>-->
+                                <!--<field invisible="1" name="product_uom_id" on_change="on_change_unit_amount(product_id, unit_amount, False, product_uom_id,journal_id)"/>-->
+                                <!--<field invisible="1" name="amount"/>-->
+                                <!--<field invisible="1" name="general_account_id"/>-->
+                            <!--</tree>-->
+                        <!--</field>-->
+                    <!--</page>-->
+                <!--</xpath>-->
+            </field>
+        </record>
+
+        <record id="action_silent_done" model="ir.actions.server">
+            <field name="name">Silent Done</field>
+            <field name="model_id" ref="model_project_issue"/>
+            <field name="state">code</field>
+            <field name="code">self.silent_done(cr, uid, context=context)</field>
+        </record>
+
+        <record id="menu_upgrade_modules" model="ir.values">
+            <field name="object" eval="True" />
+            <field name="name">Close without email</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_silent_done" />
+            <field name="key">action</field>
+            <field name="model">project.issue</field>
+        </record>
+
+    </data>
+</openerp>

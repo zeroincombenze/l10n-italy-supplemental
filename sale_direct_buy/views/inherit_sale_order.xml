@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="sale_order_tree_print_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.print.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <button name="print_sale" string="Print" type="object" icon="gtk-print" invisible="not context.get('view_print')"/>
+                </field>
+            </field>
+        </record>
+    
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.direct.buy.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='product_id']" position="attributes">
+                    <attribute name="on_change">product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, False, extra_purchase_discount)</attribute>
+                    <attribute name="context">{'product_brand_id': product_brand_id}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='product_uom_qty']" position="attributes">
+                    <attribute name="on_change">product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty,product_uos, name, parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, supplier_id, extra_purchase_discount)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='product_packaging']" position="attributes">
+                    <attribute name="on_change">product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty,product_uos, name, parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, supplier_id, extra_purchase_discount)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='product_id']" position="before">
+                    <!--<field name="manufacturer_id"  attrs="{'readonly': [('product_id', '!=', False)]}"/>-->
+                    <!--<field name="manufacturer_pref" attrs="{'readonly': [('product_id', '!=', False)]}"/>-->
+                    <field name="product_brand_id" attrs="{'readonly': [('product_id', '!=', False)]}" colspan="2" />
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='name']" position="after">
+                    <field name="supplier_ids" invisible="1" />
+                    <field name="supplier_id"
+                        on_change="product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, supplier_id, extra_purchase_discount, False)"
+                        attrs="{'readonly': [('product_id','=',False)]}"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='product_uom']" position="after">
+                    <newline />
+                </xpath>
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/form//field[@name='discount']" position="after">
+                    <field name="extra_purchase_discount"
+                        on_change="product_id_change(parent.pricelist_id, product_id, product_uom_qty, product_uom, product_uos_qty, product_uos, name, parent.partner_id, False, True, parent.date_order, product_packaging, parent.fiscal_position, False, supplier_id, extra_purchase_discount)"
+                    />
+                    <field name="margin" />
+                </xpath>
+
+                <xpath expr="//field[@name='order_line' or @name='abstract_line_ids']/tree//field[@name='name']"
+                       position="after">
+                    <field name="supplier_id"/>
+                </xpath>
+
+                <xpath expr="//separator[@string='Invoices']"  position="before">
+                    <separator colspan="4" string="Purchase"/>
+                    <field colspan="4" name="purchase_order_ids" nolabel="1" context="{'view_print': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+    
+    </data>
+</openerp>

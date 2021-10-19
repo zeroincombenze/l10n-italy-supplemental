@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_fido_company_form">
+            <field name="name">res.company.rfido.inherit</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <page string="Configuration" position="inside">
+                    <separator string="Gestione Fido" colspan="4"/>
+                    <field name="check_credit_limit"/>
+                    <field name="default_credit_limit"/>
+                    <field name="check_overdue"/>
+                    <field name="date_max_overdue"/>
+                    <separator string="Manage Validity on Sale Order" colspan="4"/>
+                    <field name="default_sale_order_validity"/>
+                    <field name="sale_order_validity_end_of_month" />
+                    <separator string="Margin Manager" colspan="4"/>
+                    <field name="enable_margin_validation"/>
+                    <field name="minimum_margin"/>
+                    <field name="enable_discount_validation"/>
+                    <field name="max_discount"/>
+                    <separator string="Parametri Default" colspan="4"/>
+                    <field name="default_property_account_position"/>
+                    <field name="default_property_payment_term"/>
+                    <field name="default_property_advance_product_id" required="1"/>
+                    <separator string="Sale Order Validation Params" colspan="4"/>
+                    <field name="auto_order_policy" />
+                    <field name="enable_partner_validation" />
+                    <field name="need_tech_validation"/>
+                    <field name="tech_validation_if_no_product" />
+                    <field name="need_manager_validation"/>
+                    <field name="need_supervisor_validation"/>
+                    <field name="skip_supervisor_validation_onstandard_product" attrs="{'invisible': [('need_supervisor_validation','!=',True)]}"/>
+                    <!--			<separator name="Sale Order View" colspan="4"/>
+                                <field name="readonly_price_unit" />-->
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

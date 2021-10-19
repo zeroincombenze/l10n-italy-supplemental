@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="form_serial_partial_picking_tree" model="ir.ui.view">
+            <field name="name">form.serial.partial.picking.form</field>
+            <field name="model">stock.partial.picking</field>
+            <field name="inherit_id" ref="stock.stock_partial_picking_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/field[@name='move_ids']/tree[@string='Product Moves']" position="attributes">
+                    <attribute name="colors">fuchsia:row_color=='fuchsia';grey:row_color=='grey';blue:row_color=='blue';red:row_color=='red';green:row_color=='green';orange:row_color=='orange'</attribute>
+                </xpath>
+                <xpath expr="/form/field[@name='move_ids']" position="attributes">
+                    <attribute name="on_change">onchange_product_search(product_search, move_ids, context)</attribute>
+                </xpath>
+                <field name="move_ids" position="before">
+                    <field name="product_search" placeholder="Product code for search in line" colspan="4" nolabel="1"
+                               on_change="onchange_product_search(product_search, move_ids, context)"/>
+                </field>
+                <field name="hide_tracking" position="after">
+                    <field name="tracking_code"/>
+                    <field name="arrival_date"/>
+                    <newline/>
+                    <button name="action_set_zero_all" string="Set To Zero All" colspan="1" type="object" icon="gtk-clear"/>
+                    <button name="action_set_zero_except_check" string="Set To Zero Except Check" colspan="1" type="object" icon="gtk-clear"/>
+                    <button name="action_set_max" string="Set To Max" colspan="1" type="object" icon="gtk-home"/>
+                    <button name="action_set_max_except_check" string="Set To Max Except Check" colspan="1" type="object" icon="gtk-home"/>
+                </field>
+                <field name="product_id" position="replace">
+                    <field name="row_color" invisible="1"/>
+                    <field name="code" invisible="not context.get('type_in', False)"/>
+                    <field name="product_id" readonly="1" />
+                </field>
+                <field name="quantity" position="replace">
+                    <field name="quantity" attrs="{'readonly': [('split_type', '=', 'single')]}" />
+                    <button name="action_add" string="Add" type="object" icon="gtk-add"  attrs="{'invisible': [('split_type', '=', 'single')]}"/>
+                    <button name="action_remove" string="Remove" type="object" icon="gtk-remove"  attrs="{'invisible': [('split_type', '=', 'single')]}"/>
+                    <button name="action_check" string="Check" type="object" icon="gtk-apply" />
+                    <field name="line_check" />
+                    <field name="balance" groups="stock.view_balance"/>
+                    <field name="pallet_qty" groups="stock.view_pallet" />
+                    <field name="pallet_id" groups="stock.view_pallet" widget="selection" />
+                </field>
+                <field name="prodlot_id" position="replace">
+                    <field name="new_prodlot_code" on_change="onchange_new_prodlot_code(new_prodlot_code, product_id, prodlot_id)"  groups="stock.group_production_lot"/>
+                    <field name="prodlot_id" domain="[('product_id', '=', product_id), ('stock_available', '!=', '0')]" invisible="context.get('hide_tracking', False)" attrs="{'required': [('tracking', '=', True), ('new_prodlot_code', '=', False)]}" groups="stock.group_production_lot"/>
+                    <field name="split_type" readonly="1" groups="stock.group_production_lot"/>
+                    <field name="tracking_id" invisible="True" />
+                </field>
+                <button string="_Cancel" position="replace" >
+                    <button name="save_partial" string="_Save" colspan="1" type="object" icon="gtk-floppy"/>
+                </button>
+            </field>
+        </record>
+    </data>
+</openerp>

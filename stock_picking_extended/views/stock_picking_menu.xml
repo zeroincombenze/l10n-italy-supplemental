@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="stock.next_id_61" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_reporting')])]"/>
+        </record>
+
+        <menuitem name="Order Board" id="menu_order_board"
+                  parent="stock.menu_stock_root" sequence="1" groups="view_order_board">
+        </menuitem>
+
+        <menuitem name="Order Board" action="action_view_stock_picking" id="menu_view_stock_picking"
+                  parent="menu_order_board" sequence="1"/>
+
+        <menuitem name="Line Order Board" action="action_view_stock_move" id="menu_view_stock_move"
+                  parent="menu_order_board" sequence="2"/>
+
+    </data>
+</openerp>

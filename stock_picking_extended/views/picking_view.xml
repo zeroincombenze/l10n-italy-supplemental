@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="stock_picking_tree_print_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.tree.print.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_tree"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="amount_partial" groups="account.group_customer_account_invoice" sum="SUM" invisible="context.get('view_print')"/>
+                    <field name="amount_total" groups="account.group_customer_account_invoice" sum="SUM" invisible="context.get('view_print')"/>
+                    <field name="payment_term_id" groups="account.group_customer_account_invoice" invisible="context.get('view_print')"/>
+                    <button name="print_picking" string="Print" type="object" icon="gtk-print" invisible="not context.get('view_print')"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="stock.stock_picking_calendar">
+            <field name="name">stock.picking.calendar</field>
+            <field name="model">stock.picking</field>
+            <field name="type">calendar</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Calendar View" date_start="minimum_planned_date" date_stop="minimum_planned_date" color="customer_id">
+                    <field name="origin"/>
+                    <field name="customer_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="stock_picking_out_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.ddt</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <field name="carrier_id" position="before">
+                    <field name="address_delivery_id" context="{'name_lenght': '180', 'contact_display': 'partner'}" colspan="6" />
+                    <field name="goods_description_id" widget="selection"/>
+                    <field name="carriage_condition_id" widget="selection"/>
+                    <field name="transportation_condition_id" widget="selection"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="stock_picking_out_form_inherit_replace" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.replace</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_form"/>
+            <field name="priority">16</field>
+            <field name="arch" type="xml">
+                <field name="date_done" position="replace"/>
+                <field name="date" position="replace">
+                    <field name="date_done"/>
+                </field>
+                <field name="name" position="replace"/>
+                <field name="origin" position="replace"/>
+                <field name="invoice_state" position="replace"/>
+                <field name="backorder_id" position="replace"/>
+                <field name="move_type" position="after">
+                    <!-- <field name="transportation_reason_id"/>-->
+                    <field name="name" readonly="1"/>
+                    <field name="origin" readonly="1"/>
+                    <field name="date"/>
+                    <field name="minimum_planned_date" readonly="1"/>
+                    <field name="invoice_state"/>
+                    <field name="backorder_id" readonly="1" groups="base.group_extended"/>
+                </field>
+                <field name="stock_journal_id" position="replace">
+                    <field name="stock_journal_id" required="1"
+                    on_change="onchange_stock_journal(stock_journal_id,state)" widget="selection"/>
+                    <field name="credit_limit" attrs="{'invisible': [('visible_credit_limit','!=',True)]}"/>
+                    <field name="visible_credit_limit" invisible="1"/>
+                </field>
+
+                <page string="Notes" position="after">
+                    <page string="Internal Notes">
+                        <field colspan="4" name="internal_note" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="stock_picking_in_form_inherit" model="ir.ui.view">
+            <field name="name">stock.picking.form.in.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_in_form"/>
+            <field name="arch" type="xml">
+                <field name="address_id" position="after">
+                    <field name="address_delivery_id" context="{'contact_display':'partner_address'}" colspan="4"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_journal_picking_order_tree">
+            <field name="name">stock.picking.journal.view.tree</field>
+            <field name="type">tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_journal.sale_journal_picking_order_tree" />
+            <field name="arch" type="xml">
+                <field name="invoice_type_id" position="replace">
+                    <field name="client_order_ref" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_journal_picking_order_tree_out">
+            <field name="name">stock.picking.journal.view.tree</field>
+            <field name="type">tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_journal.sale_journal_picking_order_tree_out" />
+            <field name="arch" type="xml">
+                <field name="invoice_type_id" position="replace">
+                    <field name="client_order_ref" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_journal_picking_order_out">
+            <field name="name">stock.picking.journal.view.form</field>
+            <field name="type">form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="sale_journal.sale_journal_picking_order_out" />
+            <field name="arch" type="xml">
+                <field name="invoice_type_id" position="after">
+                    <field name="client_order_ref" select="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_enhanced_filter_out" model="ir.ui.view">
+            <field name="name">stock.picking.enhanced.filter</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_out_search"/>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <newline/>
+                    <field name="client_order_ref" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_search" model="ir.ui.view">
+            <field name="name">stock.picking.order.board.search</field>
+            <field name="model">stock.picking</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Order Board">
+                    <filter icon="gtk-ok" name="available" string="Goods Ready" domain="[('goods_ready','=', True)]" />
+                    <field name="sale_id" filter_domain="['|',('sale_id','ilike',self),('origin','ilike',self)]" domain="[('state','in', ['progress', 'manual', 'done'])]"/>
+                    <field name="customer_id"/>
+                    <field name="sale_user_id"/>
+                    <field name="province" />
+                    <field name="region"/>
+                    <field name="product_id"/>
+                    <filter domain="[]" icon="terp-stock_zoom" name="show_delivery" string="Delivery Data"
+                           context="{'show_delivery': True}"/>
+                    <field name="minimum_planned_date"/>
+                    <field name="week_nbr" />
+                </search>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.order.board.form</field>
+            <field name="model">stock.picking</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Order Board">
+
+                    <group col="4" colspan="4">
+                        <group col="2" colspan="2">
+                            <field name="sale_id" groups="base.group_sale_salesman" readonly="1"/>
+                            <field name="customer_id"/>
+                            <field name="internal_note"/>
+                            <field name="creation_date"/>
+                            <field name="carrier_id"/>
+                        </group>
+
+                        <group col="4" colspan="2">
+                            <field name="minimum_planned_date"/>
+                            <field name="order_type"/>
+                            <field name="order_sent"/>
+                            <field name="order_ready"/>
+                            <field name="street" readonly="1"/>
+                            <newline/>
+                            <field name="city" readonly="1"/>
+                            <newline/>
+                            <field name="province"/>
+                            <newline/>
+                            <field name="region"/>
+                            <newline/>
+                            <field name="agent"/>
+                            <newline />
+                            <field name="board_date"/>
+                            <newline />
+                            <field name="amount_total" groups="base.group_sale_salesman"/>
+                            <field name="invoiced_state" />
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Moves">
+                            <field name="move_lines" nolabel="1">
+                                <tree string="Moves" colors="green:goods_ready">
+                                    <field name="product_id"/>
+                                    <field name="product_qty" sum="product_sum"/>
+                                    <field name="product_uom"/>
+                                    <field name="note"/>
+                                    <field name="prodlot_id" invisible="1"/>
+                                    <field name="goods_ready"/>
+                                    <field name="state" invisible="1"/>
+                                    <button name="action_check_goods_ready" string="Check" type="object" icon="gtk-ok"
+                                            attrs="{'invisible': [('state', 'in', ['assigned', 'done'])]}"/>
+                                </tree>
+                                <form string="Move">
+                                    <field name="picking_id" readonly="1"/>
+                                    <field name="product_qty" readonly="1"/>
+                                    <field name="sale_id" readonly="1"/>
+                                    <field name="state"/>
+                                    <separator string="Internal Note" colspan="4"/>
+                                    <field name="internal_note" colspan="4" nolabel="1"/>
+                                    <separator string="Note on Picking Line" colspan="4"/>
+                                    <field name="note" colspan="4" nolabel="1"/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Info">
+                            <field name="note" nolabel="1"/>
+                        </page>
+                        <page string="Communication &amp; History" groups="base.group_extended">
+                            <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
+                                <tree string="History">
+                                    <field name="display_text" string="History Information"/>
+                                    <field name="email_from" invisible="1"/>
+                                    <button string="Reply" attrs="{'invisible': [('email_from', '=', False)]}" name="%(mail.action_email_compose_message_wizard)d" context="{'mail.compose.message.mode':'reply', 'message_id':active_id}" icon="terp-mail-replied" type="action"/>
+                                </tree>
+                            </field>
+                            <button string="Send New Email"
+                                    name="%(mail.action_email_compose_message_wizard)d"
+                                    icon="terp-mail-message-new" type="action"/>
+                        </page>
+                    </notebook>
+                    <field name="state" widget="statusbar" statusbar_colors='{"draft":"red","done":"black","cancel":"grey"}' invisible="1"/>
+                </form>
+           </field>
+        </record>
+
+        <record id="view_stock_picking_tree" model="ir.ui.view">
+            <field name="name">stock.picking.order.board.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Order Board" colors="green:order_ready">
+                    <field name="sale_id"/>
+                    <field name="client_order_ref"/>
+                    <field name="customer_id" invisible="1"/>
+                    <field name="sale_user_id" invisible="not context.get('show_delivery', False)"/>
+                    <field name="province" invisible="not context.get('show_delivery', False)"/>
+                    <field name="region" invisible="not context.get('show_delivery', False)"/>
+                    <field name="note"/>
+                    <field name="internal_note" />
+                    <field name="board_date" />
+                    <field name="minimum_planned_date"/>
+                    <field name="week_nbr" />
+                    <field name="order_type" />
+                    <field name="order_ready" />
+                    <field name="picked_rate" widget="progressbar"/>
+                    <field name="amount_partial" sum="Total" groups="base.group_sale_salesman"/>
+                    <field name="amount_total" sum="Total" groups="base.group_sale_salesman"/>
+                    <field name="payment_term_id" invisible="context.get('show_delivery', False)"/>
+                    <field name="invoiced_state" invisible="context.get('show_delivery', False)" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_stock_move_search" model="ir.ui.view">
+            <field name="name">stock.move.order.board.search</field>
+            <field name="model">stock.move</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Line Order Board">
+                    <filter icon="terp-dialog-close" name="to_delivery" string="To Delievery" domain="[('state','!=','done')]"/>
+                    <field name="sale_id" filter_domain="['|',('sale_id','ilike',self),('origin','ilike',self)]" domain="[('state','in', ['progress', 'manual', 'done'])]"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <separator orientation="vertical"/>
+                    <filter icon="terp-go-month" string="Last Month" name="last_month" help="Delivery of the last month" domain="[('minimum_planned_date', '&lt;', datetime.date.today().strftime('%%Y-%%m-01 00:00:00')), ('minimum_planned_date', '&gt;=', (datetime.date.today() - relativedelta(months=1)).strftime('%%Y-%%m-01 00:00:00'))]"/>
+                    <filter icon="terp-go-month" string="Current Month" name="current_month" help="Delivery of the current month" domain="[('minimum_planned_date', '&lt;', (datetime.date.today() + relativedelta(months=1)).strftime('%%Y-%%m-01 00:00:00')), ('minimum_planned_date', '&gt;=', (datetime.date.today()).strftime('%%Y-%%m-01 00:00:00'))]"/>
+                    <filter icon="terp-go-month" string="Next Month" name="next_month" help="Delivery of the next month" domain="[('minimum_planned_date', '&lt;', (datetime.date.today() + relativedelta(months=2)).strftime('%%Y-%%m-01 00:00:00')), ('minimum_planned_date', '&gt;=', (datetime.date.today() + relativedelta(months=1)).strftime('%%Y-%%m-01 00:00:00'))]"/>
+                    <field name="date_from" filter_domain="[('minimum_planned_date','&gt;=',self)]"/>
+                    <field name="date_to" filter_domain="[('minimum_planned_date','&lt;=',self)]"/>
+                    <separator orientation="vertical"/>
+                    <field name="week_nbr"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Partner" icon="terp-personal" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Shop" icon="terp-personal" domain="[]" context="{'group_by':'shop_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Product" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'product_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Order Delivery" icon="terp-go-month" domain="[]" context="{'group_by':'minimum_planned_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_stock_move_form" model="ir.ui.view">
+            <field name="name">stock.move.order.board.form</field>
+            <field name="model">stock.move</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Move">
+                    <field name="product_id" readonly="1"/>
+                    <field name="picking_id" readonly="1" context="{'form_view_ref': 'stock_picking_extended.view_stock_picking_form'}"/>
+                    <field name="product_qty" readonly="1"/>
+                    <field name="sale_id" readonly="1"/>
+                    <field name="state"/>
+                    <separator string="Internal Note" colspan="4"/>
+                    <field name="internal_note" colspan="4" nolabel="1"/>
+                    <separator string="Note on Picking Line" colspan="4"/>
+                    <field name="note" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_stock_move_tree" model="ir.ui.view">
+            <field name="name">stock.move.order.board.tree</field>
+            <field name="model">stock.move</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Line Order Board">
+                    <field name="shop_id" />
+                    <button name="action_view_order_board" string="Open Order Board" type="object" icon="gtk-zoom-in" />
+                    <field name="picking_id" />
+                    <field name="sale_id" />
+                    <field name="minimum_planned_date"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="product_id"/>
+                    <field name="product_qty" sum="product_sum"/>
+                    <field name="product_uom"/>
+                    <field name="note"/>
+                    <field name="goods_ready"/>
+                    <field name="state"/>
+                    <button name="action_check_goods_ready" string="Check" type="object" icon="gtk-ok"
+                            attrs="{'invisible': [('state', 'in', ['assigned', 'done'])]}"/>
+                    <field name="line_price_subtotal" sum="line_price_subtotal" groups="base.group_sale_salesman"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_stock_picking" model="ir.actions.act_window">
+            <field name="domain">[('sale_id', '!=', False), ('state', '!=', 'cancel'), ('type', '=', 'out'), ('ddt_number', '=', False)]</field>
+            <field name="context">{'nodelete': '1', 'nocreate': '1', 'noduplicate': '1', 'order': 'minimum_planned_date desc', 'search_default_to_delivery': 1}</field>
+            <field name="name">Order Board</field>
+            <field name="res_model">stock.picking</field>
+            <field name="search_view_id" ref="view_stock_picking_search"/>
+            <field name="view_id" ref="view_stock_picking_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+        <record id="action_stock_picking_tree1_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_stock_picking_tree"/>
+            <field name="act_window_id" ref="action_view_stock_picking"/>
+        </record>
+
+        <record id="action_stock_picking_form1_view1" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_picking_form"/>
+            <field name="act_window_id" ref="action_view_stock_picking"/>
+        </record>
+
+        <record id="action_stock_picking_calendar1_view1" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">calendar</field>
+            <field name="act_window_id" ref="action_view_stock_picking"/>
+        </record>
+
+        <record id="action_view_stock_move" model="ir.actions.act_window">
+            <field name="domain">[('product_id.type', '!=', 'service'), ('picking_id.sale_id', '!=', False), ('picking_id.state', 'not in', ('cancel', 'done')), ('picking_id.type', '=', 'out'), ('picking_id.ddt_number', '=', False)]</field>
+            <field name="context">{'nodelete': '1', 'nocreate': '1', 'noduplicate': '1', 'order': 'minimum_planned_date desc'}</field>
+            <field name="name">Line Order Board</field>
+            <field name="res_model">stock.move</field>
+            <field name="search_view_id" ref="view_stock_move_search"/>
+            <field name="view_id" ref="view_stock_move_tree"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_stock_move_tree1_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_stock_move_tree"/>
+            <field name="act_window_id" ref="action_view_stock_move"/>
+        </record>
+
+        <record id="action_stock_move_form1_view1" model="ir.actions.act_window.view">
+            <field eval="3" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_move_form"/>
+            <field name="act_window_id" ref="action_view_stock_move"/>
+        </record>
+
+    </data>
+</openerp>

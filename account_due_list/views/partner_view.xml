@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="res_partner_account_move_form" model="ir.ui.view">
+            <field name="name">res.partner.view.move.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Schedule" groups="account_due_list.can_view_due_list">
+                        <separator string="Schedule" colspan="4"/>
+                        <field name="payment_ids" nolabel="1" readonly="1" context="{'color': 'reconcile_function_id', 'order': 'date_maturity desc, date asc, ref desc, move_id desc, id desc'}">
+                            <tree colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                                <field name="row_color" invisible="1"/>
+                                <field name="move_id" required="False" readonly="1"/>
+                                <button name="action_view_account_move" string="Open Journal Entries" type="object"
+                                        icon="gtk-zoom-in"/>
+                                <field name="date" readonly="1"/>
+                                <field name="period_id" invisible="context.get('period_id', False)"/>
+                                <field name="statement_id"
+                                       domain="[('state', '!=', 'confirm'),('journal_id.type', '=', 'bank')]"
+                                       invisible="True"/>
+                                <field name="account_id"
+                                       domain="[('journal_id', '=', journal_id),('type','!=','view'), ('type','!=','closed')]"
+                                       on_change="onchange_account_id(account_id, partner_id)"/>
+                                <field name="name"/>
+                                <field name="date_maturity"/>
+                                <field name="journal_id" context="{'journal_id': journal_id}"
+                                       invisible="context.get('filter_journal_id', False)"/>
+                                <field name="debit" sum="Total debit"/>
+                                <field name="credit" sum="Total credit"/>
+                                <field name="account_tax_id" domain="[('parent_id', '=' ,False)]"
+                                       context="{'journal_id': journal_id}"/>
+                                <field name="residual" sum="Total residual"/>
+                                <field name="state" width="60"/>
+                                <field name="reconcile_function_id" />
+                                <field name="running_balance" />
+                            </tree>
+                        </field>
+                        <field name="credit_phonecall_ids" colspan="4" nolabel="1" context="{'tree_view_ref':'account_due_list.credit_case_inbound_phone_tree_view' }"/>
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+        <record id="view_partner_tree_add_overdue_credit" model="ir.ui.view">
+            <field name="name">res.partner.add.overdue_credit.tree</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after" >
+                    <field name="overdue_credit" groups="account_due_list.can_view_due_list" />
+                    <field name="last_overdue_credit_activity_date" groups="account_due_list.can_view_due_list" invisible="not context.get('show_overdue_activity', False)"/>
+                    <field name="next_overdue_credit_activity_date" groups="account_due_list.can_view_due_list" invisible="not context.get('show_overdue_activity', False)"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_zone_search" model="ir.ui.view">
+            <field name="name">res.partner.supplier.note.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <filter string="Overdue Credit" name="overdue_credit" icon="terp-dolar_ok!" context="{'show_overdue_activity': True}" domain="[('overdue_credit','=',1)]" groups="account_due_list.can_view_due_list"/>
+                    <filter string="To Recall for Credit" icon="terp-gnome-cpu-frequency-applet+" context="{'show_overdue_activity': True}" domain="[('next_overdue_credit_activity_date','&lt;', current_date)]" groups="account_due_list.can_view_due_list"/>
+<!--                    <filter string="Scaduto da sollecitare" icon="terp-mail-" context="{'show_overdue_activity': True}" domain="[('overdue_credit','=',1), ('excluding_recall', '=', False), ('collections_out', '=', False )]" groups="account_due_list.can_view_due_list"/>-->
+                    <filter string="Scaduto da sollecitare" name="overdue_debit_positive" icon="terp-mail-" context="{'show_overdue_activity': True}" domain="[('excluding_recall', '=', False), ('collections_out', '=', False ), ('overdue_debit_positive', '=', True)]" groups="account_due_list.can_view_due_list"/>
+                    <separator orientation="vertical"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="purchase_order_form_payment_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.payment.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="priority">160</field>
+            <field name="arch" type="xml">
+                <field name="dest_address_id" position="after">
+                    <field name="delivery_address"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="payment_term" widget="selection"/>
+                    <field name="incoterm_id" widget="selection"/>
+                </field>
+                <group name="logistics" position="inside">
+                    <field name="carriage_condition_id"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="show_pickings_purchase_order_form" model="ir.ui.view">
+            <field name="name">show_pickings.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="picking_ids" position="replace"/>
+                <field name="invoice_ids" position="after">
+                    <separator string="Pickings" colspan="4"/>
+                    <newline/>
+                    <field name="picking_ids" nolabel="1" colspan="4" context="{'form_view_ref':'stock.view_picking_in_form', 'tree_view_ref':'stock.view_picking_in_tree' }">
+                        <tree string="Picking list">
+                            <field name="type"/>
+                            <field name="complete_name"/>
+                            <field name="backorder_id" groups="base.group_extended"/>
+                            <field name="date"/>
+                            <field name="invoice_state" groups="base.group_extended"/>
+                            <field name="stock_journal_id" groups="base.group_extended" widget="selection"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

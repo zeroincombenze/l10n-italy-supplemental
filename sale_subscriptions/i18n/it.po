@@ -1,0 +1,436 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* sale_subscriptions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-16 21:13+0000\n"
+"PO-Revision-Date: 2015-12-16 21:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_subscriptions
+#: sql_constraint:sale.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "Il Riferimento Ordine deve essere unico per azienda!"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:97
+#: view:sale.order.line:0
+#: field:sale.order.line,partner_id:0
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:228
+#, python-format
+msgid "Calculated invoice date differ from real date ({})"
+msgstr "La data calcolata dalla fattura differisce da quella reale ({})"
+
+#. module: sale_subscriptions
+#: field:sale.order,order_start_date:0
+msgid "Subscription Beginning Date"
+msgstr "Data prima fatturazione"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Close order"
+msgstr "Chiudi Ordine"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Monthly"
+msgstr "Mensile"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:94
+#: field:sale.order,automatically_create_new_subscription:0
+#: field:sale.order.line,automatically_create_new_subscription:0
+#, python-format
+msgid "Automatically create new subscription"
+msgstr "Crea automaticamente una nuova Offerta"
+
+#. module: sale_subscriptions
+#: constraint:res.company:0
+msgid "Error! You can not create recursive companies."
+msgstr "Attenzione: non puoi creare aziende ricorsive"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Reactivate suspended order"
+msgstr "Riattiva Ordini Sospesi"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/company.py:33
+#: selection:res.company,subscription_invoice_day:0
+#: selection:sale.order,subscription_invoice_day:0
+#, python-format
+msgid "Last day of month"
+msgstr "Ultimo giorno del mese"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/company.py:34
+#: field:res.company,subscription_invoice_day:0
+#: field:sale.order,subscription_invoice_day:0
+#, python-format
+msgid "Invoice Day"
+msgstr "Giorno Fatturazione"
+
+#. module: sale_subscriptions
+#: view:sale.order.line:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Total Tax Excluded"
+msgstr "Totale non tassato"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/company.py:32
+#: selection:res.company,subscription_invoice_day:07
+#: selection:sale.order,subscription_invoice_day:0
+#, python-format
+msgid "First day of month"
+msgstr "Primo giorno del mese"
+
+#. module: sale_subscriptions
+#: sql_constraint:res.company:0
+msgid "The company name must be unique !"
+msgstr "Il nome azienda deve essere unico!"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "6 months"
+msgstr "6 mesi"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "1 month"
+msgstr "1 mese"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:238
+#: code:addons/sale_subscriptions/models/sale.py:246
+#, python-format
+msgid "You've added subscriptable product to an order which has no Payments in Installments"
+msgstr "Hai aggiunto un prodotto in abbonamento in un ordine che non ha impostato la durata contrattuale"
+
+#. module: sale_subscriptions
+#: model:ir.actions.server,name:sale_subscriptions.action_orders_renew
+msgid "Renew Orders"
+msgstr "Rinnova Ordini"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "2 months"
+msgstr "2 mesi"
+
+#. module: sale_subscriptions
+#: model:ir.model,name:sale_subscriptions.model_product_product
+#: view:sale.order.line:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:98
+#: field:sale.order.line,order_start_date:0
+#, python-format
+msgid "Order Start"
+msgstr "Data Inizio"
+
+#. module: sale_subscriptions
+#: help:sale.order,order_duration:0
+msgid "Subscription duration in days"
+msgstr "Durata contrattuale in giorni"
+
+#. module: sale_subscriptions
+#: view:sale.order.line:0
+msgid "Search Sales Order"
+msgstr "Cerca ordine di vendita"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Self-renewal"
+msgstr "Auto Rinnovo"
+
+#. module: sale_subscriptions
+#: view:res.company:0
+msgid "Configuration"
+msgstr "Configurazione"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:469
+#, python-format
+msgid "The quotation '%s' has been converted to a sales order."
+msgstr "La quotazione '%s' è stata confermata."
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "1 year"
+msgstr "1 anno"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:93
+#: field:product.product,subscription:0
+#: field:sale.order.line,subscription:0
+#, python-format
+msgid "Subscription"
+msgstr "Abbonamento"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Bimestral"
+msgstr "Bimestrale"
+
+#. module: sale_subscriptions
+#: view:sale.order.line:0
+msgid "Suspended Sale Order Line"
+msgstr "Sospendi Righe Ordine di Vendita"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "3 months"
+msgstr "3 mesi"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "4 months"
+msgstr "4 mesi"
+
+#. module: sale_subscriptions
+#: view:res.company:0
+msgid "Sale Subscription"
+msgstr "Abbonamenti"
+
+#. module: sale_subscriptions
+#: field:sale.order,order_duration:0
+#: field:product.product,order_duration:0
+msgid "Subscription Duration"
+msgstr "Durata contrattuale"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Annual"
+msgstr "Annuale"
+
+#. module: sale_subscriptions
+#: model:ir.model,name:sale_subscriptions.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Semiannual"
+msgstr "Semestrale"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Trimestral"
+msgstr "Trimestrale"
+
+#. module: sale_subscriptions
+#: field:sale.order,presentation:0
+msgid "Allega Presentazione"
+msgstr "Allega Presentazione"
+
+#. module: sale_subscriptions
+#: field:sale.order,have_subscription:0
+msgid "Payment in installments"
+msgstr "Pagamento Rateizzato"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+#: view:sale.order.line:0
+msgid "Suspend"
+msgstr "Sospendi"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Biennial"
+msgstr "Biennale"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_invoice_duration:0
+msgid "Triennial"
+msgstr "Triennale"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:238
+#: code:addons/sale_subscriptions/models/sale.py:246
+#, python-format
+msgid "Error"
+msgstr "Errore"
+
+#. module: sale_subscriptions
+#: view:sale.order.line:0
+msgid "Order"
+msgstr "Ordine"
+
+#. module: sale_subscriptions
+#: field:sale.order,order_invoice_duration:0
+#: help:sale.order,order_invoice_duration:0
+msgid "Invoice Period"
+msgstr "Periodo Fatturazione"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+#: view:sale.order.line:0
+msgid "Restore"
+msgstr "Ripristino"
+
+#. module: sale_subscriptions
+#: model:ir.model,name:sale_subscriptions.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Ending Date"
+msgstr "Data Conclusiva"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:107
+#: field:sale.order.line,order_end_date:0
+#, python-format
+msgid "Order End"
+msgstr "Data Fine"
+
+#. module: sale_subscriptions
+#: model:ir.actions.act_window,name:sale_subscriptions.action_view_subscriptions
+#: model:ir.ui.menu,name:sale_subscriptions.menu_subscriptions
+#: view:sale.order.line:0
+msgid "Subscriptions"
+msgstr "Abbonamenti"
+
+#. module: sale_subscriptions
+#: view:sale.order.line:0
+msgid "Internal User"
+msgstr "Utente Interno"
+
+#. module: sale_subscriptions
+#: help:sale.order,have_subscription:0
+msgid "If set, the total sale price will be allocated in the number of invoices provided by the order in which you enter the product"
+msgstr "Se inserisci il flag, il prezzo di vendita complessivo verrà ripartito nel numero di fatture previste dall’ordine in cui viene inserito il prodotto"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:109
+#: view:sale.order.line:0
+#: field:sale.order.line,section_id:0
+#, python-format
+msgid "Sales Team"
+msgstr "Team di Vendita"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Subscription Ending Date"
+msgstr "Termine durata contrattuale"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:96
+#: view:sale.order.line:0
+#: field:sale.order.line,suspended:0
+#, python-format
+msgid "Suspended"
+msgstr "Sospeso"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:99
+#: field:sale.order.line,order_duration:0
+#, python-format
+msgid "Duration"
+msgstr "Durata"
+
+#. module: sale_subscriptions
+#: view:sale.order:0
+msgid "Total Tax Included"
+msgstr "Totale (tasse incluse)"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "2 years"
+msgstr "2 Anni"
+
+#. module: sale_subscriptions
+#: selection:sale.order,order_duration:0
+#: selection:sale.order.line,order_duration:0
+msgid "3 years"
+msgstr "3 Anni"
+
+#. module: sale_subscriptions
+#: code:addons/sale_subscriptions/models/sale.py:108
+#: field:sale.order.line,user_id:0
+#, python-format
+msgid "Salesman"
+msgstr "Utente"
+
+#. module: sale_subscriptions
+#: model:ir.model,name:sale_subscriptions.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea d'ordine di vendita"
+
+#. module: sale_order_confirm
+#: model:res.groups,name:sale.view_subscription_invoice_day
+msgid "Change Invoice Day on Sale Order"
+msgstr "Cambia il giorno di Fatturazione nell'ordine di Vendita"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "1 month"
+msgstr "1 mese"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "2 months"
+msgstr "2 mesi"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "3 months"
+msgstr "3 mesi"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "4 months"
+msgstr "4 mesi"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "6 months"
+msgstr "6 mesi"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "1 year"
+msgstr "1 anno"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "2 years"
+msgstr "2 anni"
+
+#. module: sale_subscriptions
+#: selection:product.product,order_duration:0
+msgid "3 years"
+msgstr "3 anni"
+
+#. module: sale_subscriptions
+#: view:sale.change.subscriptions:0
+#: view:sale.order:0
+msgid "Change Subscriptions"
+msgstr "Cambia Periodo Contrattuale"
+
