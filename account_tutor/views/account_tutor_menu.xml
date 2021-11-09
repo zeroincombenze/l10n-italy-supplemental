@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <act_window id="action_account_wizard"
+        key2="client_action_multi"
+        name="Account Configuration Tutor"
+        res_model="tutor.configure.wizard"
+        view_mode="form"
+        target="new"
+        />
+
+    <menuitem id="account_tutor" name="Account Configuration Tutor"
+              action="action_account_wizard"
+              parent="account.menu_finance_configuration"
+              groups="base.group_no_one"
+              sequence="1"/>
+
+</odoo>
