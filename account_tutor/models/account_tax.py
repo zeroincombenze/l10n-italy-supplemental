@@ -126,6 +126,7 @@ class AccountTax(models.Model):
                 res[tax]['axc'] = False
                 res[tax]['nat'] = ''
                 res[tax]['pay'] = 'S'
+                res[tax]['law'] = 'IVA in split-payment - Art. 17ter'
             elif assosoftware == '*DF':
                 res[tax]['axc'] = False
                 res[tax]['nat'] = ''

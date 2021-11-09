@@ -13,6 +13,6 @@
               action="action_account_wizard"
               parent="account.menu_finance_configuration"
               groups="base.group_no_one"
-              sequence="1"/>
+              sequence="100"/>
 
 </odoo>
