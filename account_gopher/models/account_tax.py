@@ -9,7 +9,7 @@
 #
 import re
 
-from odoo import models, _
+from odoo import models
 
 # Nature(text), law number(number), law supplemental(text), \
 # law section(number), law letter(text), law ref (text)
