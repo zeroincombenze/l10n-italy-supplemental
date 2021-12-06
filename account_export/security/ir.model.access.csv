@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_move_export,access_account_move_export,model_account_move_export,,1,0,0,0
-access_account_move_export_customer,access_account_move_export_customer,model_account_move_export_customer,,1,0,0,0
-access_account_move_export_supplier,access_account_move_export_supplier,model_account_move_export_supplier,,1,0,0,0
