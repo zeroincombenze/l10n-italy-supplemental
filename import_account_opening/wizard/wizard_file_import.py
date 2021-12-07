@@ -115,11 +115,10 @@ class WizardImportAccountOpening(models.Model):
                     if vals.get('supplier'):
                         vals['account_id'] = recs[
                             0].property_account_payable_id.id
-                        by_code = False
                     else:
                         vals['account_id'] = recs[
                             0].property_account_receivable_id.id
-                        by_code = False
+                    by_code = False
             else:
                 if html_txt:
                     html += html_txt('', 'tr')
@@ -173,9 +172,9 @@ class WizardImportAccountOpening(models.Model):
             'ref': 'apertura conti',
         })
         tracelog = self.html_txt(_('Import account entries'), 'h3')
+        numrec = 0
         tracelog += self.html_txt('', 'table')
         tracelog += self.html_txt('', 'tr')
-        numrec = 0
         tracelog += self.html_txt(_('Row'), 'td')
         tracelog += self.html_txt(_('Code'), 'td')
         tracelog += self.html_txt(_('Name'), 'td')
@@ -195,10 +194,20 @@ class WizardImportAccountOpening(models.Model):
             if not vals:
                 continue
             vals['move_id'] = move.id
-            total_debit += vals.get('debit') or 0.0
-            total_credit += vals.get('credit') or 0.0
-            self.env[model_dtl].with_context(
-                check_move_validity=False).create(vals)
+            try:
+                self.env[model_dtl].with_context(
+                    check_move_validity=False).create(vals)
+                total_debit += vals.get('debit') or 0.0
+                total_credit += vals.get('credit') or 0.0
+            except BaseException as e:
+                html += html_txt('', 'tr')
+                html += html_txt('%s' % numrec, 'td')
+                html += html_txt('', 'td')
+                html += html_txt(vals.get('name', ''), 'td')
+                html += html_txt('', 'td')
+                html += html_txt(e, 'td')
+                html += html_txt('', '/tr')
+                break
         vals = {
             'move_id': move.id,
             'account_id': self.account_id.id,

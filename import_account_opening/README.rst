@@ -1,7 +1,7 @@
 
-======================================
-|icon| Import account opening 12.0.0.1
-======================================
+========================================
+|icon| Import account opening 12.0.0.1.1
+========================================
 
 
 .. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/import_account_opening/static/description/icon.png
