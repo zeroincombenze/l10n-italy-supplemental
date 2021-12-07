@@ -200,13 +200,14 @@ class WizardImportAccountOpening(models.Model):
                 total_debit += vals.get('debit') or 0.0
                 total_credit += vals.get('credit') or 0.0
             except BaseException as e:
-                html += html_txt('', 'tr')
-                html += html_txt('%s' % numrec, 'td')
-                html += html_txt('', 'td')
-                html += html_txt(vals.get('name', ''), 'td')
-                html += html_txt('', 'td')
-                html += html_txt(e, 'td')
-                html += html_txt('', '/tr')
+                html = self.html_txt('', 'tr')
+                html += self.html_txt('%s' % numrec, 'td')
+                html += self.html_txt('', 'td')
+                html += self.html_txt(vals.get('name', ''), 'td')
+                html += self.html_txt('', 'td')
+                html += self.html_txt(e, 'td')
+                html += self.html_txt('', '/tr')
+                tracelog += html
                 break
         vals = {
             'move_id': move.id,
