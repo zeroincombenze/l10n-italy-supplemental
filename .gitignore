@@ -1,79 +1,224 @@
-# dotfiles
-.*
-!.gitignore
-#
+# [antoniov: 2021-11-21]
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.a
+*.obj
+*.exe
 # C extensions
+*.o
 *.so
-# hg stuff
-*.orig
+# Temporay files
+*.log
+*.bak
+*.out
+*.conf
+*~
+.tmp
+.tracehis
+.tracehistory
+test*.pdf
+tmp.*
+stdout.log
+*.oca
+*.z0i
+.gitrepname
+# sphinx build directories
+_build/
+_static/
+_template/
+latex/
+html/
+# setup.py egg_info
+*.egg-info
+build/
+dist/
+# dotfiles
+.*
+!.gitignore
+!.github
+!.mailmap
+# coverage tests
+*.conf
+conf/
+cover/
+**/.coverage
+# vcs files
+.orig
+.swp
+__old_*
 status
-# odoo filestore
-openerp/filestore
-# maintenance migration scripts
-openerp/addons/base/maintenance
-# generated for windows installer?
-install/win32/*.bat
-install/win32/meta.py
-# various virtualenv / Distribution / packaging
-.Python
+.bzr/
+.svn/
+.hg/
+.fslckout
+.osc
+#
+# Specific files
+venv_odoo/
 /bin/
 /build/
 /dist/
 /include/
 /lib/
-/lib64/
 /man/
 /share/
 /src/
-env/
-develop-eggs/
-eggs/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-*.egg-info
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-# Unit test / coverage reports
-htmlcov/
-.tox/
-# .coverage
-**/.coverage
-.cache
-nosetests.xml
-coverage.xml
+OCB/
+conf/
 cover/
-# Translations
-*.mo
-# Pycharm
-.idea
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-# Rope
-.ropeproject
-# Sphinx documentation & documentation
-docs/_build/
-_build/
+**/.coverage
 latex/
 html/
-# docs/
-# Backup files & Temporay files
-*~
-*.swp
-*.log
-*.bak
-*.out
-l10n-italy-supplemental/
 stdout.log
+oca__*
+z0i__*
 *.oca
 *.z0i
+.gitrepname
+example_*
+import_partner*
+*_doc.txt
+# Specific files
+# generated for windows installer?
+install/win32/*.bat
+install/win32/meta.py# needed only when building for win32
+setup/win32/static/less/
+setup/win32/static/wkhtmltopdf/
+setup/win32/static/postgresql*.exe
+#
+# odoo filestore
+odoo/filestore
+account-analytic/
+account-budgeting/
+account-closing/
+account-closing_oca/
+account-consolidation/
+account-financial-reporting/
+account-financial-tools/
+account-fiscal-rule/
+account_invoice_create_payment/
+account-invoice-reporting/
+account-invoicing/
+account-payment/
+account_payment_approve_invoice/
+account-reconcile/
+ansible-odoo/
+apps-store/
+bank-payment/
+bank-statement-import/
+bank-statement-reconcile/
+business-requirement/
+calendar/
+commission/
+community-data-files/
+connector/
+connector-accountedge/
+connector-cmis/
+connector-ecommerce/
+connector-infor/
+connector-interfaces/
+connector-lengow/
+connector-lims/
+connector-magento/
+connector-magento-php-extension/
+connector-odoo2odoo/
+connector-prestashop/
+connector-redmine/
+connector-sage/
+connector-salesforce/
+connector-telephony/
+connector-woocommerce/
+contract/
+crm/
+currency/
+ddmrp/
+delivery-carrier/
+donation/
+dotnet/
+e-commerce/
+edi/
+event/
+geospatial/
+hr/
+hr-timesheet/
+infrastructure-dns/
+interface-github/
+intrastat/
+knowledge/
+l10n-italy/
+l10n-italy-supplemental/
+maintainer-quality-tools/
+maintainer-tools/
+maintenance/
+management-system/
+manufacture/
+manufacture-reporting/
+margin-analysis/
+mis-builder/
+multi-company/
+oca-custom/
+oca-decorators/
+odoorpc/
+odoo-sentinel/
+odoo-sphinx-autodoc/
+OpenUpgrade/
+openupgradelib/
+operating-unit/
+partner-contact/
+pos/
+product-attribute/
+product-kitting/
+product-variant/
+profiles/
+project/
+project-agile/
+project-reporting/
+purchase-reporting/
+purchase-workflow/
+pylint-odoo/
+queue/
+reporting-engine/
+report-print-send/
+rma/
+runbot-addons/
+sale-financial/
+sale-reporting/
+sale-workflow/
+server-auth/
+server-backend/
+server-brand/
+server-env/
+server-tools/
+server-ux/
+social/
+stock-logistics-barcode/
+stock-logistics-reporting/
+stock-logistics-tracking/
+stock-logistics-transport/
+stock-logistics-warehouse/
+stock-logistics-workflow/
+survey/
+__to_remove/
+uncovered/
+vertical-abbey/
+vertical-agriculture/
+vertical-association/
+vertical-community/
+vertical-construction/
+vertical-edition/
+vertical-education/
+vertical-hotel/
+vertical-isp/
+vertical-medical/
+vertical-ngo/
+vertical-realestate/
+vertical-travel/
+web/
+webhook/
+webkit-tools/
+website/
+website-cms/
+website-themes/
+zerobug-test/
+

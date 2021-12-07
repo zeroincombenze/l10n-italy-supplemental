@@ -1,23 +1,17 @@
-# -*- coding: utf-8 -*-
-# © 2015-2017 Didotech srl (www.didotech.com)
+# © 2021-2022 SHS-AV srl (www.shs-av.com)
 {
-    'name': 'Data migration import',
-    'version': '12.0.0.0',
+    'name': 'Import account opening',
+    'version': '12.0.0.1',
     'category': 'Tools',
-    'author': 'powERP enterprise network',
-    'website': 'https://www.powerp.it',
+    'author': 'SHS-AV s.r.l.',
+    'website': 'https://www.zeroincombenze.it',
     'development_status': 'Alpha',
     'license': 'LGPL-3',
-    'depends': [
-        'base',
-        'core_extended',
-        'product',
-    ],
-    'external_dependencies': {'python': ['xlrd']},
+    'depends': ['base'],
+    'external_dependencies': {'python': ['openpyxl']},
     'data': [
-        'wizard/file_import_view.xml',
+        'wizard/wizard_file_import_view.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
-    'auto_install': False,
 }
