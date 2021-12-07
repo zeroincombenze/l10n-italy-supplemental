@@ -100,6 +100,7 @@ class WizardImportAccountOpening(models.Model):
             elif name == 'name':
                 vals[name] = row[field] or ''
         if by_vat:
+            partner_domain.append(('type', '=', 'contact'))
             recs = self.env['res.partner'].search(partner_domain)
             if recs:
                 if len(recs) > 1:
