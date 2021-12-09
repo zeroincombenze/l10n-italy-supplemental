@@ -31,6 +31,7 @@ msgstr "Seleziona un file da importare..."
 #. module: import_account_opening
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:180
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:180
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:180
 msgid "Code"
 msgstr "Codice"
 
@@ -52,7 +53,7 @@ msgstr "Nome visualizzato"
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__data_file
 msgid "Excel Data File"
-msgstr ""
+msgstr "File Excel"
 
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__filename
@@ -64,8 +65,10 @@ msgstr "Nome file"
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:144
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:113
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:144
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:113
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:144
 msgid "Found multiple records."
-msgstr "."
+msgstr "Rilevati più record."
 
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__id
@@ -81,23 +84,24 @@ msgstr "Importazione"
 #: model:ir.actions.act_window,name:import_account_opening.action_import_account_opening
 #: model:ir.ui.menu,name:import_account_opening.menu_account_opening_import
 msgid "Import Account Opening"
-msgstr ""
+msgstr "Importare apertura conti"
 
 #. module: import_account_opening
 #: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening
 msgid "Import Account Opening from file Excel"
-msgstr ""
+msgstr "Importare apertura conti da Excel"
 
 #. module: import_account_opening
 #: model:ir.model,name:import_account_opening.model_wizard_import_account_opening
 msgid "Import Account Opening from xlsx"
-msgstr ""
+msgstr "Importare apertura conti da xlsx"
 
 #. module: import_account_opening
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:175
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:175
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:175
 msgid "Import account entries"
-msgstr ""
+msgstr "Importare registrazioni contabili"
 
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__journal_id
@@ -122,6 +126,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: import_account_opening
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:181
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:181
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:181
 msgid "Name"
 msgstr "Descrizione"
 
@@ -130,10 +135,13 @@ msgstr "Descrizione"
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:146
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:130
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:146
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:130
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:146
 msgid "No record found!"
-msgstr "!"
+msgstr "Nessun record trovato!"
 
 #. module: import_account_opening
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:183
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:183
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:183
 msgid "Note"
@@ -142,13 +150,14 @@ msgstr "Nota"
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__account_id
 msgid "Open account"
-msgstr ""
+msgstr "Apertura conto"
 
 #. module: import_account_opening
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:158
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:158
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:158
 msgid "Record without data"
-msgstr ""
+msgstr "Riga senza dati"
 
 #. module: import_account_opening
 #: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__tracelog
@@ -158,15 +167,17 @@ msgstr "Cronologia dei risultati"
 #. module: import_account_opening
 #: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening_result
 msgid "Result of Account Opening"
-msgstr ""
+msgstr "Risultato apertura conti"
 
 #. module: import_account_opening
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:179
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:179
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:179
 msgid "Row"
-msgstr ""
+msgstr "Riga"
 
 #. module: import_account_opening
+#: code:addons/import_account_opening/wizard/wizard_file_import.py:182
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:182
 #: code:addons/import_account_opening/wizard/wizard_file_import.py:182
 msgid "Vat"

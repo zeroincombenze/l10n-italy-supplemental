@@ -18,7 +18,9 @@ Avaiable Addons / Moduli disponibili
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | Name / Nome            | Version    | OCA Ver.   | Description / Descrizione                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening | 12.0.0.1   | |no_check| | Import account opening                                                           |
+| import_account_opening | 12.0.0.1.2 | |no_check| | Import account opening                                                           |
++------------------------+------------+------------+----------------------------------------------------------------------------------+
+| import_inventory       | 12.0.0.1.2 | |no_check| | Import inventory                                                                 |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 
 
@@ -140,6 +142,12 @@ Proposals for enhancement
 History / Cronologia
 --------------------
 
+import_inventory: 12.0.0.1 (2021-12-04)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Draft code / Bozza iniziale
+
+
 import_account_opening: 12.0.0.1 (2021-12-04)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -179,7 +187,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2021-12-07
+Last Update / Ultimo aggiornamento: 2021-12-09
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

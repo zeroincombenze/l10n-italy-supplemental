@@ -112,14 +112,14 @@ class WizardImportAccountOpening(models.Model):
                         html += html_txt(row.get(by_vat, ''), 'td')
                         html += html_txt(_('Found multiple records.'), 'td')
                         html += html_txt('', '/tr')
-                    vals['partner_id'] = recs[0].id
-                    if vals.get('supplier'):
-                        vals['account_id'] = recs[
-                            0].property_account_payable_id.id
-                    else:
-                        vals['account_id'] = recs[
-                            0].property_account_receivable_id.id
-                    by_code = False
+                vals['partner_id'] = recs[0].id
+                if vals.get('supplier'):
+                    vals['account_id'] = recs[
+                        0].property_account_payable_id.id
+                else:
+                    vals['account_id'] = recs[
+                        0].property_account_receivable_id.id
+                by_code = False
             else:
                 if html_txt:
                     html += html_txt('', 'tr')
