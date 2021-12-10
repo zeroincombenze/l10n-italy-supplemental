@@ -1,0 +1,349 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_gopher
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-01 07:35+0000\n"
+"PO-Revision-Date: 2021-12-01 07:35+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#. module: account_gopher
+#: model:ir.actions.act_window,name:account_gopher.action_account_wizard
+#: model:ir.ui.menu,name:account_gopher.account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.wizard_configure_view
+msgid "Account Configuration Assistant"
+msgstr "Assistente contabile per la configurazione"
+
+#. module: account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.result_wizard_configure_view
+msgid "Account Configuration Assistant Result"
+msgstr "Riepilogo assistente contabile per la configurazione"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:163
+#: code:addons/account_gopher/models/account_tax.py:163
+#: code:addons/account_gopher/models/account_tax.py:163
+#: code:addons/account_gopher/models/account_tax.py:163
+#: code:addons/account_gopher/models/account_tax.py:163
+#: code:addons/account_gopher/models/account_tax.py:163
+msgid "Action"
+msgstr "Azione"
+
+#. module: account_gopher
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+#: code:addons/account_gopher/wizard/wizard_configure.py:23
+msgid "Advisor"
+msgstr "Professionista"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:158
+#: code:addons/account_gopher/models/account_tax.py:158
+#: code:addons/account_gopher/models/account_tax.py:158
+#: code:addons/account_gopher/models/account_tax.py:158
+#: code:addons/account_gopher/models/account_tax.py:158
+#: code:addons/account_gopher/models/account_tax.py:158
+msgid "Analyzing Taxes"
+msgstr "Analisi codici IVA"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_account_tax__assosoftware_id
+msgid "Assosoftware Code"
+msgstr "Codice Assosoftware"
+
+#. module: account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.wizard_configure_view
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.result_wizard_configure_view
+msgid "Close"
+msgstr "Chiudere"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:161
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__code
+#: code:addons/account_gopher/models/account_tax.py:161
+#: code:addons/account_gopher/models/account_tax.py:161
+#: code:addons/account_gopher/models/account_tax.py:161
+#: code:addons/account_gopher/models/account_tax.py:161
+#: code:addons/account_gopher/models/account_tax.py:161
+msgid "Code"
+msgstr "Codice"
+
+#. module: account_gopher
+#: sql_constraint:italy.ade.tax.assosoftware:0
+#: sql_constraint:italy.ade.tax.assosoftware
+#: sql_constraint:italy.ade.tax.assosoftware
+#: sql_constraint:italy.ade.tax.assosoftware
+#: sql_constraint:italy.ade.tax.assosoftware
+#: sql_constraint:italy.ade.tax.assosoftware
+msgid "Code already exists!"
+msgstr "Il codice esiste già!"
+
+#. module: account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.wizard_configure_view
+msgid "Configure"
+msgstr "Configura"
+
+#. module: account_gopher
+#: model:ir.model,name:account_gopher.model_gopher_configure_wizard
+#: model:ir.model,name:account_gopher.model_tutor_configure_wizard
+msgid "Configure Account Environment"
+msgstr "Ambiente contabile di configurazione"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__create_uid
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__create_date
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__display_name
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__id
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:290
+#: code:addons/account_gopher/models/account_tax.py:290
+#: code:addons/account_gopher/models/account_tax.py:290
+#: code:addons/account_gopher/models/account_tax.py:290
+#: code:addons/account_gopher/models/account_tax.py:290
+#: code:addons/account_gopher/models/account_tax.py:290
+msgid "IP18 excluded; "
+msgstr "Esclusa da IP18; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:292
+#: code:addons/account_gopher/models/account_tax.py:292
+#: code:addons/account_gopher/models/account_tax.py:292
+#: code:addons/account_gopher/models/account_tax.py:292
+#: code:addons/account_gopher/models/account_tax.py:292
+#: code:addons/account_gopher/models/account_tax.py:292
+msgid "IP18 included; "
+msgstr "Inclusa in IP18; "
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard____last_update
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__write_uid
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__write_date
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:162
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__name
+#: code:addons/account_gopher/models/account_tax.py:162
+#: code:addons/account_gopher/models/account_tax.py:162
+#: code:addons/account_gopher/models/account_tax.py:162
+#: code:addons/account_gopher/models/account_tax.py:162
+#: code:addons/account_gopher/models/account_tax.py:162
+msgid "Name"
+msgstr "Descrizione"
+
+#. module: account_gopher
+#: model_terms:ir.ui.view,arch_db:account_gopher.view_tax_assosoftware_tree
+msgid "Natura IVA"
+msgstr ""
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_italy_ade_tax_assosoftware__nature
+msgid "Nature"
+msgstr "Natura"
+
+#. module: account_gopher
+#: model:ir.model.fields,help:account_gopher.field_italy_ade_tax_assosoftware__nature
+msgid "Nature of tax code: may be taxable, out of scope, etc ..."
+msgstr "Natura del codice: può essere imponibile, fuori campo, eccetera …."
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:328
+#: code:addons/account_gopher/models/account_tax.py:328
+#: code:addons/account_gopher/models/account_tax.py:328
+#: code:addons/account_gopher/models/account_tax.py:328
+#: code:addons/account_gopher/models/account_tax.py:328
+#: code:addons/account_gopher/models/account_tax.py:328
+msgid "No action"
+msgstr "Nessuna azione"
+
+#. module: account_gopher
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+#: code:addons/account_gopher/wizard/wizard_configure.py:21
+msgid "Ordinary Account"
+msgstr "Contabilità ordinaria"
+
+#. module: account_gopher
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+#: code:addons/account_gopher/wizard/wizard_configure.py:54
+msgid "Result"
+msgstr "Risultato"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__tracelog
+msgid "Result History"
+msgstr "Cronologia dei risultati"
+
+#. module: account_gopher
+#: model:ir.model.fields,field_description:account_gopher.field_gopher_configure_wizard__account_profile
+msgid "Select account profile"
+msgstr "Selezionare profilo contabile"
+
+#. module: account_gopher
+#: model:ir.model,name:account_gopher.model_account_tax
+msgid "Tax"
+msgstr "Imposta"
+
+#. module: account_gopher
+#: model:ir.model,name:account_gopher.model_italy_ade_tax_assosoftware
+#: model:ir.model.fields,help:account_gopher.field_account_tax__assosoftware_id
+msgid "Tax Assosoftware classification"
+msgstr "Classificazione IVA Assosoftware"
+
+#. module: account_gopher
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+#: code:addons/account_gopher/wizard/wizard_configure.py:22
+msgid "Tax Cash Basis"
+msgstr "IVA per cassa"
+
+#. module: account_gopher
+#: model:ir.actions.act_window,name:account_gopher.action_tax_assosoftware
+#: model:ir.ui.menu,name:account_gopher.menu_tax_assosoftware
+#: model_terms:ir.ui.view,arch_db:account_gopher.view_tax_assosoftware_form
+msgid "Tax assosoftware"
+msgstr "IVA Assosoftware"
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:311
+#: code:addons/account_gopher/models/account_tax.py:311
+#: code:addons/account_gopher/models/account_tax.py:311
+#: code:addons/account_gopher/models/account_tax.py:311
+#: code:addons/account_gopher/models/account_tax.py:311
+#: code:addons/account_gopher/models/account_tax.py:311
+msgid "reset ax code; "
+msgstr "azzerato codice Assosoftware; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:319
+#: code:addons/account_gopher/models/account_tax.py:319
+#: code:addons/account_gopher/models/account_tax.py:319
+#: code:addons/account_gopher/models/account_tax.py:319
+#: code:addons/account_gopher/models/account_tax.py:319
+#: code:addons/account_gopher/models/account_tax.py:319
+msgid "reset law reference; "
+msgstr "azzerato riferimento di legge; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:281
+#: code:addons/account_gopher/models/account_tax.py:281
+#: code:addons/account_gopher/models/account_tax.py:281
+#: code:addons/account_gopher/models/account_tax.py:281
+#: code:addons/account_gopher/models/account_tax.py:281
+#: code:addons/account_gopher/models/account_tax.py:281
+msgid "reset nature; "
+msgstr "azzerata natura; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:300
+#: code:addons/account_gopher/models/account_tax.py:300
+#: code:addons/account_gopher/models/account_tax.py:300
+#: code:addons/account_gopher/models/account_tax.py:300
+#: code:addons/account_gopher/models/account_tax.py:300
+#: code:addons/account_gopher/models/account_tax.py:300
+msgid "reset payability; "
+msgstr "azzerata esigibilità; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:308
+#: code:addons/account_gopher/models/account_tax.py:308
+#: code:addons/account_gopher/models/account_tax.py:308
+#: code:addons/account_gopher/models/account_tax.py:308
+#: code:addons/account_gopher/models/account_tax.py:308
+#: code:addons/account_gopher/models/account_tax.py:308
+#, python-format
+msgid "set ax code to %s; "
+msgstr "impostato codice Assosoftware %s; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:316
+#: code:addons/account_gopher/models/account_tax.py:316
+#: code:addons/account_gopher/models/account_tax.py:316
+#: code:addons/account_gopher/models/account_tax.py:316
+#: code:addons/account_gopher/models/account_tax.py:316
+#: code:addons/account_gopher/models/account_tax.py:316
+#, python-format
+msgid "set law reference to %s; "
+msgstr "impostato riferimento di legge %s; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:278
+#: code:addons/account_gopher/models/account_tax.py:278
+#: code:addons/account_gopher/models/account_tax.py:278
+#: code:addons/account_gopher/models/account_tax.py:278
+#: code:addons/account_gopher/models/account_tax.py:278
+#: code:addons/account_gopher/models/account_tax.py:278
+#, python-format
+msgid "set nature to %s; "
+msgstr "impostata natura %s; "
+
+#. module: account_gopher
+#: code:addons/account_gopher/models/account_tax.py:297
+#: code:addons/account_gopher/models/account_tax.py:297
+#: code:addons/account_gopher/models/account_tax.py:297
+#: code:addons/account_gopher/models/account_tax.py:297
+#: code:addons/account_gopher/models/account_tax.py:297
+#: code:addons/account_gopher/models/account_tax.py:297
+#, python-format
+msgid "set payability to %s; "
+msgstr "impostata esigibilità %s; "
+
+
