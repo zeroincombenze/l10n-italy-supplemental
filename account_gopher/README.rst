@@ -1,12 +1,12 @@
 
-====================================
-|icon| Account Tutor 12.0.10.0.0.1.0
-====================================
+========================================
+|icon| Account Assistant 12.0.10.0.0.1.0
+========================================
 
 
 **Configure account records**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_tutor/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_gopher/static/description/icon.png
 
 |Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
@@ -18,16 +18,16 @@
 Overview / Panoramica
 =====================
 
-|en| Account Tutor
-------------------
+|en| Assistente contabile
+-------------------------
 
-Configure account records.
+Configuratore automatico contabile
 
 
 |
 
-|it| Account Tutor
-------------------
+|it| Account Assistant
+----------------------
 
 Configura i dati contabili.
 
@@ -85,7 +85,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode 
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **account_tutor** > Install
+* |menu| Setting > Apps |right_do| Select **account_gopher** > Install
 
 
 |
@@ -281,7 +281,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-11-09
+Last Update / Ultimo aggiornamento: 2021-12-10
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

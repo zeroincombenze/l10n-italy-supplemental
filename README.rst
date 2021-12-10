@@ -23,6 +23,8 @@ Avaiable Addons / Moduli disponibili
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_export                 | 12.0.10.0. | |no_check| | Export account moves                                                             |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
+| account_gopher                 | 12.0.10.0. | |no_check| | Configure account records                                                        |
++--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_add_sale_order | 12.0.10.0. | |no_check| | Add sale order to sale account invoice                                           |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_last_number    | |halt|     | |no_check| | Decrement invoice sequence if unlink last invoice                                |
@@ -30,8 +32,6 @@ Avaiable Addons / Moduli disponibili
 | account_invoice_line_view      | 12.0.10.0. | |no_check| | Adds Customer/Supplier Invoice Line menu items                                   |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_renum_lines    | 12.0.10.0. | |no_check| | Sort invoice lines by sale order, DdT, sequence, id                              |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_tutor                  | 12.0.10.0. | |no_check| | Configure account records                                                        |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | purchase_order_line_form       | 12.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -170,8 +170,8 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
-account_tutor: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+account_gopher: 10.0.0.0.0 (2021-11-08)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] First version
 
@@ -209,7 +209,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2021-11-09
+Last Update / Ultimo aggiornamento: 2021-12-10
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

@@ -1,4 +1,4 @@
-Account Tutor
--------------
+Assistente contabile
+--------------------
 
-Configure account records.
+Configuratore automatico contabile

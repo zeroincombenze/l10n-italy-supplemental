@@ -16,7 +16,9 @@
     'website': 'https://www.zeroincombenze.it',
     'development_status': 'Beta',
     'license': 'LGPL-3',
-    'depends': ['base', 'account', 'l10n_it_ade', 'l10n_it_einvoice_base'],
+    'depends': [
+        'base', 'account', 'l10n_it_ade', 'l10n_it_einvoice_base'
+    ],
     'data': [
         # 'security/ir.model.access.csv',
         'views/account_gopher_menu.xml',

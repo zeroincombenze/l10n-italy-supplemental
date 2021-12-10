@@ -9,7 +9,7 @@
 #
 import re
 
-from odoo import models
+from odoo import models, fields, _
 
 # Nature(text), law number(number), law supplemental(text), \
 # law section(number), law letter(text), law ref (text)
@@ -88,7 +88,7 @@ ASSOCODES = {
 class AccountTax(models.Model):
     _inherit = 'account.tax'
 
-    def tutor_configure_tax(self, log=None):
+    def gopher_configure_tax(self, html_txt=None):
         """Set default values"""
 
         def search_4_tokens(tax_name, number, nature=None, bis=None,
@@ -134,13 +134,13 @@ class AccountTax(models.Model):
             elif assosoftware.startswith('*N'):
                 res[tax]['axc'] = False
                 res[tax]['nat'] = assosoftware[1:]
-                res[tax]['pay'] = ''
+                res[tax]['pay'] = False
             else:
                 assosoftware_rec = assosoftware_model.search(
                     [('code', '=', assosoftware)])
                 res[tax]['axc'] = assosoftware
                 res[tax]['nat'] = assosoftware_rec.nature
-                res[tax]['pay'] = ''
+                res[tax]['pay'] = False
                 res[tax]['law'] = assosoftware_rec.name
 
         tax_model = self.env['account.tax']
@@ -148,13 +148,15 @@ class AccountTax(models.Model):
         nature_model = self.env['italy.ade.tax.nature']
         assosoftware_model = self.env['italy.ade.tax.assosoftware']
         # company_model = self.env['res.company']
-        if log:
-            log += '<p>Analyzing Taxes</p>'
-            log += '<table border="2px" cellpadding="2px" style="padding: 5px;"><tr>'
-            log += '<td>Code</td>'
-            log += '<td>Name</td>'
-            log += '<td>Action</td>'
-            log += '</tr>'
+        html = ''
+        if html_txt:
+            html += html_txt(_('Analyzing Taxes'), 'h3')
+            html += html_txt('', 'table')
+            html += html_txt('', 'tr')
+            html += html_txt(_('Code'), 'td')
+            html += html_txt(_('Name'), 'td')
+            html += html_txt(_('Action'), 'td')
+            html += html_txt('', '/tr')
         cur_company_id = False
         cur_company_pay = False
         res = {}
@@ -256,48 +258,59 @@ class AccountTax(models.Model):
                         continue
                     set_result(tax, assosoftware, weight, res)
         for tax in parsed:
-            if tax not in res or (not res[tax]['wgt'] and not res[tax]['amt']):
-                if log:
-                    log += '<tr>'
-                    log += '<td>%s</td>' % tax.description
-                    log += '<td>%s</td>' % tax.name
-                    log += '<td>%s</td>' % _('No action')
-                    log += '<tr>'
-                continue
-            if res[tax]['wgt'] or res[tax]['amt']:
-                actioned = ''
+            actioned = ''
+            if res[tax].get('wgt') or res[tax].get('amt'):
                 vals = {}
+                nature = False
                 if res[tax].get('nat'):
-                    vals['nature_id'] = nature_model.search(
-                        [('code', '=', res[tax]['nat'])])[0].id
+                    nature = nature_model.search(
+                        [('code', '=', res[tax]['nat'])])[0]
+                    vals['nature_id'] = nature.id
                 elif 'nat' in res[tax]:
                     vals['nature_id'] = False
                 if vals.get('nature_id') != tax.nature_id.id:
-                    actioned += _('set nature to %s; ') % res[tax].get('nat')
+                    if vals.get('nature_id'):
+                        actioned += _(
+                            'set nature to %s; ') % res[tax]['nat']
+                    else:
+                        actioned += _('reset nature; ')
                 if 'pay' in res[tax]:
                     vals['payability'] = res[tax]['pay']
-                    if vals.get('payability') != tax.payability:
-                        actioned += _(
-                            'set payability to %s; ') % res[tax].get('pay')
+                    if vals.get('payability', False) != tax.payability:
+                        if vals.get('payability'):
+                            actioned += _(
+                                'set payability to %s; ') % res[tax].get('pay')
+                        else:
+                            actioned += _('reset payability; ')
                 if res[tax].get('axc'):
                     vals['assosoftware_id'] = assosoftware_model.search(
                         [('code', '=', res[tax]['axc'])])[0].id
                 elif 'axc' in res[tax]:
                     vals['assosoftware_id'] = False
                 if vals.get('assosoftware_id', False) != tax.assosoftware_id.id:
-                    actioned += ('set ax code to %s; ') % res[tax].get('axc')
+                    if vals.get('assosoftware_id'):
+                        actioned += _(
+                            'set ax code to %s; ') % res[tax].get('axc')
+                    else:
+                        actioned += _('reset ax code; ')
                 if 'law' in res[tax]:
                     vals['law_reference'] = res[tax]['law']
                 if vals.get('law_reference', False) != tax.law_reference:
-                    actioned += _(
-                        'set law reference to %s; ') % res[tax].get('law')
+                    if vals.get('law_reference'):
+                        actioned += _(
+                            'set law reference to %s; ') % res[tax].get('law')
+                    else:
+                        actioned += _('reset law reference; ')
                 tax.write(vals)
-                if log:
-                    log += '<tr>'
-                    log += '<td>%s</td>' % tax.description
-                    log += '<td>%s</td>' % tax.name
-                    log += '<td>%s</td>' % actioned
-                    log += '<tr>'
-        if log:
-            log += '</table>'
-        return log
+            if html_txt:
+                html += html_txt('', 'tr')
+                html += html_txt(tax.description, 'td')
+                html += html_txt(tax.name, 'td')
+                if actioned:
+                    html += html_txt(actioned, 'td')
+                else:
+                    html += html_txt(_('No action'), 'td')
+                html += html_txt('', '/tr')
+        if html_txt:
+            html += html_txt('', '/table')
+        return html
