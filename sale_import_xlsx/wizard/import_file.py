@@ -10,7 +10,7 @@ from odoo import models, fields, _
 TNL = {
     'Codice': 'default_code',
     'Nome': 'name',
-    'Quantità': 'product_uom_qty',
+    'Quantita': 'product_uom_qty',
 }
 
 

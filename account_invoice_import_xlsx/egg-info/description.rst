@@ -1,12 +1,12 @@
 Import lines from Excel
 -----------------------
 
-This module add a button [import] in order to import account invoice lines from a Excel file.
+This module add a button [import] in order to import sale order lines from a Excel file.
 
 Excel file must have following structure:
 
 +----------------+--------+----------+
-| Nome           | Codice | Quantità |
+| Nome           | Codice | Quantita |
 +----------------+--------+----------+
 | Prodotto Alpha | AAA    |       10 |
 +----------------+--------+----------+

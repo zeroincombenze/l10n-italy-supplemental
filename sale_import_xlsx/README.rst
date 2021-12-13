@@ -26,9 +26,10 @@ This module add a button [import] in order to import sale order lines from a Exc
 Excel file must have following structure:
 
 +----------------+--------+----------+
-| Nome           | Codice | Quantità |
+| Nome           | Codice | Quantita |
 +----------------+--------+----------+
 | Prodotto Alpha | AAA    |       10 |
++----------------+--------+----------+
 | Prodotto Beta  | BBB    |       20 |
 +----------------+--------+----------+
 
@@ -45,7 +46,7 @@ Questo modulo aggiunge il bottone [importa] nella videata per importare le righe
 Il file Excel ha la seguente struttura:
 
 +----------------+--------+----------+
-| Nome           | Codice | Quantità |
+| Nome           | Codice | Quantita |
 +----------------+--------+----------+
 | Prodotto Alpha | AAA    |       10 |
 +----------------+--------+----------+
