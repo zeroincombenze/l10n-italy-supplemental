@@ -1,8 +1,12 @@
 
-=============================================
-|Zeroincombenze| l10n-italy-supplemental 12.0
-=============================================
-|Build Status| |Codecov Status| |license gpl| |Try Me|
+========================================
+|icon| Import account opening 12.0.0.1.2
+========================================
+
+
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/import_account_opening/static/description/icon.png
+
+|Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
 
 .. contents::
@@ -12,47 +16,21 @@
 Overview / Panoramica
 =====================
 
-|en| 
+|en| Account Opeing Import
+--------------------------
 
-|it| N/D
-Avaiable Addons / Moduli disponibili
-------------------------------------
-
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| Name / Nome                    | Version    | OCA Ver.   | Description / Descrizione                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_export                 | 12.0.10.0. | |no_check| | Export account moves                                                             |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher                 | 12.0.10.0. | |no_check| | Configure account records                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_add_sale_order | 12.0.10.0. | |no_check| | Add sale order to sale account invoice                                           |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_import_xlsx    | 12.0.10.0. | |no_check| | Import invoice lines from Excel file                                             |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_last_number    | |halt|     | |no_check| | Decrement invoice sequence if unlink last invoice                                |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_line_view      | |halt|     | |no_check| | Adds Customer/Supplier Invoice Line menu items                                   |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_renum_lines    | 12.0.10.0. | |no_check| | Sort invoice lines by sale order, DdT, sequence, id                              |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening         | 12.0.10.0. | |no_check| | Import account opening                                                           |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| purchase_order_line_form       | 12.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| refocus_report                 | 12.0.10.0. | |no_check| | Customized report for Refocus                                                    |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_import_xlsx               | 12.0.10.0. | |no_check| | Import sale order lines from a Excel                                             |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_resellers                 | 12.0.10.0. | |no_check| | Manage Sale Resellers                                                            |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sequence_recovery_last         | 12.0.10.0. | |no_check| | Sequence Recovery                                                                |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| status_widget                  | 12.0.10.0. | |no_check| | Status Widget                                                                    |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| vg7_report                     | |halt|     | |no_check| | Customized report for VG7                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
+Import account opening from Excel file
 
 
+|
+
+|it| Importazione apertura conti
+--------------------------------
+
+Importazione apertura conti da file Excel
+
+
+|
 
 OCA comparation / Confronto con OCA
 -----------------------------------
@@ -65,6 +43,8 @@ OCA comparation / Confronto con OCA
 +-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
 
 
+|
+|
 
 Getting started / Come iniziare
 ===============================
@@ -72,13 +52,7 @@ Getting started / Come iniziare
 |Try Me|
 
 
-Prerequisites / Prerequisiti
-----------------------------
-
-
-* python 3.7+
-* postgresql 9.6+ (experimental 10.0+)
-
+|
 
 Installation / Installazione
 ----------------------------
@@ -118,7 +92,14 @@ Installation / Installazione
     odoo_install_repository l10n-italy-supplemental -b 12.0 -O zero -o $HOME/12.0
     vem create $HOME/12.0/venv_odoo -O 12.0 -a "*" -DI -o $HOME/12.0
 
+From UI: go to:
 
+* |menu| Setting > Activate Developer mode 
+* |menu| Apps > Update Apps List
+* |menu| Setting > Apps |right_do| Select **import_account_opening** > Install
+
+
+|
 
 Upgrade / Aggiornamento
 -----------------------
@@ -144,15 +125,19 @@ Upgrade / Aggiornamento
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
+From UI: go to:
+
+|
 
 Support / Supporto
 ------------------
 
 
-|Zeroincombenze| This project is mainly maintained by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
+|Zeroincombenze| This module is maintained by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
-
+|
+|
 
 Get involved / Ci mettiamo in gioco
 ===================================
@@ -167,42 +152,24 @@ Proposals for enhancement
 -------------------------
 
 
-|en| If you have a proposal to change on oh these modules, you may want to send an email to <cc@shs-av.com> for initial feedback.
+|en| If you have a proposal to change this module, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
 
-|it| Se hai proposte per migliorare uno dei moduli, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
+|it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-History / Cronologia
---------------------
+ChangeLog History / Cronologia modifiche
+----------------------------------------
 
-import_account_opening: 12.0.0.1 (2021-12-04)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12.0.0.1 (2021-12-04)
+~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale
 
 
 
-sale_import_xlsx: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
-
-account_invoice_import_xlsx: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
-
-account_gopher: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
-
-
-
+|
+|
 
 Credits / Didascalie
 ====================
@@ -212,6 +179,29 @@ Copyright
 
 Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
+
+
+|
+
+Authors / Autori
+----------------
+
+* `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
+
+
+Contributors / Collaboratori
+----------------------------
+
+* Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
+
+
+Maintainer / Manutenzione
+-------------------------
+
+
+
+
+|
 
 ----------------
 
@@ -232,10 +222,11 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 |
 
+This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-12-13
+Last Update / Ultimo aggiornamento: 2021-12-09
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=12.0
@@ -293,5 +284,4 @@ Last Update / Ultimo aggiornamento: 2021-12-13
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
-
 

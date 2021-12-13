@@ -22,5 +22,5 @@ Main Features
     'data': [
         'views/account_invoice_view.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

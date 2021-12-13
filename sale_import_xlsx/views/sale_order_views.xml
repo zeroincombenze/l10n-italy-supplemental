@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_import_file" model="ir.actions.act_window">
+        <field name="name">Import sale order from file xlsx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.import.sale.file.xlsx</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_sale_order_import_xlsx" model="ir.ui.view">
+        <field name="name">sale.order.import.xlsx</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="%(sale_import_xlsx.action_import_file)d"
+                        type="action" string="Import xlsx"
+                        attrs="{'invisible': [('state' ,'!=', 'draft')]}"
+                />
+            </header>
+        </field>
+    </record>
+
+</odoo>

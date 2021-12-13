@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_sale_import_file_xlsx">
+        <field name="name">Import sale order from file xlsx</field>
+        <field name="model">wizard.import.sale.file.xlsx</field>
+        <field name="arch" type="xml">
+            <form string="Import invoice from file xlsx" >
+                <group>
+                        <field name="data_file" filename="filename"
+                               placeholder="Choose a file to import..."/>
+                        <field name="filename" invisible="1"/>
+                </group>
+                <footer>
+                    <button string="Import" name="import_file_xlsx"
+                            type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

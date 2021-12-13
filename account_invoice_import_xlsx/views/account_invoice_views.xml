@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_import_file" model="ir.actions.act_window">
+        <field name="name">Import invoice from file xlsx</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.import.invoice.file.xlsx</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_account_invoice_import_xlsx" model="ir.ui.view">
+        <field name="name">account.invoice.import.xlsx</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="%(account_invoice_import_xlsx.action_import_file)d"
+                        type="action" string="Import xlsx"
+                        attrs="{'invisible': [('state' ,'!=', 'draft')]}"
+                />
+            </header>
+        </field>
+    </record>
+
+</odoo>
