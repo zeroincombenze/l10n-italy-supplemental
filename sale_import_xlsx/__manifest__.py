@@ -9,12 +9,13 @@
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.0',
+    'version': '10.0.0.1.1',
 
     'depends': [
         'sale',
     ],
     'data': [
+        "security/ir.model.access.csv",
         "views/sale_order_views.xml",
         "wizard/import_file_view.xml",
     ],

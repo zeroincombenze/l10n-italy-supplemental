@@ -5,7 +5,7 @@
         <field name="name">Import sale order from file xlsx</field>
         <field name="model">wizard.import.sale.file.xlsx</field>
         <field name="arch" type="xml">
-            <form string="Import invoice from file xlsx" >
+            <form string="Import sale order from file xlsx" >
                 <group>
                         <field name="data_file" filename="filename"
                                placeholder="Choose a file to import..."/>

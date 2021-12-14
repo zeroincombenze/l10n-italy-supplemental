@@ -1,6 +1,6 @@
 
 ========================================================
-|icon| Import file Excel into sale order 12.0.10.0.0.1.0
+|icon| Import file Excel into sale order 12.0.10.0.0.1.1
 ========================================================
 
 
@@ -237,7 +237,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-12-13
+Last Update / Ultimo aggiornamento: 2021-12-14
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

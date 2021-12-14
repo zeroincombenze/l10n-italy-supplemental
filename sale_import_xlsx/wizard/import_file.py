@@ -5,7 +5,7 @@ import base64
 from io import BytesIO
 from openpyxl import load_workbook
 from odoo import models, fields, _
-# from odoo import exceptions
+from odoo import exceptions
 
 TNL = {
     'Codice': 'default_code',
@@ -75,9 +75,21 @@ class WizardImportSaleFileXlsx(models.Model):
         datas = self.get_data()
         for order in order_model.browse(
                 self.env.context.get('active_ids', False)):
+            row_ctr = 1
             for row in datas:
-                line = line_model.create(
-                    self.prepare_data(order, row))
+                row_ctr += 1
+                vals = self.prepare_data(order, row)
+                if not vals or not vals.get('product_uom_qty'):
+                    continue
+                if not vals.get('product_id'):
+                    raise exceptions.Warning(
+                        _('Invalid or missed code in line %d (%s)') % (
+                            row_ctr, vals.get('name')))
+                try:
+                    line = line_model.create(vals)
+                except BaseException as e:
+                    raise exceptions.Warning(
+                        _('Error %s in line %d') % (e, row_ctr))
                 line.product_id_change()
                 line._compute_amount()
                 line._compute_tax_id()

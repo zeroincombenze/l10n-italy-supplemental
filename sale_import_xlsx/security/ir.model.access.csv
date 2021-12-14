@@ -1,1 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_import_sale_file_xlsx,access_wizard_import_sale_file_xlsx,model_wizard_import_sale_file_xlsx,sales_team.group_sale_salesman,1,1,1,1
