@@ -52,13 +52,15 @@ class WizardImportSaleFileXlsx(models.Model):
         }
         by_code = False
         for field in row.keys():
+            if isinstance(row[field], basestring):
+                row[field] = row[field].strip()
             name = TNL.get(field)
             if name == 'default_code':
                 if row[field]:
                     product_domain.append(('default_code', '=', row[field]))
                     by_code = field
             elif name == 'product_uom_qty':
-                vals[name] = row[field] and row[field].strip() or 0.0
+                vals[name] = row[field] or 0.0
             elif name == 'name':
                 vals[name] = row[field] or ''
         if by_code:
