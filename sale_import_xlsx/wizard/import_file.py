@@ -58,7 +58,7 @@ class WizardImportSaleFileXlsx(models.Model):
                     product_domain.append(('default_code', '=', row[field]))
                     by_code = field
             elif name == 'product_uom_qty':
-                vals[name] = row[field] or 0.0
+                vals[name] = row[field].strip() or 0.0
             elif name == 'name':
                 vals[name] = row[field] or ''
         if by_code:
