@@ -1,6 +1,6 @@
 
 ========================================
-|icon| Import account opening 12.0.0.1.2
+|icon| Import account opening 12.0.0.1.3
 ========================================
 
 
@@ -161,11 +161,17 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
-12.0.0.1 (2021-12-04)
-~~~~~~~~~~~~~~~~~~~~~
+12.0.0.1.3 (2021-12-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search like name too / Ricerca anche con nome simile
+* [IMP] Search just contact / Ricerca solo contatti
+* [IMP] Dry-run / Esecuzione di prova
+
+12.0.0.1.0 (2021-12-04)
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale
-
 
 
 |
@@ -224,7 +230,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-12-09
+Last Update / Ultimo aggiornamento: 2021-12-23
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

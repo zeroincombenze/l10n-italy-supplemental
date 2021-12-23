@@ -1,4 +1,11 @@
-12.0.0.1 (2021-12-04)
+12.0.0.1.3 (2021-12-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search like name too / Ricerca anche con nome simile
+* [IMP] Search just contact / Ricerca solo contatti
+* [IMP] Dry-run / Esecuzione di prova
+
+12.0.0.1.0 (2021-12-04)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale

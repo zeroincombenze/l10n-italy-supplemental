@@ -18,7 +18,9 @@ Avaiable Addons / Moduli disponibili
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | Name / Nome            | Version    | OCA Ver.   | Description / Descrizione                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening | 12.0.0.1.2 | |no_check| | Import account opening                                                           |
+| account_gopher         | 12.0.0.1.0 | |no_check| | Configure account records                                                        |
++------------------------+------------+------------+----------------------------------------------------------------------------------+
+| import_account_opening | 12.0.0.1.3 | |no_check| | Import account opening                                                           |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_inventory       | 12.0.0.1.2 | |no_check| | Import inventory                                                                 |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -142,18 +144,36 @@ Proposals for enhancement
 History / Cronologia
 --------------------
 
+import_account_opening: 12.0.0.1.3 (2021-12-23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search like name too / Ricerca anche con nome simile
+* [IMP] Search just contact / Ricerca solo contatti
+* [IMP] Dry-run / Esecuzione di prova
+
+
+account_gopher: 12.0.0.1.0 (2021-12-23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Dry-run
+
+
 import_inventory: 12.0.0.1 (2021-12-04)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale
 
 
-import_account_opening: 12.0.0.1 (2021-12-04)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import_account_opening: 12.0.0.1.0 (2021-12-04)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale
 
 
+account_gopher: 10.0.0.0.0 (2021-11-08)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] First version
 
 
 
@@ -187,7 +207,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2021-12-09
+Last Update / Ultimo aggiornamento: 2021-12-23
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

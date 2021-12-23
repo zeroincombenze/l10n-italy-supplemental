@@ -14,6 +14,7 @@
                 <group>
                         <field name="journal_id"/>
                         <field name="account_id"/>
+                        <field name="dry_run"/>
                 </group>
                 <footer>
                     <button string="Import" name="import_xls"
@@ -50,8 +51,8 @@
     <menuitem id="menu_account_opening_import"
               name="Import Account Opening"
               action="action_import_account_opening"
-              parent="base.next_id_9"
-              sequence="80"
+              parent="account.menu_finance_configuration"
+              sequence="90"
               />
 
 </odoo>

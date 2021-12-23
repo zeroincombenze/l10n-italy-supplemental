@@ -14,6 +14,7 @@ TNL = {
     'Partita IVA': 'vat',
     'Dare': 'debit',
     'Avere': 'credit',
+    'Riferimento': 'ref',
 }
 
 
@@ -34,6 +35,9 @@ class WizardImportAccountOpening(models.Model):
         'account.account',
         string='Open account',
         required=True)
+    dry_run = fields.Boolean(
+        string='Dry-run',
+        default=False)
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -97,11 +101,23 @@ class WizardImportAccountOpening(models.Model):
                     by_code = field
             elif name in ('debit', 'credit'):
                 vals[name] = row[field] or 0.0
-            elif name == 'name':
-                vals[name] = row[field] or ''
+            elif name in ('name', 'ref') and row[field]:
+                vals[name] = row[field]
         if by_vat:
             partner_domain.append(('type', '=', 'contact'))
-            recs = self.env['res.partner'].search(partner_domain)
+            if vals.get('name'):
+                stext = ''
+                for ch in vals['name']:
+                    if ch.isalpha():
+                        stext += ch
+                    elif not stext.endswith('%'):
+                        stext += '%'
+                partner_domain.append(('name', 'ilike', stext))
+                recs = self.env['res.partner'].search(partner_domain)
+                if not recs:
+                    recs = self.env['res.partner'].search(partner_domain[:-1])
+            else:
+                recs = self.env['res.partner'].search(partner_domain)
             if recs:
                 if len(recs) > 1:
                     if html_txt:
@@ -119,7 +135,7 @@ class WizardImportAccountOpening(models.Model):
                 else:
                     vals['account_id'] = recs[
                         0].property_account_receivable_id.id
-                by_code = False
+                # by_code = False
             else:
                 if html_txt:
                     html += html_txt('', 'tr')
@@ -194,6 +210,8 @@ class WizardImportAccountOpening(models.Model):
             if not vals:
                 continue
             vals['move_id'] = move.id
+            if self.dry_run:
+                continue
             try:
                 self.env[model_dtl].with_context(
                     check_move_validity=False).create(vals)
@@ -218,7 +236,8 @@ class WizardImportAccountOpening(models.Model):
             vals['debit'] = total_credit - total_debit
         else:
             vals['credit'] = total_debit - total_credit
-        self.env[model_dtl].create(vals)
+        if not self.dry_run:
+            self.env[model_dtl].create(vals)
         tracelog += self.html_txt('', '/table')
         self.tracelog = tracelog
         return {
