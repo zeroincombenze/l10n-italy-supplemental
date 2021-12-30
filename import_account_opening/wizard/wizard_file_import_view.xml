@@ -6,15 +6,23 @@
         <field name="model">wizard.import.account.opening</field>
         <field name="arch" type="xml">
             <form string="Import Account Opening from file Excel" >
-                <group>
+                <group colspan="4">
+                    <group colspan="2" col="2">
                         <field name="data_file" filename="filename"
                                placeholder="Choose a file to import..."/>
                         <field name="filename" invisible="1"/>
-                </group>
-                <group>
+                        <separator string="Parameters"/>
                         <field name="journal_id"/>
                         <field name="account_id"/>
                         <field name="dry_run"/>
+                    </group>
+                    <group colspan="2" col="1">
+                        <p>Please, import just xlsx files.</p>
+                        <p>Import file heade ìr must be:</p>
+                        <p>"Codice" "Nome" "Cliente" "Fornitore" "Partita IVA" "Riferimento" "Dare" "Avere"</p>
+                        <p>Please set 1 in one of "Cliente" or "Fornitore" for partner</p>
+                        <p>Please set only one value in one of "Dare" "Avere"</p>
+                    </group>
                 </group>
                 <footer>
                     <button string="Import" name="import_xls"

@@ -82,7 +82,7 @@ class WizardImportAccountOpening(models.Model):
         partner_domain = []
         acc_domain = []
         vals = {}
-        by_vat = by_code = False
+        by_vat = by_code = acc_field = False
         for field in row.keys():
             name = TNL.get(field)
             if name == 'vat':
@@ -92,9 +92,11 @@ class WizardImportAccountOpening(models.Model):
             elif name == 'customer':
                 if row[field]:
                     partner_domain.append(('customer', '=', True))
+                    acc_field = 'property_account_receivable_id'
             elif name == 'supplier':
                 if row[field]:
                     partner_domain.append(('supplier', '=', True))
+                    acc_field = 'property_account_payable_id'
             elif name == 'code':
                 if row[field]:
                     acc_domain.append(('code', '=', row[field]))
@@ -129,13 +131,8 @@ class WizardImportAccountOpening(models.Model):
                         html += html_txt(_('Found multiple records.'), 'td')
                         html += html_txt('', '/tr')
                 vals['partner_id'] = recs[0].id
-                if vals.get('supplier'):
-                    vals['account_id'] = recs[
-                        0].property_account_payable_id.id
-                else:
-                    vals['account_id'] = recs[
-                        0].property_account_receivable_id.id
-                # by_code = False
+                if acc_field:
+                    vals['account_id'] = getattr(recs[0], acc_field).id
             else:
                 if html_txt:
                     html += html_txt('', 'tr')
