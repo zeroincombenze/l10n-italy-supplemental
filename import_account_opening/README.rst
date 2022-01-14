@@ -1,6 +1,6 @@
 
 ========================================
-|icon| Import account opening 12.0.0.1.3
+|icon| Import account opening 12.0.0.1.5
 ========================================
 
 
@@ -16,11 +16,36 @@
 Overview / Panoramica
 =====================
 
-|en| Account Opeing Import
---------------------------
+|en| Account Opening Import
+----------_-----------
 
-Import account opening from Excel file
+Import account opening from Excel file.
 
+Excel file must have following structure:
+
++--------+---------------------+---------+-----------+----------------+------+-------+
+| Codice | Nome                | Cliente | Fornitore | Partita IVA    | Dare | Avere |
++--------+---------------------+---------+-----------+----------------+------+-------+
+|        | Global Trading Ltd  | 1       |           | GB250072348000 | 1000 |       |
++--------+---------------------+---------+-----------+----------------+------+-------+
+|        | Rossi e Bianchi srl |         | 1         | IT05111810015  |      | 500   |
++--------+---------------------+---------+-----------+----------------+------+-------+
+| 180003 | Banca               |         |           |                | 100  |       |
++--------+---------------------+---------+-----------+----------------+------+-------+
+
+
+
+Notes:
+
+* Please, import just xlsx files
+* The labels of the header must be exactly as you see above
+* Please set 1 in one of "Cliente" or "Fornitore" for partner lines
+* Please set only one value in one of "Dare" "Avere"
+* Partners search try to find by vat code and name
+* In partner lines, account code is set by partner record if not in line
+* Ref field i snot required; use it if you want load amount by invoices
+
+You can find Excel example in example directory.
 
 |
 
@@ -29,6 +54,31 @@ Import account opening from Excel file
 
 Importazione apertura conti da file Excel
 
+Il file Excel ha la seguente struttura:
+
++--------+---------------------+---------+-----------+----------------+------+-------+
+| Codice | Nome                | Cliente | Fornitore | Partita IVA    | Dare | Avere |
++--------+---------------------+---------+-----------+----------------+------+-------+
+|        | Global Trading Ltd  | 1       |           | GB250072348000 | 1000 |       |
++--------+---------------------+---------+-----------+----------------+------+-------+
+|        | Rossi e Bianchi srl |         | 1         | IT05111810015  |      | 500   |
++--------+---------------------+---------+-----------+----------------+------+-------+
+| 180003 | Banca               |         |           |                | 100  |       |
++--------+---------------------+---------+-----------+----------------+------+-------+
+
+
+
+Note:
+
+* Si possono importare solo file .xlsx
+* Le etichette dell'intestazione devono essere rispettate
+* Impostare solo cliente o fornitore in ogni riga cliente/fornitore
+* Impostare un solo importo tra "Dare" e "Avere"
+* Nel caso di clienti/fornitori viene cercato per partita IVA e nome simile
+* Nel caso di clienti/fornitori, il codice conto, se non è inserito, è preso dall'anagrafica
+* Il campo REf è facoltativo; serve se si vuole importare per partite aperte
+
+Si può vedere un esempio nella cartella example.
 
 |
 
@@ -161,6 +211,17 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+12.0.0.1.5 (2022-01-14)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Parter account from Excel file /Conto cliente/fornitore da file Excel
+* [FIX] No emoty entry when dry-run / No testata vuota di registrazione contabile se simulazione
+
+12.0.0.1.4 (2021-12-30)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Supplier account
+
 12.0.0.1.3 (2021-12-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -230,7 +291,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-12-23
+Last Update / Ultimo aggiornamento: 2022-01-14
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

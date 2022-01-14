@@ -78,6 +78,27 @@ class WizardImportAccountOpening(models.Model):
         return contents
 
     def prepare_data(self, row, company_id, numrec, html_txt=None):
+
+        def get_account_code(acc_domain, vals, html):
+            acc_domain.append(('company_id', '=', company_id))
+            recs = self.env['account.account'].search(acc_domain)
+            if len(recs) != 1:
+                if html_txt:
+                    html += html_txt('', 'tr')
+                    html += html_txt('%s' % numrec, 'td')
+                    html += html_txt(row.get(by_code, ''), 'td')
+                    html += html_txt(vals.get('name', ''), 'td')
+                    html += html_txt('', 'td')
+                    if len(recs) > 1:
+                        html += html_txt(_('Found multiple records.'), 'td')
+                    else:
+                        html += html_txt(_('No record found!'), 'td')
+                    html += html_txt('', '/tr')
+                vals = {}
+            else:
+                vals['account_id'] = recs[0].id
+            return vals
+
         html = ''
         partner_domain = []
         acc_domain = []
@@ -100,7 +121,8 @@ class WizardImportAccountOpening(models.Model):
             elif name == 'code':
                 if row[field]:
                     acc_domain.append(('code', '=', row[field]))
-                    by_code = field
+                    if by_code != 'vat':
+                        by_code = field
             elif name in ('debit', 'credit'):
                 vals[name] = row[field] or 0.0
             elif name in ('name', 'ref') and row[field]:
@@ -131,7 +153,9 @@ class WizardImportAccountOpening(models.Model):
                         html += html_txt(_('Found multiple records.'), 'td')
                         html += html_txt('', '/tr')
                 vals['partner_id'] = recs[0].id
-                if acc_field:
+                if acc_domain:
+                    vals = get_account_code(acc_domain, vals, html)
+                elif acc_field:
                     vals['account_id'] = getattr(recs[0], acc_field).id
             else:
                 if html_txt:
@@ -144,23 +168,7 @@ class WizardImportAccountOpening(models.Model):
                     html += html_txt('', '/tr')
                 vals = {}
         elif by_code:
-            acc_domain.append(('company_id', '=', company_id))
-            recs = self.env['account.account'].search(acc_domain)
-            if len(recs) != 1:
-                if html_txt:
-                    html += html_txt('', 'tr')
-                    html += html_txt('%s' % numrec, 'td')
-                    html += html_txt(row.get(by_code, ''), 'td')
-                    html += html_txt(vals.get('name', ''), 'td')
-                    html += html_txt('', 'td')
-                    if len(recs) > 1:
-                        html += html_txt(_('Found multiple records.'), 'td')
-                    else:
-                        html += html_txt(_('No record found!'), 'td')
-                    html += html_txt('', '/tr')
-                vals = {}
-            else:
-                vals['account_id'] = recs[0].id
+            vals = get_account_code(acc_domain, vals, html)
         else:
             if html_txt:
                 html += html_txt('', 'tr')
@@ -178,13 +186,14 @@ class WizardImportAccountOpening(models.Model):
         model = 'account.move'
         company_id = self.env.user.company_id.id
         model_dtl = 'account.move.line'
-        move = self.env[model].create({
-            'company_id': company_id,
-            'journal_id': self.journal_id.id,
-            'move_type': 'other',
-            'type': 'entry',
-            'ref': 'apertura conti',
-        })
+        if not self.dry_run:
+            move = self.env[model].create({
+                'company_id': company_id,
+                'journal_id': self.journal_id.id,
+                'move_type': 'other',
+                'type': 'entry',
+                'ref': 'apertura conti',
+            })
         tracelog = self.html_txt(_('Import account entries'), 'h3')
         numrec = 0
         tracelog += self.html_txt('', 'table')
@@ -195,20 +204,16 @@ class WizardImportAccountOpening(models.Model):
         tracelog += self.html_txt(_('Vat'), 'td')
         tracelog += self.html_txt(_('Note'), 'td')
         tracelog += self.html_txt('', '/tr')
-        # self.tracelog = travislog
         datas = self.get_data()
         total_debit = total_credit = 0.0
         for row in datas:
             numrec += 1
             vals, html = self.prepare_data(row, company_id, numrec,
                                            html_txt=self.html_txt)
-            # self.tracelog += html
             tracelog += html
-            if not vals:
+            if not vals or self.dry_run:
                 continue
             vals['move_id'] = move.id
-            if self.dry_run:
-                continue
             try:
                 self.env[model_dtl].with_context(
                     check_move_validity=False).create(vals)
@@ -224,16 +229,16 @@ class WizardImportAccountOpening(models.Model):
                 html += self.html_txt('', '/tr')
                 tracelog += html
                 break
-        vals = {
-            'move_id': move.id,
-            'account_id': self.account_id.id,
-            'name': 'risultato di esercizio',
-        }
-        if total_credit > total_debit:
-            vals['debit'] = total_credit - total_debit
-        else:
-            vals['credit'] = total_debit - total_credit
         if not self.dry_run:
+            vals = {
+                'move_id': move.id,
+                'account_id': self.account_id.id,
+                'name': 'risultato di esercizio',
+            }
+            if total_credit > total_debit:
+                vals['debit'] = total_credit - total_debit
+            else:
+                vals['credit'] = total_debit - total_credit
             self.env[model_dtl].create(vals)
         tracelog += self.html_txt('', '/table')
         self.tracelog = tracelog

@@ -1,3 +1,9 @@
+12.0.0.1.5 (2022-01-14)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Parter account from Excel file /Conto cliente/fornitore da file Excel
+* [FIX] No emoty entry when dry-run / No testata vuota di registrazione contabile se simulazione
+
 12.0.0.1.4 (2021-12-30)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

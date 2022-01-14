@@ -1,7 +1,7 @@
 # © 2021-2022 SHS-AV srl (www.shs-av.com)
 {
     'name': 'Import account opening',
-    'version': '12.0.0.1.4',
+    'version': '12.0.0.1.5',
     'category': 'Tools',
     'author': 'SHS-AV s.r.l.',
     'website': 'https://www.zeroincombenze.it',
