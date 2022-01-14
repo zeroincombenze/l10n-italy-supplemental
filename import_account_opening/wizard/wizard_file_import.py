@@ -15,6 +15,7 @@ TNL = {
     'Partita IVA': 'vat',
     'Dare': 'debit',
     'Avere': 'credit',
+    'Riferimento': 'ref',
 }
 
 
@@ -35,6 +36,9 @@ class WizardImportAccountOpening(models.Model):
         'account.account',
         string='Open account',
         required=True)
+    dry_run = fields.Boolean(
+        string='Dry-run',
+        default=False)
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -75,63 +79,8 @@ class WizardImportAccountOpening(models.Model):
         return contents
 
     def prepare_data(self, row, company_id, numrec, html_txt=None):
-        html = ''
-        partner_domain = []
-        acc_domain = []
-        vals = {}
-        by_vat = by_code = False
-        for field in row.keys():
-            name = TNL.get(field)
-            if name == 'vat':
-                if row[field]:
-                    partner_domain.append(('vat', '=', row[field]))
-                    by_vat = field
-            elif name == 'customer':
-                if row[field]:
-                    partner_domain.append(('customer', '=', True))
-            elif name == 'supplier':
-                if row[field]:
-                    partner_domain.append(('supplier', '=', True))
-            elif name == 'code':
-                if row[field]:
-                    acc_domain.append(('code', '=', row[field]))
-                    by_code = field
-            elif name in ('debit', 'credit'):
-                vals[name] = row[field] or 0.0
-            elif name == 'name':
-                vals[name] = row[field] or ''
-        if by_vat:
-            partner_domain.append(('type', '=', 'contact'))
-            recs = self.env['res.partner'].search(partner_domain)
-            if recs:
-                if len(recs) > 1:
-                    if html_txt:
-                        html += html_txt('', 'tr')
-                        html += html_txt('%s' % numrec, 'td')
-                        html += html_txt('', 'td')
-                        html += html_txt(vals.get('name', ''), 'td')
-                        html += html_txt(row.get(by_vat, ''), 'td')
-                        html += html_txt(_('Found multiple records.'), 'td')
-                        html += html_txt('', '/tr')
-                vals['partner_id'] = recs[0].id
-                if vals.get('supplier'):
-                    vals['account_id'] = recs[
-                        0].property_account_payable_id.id
-                else:
-                    vals['account_id'] = recs[
-                        0].property_account_receivable_id.id
-                by_code = False
-            else:
-                if html_txt:
-                    html += html_txt('', 'tr')
-                    html += html_txt('%s' % numrec, 'td')
-                    html += html_txt('', 'td')
-                    html += html_txt(vals.get('name', ''), 'td')
-                    html += html_txt(row.get(by_vat, ''), 'td')
-                    html += html_txt(_('No record found!'), 'td')
-                    html += html_txt('', '/tr')
-                vals = {}
-        elif by_code:
+
+        def get_account_code(acc_domain, vals, html):
             acc_domain.append(('company_id', '=', company_id))
             recs = self.env['account.account'].search(acc_domain)
             if len(recs) != 1:
@@ -149,6 +98,78 @@ class WizardImportAccountOpening(models.Model):
                 vals = {}
             else:
                 vals['account_id'] = recs[0].id
+            return vals
+
+        html = ''
+        partner_domain = []
+        acc_domain = []
+        vals = {}
+        by_vat = by_code = acc_field = False
+        for field in row.keys():
+            name = TNL.get(field)
+            if name == 'vat':
+                if row[field]:
+                    partner_domain.append(('vat', '=', row[field]))
+                    by_vat = field
+            elif name == 'customer':
+                if row[field]:
+                    partner_domain.append(('customer', '=', True))
+                    acc_field = 'property_account_receivable_id'
+            elif name == 'supplier':
+                if row[field]:
+                    partner_domain.append(('supplier', '=', True))
+                    acc_field = 'property_account_payable_id'
+            elif name == 'code':
+                if row[field]:
+                    acc_domain.append(('code', '=', row[field]))
+                    if by_code != 'vat':
+                        by_code = field
+            elif name in ('debit', 'credit'):
+                vals[name] = row[field] or 0.0
+            elif name in ('name', 'ref') and row[field]:
+                vals[name] = row[field]
+        if by_vat:
+            partner_domain.append(('type', '=', 'contact'))
+            if vals.get('name'):
+                stext = ''
+                for ch in vals['name']:
+                    if ch.isalpha():
+                        stext += ch
+                    elif not stext.endswith('%'):
+                        stext += '%'
+                partner_domain.append(('name', 'ilike', stext))
+                recs = self.env['res.partner'].search(partner_domain)
+                if not recs:
+                    recs = self.env['res.partner'].search(partner_domain[:-1])
+            else:
+                recs = self.env['res.partner'].search(partner_domain)
+            if recs:
+                if len(recs) > 1:
+                    if html_txt:
+                        html += html_txt('', 'tr')
+                        html += html_txt('%s' % numrec, 'td')
+                        html += html_txt('', 'td')
+                        html += html_txt(vals.get('name', ''), 'td')
+                        html += html_txt(row.get(by_vat, ''), 'td')
+                        html += html_txt(_('Found multiple records.'), 'td')
+                        html += html_txt('', '/tr')
+                vals['partner_id'] = recs[0].id
+                if acc_domain:
+                    vals = get_account_code(acc_domain, vals, html)
+                elif acc_field:
+                    vals['account_id'] = getattr(recs[0], acc_field).id
+            else:
+                if html_txt:
+                    html += html_txt('', 'tr')
+                    html += html_txt('%s' % numrec, 'td')
+                    html += html_txt('', 'td')
+                    html += html_txt(vals.get('name', ''), 'td')
+                    html += html_txt(row.get(by_vat, ''), 'td')
+                    html += html_txt(_('No record found!'), 'td')
+                    html += html_txt('', '/tr')
+                vals = {}
+        elif by_code:
+            vals = get_account_code(acc_domain, vals, html)
         else:
             if html_txt:
                 html += html_txt('', 'tr')
@@ -166,13 +187,14 @@ class WizardImportAccountOpening(models.Model):
         model = 'account.move'
         company_id = self.env.user.company_id.id
         model_dtl = 'account.move.line'
-        move = self.env[model].create({
-            'company_id': company_id,
-            'journal_id': self.journal_id.id,
-            'move_type': 'other',
-            'type': 'entry',
-            'ref': 'apertura conti',
-        })
+        if not self.dry_run:
+            move = self.env[model].create({
+                'company_id': company_id,
+                'journal_id': self.journal_id.id,
+                'move_type': 'other',
+                'type': 'entry',
+                'ref': 'apertura conti',
+            })
         tracelog = self.html_txt(_('Import account entries'), 'h3')
         numrec = 0
         tracelog += self.html_txt('', 'table')
@@ -183,16 +205,14 @@ class WizardImportAccountOpening(models.Model):
         tracelog += self.html_txt(_('Vat'), 'td')
         tracelog += self.html_txt(_('Note'), 'td')
         tracelog += self.html_txt('', '/tr')
-        # self.tracelog = travislog
         datas = self.get_data()
         total_debit = total_credit = 0.0
         for row in datas:
             numrec += 1
             vals, html = self.prepare_data(row, company_id, numrec,
                                            html_txt=self.html_txt)
-            # self.tracelog += html
             tracelog += html
-            if not vals:
+            if not vals or self.dry_run:
                 continue
             vals['move_id'] = move.id
             try:
@@ -210,16 +230,18 @@ class WizardImportAccountOpening(models.Model):
                 html += self.html_txt('', '/tr')
                 tracelog += html
                 break
-        vals = {
-            'move_id': move.id,
-            'account_id': self.account_id.id,
-            'name': 'risultato di esercizio',
-        }
-        if total_credit > total_debit:
-            vals['debit'] = total_credit - total_debit
-        else:
-            vals['credit'] = total_debit - total_credit
-        self.env[model_dtl].create(vals)
+        if not self.dry_run:
+            vals = {
+                'move_id': move.id,
+                'account_id': self.account_id.id,
+                'name': 'risultato di esercizio',
+            }
+            if total_credit > total_debit:
+                vals['debit'] = total_credit - total_debit
+            else:
+                vals['credit'] = total_debit - total_credit
+            if not self.dry_run:
+                self.env[model_dtl].create(vals)
         tracelog += self.html_txt('', '/table')
         self.tracelog = tracelog
         return {
