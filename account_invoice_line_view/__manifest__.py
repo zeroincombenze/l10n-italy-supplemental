@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
-#    Odoo, Open Source Management Solution
-#    Copyright (C) 2014 Rooms For (Hong Kong) Limited T/A OSCG
-#    <https://www.odoo-asia.com>
+# Copyright (C) 2014 Rooms For Limited T/A OSCG <https://www.odoo-asia.com>
+# Copyright (C) 2016-22 SHS-AV s.r.l. <https://zeroincombenze.it>
+#
 {
     'name': 'Invoice Line View',
-    'version': '10.0.1.0.3',
+    'version': '10.0.1.0.4',
     'category': 'Account',
-    'summary': 'Adds Customer/Supplier Invoice Line menu items',
-    'description': """
-Main Features
-==================================================
-* Add menu items Customer Invoice Lines and Supplier Invoice Lines
-* Captures exchange rates as of the invoice dates and shows the base currency amounts in the output.
-    """,
-    'author': 'Rooms For (Hong Kong) Limited T/A OSCG',
-    'website': 'https://www.odoo-asia.com',
+    'summary': 'Adds Invoice Line menu items',
+    'author': 'SHS-AV s.r.l',
+    'website': 'https://zeroincombenze.it',
     'license': 'AGPL-3',
     'images' : [],
     'depends': ['account',
@@ -22,5 +16,5 @@ Main Features
     'data': [
         'views/account_invoice_view.xml',
     ],
-    'installable': False,
+    'installable': True,
 }

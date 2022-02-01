@@ -21,14 +21,17 @@ class AccountInvoice(models.Model):
                          0.0,
                          precision_rounding=line.product_uom.rounding) <= 0:
             qty = 0.0
+        invoice_line = self.env['account.invoice.line']
         taxes = line.tax_id
         invoice_line_tax_ids = line.order_id.fiscal_position_id.map_tax(taxes)
         account_id = line.product_id.property_account_income_id.id or \
                   line.product_id.categ_id.property_account_income_categ_id.id or \
                   invoice_line.with_context(
-                      {'journal_id': self.journal_id.id,
-                       'type': 'out_invoice'})._default_account(),
-        invoice_line = self.env['account.invoice.line']
+                      {
+                          'journal_id': self.journal_id.id,
+                          'type': 'out_invoice'
+                      }
+                  )._default_account(),
         data = {
             'sale_line_ids': [(6, 0, [line.id])],
             'name': line.name,
