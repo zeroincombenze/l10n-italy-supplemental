@@ -178,6 +178,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
+import_account_opening: 10.0.0.1.5 (2022-01-31)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
+
+
 account_invoice_line_view: 10.0.1.0.4 (2022-01-31)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -187,7 +193,7 @@ import_account_opening: 10.0.0.1.5 (2022-01-14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Parter account from Excel file /Conto cliente/fornitore da file Excel
-* [FIX] No emoty entry when dry-run / No testata vuota di registrazione contabile se simulazione
+* [FIX] No empty entry when dry-run / No testata vuota di registrazione contabile se simulazione
 
 
 import_account_opening: 10.0.0.1.4 (2021-12-30)
@@ -260,7 +266,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-01
+Last Update / Ultimo aggiornamento: 2022-02-02
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

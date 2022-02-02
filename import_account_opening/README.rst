@@ -1,6 +1,6 @@
 
 =============================================
-|icon| Import account opening 12.0.10.0.0.1.5
+|icon| Import account opening 12.0.10.0.0.1.6
 =============================================
 
 
@@ -17,7 +17,7 @@ Overview / Panoramica
 =====================
 
 |en| Account Opening Import
-----------_-----------
+---------------------------
 
 Import account opening from Excel file.
 
@@ -43,7 +43,7 @@ Notes:
 * Please set only one value in one of "Dare" "Avere"
 * Partners search try to find by vat code and name
 * In partner lines, account code is set by partner record if not in line
-* Ref field i snot required; use it if you want load amount by invoices
+* Ref field is not required; use it if you want load amount by invoice references
 
 You can find Excel example in example directory.
 
@@ -74,9 +74,9 @@ Note:
 * Le etichette dell'intestazione devono essere rispettate
 * Impostare solo cliente o fornitore in ogni riga cliente/fornitore
 * Impostare un solo importo tra "Dare" e "Avere"
-* Nel caso di clienti/fornitori viene cercato per partita IVA e nome simile
+* Nel caso di clienti/fornitori viene cercato per partita IVA o codice fiscale e nome simile
 * Nel caso di clienti/fornitori, il codice conto, se non è inserito, è preso dall'anagrafica
-* Il campo REf è facoltativo; serve se si vuole importare per partite aperte
+* Il campo Ref è facoltativo; serve se si vuole importare per partite aperte
 
 Si può vedere un esempio nella cartella example.
 
@@ -211,11 +211,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.5 (2022-01-31)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
+
 10.0.0.1.5 (2022-01-14)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Parter account from Excel file /Conto cliente/fornitore da file Excel
-* [FIX] No emoty entry when dry-run / No testata vuota di registrazione contabile se simulazione
+* [FIX] No empty entry when dry-run / No testata vuota di registrazione contabile se simulazione
 
 10.0.0.1.4 (2021-12-30)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -291,7 +296,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-01-14
+Last Update / Ultimo aggiornamento: 2022-02-02
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
