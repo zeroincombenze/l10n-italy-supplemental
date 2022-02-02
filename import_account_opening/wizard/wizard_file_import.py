@@ -3,6 +3,7 @@
 import base64
 from io import BytesIO
 from openpyxl import load_workbook
+from unidecode import unidecode
 from odoo import models, fields, api, _
 # from odoo import exceptions
 
@@ -99,41 +100,16 @@ class WizardImportAccountOpening(models.Model):
                 vals['account_id'] = recs[0].id
             return vals
 
-        html = ''
-        partner_domain = []
-        acc_domain = []
-        vals = {}
-        by_vat = by_code = acc_field = False
-        for field in row.keys():
-            name = TNL.get(field)
-            if name == 'vat':
-                if row[field]:
-                    partner_domain.append(('vat', '=', row[field]))
-                    by_vat = field
-            elif name == 'customer':
-                if row[field]:
-                    partner_domain.append(('customer', '=', True))
-                    acc_field = 'property_account_receivable_id'
-            elif name == 'supplier':
-                if row[field]:
-                    partner_domain.append(('supplier', '=', True))
-                    acc_field = 'property_account_payable_id'
-            elif name == 'code':
-                if row[field]:
-                    acc_domain.append(('code', '=', row[field]))
-                    if by_code != 'vat':
-                        by_code = field
-            elif name in ('debit', 'credit'):
-                vals[name] = row[field] or 0.0
-            elif name in ('name', 'ref') and row[field]:
-                vals[name] = row[field]
-        if by_vat:
+        def get_partner(partner_domain, vals, html, disable_err=None):
             partner_domain.append(('type', '=', 'contact'))
+            stext = ''
             if vals.get('name'):
-                stext = ''
                 for ch in vals['name']:
                     if ch.isalpha():
-                        stext += ch
+                        if unidecode(ch) != ch:
+                            stext += '_'
+                        else:
+                            stext += ch
                     elif not stext.endswith('%'):
                         stext += '%'
                 partner_domain.append(('name', 'ilike', stext))
@@ -157,7 +133,7 @@ class WizardImportAccountOpening(models.Model):
                     vals = get_account_code(acc_domain, vals, html)
                 elif acc_field:
                     vals['account_id'] = getattr(recs[0], acc_field).id
-            else:
+            elif not disable_err:
                 if html_txt:
                     html += html_txt('', 'tr')
                     html += html_txt('%s' % numrec, 'td')
@@ -167,8 +143,49 @@ class WizardImportAccountOpening(models.Model):
                     html += html_txt(_('No record found!'), 'td')
                     html += html_txt('', '/tr')
                 vals = {}
+            return vals
+
+        html = ''
+        partner_domain = []
+        partner_domain_fc = []
+        acc_domain = []
+        vals = {}
+        by_vat = by_code = acc_field = False
+        for field in row.keys():
+            name = TNL.get(field)
+            if name == 'vat':
+                if row[field]:
+                    partner_domain.append(('vat', '=', row[field]))
+                    partner_domain_fc.append(('fiscalcode', '=', row[field]))
+                    by_vat = field
+            elif name == 'customer':
+                if row[field]:
+                    partner_domain.append(('customer', '=', True))
+                    partner_domain_fc.append(('customer', '=', True))
+                    acc_field = 'property_account_receivable_id'
+            elif name == 'supplier':
+                if row[field]:
+                    partner_domain.append(('supplier', '=', True))
+                    partner_domain_fc.append(('supplier', '=', True))
+                    acc_field = 'property_account_payable_id'
+            elif name == 'code':
+                if row[field]:
+                    acc_domain.append(('code', '=', row[field]))
+                    if by_code != 'vat':
+                        by_code = field
+            elif name in ('debit', 'credit'):
+                vals[name] = row[field] or 0.0
+            elif name in ('name', 'ref') and row[field]:
+                vals[name] = row[field]
+        if by_vat:
+            vals = get_partner(partner_domain, vals, html, disable_err=True)
+            if not vals.get('partner_id'):
+                vals = get_partner(
+                    partner_domain_fc, vals, html)
         elif by_code:
             vals = get_account_code(acc_domain, vals, html)
+        elif vals.get('name'):
+            vals = get_partner([], vals, html)
         else:
             if html_txt:
                 html += html_txt('', 'tr')

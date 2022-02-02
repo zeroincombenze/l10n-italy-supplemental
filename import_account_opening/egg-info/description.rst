@@ -1,5 +1,5 @@
 Account Opening Import
-----------_-----------
+----------------------
 
 Import account opening from Excel file.
 
@@ -15,6 +15,6 @@ Notes:
 * Please set only one value in one of "Dare" "Avere"
 * Partners search try to find by vat code and name
 * In partner lines, account code is set by partner record if not in line
-* Ref field i snot required; use it if you want load amount by invoices
+* Ref field is not required; use it if you want load amount by invoice references
 
 You can find Excel example in example directory.

@@ -20,7 +20,7 @@ Avaiable Addons / Moduli disponibili
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_gopher         | 12.0.0.1.0 | |no_check| | Configure account records                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening | 12.0.0.1.5 | |no_check| | Import account opening                                                           |
+| import_account_opening | 12.0.0.1.6 | |no_check| | Import account opening                                                           |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_inventory       | 12.0.0.1.2 | |no_check| | Import inventory                                                                 |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -144,11 +144,17 @@ Proposals for enhancement
 History / Cronologia
 --------------------
 
+import_account_opening: 12.0.0.1.5 (2022-01-31)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
+
+
 import_account_opening: 12.0.0.1.5 (2022-01-14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Parter account from Excel file /Conto cliente/fornitore da file Excel
-* [FIX] No emoty entry when dry-run / No testata vuota di registrazione contabile se simulazione
+* [IMP] Parter account from Excel file / Conto cliente/fornitore da file Excel
+* [FIX] No empty entry when dry-run / No testata vuota di registrazione contabile se simulazione
 
 
 import_account_opening: 12.0.0.1.4 (2021-12-30)
@@ -220,7 +226,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-01-14
+Last Update / Ultimo aggiornamento: 2022-02-02
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
