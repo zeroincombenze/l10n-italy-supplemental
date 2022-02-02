@@ -256,7 +256,8 @@ class WizardImportAccountOpening(models.Model):
                 vals['debit'] = total_credit - total_debit
             else:
                 vals['credit'] = total_debit - total_credit
-            self.env[model_dtl].create(vals)
+            if not self.dry_run:
+                self.env[model_dtl].create(vals)
         tracelog += self.html_txt('', '/table')
         self.tracelog = tracelog
         return {
