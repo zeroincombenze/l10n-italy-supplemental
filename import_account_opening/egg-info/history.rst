@@ -1,4 +1,9 @@
-12.0.0.1.5 (2022-01-31)
+12.0.0.1.7 (2022-02-03)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Missed some error message / In alcuni casi non si vedevamo i messaggi di errore
+
+12.0.0.1.6 (2022-01-31)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome

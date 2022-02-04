@@ -98,7 +98,7 @@ class WizardImportAccountOpening(models.Model):
                 vals = {}
             else:
                 vals['account_id'] = recs[0].id
-            return vals
+            return vals, html
 
         def get_partner(partner_domain, vals, html, disable_err=None):
             partner_domain.append(('type', '=', 'contact'))
@@ -143,7 +143,7 @@ class WizardImportAccountOpening(models.Model):
                     html += html_txt(_('No record found!'), 'td')
                     html += html_txt('', '/tr')
                 vals = {}
-            return vals
+            return vals, html
 
         html = ''
         partner_domain = []
@@ -178,14 +178,15 @@ class WizardImportAccountOpening(models.Model):
             elif name in ('name', 'ref') and row[field]:
                 vals[name] = row[field]
         if by_vat:
-            vals = get_partner(partner_domain, vals, html, disable_err=True)
+            vals, html = get_partner(
+                partner_domain, vals, html, disable_err=True)
             if not vals.get('partner_id'):
-                vals = get_partner(
+                vals, html = get_partner(
                     partner_domain_fc, vals, html)
         elif by_code:
-            vals = get_account_code(acc_domain, vals, html)
+            vals, html = get_account_code(acc_domain, vals, html)
         elif vals.get('name'):
-            vals = get_partner([], vals, html)
+            vals, html = get_partner([], vals, html)
         else:
             if html_txt:
                 html += html_txt('', 'tr')
