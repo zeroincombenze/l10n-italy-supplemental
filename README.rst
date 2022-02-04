@@ -178,7 +178,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
-import_account_opening: 10.0.0.1.5 (2022-01-31)
+import_account_opening: 10.0.0.1.7 (2022-02-03)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Missed some error message / In alcuni casi non si vedevamo i messaggi di errore
+
+
+import_account_opening: 10.0.0.1.6 (2022-01-31)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
@@ -266,7 +272,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-02
+Last Update / Ultimo aggiornamento: 2022-02-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

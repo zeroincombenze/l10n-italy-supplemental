@@ -1,6 +1,6 @@
 
 =============================================
-|icon| Import account opening 12.0.10.0.0.1.6
+|icon| Import account opening 12.0.10.0.0.1.7
 =============================================
 
 
@@ -211,7 +211,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.5 (2022-01-31)
+10.0.0.1.7 (2022-02-03)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Missed some error message / In alcuni casi non si vedevamo i messaggi di errore
+
+10.0.0.1.6 (2022-01-31)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
@@ -296,7 +301,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-02-02
+Last Update / Ultimo aggiornamento: 2022-02-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
