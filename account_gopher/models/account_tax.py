@@ -136,11 +136,17 @@ class AccountTax(models.Model):
             if len(tax) == 1:
                 vals = get_tmpl_values(tmpl, rec=tax)
                 if vals:
-                    tax.write(vals)
-                    actioned = _('Updated')
+                    try:
+                        tax.write(vals)
+                        actioned = _('Updated')
+                    except BaseException as e:
+                        actioned = '** %s **' % e
             elif not tax:
-                tax_model.create(get_tmpl_values(tmpl))
-                actioned = _('New record created')
+                try:
+                    tax_model.create(get_tmpl_values(tmpl))
+                    actioned = _('New record created')
+                except BaseException as e:
+                    actioned = '** %s **' % e
             if html_txt and actioned:
                 html += html_txt('', 'tr')
                 html += html_txt(tmpl.description, 'td')
