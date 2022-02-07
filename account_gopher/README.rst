@@ -1,6 +1,6 @@
 
 ===================================
-|icon| Account Assistant 12.0.0.1.0
+|icon| Account Assistant 12.0.0.2.0
 ===================================
 
 
@@ -154,6 +154,8 @@ ChangeLog History / Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
+* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
+* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
 
 12.0.0.1.0 (2021-12-23)
 ~~~~~~~~~~~~~~~~~~~~~~~

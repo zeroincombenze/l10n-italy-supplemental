@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-21 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -28,6 +28,13 @@ class GopherConfigureWizard(models.TransientModel):
         'Select account profile',
         default='ord',
         required=True)
+    reload_from_coa = fields.Selection(
+        [
+            ('tax', 'Tax codes'),
+            ('coa', 'Chart of Account'),
+            ('both', 'Tax & CoA codes'),
+        ],
+        'Reload CoA and Tax codes')
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -50,11 +57,16 @@ class GopherConfigureWizard(models.TransientModel):
 
     @api.multi
     def account_wizard(self):
-        self.tracelog = '%s\n%s' % (
-            self.html_txt(_('Result'), 'h2'),
-            self.env['account.tax'].gopher_configure_tax(
+        tracelog = self.html_txt(_('Result'), 'h2')
+        if self.reload_from_coa in ('coa', 'both'):
+            tracelog += self.env['account.account'].gopher_reload_coa(
+                    html_txt=self.html_txt)
+        if self.reload_from_coa in ('tax', 'both'):
+            tracelog += self.env['account.tax'].gopher_reload_taxes(
                 html_txt=self.html_txt)
-        )
+        tracelog += self.env['account.tax'].gopher_configure_tax(
+                html_txt=self.html_txt)
+        self.tracelog = tracelog
         return {
             'name': 'Configuration result',
             'type': 'ir.actions.act_window',

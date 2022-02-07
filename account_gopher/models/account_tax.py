@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-21 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -11,15 +11,9 @@ import re
 
 from odoo import models, fields, _
 
-# Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind"
 NATURE_MODEL = 'account.tax.kind'
 NATURE_ID = 'kind_id'
-# NATURE_MODEL = 'italy.ade.tax.nature'
-# NATURE_ID = 'nature_id'
 
-# Nature(text), law number(number), law supplemental(text), \
-# law section(number), law letter(text), law ref (text)
-# - law supplemental -> (bis|ter|quater|quinques|sexies|septies|octies|novies)
 RE_ESCL = 'E[scl.]+'
 RE_FC = r'(F\.?C|F[uori.]+ C[ampo.]+)( IVA )?'
 RE_NSOGG = 'N[on]*[. ]+S'
@@ -98,6 +92,65 @@ class AccountTax(models.Model):
         'italy.ade.tax.assosoftware',
         string='Assosoftware Code',
         help='Tax Assosoftware classification')
+
+    def gopher_reload_taxes(self, html_txt=None):
+        """Reaload tax records from account.tax.template"""
+
+        def get_tmpl_values(tmpl, rec=None):
+            vals = {}
+            for name in ('description', 'name', 'type_tax_use', 'sequence',
+                         'amount_type', 'amount', 'price_include',
+                         ):
+                if not rec or getattr(rec, name) != getattr(tmpl, name):
+                    vals[name] = getattr(tmpl, name)
+            for name in ('tax_group_id',):
+                if not rec or getattr(rec, name) != getattr(tmpl, name):
+                    vals[name] = getattr(tmpl, name).id
+            for name in ('account_id', 'refund_account_id',):
+                acc = self.env['account.account'].search(
+                    [('code', '=', getattr(tmpl, name).code),
+                     ('company_id', '=', company.id)]
+                )
+                if len(acc) == 1 and (not rec or
+                                      getattr(rec, name).id != acc[0].id):
+                    vals[name] = acc[0].id
+            return vals
+
+        html = ''
+        if html_txt:
+            html += html_txt(_('Reload Taxes'), 'h3')
+            html += html_txt('', 'table')
+            html += html_txt('', 'tr')
+            html += html_txt(_('Code'), 'td')
+            html += html_txt(_('Name'), 'td')
+            html += html_txt(_('Action'), 'td')
+            html += html_txt('', '/tr')
+        template_model = self.env['account.tax.template']
+        tax_model = self.env['account.tax']
+        company = self.env.user.company_id
+        for tmpl in template_model.search([]):
+            tax = tax_model.search(
+                [('description', '=', tmpl.description),
+                 ('company_id', '=', company.id)])
+            actioned = ''
+            if len(tax) == 1:
+                vals = get_tmpl_values(tmpl, rec=tax)
+                if vals:
+                    tax.write(vals)
+                    actioned = _('Updated')
+            elif not tax:
+                tax_model.create(get_tmpl_values(tmpl))
+                actioned = _('New record created')
+            if html_txt and actioned:
+                html += html_txt('', 'tr')
+                html += html_txt(tmpl.description, 'td')
+                html += html_txt(tmpl.name, 'td')
+                html += html_txt(actioned, 'td')
+                html += html_txt('', '/tr')
+        if html_txt:
+            html += html_txt('', '/table')
+        # self._cr.commit()  # pylint: disable=invalid-commit
+        return html
 
     def gopher_configure_tax(self, html_txt=None):
         """Set default values"""

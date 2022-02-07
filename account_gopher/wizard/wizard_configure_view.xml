@@ -8,6 +8,7 @@
             <form string="Account Configuration Assistant">
                 <group>
                     <field name="account_profile"/>
+                    <field name="reload_from_coa"/>
                 </group>
                 <footer>
                     <button name="account_wizard" string="Configure"
