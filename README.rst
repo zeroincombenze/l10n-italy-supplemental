@@ -182,6 +182,8 @@ account_gopher: 10.0.0.2.0 (2022-02-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
+* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
+* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
 
 
 import_account_opening: 10.0.0.1.7 (2022-02-03)

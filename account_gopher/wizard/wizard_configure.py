@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-21 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -28,6 +28,13 @@ class GopherConfigureWizard(models.TransientModel):
         'Select account profile',
         default='ord',
         required=True)
+    reload_from_coa = fields.Selection(
+        [
+            ('tax', 'Tax codes'),
+            ('coa', 'Chart of Account'),
+            ('both', 'Tax & CoA codes'),
+        ],
+        'Reload CoA and Tax codes')
     tracelog = fields.Html('Result History')
 
     @api.multi

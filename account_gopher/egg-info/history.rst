@@ -2,6 +2,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
+* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
+* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
 
 10.0.0.1.0 (2021-12-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
