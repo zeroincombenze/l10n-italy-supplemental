@@ -140,12 +140,14 @@ class AccountTax(models.Model):
                         tax.write(vals)
                         actioned = _('Updated')
                     except BaseException as e:
+                        self._cr.rollback()  # pylint: disable=invalid-commit
                         actioned = '** %s **' % e
             elif not tax:
                 try:
                     tax_model.create(get_tmpl_values(tmpl))
                     actioned = _('New record created')
                 except BaseException as e:
+                    self._cr.rollback()  # pylint: disable=invalid-commit
                     actioned = '** %s **' % e
             if html_txt and actioned:
                 html += html_txt('', 'tr')

@@ -50,12 +50,14 @@ class AccountAccount(models.Model):
                         acc[0].write(vals)
                         actioned = _('Updated')
                     except BaseException as e:
+                        self._cr.rollback()  # pylint: disable=invalid-commit
                         actioned = '** %s **' % e
             elif not acc:
                 try:
                     acc_model.create(get_tmpl_values(tmpl))
                     actioned = _('New record created')
                 except BaseException as e:
+                    self._cr.rollback()  # pylint: disable=invalid-commit
                     actioned = '** %s **' % e
             if html_txt and actioned:
                 html += html_txt('', 'tr')
