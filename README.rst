@@ -18,7 +18,7 @@ Avaiable Addons / Moduli disponibili
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | Name / Nome            | Version    | OCA Ver.   | Description / Descrizione                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher         | 12.0.0.1.0 | |no_check| | Configure account records                                                        |
+| account_gopher         | 12.0.0.2.0 | |no_check| | Configure account records                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_account_opening | 12.0.0.1.7 | |no_check| | Import account opening                                                           |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -144,6 +144,12 @@ Proposals for enhancement
 History / Cronologia
 --------------------
 
+account_gopher: 12.0.0.2.0 (2022-02-07)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
+
+
 import_account_opening: 12.0.0.1.7 (2022-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -180,7 +186,7 @@ import_account_opening: 12.0.0.1.3 (2021-12-23)
 account_gopher: 12.0.0.1.0 (2021-12-23)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Dry-run
+* [IMP] Minor enhancements
 
 
 import_inventory: 12.0.0.1 (2021-12-04)
@@ -199,6 +205,7 @@ account_gopher: 10.0.0.0.0 (2021-11-08)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] First version
+
 
 
 
@@ -232,7 +239,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-04
+Last Update / Ultimo aggiornamento: 2022-02-07
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
