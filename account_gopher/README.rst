@@ -18,18 +18,20 @@
 Overview / Panoramica
 =====================
 
-|en| Assistente contabile
--------------------------
+|en| This module makes available following useful functions:
 
-Configuratore automatico contabile
+* Configure taxes
+* Reload taxes from template after CoA module upgrade
+* Reload accounts from template after CoA module upgrade
 
 
 |
 
-|it| Account Assistant
-----------------------
+|it| Questo modulo rende disponibili le seguenti utili funzioni:
 
-Configura i dati contabili.
+* Configura tasse (natura,esigibilità, gruppo, eccetera)
+* Ricarica tasse da modello, dopo l'aggiornamento del modulo PdC
+* Ricarica conti contabili da modello, dopo l'aggiornamento del modulo PdC
 
 
 |

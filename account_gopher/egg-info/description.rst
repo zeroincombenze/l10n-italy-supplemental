@@ -1,4 +1,5 @@
-Assistente contabile
---------------------
+This module makes available following useful functions:
 
-Configuratore automatico contabile
+* Configure taxes
+* Reload taxes from template after CoA module upgrade
+* Reload accounts from template after CoA module upgrade
