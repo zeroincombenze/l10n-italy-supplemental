@@ -12,7 +12,7 @@
     <menuitem id="account_gopher" name="Account Configuration Assistant"
               action="action_account_wizard"
               parent="account.menu_finance_configuration"
-              groups="base.group_no_one"
+              groups="account.group_account_manager"
               sequence="100"/>
 
 </odoo>

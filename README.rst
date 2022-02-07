@@ -178,6 +178,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
+account_gopher: 10.0.0.2.0 (2022-02-07)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
+
+
 import_account_opening: 10.0.0.1.7 (2022-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -214,6 +220,12 @@ import_account_opening: 10.0.0.1.3 (2021-12-23)
 * [IMP] Search like name too / Ricerca anche con nome simile
 * [IMP] Search just contact / Ricerca solo contatti
 * [IMP] Dry-run / Esecuzione di prova
+
+
+account_gopher: 10.0.0.1.0 (2021-12-23)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Minor enhancements
 
 
 import_account_opening: 10.0.0.1.0 (2021-12-04)
@@ -272,7 +284,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-04
+Last Update / Ultimo aggiornamento: 2022-02-07
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

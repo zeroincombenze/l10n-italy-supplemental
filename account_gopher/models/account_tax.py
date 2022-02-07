@@ -11,6 +11,12 @@ import re
 
 from odoo import models, fields, _
 
+# Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind" 
+# NATURE_MODEL = 'account.tax.kind'
+# NATURE_ID = 'kind_id'
+NATURE_MODEL = 'italy.ade.tax.nature'
+NATURE_ID = 'nature_id'
+
 # Nature(text), law number(number), law supplemental(text), \
 # law section(number), law letter(text), law ref (text)
 # - law supplemental -> (bis|ter|quater|quinques|sexies|septies|octies|novies)
@@ -144,8 +150,7 @@ class AccountTax(models.Model):
                 res[tax]['law'] = assosoftware_rec.name
 
         tax_model = self.env['account.tax']
-        # nature_model = self.env['account.tax.kind']
-        nature_model = self.env['italy.ade.tax.nature']
+        nature_model = self.env[NATURE_MODEL]
         assosoftware_model = self.env['italy.ade.tax.assosoftware']
         # company_model = self.env['res.company']
         html = ''
@@ -265,11 +270,11 @@ class AccountTax(models.Model):
                 if res[tax].get('nat'):
                     nature = nature_model.search(
                         [('code', '=', res[tax]['nat'])])[0]
-                    vals['nature_id'] = nature.id
+                    vals[NATURE_ID] = nature.id
                 elif 'nat' in res[tax]:
-                    vals['nature_id'] = False
-                if vals.get('nature_id') != tax.nature_id.id:
-                    if vals.get('nature_id'):
+                    vals[NATURE_ID] = False
+                if vals.get(NATURE_ID, False) != getattr(tax, NATURE_ID).id:
+                    if vals.get(NATURE_ID):
                         actioned += _(
                             'set nature to %s; ') % res[tax]['nat']
                     else:
