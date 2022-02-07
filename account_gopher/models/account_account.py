@@ -67,4 +67,5 @@ class AccountAccount(models.Model):
                 html += html_txt('', '/tr')
         if html_txt:
             html += html_txt('', '/table')
+        self._cr.commit()  # pylint: disable=invalid-commit
         return html

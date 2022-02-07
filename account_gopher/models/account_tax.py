@@ -157,7 +157,7 @@ class AccountTax(models.Model):
                 html += html_txt('', '/tr')
         if html_txt:
             html += html_txt('', '/table')
-        # self._cr.commit()  # pylint: disable=invalid-commit
+        self._cr.commit()  # pylint: disable=invalid-commit
         return html
 
     def gopher_configure_tax(self, html_txt=None):
