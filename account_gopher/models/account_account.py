@@ -40,8 +40,8 @@ class AccountAccount(models.Model):
         company = self.env.user.company_id
         for tmpl in template_model.search([]):
             acc = acc_model.search(
-                [('code', '=', tmpl.code),
-                 ('company_id', '=', company.id)])
+                [('code', '=', tmpl.code), ('company_id', '=', company.id)]
+            )
             actioned = ''
             if len(acc) == 1:
                 vals = get_tmpl_values(tmpl, rec=acc)

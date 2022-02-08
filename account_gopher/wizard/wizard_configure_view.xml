@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <form string="Account Configuration Assistant">
                 <group>
-                    <field name="account_profile"/>
+                    <field name="fiscal_position_id"/>
                     <field name="reload_from_coa"/>
                 </group>
                 <footer>

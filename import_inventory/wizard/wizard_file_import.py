@@ -4,6 +4,7 @@ import base64
 from io import BytesIO
 from openpyxl import load_workbook
 from odoo import models, fields, api, _
+
 # from odoo import exceptions
 
 TNL = {
@@ -22,13 +23,10 @@ class WizardImportAccountOpening(models.Model):
         required=True,
     )
     filename = fields.Char()
-    name = fields.Char(
-        string='Name',
-        required=True)
+    name = fields.Char(string='Name', required=True)
     location_id = fields.Many2one(
-        'stock.location',
-        string='Location',
-        required=True)
+        'stock.location', string='Location', required=True
+    )
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -36,7 +34,9 @@ class WizardImportAccountOpening(models.Model):
         if tag:
             if tag in ('table', '/table', 'tr', '/tr'):
                 if not text and tag == 'table':
-                    text = 'border="2px" cellpadding="2px" style="padding: 5px"'
+                    text = (
+                        'border="2px" cellpadding="2px" style="padding: 5px"'
+                    )
                 if text:
                     html = '<%s %s>' % (tag, text)
                 elif tag.startswith('/'):
@@ -118,11 +118,13 @@ class WizardImportAccountOpening(models.Model):
         model = 'stock.inventory'
         company_id = self.env.user.company_id.id
         model_dtl = 'stock.inventory.line'
-        inventory = self.env[model].create({
-            'company_id': company_id,
-            'name': self.name,
-            'location_id': self.location_id.id,
-        })
+        inventory = self.env[model].create(
+            {
+                'company_id': company_id,
+                'name': self.name,
+                'location_id': self.location_id.id,
+            }
+        )
         tracelog = self.html_txt(_('Inventory entries'), 'h3')
         numrec = 0
         tracelog += self.html_txt('', 'table')
@@ -136,8 +138,9 @@ class WizardImportAccountOpening(models.Model):
         datas = self.get_data()
         for row in datas:
             numrec += 1
-            vals, html = self.prepare_data(row, company_id, numrec,
-                                           html_txt=self.html_txt)
+            vals, html = self.prepare_data(
+                row, company_id, numrec, html_txt=self.html_txt
+            )
             tracelog += html
             if not vals:
                 continue

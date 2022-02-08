@@ -13,28 +13,29 @@ from odoo import api, fields, models, _
 
 class GopherConfigureWizard(models.TransientModel):
     """No yet documented"""
+
     _name = 'gopher.configure.wizard'
     _description = "Configure Account Environment"
 
-    @api.model
-    def _selection_profile(self):
-        res = [('ord', _('Ordinary Account')),
-               ('cash', _('Tax Cash Basis')),
-               ('adv', _('Advisor'))]
-        return res
+    def _default_fiscal_position(self):
+        return self.env['fatturapa.fiscal_position'].search(
+            [('code', '=', 'RF01')])[0]
 
-    account_profile = fields.Selection(
-        lambda self: self._selection_profile(),
-        'Select account profile',
-        default='ord',
-        required=True)
+    fiscal_position_id = fields.Many2one(
+        'fatturapa.fiscal_position',
+        'Fiscal Position',
+        default=_default_fiscal_position,
+        required=True,
+        help="Fiscal position used by electronic invoice",
+    )
     reload_from_coa = fields.Selection(
         [
             ('tax', 'Tax codes'),
             ('coa', 'Chart of Account'),
             ('both', 'Tax & CoA codes'),
         ],
-        'Reload CoA and Tax codes')
+        'Reload CoA and Tax codes',
+    )
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -42,7 +43,9 @@ class GopherConfigureWizard(models.TransientModel):
         if tag:
             if tag in ('table', '/table', 'tr', '/tr'):
                 if not text and tag == 'table':
-                    text = 'border="2px" cellpadding="2px" style="padding: 5px"'
+                    text = (
+                        'border="2px" cellpadding="2px" style="padding: 5px"'
+                    )
                 if text:
                     html = '<%s %s>' % (tag, text)
                 elif tag.startswith('/'):
@@ -58,14 +61,22 @@ class GopherConfigureWizard(models.TransientModel):
     @api.multi
     def account_wizard(self):
         tracelog = self.html_txt(_('Result'), 'h2')
+        if self.env.user.company_id.fatturapa_fiscal_position_id != self.fiscal_position_id:
+            self.env.user.company_id.fatturapa_fiscal_position_id = self.fiscal_position_id
+            tracelog += self.html_txt(
+                'Set fiscal position %s' % self.fiscal_position_id.code,
+                'div')
         if self.reload_from_coa in ('coa', 'both'):
             tracelog += self.env['account.account'].gopher_reload_coa(
-                    html_txt=self.html_txt)
+                html_txt=self.html_txt
+            )
         if self.reload_from_coa in ('tax', 'both'):
             tracelog += self.env['account.tax'].gopher_reload_taxes(
-                html_txt=self.html_txt)
+                html_txt=self.html_txt
+            )
         tracelog += self.env['account.tax'].gopher_configure_tax(
-                html_txt=self.html_txt)
+            html_txt=self.html_txt
+        )
         self.tracelog = tracelog
         return {
             'name': 'Configuration result',
@@ -77,7 +88,8 @@ class GopherConfigureWizard(models.TransientModel):
             'target': 'new',
             'context': {'active_id': self.id},
             'view_id': self.env.ref(
-                'account_gopher.result_wizard_configure_view').id,
+                'account_gopher.result_wizard_configure_view'
+            ).id,
             'domain': [('id', '=', self.id)],
         }
 

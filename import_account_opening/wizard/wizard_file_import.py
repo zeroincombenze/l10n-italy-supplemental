@@ -5,6 +5,7 @@ from io import BytesIO
 from openpyxl import load_workbook
 from unidecode import unidecode
 from odoo import models, fields, api, _
+
 # from odoo import exceptions
 
 TNL = {
@@ -29,16 +30,12 @@ class WizardImportAccountOpening(models.Model):
     )
     filename = fields.Char()
     journal_id = fields.Many2one(
-        'account.journal',
-        string='Journal',
-        required=True)
+        'account.journal', string='Journal', required=True
+    )
     account_id = fields.Many2one(
-        'account.account',
-        string='Open account',
-        required=True)
-    dry_run = fields.Boolean(
-        string='Dry-run',
-        default=False)
+        'account.account', string='Open account', required=True
+    )
+    dry_run = fields.Boolean(string='Dry-run', default=False)
     tracelog = fields.Html('Result History')
 
     @api.multi
@@ -46,7 +43,9 @@ class WizardImportAccountOpening(models.Model):
         if tag:
             if tag in ('table', '/table', 'tr', '/tr'):
                 if not text and tag == 'table':
-                    text = 'border="2px" cellpadding="2px" style="padding: 5px"'
+                    text = (
+                        'border="2px" cellpadding="2px" style="padding: 5px"'
+                    )
                 if text:
                     html = '<%s %s>' % (tag, text)
                 elif tag.startswith('/'):
@@ -79,7 +78,6 @@ class WizardImportAccountOpening(models.Model):
         return contents
 
     def prepare_data(self, row, company_id, numrec, html_txt=None):
-
         def get_account_code(acc_domain, vals, html):
             acc_domain.append(('company_id', '=', company_id))
             recs = self.env['account.account'].search(acc_domain)
@@ -179,10 +177,10 @@ class WizardImportAccountOpening(models.Model):
                 vals[name] = row[field]
         if by_vat:
             vals, html = get_partner(
-                partner_domain, vals, html, disable_err=True)
+                partner_domain, vals, html, disable_err=True
+            )
             if not vals.get('partner_id'):
-                vals, html = get_partner(
-                    partner_domain_fc, vals, html)
+                vals, html = get_partner(partner_domain_fc, vals, html)
         elif by_code:
             vals, html = get_account_code(acc_domain, vals, html)
         elif vals.get('name'):
@@ -205,13 +203,15 @@ class WizardImportAccountOpening(models.Model):
         company_id = self.env.user.company_id.id
         model_dtl = 'account.move.line'
         if not self.dry_run:
-            move = self.env[model].create({
-                'company_id': company_id,
-                'journal_id': self.journal_id.id,
-                'move_type': 'other',
-                'type': 'entry',
-                'ref': 'apertura conti',
-            })
+            move = self.env[model].create(
+                {
+                    'company_id': company_id,
+                    'journal_id': self.journal_id.id,
+                    'move_type': 'other',
+                    'type': 'entry',
+                    'ref': 'apertura conti',
+                }
+            )
         tracelog = self.html_txt(_('Import account entries'), 'h3')
         numrec = 0
         tracelog += self.html_txt('', 'table')
@@ -226,15 +226,17 @@ class WizardImportAccountOpening(models.Model):
         total_debit = total_credit = 0.0
         for row in datas:
             numrec += 1
-            vals, html = self.prepare_data(row, company_id, numrec,
-                                           html_txt=self.html_txt)
+            vals, html = self.prepare_data(
+                row, company_id, numrec, html_txt=self.html_txt
+            )
             tracelog += html
             if not vals or self.dry_run:
                 continue
             vals['move_id'] = move.id
             try:
                 self.env[model_dtl].with_context(
-                    check_move_validity=False).create(vals)
+                    check_move_validity=False
+                ).create(vals)
                 total_debit += vals.get('debit') or 0.0
                 total_credit += vals.get('credit') or 0.0
             except BaseException as e:
