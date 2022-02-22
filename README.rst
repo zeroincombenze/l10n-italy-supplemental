@@ -18,11 +18,15 @@ Avaiable Addons / Moduli disponibili
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | Name / Nome            | Version    | OCA Ver.   | Description / Descrizione                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher         | 12.0.0.2.0 | |no_check| | Configure account records                                                        |
+| account_gopher         | 12.0.0.2.2 | |no_check| | Configure account records                                                        |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_account_opening | 12.0.0.1.7 | |no_check| | Import account opening                                                           |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_inventory       | 12.0.0.1.2 | |no_check| | Import inventory                                                                 |
++------------------------+------------+------------+----------------------------------------------------------------------------------+
+| import_partners        | 12.0.0.1.0 | |no_check| | Import partners                                                                  |
++------------------------+------------+------------+----------------------------------------------------------------------------------+
+| repair_supplemental    | 12.0.0.1.0 | |no_check| | Repair supplemental                                                              |
 +------------------------+------------+------------+----------------------------------------------------------------------------------+
 
 
@@ -144,6 +148,31 @@ Proposals for enhancement
 History / Cronologia
 --------------------
 
+account_gopher: 12.0.0.2.2 (2022-02-21)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Set account nature / Imposta natura conto
+
+
+account_gopher: 12.0.0.2.1 (2022-02-08)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Company fiscal position / Posizione fiscale azienda
+
+
+repair_supplemental: 12.0.0.1.0 (2022-02-07)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Draft code / Bozza iniziale
+
+
+import_partners: 12.0.0.1.0 (2022-02-07)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Draft code / Bozza iniziale
+
+
+
 account_gopher: 12.0.0.2.0 (2022-02-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -241,7 +270,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-07
+Last Update / Ultimo aggiornamento: 2022-02-22
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

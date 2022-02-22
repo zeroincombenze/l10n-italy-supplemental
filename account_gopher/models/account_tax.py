@@ -11,9 +11,15 @@ import re
 
 from odoo import models, fields, _
 
+# Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind"
 NATURE_MODEL = 'account.tax.kind'
 NATURE_ID = 'kind_id'
+# NATURE_MODEL = 'italy.ade.tax.nature'
+# NATURE_ID = 'nature_id'
 
+# Nature(text), law number(number), law supplemental(text), \
+# law section(number), law letter(text), law ref (text)
+# - law supplemental -> (bis|ter|quater|quinques|sexies|septies|octies|novies)
 RE_ESCL = 'E[scl.]+'
 RE_FC = r'(F\.?C|F[uori.]+ C[ampo.]+)( IVA )?'
 RE_NSOGG = 'N[on]*[. ]+S'
@@ -427,17 +433,20 @@ class AccountTax(models.Model):
                         actioned += _('set nature to %s; ') % res[tax]['nat']
                     else:
                         actioned += _('reset nature; ')
-                if nature and nature.code == 'N1':
-                    vals['vsc_exclude_operation'] = True
-                    vals['vsc_exclude_vat'] = True
-                else:
-                    vals['vsc_exclude_operation'] = False
-                    vals['vsc_exclude_vat'] = False
-                if vals['vsc_exclude_operation'] != tax.vsc_exclude_operation:
-                    if vals['vsc_exclude_operation']:
-                        actioned += _('IP18 excluded; ')
+                if (hasattr(tax, 'vsc_exclude_operation') and
+                        hasattr(tax, 'vsc_exclude_vat')):
+                    if nature and nature.code == 'N1':
+                        vals['vsc_exclude_operation'] = True
+                        vals['vsc_exclude_vat'] = True
                     else:
-                        actioned += _('IP18 included; ')
+                        vals['vsc_exclude_operation'] = False
+                        vals['vsc_exclude_vat'] = False
+                    if (vals['vsc_exclude_operation'] !=
+                            tax.vsc_exclude_operation):
+                        if vals['vsc_exclude_operation']:
+                            actioned += _('IP18 excluded; ')
+                        else:
+                            actioned += _('IP18 included; ')
                 if 'pay' in res[tax]:
                     vals['payability'] = res[tax]['pay']
                     if vals.get('payability', False) != tax.payability:
