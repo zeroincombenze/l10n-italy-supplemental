@@ -9,7 +9,7 @@
 #
 {
     'name': 'Account Assistant',
-    'version': '10.0.0.2.0',
+    'version': '10.0.0.2.2',
     'category': 'Localization/Italy',
     'summary': 'Configure account records',
     'author': 'SHS-AV s.r.l.',
@@ -17,7 +17,10 @@
     'development_status': 'Beta',
     'license': 'LGPL-3',
     'depends': [
-        'base', 'account', 'l10n_it_ade', 'l10n_it_einvoice_base'
+        'base',
+        'account',
+        'l10n_it_ade',
+        'l10n_it_einvoice_base'
     ],
     'data': [
         # 'security/ir.model.access.csv',

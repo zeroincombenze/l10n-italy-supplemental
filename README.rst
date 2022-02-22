@@ -178,6 +178,18 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
+account_gopher: 10.0.0.2.2 (2022-02-21)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Set account nature / Imposta natura conto
+
+
+account_gopher: 10.0.0.2.1 (2022-02-08)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Company fiscal position / Posizione fiscale azienda
+
+
 account_gopher: 10.0.0.2.0 (2022-02-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -286,7 +298,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-02-07
+Last Update / Ultimo aggiornamento: 2022-02-22
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

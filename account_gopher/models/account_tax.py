@@ -41,14 +41,26 @@ ASSOCODES = {
     'N020207': (None, '7', 'septies', None, None, None),
     'N020208': (None, '38', None, '5', None, r'D?\.?L.? *331'),
     'N020209': ('no.? res', '17', None, '3', None, None),
-    'N020210': (None, '7', None, None, None,
-                '19[- .,]*c[- .,]*3[- .,/]*l[etr.]*b'),
+    'N020210': (
+        None,
+        '7',
+        None,
+        None,
+        None,
+        '19[- .,]*c[- .,]*3[- .,/]*l[etr.]*b',
+    ),
     'N020212': (RE_NSOGG, '50', 'bis', '4', '[cehi .]+', r'D?\.?L.? *331'),
     'N020213': (None, '7', 'octies', None, None, None),
     'N020300': (RE_NSOGG, '74', None, '[12]', None, None),
     'N020400': (RE_ESCL, '13', None, None, None, None),
-    'N020501': (RE_MIN, '(1|27)', None, None, None,
-                r'(D?\.?L.? *98|L.? *244)'),
+    'N020501': (
+        RE_MIN,
+        '(1|27)',
+        None,
+        None,
+        None,
+        r'(D?\.?L.? *98|L.? *244)',
+    ),
     'N020502': ('Forf', '1', None, None, None, 'L.? *190'),
     'N020601': ('Var[iazione.]?', '26', None, '3', None, None),
     'N030101': (RE_NI, '8', None, '1', 'a', None),
@@ -58,22 +70,52 @@ ASSOCODES = {
     'N030111': (RE_NI, '72', None, None, None, None),
     'N030112': (RE_NI, '71', None, None, None, '(RSM|Marino)'),
     'N030113': (RE_NI, '71', None, None, None, '(SCV|Vaticano)'),
-    'N030201': (RE_NI, '8', None, '1', 'c',
-                '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+'),
-    'N030202': (RE_NI, '8', '(bis)?', '2', None,
-                '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+'),
-    'N030203': (RE_NI, '9', None, '2', None,
-                '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+'),
-    'N030204': (RE_NI, '72', None, '1', None,
-                '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+'),
+    'N030201': (
+        RE_NI,
+        '8',
+        None,
+        '1',
+        'c',
+        '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+',
+    ),
+    'N030202': (
+        RE_NI,
+        '8',
+        '(bis)?',
+        '2',
+        None,
+        '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+',
+    ),
+    'N030203': (
+        RE_NI,
+        '9',
+        None,
+        '2',
+        None,
+        '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+',
+    ),
+    'N030204': (
+        RE_NI,
+        '72',
+        None,
+        '1',
+        None,
+        '(Let[tera.]+|Dich[iarzone]*)[ di]* Int[ento.]+',
+    ),
     'N030401': (RE_NI, '41', None, None, None, r'D?\.?L.? *331'),
     'N030501': (RE_NI, '38', 'quater', '1', None, None),
     'N040101': (RE_ESE, '10', None, None, None, None),
     'N040102': (RE_ESE, '10', None, '[123456789]', None, None),
     'N040103': (RE_ESE, '10', None, '11', None, None),
     'N040105': (RE_ESE, '10', None, '27', None, 'quinques'),
-    'N050100': ('R[egime.]+[ di]+Marg', '3[67]', None, None, None,
-                r'D?\.?L.? *41'),
+    'N050100': (
+        'R[egime.]+[ di]+Marg',
+        '3[67]',
+        None,
+        None,
+        None,
+        r'D?\.?L.? *41',
+    ),
     'N060101': (None, '17', None, '6', 'a', 'bis'),
     'N060102': (None, '74', None, '[78]', None, None),
     'N060103': (None, '17', None, '5', None, None),
@@ -97,8 +139,16 @@ class AccountTax(models.Model):
     def gopher_configure_tax(self, html_txt=None):
         """Set default values"""
 
-        def search_4_tokens(tax_name, number, nature=None, bis=None,
-                            comma=None, letter=None, roman=None, law=None):
+        def search_4_tokens(
+            tax_name,
+            number,
+            nature=None,
+            bis=None,
+            comma=None,
+            letter=None,
+            roman=None,
+            law=None,
+        ):
             regex = '(Oper[azione]?)?'
             if nature:
                 regex += '[- (,./]?%sArt[ .]+%s' % (nature, number)
@@ -125,8 +175,7 @@ class AccountTax(models.Model):
                 return True
             return False
 
-        def set_result(
-                tax, assosoftware, weight, res):
+        def set_result(tax, assosoftware, weight, res):
             res[tax]['wgt'] = weight
             if assosoftware == '*SP':
                 res[tax]['axc'] = False
@@ -143,7 +192,8 @@ class AccountTax(models.Model):
                 res[tax]['pay'] = False
             else:
                 assosoftware_rec = assosoftware_model.search(
-                    [('code', '=', assosoftware)])
+                    [('code', '=', assosoftware)]
+                )
                 res[tax]['axc'] = assosoftware
                 res[tax]['nat'] = assosoftware_rec.nature
                 res[tax]['pay'] = False
@@ -175,7 +225,9 @@ class AccountTax(models.Model):
                         """select f.code from
                         res_company c,fatturapa_fiscal_position f
                         where c.fatturapa_fiscal_position_id=f.id and
-                        c.id=%d""" % tax.company_id.id)
+                        c.id=%d"""
+                        % tax.company_id.id
+                    )
                     code = self.cr.fetchone()[0]
                     if code in ('RF16', 'RF17'):
                         cur_company_pay = 'D'
@@ -183,80 +235,94 @@ class AccountTax(models.Model):
                     pass
                 cur_company_id = tax.company_id.id
             res[tax] = {
-                'wgt': 0, 'nat': '',
+                'wgt': 0,
+                'nat': '',
                 'pay': cur_company_pay if tax.type_tax_use == 'sale' else 'I',
-                'amt': tax.amount, 'des': tax, 'nme': tax.name,
+                'amt': tax.amount,
+                'des': tax,
+                'nme': tax.name,
             }
             for assosoftware in ASSOCODES.keys():
                 if search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        nature=ASSOCODES[assosoftware][0],
-                        bis=ASSOCODES[assosoftware][2],
-                        comma=ASSOCODES[assosoftware][3],
-                        letter=ASSOCODES[assosoftware][4],
-                        law=ASSOCODES[assosoftware][5]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    nature=ASSOCODES[assosoftware][0],
+                    bis=ASSOCODES[assosoftware][2],
+                    comma=ASSOCODES[assosoftware][3],
+                    letter=ASSOCODES[assosoftware][4],
+                    law=ASSOCODES[assosoftware][5],
+                ):
                     # Full match
-                    weight = 4 + len([x for x in ASSOCODES[assosoftware]
-                                      if x is not None])
+                    weight = 4 + len(
+                        [x for x in ASSOCODES[assosoftware] if x is not None]
+                    )
                     if weight < res[tax]['wgt']:
                         continue
                     set_result(tax, assosoftware, weight, res)
                 elif search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        bis=ASSOCODES[assosoftware][2],
-                        comma=ASSOCODES[assosoftware][3],
-                        letter=ASSOCODES[assosoftware][4],
-                        law=ASSOCODES[assosoftware][5]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    bis=ASSOCODES[assosoftware][2],
+                    comma=ASSOCODES[assosoftware][3],
+                    letter=ASSOCODES[assosoftware][4],
+                    law=ASSOCODES[assosoftware][5],
+                ):
                     # match w/o nature
-                    weight = 3 + len([x for x in ASSOCODES[assosoftware]
-                                      if x is not None])
+                    weight = 3 + len(
+                        [x for x in ASSOCODES[assosoftware] if x is not None]
+                    )
                     if weight <= res[tax]['wgt']:
                         continue
                     set_result(tax, assosoftware, weight, res)
                 elif search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        nature=ASSOCODES[assosoftware][0],
-                        comma=ASSOCODES[assosoftware][3],
-                        letter=ASSOCODES[assosoftware][4],
-                        law=ASSOCODES[assosoftware][5]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    nature=ASSOCODES[assosoftware][0],
+                    comma=ASSOCODES[assosoftware][3],
+                    letter=ASSOCODES[assosoftware][4],
+                    law=ASSOCODES[assosoftware][5],
+                ):
                     # match w/o supplemental (bis/ter/...)
-                    weight = 3 + len([x for x in ASSOCODES[assosoftware]
-                                      if x is not None])
+                    weight = 3 + len(
+                        [x for x in ASSOCODES[assosoftware] if x is not None]
+                    )
                     if weight <= res[tax]['wgt']:
                         continue
                     set_result(tax, assosoftware, weight, res)
                 elif search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        nature=ASSOCODES[assosoftware][0],
-                        bis=ASSOCODES[assosoftware][2],
-                        comma=ASSOCODES[assosoftware][3],
-                        letter=ASSOCODES[assosoftware][4]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    nature=ASSOCODES[assosoftware][0],
+                    bis=ASSOCODES[assosoftware][2],
+                    comma=ASSOCODES[assosoftware][3],
+                    letter=ASSOCODES[assosoftware][4],
+                ):
                     # Match w/o law reference
-                    weight = 2 + len([x for x in ASSOCODES[assosoftware]
-                                      if x is not None])
+                    weight = 2 + len(
+                        [x for x in ASSOCODES[assosoftware] if x is not None]
+                    )
                     if weight <= res[tax]['wgt']:
                         continue
                     set_result(tax, assosoftware, weight, res)
                 elif search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        nature=ASSOCODES[assosoftware][0],
-                        bis=ASSOCODES[assosoftware][2],
-                        comma=ASSOCODES[assosoftware][3]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    nature=ASSOCODES[assosoftware][0],
+                    bis=ASSOCODES[assosoftware][2],
+                    comma=ASSOCODES[assosoftware][3],
+                ):
                     # Match w/o law ref neither law letter
-                    weight = 2 + len([x for x in ASSOCODES[assosoftware]
-                                      if x is not None])
+                    weight = 2 + len(
+                        [x for x in ASSOCODES[assosoftware] if x is not None]
+                    )
                     if weight <= res[tax]['wgt']:
                         continue
                     set_result(tax, assosoftware, weight, res)
                 elif search_4_tokens(
-                        tax.name,
-                        ASSOCODES[assosoftware][1],
-                        nature=ASSOCODES[assosoftware][0]):
+                    tax.name,
+                    ASSOCODES[assosoftware][1],
+                    nature=ASSOCODES[assosoftware][0],
+                ):
                     # Finally match just nature and law number
                     weight = 1
                     if weight <= res[tax]['wgt']:
@@ -269,41 +335,62 @@ class AccountTax(models.Model):
                 nature = False
                 if res[tax].get('nat'):
                     nature = nature_model.search(
-                        [('code', '=', res[tax]['nat'])])[0]
+                        [('code', '=', res[tax]['nat'])]
+                    )[0]
                     vals[NATURE_ID] = nature.id
                 elif 'nat' in res[tax]:
                     vals[NATURE_ID] = False
                 if vals.get(NATURE_ID, False) != getattr(tax, NATURE_ID).id:
                     if vals.get(NATURE_ID):
-                        actioned += _(
-                            'set nature to %s; ') % res[tax]['nat']
+                        actioned += _('set nature to %s; ') % res[tax]['nat']
                     else:
                         actioned += _('reset nature; ')
+                if (hasattr(tax, 'vsc_exclude_operation') and
+                        hasattr(tax, 'vsc_exclude_vat')):
+                    if nature and nature.code == 'N1':
+                        vals['vsc_exclude_operation'] = True
+                        vals['vsc_exclude_vat'] = True
+                    else:
+                        vals['vsc_exclude_operation'] = False
+                        vals['vsc_exclude_vat'] = False
+                    if (vals['vsc_exclude_operation'] !=
+                            tax.vsc_exclude_operation):
+                        if vals['vsc_exclude_operation']:
+                            actioned += _('IP18 excluded; ')
+                        else:
+                            actioned += _('IP18 included; ')
                 if 'pay' in res[tax]:
                     vals['payability'] = res[tax]['pay']
                     if vals.get('payability', False) != tax.payability:
                         if vals.get('payability'):
-                            actioned += _(
-                                'set payability to %s; ') % res[tax].get('pay')
+                            actioned += _('set payability to %s; ') % res[
+                                tax
+                            ].get('pay')
                         else:
                             actioned += _('reset payability; ')
                 if res[tax].get('axc'):
                     vals['assosoftware_id'] = assosoftware_model.search(
-                        [('code', '=', res[tax]['axc'])])[0].id
+                        [('code', '=', res[tax]['axc'])]
+                    )[0].id
                 elif 'axc' in res[tax]:
                     vals['assosoftware_id'] = False
-                if vals.get('assosoftware_id', False) != tax.assosoftware_id.id:
+                if (
+                    vals.get('assosoftware_id', False)
+                    != tax.assosoftware_id.id
+                ):
                     if vals.get('assosoftware_id'):
-                        actioned += _(
-                            'set ax code to %s; ') % res[tax].get('axc')
+                        actioned += _('set ax code to %s; ') % res[tax].get(
+                            'axc'
+                        )
                     else:
                         actioned += _('reset ax code; ')
                 if 'law' in res[tax]:
                     vals['law_reference'] = res[tax]['law']
                 if vals.get('law_reference', False) != tax.law_reference:
                     if vals.get('law_reference'):
-                        actioned += _(
-                            'set law reference to %s; ') % res[tax].get('law')
+                        actioned += _('set law reference to %s; ') % res[
+                            tax
+                        ].get('law')
                     else:
                         actioned += _('reset law reference; ')
                 tax.write(vals)

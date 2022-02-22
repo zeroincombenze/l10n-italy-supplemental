@@ -24,6 +24,11 @@ class AccountAccount(models.Model):
             for name in ('user_type_id', 'group_id'):
                 if not rec or getattr(rec, name) != getattr(tmpl, name):
                     vals[name] = getattr(tmpl, name).id
+            name = 'nature'
+            if hasattr(tmpl.user_type_id, name):
+                if not rec or getattr(rec, name) != getattr(tmpl.user_type_id,
+                                                            name):
+                    vals[name] = getattr(tmpl.user_type_id, name)
             return vals
 
         html = ''
@@ -40,8 +45,8 @@ class AccountAccount(models.Model):
         company = self.env.user.company_id
         for tmpl in template_model.search([]):
             acc = acc_model.search(
-                [('code', '=', tmpl.code),
-                 ('company_id', '=', company.id)])
+                [('code', '=', tmpl.code), ('company_id', '=', company.id)]
+            )
             actioned = ''
             if len(acc) == 1:
                 vals = get_tmpl_values(tmpl, rec=acc)

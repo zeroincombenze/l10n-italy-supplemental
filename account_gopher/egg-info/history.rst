@@ -1,3 +1,13 @@
+10.0.0.2.2 (2022-02-21)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Set account nature / Imposta natura conto
+
+10.0.0.2.1 (2022-02-08)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Company fiscal position / Posizione fiscale azienda
+
 10.0.0.2.0 (2022-02-07)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
