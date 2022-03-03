@@ -4,12 +4,12 @@
 {
     'name': "Import file Excel into invoice",
 
-    'summary': """Import invoice lines from Excel file""",
+    'summary': """Import invoice from Excel file""",
     'author': "SHS-AV s.r.l.",
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.0',
+    'version': '10.0.0.1.1',
 
     'depends': [
         'account',

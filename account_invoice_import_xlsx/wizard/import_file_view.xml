@@ -10,6 +10,9 @@
                         <field name="data_file" filename="filename"
                                placeholder="Choose a file to import..."/>
                         <field name="filename" invisible="1"/>
+                        <field name="journal_id"/>
+                        <field name="date_invoice"/>
+                        <field name="dry_run"/>
                 </group>
                 <footer>
                     <button string="Import" name="import_file_xlsx"
@@ -19,5 +22,35 @@
             </form>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="wizard_import_invoice_result">
+        <field name="name">Import Invoices</field>
+        <field name="model">wizard.import.invoice.file.xlsx</field>
+        <field name="arch" type="xml">
+            <form string="Result of Import invoices" >
+                <group>
+                    <field name="tracelog" readonly = "1"/>
+                </group>
+                <footer>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_import_account_invoice"
+        key2="client_action_multi"
+        name="Import Account Invoice"
+        res_model="wizard.import.invoice.file.xlsx"
+        view_mode="form"
+        target="new"
+        />
+
+    <menuitem id="menu_account_invoice_import"
+              name="Import Account Invoice"
+              action="action_import_account_invoice"
+              parent="account.menu_finance_configuration"
+              sequence="100"
+              />
 
 </odoo>

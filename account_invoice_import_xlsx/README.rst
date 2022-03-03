@@ -1,10 +1,10 @@
 
 =====================================================
-|icon| Import file Excel into invoice 12.0.10.0.0.1.0
+|icon| Import file Excel into invoice 12.0.10.0.0.1.1
 =====================================================
 
 
-**Import invoice lines from Excel file**
+**Import invoice from Excel file**
 
 .. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_invoice_import_xlsx/static/description/icon.png
 
@@ -237,7 +237,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2021-12-13
+Last Update / Ultimo aggiornamento: 2022-03-03
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
