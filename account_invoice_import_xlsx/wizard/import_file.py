@@ -116,7 +116,8 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('', 'td')
                 html += html_txt(self.partner_vals.get('name', ''), 'td')
                 html += html_txt(
-                    self.partner_vals.get(search_by.split(',')[0], ''), 'td')
+                    self.partner_vals.get(
+                        self.partner_vals.get('vat', ''), 'td'))
                 html += html_txt(mesg, 'td')
                 html += html_txt('', '/tr')
             return html
@@ -163,10 +164,10 @@ class WizardImportInvoiceFileXlsx(models.Model):
             if html_txt:
                 html += html_txt('', 'tr')
                 html += html_txt('%s' % self.numrow, 'td')
-                html += html_txt('', 'td')
-                html += html_txt(self.partner_vals.get('name', ''), 'td')
                 html += html_txt(
-                    self.partner_vals.get(search_by.split(',')[0], ''), 'td')
+                    self.product_vals.get('default_code', ''), 'td')
+                html += html_txt(self.product_vals.get('name', ''), 'td')
+                html += html_txt('', 'td')
                 html += html_txt(_('Found multiple records.'), 'td')
                 html += html_txt('', '/tr')
             return html
@@ -383,7 +384,6 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('', 'td')
                 html += html_txt(vals.get('move_name', ''), 'td')
                 html += html_txt('', 'td')
-                html += html_txt('', 'td')
                 html += html_txt(_('Invoice will be created.'), 'td')
                 html += html_txt('', '/tr')
             return True, html
@@ -398,7 +398,6 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('%s' % self.numrow, 'td')
                 html += html_txt('', 'td')
                 html += html_txt(vals.get('name', ''), 'td')
-                html += html_txt('', 'td')
                 html += html_txt('', 'td')
                 html += html_txt(_('Line will be created.'), 'td')
                 html += html_txt('', '/tr')
