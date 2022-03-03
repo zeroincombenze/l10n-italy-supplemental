@@ -116,8 +116,8 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('', 'td')
                 html += html_txt(self.partner_vals.get('name', ''), 'td')
                 html += html_txt(
-                    self.partner_vals.get(
-                        self.partner_vals.get('vat', ''), 'td'))
+                    self.partner_vals.get(self.partner_vals.get('vat', '')),
+                    'td')
                 html += html_txt(mesg, 'td')
                 html += html_txt('', '/tr')
             return html
