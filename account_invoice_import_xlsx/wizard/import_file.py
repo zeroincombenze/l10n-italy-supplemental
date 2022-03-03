@@ -467,12 +467,12 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html = self.unpack_partner()
                 tracelog += html
                 if self.header_exits():
-                    if invoice:
+                    if invoice and invoice is not True:
                         invoice.compute_taxes()
                     invoice, html = self.create_invoice(
                         self.invoice_vals, html_txt=self.html_txt)
                     tracelog += html
-                if invoice and invoice != True:
+                if invoice and invoice is not True:
                     self.line_vals['invoice_id'] = invoice.id
                     if not self.line_vals.get('account_id'):
                         self.line_vals['account_id'] = (
