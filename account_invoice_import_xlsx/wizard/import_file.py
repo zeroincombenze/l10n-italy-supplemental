@@ -483,7 +483,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
                     html = self.create_invoice_line(
                         self.line_vals, html_txt=self.html_txt)
                     tracelog += html
-            if invoice:
+            if invoice and invoice is not True:
                 invoice.compute_taxes()
         tracelog += self.html_txt('', '/table')
         self.tracelog = tracelog
