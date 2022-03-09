@@ -406,3 +406,76 @@ class AccountTax(models.Model):
         if html_txt:
             html += html_txt('', '/table')
         return html
+
+
+    def gopher_reload_taxes(self, html_txt=None):
+        """Reaload tax records from account.tax.template"""
+
+        def get_tmpl_values(tmpl, rec=None):
+            vals = {}
+            for name in ('description',
+                         'name',
+                         'amount_type',
+                         'type_tax_use'):
+                if not rec or getattr(rec, name) != getattr(tmpl, name):
+                    vals[name] = getattr(tmpl, name)
+            for name in ('tax_group_id', ):
+                if not rec or (getattr(tmpl, name) and
+                               getattr(rec, name) != getattr(tmpl, name)):
+                    vals[name] = getattr(tmpl, name).id
+            for name in ('account_id', 'refund_account_id'):
+                if getattr(tmpl, name) and (
+                        (not rec or not getattr(rec, name)) or (
+                        getattr(rec, name).code != getattr(tmpl, name).code)):
+                    code = getattr(tmpl, name).code
+                    acc = self.env['account.account'].search(
+                        [('code', '=', code),
+                         ('company_id', '=', self.env.user.company_id.id)]
+                    )
+                    vals[name] = acc.id
+            return vals
+
+        html = ''
+        if html_txt:
+            html += html_txt(_('Reload Taxes'), 'h3')
+            html += html_txt('', 'table')
+            html += html_txt('', 'tr')
+            html += html_txt(_('Code'), 'td')
+            html += html_txt(_('Name'), 'td')
+            html += html_txt(_('Action'), 'td')
+            html += html_txt('', '/tr')
+        template_model = self.env['account.tax.template']
+        tax_model = self.env['account.tax']
+        company = self.env.user.company_id
+        for tmpl in template_model.search([]):
+            tax = tax_model.search(
+                [('description', '=', tmpl.description),
+                 ('company_id', '=', company.id)]
+            )
+            actioned = ''
+            if len(tax) == 1:
+                vals = get_tmpl_values(tmpl, rec=tax)
+                if vals:
+                    try:
+                        tax[0].write(vals)
+                        actioned = _('Updated')
+                    except BaseException as e:
+                        self._cr.rollback()  # pylint: disable=invalid-commit
+                        actioned = '** %s **' % e
+            elif not tax:
+                try:
+                    tax_model.create(get_tmpl_values(tmpl))
+                    actioned = _('New record created')
+                except BaseException as e:
+                    self._cr.rollback()  # pylint: disable=invalid-commit
+                    actioned = '** %s **' % e
+            if html_txt and actioned:
+                html += html_txt('', 'tr')
+                html += html_txt(tmpl.description, 'td')
+                html += html_txt(tmpl.name, 'td')
+                html += html_txt(actioned, 'td')
+                html += html_txt('', '/tr')
+        if html_txt:
+            html += html_txt('', '/table')
+        self._cr.commit()  # pylint: disable=invalid-commit
+        return html
