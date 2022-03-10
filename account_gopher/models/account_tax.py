@@ -428,7 +428,10 @@ class AccountTax(models.Model):
                 if not rec or (getattr(tmpl, name) and
                                getattr(rec, name) != getattr(tmpl, name)):
                     vals[name] = getattr(tmpl, name).id
-            for name in ('account_id', 'refund_account_id'):
+            for name in (
+                'account_id',
+                'refund_account_id',
+            ):
                 if getattr(tmpl, name) and (
                         (not rec or not getattr(rec, name)) or (
                         getattr(rec, name).code != getattr(tmpl, name).code)):
