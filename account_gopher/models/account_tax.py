@@ -248,6 +248,43 @@ class AccountTax(models.Model):
                 'des': tax,
                 'nme': tax.name,
             }
+            actioned = ''
+            for name in ('account_id', 'refund_account_id'):
+                if (getattr(tax, name) and
+                        getattr(tax, name).company_id.id != cur_company_id):
+                    actioned = 'Invalid account company'
+                    account_id = self.env['account.account'].search(
+                        [('company_id', '=', cur_company_id),
+                         ('code', '=', tax.account_id.code)]
+                    )
+                    if account_id:
+                        setattr(tax, name, account_id[0])
+                    else:
+                        setattr(tax, name, False)
+            if actioned and html_txt:
+                html += html_txt('', 'tr')
+                html += html_txt(tax.description, 'td')
+                html += html_txt(tax.name, 'td')
+                html += html_txt(actioned, 'td')
+                html += html_txt('', '/tr')
+            actioned = ''
+            name = 'rc_sale_tax_id'
+            if hasattr(tax, name) and getattr(tax, name) and tax.rc_type:
+                if getattr(tax, name) == 'self':
+                    if not tax.rc_sale_tax_id:
+                        actioned = 'Missed sale tax'
+                    else:
+                        tax_sell = tax.rc_sale_tax_id
+                        if tax.amount != tax_sell.amount:
+                            actioned = 'Purchase and sale different tax rates'
+                        elif tax.company_id != tax_sell.amount.company_id:
+                            actioned = 'Invalid account company for sale tax'
+                if actioned and html_txt:
+                    html += html_txt('', 'tr')
+                    html += html_txt(tax.description, 'td')
+                    html += html_txt(tax.name, 'td')
+                    html += html_txt(actioned, 'td')
+                    html += html_txt('', '/tr')
             for assosoftware in ASSOCODES.keys():
                 if search_4_tokens(
                     tax.name,
@@ -400,6 +437,10 @@ class AccountTax(models.Model):
                     else:
                         actioned += _('reset law reference; ')
                 tax.write(vals)
+                if hasattr(tax, '_onchange_nature'):
+                    tax._onchange_nature()
+                elif hasattr(tax, '_default_rc_type'):
+                    tax.rc_type = tax._default_rc_type()
             if html_txt:
                 html += html_txt('', 'tr')
                 html += html_txt(tax.description, 'td')

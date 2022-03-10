@@ -8,6 +8,7 @@
             <form string="Account Configuration Assistant">
                 <group>
                     <field name="fiscal_position_id"/>
+                    <field name="check_4_tax"/>
                     <field name="reload_from_coa"/>
                 </group>
                 <footer>

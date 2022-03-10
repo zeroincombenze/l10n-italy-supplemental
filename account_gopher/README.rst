@@ -1,6 +1,6 @@
 
 ===================================
-|icon| Account Assistant 12.0.0.2.4
+|icon| Account Assistant 12.0.0.2.5
 ===================================
 
 
@@ -151,6 +151,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
+
+12.0.0.2.5 (2022-0310)
+~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] New checks
 
 12.0.0.2.4 (2022-03-09)
 ~~~~~~~~~~~~~~~~~~~~~~~

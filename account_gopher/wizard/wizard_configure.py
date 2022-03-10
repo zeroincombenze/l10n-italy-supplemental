@@ -7,7 +7,6 @@
 #
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
-
 from odoo import api, fields, models, _
 
 
@@ -28,6 +27,9 @@ class GopherConfigureWizard(models.TransientModel):
         required=True,
         help="Fiscal position used by electronic invoice",
     )
+    check_4_tax = fields.Boolean(
+        'Check for tax configuration',
+        default=True)
     reload_from_coa = fields.Selection(
         [
             ('tax', 'Tax codes'),
@@ -61,8 +63,11 @@ class GopherConfigureWizard(models.TransientModel):
     @api.multi
     def account_wizard(self):
         tracelog = self.html_txt(_('Result'), 'h2')
-        if self.env.user.company_id.fatturapa_fiscal_position_id != self.fiscal_position_id:
-            self.env.user.company_id.fatturapa_fiscal_position_id = self.fiscal_position_id
+        if (self.env.user.company_id.fatturapa_fiscal_position_id
+                !=
+                self.fiscal_position_id):
+            self.env.user.company_id.fatturapa_fiscal_position_id = (
+                self.fiscal_position_id)
             tracelog += self.html_txt(
                 'Set fiscal position %s' % self.fiscal_position_id.code,
                 'div')
@@ -74,9 +79,10 @@ class GopherConfigureWizard(models.TransientModel):
             tracelog += self.env['account.tax'].gopher_reload_taxes(
                 html_txt=self.html_txt
             )
-        tracelog += self.env['account.tax'].gopher_configure_tax(
-            html_txt=self.html_txt
-        )
+        if self.check_4_tax:
+            tracelog += self.env['account.tax'].gopher_configure_tax(
+                html_txt=self.html_txt
+            )
         self.tracelog = tracelog
         return {
             'name': 'Configuration result',

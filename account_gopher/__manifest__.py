@@ -9,7 +9,7 @@
 #
 {
     'name': 'Account Assistant',
-    'version': '12.0.0.2.4',
+    'version': '12.0.0.2.5',
     'category': 'Localization/Italy',
     'summary': 'Configure account records',
     'author': 'SHS-AV s.r.l.',
