@@ -420,10 +420,11 @@ class AccountTax(models.Model):
                          'amount_type',
                          'type_tax_use',
                          'amount',
-                         'sequence'):
+                         'sequence',
+                         'price_include'):
                 if not rec or getattr(rec, name) != getattr(tmpl, name):
                     vals[name] = getattr(tmpl, name)
-            for name in ('tax_group_id', ):
+            for name in ('tax_group_id',):
                 if not rec or (getattr(tmpl, name) and
                                getattr(rec, name) != getattr(tmpl, name)):
                     vals[name] = getattr(tmpl, name).id
@@ -432,11 +433,16 @@ class AccountTax(models.Model):
                         (not rec or not getattr(rec, name)) or (
                         getattr(rec, name).code != getattr(tmpl, name).code)):
                     code = getattr(tmpl, name).code
-                    acc = self.env['account.account'].search(
-                        [('code', '=', code),
-                         ('company_id', '=', company_id)]
-                    )
-                    vals[name] = acc.id
+                acc = self.env['account.account'].search(
+                    [
+                        ('code', '=', getattr(tmpl, name).code),
+                        ('company_id', '=', company.id),
+                    ]
+                )
+                if len(acc) == 1 and (
+                    not rec or getattr(rec, name).id != acc[0].id
+                ):
+                    vals[name] = acc[0].id
             return vals
 
         html = ''
