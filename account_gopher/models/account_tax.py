@@ -8,7 +8,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
 import re
-
+from python_plus import _u
 from odoo import models, fields, _
 
 # Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind" 
@@ -407,16 +407,20 @@ class AccountTax(models.Model):
             html += html_txt('', '/table')
         return html
 
-
     def gopher_reload_taxes(self, html_txt=None):
         """Reaload tax records from account.tax.template"""
 
         def get_tmpl_values(tmpl, rec=None):
+            company_id = self.env.user.company_id.id
             vals = {}
+            if not rec:
+                vals['company_id'] = company_id
             for name in ('description',
                          'name',
                          'amount_type',
-                         'type_tax_use'):
+                         'type_tax_use',
+                         'amount',
+                         'sequence'):
                 if not rec or getattr(rec, name) != getattr(tmpl, name):
                     vals[name] = getattr(tmpl, name)
             for name in ('tax_group_id', ):
@@ -430,7 +434,7 @@ class AccountTax(models.Model):
                     code = getattr(tmpl, name).code
                     acc = self.env['account.account'].search(
                         [('code', '=', code),
-                         ('company_id', '=', self.env.user.company_id.id)]
+                         ('company_id', '=', company_id)]
                     )
                     vals[name] = acc.id
             return vals
@@ -444,13 +448,18 @@ class AccountTax(models.Model):
             html += html_txt(_('Name'), 'td')
             html += html_txt(_('Action'), 'td')
             html += html_txt('', '/tr')
+
         template_model = self.env['account.tax.template']
         tax_model = self.env['account.tax']
         company = self.env.user.company_id
-        for tmpl in template_model.search([]):
+        chart_template_id = company.chart_template_id
+        for tmpl in template_model.search(
+                [('chart_template_id', '=', chart_template_id.id)],
+                order='sequence'):
             tax = tax_model.search(
-                [('description', '=', tmpl.description),
-                 ('company_id', '=', company.id)]
+                [
+                    ('description', '=', tmpl.description),
+                    ('company_id', '=', company.id)]
             )
             actioned = ''
             if len(tax) == 1:
@@ -459,16 +468,18 @@ class AccountTax(models.Model):
                     try:
                         tax[0].write(vals)
                         actioned = _('Updated')
+                        self._cr.commit()  # pylint: disable=invalid-commit
                     except BaseException as e:
                         self._cr.rollback()  # pylint: disable=invalid-commit
-                        actioned = '** %s **' % e
+                        actioned = _u('** %s **' % e)
             elif not tax:
                 try:
                     tax_model.create(get_tmpl_values(tmpl))
                     actioned = _('New record created')
+                    self._cr.commit()  # pylint: disable=invalid-commit
                 except BaseException as e:
                     self._cr.rollback()  # pylint: disable=invalid-commit
-                    actioned = '** %s **' % e
+                    actioned = _u('** %s **' % e)
             if html_txt and actioned:
                 html += html_txt('', 'tr')
                 html += html_txt(tmpl.description, 'td')
@@ -477,5 +488,4 @@ class AccountTax(models.Model):
                 html += html_txt('', '/tr')
         if html_txt:
             html += html_txt('', '/table')
-        self._cr.commit()  # pylint: disable=invalid-commit
         return html
