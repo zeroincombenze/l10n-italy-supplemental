@@ -8,7 +8,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
 import re
-
+from python_plus import _u
 from odoo import models, fields, _
 
 # Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind"
@@ -141,88 +141,6 @@ class AccountTax(models.Model):
         string='Assosoftware Code',
         help='Tax Assosoftware classification',
     )
-
-    def gopher_reload_taxes(self, html_txt=None):
-        """Reaload tax records from account.tax.template"""
-
-        def get_tmpl_values(tmpl, rec=None):
-            vals = {}
-            for name in (
-                'description',
-                'name',
-                'type_tax_use',
-                'sequence',
-                'amount_type',
-                'amount',
-                'price_include',
-            ):
-                if not rec or getattr(rec, name) != getattr(tmpl, name):
-                    vals[name] = getattr(tmpl, name)
-            for name in ('tax_group_id',):
-                if not rec or getattr(rec, name) != getattr(tmpl, name):
-                    vals[name] = getattr(tmpl, name).id
-            for name in (
-                'account_id',
-                'refund_account_id',
-            ):
-                acc = self.env['account.account'].search(
-                    [
-                        ('code', '=', getattr(tmpl, name).code),
-                        ('company_id', '=', company.id),
-                    ]
-                )
-                if len(acc) == 1 and (
-                    not rec or getattr(rec, name).id != acc[0].id
-                ):
-                    vals[name] = acc[0].id
-            return vals
-
-        html = ''
-        if html_txt:
-            html += html_txt(_('Reload Taxes'), 'h3')
-            html += html_txt('', 'table')
-            html += html_txt('', 'tr')
-            html += html_txt(_('Code'), 'td')
-            html += html_txt(_('Name'), 'td')
-            html += html_txt(_('Action'), 'td')
-            html += html_txt('', '/tr')
-        template_model = self.env['account.tax.template']
-        tax_model = self.env['account.tax']
-        company = self.env.user.company_id
-        for tmpl in template_model.search([]):
-            tax = tax_model.search(
-                [
-                    ('description', '=', tmpl.description),
-                    ('company_id', '=', company.id),
-                ]
-            )
-            actioned = ''
-            if len(tax) == 1:
-                vals = get_tmpl_values(tmpl, rec=tax)
-                if vals:
-                    try:
-                        tax.write(vals)
-                        actioned = _('Updated')
-                    except BaseException as e:
-                        self._cr.rollback()  # pylint: disable=invalid-commit
-                        actioned = '** %s **' % e
-            elif not tax:
-                try:
-                    tax_model.create(get_tmpl_values(tmpl))
-                    actioned = _('New record created')
-                except BaseException as e:
-                    self._cr.rollback()  # pylint: disable=invalid-commit
-                    actioned = '** %s **' % e
-            if html_txt and actioned:
-                html += html_txt('', 'tr')
-                html += html_txt(tmpl.description, 'td')
-                html += html_txt(tmpl.name, 'td')
-                html += html_txt(actioned, 'td')
-                html += html_txt('', '/tr')
-        if html_txt:
-            html += html_txt('', '/table')
-        self._cr.commit()  # pylint: disable=invalid-commit
-        return html
 
     def gopher_configure_tax(self, html_txt=None):
         """Set default values"""
@@ -490,6 +408,98 @@ class AccountTax(models.Model):
                     html += html_txt(actioned, 'td')
                 else:
                     html += html_txt(_('No action'), 'td')
+                html += html_txt('', '/tr')
+        if html_txt:
+            html += html_txt('', '/table')
+        return html
+
+    def gopher_reload_taxes(self, html_txt=None):
+        """Reaload tax records from account.tax.template"""
+
+        def get_tmpl_values(tmpl, rec=None):
+            company_id = self.env.user.company_id.id
+            vals = {}
+            if not rec:
+                vals['company_id'] = company_id
+            for name in ('description',
+                         'name',
+                         'amount_type',
+                         'type_tax_use',
+                         'amount',
+                         'sequence',
+                         'price_include'):
+                if not rec or getattr(rec, name) != getattr(tmpl, name):
+                    vals[name] = getattr(tmpl, name)
+            for name in ('tax_group_id',):
+                if not rec or (getattr(tmpl, name) and
+                               getattr(rec, name) != getattr(tmpl, name)):
+                    vals[name] = getattr(tmpl, name).id
+            for name in (
+                'account_id',
+                'refund_account_id',
+            ):
+                if getattr(tmpl, name) and (
+                        (not rec or not getattr(rec, name)) or (
+                        getattr(rec, name).code != getattr(tmpl, name).code)):
+                    code = getattr(tmpl, name).code
+                acc = self.env['account.account'].search(
+                    [
+                        ('code', '=', getattr(tmpl, name).code),
+                        ('company_id', '=', company.id),
+                    ]
+                )
+                if len(acc) == 1 and (
+                    not rec or getattr(rec, name).id != acc[0].id
+                ):
+                    vals[name] = acc[0].id
+            return vals
+
+        html = ''
+        if html_txt:
+            html += html_txt(_('Reload Taxes'), 'h3')
+            html += html_txt('', 'table')
+            html += html_txt('', 'tr')
+            html += html_txt(_('Code'), 'td')
+            html += html_txt(_('Name'), 'td')
+            html += html_txt(_('Action'), 'td')
+            html += html_txt('', '/tr')
+
+        template_model = self.env['account.tax.template']
+        tax_model = self.env['account.tax']
+        company = self.env.user.company_id
+        chart_template_id = company.chart_template_id
+        for tmpl in template_model.search(
+                [('chart_template_id', '=', chart_template_id.id)],
+                order='sequence'):
+            tax = tax_model.search(
+                [
+                    ('description', '=', tmpl.description),
+                    ('company_id', '=', company.id)]
+            )
+            actioned = ''
+            if len(tax) == 1:
+                vals = get_tmpl_values(tmpl, rec=tax)
+                if vals:
+                    try:
+                        tax[0].write(vals)
+                        actioned = _('Updated')
+                        self._cr.commit()  # pylint: disable=invalid-commit
+                    except BaseException as e:
+                        self._cr.rollback()  # pylint: disable=invalid-commit
+                        actioned = _u('** %s **' % e)
+            elif not tax:
+                try:
+                    tax_model.create(get_tmpl_values(tmpl))
+                    actioned = _('New record created')
+                    self._cr.commit()  # pylint: disable=invalid-commit
+                except BaseException as e:
+                    self._cr.rollback()  # pylint: disable=invalid-commit
+                    actioned = _u('** %s **' % e)
+            if html_txt and actioned:
+                html += html_txt('', 'tr')
+                html += html_txt(tmpl.description, 'td')
+                html += html_txt(tmpl.name, 'td')
+                html += html_txt(actioned, 'td')
                 html += html_txt('', '/tr')
         if html_txt:
             html += html_txt('', '/table')

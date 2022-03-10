@@ -14,7 +14,7 @@ class AccountAccount(models.Model):
     _inherit = 'account.account'
 
     def gopher_reload_coa(self, html_txt=None):
-        """Reaload account records from account.tax.template"""
+        """Reaload account records from account.account.template"""
 
         def get_tmpl_values(tmpl, rec=None):
             vals = {}
