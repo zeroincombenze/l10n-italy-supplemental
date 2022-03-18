@@ -61,8 +61,7 @@ class WizardImportAccountOpening(models.Model):
     def get_data(self):
         contents = []
         wb = load_workbook(BytesIO(base64.b64decode(self.data_file)))
-        for sheet in wb:
-            break
+        sheet = wb.active
         colnames = []
         for column in sheet.columns:
             colnames.append(column[0].value)
@@ -100,6 +99,7 @@ class WizardImportAccountOpening(models.Model):
 
         def get_partner(partner_domain, vals, html, disable_err=None):
             partner_domain.append(('type', '=', 'contact'))
+            partner_domain.append(('parent_id', '=', False))
             stext = ''
             if vals.get('name'):
                 for ch in vals['name']:
@@ -128,7 +128,7 @@ class WizardImportAccountOpening(models.Model):
                         html += html_txt('', '/tr')
                 vals['partner_id'] = recs[0].id
                 if acc_domain:
-                    vals = get_account_code(acc_domain, vals, html)
+                    vals, html = get_account_code(acc_domain, vals, html)
                 elif acc_field:
                     vals['account_id'] = getattr(recs[0], acc_field).id
             elif not disable_err:

@@ -1,3 +1,8 @@
+12.0.0.1.8 (2022-03-17)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Search for only parent partner / Ricerca solo contatti padre
+
 12.0.0.1.7 (2022-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

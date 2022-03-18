@@ -1,6 +1,6 @@
 
 ========================================
-|icon| Import account opening 12.0.0.1.7
+|icon| Import account opening 12.0.0.1.8
 ========================================
 
 
@@ -211,6 +211,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+12.0.0.1.8 (2022-03-17)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Search for only parent partner / Ricerca solo contatti padre
+
 12.0.0.1.7 (2022-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -243,6 +248,7 @@ ChangeLog History / Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Draft code / Bozza iniziale
+
 
 
 |
@@ -301,7 +307,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-02-04
+Last Update / Ultimo aggiornamento: 2022-03-18
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
