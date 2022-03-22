@@ -9,4 +9,5 @@
 #
 from . import account_tax
 from . import account_account
+from . import account_fiscal_position
 from . import italy_ade_tax_assosoftware
