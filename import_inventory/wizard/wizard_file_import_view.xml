@@ -39,13 +39,13 @@
         </field>
     </record>
 
-    <act_window id="action_import_inventory"
-        key2="client_action_multi"
-        name="Import Inventory"
-        res_model="wizard.import.inventory"
-        view_mode="form"
-        target="new"
-    />
+    <record id="action_import_inventory" model="ir.actions.act_window">
+        <field name="key2">client_action_multi</field>
+        <field name="name">Import Inventory</field>
+        <field name="res_model">wizard.import.inventory</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
 
     <menuitem id="menu_inventory_import"
               name="Import Inventory"
