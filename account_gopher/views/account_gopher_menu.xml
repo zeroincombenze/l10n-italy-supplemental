@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <act_window id="action_account_wizard"
-        key2="client_action_multi"
-        name="Account Configuration Assistant"
-        res_model="gopher.configure.wizard"
-        view_mode="form"
-        target="new"
-        />
+    <record id="action_account_wizard" model="ir.actions.act_window">
+        <field name="key2">client_action_multi</field>
+        <field name="name">Account Configuration Assistant</field>
+        <field name="res_model">gopher.configure.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
 
     <menuitem id="account_gopher" name="Account Configuration Assistant"
               action="action_account_wizard"

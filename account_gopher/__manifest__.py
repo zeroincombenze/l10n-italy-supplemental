@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -9,7 +8,7 @@
 #
 {
     'name': 'Account Assistant',
-    'version': '12.0.0.2.5',
+    'version': "14.0.1.0.0",
     'category': 'Localization/Italy',
     'summary': 'Configure account records',
     'author': 'SHS-AV s.r.l.',

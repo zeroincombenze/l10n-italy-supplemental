@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -40,7 +39,6 @@ class GopherConfigureWizard(models.TransientModel):
     )
     tracelog = fields.Html('Result History')
 
-    @api.multi
     def html_txt(self, text, tag):
         if tag:
             if tag in ('table', '/table', 'tr', '/tr'):
@@ -60,7 +58,6 @@ class GopherConfigureWizard(models.TransientModel):
             html = text
         return html
 
-    @api.multi
     def account_wizard(self):
         tracelog = self.html_txt(_('Result'), 'h2')
         if (self.env.user.company_id.fatturapa_fiscal_position_id

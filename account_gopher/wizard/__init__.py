@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
