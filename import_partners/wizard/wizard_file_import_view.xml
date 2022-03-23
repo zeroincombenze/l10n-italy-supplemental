@@ -46,13 +46,13 @@
         </field>
     </record>
 
-    <act_window id="action_import_partners"
-        key2="client_action_multi"
-        name="Import Account Opening"
-        res_model="wizard.import.partners"
-        view_mode="form"
-        target="new"
-    />
+    <record id="action_import_partners" model="ir.actions.act_window">
+        <field name="key2">client_action_multi</field>
+        <field name="name">Import Account Opening</field>
+        <field name="res_model">wizard.import.partners</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
 
     <menuitem id="menu_import_partners"
               name="Import Partners"
