@@ -38,7 +38,6 @@ class WizardImportAccountOpening(models.Model):
     dry_run = fields.Boolean(string='Dry-run', default=False)
     tracelog = fields.Html('Result History')
 
-    @api.multi
     def html_txt(self, text, tag):
         if tag:
             if tag in ('table', '/table', 'tr', '/tr'):
@@ -197,7 +196,6 @@ class WizardImportAccountOpening(models.Model):
             vals = {}
         return vals, html
 
-    @api.multi
     def import_xls(self):
         model = 'account.move'
         company_id = self.env.user.company_id.id
