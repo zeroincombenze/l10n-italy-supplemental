@@ -242,6 +242,25 @@ class AccountTax(models.Model):
                 'des': tax,
                 'nme': tax.name,
             }
+            actioned = ''
+            for name in ('account_id', 'refund_account_id'):
+                if (getattr(tax, name) and
+                        getattr(tax, name).company_id.id != cur_company_id):
+                    actioned = 'Invalid account company'
+                    account_id = self.env['account.account'].search(
+                        [('company_id', '=', cur_company_id),
+                         ('code', '=', tax.account_id.code)]
+                    )
+                    if account_id:
+                        setattr(tax, name, account_id[0])
+                    else:
+                        setattr(tax, name, False)
+            if actioned and html_txt:
+                html += html_txt('', 'tr')
+                html += html_txt(tax.description, 'td')
+                html += html_txt(tax.name, 'td')
+                html += html_txt(actioned, 'td')
+                html += html_txt('', '/tr')
             for assosoftware in ASSOCODES.keys():
                 if search_4_tokens(
                     tax.name,
@@ -394,6 +413,10 @@ class AccountTax(models.Model):
                     else:
                         actioned += _('reset law reference; ')
                 tax.write(vals)
+                if hasattr(tax, '_onchange_nature'):
+                    tax._onchange_nature()
+                elif hasattr(tax, '_default_rc_type'):
+                    tax.rc_type = tax._default_rc_type()
             if html_txt:
                 html += html_txt('', 'tr')
                 html += html_txt(tax.description, 'td')
