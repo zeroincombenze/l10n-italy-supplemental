@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -8,10 +7,11 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
 import re
-from python_plus import _u
-from odoo import models, fields, _
 
-# Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind" 
+from odoo import _, models
+from python_plus import _u
+
+# Zeroincombenze use "italy.ade.tax.nature", OCA "account.tax.kind"
 # NATURE_MODEL = 'account.tax.kind'
 # NATURE_ID = 'kind_id'
 NATURE_MODEL = 'italy.ade.tax.nature'
@@ -458,7 +458,7 @@ class AccountTax(models.Model):
                 if getattr(tmpl, name) and (
                         (not rec or not getattr(rec, name)) or (
                         getattr(rec, name).code != getattr(tmpl, name).code)):
-                    code = getattr(tmpl, name).code
+                    getattr(tmpl, name).code
                 acc = self.env['account.account'].search(
                     [
                         ('code', '=', getattr(tmpl, name).code),
