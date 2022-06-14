@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # © 2021-2022 SHS-AV srl (www.shs-av.com)
 
+from past.builtins import basestring
 import base64
 from io import BytesIO
 from openpyxl import load_workbook
 from unidecode import unidecode
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+# from odoo.exceptions import UserError
 
 TNL = {
     'Denominazione Cliente': 'partner_id',
@@ -68,6 +69,18 @@ class WizardImportInvoiceFileXlsx(models.Model):
             html = text
         return html
 
+    def get_dim_text(self, name):
+        stext = ''
+        for ch in name:
+            if ch.isalpha():
+                if unidecode(ch) != ch:
+                    stext += '_'
+                else:
+                    stext += ch
+            elif not stext.endswith('%'):
+                stext += '%'
+        return stext
+
     def get_iso_date(self, date):
         if isinstance(date, basestring):
             sep = False
@@ -91,8 +104,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
     def get_data(self):
         contents = []
         wb = load_workbook(BytesIO(base64.b64decode(self.data_file)))
-        for sheet in wb:
-            break
+        sheet = wb.active
         colnames = []
         for column in sheet.columns:
             colnames.append(column[0].value)
@@ -174,19 +186,10 @@ class WizardImportInvoiceFileXlsx(models.Model):
 
         html = ''
         product_model = self.env['product.product']
-        search_by = search_by or self.product_search_by or 'default_code'
 
+        stext = self.get_dim_text(self.line_vals.get('name'))
+        search_by = search_by or self.product_search_by or 'default_code'
         domain = [x for x in self.product_domain]
-        stext = ''
-        if self.line_vals.get('name'):
-            for ch in self.line_vals['name']:
-                if ch.isalpha():
-                    if unidecode(ch) != ch:
-                        stext += '_'
-                    else:
-                        stext += ch
-                elif not stext.endswith('%'):
-                    stext += '%'
         domain.append((search_by, '=', self.product_vals[search_by]))
         if stext:
             domain.append(('name', 'ilike', stext))
@@ -307,6 +310,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
         return html
 
     def unpack_product(self):
+        product = False
         html = ''
         if self.sequence or self.sequence is None:
             if (not self.line_vals.get('product_id') and
@@ -319,7 +323,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
                     if product:
                         self.line_vals['product_id'] = product.id
                         break
-        return html
+        return product, html
 
     def header_exits(self):
         return self.partner_search_by and 'partner_id' in self.invoice_vals
@@ -330,49 +334,15 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 self.line_vals['quantity'] and
                 self.line_vals['price_unit'])
 
-    def prepare_line_data(self, invoice, row, html, html_txt=None):
-        product_domain = []
-        vals = {
-            'uom_id': self.env.ref('product.product_uom_unit').id,
-            'price_unit': 0.0,
-        }
-        if not self.dry_run:
-            vals['invoice_id'] = invoice.id
-            vals['account_id'] = invoice.journal_id.default_debit_account_id.id
-        search_by = []
-        line_subtotal = 0.0
-        for field in row.keys():
-            name = TNL.get(field, field)
-            if name == 'default_code':
-                if row[field]:
-                    product_domain.append(('default_code', '=', row[field]))
-                    search_by.insert(0, name)
-            elif name == 'quantity':
-                vals[name] = row[field] or 0.0
-            elif name == 'name':
-                vals[name] = row[field] or ''
-            elif (name == 'price_subtotal' and
-                  not vals.get('quantity') and
-                  not vals.get('price_unit')):
-                vals['price_unit'] = row[field] or 0.0
-                vals['quantity'] = 1
-                line_subtotal = vals['price_unit']
-            elif name == 'price_tax' and line_subtotal:
-                rate = round(row[field] * 100 / line_subtotal, 0)
-                if rate in (4, 5, 10, 22):
-                    vals['invoice_line_tax_ids'] = []
-
-        if search_by:
-            recs = self.env['product.product'].search(product_domain)
-            if len(recs) == 1:
-                product = recs[0]
-                vals['product_id'] = recs[0].id
-                vals['uom_id'] = recs[0].uom_id.id
-                vals['account_id'] = self.env[
-                    'account.invoice.line'].get_invoice_line_account(
-                    invoice.type, product, invoice.fiscal_position_id,
-                    invoice.company_id).id
-        return vals
+    def prepare_line_data(self, invoice):
+        self.line_vals['invoice_id'] = invoice.id
+        self.line_vals['account_id'] = invoice.journal_id.default_debit_account_id.id
+        if self.product:
+            self.line_vals["default_code"] = self.product.default_code
+            self.line_vals['account_id'] = self.env[
+                'account.invoice.line'].get_invoice_line_account(
+                invoice.type, self.product, invoice.fiscal_position_id,
+                invoice.company_id).id
 
     def create_invoice(self, vals, html_txt=None):
         html = ''
@@ -403,10 +373,10 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('', '/tr')
             return html
         line = line_model.create(vals)
-        # line._onchange_product_id()
-        # line._compute_price()
-        # line._set_taxes()
-        # line.write({})
+        line._onchange_product_id()
+        line._compute_price()
+        line._set_taxes()
+        line.write({})
         return html
 
     def store_tax_ids(self):
@@ -452,12 +422,17 @@ class WizardImportInvoiceFileXlsx(models.Model):
             for invoice in inv_model.browse(
                     self.env.context['active_ids']):
                 if invoice.company_id != self.company:
-                    self.company = invoice.company
+                    self.company = invoice.company_id
                     self.store_tax_ids()
                 for row in datas:
                     self.numrow += 1
                     self.unpack_data(row)
-                    html = self.create_inv_line(invoice, row)
+                    self.product, html = self.unpack_product()
+                    tracelog += html
+                    self.prepare_line_data(invoice)
+                    html = self.create_invoice_line(
+                        self.line_vals, html_txt=self.html_txt)
+                    tracelog += html
         else:
             invoice = False
             for row in datas:
@@ -476,9 +451,10 @@ class WizardImportInvoiceFileXlsx(models.Model):
                     if not self.line_vals.get('account_id'):
                         self.line_vals['account_id'] = (
                             invoice.journal_id.default_debit_account_id.id)
-                html = self.unpack_product()
+                self.product, html = self.unpack_product()
                 tracelog += html
                 if invoice and self.line_exits():
+                    self.prepare_line_data(invoice)
                     html = self.create_invoice_line(
                         self.line_vals, html_txt=self.html_txt)
                     tracelog += html

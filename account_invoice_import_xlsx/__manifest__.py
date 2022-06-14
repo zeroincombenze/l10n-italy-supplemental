@@ -9,7 +9,7 @@
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.1',
+    'version': '10.0.0.1.2',
 
     'depends': [
         'account',
