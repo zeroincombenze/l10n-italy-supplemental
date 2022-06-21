@@ -15,7 +15,7 @@ from python_plus import _u
 # NATURE_MODEL = 'account.tax.kind'
 # NATURE_ID = 'kind_id'
 NATURE_MODEL = 'italy.ade.tax.nature'
-NATURE_ID = 'nature_id'
+NATURE_ID = 'kind_id'
 
 # Nature(text), law number(number), law supplemental(text), \
 # law section(number), law letter(text), law ref (text)
