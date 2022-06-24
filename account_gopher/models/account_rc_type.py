@@ -108,8 +108,8 @@ class AccountRCTypeTax(models.Model):
                     actioned = _u("** %s **" % e)
                 if html_txt and actioned:
                     html += html_txt("", "tr")
-                    html += html_txt(vals["name"], "td")
-                    html += html_txt(vals["description"], "td")
+                    html += html_txt(rc_type.name, "td")
+                    html += html_txt(rc_type.description, "td")
                     html += html_txt(actioned, "td")
                     html += html_txt("", "/tr")
         if html_txt:
