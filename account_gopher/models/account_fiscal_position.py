@@ -61,11 +61,11 @@ class AccountFiscalPosition(models.Model):
                 except BaseException as e:
                     self._cr.rollback()  # pylint: disable=invalid-commit
                     actioned = _u("** %s **" % e)
-            if html_txt and actioned:
-                html += html_txt("", "tr")
-                html += html_txt(fpos.name, "td")
-                html += html_txt(actioned, "td")
-                html += html_txt("", "/tr")
+                if html_txt and actioned:
+                    html += html_txt("", "tr")
+                    html += html_txt(fpos[0].name, "td")
+                    html += html_txt(actioned, "td")
+                    html += html_txt("", "/tr")
         if html_txt:
             html += html_txt("", "/table")
         return html
