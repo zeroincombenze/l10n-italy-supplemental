@@ -54,8 +54,8 @@ class AccountRCTypeTax(models.Model):
             )
             if td and rc_type.fiscal_document_type_id.id != td[0].id:
                 vals["fiscal_document_type_id"] = td[0].id
+        journal_model = self.env["account.journal"]
         if not rc_type.journal_id:
-            journal_model = self.env["account.journal"]
             domain = [("type", "=", "sale")]
             if hasattr(journal_model, "rev_charge"):
                 domain.append(("rev_charge", "=", True))
