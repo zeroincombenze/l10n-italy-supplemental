@@ -11,6 +11,12 @@ from python_plus import _u
 from odoo import models, _
 
 DEFAULT_VALUES = {
+    "l10n_it_fiscal.intra": {
+        "rc_type_id": "l10n_it_reverse_charge.account_rc_type_3",
+    },
+    "l10n_it_fiscal.extra": {
+        "rc_type_id": "l10n_it_reverse_charge.account_rc_type_2",
+    },
     "l10n_it.intra": {
         "rc_type_id": "l10n_it_reverse_charge.account_rc_type_3",
     },
@@ -42,7 +48,7 @@ class AccountFiscalPosition(models.Model):
             if not tmpl:
                 continue
             fpos = self.env["account.fiscal.position"].search(
-                [("name", "=", tmpl.name)]
+                [("name", "=", tmpl[0].name)]
             )
             if fpos:
                 vals = {
