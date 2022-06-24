@@ -37,6 +37,9 @@ class GopherConfigureWizard(models.TransientModel):
     set_rc_config = fields.Boolean(
         "Set reverse charge configuration",
     )
+    tax_config = fields.Boolean(
+        "Set tax configuration",
+    )
     tracelog = fields.Html("Result History")
 
     @api.multi
@@ -83,9 +86,9 @@ class GopherConfigureWizard(models.TransientModel):
                 html_txt=self.html_txt)
             tracelog += self.env["account.fiscal.position"].gopher_set_fiscal_position(
                 html_txt=self.html_txt)
-
-        tracelog += self.env["account.tax"].gopher_configure_tax(
-            html_txt=self.html_txt)
+        if self.tax_config:
+            tracelog += self.env["account.tax"].gopher_configure_tax(
+                html_txt=self.html_txt)
         self.tracelog = tracelog
         return {
             "name": "Configuration result",
