@@ -67,6 +67,7 @@ class AccountRCTypeTax(models.Model):
                         journal_id = journals[0].id
                         break
                 vals["journal_id"] = journal_id
+        tmp_account_id = rc_type.default_debit_account_id.id
         if not rc_type.transitory_account_id:
             acc_model = self.env["account.account"]
             domain = [
@@ -76,26 +77,28 @@ class AccountRCTypeTax(models.Model):
                 ("code", "=", "295000")]
             accs = acc_model.search(domain)
             if accs:
-                vals["transitory_account_id"] = accs[0].id
+                tmp_account_id = accs[0].id
+                vals["transitory_account_id"] = tmp_account_id
+        if not rc_type.payment_journal_id:
+            domain = [
+                ("company_id", "=", company.id),
+                ("type", "=", "general"),
+                ("default_debit_account_id", "=", tmp_account_id),
+            ]
+            journals = journal_model.search(domain)
+            if journals:
+                vals["payment_journal_id"] = journals[0].id
+            else:
                 domain = [
                     ("company_id", "=", company.id),
                     ("type", "=", "general"),
-                    ("default_debit_account_id", "=", accs[0].id),
+                    ("code", "=", "GCRC"),
                 ]
                 journals = journal_model.search(domain)
                 if journals:
                     vals["payment_journal_id"] = journals[0].id
-                else:
-                    domain = [
-                        ("company_id", "=", company.id),
-                        ("type", "=", "general"),
-                        ("code", "=", "GCRC"),
-                    ]
-                    journals = journal_model.search(domain)
-                    if journals:
-                        vals["payment_journal_id"] = journals[0].id
-                        journals[0].default_debit_account_id = accs[0].id
-                        journals[0].default_credit_account_id = accs[0].id
+                    journals[0].default_debit_account_id = tmp_account_id
+                    journals[0].default_credit_account_id = tmp_account_id
         if not rc_type.partner_id:
             vals["partner_id"] = self.env.user.company_id.partner_id.id
         return vals
