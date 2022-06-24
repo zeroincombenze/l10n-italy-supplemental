@@ -67,7 +67,7 @@ class AccountRCTypeTax(models.Model):
                         journal_id = journals[0].id
                         break
                 vals["journal_id"] = journal_id
-        tmp_account_id = rc_type.default_debit_account_id.id
+        tmp_account_id = rc_type.transitory_account_id.id
         if not rc_type.transitory_account_id:
             acc_model = self.env["account.account"]
             domain = [
