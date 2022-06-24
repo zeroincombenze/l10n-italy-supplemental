@@ -79,6 +79,16 @@ class AccountRCTypeTax(models.Model):
                 journals = journal_model.search(domain)
                 if journals:
                     vals["payment_journal_id"] = journals[0].id
+                else:
+                    domain = [
+                        ("type", "=", "general"),
+                        ("code", "=", "GCRC"),
+                    ]
+                    journals = journal_model.search(domain)
+                    if journals:
+                        vals["payment_journal_id"] = journals[0].id
+                        journals[0].default_debit_account_id = accs[0].id
+                        journals[0].default_credit_account_id = accs[0].id
         if not rc_type.partner_id:
             vals["partner_id"] = self.env.user.company_id.partner_id.id
         return vals
