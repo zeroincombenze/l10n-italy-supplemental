@@ -1,45 +1,32 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * account_invoice_line_view
+#	* account_invoice_line_view
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-15 08:09+0000\n"
-"PO-Revision-Date: 2019-02-15 08:09+0000\n"
+"POT-Creation-Date: 2022-06-24 06:19+0000\n"
+"PO-Revision-Date: 2022-06-24 06:19+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_invoice_line_view
 #: model:ir.model.fields,help:account_invoice_line_view.field_account_invoice_line_state
-msgid ""
-" * The 'Draft' status is used when a user is encoding a new and "
-"unconfirmed Invoice.\n"
-" * The 'Pro-forma' status is used when the invoice does not have an "
-"invoice number.\n"
-" * The 'Open' status is used when user creates invoice, an invoice number"
-" is generated. It stays in the open status till the user pays the "
-"invoice.\n"
-" * The 'Paid' status is set automatically when the invoice is paid. Its "
-"related journal entries may or may not be reconciled.\n"
+msgid " * The 'Draft' status is used when a user is encoding a new and unconfirmed Invoice.\n"
+" * The 'Pro-forma' status is used when the invoice does not have an invoice number.\n"
+" * The 'Open' status is used when user creates invoice, an invoice number is generated. It stays in the open status till the user pays the invoice.\n"
+" * The 'Paid' status is set automatically when the invoice is paid. Its related journal entries may or may not be reconciled.\n"
 " * The 'Cancelled' status is used when user cancel invoice."
-msgstr ""
-" * Lo stato «Bozza» viene usato in presenza di una nuova fattura non "
-"ancora confermata.\n"
-" * Lo stato «Pro-forma» viene usato quando non è presente un numero "
-"associato alla fattura.\n"
-" * Lo stato «Aperta» identifica fatture alle quali è stato assegnato un "
-"numero ma che non sono ancora state pagate.\n"
-" * Lo stato «Pagata» è impostato automaticamente dopo il pagamento della "
-"fattura, a prescindere dalla riconciliazione delle relative registrazioni"
-" contabili.\n"
+msgstr " * Lo stato «Bozza» viene usato in presenza di una nuova fattura non ancora confermata.\n"
+" * Lo stato «Pro-forma» viene usato quando non è presente un numero associato alla fattura.\n"
+" * Lo stato «Aperta» identifica fatture alle quali è stato assegnato un numero ma che non sono ancora state pagate.\n"
+" * Lo stato «Pagata» è impostato automaticamente dopo il pagamento della fattura, a prescindere dalla riconciliazione delle relative registrazioni contabili.\n"
 " * Lo stato «Annullata» viene usato dopo l'annullamento di una fattura."
 
 #. module: account_invoice_line_view
@@ -56,7 +43,7 @@ msgstr "Righe fatture clienti"
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
 msgid "Group By..."
-msgstr "Raggruppare per..."
+msgstr "Raggruppa per..."
 
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
@@ -64,10 +51,9 @@ msgid "Invoice"
 msgstr "Fattura"
 
 #. module: account_invoice_line_view
-#: model:ir.model.fields,field_description:account_invoice_line_view.field_account_invoice_line_date_invoice
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
 msgid "Invoice Date"
-msgstr "Data fattura"
+msgstr "Data Fattura"
 
 #. module: account_invoice_line_view
 #: model:ir.model,name:account_invoice_line_view.model_account_invoice_line
@@ -77,12 +63,7 @@ msgstr "Riga fattura"
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.view_invoice_line2
 msgid "Invoice Lines"
-msgstr "Righe fatture"
-
-#. module: account_invoice_line_view
-#: model:ir.model.fields,help:account_invoice_line_view.field_account_invoice_line_date_invoice
-msgid "Keep empty to use the current date"
-msgstr "Lasciare vuoto per usare la data odierna"
+msgstr "Righe fattura"
 
 #. module: account_invoice_line_view
 #: model:ir.model.fields,field_description:account_invoice_line_view.field_account_invoice_line_number
@@ -92,7 +73,7 @@ msgstr "Numero"
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
 msgid "Partner"
-msgstr "Nominativo"
+msgstr "Soggetto"
 
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
@@ -113,7 +94,7 @@ msgstr "Stato"
 #: model:ir.actions.act_window,name:account_invoice_line_view.supplier_action_invoice_line
 #: model:ir.ui.menu,name:account_invoice_line_view.supplier_invoice_line
 msgid "Supplier Invoice Lines"
-msgstr "Righe fatture fornitori"
+msgstr "Supplier Invoice Lines"
 
 #. module: account_invoice_line_view
 #: model:ir.ui.view,arch_db:account_invoice_line_view.account_invoice_line_search
