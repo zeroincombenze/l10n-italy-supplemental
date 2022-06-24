@@ -34,8 +34,13 @@ class AccountFiscalPosition(models.Model):
             html += html_txt("", "/tr")
 
         for xref in ("extra", "intra"):
-            xref = "l10n_it.%s" % xref
-            tmpl = self.env.ref(xref)
+            xref = "l10n_it_fiscal.%s" % xref
+            tmpl = self.env.ref(xref, raise_if_not_found=False)
+            if not tmpl:
+                xref = "l10n_it.%s" % xref
+                tmpl = self.env.ref(xref, raise_if_not_found=False)
+            if not tmpl:
+                continue
             fpos = self.env["account.fiscal.position"].search(
                 [("name", "=", tmpl.name)]
             )
