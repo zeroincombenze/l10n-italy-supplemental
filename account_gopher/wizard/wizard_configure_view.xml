@@ -9,6 +9,7 @@
                 <group>
                     <field name="fiscal_position_id"/>
                     <field name="reload_from_coa"/>
+                    <field name="set_rc_config"/>
                 </group>
                 <footer>
                     <button name="account_wizard" string="Configure"

@@ -9,3 +9,5 @@
 #
 from . import account_tax
 from . import account_account
+from . import account_rc_type
+from . import account_fiscal_position
