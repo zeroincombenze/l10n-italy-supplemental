@@ -39,6 +39,7 @@ class AccountRCTypeTax(models.Model):
     _inherit = "account.rc.type"
 
     def get_def_values(self, xref, rc_type):
+        company = self.env.user.company_id
         vals = {}
         for name in ("description", "name", "method", "partner_type"):
             def_name = DEFAULT_VALUES[xref][name]
@@ -68,11 +69,16 @@ class AccountRCTypeTax(models.Model):
                 vals["journal_id"] = journal_id
         if not rc_type.transitory_account_id:
             acc_model = self.env["account.account"]
-            domain = ["|", ("code", "=", "490050"), ("code", "=", "295000")]
+            domain = [
+                ("company_id", "=", company.id),
+                "|",
+                ("code", "=", "490050"),
+                ("code", "=", "295000")]
             accs = acc_model.search(domain)
             if accs:
                 vals["transitory_account_id"] = accs[0].id
                 domain = [
+                    ("company_id", "=", company.id),
                     ("type", "=", "general"),
                     ("default_debit_account_id", "=", accs[0].id),
                 ]
@@ -81,6 +87,7 @@ class AccountRCTypeTax(models.Model):
                     vals["payment_journal_id"] = journals[0].id
                 else:
                     domain = [
+                        ("company_id", "=", company.id),
                         ("type", "=", "general"),
                         ("code", "=", "GCRC"),
                     ]

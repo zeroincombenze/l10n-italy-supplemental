@@ -30,6 +30,7 @@ class AccountFiscalPosition(models.Model):
     _inherit = "account.fiscal.position"
 
     def gopher_set_fiscal_position(self, html_txt=None):
+        company = self.env.user.company_id
         html = ""
         if html_txt:
             html += html_txt(_("Set fiscal position"), "h3")
@@ -48,7 +49,7 @@ class AccountFiscalPosition(models.Model):
             if not tmpl:
                 continue
             fpos = self.env["account.fiscal.position"].search(
-                [("name", "=", tmpl[0].name)]
+                [("company_id", "=", company.id), ("name", "=", tmpl[0].name)]
             )
             if fpos:
                 vals = {
