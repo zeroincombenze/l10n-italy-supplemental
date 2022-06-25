@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="view_invoice_line2" model="ir.ui.view">
         <field name="name">account.invoice.line2</field>
         <field name="model">account.invoice.line</field>
         <field name="arch" type="xml">
-            <tree string="Invoice Lines" create="false" delete="false">
+            <tree string="Invoice Lines" create="0" delete="0">
                 <field name="date_invoice"/>
                 <field name="number"/>
                 <field name="origin"/>
@@ -26,7 +27,6 @@
         </field>
     </record>
 
-
     <record id="account_invoice_line_search" model="ir.ui.view">
         <field name="name">account.invoice.line.search</field>
         <field name="model">account.invoice.line</field>
@@ -47,14 +47,16 @@
         </field>
     </record>
 
-
     <record model='ir.actions.act_window' id='customer_action_invoice_line'>
         <field name="name">Customer Invoice Lines</field>
         <field name="res_model">account.invoice.line</field>
         <field name="domain">['|',('invoice_id.type','=','out_invoice'),('invoice_id.type','=','out_refund')]</field>
         <field name="view_id" ref="view_invoice_line2"/>
+        <field name='view_mode'>tree,form</field>
         <field name="search_view_id" ref="account_invoice_line_search"/>
+        <field name="context">{'create': False, 'edit': False}</field>
     </record>
+
     <menuitem id="customer_invoice_line"
               name="Customer Invoice Lines"
               parent="account.menu_finance_receivables"
@@ -65,8 +67,11 @@
         <field name="res_model">account.invoice.line</field>
         <field name="domain">['|',('invoice_id.type','=','in_invoice'),('invoice_id.type','=','in_refund')]</field>
         <field name="view_id" ref="view_invoice_line2"/>
+        <field name='view_mode'>tree,form</field>
         <field name="search_view_id" ref="account_invoice_line_search"/>
+        <field name="context">{'create': False, 'edit': False}</field>
     </record>
+
     <menuitem id="supplier_invoice_line"
               name="Supplier Invoice Lines"
               parent="account.menu_finance_payables"

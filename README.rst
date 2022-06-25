@@ -1,6 +1,6 @@
 
 =============================================
-|Zeroincombenze| l10n-italy-supplemental 12.0
+|Zeroincombenze| l10n-italy-supplemental 10.0
 =============================================
 |Build Status| |Codecov Status| |license gpl| |Try Me|
 
@@ -21,35 +21,35 @@ Avaiable Addons / Moduli disponibili
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | Name / Nome                    | Version    | OCA Ver.   | Description / Descrizione                                                        |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_export                 | 12.0.10.0. | |no_check| | Export account moves                                                             |
+| account_export                 | 10.0.0.1.0 | |no_check| | Export account moves                                                             |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher                 | 12.0.10.0. | |no_check| | Configure account records                                                        |
+| account_gopher                 | 10.0.0.2.6 | |no_check| | Configure account records                                                        |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_add_sale_order | 12.0.10.0. | |no_check| | Add sale order to sale account invoice                                           |
+| account_invoice_add_sale_order | 10.0.0.1.1 | |no_check| | Add sale order to sale account invoice                                           |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_import_xlsx    | 12.0.10.0. | |no_check| | Import invoice from Excel file                                                   |
+| account_invoice_import_xlsx    | 10.0.0.1.2 | |no_check| | Import invoice from Excel file                                                   |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_last_number    | |halt|     | |no_check| | Decrement invoice sequence if unlink last invoice                                |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_line_report    | 12.0.10.0. | |no_check| | New views to manage invoice lines information                                    |
+| account_invoice_line_report    | 10.0.1.0.0 | |no_check| | New views to manage invoice lines information                                    |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_line_view      | 12.0.10.0. | |no_check| | Adds Invoice Line menu items                                                     |
+| account_invoice_line_view      | 10.0.1.0.5 | |no_check| | Adds Invoice Line menu items                                                     |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_renum_lines    | 12.0.10.0. | |no_check| | Sort invoice lines by sale order, DdT, sequence, id                              |
+| account_invoice_renum_lines    | 10.0.0.1.1 | |no_check| | Sort invoice lines by sale order, DdT, sequence, id                              |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening         | 12.0.10.0. | |no_check| | Import account opening                                                           |
+| import_account_opening         | 10.0.0.1.7 | |no_check| | Import account opening                                                           |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| purchase_order_line_form       | 12.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
+| purchase_order_line_form       | 10.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| refocus_report                 | 12.0.10.0. | |no_check| | Customized report for Refocus                                                    |
+| refocus_report                 | 10.0.0.1.7 | |no_check| | Customized report for Refocus                                                    |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_import_xlsx               | 12.0.10.0. | |no_check| | Import sale order lines from a Excel                                             |
+| sale_import_xlsx               | 10.0.0.1.1 | |no_check| | Import sale order lines from a Excel                                             |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_resellers                 | 12.0.10.0. | |no_check| | Manage Sale Resellers                                                            |
+| sale_resellers                 | 10.0.1.5.4 | |no_check| | Manage Sale Resellers                                                            |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sequence_recovery_last         | 12.0.10.0. | |no_check| | Sequence Recovery                                                                |
+| sequence_recovery_last         | 10.0.0.0.1 | |no_check| | Sequence Recovery                                                                |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| status_widget                  | 12.0.10.0. | |no_check| | Status Widget                                                                    |
+| status_widget                  | 10.0.1.0.0 | |no_check| | Status Widget                                                                    |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | vg7_report                     | |halt|     | |no_check| | Customized report for VG7                                                        |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -78,8 +78,8 @@ Prerequisites / Prerequisiti
 ----------------------------
 
 
-* python 3.7+
-* postgresql 9.6+ (experimental 10.0+)
+* python 2.7+ (best 2.7.5+)
+* postgresql 9.2+ (best 9.5)
 
 
 Installation / Installazione
@@ -99,7 +99,7 @@ Installation / Installazione
 +---------------------------------+------------------------------------------+
 | Suggested deployment is:        | Posizione suggerita per l'installazione: |
 +---------------------------------+------------------------------------------+
-| $HOME/12.0                                                                 |
+| $HOME/10.0                                                                 |
 +----------------------------------------------------------------------------+
 
 ::
@@ -117,8 +117,8 @@ Installation / Installazione
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository installation; OCB repository must be installed
-    odoo_install_repository l10n-italy-supplemental -b 12.0 -O zero -o $HOME/12.0
-    vem create $HOME/12.0/venv_odoo -O 12.0 -a "*" -DI -o $HOME/12.0
+    odoo_install_repository l10n-italy-supplemental -b 10.0 -O zero -o $HOME/10.0
+    vem create $HOME/10.0/venv_odoo -O 10.0 -a "*" -DI -o $HOME/10.0
 
 
 
@@ -141,8 +141,8 @@ Upgrade / Aggiornamento
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository upgrade
-    odoo_install_repository l10n-italy-supplemental -b 12.0 -o $HOME/12.0 -U
-    vem amend $HOME/12.0/venv_odoo -o $HOME/12.0
+    odoo_install_repository l10n-italy-supplemental -b 10.0 -o $HOME/10.0 -U
+    vem amend $HOME/10.0/venv_odoo -o $HOME/10.0
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
@@ -177,6 +177,30 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 History / Cronologia
 --------------------
+
+account_invoice_line_view: 10.0.1.0.5 (2022-06-24)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Invoice line read-only / Dati righe in sola lettura
+
+
+account_gopher: 10.0.0.2.6 (2022-06-24)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] RC configuraton / Configurazione reverse charge
+
+
+account_gopher: 10.0.0.2.5 (2022-06-20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Tax nature rename
+
+
+account_invoice_import_xlsx: 10.0.0.0.2 (2022-06-14)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Variuous fixes
+
 
 account_gopher: 10.0.0.2.4 (2022-03-09)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,6 +251,7 @@ account_invoice_line_view: 10.0.1.0.4 (2022-01-31)
 
 * [FIX] ValueError: field `number` does not exist / ValueError: Il campo `number` non esiste
 
+
 import_account_opening: 10.0.0.1.5 (2022-01-14)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -239,43 +264,6 @@ import_account_opening: 10.0.0.1.4 (2021-12-30)
 
 * [FIX] Supplier account
 
-
-import_account_opening: 10.0.0.1.3 (2021-12-23)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Search like name too / Ricerca anche con nome simile
-* [IMP] Search just contact / Ricerca solo contatti
-* [IMP] Dry-run / Esecuzione di prova
-
-
-account_gopher: 10.0.0.1.0 (2021-12-23)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor enhancements
-
-
-import_account_opening: 10.0.0.1.0 (2021-12-04)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Draft code / Bozza iniziale
-
-
-sale_import_xlsx: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
-
-account_invoice_import_xlsx: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
-
-account_gopher: 10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
 
 
 
@@ -310,12 +298,12 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-03-10
+Last Update / Ultimo aggiornamento: 2022-06-25
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
-.. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=12.0
+.. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=10.0
     :target: https://travis-ci.com/zeroincombenze/l10n-italy-supplemental
     :alt: github.com
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg
@@ -324,23 +312,23 @@ Last Update / Ultimo aggiornamento: 2022-03-10
 .. |license opl| image:: https://img.shields.io/badge/licence-OPL-7379c3.svg
     :target: https://www.odoo.com/documentation/user/14.0/legal/licenses/licenses.html
     :alt: License: OPL
-.. |Coverage Status| image:: https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=12.0
-    :target: https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=12.0
+.. |Coverage Status| image:: https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=10.0
+    :target: https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=10.0
     :alt: Coverage
-.. |Codecov Status| image:: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/12.0/graph/badge.svg
-    :target: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/12.0
+.. |Codecov Status| image:: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/10.0/graph/badge.svg
+    :target: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/10.0
     :alt: Codecov
-.. |Tech Doc| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-12.svg
-    :target: https://wiki.zeroincombenze.org/en/Odoo/12.0/dev
+.. |Tech Doc| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-10.svg
+    :target: https://wiki.zeroincombenze.org/en/Odoo/10.0/dev
     :alt: Technical Documentation
-.. |Help| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-12.svg
-    :target: https://wiki.zeroincombenze.org/it/Odoo/12.0/man
+.. |Help| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-10.svg
+    :target: https://wiki.zeroincombenze.org/it/Odoo/10.0/man
     :alt: Technical Documentation
-.. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-12.svg
-    :target: https://erp12.zeroincombenze.it
+.. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-10.svg
+    :target: https://erp10.zeroincombenze.it
     :alt: Try Me
-.. |OCA Codecov| image:: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/12.0/graph/badge.svg
-    :target: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/12.0
+.. |OCA Codecov| image:: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/10.0/graph/badge.svg
+    :target: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/10.0
     :alt: Codecov
 .. |Odoo Italia Associazione| image:: https://www.odoo-italia.org/images/Immagini/Odoo%20Italia%20-%20126x56.png
    :target: https://odoo-italia.org

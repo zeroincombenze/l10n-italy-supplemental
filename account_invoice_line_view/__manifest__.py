@@ -4,7 +4,7 @@
 #
 {
     'name': 'Invoice Line View',
-    'version': '10.0.1.0.4',
+    'version': '10.0.1.0.5',
     'category': 'Account',
     'summary': 'Adds Invoice Line menu items',
     'author': 'SHS-AV s.r.l',

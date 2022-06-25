@@ -2,11 +2,10 @@
 # Copyright (C) 2014 Rooms For Limited T/A OSCG <https://www.odoo-asia.com>
 # Copyright (C) 2016-22 SHS-AV s.r.l. <https://zeroincombenze.it>
 #
+from odoo import fields, models, api
 
-from odoo import fields, models
 
-
-class account_invoice_line(models.Model):
+class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
     _order = 'id desc'
 
@@ -17,3 +16,13 @@ class account_invoice_line(models.Model):
                                string=u'Invoice Date', store=True)
     state = fields.Selection(related='invoice_id.state',
                              string=u'Status', store=True)
+
+    @api.model
+    def fields_view_get(
+        self, view_id=None, view_type='form', toolbar=False, submenu=False
+    ):
+        res = super(AccountInvoiceLine, self).fields_view_get(view_id=view_id,
+                                                              view_type=view_type,
+                                                              toolbar=toolbar,
+                                                              submenu=submenu)
+        return res
