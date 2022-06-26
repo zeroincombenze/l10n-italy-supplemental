@@ -19,19 +19,34 @@ DEFAULT_VALUES = {
         "fiscal_document_type_id": "TD16",
     },
     "l10n_it_reverse_charge.account_rc_type_2": {
-        "name": "Reverse charge Extra-EU",
-        "description": "Usare per RC estero no EU",
+        "name": "Reverse charge per beni da Extra-EU",
+        "description": "Usare per acquisti di beni da estero fuori EU",
         "method": "selfinvoice",
         "partner_type": "other",
-        "fiscal_document_type_id": "TD17",
+        "fiscal_document_type_id": "TD01",
     },
     "l10n_it_reverse_charge.account_rc_type_3": {
-        "name": "Reverse charge EU",
-        "description": "Usare per RC interna EU",
+        "name": "Reverse charge per beni da EU",
+        "description": "Usare per acquisti di beni intra EU",
         "method": "selfinvoice",
         "partner_type": "supplier",
         "fiscal_document_type_id": "TD18",
     },
+    "l10n_it_reverse_charge.account_rc_type_4": {
+        "name": "Reverse charge per servizi da EU",
+        "description": "Usare per acquisti di servizi intra EU",
+        "method": "selfinvoice",
+        "partner_type": "supplier",
+        "fiscal_document_type_id": "TD17",
+    },
+    "l10n_it_reverse_charge.account_rc_type_5": {
+        "name": "Reverse charge per beni da Extra-EU",
+        "description": "Usare per acquisti di servizi da estero fuori EU",
+        "method": "selfinvoice",
+        "partner_type": "other",
+        "fiscal_document_type_id": "TD01",
+    },
+
 }
 
 
