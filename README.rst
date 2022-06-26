@@ -182,6 +182,9 @@ account_invoice_line_view: 10.0.1.0.5 (2022-06-24)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Invoice line read-only / Dati righe in sola lettura
+* [FIX] Signed quantity & amount / Quantità e totale riga segnati (per note credito)
+* [IMP] quantity & amount totals / Totale quantità e totale riga
+
 
 
 account_gopher: 10.0.0.2.6 (2022-06-24)
@@ -298,7 +301,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-06-25
+Last Update / Ultimo aggiornamento: 2022-06-26
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status

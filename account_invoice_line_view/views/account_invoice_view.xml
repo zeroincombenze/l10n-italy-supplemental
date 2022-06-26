@@ -6,6 +6,7 @@
         <field name="model">account.invoice.line</field>
         <field name="arch" type="xml">
             <tree string="Invoice Lines" create="0" delete="0">
+                <field name="type"/>
                 <field name="date_invoice"/>
                 <field name="number"/>
                 <field name="origin"/>
@@ -14,12 +15,12 @@
                 <field name="partner_id" string="Customer"/>
                 <field name="company_id" invisible='1'/>
                 <field name="account_id" invisible='1'/>
-                <field name="quantity"/>
+                <field name="quantity_signed" sum="Quantity total"/>
                 <field name="uom_id"/>
                 <field name="price_unit"/>
                 <field name="discount"/>
                 <field name="invoice_line_tax_ids"/>
-                <field name="price_subtotal"/>
+                <field name="price_subtotal_signed" sum="Total"/>
                 <field name="currency_id"/>
                 <field name="state"/>
                 <field name="agents"/>

@@ -2,6 +2,9 @@
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Invoice line read-only / Dati righe in sola lettura
+* [FIX] Signed quantity & amount / Quantità e totale riga segnati (per note credito)
+* [IMP] quantity & amount totals / Totale quantità e totale riga
+
 
 10.0.1.0.4 (2022-01-31)
 ~~~~~~~~~~~~~~~~~~~~~~~
