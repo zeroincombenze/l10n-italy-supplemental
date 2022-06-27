@@ -34,11 +34,9 @@ class GopherConfigureWizard(models.TransientModel):
         ],
         "Reload CoA and Tax codes",
     )
+    check_4_tax = fields.Boolean("Check for tax configuration")
     set_rc_config = fields.Boolean(
         "Set reverse charge configuration",
-    )
-    tax_config = fields.Boolean(
-        "Set tax configuration",
     )
     tracelog = fields.Html("Result History")
 
@@ -81,14 +79,16 @@ class GopherConfigureWizard(models.TransientModel):
             tracelog += self.env["account.tax"].gopher_reload_taxes(
                 html_txt=self.html_txt
             )
-        if self.set_rc_config:
+        if self.set_rc_config and "account.rc.type" in self.env:
             tracelog += self.env["account.rc.type"].gopher_set_rc_type(
                 html_txt=self.html_txt)
-            tracelog += self.env["account.fiscal.position"].gopher_set_fiscal_position(
-                html_txt=self.html_txt)
-        if self.tax_config:
+        if self.check_4_tax:
             tracelog += self.env["account.tax"].gopher_configure_tax(
                 html_txt=self.html_txt)
+        if self.set_rc_config or self.check_4_tax:
+            tracelog += self.env["account.fiscal.position"].gopher_configure_fiscalpos(
+                html_txt=self.html_txt
+            )
         self.tracelog = tracelog
         return {
             "name": "Configuration result",

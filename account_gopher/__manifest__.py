@@ -24,7 +24,6 @@
         "l10n_it_reverse_charge"
     ],
     "data": [
-        # 'security/ir.model.access.csv',
         "views/account_gopher_menu.xml",
         "wizard/wizard_configure_view.xml",
     ],

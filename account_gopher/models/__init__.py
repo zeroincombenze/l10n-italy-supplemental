@@ -9,5 +9,8 @@
 #
 from . import account_tax
 from . import account_account
-from . import account_rc_type
+try:
+    from . import account_rc_type
+except ImportError:
+    pass
 from . import account_fiscal_position
