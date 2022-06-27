@@ -8,27 +8,26 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
 {
-    'name': 'Account Assistant',
-    'version': '12.0.0.2.5',
-    'category': 'Localization/Italy',
-    'summary': 'Configure account records',
-    'author': 'SHS-AV s.r.l.',
-    'website': 'https://www.zeroincombenze.it',
-    'development_status': 'Beta',
-    'license': 'LGPL-3',
-    'depends': [
-        'base',
-        'account',
-        'l10n_it_account_tax_kind',
-        'l10n_it_fatturapa',
+    "name": "Account Assistant",
+    "version": "12.0.0.2.6",
+    "category": "Localization/Italy",
+    "summary": "Configure account records",
+    "author": "SHS-AV s.r.l.",
+    "website": "https://www.zeroincombenze.it",
+    "development_status": "Beta",
+    "license": "LGPL-3",
+    "depends": [
+        "base",
+        "account",
+        "l10n_it_account_tax_kind",
+        "l10n_it_fatturapa",
+        "l10n_it_reverse_charge",
+        "l10n_it_assosoftware",
     ],
-    'data': [
-        'security/ir.model.access.csv',
-        'views/account_gopher_menu.xml',
-        'views/tax_assosoftware_view.xml',
-        'wizard/wizard_configure_view.xml',
-        'data/italy_ade_tax_assosoftware.xml',
+    "data": [
+        "views/account_gopher_menu.xml",
+        "wizard/wizard_configure_view.xml",
     ],
-    'maintainer': 'Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>',
-    'installable': True,
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "installable": True,
 }

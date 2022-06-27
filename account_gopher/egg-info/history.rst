@@ -1,7 +1,17 @@
+12.0.0.2.7 (2022-06-27)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] RC new checks / Nuovi controlli RC
+
+12.0.0.2.6 (2022-06-24)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] RC configuraton / Configurazione reverse charge
+
 12.0.0.2.5 (2022-03-10)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] New checks
+* Not avaialable version
 
 12.0.0.2.4 (2022-03-09)
 ~~~~~~~~~~~~~~~~~~~~~~~

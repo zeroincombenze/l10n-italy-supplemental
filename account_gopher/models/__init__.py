@@ -9,5 +9,8 @@
 #
 from . import account_tax
 from . import account_account
+try:
+    from . import account_rc_type
+except ImportError:
+    pass
 from . import account_fiscal_position
-from . import italy_ade_tax_assosoftware

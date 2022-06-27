@@ -1,6 +1,6 @@
 
 ===================================
-|icon| Account Assistant 12.0.0.2.5
+|icon| Account Assistant 12.0.0.2.6
 ===================================
 
 
@@ -152,10 +152,20 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
-12.0.0.2.5 (2022-0310)
-~~~~~~~~~~~~~~~~~~~~~~
+12.0.0.2.7 (2022-06-27)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] New checks
+* [IMP] RC new checks / Nuovi controlli RC
+
+12.0.0.2.6 (2022-06-24)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] RC configuraton / Configurazione reverse charge
+
+12.0.0.2.5 (2022-03-10)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Not avaialable version
 
 12.0.0.2.4 (2022-03-09)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,7 +262,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-03-22
+Last Update / Ultimo aggiornamento: 2022-06-27
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
