@@ -45,6 +45,8 @@ Avaiable Addons / Moduli disponibili
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | sale_import_xlsx               | 10.0.0.1.1 | |no_check| | Import sale order lines from a Excel                                             |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
+| sale_plus                      | 10.0.0.1.0 | |no_check| | Operator can full invoice multiple sale orders.                                  |
++--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | sale_resellers                 | 10.0.1.5.4 | |no_check| | Manage Sale Resellers                                                            |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | sequence_recovery_last         | 10.0.0.0.1 | |no_check| | Sequence Recovery                                                                |
@@ -178,6 +180,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
+account_gopher: 10.0.0.2.7 (2022-06-27)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] RC new checks / Nuovi controlli RC
+
+
 account_invoice_line_view: 10.0.1.0.5 (2022-06-24)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -262,12 +270,6 @@ import_account_opening: 10.0.0.1.5 (2022-01-14)
 * [FIX] No empty entry when dry-run / No testata vuota di registrazione contabile se simulazione
 
 
-import_account_opening: 10.0.0.1.4 (2021-12-30)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Supplier account
-
-
 
 
 
@@ -301,7 +303,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-06-26
+Last Update / Ultimo aggiornamento: 2022-07-02
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
