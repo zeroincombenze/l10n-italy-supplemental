@@ -6,7 +6,7 @@
     'website': 'http://www.zeroincombenze.it',
     # 'summary': 'Operator can full invoice multiple sale orders.',
     'version': '10.0.0.1.0',
-    'depends': [],
+    'depends': ["base"],
     'data': [],
     'installable': True,
 }

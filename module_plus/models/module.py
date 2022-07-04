@@ -45,7 +45,7 @@ class BaseModuleUpdate(models.TransientModel):
                                 modules[0].state = "to upgrade"
                                 need_restart = True
                 if need_restart:
-                    self.cr.commit()
+                    self.env.cr.commit()  # pylint: disable=invalid-commit
                     service.server.restart()
                     return {
                         "type": "ir.actions.client",
