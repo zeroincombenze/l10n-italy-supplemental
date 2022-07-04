@@ -39,6 +39,8 @@ Avaiable Addons / Moduli disponibili
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | import_account_opening         | 10.0.0.1.7 | |no_check| | Import account opening                                                           |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
+| module_plus                    | 10.0.0.1.0 | |no_check| | Module enhanced functions                                                        |
++--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | purchase_order_line_form       | 10.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | refocus_report                 | 10.0.0.1.7 | |no_check| | Customized report for Refocus                                                    |
@@ -303,7 +305,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-07-02
+Last Update / Ultimo aggiornamento: 2022-07-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
