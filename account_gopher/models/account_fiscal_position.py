@@ -13,15 +13,27 @@ from odoo import models, _
 DEFAULT_VALUES = {
     "l10n_it_fiscal.intra": {
         "rc_type_id": "l10n_it_reverse_charge.account_rc_type_3",
+        "rc_type": "self",
+        "partner_type": "supplier",
+        "rc_fiscal_document_type_id": "TD18",
     },
     "l10n_it_fiscal.extra": {
         "rc_type_id": "l10n_it_reverse_charge.account_rc_type_2",
+        "rc_type": "self",
+        "partner_type": "other",
+        "rc_fiscal_document_type_id": "TD01",
     },
     "l10n_it.intra": {
         "rc_type_id": "l10n_it_reverse_charge.account_rc_type_3",
+        "rc_type": "self",
+        "partner_type": "supplier",
+        "rc_fiscal_document_type_id": "TD18",
     },
     "l10n_it.extra": {
         "rc_type_id": "l10n_it_reverse_charge.account_rc_type_2",
+        "rc_type": "self",
+        "partner_type": "other",
+        "rc_fiscal_document_type_id": "TD01",
     },
 }
 
@@ -54,9 +66,20 @@ class AccountFiscalPosition(models.Model):
                 [("company_id", "=", company.id), ("name", "=", tmpl[0].name)]
             )
             if fiscalpos:
-                vals = {
-                    "rc_type_id": self.env.ref(DEFAULT_VALUES[xref]["rc_type_id"]).id
-                }
+                if hasattr(fiscalpos, "rc_type_id"):
+                    vals = {
+                        "rc_type_id": self.env.ref(
+                            DEFAULT_VALUES[xref]["rc_type_id"]).id
+                    }
+                elif hasattr(fiscalpos, "rc_type"):
+                    vals = {
+                        "rc_type": self.env.ref(
+                            DEFAULT_VALUES[xref]["rc_type"]),
+                        "partner_type": self.env.ref(
+                            DEFAULT_VALUES[xref]["partner_type"]),
+                        "rc_fiscal_document_type_id": self.env.ref(
+                            DEFAULT_VALUES[xref]["rc_fiscal_document_type_id"]),
+                    }
                 try:
                     fiscalpos[0].write(vals)
                     actioned = _("Updated")
