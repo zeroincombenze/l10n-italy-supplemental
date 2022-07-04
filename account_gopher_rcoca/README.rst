@@ -1,8 +1,14 @@
 
 =============================================
-|Zeroincombenze| l10n-italy-supplemental 12.0
+|icon| Account Assistant OCA-Italy 12.0.0.2.6
 =============================================
-|Build Status| |Codecov Status| |license gpl| |Try Me|
+
+
+**Configure account records**
+
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_gopher_rcoca/static/description/icon.png
+
+|Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
 
 .. contents::
@@ -12,43 +18,16 @@
 Overview / Panoramica
 =====================
 
-|en| 
-
-|it| N/D
-Avaiable Addons / Moduli disponibili
-------------------------------------
-
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| Name / Nome            | Version    | OCA Ver.   | Description / Descrizione                                                        |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher         | 12.0.0.2.6 | |no_check| | Configure account records                                                        |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher_rcoca   | 12.0.0.2.6 | |no_check| | Configure account records                                                        |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening | 12.0.0.1.8 | |no_check| | Import account opening                                                           |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_inventory       | 12.0.0.1.2 | |no_check| | Import inventory                                                                 |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_partners        | 12.0.0.1.0 | |no_check| | Import partners                                                                  |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| l10n_it_assosoftware   | 12.0.1.0.0 | |no_check| | Aggiunge la tabella dei codici IVA assosoftware per future scambio dati con fatt |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
-| repair_supplemental    | 12.0.0.1.0 | |no_check| |                                                                                  |
-+------------------------+------------+------------+----------------------------------------------------------------------------------+
+|en| Account assistant for OCA-Italy configuration
 
 
+|
 
-OCA comparation / Confronto con OCA
------------------------------------
-
-
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
-| Description / Descrizione                                       | Zeroincombenze    | OCA            | Notes / Note                   |
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
-| Coverage / Copertura test                                       |  |Codecov Status| | |OCA Codecov|  |                                |
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
+|it| Assistente contabile per ambiente OCA-Italy
 
 
+|
+|
 
 Getting started / Come iniziare
 ===============================
@@ -56,14 +35,7 @@ Getting started / Come iniziare
 |Try Me|
 
 
-Prerequisites / Prerequisiti
-----------------------------
-
-
-* python 3.7+
-* postgresql 9.6+ (experimental 10.0+)
-* openpyxl
-
+|
 
 Installation / Installazione
 ----------------------------
@@ -103,7 +75,14 @@ Installation / Installazione
     odoo_install_repository l10n-italy-supplemental -b 12.0 -O zero -o $HOME/12.0
     vem create $HOME/12.0/venv_odoo -O 12.0 -a "*" -DI -o $HOME/12.0
 
+From UI: go to:
 
+* |menu| Setting > Activate Developer mode 
+* |menu| Apps > Update Apps List
+* |menu| Setting > Apps |right_do| Select **account_gopher_rcoca** > Install
+
+
+|
 
 Upgrade / Aggiornamento
 -----------------------
@@ -129,15 +108,19 @@ Upgrade / Aggiornamento
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
+From UI: go to:
+
+|
 
 Support / Supporto
 ------------------
 
 
-|Zeroincombenze| This project is mainly maintained by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
+|Zeroincombenze| This module is maintained by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
-
+|
+|
 
 Get involved / Ci mettiamo in gioco
 ===================================
@@ -152,113 +135,24 @@ Proposals for enhancement
 -------------------------
 
 
-|en| If you have a proposal to change on oh these modules, you may want to send an email to <cc@shs-av.com> for initial feedback.
+|en| If you have a proposal to change this module, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
 
-|it| Se hai proposte per migliorare uno dei moduli, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
+|it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-History / Cronologia
---------------------
+ChangeLog History / Cronologia modifiche
+----------------------------------------
 
-account_gopher_rcoca: 12.0.0.2.7 (2022-07-01)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12.0.0.2.7 (2022-07-01)
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Prima versione
 
 
-account_gopher: 12.0.0.2.7 (2022-06-27)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] RC new checks / Nuovi controlli RC
-
-
-account_gopher: 12.0.0.2.6 (2022-06-24)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] RC configuraton / Configurazione reverse charge
-
-
-import_account_opening: 12.0.0.1.8 (2022-03-17)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Search for only parent partner / Ricerca solo contatti padre
-
-
-account_gopher: 12.0.0.2.5 (2022-03-10)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* Not avaialable version
-
-
-account_gopher: 12.0.0.2.4 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-
-account_gopher: 12.0.0.2.3 (2022-03-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-
-account_gopher: 12.0.0.2.2 (2022-02-21)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Set account nature / Imposta natura conto
-
-
-account_gopher: 12.0.0.2.1 (2022-02-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Company fiscal position / Posizione fiscale azienda
-
-
-repair_supplemental: 12.0.0.1.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Draft code / Bozza iniziale
-
-
-import_partners: 12.0.0.1.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Draft code / Bozza iniziale
-
-
-
-account_gopher: 12.0.0.2.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
-* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
-* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
-
-
-
-import_account_opening: 12.0.0.1.7 (2022-02-03)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Missed some error message / In alcuni casi non si vedevamo i messaggi di errore
-
-
-import_account_opening: 12.0.0.1.6 (2022-01-31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
-
-
-import_account_opening: 12.0.0.1.5 (2022-01-14)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Parter account from Excel file / Conto cliente/fornitore da file Excel
-* [FIX] No empty entry when dry-run / No testata vuota di registrazione contabile se simulazione
-
-
-
-
-
+|
+|
 
 Credits / Didascalie
 ====================
@@ -268,6 +162,29 @@ Copyright
 
 Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
+
+
+|
+
+Authors / Autori
+----------------
+
+* `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
+
+
+Contributors / Collaboratori
+----------------------------
+
+* Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
+
+
+Maintainer / Manutenzione
+-------------------------
+
+
+
+
+|
 
 ----------------
 
@@ -288,10 +205,11 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 |
 
+This module is part of l10n-italy-supplemental project.
 
 Last Update / Ultimo aggiornamento: 2022-07-04
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=12.0
@@ -349,5 +267,4 @@ Last Update / Ultimo aggiornamento: 2022-07-04
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
-
 
