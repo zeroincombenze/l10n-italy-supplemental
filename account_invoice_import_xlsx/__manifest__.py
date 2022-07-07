@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
+# Copyright 2018-22 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     'name': "Import file Excel into invoice",
@@ -9,7 +9,7 @@
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.2',
+    'version': '10.0.0.1.3',
 
     'depends': [
         'account',

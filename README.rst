@@ -27,7 +27,7 @@ Avaiable Addons / Moduli disponibili
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_add_sale_order | 10.0.0.1.1 | |no_check| | Add sale order to sale account invoice                                           |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_import_xlsx    | 10.0.0.1.2 | |no_check| | Import invoice from Excel file                                                   |
+| account_invoice_import_xlsx    | 10.0.0.1.3 | |no_check| | Import invoice from Excel file                                                   |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_last_number    | |halt|     | |no_check| | Decrement invoice sequence if unlink last invoice                                |
 +--------------------------------+------------+------------+----------------------------------------------------------------------------------+
@@ -180,6 +180,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 History / Cronologia
 --------------------
 
+account_invoice_import_xlsx: 10.0.0.0.3 (2022-07-07)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Name form file xlsx / Descrizione riga da file Excel
+
+
 account_gopher: 10.0.0.2.7 (2022-06-27)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -303,7 +309,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-07-02
+Last Update / Ultimo aggiornamento: 2022-07-07
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
