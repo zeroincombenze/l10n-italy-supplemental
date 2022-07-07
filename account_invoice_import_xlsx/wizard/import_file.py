@@ -33,7 +33,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
 
     data_file = fields.Binary(
         string='Excel Data File',
-        required=True,
+        # required=True,
     )
     filename = fields.Char()
 
@@ -373,10 +373,11 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 html += html_txt('', '/tr')
             return html
         line = line_model.create(vals)
+        name = vals["name"]
         line._onchange_product_id()
         line._compute_price()
         line._set_taxes()
-        line.write({})
+        line.write({"name": name})
         return html
 
     def store_tax_ids(self):
