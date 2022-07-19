@@ -1,10 +1,12 @@
 
-===========================================
-|icon| Module enhanced functions 10.0.0.1.0
-===========================================
+======================================================================
+|icon| Account bank statement with liquidity reconciliation 10.0.0.1.0
+======================================================================
 
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/module_plus/static/description/icon.png
+**Liquidity accounts can be reconciled bye bank statement**
+
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/account_bank_statement_liquidity/static/description/icon.png
 
 |Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
@@ -16,12 +18,22 @@
 Overview / Panoramica
 =====================
 
-|en| Upgraded repository directories
+|en| When you reconcile account bank statement,
+<bank to bank> and <bank to cash> jounral entries are ignored
+because liquidity account cannot be reconciled in Odoo.
+
+This module enable theese entries to be known and reconcied by
+account bank statement.
 
 
 |
 
-|it| Aggiorna repository directory
+|it| Nella gestione della riconciliazione di un estratto conto bancario,
+i giroconti tra conti di liquidità sono ignorati perché in Odoo
+i conti bancari non sono riconciliabili.
+
+Questo modulo permette di gestire il riconoscimento dei giroconti
+di liquidità nell'estrattto conto e di conseguenza di riconciliarli.
 
 
 |
@@ -77,7 +89,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode 
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **module_plus** > Install
+* |menu| Setting > Apps |right_do| Select **account_bank_statement_liquidity** > Install
 
 
 |
@@ -110,7 +122,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **module_plus** > Update
+* |menu| Setting > Apps |right_do| Select **account_bank_statement_liquidity** > Update
 
 |
 
@@ -141,6 +153,16 @@ Proposals for enhancement
 An Enhancement Proposal may be submitted if your idea gains ground.
 
 |it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
+
+
+ChangeLog History / Cronologia modifiche
+----------------------------------------
+
+10.0.0.1.0 (2022-07-18)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Draft code / Bozza iniziale
+
 
 
 |
@@ -199,7 +221,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-07-04
+Last Update / Ultimo aggiornamento: 2022-07-19
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
