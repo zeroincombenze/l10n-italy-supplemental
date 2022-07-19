@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<odoo>
+
+        <record id="view_bank_statement_form" model="ir.ui.view">
+            <field name="name">Import Bank Statements</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[last()]" position="after">
+                    <button
+                        name="%(action_wizard_import_account_bank_statement)d"
+                        type="action"
+                        string="Import"
+                        class="oe_highlight"
+                    />
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
