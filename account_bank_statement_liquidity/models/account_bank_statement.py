@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime, timedelta
+
 from odoo.osv import expression
 from odoo import models
 
@@ -59,6 +61,21 @@ class AccountBankStatementLine(models.Model):
             # domain_matching = expression.AND([domain_matching, domain_account])
 
         domain = expression.OR([domain_reconciliation, domain_matching])
+        strftime = datetime.strftime
+        strptime = datetime.strptime
+
+        domain_date = [
+            ('date',
+             '>=',
+             strftime(strptime(self.date, '%Y-%m-%d') - timedelta(days=60),
+                      '%Y-%m-%d')),
+            ('date',
+             '<=',
+             strftime(strptime(self.date, '%Y-%m-%d') + timedelta(days=60),
+                      '%Y-%m-%d')),
+        ]
+        domain = expression.AND([domain, domain_date])
+
         if self.partner_id.id and not overlook_partner:
             domain = expression.AND([domain, [("partner_id", "=", self.partner_id.id)]])
 
