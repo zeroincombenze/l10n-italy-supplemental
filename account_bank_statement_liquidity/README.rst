@@ -1,6 +1,6 @@
 
 ======================================================================
-|icon| Account bank statement with liquidity reconciliation 10.0.0.1.0
+|icon| Account bank statement with liquidity reconciliation 10.0.0.1.1
 ======================================================================
 
 
@@ -158,6 +158,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.1 (2022-07-20)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Searche for all accounts / Cerca tutti i conti
+
 10.0.0.1.0 (2022-07-18)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -221,7 +226,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-07-19
+Last Update / Ultimo aggiornamento: 2022-07-20
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

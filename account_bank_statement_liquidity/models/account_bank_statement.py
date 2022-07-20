@@ -43,20 +43,20 @@ class AccountBankStatementLine(models.Model):
                     [("account_id.internal_type", "in", ["payable", "receivable"])],
                 ]
             )
-        else:
-            domain_account = expression.OR(
-                [
-                    [("account_id.reconcile", "=", True)],
-                    [
-                        (
-                            "account_id.user_type_id",
-                            "=",
-                            self.env.ref("account.data_account_type_liquidity").id,
-                        )
-                    ],
-                ]
-            )
-            domain_matching = expression.AND([domain_matching, domain_account])
+        # else:
+            # domain_account = expression.OR(
+            #     [
+            #         [("account_id.reconcile", "=", True)],
+            #         [
+            #             (
+            #                 "account_id.user_type_id",
+            #                 "=",
+            #                 self.env.ref("account.data_account_type_liquidity").id,
+            #             )
+            #         ],
+            #     ]
+            # )
+            # domain_matching = expression.AND([domain_matching, domain_account])
 
         domain = expression.OR([domain_reconciliation, domain_matching])
         if self.partner_id.id and not overlook_partner:
