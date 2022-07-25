@@ -1,12 +1,33 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
+import time
 
 from odoo.osv import expression
-from odoo import models
+from odoo import models, api, fields, _
+from odoo.exceptions import UserError
+
+
+class AccountBankStatement(models.Model):
+    _inherit = "account.bank.statement"
 
 
 class AccountBankStatementLine(models.Model):
     _inherit = "account.bank.statement.line"
+
+    # journal_entry_ids = fields.Many2many(
+    #     'account.move',
+    #     'bank_statement_move_rel',
+    #     'statement_line_id',
+    #     'id',
+    #     copy=False,
+    #     readonly=True
+    # )
+
+    @api.multi
+    def button_cancel_reconciliation(self):
+        super(AccountBankStatementLine, self).button_cancel_reconciliation()
+        for st_line in self:
+            st_line.journal_entry_ids = [(5, 0)]
 
     def get_move_lines_for_reconciliation(
         self,
@@ -61,20 +82,30 @@ class AccountBankStatementLine(models.Model):
             # domain_matching = expression.AND([domain_matching, domain_account])
 
         domain = expression.OR([domain_reconciliation, domain_matching])
+
         strftime = datetime.strftime
         strptime = datetime.strptime
-
         domain_date = [
             ('date',
              '>=',
-             strftime(strptime(self.date, '%Y-%m-%d') - timedelta(days=60),
+             strftime(strptime(self.date, '%Y-%m-%d') - timedelta(days=35),
                       '%Y-%m-%d')),
             ('date',
              '<=',
-             strftime(strptime(self.date, '%Y-%m-%d') + timedelta(days=60),
+             strftime(strptime(self.date, '%Y-%m-%d') + timedelta(days=35),
                       '%Y-%m-%d')),
         ]
         domain = expression.AND([domain, domain_date])
+
+        if self.amount_currency and self.currency_id:
+            amount = self.amount_currency
+        else:
+            amount = self.amount
+        if amount < 0.0:
+            domain_amount = [("credit", "<=", abs(amount))]
+        else:
+            domain_amount = [("debit", "<=", amount)]
+        # domain = expression.AND([domain, domain_amount])
 
         if self.partner_id.id and not overlook_partner:
             domain = expression.AND([domain, [("partner_id", "=", self.partner_id.id)]])
@@ -95,5 +126,17 @@ class AccountBankStatementLine(models.Model):
         domain = expression.AND([domain, additional_domain])
 
         return self.env["account.move.line"].search(
-            domain, offset=offset, limit=limit, order="date_maturity asc, id asc"
+            domain, offset=offset, limit=limit, order="date asc, id asc"
         )
+
+    def process_reconciliation(
+            self, counterpart_aml_dicts=None, payment_aml_rec=None, new_aml_dicts=None):
+        res = super(AccountBankStatementLine, self).process_reconciliation(
+            counterpart_aml_dicts=counterpart_aml_dicts,
+            payment_aml_rec=payment_aml_rec,
+            new_aml_dicts=new_aml_dicts,
+        )
+        payment_aml_rec = payment_aml_rec or self.env['account.move.line']
+        for aml_rec in payment_aml_rec:
+            self.journal_entry_ids = [(3, aml_rec.move_id.id)]
+        # self.move_lines_ids = [(3, x) for x in datum['payment_aml_ids']]
