@@ -2,44 +2,54 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Liquidity accounts can be reconciled bye bank statement / Riconciliazione bancaria conti di liquidit&#224;</h2>
+            <h2 class="oe_slogan" style="color:#162832;">Import account bank statement from Excel / Importazione E/C bancario da Excel</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
                 <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
             </p>
-            <p class="oe_mt16" align="justify">When you reconcile account bank statement,
-&lt;bank to bank&gt; and &lt;bank to cash&gt; jounral entries are ignored
-because liquidity account cannot be reconciled in Odoo.
+            <p class="oe_mt16" align="justify">Import a Excel file into bank statement
 <p align="justify">
-This module enable theese entries to be known and reconcied by
-account bank statement.
+Excel file must have following structure:
+</p><p align="justify">
+</p><p align="justify">
+<table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
+<td>Data contabile</td><td>Valuta</td><td>Dare</td><td>Avere</td><td>Divisa</td><td>Causale</td><td>Descrizione</td>
+</tr><tr>
+<td>01/01/2022</td><td>01/01/2022</td><td/><td>100</td><td>EUR</td><td>XX</td><td>DEPOSITO</td>
+</tr><tr>
+<td>10/01/2022</td><td>10/01/2022</td><td>-50</td><td/><td>EUR</td><td>26</td><td>BONIFICO SEPA</td>
+</tr><tr>
+
+</tr></table>
 </p></p>
         </div>
         <div class="oe_span6">
             <p align="center">
                 <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
             </p>
-            <p class="oe_mt16" align="justify">Nella gestione della riconciliazione di un estratto conto bancario,
-i giroconti tra conti di liquidit&#224; sono ignorati perch&#233; in Odoo
-i conti bancari non sono riconciliabili.
+            <p class="oe_mt16" align="justify">Importazione file Excel per E/C bancario
 <p align="justify">
-Questo modulo permette di gestire il riconoscimento dei giroconti
-di liquidit&#224; nell'estrattto conto e di conseguenza di riconciliarli.
+</p><p align="justify">
+Il file Excel ha la seguente struttura:
+</p><p align="justify">
+<table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
+<td>Data contabile</td><td>Valuta</td><td>Dare</td><td>Avere</td><td>Divisa</td><td>Causale</td><td>Descrizione</td>
+</tr><tr>
+<td>01/01/2022</td><td>01/01/2022</td><td/><td>100</td><td>EUR</td><td>XX</td><td>DEPOSITO</td>
+</tr><tr>
+<td>10/01/2022</td><td>10/01/2022</td><td>-50</td><td/><td>EUR</td><td>26</td><td>BONIFICO SEPA</td>
+</tr><tr>
+
+</tr></table>
 </p></p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
         <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
         <div class="oe_span12">
-<h3>10.0.0.1.1 (2022-07-20)</h3>
-<p align="justify">
-<ul>
-<li>[IMP] Search for all accounts / Cerca tutti i conti</li>
-</ul>
-</p><p align="justify">
 <h3>10.0.0.1.0 (2022-07-18)</h3>
-</p><p align="justify">
+<p align="justify">
 <ul>
 <li>[IMP] Draft code / Bozza iniziale</li>
 </ul>

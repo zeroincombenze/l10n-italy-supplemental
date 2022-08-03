@@ -110,7 +110,7 @@ ASSOCODES = {
     "N040103": (RE_ESE, "10", None, "11", None, None),
     "N040105": (RE_ESE, "10", None, "27", None, "quinques"),
     "N050100": (
-        "R[egime.]+[ di]+Marg",
+        "R[egime.]+[ deli]+Marg",
         "3[67]",
         None,
         None,
@@ -130,6 +130,8 @@ ASSOCODES = {
     "N060203": (None, "7", "quinques", None, None, None),
     "*SP": (None, "17", "ter", None, None, None),
     "*DF": (None, "32", "bis", None, None, "83"),
+    "*X": (None, "17", None, "2", None, None),
+    # Art. 17 generic comma
     "*N6.9": (None, "17", None, "c", None, None),
 }
 
@@ -178,6 +180,7 @@ class AccountTax(models.Model):
 
         def set_result(tax, assosoftware, weight, res):
             res[tax]["wgt"] = weight
+            res[tax]["rc"] = False
             if assosoftware == "*SP":
                 res[tax]["axc"] = False
                 res[tax]["nat"] = ""
@@ -187,6 +190,10 @@ class AccountTax(models.Model):
                 res[tax]["axc"] = False
                 res[tax]["nat"] = ""
                 res[tax]["pay"] = "D"
+            elif assosoftware == "*X":
+                res[tax]["axc"] = False
+                res[tax]["nat"] = ""
+                res[tax]["pay"] = ""
             elif assosoftware.startswith("*N"):
                 res[tax]["axc"] = False
                 res[tax]["nat"] = assosoftware[1:]
@@ -199,13 +206,12 @@ class AccountTax(models.Model):
                 res[tax]["nat"] = assosoftware_rec.nature
                 res[tax]["pay"] = False
                 res[tax]["law"] = assosoftware_rec.name
+            if assosoftware in ("N020208", "N030501", "*X"):
+                res[tax]["use"] = "sale"
 
         tax_model = self.env["account.tax"]
         nature_model = self.env[NATURE_MODEL]
         assosoftware_model = self.env["italy.ade.tax.assosoftware"]
-        # company_model = self.env['res.company']
-        # for tax in tax_model.search([("rc_sale_tax_id", "!=", False)]):
-        #     tax.write({})
         html = ""
         if html_txt:
             html += html_txt(_("Analyzing Taxes"), "h3")
@@ -232,7 +238,7 @@ class AccountTax(models.Model):
                         % tax.company_id.id
                     )
                     code = self.cr.fetchone()[0]
-                    if code in ("RF16", "RF17"):
+                    if code in ("RF02", "RF16", "RF17", "RF19"):
                         cur_company_pay = "D"
                 except BaseException:
                     pass
@@ -355,9 +361,24 @@ class AccountTax(models.Model):
                         continue
                     set_result(tax, assosoftware, weight, res)
         for tax in parsed:
+            vals = {}
+            if res[tax].get("use") and (
+                    res[tax].get("use") != tax.type_tax_use
+                    or tax.description.startswith("aa")):
+                if "non usare" not in tax.name:
+                    actioned += _("do not use!; ")
+                    vals["name"] = res[tax]["nme"] + " (non usare)"
+                    vals["active"] = False
+            if (res[tax]["nat"].startswith("N3") and res[tax]["nat"] != "N3.5"):
+                res[tax]["rc"] = True
+                if tax.type_tax_use == "purchase":
+                    del res[tax]["nat"]
+            elif res[tax]["nat"].startswith("N6"):
+                res[tax]["rc"] = True
+                if tax.type_tax_use == "sale":
+                    del res[tax]["nat"]
             actioned = ""
             if res[tax].get("wgt") or res[tax].get("amt"):
-                vals = {}
                 nature = False
                 if res[tax].get("nat"):
                     nature = nature_model.search([("code", "=", res[tax]["nat"])])[0]
@@ -410,10 +431,16 @@ class AccountTax(models.Model):
                         actioned += _("set law reference to %s; ") % res[tax].get("law")
                     else:
                         actioned += _("reset law reference; ")
+                if (hasattr(tax, "rc")
+                        and res[tax].get("rc")
+                        and res[tax]["rc"] != tax.rc):
+                    vals["rc"] = res[tax]["rc"]
+                    actioned += _("set RC type tax; ")
                 tax.write(vals)
                 if not hasattr(tax, "rc_type") or "rc_type" not in vals:
                     if hasattr(tax, "_onchange_nature"):
                         tax._onchange_nature()
+                        tax.rc = tax.rc | res[tax].get("rc", False)
                     elif hasattr(tax, "_default_rc_type"):
                         tax.rc_type = tax._default_rc_type()
                 if hasattr(tax, "get_rc_type"):
@@ -424,11 +451,11 @@ class AccountTax(models.Model):
                         and not tax.rc_type
                     ) or (rc_type == "self" and rc_type != tax.rc_type):
                         actioned += _("Invalid RC type for tax nature; ")
-                    if rc_type:
-                        if tax.type_tax_use == "purchase" and not tax.amount:
+                    if rc_type and not tax.amount:
+                        if tax.type_tax_use == "purchase":
                             actioned += _("Missed rate in RC tax; ")
-                        elif tax.type_tax_use == "sale" and tax.amount:
-                            actioned += _("Invalid rate in RC tax; ")
+                        elif tax.type_tax_use == "sale":
+                            actioned += _("RC type requires a rate tax; ")
                 name = "rc_sale_tax_id"
                 if hasattr(tax, name) and getattr(tax, name) and tax.rc_type:
                     if tax.rc_type == "self":
@@ -436,9 +463,9 @@ class AccountTax(models.Model):
                             actioned += _("Missed sale tax; ")
                         else:
                             tax_sale = tax.rc_sale_tax_id
-                            if not tax.amount or not tax_sale.amount:
-                                actioned += _("RC tax without rate; ")
-                            elif tax.amount != tax_sale.amount:
+                            if not tax_sale.amount:
+                                actioned += _("Sale RC type requires a rate tax; ")
+                            if tax.amount != tax_sale.amount:
                                 actioned += _("Purchase and sale different tax rates")
                             elif tax.company_id != tax_sale.company_id:
                                 actioned += _(
@@ -452,19 +479,26 @@ class AccountTax(models.Model):
                                 )
                 name = "rc_purchase_tax_id"
                 if hasattr(tax, name) and getattr(tax, name) and tax.rc_type:
-                    if tax.rc_type:
-                        actioned += _("Invalid RC type")
+                    actioned += _("Invalid RC type")
                 if getattr(tax, NATURE_ID):
-                    if getattr(tax, NATURE_ID).code.startswith("N3") or getattr(
-                        tax, NATURE_ID
-                    ).code.startswith("N6"):
-                        if not hasattr(tax, "get_rc_type"):
-                            if tax.type_tax_use == "purchase" and not tax.amount:
+                    if (getattr(tax, NATURE_ID).code.startswith("N3")
+                            and getattr(tax, NATURE_ID).code != "N3.5"):
+                        if tax.type_tax_use == "purchase":
+                            actioned += _(
+                                "Remove invalid nature %s; "
+                                % getattr(tax, NATURE_ID).code)
+                            setattr(tax, NATURE_ID, False)
+                        elif tax.amount:
+                            tax.amount = 0.0
+                            actioned += _("Invalid rate in tax; ")
+                    elif getattr(tax, NATURE_ID).code.startswith("N6"):
+                        if not tax.amount:
+                            if tax.type_tax_use == "purchase":
                                 actioned += _("Missed rate in RC tax; ")
-                            elif tax.type_tax_use == "sale" and tax.amount:
-                                actioned += _("Invalid rate in RC tax; ")
+                            elif tax.type_tax_use == "sale":
+                                actioned += _("RC type requires a rate tax; ")
                     elif getattr(tax, NATURE_ID) and tax.amount:
-                        actioned += _("Invalid rate in tax; ")
+                        actioned += _("Invalid nature or rate in tax; ")
             if html_txt:
                 html += html_txt("", "tr")
                 html += html_txt(tax.description, "td")

@@ -1,12 +1,10 @@
 
-===================================
-|icon| Account Assistant 10.0.0.2.8
-===================================
+==========================================================
+|icon| Import account bank statement from Excel 10.0.0.1.0
+==========================================================
 
 
-**Configure account records**
-
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/account_gopher/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/account_bank_statement_import_xlsx/static/description/icon.png
 
 |Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
@@ -18,20 +16,38 @@
 Overview / Panoramica
 =====================
 
-|en| This module makes available following useful functions:
+|en| Import a Excel file into bank statement
 
-* Configure taxes
-* Reload taxes from template after CoA module upgrade
-* Reload accounts from template after CoA module upgrade
+Excel file must have following structure:
+
+
++----------------+------------+------+------+--------+--------+---------------+
+| Data contabile | Valuta     | Dare | Avere| Divisa | Causale| Descrizione   |
++----------------+------------+------+------+--------+--------+---------------+
+| 01/01/2022     | 01/01/2022 |      |  100 | EUR    | XX     | DEPOSITO      |
++----------------+------------+------+------+--------+--------+---------------+
+| 10/01/2022     | 10/01/2022 |  -50 |      | EUR    | 26     | BONIFICO SEPA |
++----------------+------------+------+------+--------+--------+---------------+
+
+You can find Excel example in example directory.
 
 
 |
 
-|it| Questo modulo rende disponibili le seguenti utili funzioni:
+|it| Importazione file Excel per E/C bancario
 
-* Configura tasse (natura,esigibilità, gruppo, eccetera)
-* Ricarica tasse da modello, dopo l'aggiornamento del modulo PdC
-* Ricarica conti contabili da modello, dopo l'aggiornamento del modulo PdC
+
+Il file Excel ha la seguente struttura:
+
++----------------+------------+------+------+--------+--------+---------------+
+| Data contabile | Valuta     | Dare | Avere| Divisa | Causale| Descrizione   |
++----------------+------------+------+------+--------+--------+---------------+
+| 01/01/2022     | 01/01/2022 |      |  100 | EUR    | XX     | DEPOSITO      |
++----------------+------------+------+------+--------+--------+---------------+
+| 10/01/2022     | 10/01/2022 |  -50 |      | EUR    | 26     | BONIFICO SEPA |
++----------------+------------+------+------+--------+--------+---------------+
+
+Si può vedere un esempio nella cartella example.
 
 
 |
@@ -87,7 +103,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode 
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **account_gopher** > Install
+* |menu| Setting > Apps |right_do| Select **account_bank_statement_import_xlsx** > Install
 
 
 |
@@ -120,7 +136,7 @@ From UI: go to:
 
 * |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **account_gopher** > Update
+* |menu| Setting > Apps |right_do| Select **account_bank_statement_import_xlsx** > Update
 
 |
 
@@ -156,62 +172,10 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
-10.0.0.2.8 (2022-07-22)
+10.0.0.1.0 (2022-07-18)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] New tax checks / Nuovi controlli IVA
-
-10.0.0.2.7 (2022-06-27)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] RC new checks / Nuovi controlli RC
-
-10.0.0.2.6 (2022-06-24)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] RC configuraton / Configurazione reverse charge
-
-10.0.0.2.5 (2022-06-20)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Tax nature rename
-
-10.0.0.2.4 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-10.0.0.2.3 (2022-03-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-10.0.0.2.2 (2022-02-21)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Set account nature / Imposta natura conto
-
-10.0.0.2.1 (2022-02-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Company fiscal position / Posizione fiscale azienda
-
-10.0.0.2.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
-* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
-* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
-
-10.0.0.1.0 (2021-12-23)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor enhancements
-
-10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
+* [IMP] Draft code / Bozza iniziale
 
 
 
@@ -271,9 +235,9 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-07-25
+Last Update / Ultimo aggiornamento: 2022-07-19
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=10.0
