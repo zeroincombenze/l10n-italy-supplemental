@@ -1,6 +1,6 @@
 
 ===================================
-|icon| Invoice Line View 10.0.1.0.5
+|icon| Invoice Line View 10.0.1.0.6
 ===================================
 
 
@@ -146,6 +146,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+10.0.1.0.6 (2022-08-03)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Invoice line order / Ordinamento righe fattura
+
 10.0.1.0.5 (2022-06-24)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -218,7 +223,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-06-26
+Last Update / Ultimo aggiornamento: 2022-08-03
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
