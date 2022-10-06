@@ -1,6 +1,6 @@
 
 ================================================
-|icon| Import file Excel into invoice 10.0.0.1.3
+|icon| Import file Excel into invoice 10.0.0.2.0
 ================================================
 
 
@@ -178,6 +178,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+10.0.0.2.0 (2022-10-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] User no admin can import / Utenti non admin possono importare
+* [FIX] Evaluate early total tax / Calcolo totale IVA immediato
+* [IMP] Use listprice, if present / Utilizza listino se presente (richiede modulo aggiuntivo)
+
 10.0.0.0.3 (2022-07-07)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -251,7 +258,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-07-07
+Last Update / Ultimo aggiornamento: 2022-10-06
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
