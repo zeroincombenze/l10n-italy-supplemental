@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <form string="Import invoice from file xlsx" >
                 <group>
-                        <field name="data_file" filename="filename"
+                        <field name="data_file" filename="filename" widget="binary"
                                placeholder="Choose a file to import..."/>
                         <field name="filename" invisible="1"/>
                         <field name="journal_id"/>
@@ -26,6 +26,7 @@
     <record model="ir.ui.view" id="wizard_import_invoice_result">
         <field name="name">Import Invoices</field>
         <field name="model">wizard.import.invoice.file.xlsx</field>
+        <field name="priority">99</field>
         <field name="arch" type="xml">
             <form string="Result of Import invoices" >
                 <group>

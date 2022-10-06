@@ -335,14 +335,15 @@ class WizardImportInvoiceFileXlsx(models.Model):
                 self.line_vals['price_unit'])
 
     def prepare_line_data(self, invoice):
+        inv_line_model = self.env['account.invoice.line']
         self.line_vals['invoice_id'] = invoice.id
         self.line_vals['account_id'] = invoice.journal_id.default_debit_account_id.id
-        if self.product:
-            self.line_vals["default_code"] = self.product.default_code
-            self.line_vals['account_id'] = self.env[
-                'account.invoice.line'].get_invoice_line_account(
-                invoice.type, self.product, invoice.fiscal_position_id,
-                invoice.company_id).id
+        # if self.product:
+        #     self.line_vals["default_code"] = self.product.default_code
+        #     account = inv_line_model.get_invoice_line_account(
+        #         invoice.type, self.product, invoice.fiscal_position_id,
+        #         invoice.company_id)
+        #     self.line_vals['account_id'] = account.id
 
     def create_invoice(self, vals, html_txt=None):
         html = ''
@@ -377,6 +378,8 @@ class WizardImportInvoiceFileXlsx(models.Model):
         line._onchange_product_id()
         line._compute_price()
         line._set_taxes()
+        if hasattr(line, 'update_from_pricelist'):
+            line.update_from_pricelist()
         line.write({"name": name})
         return html
 
@@ -434,6 +437,7 @@ class WizardImportInvoiceFileXlsx(models.Model):
                     html = self.create_invoice_line(
                         self.line_vals, html_txt=self.html_txt)
                     tracelog += html
+                invoice.compute_taxes()
         else:
             invoice = False
             for row in datas:

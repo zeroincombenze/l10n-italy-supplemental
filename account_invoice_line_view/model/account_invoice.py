@@ -8,7 +8,7 @@ import odoo.addons.decimal_precision as dp
 
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
-    _order = 'id desc'
+    # _order = 'id desc'
 
     @api.depends('quantity')
     def _compute_quantity(self):

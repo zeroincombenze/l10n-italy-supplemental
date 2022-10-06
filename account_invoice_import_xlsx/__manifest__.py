@@ -9,7 +9,7 @@
     'website': "https://www.zeroincombenze.it/",
 
     'category': 'Generic Modules/Accounting',
-    'version': '10.0.0.1.3',
+    'version': '10.0.0.2.0',
 
     'depends': [
         'account',
@@ -17,6 +17,7 @@
     'data': [
         "views/account_invoice_views.xml",
         "wizard/import_file_view.xml",
+        "security/ir.model.access.csv",
     ],
     'installable': True
 }
