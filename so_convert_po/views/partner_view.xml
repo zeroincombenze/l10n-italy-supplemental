@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record id="partner_form_so_po" model="ir.ui.view">
+        <field name="name">partner.form.so.po</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="copy_sale_price"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</data>
+</odoo>
