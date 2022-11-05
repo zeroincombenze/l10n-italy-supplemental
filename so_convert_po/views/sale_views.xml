@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="view_sale_order_form_po" model="ir.ui.view">
+    <field name="name">sale.order.form.po</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="editable" />
+            </xpath>
+        </data>
+        <group name="sales_person" position="after">
+            <group string="Purchase Information" name="purchase">
+                <field name="allow_convert" readonly="True"/>
+                <field name="margin"/>
+            </group>
+        </group>
+        <xpath expr="//header" position="inside">
+            <button string="Convert To Purchase Order"
+                    name="action_convert_to_purchase_order"
+                    type="object"
+                    attrs="{'invisible': [
+                    ('allow_convert', '=', False),
+                    ]}"/>
+            <button string="Recompute Margin"
+                    name="action_recompute_margin"
+                    type="object"
+                    />
+        </xpath>
+        <xpath expr="//field[@name='order_line']/form//div[@name='discount']" position="after">
+            <field name="product_margin"/>
+        </xpath>
+        <xpath expr="//field[@name='tax_id']" position="after">
+            <field name="po_currency_id" readonly="True"/>
+            <field name="po_price_unit_ccy" readonly="True"/>
+            <field name="po_price_unit"/>
+            <field name="po_discount"/>
+            <field name="purchase_order_line_id" readonly="True"/>
+            <field name="purchase_order_id" readonly="True"/>
+        </xpath>
+        <xpath expr="//field[@name='order_line']/tree/field[@name='price_total']" position="after">
+            <field name="purchase_order_id" readonly="True"/>
+        </xpath>
+    </field>
+</record>
+
+</odoo>
+

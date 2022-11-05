@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_config_settings_inherit" model="ir.ui.view">
+        <field name="name">sale.config.settings.form.inherit</field>
+        <field name="model">sale.config.settings</field>
+        <field name="inherit_id" ref="sales_team.view_sale_config_settings"/>
+        <field name="arch" type="xml">
+            <div id="main" position="inside">
+                <group string="Converting to Purchase Order" name="so_convert_purchase_order">
+                    <field name="state" class="oe_inline"/>
+                    <field name="draft_allow_convert" class="oe_inline"/>
+                    <field name="sent_allow_convert" class="oe_inline"/>
+                    <field name="sale_allow_convert" class="oe_inline"/>
+                </group>
+            </div>
+        </field>
+    </record>
+</odoo>
