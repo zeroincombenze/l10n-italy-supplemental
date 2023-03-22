@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="commercial_agent_sale_commission_view_tree" model="ir.ui.view">
+        <field name="name">commercial.agent.sale.commission.view.tree</field>
+        <field name="model">commercial.agent.sale.commission</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false">
+                <field name="agent_id" />
+                <field name="sale_order_id" />
+                <field name="date_order" />
+                <field name="currency_id" invisible="1"/>
+                <field name="total_order_amount" 
+                sum="Total Order"/>
+                <field name="total_commission" 
+                widget="monetary" 
+                options="{'currency_field': 'currency_id'}"
+                sum="Total Commission"/>
+                <field name="paid_commission" 
+                widget="monetary" 
+                options="{'currency_field': 'currency_id'}"
+                sum="Paid"
+                />
+                <field name="remaining_commission" 
+                widget="monetary" 
+                options="{'currency_field': 'currency_id'}"
+                sum="Remaining"
+                />
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="commercial_agent_commission_view_form" model="ir.ui.view">
+        <field name="name">commercial_agent_commission.view.form</field>
+        <field name="model">commercial.agent.commission</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="agent_id" readonly="1"/>
+                        <field name="commission_type" readonly="1"/>
+                        <field name="commission" readonly="1"/>
+                        <field name="date_start" readonly="1"/>
+                        <field name="date_end" readonly="1"/>
+                        <field name="product_id" readonly="1"
+                        attrs="{
+                        'readonly':[('commission_type','not in', ['product_customer','product'])]
+                        }"/>
+                        <field name="product_category" readonly="1"
+                        attrs="{
+                        'readonly':[('commission_type','not in', ['product_category'])]
+                        }"/>
+                        <field name="customer_id" readonly="1"
+                            attrs="{
+                        'readonly':[('commission_type','not in', ['product_customer', 'customer'])]
+                        }"/>
+                        <field name="pricelist_id" readonly="1"
+                            attrs="{
+                        'readonly':[('commission_type','not in', ['pricelist'])]
+                        }"/>
+                        <field name="area_id" readonly="1"
+                            attrs="{
+                        'readonly':[('commission_type','not in', ['area'])]
+                        }"/>
+                        <field name="active"  widget="boolean_toggle"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="commercial_agent_sale_commission_view_form" model="ir.ui.view">
+        <field name="name">commercial.agent.sale.commission.view.form</field>
+        <field name="model">commercial.agent.sale.commission</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <sheet>
+<!--                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>-->
+                    <div class="alert alert-danger oe_edit_only" role="alert" 
+                    attrs="{'invisible': [('remaining_commission', '>', 0)]}">
+                        The commission order has been fully settled, you cannot change it.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" />
+                            <field name="agent_id" readonly="1"/>       
+                            <field name="sale_order_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date_order" readonly="1"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="Lines" string="Commission Lines">
+                            <field name="commission_lines"  
+                            attrs="{'readonly': [('remaining_commission', '=', 0)]}">
+                                <tree delete="false" create="false" editable="top">
+                                    <field name="product_id" readonly="1"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="line_amount" 
+                                    widget="monetary" 
+                                    options="{'currency_field': 'currency_id'}"
+                                    readonly="1"/>
+                                    <field name="commission_type" readonly="1"/>
+                                    <field name="commission_percentage" />
+                                    <field name="commission_value" 
+                                    widget="monetary" 
+                                    options="{'currency_field': 'currency_id'}"/>
+                                </tree>
+                            </field>
+                            <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4">
+                                    
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="commission_total">
+                                    <field name="total_order_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                        <label for="total_commission"/>
+                                    </div>
+                                    <field name="total_commission" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+
+                                    <field name="paid_commission" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="remaining_commission" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    
+                                </group>
+                                <div class="oe_clear"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    
+    <record id="commercial_Agent_sale_line_commission_view_form" model="ir.ui.view">
+        <field name="name">commercial.agent.sale.line.commission.view.form</field>
+        <field name="model">commercial.agent.sale.line.commission</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    
+                    <group>
+                        <field name="active" />
+                        <field name="order_commission_id" readonly="1"/>
+                        <field name="sale_order_line_id" readonly="1" />
+                        <field name="product_id" readonly="1"/>
+                        <field name="commercial_agent_commission_id" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="line_amount" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="commission_type" readonly="1"/>
+                        <field name="commission_percentage" readonly="1"/>
+                        <field name="commission_value" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="commercial_agent_commission_view_tree" model="ir.ui.view">
+        <field name="name">commercial.agent.commission.view.tree</field>
+        <field name="model">commercial.agent.commission</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="agent_id"/>
+                <field name="commission_type" />
+                <field name="commission" />
+                <field name="product_id" 
+                attrs="{
+                'readonly':[('commission_type','not in', ['product_customer','product'])]
+                }"/>
+                <field name="product_category" 
+                attrs="{
+                'readonly':[('commission_type','not in', ['product_category'])]
+                }"/>
+                <field name="customer_id" 
+                    attrs="{
+                'readonly':[('commission_type','not in', ['product_customer', 'customer'])]
+                }"/>
+                <field name="pricelist_id" 
+                    attrs="{
+                'readonly':[('commission_type','not in', ['pricelist'])]
+                }"/>
+                <field name="area_id" 
+                    attrs="{
+                'readonly':[('commission_type','not in', ['area'])]
+                }"/>
+                <field name="date_start"
+                options='{"related_end_date": "date_end"}' required="1"/>
+                <field name="date_end" required="1"
+                options='{"related_start_date": "date_start"}'/>
+                <field name="active"
+                groups="commercial_agent_plus.commercial_agent_plus_agent_admin_group,commercial_agent_plus.commercial_agent_plus_manager_group"/>
+
+            </tree>
+        </field>
+    </record>
+</odoo>
+
+

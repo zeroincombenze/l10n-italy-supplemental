@@ -1,0 +1,32 @@
+.box_document{
+    margin:20px 0;
+    font-size: 24px;
+    color:'#b6b6b6';
+}
+
+/*
+    table header type format
+*/
+
+.box_header{
+    border-bottom: 1px solid #83d2fb;
+    border-top: 1px solid #83d2fb;
+    background-color: #fff;
+    margin: 5px 0 0 0;
+    text-transform: uppercase;
+}
+
+/*
+    invoice table font
+*/
+
+.invoice_table_font{
+    font-size: 10pt;
+}
+/*
+    summary table font
+*/
+
+.summary_font{
+    font-size: 10pt;
+}

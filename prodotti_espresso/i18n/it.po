@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * prodotti_espresso
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-01 09:48+0000\n"
+"PO-Revision-Date: 2022-06-01 11:50+0200\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/models/sale.py:107
+#: code:addons/prodotti_espresso/models/sale.py:107
+msgid ""
+"Alcuni prodotti hanno una quantità superiore a quella prevista.\n"
+"Verificare manualmente la consegna"
+msgstr ""
+"Alcuni prodotti hanno una quantità superiore a quella prevista.\n"
+"Verificare manualmente la consegna"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_product_product__espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_product_template__espresso
+msgid "Espresso"
+msgstr "Espresso"
+
+#. module: prodotti_espresso
+#: model:ir.actions.server,name:prodotti_espresso.espresso_generate_ddt
+msgid "Generate DDT espresso"
+msgstr "Genera DDT espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_product_product__espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_product_template__espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_sale_order_line__product_espresso
+msgid ""
+"If flagged this product will be automatically insert into DDT from "
+"delivery note."
+msgstr ""
+"Se impostato questo prodotto verrà automaticamente inserito nel DDT dalla"
+" consegna."
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/models/sale.py:117
+#: code:addons/prodotti_espresso/models/sale.py:117
+msgid "La consegna {cn} risulta in stato anomalo rispetto a quanto atteso."
+msgstr "La consegna {cn} risulta in stato anomalo rispetto a quanto atteso."
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/models/sale.py:60
+#: code:addons/prodotti_espresso/models/sale.py:60
+msgid "Please add some items to move."
+msgstr "Aggiungi alcuni elementi da spostare."
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_sale_order_line__product_espresso
+msgid "Prodotto espresso"
+msgstr ""
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_product_product
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_product_template
+msgid "Product Template"
+msgstr "Prodotto radice"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_sale_order
+msgid "Sale Order"
+msgstr "Ordine di vendita"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga ordine di vendita"
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/models/sale.py:80
+#: code:addons/prodotti_espresso/models/sale.py:80
+msgid ""
+"You cannot validate a transfer if no quantites are reserved nor done. To "
+"force the transfer, switch in edit more and encode the done quantities."
+msgstr ""
+"Impossibile validare un trasferimento se non ci sono quantità riservate o"
+" effettuate. Per forzare il trasferimento, passare alla modalità modifica"
+" e inserire le quantità effetuate."
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/models/sale.py:100
+#: code:addons/prodotti_espresso/models/sale.py:100
+#, python-format
+msgid "You need to supply a Lot/Serial number for product %s."
+msgstr "È necessario indicare un numero di lotto/serie per il prodotto %s."
+
+

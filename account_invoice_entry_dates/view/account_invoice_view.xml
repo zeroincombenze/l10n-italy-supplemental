@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- -->
+    <!-- SUPPLIER INVOICE -->
+    <!-- -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <record id="view_supplier_invoice_entry_dates_form" model="ir.ui.view">
+        <field name="name">view.supplier.invoice.entry.dates.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"></field>
+        <field name="arch" type="xml">
+
+            <!-- Attualmente disabilitato, pronto per utilizzo futuro -->
+            <!-- <xpath expr="/form/header/button[@name='action_invoice_open']" position="after">-->
+            <!-- <button-->
+            <!-- string="Crea registrazione contabile"-->
+            <!-- type="object" name="action_invoice_draft_move"-->
+            <!-- attrs="{'invisible': [ '|' ('id', '=', False), ('move_id', '=', True) ]}"-->
+            <!-- />-->
+            <!-- </xpath>-->
+
+
+            <!-- Field 'date' moved inside page 'Other info' -->
+            <field name="date" position="replace"/>
+
+            <xpath expr="//page[@name='other_info']/group[last()]" position="after">
+                <group>
+                    <field name="date"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='payment_term_id']" position="replace">
+            </xpath>
+
+            <xpath expr="/form/sheet/group/group[last()]/field[@name='date_due']" position="after">
+                <field name="payment_term_id" options="{'no_create': True}"/>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook/page[2]" position="after">
+                <page string="Prima nota">
+                    <field name="accountbrief_ids_rel">
+                        <tree>
+                            <field name="account_id"/>
+                            <field name="partner_id"/>
+                            <field name="debit"/>
+                            <field name="credit"/>
+                            <field name="accrual_date_start"/>
+                            <field name="accrual_date_end"/>
+                        </tree>
+                    </field>
+                    <button
+                           string="Aggiorna prima nota"
+                           type="object" name="action_accountbrief_update"
+                           class="oe_highlight oe_edit_only"
+                           attrs="{ 'invisible': [ ('move_id', '=', False) ] }"
+                           />
+                </page>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook/page[3]" position="after">
+                <page
+                     string="Riepilogo IVA"
+                     name="vatbrief"
+                     >
+                    <field name="vatbrief_ids_rel">
+                        <tree>
+                            <field name="base_amount_total" sum="Totale"/>
+                            <field name="vat_code_rel"/>
+                            <field name="vat_total" sum="Totale"/>
+                            <field name="vat_det" sum="Totale"/>
+                            <field name="vat_no_det" sum="Totale"/>
+                            <field name="display_name_rel"/>
+                        </tree>
+                    </field>
+                    <button
+                           string="Aggiorna riepilogo IVA"
+                           class="oe_highlight oe_edit_only"
+                           type="object" name="action_vatbrief_update"
+                           attrs="{ 'invisible': [ ('move_id', '=', False) ] }"
+                           />
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- -->
+    <!-- CUSTOMER INVOICE -->
+    <!-- -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <record id="view_invoice_entry_dates_form" model="ir.ui.view">
+        <field name="name">view.invoice.entry.dates.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"></field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='other_info']/group" position="inside">
+                <group>
+                    <field name="date"/>
+                </group>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook/page[1]" position="after">
+                <page string="Prima nota">
+                    <field name="accountbrief_ids_rel">
+                        <tree>
+                            <field name="account_id"/>
+                            <field name="partner_id"/>
+                            <field name="debit"/>
+                            <field name="credit"/>
+                            <field name="accrual_date_start"/>
+                            <field name="accrual_date_end"/>
+                        </tree>
+                    </field>
+                    <button
+                           string="Aggiorna prima nota"
+                           type="object" name="action_accountbrief_update"
+                           class="oe_highlight oe_edit_only"
+                           attrs="{ 'invisible': [ ('move_id', '=', False) ] }"
+                           />
+                </page>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook/page[2]" position="after">
+                <page
+                     string="Riepilogo IVA"
+                     name="vatbrief"
+                     >
+                    <field name="vatbrief_ids_rel">
+                        <tree>
+                            <field name="base_amount_total" sum="Totale"/>
+                            <field name="vat_code_rel"/>
+                            <field name="vat_total" sum="Totale"/>
+                            <field name="vat_det" sum="Totale"/>
+                            <field name="vat_no_det" sum="Totale"/>
+                            <field name="display_name_rel"/>
+                        </tree>
+                    </field>
+                    <button
+                           string="Aggiorna riepilogo IVA"
+                           class="oe_highlight oe_edit_only"
+                           type="object" name="action_vatbrief_update"
+                           attrs="{ 'invisible': [ ('move_id', '=', False) ] }"
+                           />
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
+

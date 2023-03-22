@@ -1,0 +1,151 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#162832;">Common stuff for payment modules / Funzionalit&#224; utilizzate dai metodi di pagamento</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module adds some fields to account.journal and res.partner.bank to manage wallet account.
+A wallet account is a special bank account with financial amounts.
+Any bank acount may be linked to one ore more wallet accounts.
+With this module, user can declare the bank account hierarchy.</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo aggiunge i campi per la gestione dei conti di portafoglio.
+I conti di portafoglio sono conti bancari speciali usati per la gestione degli importi SBF.
+Ogni conto bancario pu&#224; essere collegato ad uno o pi&#249; conti di portafoglio.
+Ad esempio, la Banca Alpha oltre al conto di liquidit&#224; con IBAN ufficiale pu&#224; fornire un conto di portafoglio per la presentazione RIBA ed uno per gli anticipi fatture.
+Grazie a questo modulo l'utente pu&#242; dichiarare la gerarchia dei conti bancari.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
+        <div class="oe_span12">
+<h3>12.0.3.7.49 (2023-02-28)</h3>
+<p align="justify">
+<ul>
+<li>[FIX] Error "Accredito" with refunc / Errore "Accredito" se NC</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.48 (2023-02-15)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Payment confirm for refund line / Conferma pagamento di righe con NC</li>
+<li>[TEST] Regression test: 21% (1438/1135)</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.47 (2022-12-05)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Confirm payment w/o company bank / Conferma pagamento segnala assenza banca azienda</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.46 (2022-11-15)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Confirm payment w/o company bank / Conferma pagamento segnala assenza banca azienda</li>
+<li>[FIX] Crash if not compiled portafoglio SBF / Crash se manca conto portafoglio SBF</li>
+<li>[FIX] Errato caricamento conto effetti attivi</li>
+<li>[IMP] Bank form: help and more info / Form banca: help + info dettagliate</li>
+<li>[IMP] Field account_move_line.payment_order_lines renamed to payment_line_ids</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.4.7.47 (2023-01-17)</h3>
+<p align="justify">
+<ul>
+    <li>[IMP] Nella descrizione delle righe della registrazione di insoluto viene riportato il numero fattura se il campo "name" di "account.invoice" non è valorizzato</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.45 (2022-10-03)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Gestione riconciliazioni degli insoluti</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.44 (2022-07-05)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Ricalcolo disponibilit&#224;</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.43 (2022-04-15)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Impostato warning su differenza importo scadenze minore del delta impostato in configurazione</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.42 (2022-04-07)</h3>
+</p><p align="justify">
+<ul>
+<li>[REF] Effettuato refactoring della registrazione del pagamento delle scadenze</li>
+<li>[FIX] Gestito riconciliazioni nella registrazione degli insoluti</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.41 (2022-03-11)</h3>
+</p><p align="justify">
+<ul>
+<li>[IMP] Impostato ordinamento delle azioni nel rispettivo men&#249; di pagamenti e scadenze</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.40 (2022-03-11)</h3>
+</p><p align="justify">
+<ul>
+<li>[IMP] Impostato configurazione conti di abbuono e abbuono delta</li>
+<li>[FIX] Esposto in tutti i registri il conto spese bancarie</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.39 (2022-03-10)</h3>
+</p><p align="justify">
+<ul>
+<li>[FIX] Gestito importi scadenze in insoluto standard</li>
+</ul>
+</p><p align="justify">
+<h3>12.0.3.7.38 (2022-03-09)</h3>
+</p><p align="justify">
+<ul>
+<li>[IMP] Inserita data accredito da wizard</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator"/>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.powerp.it/">powERP</a></li>
+<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.didotech.com/">Didotech s.r.l.</a></li>
+<li><a href="https://www.librerp.it/">LibrERP</a></li>
+</ul>
+<h2>Common stuff for payment modules / Funzionalit&#224; utilizzate dai metodi di pagamento</h2></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16"><ul>
+<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
+<li>Marco Tosato &lt;marco.tosato@didotech.com&gt;</li>
+<li>Fabio Giovannelli &lt;fabio.giovannelli@didotech.com&gt;</li>
+</ul>
+<h2>Common stuff for payment modules / Funzionalit&#224; utilizzate dai metodi di pagamento</h2></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b>SHS_AV s.r.l.</b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of l10n-italy project.</p>
+    </div>
+</section>

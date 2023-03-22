@@ -1,0 +1,1 @@
+Imposta nella stampa fattura clienti i riferimenti ai DDT e agli Ordini di Vendita.

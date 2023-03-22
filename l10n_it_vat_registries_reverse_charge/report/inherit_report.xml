@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_registro_iva_rc" inherit_id="l10n_it_vat_registries.report_registro_iva">
+
+        <xpath expr="//tr/t[3]/t[2]" position="replace"></xpath>
+
+        <xpath expr="//tr/t[3]/t[1]" position="replace">
+                <td class="left_without_line"><div style="page-break-inside: avoid" t-esc="number_ref(line)"/></td>
+        </xpath>
+
+    </template>
+</odoo>

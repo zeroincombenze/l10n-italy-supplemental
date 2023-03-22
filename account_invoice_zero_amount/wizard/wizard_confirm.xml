@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="zero_amount_confirm_wizard_form" model="ir.ui.view" >
+        <field name="name">wizard.form</field>
+        <field name="model">wizard.confirm.zero.amount</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Conferma">
+                <field name="yes_no" readonly="1" />
+                <footer>
+                    <button name="invoice_confirm"
+                            string="Si"
+                            type="object"
+                            class="oe_highlight" />
+
+                    <button string="No" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id="view_account_list" model="ir.ui.view">
+        <field name="name">account.account.tree</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <field name="user_type_id" position="after">
+                <field name="nature"/>
+                <field name="group_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_account_form" model="ir.ui.view">
+        <field name="name">account.account.form</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+               
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="placeholder">1.2.3</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="nature"/>
+                <field name="alt_nature"/>
+            </xpath>
+            <xpath expr="//field[@name='user_type_id']" position="attributes">
+                <attribute name="domain">['|',('nature', '=', nature),('alt_nature', '=', nature)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="negative_balance"/>
+                <field name="negative_group_id"
+                       attrs="{'invisible': [('negative_balance', '=', 'no_invert')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_type_tree" model="ir.ui.view">
+        <field name="name">account.account.type.tree</field>
+        <field name="model">account.account.type</field>
+        <field name="inherit_id" ref="account.view_account_type_tree"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="nature"/>
+                <field name="alt_nature"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_type_form" model="ir.ui.view">
+        <field name="name">account.account.type.form</field>
+        <field name="model">account.account.type</field>
+        <field name="inherit_id" ref="account.view_account_type_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="nature"/>
+            </field>
+            <field name="include_initial_balance" position="after">
+                <field name="alt_nature"/>
+            </field>
+            <field name="note" position="after">
+                <separator string="Child Accounts"/>
+                <field name="account_ids"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="account_type_menu"
+              action="account.action_account_type_form"
+              sequence="50"
+              parent="account.account_account_menu"/>
+              
+    <!-- Hide original Invoicing menuitem -->
+    <record model="ir.ui.menu" id="account.menu_finance">
+        <field name="name">Accounting</field>
+    </record>
+
+</odoo>

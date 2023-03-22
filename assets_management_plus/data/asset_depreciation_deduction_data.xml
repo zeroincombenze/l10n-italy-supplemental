@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="dep_ded_1" model="asset.depreciation.deduction">
+        <field name="name">Interamente deducibile</field>
+        <field name="code">INT_DED</field>
+        <field name="deduction_rate">100.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_2" model="asset.depreciation.deduction">
+        <field name="name">Deducibile 50%</field>
+        <field name="code">50_DED</field>
+        <field name="deduction_rate">50.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_3" model="asset.depreciation.deduction">
+        <field name="name">Deducibile 80%</field>
+        <field name="code">80_DED</field>
+        <field name="deduction_rate">80.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_4" model="asset.depreciation.deduction">
+        <field name="name">Autoveicoli - Uso promiscuo impresa</field>
+        <field name="code">20_DEDI</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">18075.99</field>
+    </record>
+    <record id="dep_ded_5" model="asset.depreciation.deduction">
+        <field name="name">Autoveicoli - Agenti rappresentanti</field>
+        <field name="code">80_DEDL</field>
+        <field name="deduction_rate">80.0</field>
+        <field name="deduction_limit">25822.84</field>
+    </record>
+    <record id="dep_ded_6" model="asset.depreciation.deduction">
+        <field name="name">Autoveicoli - Uso dipendenti</field>
+        <field name="code">70_DEDL</field>
+        <field name="deduction_rate">70.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_7" model="asset.depreciation.deduction">
+        <field name="name">Autoveicoli - Uso amministratori (benefit)</field>
+        <field name="code">20_DEDL</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">18075.99</field>
+    </record>
+    <record id="dep_ded_8" model="asset.depreciation.deduction">
+        <field name="name">Motocicli - Uso promiscuo impresa</field>
+        <field name="code">20_DEDM</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">4131.66</field>
+    </record>
+    <record id="dep_ded_9" model="asset.depreciation.deduction">
+        <field name="name">Motocicli - Agenti rappresentanti</field>
+        <field name="code">80_DEDM</field>
+        <field name="deduction_rate">80.0</field>
+        <field name="deduction_limit">4131.66</field>
+    </record>
+    <record id="dep_ded_10" model="asset.depreciation.deduction">
+        <field name="name">Motocicli - Uso dipendenti</field>
+        <field name="code">70_DEDM</field>
+        <field name="deduction_rate">70.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_11" model="asset.depreciation.deduction">
+        <field name="name">Motocicli - Uso amministratori (benefit)</field>
+        <field name="code">20_DEDA</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">4131.66</field>
+    </record>
+    <record id="dep_ded_12" model="asset.depreciation.deduction">
+        <field name="name">Ciclomotori - Uso promiscuo impresa</field>
+        <field name="code">20_DEDCL</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">2065.83</field>
+    </record>
+    <record id="dep_ded_13" model="asset.depreciation.deduction">
+        <field name="name">Ciclomotori - Agenti rappresentanti</field>
+        <field name="code">80_DEDCL</field>
+        <field name="deduction_rate">80.0</field>
+        <field name="deduction_limit">2065.83</field>
+    </record>
+    <record id="dep_ded_14" model="asset.depreciation.deduction">
+        <field name="name">Ciclomotori - Uso dipendenti</field>
+        <field name="code">70_DEDCL</field>
+        <field name="deduction_rate">70.0</field>
+        <field name="deduction_limit">0.0</field>
+    </record>
+    <record id="dep_ded_15" model="asset.depreciation.deduction">
+        <field name="name">Ciclomotori - Uso amministratori (benefit)</field>
+        <field name="code">20_DEDCLA</field>
+        <field name="deduction_rate">20.0</field>
+        <field name="deduction_limit">2065.83</field>
+    </record>
+
+</odoo>

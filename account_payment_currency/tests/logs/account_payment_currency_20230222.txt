@@ -1,0 +1,47 @@
+2023-02-22 15:50:38,764 22007 INFO ? odoo: Odoo version 12.0 
+2023-02-22 15:50:38,765 22007 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/account_payment_currency/tests/logs/zero12.l10n-italy-supplemental.account_payment_currency.conf 
+2023-02-22 15:50:38,766 22007 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/accounting', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/custom-addons', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/ddmrp', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/double-trouble', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/management-system', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-kitting', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-financial', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-tracking', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/webhook', '/home/odoo/12.0/webkit-tools', '/home/odoo/12.0/website', '/home/odoo/12.0/website-cms', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2023-02-22 15:50:38,766 22007 INFO ? odoo: database: odoo12@localhost:default 
+2023-02-22 15:50:38,910 22007 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2023-02-22 15:50:39,086 22007 INFO ? odoo.addons.server_environment.serv_config: not using server_environment_files for configuration, no directory found 
+2023-02-22 15:50:39,086 22007 INFO ? odoo.addons.server_environment.serv_config: `running_env` not found. Using default = `test`. 
+2023-02-22 15:50:39,087 22007 INFO ? odoo.addons.server_environment.serv_config: We strongly recommend against using the rc file but instead use an explicit config file or env variable. 
+2023-02-22 15:50:39,104 22007 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:32027 
+2023-02-22 15:50:39,124 22007 INFO test_account_payment_currency_12 odoo.modules.loading: loading 1 modules... 
+2023-02-22 15:50:39,135 22007 INFO test_account_payment_currency_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2023-02-22 15:50:39,287 22007 INFO test_account_payment_currency_12 odoo.modules.loading: updating modules list 
+2023-02-22 15:50:39,291 22007 INFO test_account_payment_currency_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2023-02-22 15:50:54,129 22007 INFO test_account_payment_currency_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['account_payment_currency'] to user __system__ #1 via n/a 
+2023-02-22 15:50:54,487 22007 INFO test_account_payment_currency_12 odoo.modules.loading: loading 30 modules... 
+2023-02-22 15:50:54,895 22007 INFO test_account_payment_currency_12 odoo.modules.loading: 30 modules loaded in 0.41s, 0 queries 
+2023-02-22 15:50:54,902 22007 INFO test_account_payment_currency_12 odoo.modules.loading: loading 31 modules... 
+2023-02-22 15:50:56,173 22007 INFO test_account_payment_currency_12 odoo.modules.registry: module account_payment_currency: creating or updating database tables 
+2023-02-22 15:50:56,285 22007 INFO test_account_payment_currency_12 odoo.models: Storing computed values of account.payment.company_currency_id 
+2023-02-22 15:50:56,558 22007 INFO test_account_payment_currency_12 odoo.modules.loading: loading account_payment_currency/views/account_payment_view.xml 
+2023-02-22 15:50:56,867 22007 INFO test_account_payment_currency_12 odoo.modules.loading: Module account_payment_currency: loading demo 
+2023-02-22 15:50:57,463 22007 INFO test_account_payment_currency_12 odoo.modules.module: odoo.addons.account_payment_currency.tests.test_payment running tests. 
+2023-02-22 15:50:57,464 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.test_payment: test_payment (odoo.addons.account_payment_currency.tests.test_payment.TestPaymentOrder) 
+2023-02-22 15:50:57,470 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.testenv: 🎺 Starting test v2.0.5 (debug_level=0) 
+2023-02-22 15:50:57,477 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.testenv: 🎺 Testing module: account_payment_currency (12.0.0.1.0) 
+2023-02-22 15:50:57,478 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.testenv: ⚠ product.product[type]: 'product' -> 'consu' 
+2023-02-22 15:50:57,478 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.testenv: ⚠ product.template[type]: 'product' -> 'consu' 
+2023-02-22 15:50:57,480 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.testenv: ⚠ account.payment.term.line._cvt_account_payment_term_line(all) 
+2023-02-22 15:50:57,517 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.test_payment: 🎺 Starting test_riba() 
+2023-02-22 15:50:57,519 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.test_payment: Ran 1 test in 0.056s 
+2023-02-22 15:50:57,519 22007 INFO test_account_payment_currency_12 odoo.addons.account_payment_currency.tests.test_payment: OK 
+2023-02-22 15:50:57,537 22007 INFO test_account_payment_currency_12 odoo.modules.loading: 31 modules loaded in 2.63s, 36 queries 
+2023-02-22 15:50:58,390 22007 INFO test_account_payment_currency_12 odoo.modules.loading: Modules loaded. 
+2023-02-22 15:50:58,396 22007 INFO test_account_payment_currency_12 odoo.service.server: Starting post tests 
+2023-02-22 15:50:58,397 22007 INFO test_account_payment_currency_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2023-02-22 15:50:58,397 22007 INFO test_account_payment_currency_12 odoo.service.server: Initiating shutdown 
+2023-02-22 15:50:58,397 22007 INFO test_account_payment_currency_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36maccount_payment_currency[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Name                                                                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/account_payment_currency/models/account_payment.py      28     16    43%   15, 28-57
+----------------------------------------------------------------------------------------------------------
+TOTAL                                                                           28     16    43%

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="10" model="account.group">
+            <field name="code_prefix">10</field>
+            <field name="name">CREDITI VERSO SOCI PER VERSAMENTI ANCORA DOVUTI</field>
+        </record>
+        <record id="12" model="account.group">
+            <field name="code_prefix">12</field>
+            <field name="name">IMMOBILIZZAZIONI</field>
+        </record>
+        <record id="121" model="account.group">
+            <field name="code_prefix">121</field>
+            <field name="name">IMMOBILIZZAZIONI IMMATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.12"/>
+        </record>
+        <record id="122" model="account.group">
+            <field name="code_prefix">122</field>
+            <field name="name">FA IMMOBILIZZAZIONI IMMATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.12"/>
+        </record>
+        <record id="123" model="account.group">
+            <field name="code_prefix">123</field>
+            <field name="name">IMMOBILIZZAZIONI MATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.12"/>
+        </record>
+        <record id="124" model="account.group">
+            <field name="code_prefix">124</field>
+            <field name="name">FA IMMOBILIZZAZIONI IMMATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.12"/>
+        </record>
+        <record id="125" model="account.group">
+            <field name="code_prefix">125</field>
+            <field name="name">IMMOBILIZZAZIONI FINANZIARIE</field>
+            <field name="parent_id" ref="l10n_it_coa.12"/>
+        </record>
+        <record id="15" model="account.group">
+            <field name="code_prefix">15</field>
+            <field name="name">ATTIVO CIRCOLANTE</field>
+        </record>
+        <record id="151" model="account.group">
+            <field name="code_prefix">151</field>
+            <field name="name">RIMANENZE</field>
+            <field name="parent_id" ref="l10n_it_coa.15"/>
+        </record>
+        <record id="152" model="account.group">
+            <field name="code_prefix">152</field>
+            <field name="name">CREDITI COMMERCIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.15"/>
+        </record>
+        <record id="153" model="account.group">
+            <field name="code_prefix">153</field>
+            <field name="name">CREDITI DIVERSI CHE NON COSTITUISCONO IMMOBILIZZAZIONI</field>
+            <field name="parent_id" ref="l10n_it_coa.15"/>
+        </record>
+        <record id="155" model="account.group">
+            <field name="code_prefix">155</field>
+            <field name="name">IVA N/CREDITO EU-OSS</field>
+            <field name="parent_id" ref="l10n_it_coa.15"/>
+        </record>
+        <record id="180" model="account.group">
+            <field name="code_prefix">180</field>
+            <field name="name">TOTALE DISPONIBILITA LIQUIDE</field>
+        </record>
+        <record id="19" model="account.group">
+            <field name="code_prefix">19</field>
+            <field name="name">RATEI E RISCONTI ATTIVI</field>
+        </record>
+        <record id="21" model="account.group">
+            <field name="code_prefix">21</field>
+            <field name="name">PATRIMONIO NETTO</field>
+        </record>
+        <record id="22" model="account.group">
+            <field name="code_prefix">22</field>
+            <field name="name">FONDI PER RISCHI E ONERI</field>
+        </record>
+        <record id="23" model="account.group">
+            <field name="code_prefix">23</field>
+            <field name="name">TRATTAMENTO FINE RAPPORTO LAVORO SUBORDINATO</field>
+        </record>
+        <record id="24" model="account.group">
+            <field name="code_prefix">24</field>
+            <field name="name">DEBITI FINANZIARI</field>
+        </record>
+        <record id="25" model="account.group">
+            <field name="code_prefix">25</field>
+            <field name="name">DEBITI COMMERCIALI</field>
+        </record>
+        <record id="26" model="account.group">
+            <field name="code_prefix">26</field>
+            <field name="name">DEBITI DIVERSI</field>
+        </record>
+        <record id="265" model="account.group">
+            <field name="code_prefix">265</field>
+            <field name="name">IVA N/DEBITO EU-OSS</field>
+            <field name="parent_id" ref="l10n_it_coa.26"/>
+        </record>
+        <record id="29" model="account.group">
+            <field name="code_prefix">29</field>
+            <field name="name">RATEI E RISCONTI PASSIVI</field>
+        </record>
+        <record id="41" model="account.group">
+            <field name="code_prefix">41</field>
+            <field name="name">RISCHI ASSUNTI DALL'IMPRESA</field>
+        </record>
+        <record id="42" model="account.group">
+            <field name="code_prefix">42</field>
+            <field name="name">TOTALE IMPEGNI ASSUNTI DALL'IMPRESA</field>
+        </record>
+        <record id="43" model="account.group">
+            <field name="code_prefix">43</field>
+            <field name="name">BENI DI TERZI PRESSO L'IMPRESA</field>
+        </record>
+        <record id="49" model="account.group">
+            <field name="code_prefix">49</field>
+            <field name="name">RIPRESE FISCALI DA NON DIMENTICARE</field>
+        </record>
+        <record id="51" model="account.group">
+            <field name="code_prefix">51</field>
+            <field name="name">RICAVI DI VENDITE E PRESTAZIONI</field>
+        </record>
+        <record id="52" model="account.group">
+            <field name="code_prefix">52</field>
+            <field name="name">VARIAZIONI RIMANENZE DI LAVORAZIONI IN CORSO</field>
+        </record>
+        <record id="53" model="account.group">
+            <field name="code_prefix">53</field>
+            <field name="name">VARIAZIONI DI LAVORI IN CORSO SU ORDINAZIONE</field>
+        </record>
+        <record id="54" model="account.group">
+            <field name="code_prefix">54</field>
+            <field name="name">INCREMENTI DI IMMOBILIZZAZIONI PER LAVORI INTERNI</field>
+        </record>
+        <record id="55" model="account.group">
+            <field name="code_prefix">55</field>
+            <field name="name">RICAVI E PROVENTI DIVERSI</field>
+        </record>
+        <record id="61" model="account.group">
+            <field name="code_prefix">61</field>
+            <field name="name">COSTO DEL VENDUTO</field>
+        </record>
+        <record id="62" model="account.group">
+            <field name="code_prefix">62</field>
+            <field name="name">COSTI PER SERVIZI</field>
+        </record>
+        <record id="63" model="account.group">
+            <field name="code_prefix">63</field>
+            <field name="name">COSTI PER GODIMENTO BENI DI TERZI</field>
+        </record>
+        <record id="64" model="account.group">
+            <field name="code_prefix">64</field>
+            <field name="name">COSTI PER IL PERSONALE</field>
+        </record>
+        <record id="65" model="account.group">
+            <field name="code_prefix">65</field>
+            <field name="name">AMMORTAMENTI</field>
+        </record>
+        <record id="651" model="account.group">
+            <field name="code_prefix">651</field>
+            <field name="name">AMMORTAMENTI IMMOBILIZZAZIONI IMMATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.65"/>
+        </record>
+        <record id="652" model="account.group">
+            <field name="code_prefix">652</field>
+            <field name="name">AMMORTAMENTI IMMOBILIZZAZIONI MATERIALI</field>
+            <field name="parent_id" ref="l10n_it_coa.65"/>
+        </record>
+        <record id="66" model="account.group">
+            <field name="code_prefix">66</field>
+            <field name="name">SVALUTAZIONI</field>
+        </record>
+        <record id="67" model="account.group">
+            <field name="code_prefix">67</field>
+            <field name="name">VARIAZIONI RIMANENZE</field>
+        </record>
+        <record id="68" model="account.group">
+            <field name="code_prefix">68</field>
+            <field name="name">ACCANTONAMENTI</field>
+        </record>
+        <record id="681" model="account.group">
+            <field name="code_prefix">681</field>
+            <field name="name">ACCANTONAMENTI PER RISCHI</field>
+            <field name="parent_id" ref="l10n_it_coa.68"/>
+        </record>
+        <record id="682" model="account.group">
+            <field name="code_prefix">682</field>
+            <field name="name">ALTRI ACCANTONAMENTI</field>
+            <field name="parent_id" ref="l10n_it_coa.68"/>
+        </record>
+        <record id="69" model="account.group">
+            <field name="code_prefix">69</field>
+            <field name="name">ONERI DIVERSI DI GESTIONE</field>
+        </record>
+        <record id="71" model="account.group">
+            <field name="code_prefix">71</field>
+            <field name="name">PROVENTI DA PARTECIPAZIONI</field>
+        </record>
+        <record id="72" model="account.group">
+            <field name="code_prefix">72</field>
+            <field name="name">ALTRI PROVENTI FINANZIARI</field>
+        </record>
+        <record id="73" model="account.group">
+            <field name="code_prefix">73</field>
+            <field name="name">INTERESSI E ALTRI ONERI FINANZIARI</field>
+        </record>
+        <record id="83" model="account.group">
+            <field name="code_prefix">83</field>
+            <field name="name">RETTIFICHE DI VALORE:  RIVALUTAZIONI</field>
+        </record>
+        <record id="84" model="account.group">
+            <field name="code_prefix">84</field>
+            <field name="name">RETTIFICHE DI VALORE: SVALUTAZIONI</field>
+        </record>
+        <record id="85" model="account.group">
+            <field name="code_prefix">85</field>
+            <field name="name">PROVENTI STRAORDINARI</field>
+        </record>
+        <record id="86" model="account.group">
+            <field name="code_prefix">86</field>
+            <field name="name">ONERI STRAORDINARI</field>
+        </record>
+        <record id="87" model="account.group">
+            <field name="code_prefix">87</field>
+            <field name="name">ALTRI ONERI</field>
+        </record>
+        <record id="88" model="account.group">
+            <field name="code_prefix">88</field>
+            <field name="name">ACCANTONAMENTI DA NORME TRIBUTARIE</field>
+        </record>
+
+    </data>
+</odoo>

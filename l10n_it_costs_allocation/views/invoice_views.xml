@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_form_costs" model="ir.ui.view">
+        <field name="name">account.invoice.form.costs</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group[last()]" position="after">
+                <group string="Ventilazione costi">
+                    <field name="total_delivery_from_lines" invisible="1"/>
+                    <field name="total_packaging_from_lines" invisible="1"/>
+                    <field name="total_payment_from_lines" invisible="1"/>
+                    <field name="total_other_from_lines" invisible="1"/>
+                    <field name="total_discount_from_lines" invisible="1"/>
+
+                    <field name="total_goods_n_service_amount"/>
+                    <field name="total_goods_amount"/>
+                    <field name="total_delivery_amount"
+                           attrs="{'readonly': [('total_delivery_from_lines', '=', True)]}"
+                           />
+                    <field name="total_packaging_amount"
+                           attrs="{'readonly': [('total_packaging_from_lines', '=', True)]}"
+                           />
+                    <field name="total_payment_amount"
+                           attrs="{'readonly': [('total_payment_from_lines', '=', True)]}"
+                           />
+                    <field name="total_other_amount"
+                           attrs="{'readonly': [('total_other_from_lines', '=', True)]}"
+                           />
+                    <field name="total_discount_amount"
+                           attrs="{'readonly': [('total_discount_from_lines', '=', True)]}"
+                           />
+
+
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_form_costs" model="ir.ui.view">
+        <field name="name">account.invoice.line.form.costs</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/group/group[last()]" position="after">
+                <group name="costs_allocation" string="Ventilazione costi">
+                    <field name="cost_delivery_amount" />
+                    <field name="cost_packaging_amount" />
+                    <field name="cost_payment_amount" />
+                    <field name="cost_other_amount" />
+                    <field name="cost_discount_amount" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+

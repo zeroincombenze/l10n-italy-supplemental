@@ -1,0 +1,7 @@
+id,code,name,user_type_id:id,reconcile,chart_template_id:id
+CLI000,CLI000,CLIENTI,account.data_account_type_receivable,TRUE,l10n_chart_it_nocoa
+FOR000,FOR000,FORNITORI,account.data_account_type_payable,TRUE,l10n_chart_it_nocoa
+IVA000,IVA000,IVA,account.data_account_type_current_liabilities,TRUE,l10n_chart_it_nocoa
+CST000,CST000,COSTI,account.data_account_type_expenses,FALSE,l10n_chart_it_nocoa
+RCV000,RCV000,RICAVI,account.data_account_type_revenue,FALSE,l10n_chart_it_nocoa
+BCA000,BCA000,BANCA,account.data_account_type_liquidity,FALSE,l10n_chart_it_nocoa

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="profile_account_demo" model="italy.profile.account">
+        <field name="name">Profilo di localizzazione italiana predefinito</field>
+        <field name="coa_toplevel_len">2</field>
+        <field name="coa_level2_len">1</field>
+        <field name="coa_lowlevel_len">3</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+</odoo>
+

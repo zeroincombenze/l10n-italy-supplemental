@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="l10n_it_balance_trial_a4_landscape" model="report.paperformat">
+        <field name="name">Trial Balance Reports A4 Landscape</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <report
+           id="report_trial_balance_demo_pdf"
+           string="Bilancio di verifica"
+           report_type="qweb-pdf"
+           model="italy.account.balance"
+           name="l10n_it_balance.report_trial_demo_pdf"
+           file="l10n_it_balance.report_trial_demo_pdf"
+           paperformat="l10n_it_balance.l10n_it_balance_trial_a4_landscape"
+           menu="False"
+           />
+
+    <template id="report_trial_demo_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <h2 style="margin-top: 10px;">Bilancio di verifica</h2>
+                    <div><b>Data inizio</b>: <t t-esc="doc.date_from" t-options='{"widget": "date"}'/> <b>Data fine</b>: <t t-esc="doc.date_to" t-options='{"widget": "date"}'/></div>
+                    <table class="table table-bordered" width="100%">
+                        <thead>
+                            <tr>
+                                <th style="padding: 5px;">Natura</th>
+                                <th style="padding: 5px;">Conto</th>
+                                <th style="padding: 5px;">Descrizione</th>
+                                <th style="padding: 5px;">Saldo iniziale</th>
+                                <th style="padding: 5px;">Totale dare</th>
+                                <th style="padding: 5px;">Totale avere</th>
+                                <th style="padding: 5px;">Saldo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="doc.balance_line_ids" t-as="l" style="padding: 5px;">
+                                <td style="padding: 5px;"><span t-field="l.nature"/></td>
+                                <td style="padding: 5px;"><span t-field="l.code"/></td>
+                                <td style="padding: 5px;"><span t-field="l.name"/></td>
+                                <td style="padding: 5px;text-align:right;"><span t-field="l.amount_start"/></td>
+                                <td style="padding: 5px;text-align:right;"><span t-field="l.amount_debit"/></td>
+                                <td style="padding: 5px;text-align:right;"><span t-field="l.amount_credit"/></td>
+                                <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
+

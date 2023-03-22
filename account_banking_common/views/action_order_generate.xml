@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="server_action_register_payment_duedates" model="ir.actions.server">
+        <field name="name">Registra pagamento</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_register_payment()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_duedates_compensate" model="ir.actions.server">
+        <field name="name">Compensazioni</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_duedate_compensate()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_payment_order_generate" model="ir.actions.server">
+        <field name="name">Genera Distinta</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_payment_order_generate()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_add_to_payment_order" model="ir.actions.server">
+        <field name="name">Aggiungi a Distinta</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_payment_order_add_move_lines()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_payment_confirm" model="ir.actions.server">
+        <field name="name">Conferma pagamento</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_payment_confirm()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_insoluto" model="ir.actions.server">
+        <field name="name">Registra Insoluto</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_insoluto()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+    <record id="server_action_duedates_update" model="ir.actions.server">
+        <field name="name">Aggiorna metodo di pagamento</field>
+        <field name="model_id" ref="model_account_move_line"/>
+        <field name="state">code</field>
+        <field name="code">
+               if model._context.get('active_model') == 'account.move.line':
+               action = model.open_wizard_set_payment_method()
+               # end if
+        </field>
+        <field
+              name="binding_model_id"
+              ref="account_banking_common.model_account_move_line"
+              />
+    </record>
+
+</odoo>
+

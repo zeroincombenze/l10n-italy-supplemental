@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_account_balance1_action"
+              name="Bilancio di verifica"
+              parent="l10n_it_menu.menu_italy_balance"
+              action="account_balance1_action"
+              sequence="10"/>
+
+    <menuitem id="menu_account_balance2_action"
+              name="Bilancio ordinario"
+              parent="l10n_it_menu.menu_italy_balance"
+              action="account_balance2_action"
+              sequence="10"/>
+
+    <menuitem id="menu_account_balance3_action"
+              name="Bilancio a sezioni contrapposte"
+              parent="l10n_it_menu.menu_italy_balance"
+              action="account_balance3_action"
+              sequence="10"/>
+
+</odoo>
+

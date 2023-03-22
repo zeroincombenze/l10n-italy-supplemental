@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="aas_1" model="asset.asset.service">
+                <field name="name">5% ordinario</field>
+                <field name="code">5ORD</field>
+                <field name="service_rate">5.0</field>
+     </record>
+     <record id="aas_2" model="asset.asset.service">
+                <field name="name">11% siderurgia e metallurgia</field>
+                <field name="code">11SIDMET</field>
+                <field name="service_rate">11.0</field>
+     </record>
+     <record id="aas_3" model="asset.asset.service">
+                <field name="name">15% imprese estrattive</field>
+                <field name="code">15ESTR</field>
+                <field name="service_rate">15.0</field>
+     </record>
+     <record id="aas_4" model="asset.asset.service">
+                <field name="name">25% veicoli trasporto autotrasportatori</field>
+                <field name="code">25VEI</field>
+                <field name="service_rate">25.0</field>
+     </record>
+     <record id="aas_5" model="asset.asset.service">
+                <field name="name">0% non incluso nel plafond</field>
+                <field name="code">0NOTIN</field>
+                <field name="service_rate">0.0</field>
+     </record>
+
+</odoo>

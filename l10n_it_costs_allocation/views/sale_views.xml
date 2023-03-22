@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_costs" model="ir.ui.view">
+        <field name="name">sale.order.form.costs</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- <page string="Other Information" name="other_information">-->
+            <xpath expr="//page[@name='other_information']/group/group[@name='technical']" position="after">
+                <group name="costs_allocation" string="Ventilazione costi">
+                    <field name="total_goods_n_service_amount"/>
+                    <field name="total_goods_amount"/>
+                    <field name="total_delivery_amount"/>
+                    <field name="total_packaging_amount"/>
+                    <field name="total_payment_amount"/>
+                    <field name="total_other_amount"/>
+                    <field name="total_discount_amount"/>
+                </group>
+            </xpath>
+            <xpath expr="/form/sheet/notebook//page[@name='order_lines']/field[@name='order_line']/form/group/group/field[@name='price_unit']" position="after">
+                <field name="cost_delivery_amount" groups="base.group_no_one"/>
+                <field name="cost_packaging_amount" groups="base.group_no_one"/>
+                <field name="cost_payment_amount" groups="base.group_no_one"/>
+                <field name="cost_other_amount" groups="base.group_no_one"/>
+                <field name="cost_discount_amount" groups="base.group_no_one"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
+

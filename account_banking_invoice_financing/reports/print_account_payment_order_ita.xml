@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- QWeb Report -->
+    <report
+           id="action_print_payment_order_ita"
+           model="account.payment.order"
+           string="Anticipo fatture"
+           report_type="qweb-pdf"
+           name="account_banking_invoice_financing.print_apo_main_ita"
+           file="account_banking_invoice_financing.print_apo_main_ita"
+           />
+
+</odoo>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- -->
+    <!-- SUPPLIER INVOICE -->
+    <!-- -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <record id="view_supplier_invoice_iban_form" model="ir.ui.view">
+        <field name="name">view.supplier.invoice.iban.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_common_mixin.view_supplier_invoice_mixin_form"></field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='supplier_mixin']" position="replace"></xpath>
+
+            <xpath expr="//page[@name='other_info']/group[last()]" position="after">
+                <group >
+                    <field name="company_bank_id"/>
+                    <field name="bank_2_print_selector"/>
+                    <field name="counterparty_bank_id" attrs="{'invisible':
+                    [('bank_2_print_selector', '!=', 'partner')]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- -->
+    <!-- CUSTOMER INVOICE -->
+    <!-- -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <record id="view_invoice_iban_form" model="ir.ui.view">
+        <field name="name">view.invoice.iban.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_common_mixin.view_invoice_mixin_form"></field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='customer_mixin']" position="replace"></xpath>
+
+            <xpath expr="//page[@name='other_info']/group" position="inside">
+                <group>
+                    <field name="company_bank_id" />
+                    <field name="bank_2_print_selector"/>
+                    <field name="counterparty_bank_id" attrs="{'invisible':
+                    [('bank_2_print_selector', '!=', 'partner')]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

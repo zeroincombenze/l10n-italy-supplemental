@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * l10n_it_fatturapa_out_ddt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-05 18:30+0000\n"
+"PO-Revision-Date: 2022-06-05 18:30+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#. module: l10n_it_fatturapa_out_ddt
+#: model:ir.model,name:l10n_it_fatturapa_out_ddt.model_wizard_export_fatturapa
+msgid "Export E-invoice"
+msgstr "Esportare e-fattura"
+
+#. module: l10n_it_fatturapa_out_ddt
+#: selection:wizard.export.fatturapa,include_ddt_data:0
+#: selection:wizard.export.fatturapa,include_ddt_data
+msgid "Include TD Data"
+msgstr ""
+
+#. module: l10n_it_fatturapa_out_ddt
+#: model:ir.model.fields,help:l10n_it_fatturapa_out_ddt.field_wizard_export_fatturapa__include_ddt_data
+msgid ""
+"Include TD data: The field must be entered when a transport document "
+"associated with a deferred invoice is present\n"
+"Include transport data: The field must be entered when a accompanying "
+"invoice to be filled with transport data is present"
+msgstr ""
+
+#. module: l10n_it_fatturapa_out_ddt
+#: selection:wizard.export.fatturapa,include_ddt_data:0
+#: selection:wizard.export.fatturapa,include_ddt_data
+msgid "Include transport data"
+msgstr "Includere dati trasporto"
+
+#. module: l10n_it_fatturapa_out_ddt
+#: model:ir.model,name:l10n_it_fatturapa_out_ddt.model_stock_picking_package_preparation
+msgid "Package Preparation"
+msgstr "Preparazione collo"
+
+#. module: l10n_it_fatturapa_out_ddt
+#: model:ir.model.fields,field_description:l10n_it_fatturapa_out_ddt.field_wizard_export_fatturapa__include_ddt_data
+msgid "TD Data"
+msgstr ""
+
+#. module: l10n_it_fatturapa_out_ddt
+#: code:addons/l10n_it_fatturapa_out_ddt/wizard/wizard_export_fatturapa.py:79
+#: code:addons/l10n_it_fatturapa_out_ddt/wizard/wizard_export_fatturapa.py:79
+#, python-format
+msgid "TIN not set for %s."
+msgstr "Partita IVA non impostata per %s."
+
+

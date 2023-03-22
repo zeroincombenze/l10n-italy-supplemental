@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Chart Template -->
+    <record id="l10n_chart_it_nocoa" model="account.chart.template">
+        <field name="name">Italy - No piano dei conti</field>
+        <field name="cash_account_code_prefix">BCA</field>
+        <field name="bank_account_code_prefix">BCA</field>
+        <field name="transfer_account_code_prefix">BCA</field>
+        <field name="currency_id" ref="base.EUR"/>
+    </record>
+
+</odoo>
+

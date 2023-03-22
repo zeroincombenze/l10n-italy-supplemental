@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_balance1_tree" model="ir.ui.view">
+        <field name="name">view.account.balance1.tree</field>
+        <field name="model">italy.account.balance</field>
+        <field name="arch" type="xml">
+            <tree limit="190">
+                <field name="name"/>
+                <field name="fiscalyear_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="balance_type" readonly="1"/>
+                <field name="company_id" groups="base.group_multi_company"
+                       options="{'no_create': True}"/>
+                <field name="last_update"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_account_balance1_form" model="ir.ui.view">
+        <field name="name">view.account.balance1.form</field>
+        <field name="model">italy.account.balance</field>
+        <field name="arch" type="xml">
+            <form string="Bilancio Fiscale">
+                <group col="4">
+                    <group colspan="2">
+                        <field name="name"/>
+                        <field name="fiscalyear_id"/>
+                        <field name="date_range_id" attrs="{'invisible': [('no_opening_balances', '=', False)]}"/>
+                        <field name="date_from" attrs="{'readonly': [('no_opening_balances', '=', False)]}"/>
+                        <field name="date_to"/>
+                        <field name="last_update"/>
+                    </group>
+                    <group name="main_info" col="2">
+                        <field name="balance_type" readonly="1"/>
+                        <field name="fiscalyear_state" invisible="1"/>
+                        <field name="select_details" invisible="1"/>
+                        <field name="view_partner_details" invisible="1"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                </group>
+                <notebook colspan="4">
+                    <page string="Bilancio di verifica"
+                          attrs="{'invisible': [('balance_type', '!=', 'trial')]}">
+                        <group>
+                            <header>
+                                <button type='action'
+                                        name="%(action_generate_balance)d"
+                                        string="Genera Bilancio"/>
+
+                                <button type='object'
+                                        name="generate_trial_xls"
+                                        context="{'type': 'trial'}"
+                                        attrs="{'invisible': [('last_update', '=', False)]}"
+                                        string="Genera xls"/>
+
+                                <button type='action'
+                                        name="%(report_trial_balance_demo_pdf)d"
+                                        attrs="{'invisible': [('last_update', '=', False)]}"
+                                        string="Genera PDF"/>
+
+                                <button type='action'
+                                    name="%(report_balance_supplier_customer_pdf)d"
+                                    attrs="{'invisible': ['|', '|', ('last_update', '=', False), ('view_partner_details', '!=', 'separate_list'), ('select_details', 'not in', ['customers_suppliers', 'only_customers', 'only_suppliers'])]}"
+                                    string="Genera clienti/fornitori PDF"/>
+
+                            </header>
+                        </group>
+                        <field name="balance_line_ids" nolabel="1"
+                               attrs="{'invisible': [('last_update', '=', False)]}">
+                            <group>
+                                <header>
+                                    <button type='action'
+                                            name="%(action_generate_balance)d"
+                                            string="Genera Bilancio"/>
+                                </header>
+                            </group>
+
+                            <tree editable="bottom" limit="190"
+                                  decoration-it="pos_balance == 'E'"
+                                  decoration-success="pos_balance == 'H'"
+                                  decoration-info="pos_balance == 'I' and level_balance != 3"
+                                  decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                  decoration-danger="pos_balance == 'S'"
+                                  >
+                                <field name="nature"/>
+                                <field name="display_code"/>
+                                <field name="partner_vat" attrs="{'column_invisible': [('parent.select_details', '=', 'all_excluded')]}"/>
+                                <field name="name"/>
+                                <field name="amount_start"/>
+                                <field name="amount_debit"/>
+                                <field name="amount_credit"/>
+                                <field name="amount_balance"/>
+                                <field name="level_balance" invisible="1"/>
+                                <field name="pos_balance" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Bilancio ordinario"
+                          attrs="{'invisible': [('balance_type', '!=', 'ordinary')]}">
+                        <group>
+                            <header>
+                                <button type='action'
+                                        name="%(action_generate_balance)d"
+                                        string="Genera Bilancio"/>
+
+                                <button type='object'
+                                        name="generate_ordinary_xls"
+                                        context="{'type': 'ordinary'}"
+                                        attrs="{'invisible': [('last_update', '=', False)]}"
+                                        string="Genera xls"/>
+
+                                <button type='action'
+                                        name="%(report_ordinary_balance_demo_pdf)d"
+                                        attrs="{'invisible': [('last_update', '=', False)]}"
+                                        string="Genera PDF"/>
+
+                                <button type='action'
+                                        name="%(report_balance_supplier_customer_pdf)d"
+                                        attrs="{'invisible': ['|', '|', ('last_update', '=', False), ('view_partner_details', '!=', 'separate_list'), ('select_details', 'not in', ['customers_suppliers', 'only_customers', 'only_suppliers'])]}"
+                                        string="Genera clienti/fornitori PDF"/>
+
+                            </header>
+                        </group>
+                        <field name="balance_line2_ids" nolabel="1"
+                               attrs="{'invisible': [('last_update', '=', False)]}">
+                            <group>
+                            </group>
+                            <tree editable="bottom" limit="190"
+                                  decoration-it="pos_balance == 'E'"
+                                  decoration-success="pos_balance == 'H'"
+                                  decoration-info="pos_balance == 'I' and level_balance != 3"
+                                  decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                  decoration-danger="pos_balance == 'S'"
+                                  >
+                                <field name="nature"/>
+                                <field name="display_code"/>
+                                <field name="partner_vat" attrs="{'column_invisible': [('parent.select_details', '=', 'all_excluded')]}"/>
+                                <field name="name"/>
+                                <field name="amount_balance"/>
+                                <field name="level_balance" invisible="1"/>
+                                <field name="pos_balance" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Bilancio a sezioni contrapposte"
+                          attrs="{'invisible': [('balance_type', '!=', 'opposite')]}">
+                        <header>
+                            <button type='action'
+                                    name="%(action_generate_balance)d"
+                                    string="Genera Bilancio"/>
+
+                            <button type='action'
+                                    name="%(action_generate_balance_opposite_file)d"
+                                    attrs="{'invisible': [('last_update', '=', False)]}"
+                                    string="Genera xls"/>
+
+                            <button type='action'
+                                    name="%(report_opposite_balance_demo_pdf)d"
+                                    attrs="{'invisible': [('last_update', '=', False)]}"
+                                    string="Genera PDF"/>
+
+                            <button type='action'
+                                    name="%(report_balance_supplier_customer_pdf)d"
+                                    attrs="{'invisible': ['|', '|',('view_partner_details', '!=', 'separate_list'), ('select_details', 'not in', ['customers_suppliers', 'only_customers', 'only_suppliers']), ('last_update', '=', False) ]}"
+                                    string="Genera clienti/fornitori PDF"/>
+
+                        </header>
+                        <group col="4" colspan="4"
+                               attrs="{'invisible': [('last_update', '=', False)]}">
+                            <group colspan="2" string="Attività">
+                                <field name="balance_line_asset_ids" nolabel="1">
+                                    <tree editable="bottom" limit="190"
+                                          decoration-it="pos_balance == 'E'"
+                                          decoration-success="pos_balance == 'H'"
+                                          decoration-info="pos_balance == 'I' and level_balance != 3"
+                                          decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                          decoration-danger="pos_balance == 'S'"
+                                          >
+                                        <field name="display_code"/>
+                                        <field name="name"/>
+                                        <field name="amount_balance"/>
+                                        <field name="level_balance" invisible="1"/>
+                                        <field name="pos_balance" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group colspan="2" string="Passività">
+                                <field name="balance_line_liability_ids" nolabel="1">
+                                    <tree editable="bottom" limit="190"
+                                          decoration-it="pos_balance == 'E'"
+                                          decoration-success="pos_balance == 'H'"
+                                          decoration-info="pos_balance == 'I' and level_balance != 3"
+                                          decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                          decoration-danger="pos_balance == 'S'"
+                                          >
+                                        <field name="display_code"/>
+                                        <field name="name"/>
+                                        <field name="amount_balance"/>
+                                        <field name="level_balance" invisible="1"/>
+                                        <field name="pos_balance" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                        <group col="4" colspan="4"
+                               attrs="{'invisible': [('last_update', '=', False)]}">
+                            <group colspan="2" string="Costi" attrs="{'invisible': ['order_by','!=','APCRO']}">
+                                <field name="balance_line_expense_ids" nolabel="1">
+                                    <tree editable="bottom" limit="190"
+                                          decoration-it="pos_balance == 'E'"
+                                          decoration-primary="pos_balance == 'H'"
+                                          decoration-info="pos_balance == 'I' and level_balance != 3"
+                                          decoration-success="pos_balance == 'I' and level_balance == 3"
+                                          decoration-danger="pos_balance == 'S'"
+                                          >
+                                        <field name="display_code"/>
+                                        <field name="name"/>
+                                        <field name="amount_balance"/>
+                                        <field name="level_balance" invisible="1"/>
+                                        <field name="pos_balance" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group colspan="2" string="Ricavi" attrs="{'invisible': ['order_by','!=','APCRO']}">
+                                <field name="balance_line_income_ids" nolabel="1">
+                                    <tree editable="bottom" limit="190"
+                                          decoration-it="pos_balance == 'E'"
+                                          decoration-success="pos_balance == 'H'"
+                                          decoration-info="pos_balance == 'I' and level_balance != 3"
+                                          decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                          decoration-danger="pos_balance == 'S'"
+                                          >
+                                        <field name="display_code"/>
+                                        <field name="name"/>
+                                        <field name="amount_balance"/>
+                                        <field name="level_balance" invisible="1"/>
+                                        <field name="pos_balance" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                        <group col="4" colspan="2" string="Conti d'ordine"
+                               attrs="{'invisible': [('last_update', '=', False)]}">
+                            <field name="balance_line_memorandum_ids" nolabel="1">
+                                <tree editable="bottom" limit="190"
+                                      decoration-it="pos_balance == 'E'"
+                                      decoration-success="pos_balance == 'H'"
+                                      decoration-info="pos_balance == 'I' and level_balance != 3"
+                                      decoration-primary="pos_balance == 'I' and level_balance == 3"
+                                      decoration-danger="pos_balance == 'S'"
+                                      >
+                                    <field name="display_code"/>
+                                    <field name="name"/>
+                                    <field name="amount_balance"/>
+                                    <field name="level_balance" invisible="1"/>
+                                    <field name="pos_balance" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Filtri registrazione">
+                        <group>
+                            <field name="date_balance_option"/>
+                        </group>
+                        <group>
+                            <field name="target_move"/>
+                        </group>
+                        <group>
+                            <field name="order_by"/>
+                        </group>
+                    </page>
+                    <page string="Filtri tipologia">
+                        <group>
+                            <field name="nature_of_accounts"/>
+                            <field name="select_details" readonly="0"/>
+                            <field name="view_partner_details" readonly="0"/>
+                            <field name="hierarchy_level" force_save="1" attrs="{'readonly': [('order_by', '=', 'code')]}"/>
+                            <field name="no_accounting_closure" readonly="1"/>
+                            <field name="no_adjustment_records" readonly="1"/>
+                            <field name="receivable_account_only" readonly="1"/>
+                            <field name="payable_account_only" readonly="1"/>
+                        </group>
+                    </page>
+                    <page string="Filtri importi">
+                        <group>
+                            <field name="no_opening_balances" attrs="{'readonly': [('fiscalyear_state', '!=', 'draft')]}"/>
+                            <!-- <field name="hide_account_at_0"/> -->
+                            <field name="rounding"/>
+                            <field name="no_nature_total" force_save="1" attrs="{'readonly': [('order_by', '=', 'code')]}"/>
+                            <field name="no_grand_total" attrs="{'invisible': [('balance_type', '=', 'opposite')]}"/>
+                            <field name="inversion" attrs="{'invisible': [('balance_type', '=', 'trial')]}"/>
+                        </group>
+                    </page>
+                    <page string="Proiezioni" attrs="{'invisible':[('balance_type', '=', 'trial')]}">
+                        <group>
+                            <field name="evaluate_accrual"/>
+                        </group>
+                        <field name="balance_line_accrual_ids" nolabel="1" attrs="{'invisible':[('evaluate_accrual', '=', False)]}">
+                            <tree editable="bottom" limit="190">
+                                <field name="move_number" />
+                                <field name="move_date" />
+                                <field name="move_count" />
+                                <field name="type" />
+                                <field name="invoiced_amount" sum="Totale"/>
+                                <field name="expired_year_amount" sum="Totale"/>
+                                <field name="previous_year_amount" sum="Totale"/>
+                                <field name="current_year_amount" sum="Totale"/>
+                                <field name="next_year_amount" sum="Totale"/>
+                                <field name="start_date_competence" />
+                                <field name="end_date_competence" />
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Developer only" groups="base.group_no_one">
+                        <group attrs="{'invisible':[('balance_type', '!=', 'trial')]}">
+                            <group>
+                                <field name="evaluate_accrual"/>
+                            </group>
+                            <field name="balance_line_accrual_ids" nolabel="1" attrs="{'invisible':[('evaluate_accrual', '=', False)]}">
+                                <tree editable="bottom" limit="190">
+                                    <field name="move_number" />
+                                    <field name="move_date" />
+                                    <field name="move_count" />
+                                    <field name="type" />
+                                    <field name="invoiced_amount" sum="Totale"/>
+                                    <field name="expired_year_amount" sum="Totale"/>
+                                    <field name="previous_year_amount" sum="Totale"/>
+                                    <field name="current_year_amount" sum="Totale"/>
+                                    <field name="next_year_amount" sum="Totale"/>
+                                    <field name="start_date_competence" />
+                                    <field name="end_date_competence" />
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="no_selected_moves"/>
+                        </group>
+                        <group>
+                            <field name="move_ids"/>
+                        </group>
+                    </page>
+                </notebook>
+                <group col="4" string="Dettagli clienti / fornitori"
+                       attrs="{'invisible': ['|', '|', '|', ('view_partner_details', '=', 'in_balance'), ('last_update', '=', False),
+                       ('select_details', 'not in', ['customers_suppliers', 'only_customers', 'only_suppliers'] )]}">
+                    <field name="balance_line_customers_ids" nolabel="1"
+                           attrs="{'invisible': [('select_details', '=', 'only_suppliers') ]}">
+                        <tree editable="bottom" limit="190">
+                            <field name="display_code"/>
+                            <field name="name"/>
+                            <field name="amount_start" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_debit" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_credit" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_balance"/>
+                        </tree>
+                    </field>
+                    <field name="balance_line_suppliers_ids" nolabel="1"
+                           attrs="{'invisible': [('select_details', '=', 'only_customers') ]}">
+                        <tree editable="bottom" limit="190">
+                            <field name="display_code"/>
+                            <field name="name"/>
+                            <field name="amount_start" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_debit" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_credit" attrs="{'column_invisible': [('parent.balance_type', '!=', 'trial')]}"/>
+                            <field name="amount_balance"/>
+                        </tree>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_balance1_action" model="ir.actions.act_window">
+        <field name="name">Bilancio di verifica</field>
+
+        <field name="res_model">italy.account.balance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_account_balance1_tree"/>
+        <field name="domain">[('balance_type', '=', 'trial')]</field>
+        <field name="context">{'default_balance_type': 'trial'}</field>
+    </record>
+
+    <record id="account_balance2_action" model="ir.actions.act_window">
+        <field name="name">Bilancio ordinario</field>
+
+        <field name="res_model">italy.account.balance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_account_balance1_tree"/>
+        <field name="domain">[('balance_type', '=', 'ordinary')]</field>
+        <field name="context">{'default_balance_type': 'ordinary'}</field>
+    </record>
+
+    <record id="account_balance3_action" model="ir.actions.act_window">
+        <field name="name">Bilancio a sezioni contrapposte</field>
+
+        <field name="res_model">italy.account.balance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_account_balance1_tree"/>
+        <field name="domain">[('balance_type', '=', 'opposite')]</field>
+        <field name="context">{'default_balance_type': 'opposite'}</field>
+    </record>
+</odoo>

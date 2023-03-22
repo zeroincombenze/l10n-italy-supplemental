@@ -1,0 +1,1 @@
+cd /home/odoo/12.0; /home/odoo/12.0/odoo-bin --stop-after-init -d test_odoo_12 --config=/home/odoo/12.0/l10n-italy-supplemental/account_payment_currency/tests/logs/zero12.l10n-italy-supplemental.account_payment_currency.conf --log-level=error -i account,analytic,auth_signup,base,base_setup,bus,decimal_precision,digest,http_routing,mail,portal,product,uom,web,web_tour

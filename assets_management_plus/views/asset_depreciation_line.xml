@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="asset_dep_line_form_view_with_message" model="ir.ui.view">
+        <field name="name">asset.dep.line.form.view.with.message</field>
+        <field name="model">asset.depreciation.line</field>
+            <field name="inherit_id" ref="assets_management.asset_dep_line_form_view" />
+        <field name="arch" type="xml">
+              <xpath expr="//sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+              </xpath>
+        </field>
+    </record>
+</odoo>

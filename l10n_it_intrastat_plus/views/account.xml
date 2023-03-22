@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_tree_invoice_intrastat_form_plus" model="ir.ui.view">
+        <field name="name">views.tree.account.intrastat.invoice.intrastat.plus</field>
+        <field name="model">account.invoice.intrastat</field>
+        <field name="inherit_id" ref="l10n_it_intrastat.view_tree_invoice_intrastat_report_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_currency']" position="after">
+                <field name="amount_euro" sum="Amount total"/>
+                <field name="statistic_amount_euro" sum="Statistic total"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+

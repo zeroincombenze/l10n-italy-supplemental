@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_it_causali_pagamento
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-05 18:23+0000\n"
+"PO-Revision-Date: 2022-06-05 18:23+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model,name:l10n_it_causali_pagamento.model_causale_pagamento
+msgid "Causale Pagamento"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model_terms:ir.ui.view,arch_db:l10n_it_causali_pagamento.view_causale_pagamento_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_causali_pagamento.view_causale_pagamento_tree
+msgid "Causale pagamento"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.actions.act_window,name:l10n_it_causali_pagamento.action_causale_pagamento
+#: model:ir.ui.menu,name:l10n_it_causali_pagamento.menu_causale_pagamento
+msgid "Causali pagamento"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__code
+msgid "Code"
+msgstr "Codice"
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__name
+msgid "Description"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: model:ir.model.fields,field_description:l10n_it_causali_pagamento.field_causale_pagamento__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_it_causali_pagamento
+#: code:addons/l10n_it_causali_pagamento/models/causale_pagamento.py:17
+#, python-format
+msgid "The element with code %s already exists"
+msgstr ""
+
+

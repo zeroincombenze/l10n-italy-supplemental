@@ -1,0 +1,1990 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * commercial_agent_plus
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-04 16:02+0000\n"
+"PO-Revision-Date: 2022-03-04 17:04+0100\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/record_rules_plus.py:0
+#: code:addons/commercial_agent_plus/models/record_rules_plus.py
+#, python-format
+msgid ""
+"\n"
+"The requested operation can not be \n"
+"completed due to security restrictions.\n"
+"Document type: %(document_kind)s (%(document_model)s) [%(document_id)s]\n"
+"Operation: %(operation)s\n"
+"User: %(user)s"
+msgstr ""
+"\n"
+"L'operazione richiesta non può essere\n"
+"completato a causa di restrizioni di sicurezza.\n"
+"Tipo di documento: %(document_kind)s (%(document_model)s) "
+"[%(document_id)s]\n"
+"Operazione: %(operation)s\n"
+"Utente: %(user)s"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/partner.py:0
+#: code:addons/commercial_agent_plus/models/partner.py
+msgid " (Agent)"
+msgstr " (Agente)"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/partner.py:0
+#: code:addons/commercial_agent_plus/models/partner.py
+msgid " (Manager)"
+msgstr "(Manager)"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "), are you sure to create a new one?"
+msgstr "), sei sicuro di crearne uno nuovo?"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ".o_form_label:contains('Agent Admin')"
+msgstr ".o_form_label:contains('Agenti: amministratore')"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ".o_form_label:contains('Agent all')"
+msgstr ".o_form_label:contains('Agente + Standard Odoo')"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ".o_notebook_headers .nav-item:contains('Sales')"
+msgstr ".o_notebook_headers .nav-item:contains('Vendite')"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "<b> Congratulations! </b> You've configured your first agent!"
+msgstr "<b> Congratulazioni! </b> Hai configurato il tuo primo agente!"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "<b> Congratulations! </b> You've configured your first customer agent!"
+msgstr "<b> Congratulazioni! </b> Hai configurato il tuo primo cliente!"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "<b> Congratulations! </b> You've configured your first product agent!"
+msgstr ""
+"<b> Felicitazioni! </b> Hai configurato il tuo primo prodotto vendibile "
+"dagli agenti!"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "<b> Congratulations! </b> You've created your first agent!"
+msgstr "<b>Congratulazioni!</b> Hai Creato il tuo primo agente!"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py:0
+#: code:addons/commercial_agent_plus/models/order.py
+msgid "<b>INVOICES</b><br/><br/>"
+msgstr "<b>FATTURE</b><br/><br/>"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py:0
+#: code:addons/commercial_agent_plus/models/order.py
+msgid "<b>PICKINGS</b><br/><br/>"
+msgstr "<b>SPEDIZIONI</b><br/><br/>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid ""
+"<span attrs=\"{'invisible': [('pricelist_item_count', '=', 1)]}\">\n"
+"                                          Extra Prices\n"
+"                                        </span>\n"
+"                                        <span attrs=\"{'invisible': "
+"[('pricelist_item_count', '!=', 1)]}\">\n"
+"                                          Extra Price\n"
+"                                        </span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('pricelist_item_count', '=', 1)]}\">\n"
+"                                          Prezzi Extra\n"
+"                                        </span>\n"
+"                                        <span attrs=\"{'invisible': "
+"[('pricelist_item_count', '!=', 1)]}\">\n"
+"                                          Prezzo extra\n"
+"                                        </span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'contact')]}\">Company "
+"Address</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'invoice')]}\">Invoice "
+"Address</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'delivery')]}\">Delivery "
+"Address</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'other')]}\">Other Address</b>"
+"\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'private')]}\">Private "
+"Address</b>\n"
+"                                <b attrs=\"{'invisible': ['&amp;', "
+"('parent_id', '!=', False), ('type', '!=', False)]}\">Address</b>\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'contact')]}\">Indirizzo "
+"Azienda</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'invoice')]}\">Indirizzo "
+"fattura</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'delivery')]}\">Indirizzo di "
+"consegna</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'other')]}\">Altro "
+"Indirizzo</b>\n"
+"                                <b attrs=\"{'invisible': ['|', "
+"('parent_id', '=', False), ('type', '!=', 'private')]}\">Indirizzo "
+"Privato</b>\n"
+"                                <b attrs=\"{'invisible': ['&amp;', "
+"('parent_id', '!=', False), ('type', '!=', False)]}\">Indirizzo</b>\n"
+"                            </span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid ""
+"<span class=\"o_stat_text\">Customer</span>\n"
+"                                <span class=\"o_stat_text\">Preview</span>"
+msgstr "<span class=\"o_stat_text\">Cliente</span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "<span class=\"o_stat_text\">Forecasted</span>"
+msgstr "<span class=\"o_stat_text\">Previsto</span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.inehrit_partner_view_for_invoicing
+msgid "<span class=\"o_stat_text\">Invoiced</span>"
+msgstr "<span class=\"o_stat_text\">Fatturato</span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "<span class=\"o_stat_text\">On Hand</span>"
+msgstr "<span class=\"o_stat_text\">Disponibile</span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+msgid "<span>All general settings about this product are managed on</span>"
+msgstr ""
+"<span>Tutte le impostazioni generali relative a questo prodotto sono "
+"gestite su</span>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid ""
+"<strong>Warning</strong>: adding or deleting attributes\n"
+"                                will delete and recreate existing "
+"variants and lead\n"
+"                                to the loss of their possible "
+"customizations."
+msgstr "<strong>Attenzione</strong>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid ""
+"A partner with the same <span><span class=\"o_vat_label\">Tax "
+"ID</span></span> already exists ("
+msgstr ""
+"Esiste già un partner con lo stesso <span><span "
+"class=\"o_vat_label\">codice fiscale</span></span> ("
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_needaction
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_needaction
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_needaction
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_needaction
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_needaction
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_needaction
+msgid "Action Needed"
+msgstr "Azione necessaria"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__active
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__active
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__active
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__active
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__active
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__active
+msgid "Active"
+msgstr "Attivo"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Add a note"
+msgstr "Aggiungi una nota"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Add a product"
+msgstr "Aggiungi un prodotto"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Add a section"
+msgstr "Aggiungi una sezione"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__commercial_agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__commercial_agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__commercial_agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__agent_id
+#: model:res.groups,name:commercial_agent_plus.commercial_agent_plus_agent_group
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_kanban_view_inherit_commercial_Agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_kanban_test
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_partner_form_inherit_base
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_partner_form_inherit_base_for_agent
+msgid "Agent"
+msgstr "Agente"
+
+#. module: commercial_agent_plus
+#: model:res.groups,name:commercial_agent_plus.commercial_agent_plus_agent_admin_group
+msgid "Agent Admin"
+msgstr "Agenti: amministratore"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_commercial_agent_commission
+#: model:ir.model,name:commercial_agent_plus.model_product_commission
+msgid "Agent Commission"
+msgstr "Commissione Agente"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_commission_Agent_action
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_agent_commissions_menu
+msgid "Agent Commissions"
+msgstr "Commissioni agenti"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__agent_invoice_id
+msgid "Agent Invoice"
+msgstr "Fattura agente"
+
+#. module: commercial_agent_plus
+#: model:res.groups,comment:commercial_agent_plus.commercial_agent_plus_agent_group
+msgid "Agent Permission Group."
+msgstr "Gruppo di autorizzazioni agente."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__agent_reverse
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__agent_reverse
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__agent_reverse
+msgid "Agent Reverse?"
+msgstr "Storna all' Agente?"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__agent_reversed
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__agent_reversed
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__agent_reversed
+msgid "Agent Reversed"
+msgstr "Stornato all'agente"
+
+#. module: commercial_agent_plus
+#: model:res.groups,name:commercial_agent_plus.commercial_agent_plus_all_group
+msgid "Agent all"
+msgstr "Agente + Standard Odoo"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_search_inherit_agente
+msgid "Agent salable"
+msgstr "Vendibile da agente"
+
+#. module: commercial_agent_plus
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_menu
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_res_partner_filter_inherit_commercial_agent_plus
+msgid "Agents"
+msgstr "Agenti"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__line_amount
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Amount"
+msgstr "Importo"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/invoice.py:0
+#: code:addons/commercial_agent_plus/models/invoice.py
+msgid "An invoice must have one agent only"
+msgstr "Una fattura deve avere un solo agente"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_Agent_sale_line_commission_view_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_area_view_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Archived"
+msgstr "Archiviati"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__area_id
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__area
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__area
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Area"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_areas_action
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_area_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_area_ids
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_areas_menu
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_partner_form_inherit_base
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_partner_form_inherit_base_for_agent
+msgid "Areas"
+msgstr "Aree"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_attachment_count
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_attachment_count
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_attachment_count
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_attachment_count
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_attachment_count
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_attachment_count
+msgid "Attachment Count"
+msgstr "Numero allegati"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_base
+msgid "Base"
+msgstr "Base"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_order_form_inherit_commercial_agent_plus
+msgid "Calculate Commission"
+msgstr "Calcola Commissioni"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_order_form_inherit_commercial_agent_plus
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/partner.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission_settlement__commission_type__cashed
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__res_partner__commercial_agent_commission_type__cashed
+#: code:addons/commercial_agent_plus/models/partner.py
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "Cashed"
+msgstr "Pagato"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Choose edit mode."
+msgstr "Scegli la modalità di modifica."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Choose the agents of this customer."
+msgstr "Scegli gli agenti per questo cliente."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Choose whether commissions are paid on invoices (invoiced) or payments "
+"(cashed)"
+msgstr ""
+"Scegli se le commissioni vengono pagate su fatture (Fatturato) o "
+"pagamenti (Pagato)"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Choose you first agent."
+msgstr "Scegli il tuo primo agente."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "City"
+msgstr "Città"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Click to change password"
+msgstr "Clicca per cambiare la password"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+msgid "Codes"
+msgstr "Codici"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__commercial_agent_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_report__commercial_agent_id
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_order_product_search_inherit_agent
+msgid "Commercial Agent"
+msgstr "Agente di Commercio"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__partner_agent_id
+msgid "Commercial Agent Partner"
+msgstr "Partner Agente Commerciale"
+
+#. module: commercial_agent_plus
+#: model:ir.module.category,name:commercial_agent_plus.module_category_commercial_agent_plus
+msgid "Commercial Agent Plus"
+msgstr "Agente di Commercio +"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_ids
+msgid "Commercial Agents"
+msgstr "Agenti di Commercio"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_commercial_agent_area
+msgid "Commercial Area"
+msgstr "Area Commerciale"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__commission_value
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Commission"
+msgstr "Provvigione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__commission_percentage
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__commission
+msgid "Commission %"
+msgstr "% Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product__commercial_agent_commission_free
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template__commercial_agent_commission_free
+msgid "Commission Free"
+msgstr "Libero da commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__commission_lines
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_form
+msgid "Commission Lines"
+msgstr "Righe Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_commercial_agent_sale_commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__commercial_agent_sale_commission_id
+msgid "Commission Order"
+msgstr "Ordine Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order_line__commercial_agent_sale_line_commission_id
+msgid "Commission Order Line"
+msgstr "Righe ordine commissione"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Commission Orders"
+msgstr "Ordini commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__commission_type
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_commission_type
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_commission_type
+msgid "Commission Type"
+msgstr "Tipo di commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__commercial_agent_commission_id
+msgid "Commission line"
+msgstr "Riga Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_commercial_agent_sale_line_commission
+msgid "Commission order line"
+msgstr "Riga Ordine Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__commission_order_ids
+msgid "Commissionm Order Lines"
+msgstr "Righe ordine commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product__product_commission_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template__product_commission_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_commission_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_commission_ids
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_form_view_inherit_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_partner_form_inherit_base_for_agent
+msgid "Commissions"
+msgstr "Provvigioni"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_form_view_inherit_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "Commissions Informations"
+msgstr "Informazioni sulle commissioni"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_sale_commission_action
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_commission_menu
+msgid "Commissions Orders"
+msgstr "Ordini commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__company_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__company_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__company_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__company_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__company_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__company_id
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Company"
+msgstr "Azienda"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Configure commission lines. The order of calculation is: Product + "
+"Customer; Product; Product Category; Customer; Price list; Area; Default "
+"Product (configurable in the product form); Default Agent."
+msgstr ""
+"Configura le linee di commissione. L'ordine di calcolo è: Prodotto + "
+"Cliente; Prodotto; Categoria di prodotto; Cliente; Listino prezzi; Area; "
+"Default Prodotto (configurabile nel modulo del prodotto); Default Agente."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Configure the default commissions for the product."
+msgstr "Configurare le commissioni predefinite per il prodotto."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_order_form_inherit_commercial_agent_plus
+msgid "Confirm"
+msgstr "Confermare"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Contact / Address"
+msgstr "Contatto / Indirizzo"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Contact Name"
+msgstr "Nome contatto"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Contact image"
+msgstr "Immagine Contatto"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Contacts & Addresses"
+msgstr "Contatti e indirizzi"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Country"
+msgstr "Nazione"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.actions.act_window,help:commercial_agent_plus.commercial_agent_product_action
+msgid "Creare un nuovo prodotto"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.invoicing_sale_order_form
+msgid "Create Invoice"
+msgstr "Creare fattura"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Create a customer or choose one from the list."
+msgstr "Crea un cliente o scegline uno dall'elenco."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Create a product or choose one from the list."
+msgstr "Crea un prodotto o scegline uno dall'elenco."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Create a user."
+msgstr "Crea un utente."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Create company"
+msgstr "Crea azienda"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__create_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__create_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__create_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__create_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__create_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__create_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__create_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__create_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__create_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__create_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__date_order
+msgid ""
+"Creation date of draft/sent orders,\n"
+"Confirmation date of confirmed orders."
+msgstr ""
+"Data di creazione delle bozze/ordini inviati,\n"
+"Data di conferma degli ordini confermati."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__currency_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__currency_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__customer_id
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__customer
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__customer
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Customer Signature"
+msgstr "Firma Cliente"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_customers_action
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_customers_menu
+msgid "Customers"
+msgstr "Clienti"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__date_end
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__date_to
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__date_end
+msgid "Date End"
+msgstr "Data fine"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__date_start
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__date_from
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__date_start
+msgid "Date Start"
+msgstr "Data inizio"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__default_agent
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__default_agent
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Default Agent"
+msgstr "Agente di default"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__default_product
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__product_commission__commission_type__default_product
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Default Product"
+msgstr "Prodotto di default"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Delivered"
+msgstr "Consegnata"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.picking_sale_order_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Delivery"
+msgstr "Consegna"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Delivery Date"
+msgstr "Data spedizione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__description
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Disc.%"
+msgstr "Sconto%"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_menu__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_view__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_report__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission_settlement__state__draft
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__warning_msg
+msgid "Earning Message"
+msgstr "Messaggio di guadagno"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Expected:"
+msgstr "Atteso:"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Fill in all the previous mandatory fields and enter your username or "
+"email."
+msgstr ""
+"Compila tutti i precedenti campi obbligatori e inserisci il tuo nome "
+"utente o e-mail."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Filter by Agents."
+msgstr "Filtra per agenti."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_follower_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_follower_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_follower_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_follower_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_follower_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_channel_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_channel_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_channel_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_channel_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_channel_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_partner_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_partner_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_partner_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_partner_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_partner_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py
+#, python-format
+msgid "Following settlements for <b>%s</b> overlap this one: <br/>"
+msgstr ""
+"Le seguenti liquidazioni per <b>%s</b> si sovrappongono a quella corrente"
+" <br/>"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Force Settle"
+msgstr "Forza Liquidazione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__forced
+msgid "Forced"
+msgstr "Forzato"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__forced_by
+msgid "Forced By"
+msgstr "Forzato da"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__free
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Free"
+msgstr "Gratis"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "General Information"
+msgstr "Informazioni generali"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_menu__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_view__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order_line__id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_unread
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_unread
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_unread
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_unread
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_unread
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_needaction
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Se selezionato, nuovi messaggi richiedono attenzione."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_has_sms_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_has_sms_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_sms_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_sms_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_sms_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_has_error
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se selezionato, alcuni messaggi presentano un errore di consegna."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "If you want choose the manager of this agent."
+msgstr "Se vuoi scegli il manager di questo agente."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "If you want, choose the areas of expertise."
+msgstr "Se vuoi, scegli le aree di competenza."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Internal Notes"
+msgstr "Note interne"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Internal note..."
+msgstr "Nota interna..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Internal notes..."
+msgstr "Note interne..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Invoice/Shipping Message"
+msgstr "Fatture/Spedizioni"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/partner.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission_settlement__commission_type__invoiced
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission_settlement__state__invoiced
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__res_partner__commercial_agent_commission_type__invoiced
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/partner.py
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "Invoiced"
+msgstr "Fatturato"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__invoice_ids
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.invoicing_sale_order_form
+msgid "Invoices"
+msgstr "Fatture"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent
+msgid "Is Agent?"
+msgstr "Agente?"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_is_follower
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_is_follower
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_is_follower
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_is_follower
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_is_follower
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_is_follower
+msgid "Is Follower"
+msgstr "Sta seguendo"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_area_manager
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_area_manager
+msgid "Is Manager?"
+msgstr "Manager?"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_account_move
+msgid "Journal Entry"
+msgstr "Registrazione contabile"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_menu____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_ir_ui_view____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_report____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__write_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__write_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__write_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__write_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__write_uid
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__write_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__write_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__write_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__write_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__write_date
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Logo"
+msgstr "Logo"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_main_attachment_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_main_attachment_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_main_attachment_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_main_attachment_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_main_attachment_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: commercial_agent_plus
+#: model:res.groups,comment:commercial_agent_plus.commercial_agent_plus_agent_admin_group
+msgid "Manage all the agent app."
+msgstr "Gestici tutta l'app agente."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__commercial_agent_manager_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_manager_id
+#: model:res.groups,name:commercial_agent_plus.commercial_agent_plus_manager_group
+msgid "Manager"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model:res.groups,comment:commercial_agent_plus.commercial_agent_plus_manager_group
+msgid "Manager Permission Group."
+msgstr "Gruppo di autorizzazioni manager."
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__manual
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Manual"
+msgstr "Manuale"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_ir_ui_menu
+msgid "Menu"
+msgstr "Menù"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__commercial_agent_msg
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__commercial_agent_msg
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__commercial_agent_msg
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__agent_msg
+msgid "Message"
+msgstr "Messaggio"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_has_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_has_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore di consegna messaggio"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Misc"
+msgstr "Varie"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Mobile:"
+msgstr "Cellulare:"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "More languages"
+msgstr "Più Lingue"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__name
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__name
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Name"
+msgstr "Descrizione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__note
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Note"
+msgstr "Nota"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Number"
+msgstr "Numero"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_needaction_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_needaction_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_needaction_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_needaction_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_needaction_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di Azioni"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_has_error_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_has_error_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_error_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_error_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_error_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di Errori"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_needaction_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_needaction_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_needaction_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_needaction_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_needaction_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_has_error_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_has_error_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_error_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_error_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_error_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__message_unread_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__message_unread_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__message_unread_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__message_unread_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_unread_counter
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Numero di messaggi non letti"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py:0
+#: code:addons/commercial_agent_plus/models/order.py
+msgid "Only draft orders can be marked as sent directly."
+msgstr "."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Open Sale & Purchase Tab."
+msgstr "Apri la scheda Vendite e acquisti."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Open agent Tab."
+msgstr "Apri la scheda agente."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Open commission Tab."
+msgstr "Apri la scheda delle commissioni."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Open filter menu."
+msgstr "Apri il menu filtri."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Open menu to change password."
+msgstr "Apri il menu per cambiare la password."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__order_commission_id
+msgid "Order Commission"
+msgstr "Ordine Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__date_order
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Order Date"
+msgstr "Data Ordine"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Order Lines"
+msgstr "Rgihe Ordine"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_orders_action
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_orders_menu
+msgid "Orders"
+msgstr "Ordini"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Other Info"
+msgstr "Altre informazioni"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__commercial_agent_employee_ids
+msgid "Own Employees"
+msgstr "Propri Dipendenti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_tree
+msgid "Paid"
+msgstr "Pagato"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__paid_commission
+msgid "Paid Commission"
+msgstr "Commissione Pagata"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__partner_agent_id
+msgid "Partner-related data of the user"
+msgstr "Dati partner dell'utente"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Payment Terms"
+msgstr "Condizioni di pagamento"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_account_payment
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__payment_ids
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Payments"
+msgstr "Pagamenti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Phone:"
+msgstr "Telefono:"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__pricelist
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__pricelist
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Price List"
+msgstr "Listino prezzi"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__pricelist_id
+msgid "Pricelist"
+msgstr "Listino Prezzi"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+msgid "Pricing"
+msgstr "Prezzo"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model,name:commercial_agent_plus.model_product_product
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__product_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__product_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__product_id
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__product
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__product
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__product_customer
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__product_customer
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Product + Customer"
+msgstr "Prodotto + Cliente"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/commission.py:0
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__product_category
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission__commission_type__product_category
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_sale_line_commission__commission_type__product_category
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+#: code:addons/commercial_agent_plus/models/commission.py
+msgid "Product Category"
+msgstr "Categoria Prodotto"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_tree_agent
+msgid "Product Name"
+msgstr "Nome Prodotto"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_product_template
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__product_tmpl_id
+msgid "Product Template"
+msgstr "Prodotto radice"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_product_action
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_products_menu
+msgid "Products"
+msgstr "Prodotti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Quantity:"
+msgstr "Quantità:"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Quotation Date"
+msgstr "Data Preventivo"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Recompute all prices based on this pricelist"
+msgstr "Ricalcola tutti i prezzi in base a questo listino"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Reference"
+msgstr "Riferimento"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_tree
+msgid "Remaining"
+msgstr "Rimanente"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__remaining_commission
+msgid "Remaining Commission"
+msgstr "Commissione rimanente"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Remove all other roles and select Agent or Manager. When you are done "
+"click on the label above."
+msgstr ""
+"Rimuovi tutti gli altri ruoli e seleziona Agente o Manager. Quando hai "
+"finito clicca sulla label qui sopra."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Request commission"
+msgstr "Richiesta commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__reverse_invoice_ids
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Reverse Invoices"
+msgstr "Fatture Stornate"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__reverse_payment_ids
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Reverse Payments"
+msgstr "Pagamenti Stornati"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_has_sms_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_has_sms_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_has_sms_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_has_sms_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_has_sms_error
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Errore spedizione SMS"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_product__commercial_agent_salable
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_template__commercial_agent_salable
+msgid "Salable by agent"
+msgstr "Vendibile da agente"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__sale_order_id
+msgid "Sale Order"
+msgstr "Ordine di vendita"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__sale_order_line_id
+msgid "Sale Order Line"
+msgstr "Riga Ordine di vendita"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Sales"
+msgstr "Vendite"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Sales & Purchase"
+msgstr "Vendite & Acquisti"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Resoconto di analisi vendite"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_sale_order
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga ordine di vendita"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Sales Order Lines"
+msgstr "Rgihe Ordini di vendita"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Sales Orders"
+msgstr "Ordini di vendita"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_tree_agent
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_tree_agent
+msgid "Sales Price"
+msgstr "Prezzo di vendita"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_partner__user_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_res_users__user_id
+msgid "Salesperson"
+msgstr "Addetto vendite"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Save agent."
+msgstr "Salva l'agente."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Save password."
+msgstr "Salva la password."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Save user."
+msgstr "Salva l'utente."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Search Reversed Invoices"
+msgstr "Cerca fattura stornate"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.admin_settlement_view_form
+msgid "Search Reversed Payments"
+msgstr "Cerca pagamenti stornati"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Section Name (eg. Products, Services)"
+msgstr "Nome Sezione (es. Prodotto, Servizi)"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Select this field if you want the agent to also acquire other roles and "
+"see the records as a common Odoo user. Otherwise the agent will only see "
+"the agent app and only the records linked to him. When you are done click"
+" on the label above."
+msgstr ""
+"Selezionare questo campo se si desidera che l'agente acquisisca anche "
+"altri ruoli e consideri i record come un utente Odoo comune. In caso "
+"contrario, l'agente vedrà solo l'app dell'agente e solo i record a lui "
+"collegati. Quando hai finito clicca sull'etichetta sopra."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid ""
+"Select this field if you want the user to be an administrator Agents app "
+"(Can have access to all records of agents, customers, orders, commission "
+"orders, settlements and settings). When you are done click on the label "
+"above."
+msgstr ""
+"Seleziona questo campo se desideri che l'utente sia un amministratore "
+"dell'app Agenti (può avere accesso a tutti i record di agenti, clienti, "
+"ordini, ordini di commissioni, liquidazioni e impostazioni). Quando hai "
+"finito clicca sull'etichetta sopra."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Send by Email"
+msgstr "Invia email"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Set to True if you want the product to be excluded from commissions."
+msgstr ""
+"Impostare su True se si desidera che il prodotto sia escluso dalle "
+"commissioni."
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Set to True if you want the product to be sold by agents."
+msgstr ""
+"Impostare su True se si desidera che il prodotto venga venduto dagli "
+"agenti."
+
+#. module: commercial_agent_plus
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_settings_menu
+msgid "Settings"
+msgstr "Impostazioni"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_form
+msgid "Settle"
+msgstr "Liquidazione"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__commercial_agent_commission_settlement__state__settled
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "Settled"
+msgstr "Liquidato"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_commercial_agent_commission_settlement
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__settlement_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__settlement_id
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__settlement_id
+#: model:ir.ui.menu,name:commercial_agent_plus.commercial_agent_plus_settlement_menu
+msgid "Settlement"
+msgstr "Liquidazione"
+
+#. module: commercial_agent_plus
+#: model:ir.actions.act_window,name:commercial_agent_plus.commercial_agent_settlement_action
+msgid "Settlements"
+msgstr "Liquidazioni"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py:0
+#: code:addons/commercial_agent_plus/models/order.py
+msgid "Sorry! You are not allowed to change order state"
+msgstr "Mi dispiace! non sei abilitato a cambiare lo stato dell'ordine"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "State"
+msgstr "Provincia"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__state
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_sale_order__state
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_tree
+msgid "Status"
+msgstr "Stato"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Street 2..."
+msgstr "Indirizzo 2..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Street..."
+msgstr "Indirizzo..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "Tags..."
+msgstr "Etichette..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Tax Total"
+msgstr "Totale Tasse"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Terms and conditions..."
+msgstr "Termini e condizioni..."
+
+#. module: commercial_agent_plus
+#: model:ir.module.category,description:commercial_agent_plus.module_category_commercial_agent_plus
+msgid "The Commercial Agent Applilcation"
+msgstr "L'Applicazione per agenti di commercio"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_form
+msgid "The commission order has been fully settled, you cannot change it."
+msgstr ""
+"L'ordine di commissione è stato completamente liquidato, non puoi più "
+"modificarlo."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_res_partner__user_id
+#: model:ir.model.fields,help:commercial_agent_plus.field_res_users__user_id
+msgid "The internal user in charge of this contact."
+msgstr "L'utente interno responsabile di questo contatto."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "This note is only for internal purposes."
+msgstr "Nota interna..."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "This will update all unit prices based on the currently set pricelist."
+msgstr ""
+"Questo aggiornerà tutti i prezzi unitari in base al listino attualmente "
+"impostato."
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_order_amount
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__total_order_amount
+msgid "Total Amount"
+msgstr "Importo totale"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__total_order_amount_taxed
+msgid "Total Amount Taxed"
+msgstr "Importo totale Tassato"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_bank_statement_line__settlement_commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_move__settlement_commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_account_payment__settlement_commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_commission
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__total_commission
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_tree
+msgid "Total Commission"
+msgstr "Totale Commissione"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.commercial_agent_sale_commission_view_tree
+msgid "Total Order"
+msgstr "Totale Ordine"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Total Tax Excluded"
+msgstr "Totale tasse escluse"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_tree_commercial_agent_plus
+msgid "Total Tax Included"
+msgstr "Totale tasse incluse"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_amount_untaxed_signed
+msgid "Total Untaxed Invoiced"
+msgstr "Totale fatturato senza tasse"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.settlement_view_tree
+msgid "Total to Settle"
+msgstr "Totale da liquidare"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_settle
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_to_settle
+msgid "Total to settle"
+msgstr "Totale da liquidare"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__total_to_subtract
+msgid "Total to subtract"
+msgstr "Totale da stornare"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__commission_type
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__commission_type
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__commission_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Unit Price:"
+msgstr "Prezzo Unitario:"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_unread
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_unread
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_unread
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_unread
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_unread
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_unread
+msgid "Unread Messages"
+msgstr "Messaggi non letti"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__message_unread_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__message_unread_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__message_unread_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__message_unread_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__message_unread_counter
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Numero messaggi non letti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "UoM"
+msgstr "Unità di misura"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "Update Prices"
+msgstr "Aggiorna Prezzi"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_res_users
+msgid "Users"
+msgstr "Utenti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_template_view_form_agent
+msgid "Variants"
+msgstr "Varianti"
+
+#. module: commercial_agent_plus
+#: model:ir.model,name:commercial_agent_plus.model_ir_ui_view
+msgid "View"
+msgstr "Vista"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py:0
+#: model:ir.model.fields.selection,name:commercial_agent_plus.selection__sale_order__state__waiting
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.view_sales_order_filter_inherit_commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/order.py
+msgid "Waiting Commission"
+msgstr "Attesa Commissione"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_area__website_message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission__website_message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_commission_settlement__website_message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_commission__website_message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_commercial_agent_sale_line_commission__website_message_ids
+#: model:ir.model.fields,field_description:commercial_agent_plus.field_product_commission__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: commercial_agent_plus
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_area__website_message_ids
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission__website_message_ids
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_commission_settlement__website_message_ids
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_commission__website_message_ids
+#: model:ir.model.fields,help:commercial_agent_plus.field_commercial_agent_sale_line_commission__website_message_ids
+#: model:ir.model.fields,help:commercial_agent_plus.field_product_commission__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
+#. module: commercial_agent_plus
+#. openerp-web
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js:0
+#: code:addons/commercial_agent_plus/static/src/js/tours/agent_tour.js
+msgid "Write password."
+msgstr "Scrivi la password."
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py
+#, python-format
+msgid "You can force looking for unsettled %s"
+msgstr "Puoi forzare in cerca di %s non liquidati"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "ZIP"
+msgstr "CAP"
+
+#. module: commercial_agent_plus
+#: model:res.groups,comment:commercial_agent_plus.commercial_agent_plus_all_group
+msgid "add the odoo logic for rules to agent."
+msgstr "Aggiungere all'agente le altre regole standard di Odoo."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_kanban_test
+msgid "at"
+msgstr "di"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.sale_order_view_form_commercial_agent_plus
+msgid "days"
+msgstr "giorni"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "e.g. BE0477472701"
+msgstr "es. IT0477472701"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "e.g. Mister"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "e.g. Mr."
+msgstr "es. Sig."
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+msgid "e.g. Odoo Enterprise Subscription"
+msgstr ""
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "e.g. Sales Director"
+msgstr "ad esempio, Direttore Vendite"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.res_partner_view_form_test
+msgid "e.g. https://www.odoo.com"
+msgstr "es. https://www.odoo.com"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "invoces"
+msgstr "fatture"
+
+#. module: commercial_agent_plus
+#: code:addons/commercial_agent_plus/models/settlement.py:0
+#: code:addons/commercial_agent_plus/models/settlement.py
+msgid "payments"
+msgstr "pagamenti"
+
+#. module: commercial_agent_plus
+#: model_terms:ir.ui.view,arch_db:commercial_agent_plus.product_product_view_form_agent
+msgid "the product template."
+msgstr "Modello prodotto."
+
+

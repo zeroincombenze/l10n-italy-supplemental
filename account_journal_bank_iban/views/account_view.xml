@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_bank_journal_form_iban_moved" model="ir.ui.view">
+            <field name="name">account.bank.journal.form.iban.moved</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_bank_journal_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="(//form/sheet/group/group)[1]" position="replace">
+                    <group>
+                        <field name="company_partner_id" invisible="1"/>
+                        <field name="bank_acc_number" attrs="{'readonly': [('bank_account_id', '!=', False)]}"/>
+                        <field name="bank_account_id"/>
+                        <field name="bank_id" attrs="{'readonly': [('bank_account_id', '!=', False)]}"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

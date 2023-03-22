@@ -1,0 +1,1 @@
+Spostato campo IBAN nel registro banca

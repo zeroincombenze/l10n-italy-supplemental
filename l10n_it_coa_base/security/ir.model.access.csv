@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_italy_profile_account_user,access_italy_profile_account_user,model_italy_profile_account,base.group_user,1,0,0,0
+access_italy_profile_account_manager,access_italy_profile_account_manager,model_italy_profile_account,account.group_account_manager,1,1,1,1

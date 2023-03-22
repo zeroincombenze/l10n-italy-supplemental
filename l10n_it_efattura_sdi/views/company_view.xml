@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sdi_access_settings" model="ir.ui.view">
+        <field name="name">view_sdi_access_settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="l10n_it_fatturapa_in.view_account_config_settings_ftpa_in"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='supplier_fatturapa_settings']" position="after">
+                <h2>Sistema di Interscambio</h2>
+                <div class="row mt16 o_settings_container" id="sdi_settings">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <div class="content-group">
+                                <div class="row">
+                                    <field name="sdi_send"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                 <div class="row">
+                                     <label for="sdi_send" class="col-lg-3 o_light_label"/>
+                                 </div>
+                                <div class="row">
+                                    <label for="sdi_username" class="col-lg-3 o_light_label"/>
+                                    <field name="sdi_username"/>
+                                </div>
+                                <div class="row">
+                                    <label for="sdi_password" class="col-lg-3 o_light_label"/>
+                                    <field name="sdi_password"/>
+                                </div>
+                                <div class="row">
+                                    <label for="node" class="col-lg-3 o_light_label"/>
+                                    <field name="node"/>
+                                </div>
+                                <div class="content-group">
+                                <div class="row">
+                                    <label for="sdi_node" class="col-lg-3 o_light_label"/>
+                                    <field name="sdi_node"/>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+<!--                             <div class="content-group">-->
+<!--                                <div class="row">-->
+<!--                                    <label for="sdi_sent" class="col-lg-3 o_light_label"/>-->
+<!--                                    <field name="sdi_sent"/>-->
+<!--                                </div>-->
+<!--                             </div>-->
+                             <div class="content-group">
+                                <div class="row">
+                                    <label for="use_local_storage" class="col-lg-3 o_light_label"/>
+                                    <field name="use_local_storage"/>
+                                </div>
+                             </div>
+                             <div class="content-group">
+                                <div class="row">
+                                    <label for="sdi_storage_format" class="col-lg-3 o_light_label"/>
+                                    <field name="sdi_storage_format"/>
+                                </div>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_payment_order_tree_plus" model="ir.ui.view">
+        <field name="name">account.payment.order.tree.plus</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='state']" position="after">
+                    <field name="bank_invoice_financing_amount" invisible="context.get('default_payment_type') != 'inbound'"/>
+                    <field name="anticipo_aperto" invisible="context.get('default_payment_type') != 'inbound'"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+             id="mastrini_wizard"
+             name="Visualizza Mastrini"
+             parent="l10n_it_menu.menu_italy_accounting_petty_cash"
+             action="mastrini_wizard_action"
+             sequence="10"
+             />
+</odoo>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_confirm_print_journal" model="ir.ui.view">
+        <field name="name">wizard.confirm.print.journal.tree</field>
+        <field name="model">wizard.confirm.print.journal</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Conferma">
+                <field name="reason_lines" readonly="1" >
+                    <tree>
+                        <field name="number" />
+                        <field name="date_document" />
+                        <field name="reason" />
+                    </tree>
+                </field>
+                <footer>
+                    <button name="conferma_anomalie"
+                            string="Conferma"
+                            type="object"
+                            class="oe_highlight" />
+
+                    <button string="Chiudi" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
+

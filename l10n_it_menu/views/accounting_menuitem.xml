@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+             name="Rapporti contabilità italiana"
+             id="menu_italy_accounting_reports"
+             parent="account.menu_finance_reports"
+             groups="base.group_user"
+             sequence="10"
+             />
+
+
+    <menuitem
+             name="Mastrino"
+             id="menu_italy_accounting_petty_cash"
+             parent="menu_italy_accounting_reports"
+             groups="base.group_user"
+             sequence="10"
+             />
+
+    <menuitem
+             name="Bilanci fiscali"
+             id="menu_italy_balance"
+             parent="menu_italy_accounting_reports"
+             groups="base.group_user"
+             sequence="20"
+             />
+
+</odoo>
+

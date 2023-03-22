@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="mastrini_wizard_form" model="ir.ui.view">
+        <field name="name">Mastrini Wizard</field>
+        <field name="model">account.mastrini.wizardmodel</field>
+        <field name="arch" type="xml">
+            <form >
+                <!--
+                Invisible field: it's here only to allow the "partner" field
+                to be hidden dynamically
+                -->
+                <field name="partner_needed" invisible="1"/>
+
+                <!-- - - - - - - - - - - - - - - - - - - - - - - -->
+                <!-- Filtering and Visualization controls -->
+                <!-- - - - - - - - - - - - - - - - - - - - - - - -->
+                <group col="12" colspan="12">
+
+                    <!-- - - - - - - - - - - - - - - - - - - -->
+                    <!-- Upper bar: filter parameters -->
+                    <!-- - - - - - - - - - - - - - - - - - - -->
+                    <group col="12" colspan="12">
+
+                        <!-- account, account_nature, account_type -->
+                        <group colspan="2" col="2">
+                            <div>
+                                <div><strong>Conto:</strong></div>
+                                <div><field name="account_id" nolabel="1" options="{'no_open': True}"/></div>
+                            </div>
+                        </group>
+                        <!-- partner -->
+                        <group colspan="2" col="2">
+                            <div>
+                                <div><strong>Partner:</strong></div>
+                                <div><field name="partner_id" nolabel="1" options="{'no_open': True}"/></div>
+                            </div>
+                        </group>
+
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Natura:</strong></div>
+                                <div><field name="account_nature" nolabel="1" attrs="{'readonly':[('account_id', '!=', False)]}"/></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Tipo:</strong></div>
+                                <div><field name="account_user_type" nolabel="1" attrs="{'readonly':[('account_id', '!=', False)]}" options="{'no_open': True}"/></div>
+                            </div>
+                        </group>
+
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Stato reg.:</strong></div>
+                                <div><field name="move_state" nolabel="1"/></div>
+                            </div>
+                        </group>
+
+                        <!-- esercizio, periodo -->
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Esercizio:</strong></div>
+                                <div><field name="fiscalyear_id" nolabel="1"/></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Periodo:</strong></div>
+                                <div><field name="date_range_id" nolabel="1"/></div>
+                            </div>
+                        </group>
+
+                        <!-- da, a -->
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Da:</strong></div>
+                                <div><field name="date_from" nolabel="1"/></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>A:</strong></div>
+                                <div><field name="date_to" nolabel="1" /></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Registro:</strong></div>
+                                <div><field name="journal_id" nolabel="1" /></div>
+                            </div>
+                        </group>
+
+                    </group>
+
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <!-- Lower bar: data visualization controls -->
+                    <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+                    <group col="12" colspan="12">
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Divisa:</strong></div>
+                                <div><field name="currency_id" nolabel="1" options="{'no_open': True}"/></div>
+                            </div>
+                        </group>
+                        <group colspan="2" col="2">
+                            <div>
+                                <div><strong>Opzione ordine di stampa:</strong></div>
+                                <field name="print_order" />
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Contropartite:</strong></div>
+                                <div><field name="show_contropartite" nolabel="1"/></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <div>
+                                <div><strong>Date competenza:</strong></div>
+                                <div><field name="accrual_dates_show" nolabel="1"/></div>
+                            </div>
+                        </group>
+                        <group colspan="2" col="2">
+                            <div>
+                                <div><strong>Visualizza importi:</strong></div>
+                                <div><field
+                                        name="show_amount_type"
+                                        nolabel="1"
+                                        attrs="{'readonly': [('is_company_currency', '=', False)]}"
+                                /></div>
+                            </div>
+                        </group>
+                        <group colspan="1" col="1">
+                            <span>
+                                <span><strong>Limite righe caricate:</strong></span>
+                                <field name="max_rows" nolabel="1"/>
+                            </span>
+                        </group>
+                        <group colspan="2" col="2">
+                            <div>
+                                <div><strong>Righe totali nel database:</strong></div>
+                                <field name="retrieved_rows" nolabel="1" readonly="True"/>
+                            </div>
+                        </group>
+                        <field name="is_company_currency" invisible="1"/>
+                    </group>
+                </group>
+
+                <!-- - - - - - - - - - - -->
+                <!-- Data lines -->
+                <!-- - - - - - - - - - - -->
+                <notebook>
+
+                    <!-- - - - - - - - - - -->
+                    <!-- Move lines -->
+                    <!-- - - - - - - - - - -->
+                    <page string="Prima Nota">
+                        <field name="move_line_ids">
+                            <tree decoration-bf="move_id == False" limit="107">
+                                <button
+                                       type="object"
+                                       name="account_move_edit_form"
+                                       string="👇"
+                                       attrs="{'invisible':[('journal_id', '=', False)]}"
+                                       />
+                                <field name="hide_zeros" invisible="1"/>
+                                <field name="date"/>
+                                <field name="journal_id" invisible="1"/>
+                                <field name="journal_code"/>
+                                <field name="move_type"/>
+                                <field name="move_id"/>
+                                <field name="ref" style="width: 15em;"/>
+                                <field name="ref_date"/>
+
+                                <field
+                                      name="debit_ccy"
+                                      digits="[14,2]"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
+                                      style="width: 10em;"
+                                      />
+                                <field
+                                      name="credit_ccy"
+                                      digits="[14,2]"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
+                                      style="width: 10em;"
+                                      />
+                                <field
+                                      name="balance_ccy"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible': ['&amp;', ('hide_zeros', '=', True), ('balance', '=', 0)]}"
+                                      style="width: 12em;"
+                                      />
+                                <field
+                                      name="sym_ccy"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)]}"
+                                      />
+
+                                <field
+                                      name="debit"
+                                      digits="[14,2]"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
+                                      style="width: 10em;"
+                                      />
+                                <field
+                                      name="credit"
+                                      digits="[14,2]"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
+                                      style="width: 10em;"
+                                      />
+                                <field
+                                      name="balance"
+                                      attrs="{'invisible': ['&amp;', ('hide_zeros', '=', True), ('balance', '=', 0)]}"
+                                      style="width: 12em;"
+                                      />
+                                <field name="sym"/>
+
+                                <!-- Contropartite e controvalori -->
+                                <field
+                                      name="contropartite"
+                                      widget="html"
+                                      attrs="{'column_invisible': [('parent.show_contropartite', '!=', 'partite')]}"
+                                      style="width: 35em;"
+                                      />
+                                <field
+                                      name="controvalori"
+                                      widget="html"
+                                      attrs="{'column_invisible': [('parent.show_contropartite', '!=', 'valori')]}"
+                                      style="width: 35em;"
+                                      />
+                                <field name="name"/>
+                                <field name="accrual_start_date" attrs="{'column_invisible': [('parent.accrual_dates_show', '=', False)]}"/>
+                                <field name="accrual_end_date" attrs="{'column_invisible': [('parent.accrual_dates_show', '=', False)]}"/>
+                                <field name="date_maturity"/>
+                                <field name="full_reconcile_id"/>
+                                <field name="move_state"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <!-- - - - - - - - - - -->
+                    <!-- VAT recap -->
+                    <!-- - - - - - - - - - -->
+                    <page string="Riepilogo IVA">
+                        <field name="vat_brief_line_ids">
+                            <tree decoration-bf="line_type == 'totals'">
+                                <field name="is_spacer" invisible="1"/>
+                                <field name="fiscal_year"/>
+                                <field name="line_type"/>
+                                <field name="description"/>
+                                <field name="base_amount"
+                                       attrs="{'invisible':[('is_spacer', '=', True)]}"/>
+                                <field name="tax_amount"
+                                       attrs="{'invisible':[('is_spacer', '=', True)]}"/>
+                                <field name="total_amount"
+                                       attrs="{'invisible':[('is_spacer', '=', True)]}"/>
+                                <field name="sign"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+
+
+                <script>
+                    /*
+                        https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+                    */
+
+                    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+                    /* funzione che analizza tutti i cambiamenti nella pagina */
+                    var callback = function(mutationsList, observer) {
+                        // patch IE 11
+                        for(var mutation of mutationsList) {
+                            if (mutation.type === 'attributes' )
+                            {
+                                /* se viene trovato il pop up */
+                                if (mutation.target.className === 'modal-footer')
+                                {
+                                    var btn = mutation.target.firstElementChild;
+                                    observer.disconnect();
+                                    /* viene confermato automaticamente */
+                                    btn.click();
+                                }
+                            }
+                        }
+                    };
+
+                    var observerOptions = {
+                      attributes: true,
+                      subtree: true
+                    }
+
+                    var observer = new MutationObserver(callback);
+                    /*
+                    per tutti i cambiamenti che occorrono nella pagina
+                    viene invocata la callback
+                    */
+                    observer.observe(document, observerOptions);
+                </script>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="mastrini_wizard_action"
+        name="Mastrini Wizard"
+        res_model="account.mastrini.wizardmodel"
+        view_type="form"
+        view_mode="form"
+        target="inline"
+        />
+
+</odoo>

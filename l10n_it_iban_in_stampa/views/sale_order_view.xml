@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_order_form_iban" model="ir.ui.view">
+            <field name="name">sale.order.form.iban</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@name='other_information']/group/group[last()]" position="after">
+                    <group string="Stampa IBAN" name="stampa_iban">
+                        <field name="bank_2_print_selector"/>
+                        <field name="counterparty_bank_id" attrs="{'invisible':
+                        [('bank_2_print_selector', '!=', 'partner')]}"/>
+                        <field name="company_bank_id" attrs="{'invisible':
+                        [('bank_2_print_selector', '!=', 'company')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+</odoo>

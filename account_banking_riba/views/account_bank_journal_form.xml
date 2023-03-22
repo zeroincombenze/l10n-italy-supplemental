@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_bank_journal_form_invoice_riba" model="ir.ui.view">
+        <field name="name">account.bank.journal.form.invoice.riba</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_bank_journal_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='bank_statement']" position="after">
+                <group string="Castelletto ri.ba" >
+                    <group>
+                        <field name="riba_limite_effetti_sbf" />
+                        <field name="riba_disponibilita_effetti_sbf"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
+

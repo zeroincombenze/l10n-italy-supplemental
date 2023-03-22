@@ -1,0 +1,1 @@
+Italian VAT capitalize the first and the second characters

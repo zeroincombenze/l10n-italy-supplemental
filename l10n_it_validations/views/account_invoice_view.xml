@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     
+    <record id="view_account_invoice_fy" model="ir.ui.view">
+        <field name="name">account.invoice.form.fy</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+               
+            <xpath expr="//field[@name='date_invoice']" position="before">
+                <field name="fiscalyear_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='date_invoice']" position="attributes">
+                <attribute name="domain">[('type', 'in', ['in_invoice', 'out_invoice', 'in_refund', 'out_refund'])]</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_invoice_supplier_form_fy" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.form.fy</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+               
+            <xpath expr="//field[@name='date']" position="before">
+                <field name="fiscalyear_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='date_invoice']" position="attributes">
+                <attribute name="domain">[('type', 'in', ['in_invoice', 'out_invoice', 'in_refund', 'out_refund'])]</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
+
+

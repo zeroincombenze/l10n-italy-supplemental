@@ -1,0 +1,1522 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * l10n_it_balance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (12.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-24 18:50+0000\n"
+"PO-Revision-Date: 2020-09-24 21:02+0200\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "<b>Data fine</b>:"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "<b>Data inizio</b>:"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__account_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__account_id
+msgid "Account"
+msgstr "Conto"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__nature_of_accounts
+msgid "Accounts selection..."
+msgstr "Selezione conti …."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_accrual_ids
+msgid "Accruals"
+msgstr "Ratei"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,target_move:0
+#: selection:wizard.generate.balance,target_move:0
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+msgid "All Entries"
+msgstr "Tutte le voci"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,target_move:0
+#: selection:wizard.generate.balance,target_move:0
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+msgid "All Posted Entries"
+msgstr "Tutte le registrazioni contabilizzate"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hide_account_at_0:0
+#: selection:wizard.generate.balance,hide_account_at_0:0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+msgid "All accounts"
+msgstr "Tutti i conti"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_opposite_xls_file
+msgid "Annulla"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__rounding
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__rounding
+msgid "Arrotondamento"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,rounding:0
+#: selection:wizard.generate.balance,rounding:0
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+msgid "Arrotondamento intelligente"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,rounding:0
+#: selection:wizard.generate.balance,rounding:0
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+msgid "Arrotondamento matematico dei capoconti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,rounding:0
+#: selection:wizard.generate.balance,rounding:0
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+msgid "Arrotondamento matematico dei mastri"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,rounding:0
+#: selection:wizard.generate.balance,rounding:0
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+msgid "Arrotondamento matematico dei sottoconti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_asset_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_customers_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_expense_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_income_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_liability_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_memorandum_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_suppliers_ids
+msgid "Asset"
+msgstr "Attività"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Attività"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line,nature:0
+#: selection:italy.account.balance.line.asset,nature:0
+#: selection:italy.account.balance.line.customer.detail,nature:0
+#: selection:italy.account.balance.line.expense,nature:0
+#: selection:italy.account.balance.line.income,nature:0
+#: selection:italy.account.balance.line.liability,nature:0
+#: selection:italy.account.balance.line.memorandum,nature:0
+#: selection:italy.account.balance.line.supplier.detail,nature:0
+#: selection:italy.account.balance.line2,nature:0
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+msgid "Attivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line2_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_line_ids
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__balance_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__balance_id
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,nature_of_accounts:0
+#: selection:wizard.generate.balance,nature_of_accounts:0
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+msgid "Balance sheets only"
+msgstr "Solo conti Patrimoniali (Attivo/Passivo)"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__balance_type
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__balance_type
+msgid "Balance type"
+msgstr "Tipo di bilancio"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__balance_type
+#: model:ir.model.fields,help:l10n_it_balance.field_wizard_generate_balance__balance_type
+msgid "Balance type..."
+msgstr "Tipo di bilancio..."
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Bilancio Fiscale"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.report,name:l10n_it_balance.report_ordinary_balance_demo_pdf
+msgid "Bilancio Ordinario"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.act_window,name:l10n_it_balance.account_balance3_action
+#: model:ir.actions.report,name:l10n_it_balance.report_opposite_balance_demo_pdf
+#: model:ir.ui.menu,name:l10n_it_balance.menu_account_balance3_action
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Bilancio a conti contrapposti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.act_window,name:l10n_it_balance.account_balance1_action
+#: model:ir.actions.report,name:l10n_it_balance.report_trial_balance_demo_pdf
+#: model:ir.ui.menu,name:l10n_it_balance.menu_account_balance1_action
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Bilancio di verifica"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance
+msgid "Bilancio fiscale italiano"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.act_window,name:l10n_it_balance.account_balance2_action
+#: model:ir.ui.menu,name:l10n_it_balance.menu_account_balance2_action
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Bilancio ordinario"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:wizard.generate.balance,balance_type:0
+#: selection:wizard.generate.balance,balance_type
+#: selection:wizard.generate.balance,balance_type
+msgid "Budget in opposite sections"
+msgstr "Bilancio a conti contrapposti"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line,nature:0
+#: selection:italy.account.balance.line.asset,nature:0
+#: selection:italy.account.balance.line.customer.detail,nature:0
+#: selection:italy.account.balance.line.expense,nature:0
+#: selection:italy.account.balance.line.income,nature:0
+#: selection:italy.account.balance.line.liability,nature:0
+#: selection:italy.account.balance.line.memorandum,nature:0
+#: selection:italy.account.balance.line.supplier.detail,nature:0
+#: selection:italy.account.balance.line2,nature:0
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+msgid "C/Ordine"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_opposite_xls_exit
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_xls_exit
+msgid "Chiudi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,select_details:0
+#: selection:wizard.generate.balance,select_details:0
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+msgid "Clienti e fornitori"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__parent_code
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__code
+#: selection:italy.account.balance,order_by:0
+#: selection:wizard.generate.balance,order_by:0
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+msgid "Codice"
+msgstr "Code"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__company_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,date_balance_option:0
+#: selection:wizard.generate.balance,date_balance_option:0
+#: selection:italy.account.balance,date_balance_option
+#: selection:wizard.generate.balance,date_balance_option
+#: selection:italy.account.balance,date_balance_option
+#: selection:wizard.generate.balance,date_balance_option
+msgid "Competence date"
+msgstr "Data di competenza"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__evaluate_accrual
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__evaluate_accrual
+msgid "Competenze Ratei e Risconti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Conti d'ordine"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__select_details
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__select_details
+msgid "Conti di debito e credito"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Conto"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+msgid "Conto economico"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__move_count
+msgid "Conto registrazione"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: selection:italy.account.balance.line,nature:0
+#: selection:italy.account.balance.line.asset,nature:0
+#: selection:italy.account.balance.line.customer.detail,nature:0
+#: selection:italy.account.balance.line.expense,nature:0
+#: selection:italy.account.balance.line.income,nature:0
+#: selection:italy.account.balance.line.liability,nature:0
+#: selection:italy.account.balance.line.memorandum,nature:0
+#: selection:italy.account.balance.line.supplier.detail,nature:0
+#: selection:italy.account.balance.line2,nature:0
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+msgid "Costi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__create_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__create_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__end_date_competence
+msgid "Data fine competenza"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__start_date_competence
+msgid "Data inizio competenza"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__move_date
+msgid "Data registrazione"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__date_balance_option
+msgid "Date options..."
+msgstr "Opzioni date ..."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__date_range_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__date_range_id
+msgid "Date range"
+msgstr "Intervallo date"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__name
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Descrizione"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Dettagli clienti / fornitori"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__view_partner_details
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__view_partner_details
+msgid "Dettagli conti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Developer only"
+msgstr "Modo sviluppatore"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__display_name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: l10n_it_balance
+#: selection:wizard.generate.balance,nature_of_accounts:0
+#: selection:wizard.generate.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+msgid "Economic accounts only"
+msgstr "Solo conti Economici (Costi e Ricavi)"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__date_to
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__date_to
+msgid "End date"
+msgstr "Data finale"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__fiscalyear_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__fiscalyear_id
+msgid "Esercizio contabile"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_accounting_closure
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_accounting_closure
+msgid "Excluded accounting closure"
+msgstr "Escluse le registrazioni di Chiusura"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_adjustment_records
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_adjustment_records
+msgid "Excluded adjustment records"
+msgstr "Escluse le registrazioni di Rettifica"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_opening_balances
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_opening_balances
+msgid "Excluded opening balances"
+msgstr "Esclusi i Saldi iniziali"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_opposite_xls_exit
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_xls_exit
+msgid "Export"
+msgstr "Esportare"
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_wizard_balance_export_xls
+#: model:ir.model,name:l10n_it_balance.model_wizard_balance_opposite_export_xls
+msgid "Export balance xls"
+msgstr "Esportare file xls"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Fatture da ricevere attive"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Fatture da ricevere passive"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__name
+msgid "File Name"
+msgstr "Nome file"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__file_export
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__file_export
+msgid "File xls"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+msgid "Filtri importi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+msgid "Filtri registrazione"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+msgid "Filtri tipologia"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_opposite_xls_file
+msgid "Genera"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.act_window,name:l10n_it_balance.action_generate_balance
+#: model:ir.model,name:l10n_it_balance.model_wizard_generate_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Genera Bilancio"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Genera PDF"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Genera xls"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_opposite_xls_file
+msgid "Generazione File"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.actions.act_window,name:l10n_it_balance.action_generate_balance_opposite_file
+msgid "Generazione file"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__hide_account_at_0
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__hide_account_at_0
+msgid "Hide accounts at 0"
+msgstr "Nascondi conti a 0"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hide_account_at_0:0
+#: selection:wizard.generate.balance,hide_account_at_0:0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+msgid "Hide zero balance accounts"
+msgstr "Nascondi conti a 0"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__current_year_amount
+msgid "Importo periodo corrente"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__previous_year_amount
+msgid "Importo periodo precedente"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__next_year_amount
+msgid "Importo periodo successivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,nature_of_accounts:0
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:italy.account.balance,nature_of_accounts
+msgid "Income Statement"
+msgstr "Conto Economico"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__inversion
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__inversion
+msgid "Inversione Natura Conti con segno negativo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,inversion:0
+#: selection:wizard.generate.balance,inversion:0
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+msgid "Inverti in base al corrispondente del conto"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,inversion:0
+#: selection:wizard.generate.balance,inversion:0
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+msgid "Inverti sempre"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls____last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__write_uid
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_export_xls__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__write_date
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__hierarchy_level
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__level_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__hierarchy_level
+msgid "Livello di bilancio"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,nature_of_accounts:0
+#: selection:wizard.generate.balance,nature_of_accounts:0
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+msgid "Memorandum accounts"
+msgstr "Conti d'Ordine"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__move_ids
+msgid "Move entires"
+msgstr "Lista registrazioni"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__move_ids
+msgid "Move entries"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__name
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__name
+msgid "Name"
+msgstr "Descrizione"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__nature
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__nature
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Natura"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__nature_of_accounts
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__nature_of_accounts
+msgid "Nature of the accounts"
+msgstr "Natura dei conti"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,view_partner_details:0
+#: selection:wizard.generate.balance,view_partner_details:0
+#: selection:italy.account.balance,view_partner_details
+#: selection:wizard.generate.balance,view_partner_details
+#: selection:italy.account.balance,view_partner_details
+#: selection:wizard.generate.balance,view_partner_details
+msgid "Nel bilancio"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_grand_total
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_grand_total
+msgid "No grand total"
+msgstr "Nessuna totalizzazione generale"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_nature_total
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_nature_total
+msgid "No nature total"
+msgstr "Nessun totale per natura"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__no_selected_moves
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__no_selected_moves
+msgid "No selected moves"
+msgstr "Escluse registrazioni selezionate"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,rounding:0
+#: selection:wizard.generate.balance,rounding:0
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+#: selection:italy.account.balance,rounding
+#: selection:wizard.generate.balance,rounding
+msgid "Non applicato"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,inversion:0
+#: selection:wizard.generate.balance,inversion:0
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+#: selection:italy.account.balance,inversion
+#: selection:wizard.generate.balance,inversion
+msgid "Non invertire"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,nature_of_accounts:0
+#: selection:wizard.generate.balance,nature_of_accounts:0
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+#: selection:italy.account.balance,nature_of_accounts
+#: selection:wizard.generate.balance,nature_of_accounts
+msgid "None excluded"
+msgstr "Nessuno escluso"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__move_number
+msgid "Numero registrazione"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,target_move:0
+#: selection:wizard.generate.balance,target_move:0
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+#: selection:italy.account.balance,target_move
+#: selection:wizard.generate.balance,target_move
+msgid "Only Draft Entries"
+msgstr "Solo registrazioni in bozza"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hide_account_at_0:0
+#: selection:wizard.generate.balance,hide_account_at_0:0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+#: selection:italy.account.balance,hide_account_at_0
+#: selection:wizard.generate.balance,hide_account_at_0
+msgid "Only posted accounts"
+msgstr "Solo registrazioni contabilizzate"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,balance_type:0
+#: selection:italy.account.balance,balance_type
+#: selection:italy.account.balance,balance_type
+msgid "Opposite side balance"
+msgstr "Bilancio a sezioni contrapposte"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,balance_type:0
+#: selection:wizard.generate.balance,balance_type:0
+#: selection:italy.account.balance,balance_type
+#: selection:wizard.generate.balance,balance_type
+#: selection:italy.account.balance,balance_type
+#: selection:wizard.generate.balance,balance_type
+msgid "Ordinary balance"
+msgstr "Bilancio ordinario"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__parent_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__parent_id
+msgid "Parent account"
+msgstr "Conto genitore"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__partner_vat
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__partner_vat
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__partner_vat
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__partner_vat
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__partner_vat
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__partner_vat
+msgid "Partita IVA"
+msgstr "Partita IVA"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__partner_id
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__partner_id
+msgid "Partner"
+msgstr "Nominativo"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+msgid "Passività"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line,nature:0
+#: selection:italy.account.balance.line.asset,nature:0
+#: selection:italy.account.balance.line.customer.detail,nature:0
+#: selection:italy.account.balance.line.expense,nature:0
+#: selection:italy.account.balance.line.income,nature:0
+#: selection:italy.account.balance.line.liability,nature:0
+#: selection:italy.account.balance.line.memorandum,nature:0
+#: selection:italy.account.balance.line.supplier.detail,nature:0
+#: selection:italy.account.balance.line2,nature:0
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+msgid "Passivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,order_by:0
+#: selection:wizard.generate.balance,order_by:0
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+msgid "Patrimoniale,Costi,Ricavi,Ordine"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,order_by:0
+#: selection:wizard.generate.balance,order_by:0
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+msgid "Patrimoniale,Ordine,Costi,Ricavi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,order_by:0
+#: selection:wizard.generate.balance,order_by:0
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+msgid "Patrimoniale,Ordine,Ricavi,Costi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,order_by:0
+#: selection:wizard.generate.balance,order_by:0
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+#: selection:italy.account.balance,order_by
+#: selection:wizard.generate.balance,order_by
+msgid "Patrimoniale,Ricavi,Costi,Ordine"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__payable_account_only
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__payable_account_only
+msgid "Payable account only"
+msgstr "Solo conti di debito fornitore"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__order_by
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__order_by
+msgid "Printing order"
+msgstr "Ordine di stampa"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.wizard_generate_balance_form
+msgid "Proiezioni"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_accrual
+msgid "Ratei e risconti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Rateo attivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Rateo passivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__receivable_account_only
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__receivable_account_only
+msgid "Receivable account only"
+msgstr "Solo conti di credito cliente"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,date_balance_option:0
+#: selection:wizard.generate.balance,date_balance_option:0
+#: selection:italy.account.balance,date_balance_option
+#: selection:wizard.generate.balance,date_balance_option
+#: selection:italy.account.balance,date_balance_option
+#: selection:wizard.generate.balance,date_balance_option
+msgid "Registration date"
+msgstr "Data di registrazione"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.view_account_balance1_form
+#: selection:italy.account.balance.line,nature:0
+#: selection:italy.account.balance.line.asset,nature:0
+#: selection:italy.account.balance.line.customer.detail,nature:0
+#: selection:italy.account.balance.line.expense,nature:0
+#: selection:italy.account.balance.line.income,nature:0
+#: selection:italy.account.balance.line.liability,nature:0
+#: selection:italy.account.balance.line.memorandum,nature:0
+#: selection:italy.account.balance.line.supplier.detail,nature:0
+#: selection:italy.account.balance.line2,nature:0
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+#: selection:italy.account.balance.line,nature
+#: selection:italy.account.balance.line.asset,nature
+#: selection:italy.account.balance.line.customer.detail,nature
+#: selection:italy.account.balance.line.expense,nature
+#: selection:italy.account.balance.line.income,nature
+#: selection:italy.account.balance.line.liability,nature
+#: selection:italy.account.balance.line.memorandum,nature
+#: selection:italy.account.balance.line.supplier.detail,nature
+#: selection:italy.account.balance.line2,nature
+msgid "Ricavi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line2
+msgid "Righe bilancio fiscale italiano"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_asset
+msgid "Righe bilancio fiscale italiano (attività)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_customer_detail
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_customers_details
+msgid "Righe bilancio fiscale italiano (clienti)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_memorandum
+msgid "Righe bilancio fiscale italiano (conti d'ordine)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_expense
+msgid "Righe bilancio fiscale italiano (costi)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_supplier_detail
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_suppliers_details
+msgid "Righe bilancio fiscale italiano (fornitori)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_liability
+msgid "Righe bilancio fiscale italiano (passività)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model,name:l10n_it_balance.model_italy_account_balance_line_income
+msgid "Righe bilancio fiscale italiano (ricavi)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Risconto attivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance.line.accrual,type:0
+#: selection:italy.account.balance.line.accrual,type
+#: selection:italy.account.balance.line.accrual,type
+msgid "Risconto passivo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__to_delete
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__to_delete
+msgid "Row to delete"
+msgstr "Riga da eliminare"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Saldo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__amount_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__amount_balance
+msgid "Saldo finale"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__amount_start
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__amount_start
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_ordinary_demo_pdf
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Saldo iniziale"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,view_partner_details:0
+#: selection:wizard.generate.balance,view_partner_details:0
+#: selection:italy.account.balance,view_partner_details
+#: selection:wizard.generate.balance,view_partner_details
+#: selection:italy.account.balance,view_partner_details
+#: selection:wizard.generate.balance,view_partner_details
+msgid "Scheda separata"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__select_details
+msgid "Seleziona opzioni ..."
+msgstr "."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__rounding
+msgid "Selezione arrotondamento..."
+msgstr "."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__date_balance_option
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__date_balance_option
+msgid "Selezione competenza"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__hierarchy_level
+msgid "Selezione livello..."
+msgstr "."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance__view_partner_details
+msgid "Selezione visualizzazione..."
+msgstr "."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__seq1
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__seq1
+msgid "Sequenza 1"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line2__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__seq2
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__seq2
+msgid "Sequenza 2"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,select_details:0
+#: selection:wizard.generate.balance,select_details:0
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+msgid "Solo clienti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,select_details:0
+#: selection:wizard.generate.balance,select_details:0
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+msgid "Solo fornitori"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hierarchy_level:0
+#: selection:wizard.generate.balance,hierarchy_level:0
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+msgid "Solo primo e secondo livello"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hierarchy_level:0
+#: selection:wizard.generate.balance,hierarchy_level:0
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+msgid "Solo primo livello"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hierarchy_level:0
+#: selection:wizard.generate.balance,hierarchy_level:0
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+msgid "Solo secondo e terzo livello"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hierarchy_level:0
+#: selection:wizard.generate.balance,hierarchy_level:0
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+msgid "Solo ultimo livello"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__date_from
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__date_from
+msgid "Start date"
+msgstr "Data iniziale"
+
+#. module: l10n_it_balance
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_opposite_demo_pdf
+msgid "Stato patrimoniale"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__fiscalyear_state
+msgid "Status"
+msgstr "Stato"
+
+#. module: l10n_it_balance
+#: selection:wizard.balance.opposite.export.xls,file_type:0
+#: selection:wizard.balance.opposite.export.xls,file_type
+#: selection:wizard.balance.opposite.export.xls,file_type
+msgid "Suddiviso (un foglio per sezione)"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__target_move
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__target_move
+msgid "Target Moves"
+msgstr "Finalità registrazioni"
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line2__partner_vat
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line__partner_vat
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line_asset__partner_vat
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line_expense__partner_vat
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line_income__partner_vat
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line_liability__partner_vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to"
+" government taxes. Used in some legal statements."
+msgstr ""
+"Il numero di partita IVA. Compilare questa casella se il contatto è "
+"soggetto a imposte governative. Utilizzato in alcuni documenti legali."
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_accrual__type
+msgid "Tipo"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,help:l10n_it_balance.field_italy_account_balance_line_accrual__type
+msgid "Tipo di record"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_balance_opposite_export_xls__file_type
+msgid "Tipo di xls"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__amount_credit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__amount_credit
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Totale avere"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_asset__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_customer_detail__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_expense__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_income__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_liability__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_memorandum__amount_debit
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance_line_supplier_detail__amount_debit
+#: model_terms:ir.ui.view,arch_db:l10n_it_balance.report_trial_demo_pdf
+msgid "Totale dare"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,balance_type:0
+#: selection:wizard.generate.balance,balance_type:0
+#: selection:italy.account.balance,balance_type
+#: selection:wizard.generate.balance,balance_type
+#: selection:italy.account.balance,balance_type
+#: selection:wizard.generate.balance,balance_type
+msgid "Trail balance"
+msgstr "Bilancio di verifica"
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,hierarchy_level:0
+#: selection:wizard.generate.balance,hierarchy_level:0
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+#: selection:italy.account.balance,hierarchy_level
+#: selection:wizard.generate.balance,hierarchy_level
+msgid "Tutti"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:italy.account.balance,select_details:0
+#: selection:wizard.generate.balance,select_details:0
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+#: selection:italy.account.balance,select_details
+#: selection:wizard.generate.balance,select_details
+msgid "Tutti esclusi"
+msgstr ""
+
+#. module: l10n_it_balance
+#: model:ir.model.fields,field_description:l10n_it_balance.field_italy_account_balance__last_update
+#: model:ir.model.fields,field_description:l10n_it_balance.field_wizard_generate_balance__last_update
+msgid "Ultimo aggiornamento"
+msgstr ""
+
+#. module: l10n_it_balance
+#: selection:wizard.balance.opposite.export.xls,file_type:0
+#: selection:wizard.balance.opposite.export.xls,file_type
+#: selection:wizard.balance.opposite.export.xls,file_type
+msgid "Unico"
+msgstr ""
+
+

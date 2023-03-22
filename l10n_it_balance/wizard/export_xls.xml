@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="wizard_generate_balance_xls_exit" model="ir.ui.view">
+        <field name="name">Esportazione file - Pronto</field>
+        <field name="model">wizard.balance.export.xls</field>
+        <field name="arch" type="xml">
+            <form string="Export">
+                <group>
+                    <field name="file_export" readonly="1" filename="name"/>
+                    <field name="name" invisible="1"/>
+                </group>
+                <footer>
+                    <button string="Chiudi" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
+

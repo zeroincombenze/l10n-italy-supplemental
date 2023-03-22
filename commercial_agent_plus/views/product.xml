@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--inherit-->
+    <record id="product_template_form_view_inherit_commercial_agent_plus" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="commission" string="Commissions Informations">
+                    <group name="first">
+                        <group>
+                            <field name="commercial_agent_salable" />
+                            <field name="commercial_agent_commission_free" />
+                        </group>
+                    </group>
+                    <group string="Commissions">
+                        <field name="product_commission_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id" invisible="1"/>
+                                <field name="product_tmpl_id" invisible="1"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="commission_type" />
+                                <field name="commission" />
+                                <field name="date_start" options='{"related_end_date": "date_end"}' required="1"/>
+                                <field name="date_end" required="1" options='{"related_start_date": "date_start"}'/>
+                                <field name="active"
+                                groups="commercial_agent_plus.commercial_agent_plus_agent_admin_group,commercial_agent_plus.commercial_agent_plus_manager_group"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="product_search_inherit_agente" model="ir.ui.view">
+        <field name="name">product_search_inherit_agente</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <filter name="filter_to_purchase" position="after">
+                <filter string="Agent salable" name="agent_salable" domain="[('commercial_agent_salable','=',True)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="product_variant_easy_edit_view_inherit_agent" model="ir.ui.view">
+        <field name="name">product.product.view.form.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <sheet position="inside">
+                <group>
+                    <group name="first">
+                        <group>
+                            <field name="commercial_agent_salable" />
+                            <field name="commercial_agent_commission_free" />
+                        </group>
+                    </group>
+                    <group string="Commissions">
+                        <field name="product_commission_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id" invisible="1"/>
+                                <field name="product_tmpl_id" invisible="1"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="commission_type" />
+                                <field name="commission" />
+                                <field name="date_start" options='{"related_end_date": "date_end"}' required="1"/>
+                                <field name="date_end" required="1" options='{"related_start_date": "date_start"}'/>
+                                <field name="active" groups="commercial_agent_plus.commercial_agent_plus_agent_admin_group,commercial_agent_plus.commercial_agent_plus_manager_group"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+    <!--new-->
+    <record id="product_template_view_tree_agent" model="ir.ui.view">
+        <field name="name">product.template.view.tree.agent</field>
+        <field name="model">product.template</field>
+        <field name="groups_id" eval="[
+        (6, 0, [ref('commercial_agent_plus.commercial_agent_plus_agent_group')])]" />
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="product_variant_count" invisible="1"/>
+                <field name="sale_ok" invisible="1"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="cost_currency_id" invisible="1"/>
+
+                <field name="name" string="Product Name"/>
+                <field name="default_code" />
+                <field name="barcode" attrs="{'readonly': [('product_variant_count', '&gt;', 1)]}"/>
+                <field name="company_id" options="{'no_create_edit': True}" groups="base.group_multi_company" />
+                <field name="list_price" string="Sales Price" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                <field name="categ_id" />
+                <field name="uom_id" readonly="1" groups="uom.group_uom"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_template_view_form_agent" model="ir.ui.view">
+        <field name="name">product_template.view.form.agent</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(product.product_variant_action)d" type="action"
+                            icon="fa-sitemap" class="oe_stat_button"
+                            attrs="{'invisible': [('product_variant_count', '&lt;=', 1)]}"
+                            groups="product.group_product_variant">
+                            <field string="Variants" name="product_variant_count" widget="statinfo" />
+                        </button>
+                        <button type="object" name="no_action" attrs="{'invisible':[('type', '!=', 'product')]}" class="oe_stat_button" icon="fa-cubes">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value" widget="statinfo">
+                                    <field name="qty_available" widget="statinfo" nolabel="1" class="mr4"/>
+                                    <field name="uom_name"/>
+                                </span>
+                                <span class="o_stat_text">On Hand</span>
+                            </div>
+                        </button>
+                        <button type="object" name="no_action" attrs="{'invisible':[('type', '!=', 'product')]}" context="{'default_product_tmpl_id': id}" class="oe_stat_button" icon="fa-cubes">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="virtual_available" widget="statinfo" nolabel="1" class="mr4"/>
+                                    <field name="uom_name"/>
+                                </span>
+                                <span class="o_stat_text">Forecasted</span>
+                            </div>
+                        </button>
+                    </div>
+                    <field name="id" invisible="True"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image_small'}"/>
+                    
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Product Name"/>
+                        <h1><field name="name" placeholder="Product Name"/></h1>
+                    </div>
+                    <notebook>
+                        <page string="General Information" name="general_information">
+                            <group>
+                                <group name="group_general">
+                                    <field name="active" invisible="1"/>
+                                    <field name="type"/>
+                                    <field name="categ_id" string="Product Category"/>
+                                    <field name="default_code" attrs="{'invisible': [('product_variant_count', '>', 1)]}"/>
+                                    <field name="barcode" attrs="{'invisible': [('product_variant_count', '>', 1)]}"/>
+                                </group>
+                                <group name="group_standard_price">
+                                    <label for="list_price"/>
+                                    <div name="pricing">
+                                      <field name="list_price" class="oe_inline" widget='monetary'
+                                        options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+<!--                                      <button name="open_pricelist_rules" icon="fa-arrow-right" type="object"-->
+<!--                                        groups="product.group_product_pricelist" class="oe_inline">-->
+<!--                                        <field name="pricelist_item_count" attrs="{'invisible': [('pricelist_item_count', '=', 0)]}"/>-->
+<!--                                        <span attrs="{'invisible': [('pricelist_item_count', '=', 1)]}">-->
+<!--                                          Extra Prices-->
+<!--                                        </span>-->
+<!--                                        <span attrs="{'invisible': [('pricelist_item_count', '!=', 1)]}">-->
+<!--                                          Extra Price-->
+<!--                                        </span>-->
+<!--                                      </button>-->
+                                    </div>
+                                    
+                                    <field name="company_id" groups="base.group_multi_company"
+                                        options="{'no_create': True}"/>
+                                    <field name="uom_id" groups="uom.group_uom" options="{'no_create': True}"/>
+                                    <field name="uom_po_id" groups="uom.group_uom" options="{'no_create': True}"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="cost_currency_id" invisible="1"/>
+                                    <field name="product_variant_id" invisible="1"/>
+                                </group>
+                            </group>
+                            <group string="Internal Notes">
+                                <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
+                            </group>
+                        </page>
+                        <page name="variants" string="Variants" groups="product.group_product_variant">
+                            <field name="attribute_line_ids" widget="one2many" context="{'show_attribute': False}">
+                                <tree string="Variants" editable="bottom">
+                                    <field name="attribute_id" attrs="{'readonly': [('id', '!=', False)]}"/>
+                                    <field name="value_ids" widget="many2many_tags" options="{'no_create_edit': True}" context="{'default_attribute_id': attribute_id, 'show_attribute': False}"/>
+                                </tree>
+                            </field>
+                                <p class="oe_grey oe_edit_only">
+                                <strong>Warning</strong>: adding or deleting attributes
+                                will delete and recreate existing variants and lead
+                                to the loss of their possible customizations.
+                            </p>
+                        </page>
+
+                        <page name="commission" string="Commissions Informations">
+                            <group name="first">
+                                <group>
+                                    <field name="commercial_agent_salable" />
+                                    <field name="commercial_agent_commission_free" />
+                                </group>
+                            </group>
+                            <group string="Commissions">
+                                <field name="product_commission_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="product_id" invisible="1"/>
+                                        <field name="product_tmpl_id" invisible="1"/>
+                                        <field name="company_id" invisible="1"/>
+                                        <field name="commission_type" />
+                                        <field name="commission" />
+                                        <field name="date_start" options='{"related_end_date": "date_end"}' required="1"/>
+                                        <field name="date_end" required="1" options='{"related_start_date": "date_start"}'/>
+                                        <field name="active"
+                                        groups="commercial_agent_plus.commercial_agent_plus_agent_admin_group,commercial_agent_plus.commercial_agent_plus_manager_group"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_product_view_tree_agent" model="ir.ui.view">
+        <field name="name">product.product.view.tree.agent</field>
+        <field name="model">product.product</field>
+        <field name="groups_id" eval="[
+        (6, 0, [ref('commercial_agent_plus.commercial_agent_plus_agent_group')])]" />
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="default_code"  readonly="1"/>
+                <field name="barcode" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="product_template_attribute_value_ids" widget="many2many_tags" groups="product.group_product_variant" readonly="1"/>
+                <field name="lst_price" string="Sales Price"/>
+                <field name="price" invisible="not context.get('pricelist',False)"/>
+                <field name="qty_available" />
+                <field name="virtual_available" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_product_view_form_agent" model="ir.ui.view">
+        <field name="name">product.product.view.form.agent</field>
+        <field name="model">product.product</field>
+        <field name="groups_id" eval="[
+        (6, 0, [ref('commercial_agent_plus.commercial_agent_plus_agent_group')])]" />
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <field name="active" invisible="1"/>
+                        <field name="id" invisible="1"/>
+                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image_small'}"/>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name" string="Product Name"/>
+                            <h1><field name="name" readonly="1" placeholder="e.g. Odoo Enterprise Subscription"/></h1>
+                            <field name="product_template_attribute_value_ids" widget="many2many_tags" readonly="1"/>
+                            <p>
+                                <span>All general settings about this product are managed on</span>
+                                <button name="open_product_template" type="object" string="the product template." class="oe_link oe_link_product pl-0 ml-1 mb-1"/>
+                            </p>
+                        </div>
+                        <group>
+                            <group name="codes" string="Codes">
+                                <field name="default_code"/>
+                                <field name="barcode"/>
+                                <field name="type" invisible="1"/>
+                            </group>
+                            <group name="pricing" string="Pricing">
+                                <field name="product_variant_count" invisible="1"/>
+                                <label for="lst_price"/>
+                                <div class="o_row col-5 pl-0">
+                                    <field name="lst_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" attrs="{'readonly': [('product_variant_count', '&gt;', 1)]}"/>
+                                </div>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group name="first">
+                                <group>
+                                    <field name="commercial_agent_salable" />
+                                    <field name="commercial_agent_commission_free" />
+                                </group>
+                            </group>
+                            <group string="Commissions">
+                                <field name="product_commission_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="product_id" invisible="1"/>
+                                        <field name="product_tmpl_id" invisible="1"/>
+                                        <field name="company_id" invisible="1"/>
+                                        <field name="commission_type" />
+                                        <field name="commission" />
+                                        <field name="date_start"
+                                        options='{"related_end_date": "date_end"}' required="1"/>
+                                        <field name="date_end" required="1"
+                                        options='{"related_start_date": "date_start"}'/>
+                                        <field name="active"
+                                        groups="commercial_agent_plus.commercial_agent_plus_agent_admin_group,commercial_agent_plus.commercial_agent_plus_manager_group"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

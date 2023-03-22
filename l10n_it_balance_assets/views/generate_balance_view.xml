@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_account_balance1_form_assets" model="ir.ui.view">
+        <field name="name">view.account.balance1.form.assets</field>
+        <field name="model">italy.account.balance</field>
+        <field name="inherit_id" ref="l10n_it_balance.view_account_balance1_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/notebook/page[last()]" position="after">
+                <page string="Quote di ammortamento" attrs="{'invisible':[('evaluate_accrual', '=', False)]}">
+                    <field name="balance_line_asset_depreciation_ids" nolabel="1" >
+                        <tree  create="0" editable="bottom">
+                            <field name="asset_id" />
+                            <field name="category_id" />
+                            <field name="type_id" />
+                            <field name="mode_id" />
+                            <field name="pro_rata_temporis" />
+                            <field name="date_start" />
+                            <field name="percentage" />
+                            <field name="base_coeff" />
+                            <field name="amount_depreciable" />
+                            <field name="amount_depreciated" />
+                            <field name="amount_current" />
+                            <field name="amount_residual" />
+                        </tree>
+                    </field>
+
+                    <field name="balance_line_amount_difference_ids" nolabel="1" >
+                        <tree  create="0" editable="bottom">
+                            <field name="category_id" />
+                            <field name="amount_current_civilistico" sum="Totale civilistico"/>
+                            <field name="amount_current_fiscale" sum="Totale fiscale"/>
+                            <field name="amount_balance" sum="Totale differenza"/>
+                        </tree>
+                    </field>
+                </page>
+
+            </xpath>
+        </field>
+
+    </record>
+</odoo>

@@ -1,0 +1,1 @@
+This module add some new fields in account.move, maily fiscal year
