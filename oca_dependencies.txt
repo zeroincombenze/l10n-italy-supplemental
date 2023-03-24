@@ -1,2 +1,8 @@
+account-financial-reporting
+account-financial-tools
 account-payment
+bank-payment
 l10n-italy
+partner-contact
+sale-workflow
+server-ux

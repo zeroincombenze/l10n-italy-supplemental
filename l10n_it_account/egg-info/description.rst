@@ -1,1 +1,0 @@
-Accounting-related modules helpers.

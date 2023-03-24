@@ -1,14 +1,15 @@
+# Odoo yaml template for travis-ci
+# __version__=2.0.3
+
 language: python
-
-python:
-  - "3.6"
-  - "3.7"
-
 sudo: false
 cache: pip
   apt: true
   directories:
     - $HOME/.cache/pip
+
+python:
+  - "3.7"
 
 virtualenv:
   system_site_packages: false
@@ -44,9 +45,9 @@ addons:
 
 before_install:
   # Use Zeroincombenze(R) tools
-  - git clone https://github.com/zeroincombenze/tools.git ${HOME}/tools --single-branch --depth=1
-  - ${HOME}/tools/install_tools.sh -qpt
-  - source ${HOME}/devel/activate_tools
+  - git clone https://github.com/zeroincombenze/tools.git $HOME/tools --single-branch --depth=1
+  - $HOME/tools/install_tools.sh -qpt
+  - source $HOME/devel/activate_tools -t
 
 install:
   - travis_install_env
@@ -61,7 +62,7 @@ env:
 
   matrix:
   - LINT_CHECK="1" LINT_CHECK_LEVEL="MINIMAL"
-  - TESTS="1" ODOO_REPO="powerp/OCB"
+  - TESTS="1" ODOO_REPO="zeroincombenze/OCB"
   - TESTS="1" ODOO_REPO="OCA/OCB"
   - TESTS="1" ODOO_REPO="odoo/odoo"
 #  - TESTS="1.0" ODOO_REPO="zeroincombenze/OCB" UNIT_TEST="1"

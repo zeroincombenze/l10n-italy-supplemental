@@ -1,1 +1,0 @@
-Questo modulo aggiunge dei modelli di registrazione contabile per facilitare l'inserimento delle stesse
