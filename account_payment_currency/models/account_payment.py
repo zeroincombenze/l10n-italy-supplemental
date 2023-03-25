@@ -27,15 +27,15 @@ class AccountPayment(models.Model):
     @api.onchange("amount", "currency_id", "payment_date", "journal_id")
     def _onchange_any_currency_amount(self):
         invoice_currency = False
-        amount_total_company = 0.0
+        company_currency_amount = 0.0
         for invoice in self.invoice_ids:
             if not invoice_currency:
                 invoice_currency = invoice.currency_id
             if invoice.currency_id != invoice_currency:
                 raise UserError(_("You cannot pay invoices with different currencies"))
-            amount_total_company += invoice.amount_total_company_signed
+            company_currency_amount += invoice.residual_company_signed
         if self.journal_id.currency_id == invoice_currency:
-            self.company_currency_amount = amount_total_company
+            self.company_currency_amount = company_currency_amount
         else:
             currency_rate_ids = self.env["res.currency.rate"].search(
                 [
