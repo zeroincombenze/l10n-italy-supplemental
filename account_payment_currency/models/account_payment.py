@@ -28,7 +28,7 @@ class AccountPayment(models.Model):
     def _onchange_any_currency_amount(self):
         invoice_currency = False
         company_currency_amount = 0.0
-        for invoice in self.invoice_ids:
+        for invoice in self.invoice_ids or self.browse(self._origin.id).invoice_ids:
             if not invoice_currency:
                 invoice_currency = invoice.currency_id
             if invoice.currency_id != invoice_currency:
