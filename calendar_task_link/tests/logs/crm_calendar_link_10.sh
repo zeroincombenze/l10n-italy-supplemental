@@ -1,0 +1,1 @@
+cd /home/odoo/10.0; /home/odoo/10.0/odoo-bin --stop-after-init -d test_crm_calendar_link_10 --config=/home/odoo/10.0/l10n-italy-supplemental/crm_calendar_link/tests/logs/zero10.l10n-italy-supplemental.crm_calendar_link.conf --log-level=error -i base,base_action_rule,base_setup,bus,calendar,crm,fetchmail,mail,resource,sales_team,utm,web,web_calendar,web_kanban,web_planner,web_tour

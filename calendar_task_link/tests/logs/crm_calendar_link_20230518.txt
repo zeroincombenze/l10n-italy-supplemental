@@ -1,0 +1,162 @@
+2023-05-18 10:59:08,437 20751 INFO ? odoo: Odoo version 10.0
+2023-05-18 10:59:08,438 20751 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/crm_calendar_link/tests/logs/zero10.l10n-italy-supplemental.crm_calendar_link.conf
+2023-05-18 10:59:08,438 20751 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/apps-store', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/business-requirement', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/donation', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/event', u'/home/odoo/10.0/geospatial', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/infrastructure', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/manufacture-reporting', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/mgmtsystem', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/operating-unit', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/pos', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/project-agile', u'/home/odoo/10.0/project-reporting', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/webkit-tools', u'/home/odoo/10.0/website', u'/home/odoo/10.0/website-cms', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2023-05-18 10:59:08,438 20751 INFO ? odoo: database: odoo10@localhost:default
+2023-05-18 10:59:08,455 20751 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:44541
+2023-05-18 10:59:08,472 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: loading 1 modules...
+2023-05-18 10:59:08,555 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: 1 modules loaded in 0.08s, 0 queries
+2023-05-18 10:59:09,197 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: loading 25 modules...
+2023-05-18 10:59:09,296 20751 INFO test_crm_calendar_link_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2023-05-18 10:59:09,341 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: 25 modules loaded in 0.14s, 0 queries
+2023-05-18 10:59:09,348 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: loading 26 modules...
+2023-05-18 10:59:09,521 20751 INFO test_crm_calendar_link_10 odoo.modules.registry: module crm_calendar_link: creating or updating database tables
+2023-05-18 10:59:09,577 20751 WARNING test_crm_calendar_link_10 odoo.addons.base.module.module: module crm_calendar_link: description is empty !
+2023-05-18 10:59:09,577 20751 INFO test_crm_calendar_link_10 odoo.modules.loading: loading crm_calendar_link/views/calendar_view.xml
+2023-05-18 10:59:09,668 20751 INFO test_crm_calendar_link_10 odoo.addons.base.ir.ir_ui_view: Element '<xpath expr="//form//sheet//div">' cannot be located in parent view
+
+Error context:
+View `calendar.event.form.link`
+[view_id: 364, xml_id: n/a, model: calendar.event, parent_id: 311]
+2023-05-18 10:59:09,669 20751 ERROR test_crm_calendar_link_10 odoo.models: Exception while validating constraint
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/models.py", line 1081, in _validate_fields
+    check(self)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 281, in _check_xml
+    view_def = view.read_combined(['arch'])
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 677, in read_combined
+    arch = self.apply_view_inheritance(arch_tree, root.id, self.model)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 626, in apply_view_inheritance
+    source = self.apply_inheritance_specs(source, specs_tree, view_id)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 604, in apply_inheritance_specs
+    self.raise_view_error(_("Element '%s' cannot be located in parent view") % tag, inherit_id)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 477, in raise_view_error
+    raise ValueError(message)
+ValueError: Element '<xpath expr="//form//sheet//div">' cannot be located in parent view
+
+Error context:
+View `calendar.event.form.link`
+[view_id: 364, xml_id: n/a, model: calendar.event, parent_id: 311]
+2023-05-18 10:59:09,673 20751 WARNING test_crm_calendar_link_10 odoo.modules.loading: Transient module states were reset
+2023-05-18 10:59:09,681 20751 ERROR test_crm_calendar_link_10 odoo.modules.registry: Failed to load registry
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/modules/registry.py", line 83, in new
+    odoo.modules.load_modules(registry._db, force_demo, status, update_module)
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 377, in load_modules
+    loaded_modules, update_module, models_to_check)
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 270, in load_marked_modules
+    perform_checks=perform_checks, models_to_check=models_to_check
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 182, in load_module_graph
+    _load_data(cr, module_name, idref, mode, kind='data')
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 96, in _load_data
+    tools.convert_file(cr, module_name, filename, idref, mode, noupdate, kind, report)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 846, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate, report)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 916, in convert_xml_import
+    obj.parse(doc.getroot(), mode=mode)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 800, in parse
+    self._tags[rec.tag](rec, de, mode=mode)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 708, in _tag_record
+    id = self.env(context=rec_context)['ir.model.data']._update(rec_model, self.module, res, rec_id or False, not self.isnoupdate(data_node), noupdate=self.isnoupdate(data_node), mode=self.mode)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_model.py", line 1252, in _update
+    record = record.create(values)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 365, in create
+    return super(View, self).create(self._compute_defaults(values))
+  File "/home/odoo/10.0/odoo/models.py", line 3887, in create
+    self._fields[key].determine_inverse(record)
+  File "/home/odoo/10.0/odoo/fields.py", line 1064, in determine_inverse
+    getattr(records, self.inverse)()
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 220, in _inverse_arch
+    view.write(data)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 383, in write
+    return super(View, self).write(self._compute_defaults(vals))
+  File "/home/odoo/10.0/odoo/models.py", line 3595, in write
+    self._write(old_vals)
+  File "/home/odoo/10.0/odoo/models.py", line 3764, in _write
+    self._validate_fields(vals)
+  File "/home/odoo/10.0/odoo/models.py", line 1086, in _validate_fields
+    raise ValidationError("%s\n\n%s" % (_("Error while validating constraint"), tools.ustr(e)))
+ParseError: "Error while validating constraint
+
+Element '<xpath expr="//form//sheet//div">' cannot be located in parent view
+
+Error context:
+View `calendar.event.form.link`
+[view_id: 364, xml_id: n/a, model: calendar.event, parent_id: 311]
+None" while parsing /home/odoo/10.0/l10n-italy-supplemental/crm_calendar_link/views/calendar_view.xml:15, near
+<record id="view_crm_meeting_link_popup" model="ir.ui.view">
+        <field name="name">calendar.event.form.link</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//div" position="inside">
+                <field name="opportunity_id"/>
+            </xpath>
+        </field>
+    </record>
+2023-05-18 10:59:09,683 20751 CRITICAL test_crm_calendar_link_10 odoo.service.server: Failed to initialize database `test_crm_calendar_link_10`.
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/service/server.py", line 974, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "/home/odoo/10.0/odoo/modules/registry.py", line 83, in new
+    odoo.modules.load_modules(registry._db, force_demo, status, update_module)
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 377, in load_modules
+    loaded_modules, update_module, models_to_check)
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 270, in load_marked_modules
+    perform_checks=perform_checks, models_to_check=models_to_check
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 182, in load_module_graph
+    _load_data(cr, module_name, idref, mode, kind='data')
+  File "/home/odoo/10.0/odoo/modules/loading.py", line 96, in _load_data
+    tools.convert_file(cr, module_name, filename, idref, mode, noupdate, kind, report)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 846, in convert_file
+    convert_xml_import(cr, module, fp, idref, mode, noupdate, report)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 916, in convert_xml_import
+    obj.parse(doc.getroot(), mode=mode)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 800, in parse
+    self._tags[rec.tag](rec, de, mode=mode)
+  File "/home/odoo/10.0/odoo/tools/convert.py", line 708, in _tag_record
+    id = self.env(context=rec_context)['ir.model.data']._update(rec_model, self.module, res, rec_id or False, not self.isnoupdate(data_node), noupdate=self.isnoupdate(data_node), mode=self.mode)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_model.py", line 1252, in _update
+    record = record.create(values)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 365, in create
+    return super(View, self).create(self._compute_defaults(values))
+  File "/home/odoo/10.0/odoo/models.py", line 3887, in create
+    self._fields[key].determine_inverse(record)
+  File "/home/odoo/10.0/odoo/fields.py", line 1064, in determine_inverse
+    getattr(records, self.inverse)()
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 220, in _inverse_arch
+    view.write(data)
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_ui_view.py", line 383, in write
+    return super(View, self).write(self._compute_defaults(vals))
+  File "/home/odoo/10.0/odoo/models.py", line 3595, in write
+    self._write(old_vals)
+  File "/home/odoo/10.0/odoo/models.py", line 3764, in _write
+    self._validate_fields(vals)
+  File "/home/odoo/10.0/odoo/models.py", line 1086, in _validate_fields
+    raise ValidationError("%s\n\n%s" % (_("Error while validating constraint"), tools.ustr(e)))
+ParseError: "Error while validating constraint
+
+Element '<xpath expr="//form//sheet//div">' cannot be located in parent view
+
+Error context:
+View `calendar.event.form.link`
+[view_id: 364, xml_id: n/a, model: calendar.event, parent_id: 311]
+None" while parsing /home/odoo/10.0/l10n-italy-supplemental/crm_calendar_link/views/calendar_view.xml:15, near
+<record id="view_crm_meeting_link_popup" model="ir.ui.view">
+        <field name="name">calendar.event.form.link</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//div" position="inside">
+                <field name="opportunity_id"/>
+            </xpath>
+        </field>
+    </record>
+2023-05-18 10:59:09,683 20751 INFO test_crm_calendar_link_10 odoo.service.server: Initiating shutdown
+2023-05-18 10:59:09,683 20751 INFO test_crm_calendar_link_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36mcrm_calendar_link[0m (10.0): [31mFAILED![0m
++===================================================================
+
+No data to report.
+No data to report.
