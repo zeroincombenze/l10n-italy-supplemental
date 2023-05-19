@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_project_task_meeting" model="ir.ui.view">
+        <field name="name">project.task.meeting</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object"
+                        context="{'partner_id': partner_id}"
+                        name="action_schedule_meeting" icon="fa-calendar">
+                    <div class="o_stat_info">
+                        <field name="meeting_count" class="o_stat_value"/>
+                        <span class="o_stat_text" attrs="{'invisible': [('meeting_count', '&lt;', 2)]}">Meetings</span>
+                        <span class="o_stat_text" attrs="{'invisible': [('meeting_count', '&gt;', 1)]}">Meeting</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
