@@ -1,14 +1,21 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Link project task to calendar",
+    "version": "10.0.0.1.1",
     "category": "CRM",
-    "author": "SHS-AV s.r.l.",
-    "website": "http://www.zeroincombenze.it",
     "summary": "Add project task to calendar event",
-    "version": "10.0.0.1.0",
-    "depends": ["base", "project", "calendar"],
+    "author": "SHS-AV s.r.l.",
+    "website": "https://www.zeroincombenze.it",
+    "development_status": "Alpha",
+    "license": "LGPL-3",
+    "depends": [
+        "",
+        "",
+        "",
+    ],
     "data": [
         "views/calendar_view.xml",
+        "views/task_view.xml",
     ],
     "installable": True,
 }
