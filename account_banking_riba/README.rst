@@ -1,12 +1,10 @@
 
-===================================
-|icon| Account RiBa CBI 12.0.4.5.26
-===================================
+===================
+|icon|  12.0.4.5.32
+===================
 
 
-**Gestione Ri.Ba.**
-
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/accounting/12.0/account_banking_riba/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze//12.0//static/description/icon.png
 
 |Maturity| |Build Status| |Codecov Status| |license gpl| |Try Me|
 
@@ -81,22 +79,23 @@ Installation / Installazione
     # Case 1: you have not installed zeroincombenze tools
     git clone https://github.com/zeroincombenze/tools.git
     cd $HOME/tools
-    ./install_tools.sh -p
+    ./install_tools.sh -pT
     source $HOME/devel/activate_tools
     # Case 2: you have already installed zeroincombenze tools
     cd $HOME/tools
-    ./install_tools.sh -U
+    ./install_tools.sh -UT
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository installation; OCB repository must be installed
-    odoo_install_repository accounting -b 12.0 -O zero -o $HOME/12.0
-    vem create $HOME/12.0/venv_odoo -O 12.0 -a "*" -DI -o $HOME/12.0
+    deploy_odoo clone -r  -b 12.0 -G zero -p $HOME/12.0
+    # Upgrade virtual environment
+    vem amend $HOME/12.0/venv_odoo
 
 From UI: go to:
 
-* |menu| Setting > Activate Developer mode 
+* |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
-* |menu| Setting > Apps |right_do| Select **account_banking_riba** > Install
+* |menu| Setting > Apps |right_do| Select **** > Install
 
 
 |
@@ -112,20 +111,21 @@ Upgrade / Aggiornamento
     # Case 1: you have not installed zeroincombenze tools
     git clone https://github.com/zeroincombenze/tools.git
     cd $HOME/tools
-    ./install_tools.sh -p
+    ./install_tools.sh -pT
     source $HOME/devel/activate_tools
     # Case 2: you have already installed zeroincombenze tools
     cd $HOME/tools
-    ./install_tools.sh -U
+    ./install_tools.sh -UT
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository upgrade
-    odoo_install_repository accounting -b 12.0 -o $HOME/12.0 -U
-    vem amend $HOME/12.0/venv_odoo -o $HOME/12.0
+    deploy_odoo update -r  -b 12.0 -G zero -p $HOME/12.0
+    vem amend $HOME/12.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
 From UI: go to:
+
 
 |
 
@@ -144,7 +144,7 @@ Get involved / Ci mettiamo in gioco
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
 and/or submit pull requests on `GitHub Issues
-<https://github.com/zeroincombenze/accounting/issues>`_.
+<https://github.com/zeroincombenze//issues>`_.
 
 In case of trouble, please check there if your issue has already been reported.
 
@@ -160,6 +160,34 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
+
+12.0.6.5.32 (2023-05-22)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Payment confirmed / Errato conferma incasso effettuato
+
+12.0.6.5.31 (2023-02-28)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Error "Accredito" with refunc / Errore "Accredito" se NC
+
+12.0.6.5.30 (2023-01-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Confirm payment of refund / Conferma incasso note credito
+* [FIX] Sometimes, after upload, payment order ha not button "Accredito" / Bottone "Accredito" a volte non appare dopo upload
+* [TEST] Primo grupo di test automatico (coverage 37% 295/197)
+
+
+12.0.6.5.29 (2023-01-16)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Commentata parte di codice che modificava il link tra payment_order_line e move_line durante la registrazione dell'incasso delle RiBa
+
+12.0.5.5.29 (2023-01-12)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Corretto nome chiave dizionario errato nella funziona di registrazione pagamento RiBa
 
 12.0.3.5.26 (2022-12-05)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,46 +208,6 @@ ChangeLog History / Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Corretta dipendenza
-
-12.0.3.5.22 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Gestito bug importo  da riga scadenza in conferma pagamento
-
-12.0.3.5.21 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Gestito bug importo accredito da riga scadenza
-
-12.0.3.5.20 (2022-03-03)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Gestito pagamento riba fornitori
-
-12.0.3.5.19 (2022-02-28)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Gestito pregresso scadenze company bank non di portafoglio
-
-12.0.3.5.18 (2022-02-24)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Aggiornato accredito con metodo di selezione registro per spese bancarie
-
-12.0.3.5.17 (2022-02-16)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [REF] Refactoring conferma pagamento
-
-12.0.3.5.16 (2022-01-18)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [REF] Refactoring impostazione conti trasferiti nel registro
-
-12.0.3.5.15 (2021-12-17)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Gestione viste conti
 
 
 
@@ -283,15 +271,15 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 |
 
-This module is part of accounting project.
+This module is part of  project.
 
-Last Update / Ultimo aggiornamento: 2022-12-05
+Last Update / Ultimo aggiornamento: 
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
-.. |Build Status| image:: https://travis-ci.org/zeroincombenze/accounting.svg?branch=12.0
-    :target: https://travis-ci.com/zeroincombenze/accounting
+.. |Build Status| image:: https://travis-ci.org/zeroincombenze/.svg?branch=12.0
+    :target: https://travis-ci.com/zeroincombenze/
     :alt: github.com
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
@@ -299,11 +287,11 @@ Last Update / Ultimo aggiornamento: 2022-12-05
 .. |license opl| image:: https://img.shields.io/badge/licence-OPL-7379c3.svg
     :target: https://www.odoo.com/documentation/user/14.0/legal/licenses/licenses.html
     :alt: License: OPL
-.. |Coverage Status| image:: https://coveralls.io/repos/github/zeroincombenze/accounting/badge.svg?branch=12.0
-    :target: https://coveralls.io/github/zeroincombenze/accounting?branch=12.0
+.. |Coverage Status| image:: https://coveralls.io/repos/github/zeroincombenze//badge.svg?branch=12.0
+    :target: https://coveralls.io/github/zeroincombenze/?branch=12.0
     :alt: Coverage
-.. |Codecov Status| image:: https://codecov.io/gh/zeroincombenze/accounting/branch/12.0/graph/badge.svg
-    :target: https://codecov.io/gh/zeroincombenze/accounting/branch/12.0
+.. |Codecov Status| image:: https://codecov.io/gh/zeroincombenze//branch/12.0/graph/badge.svg
+    :target: https://codecov.io/gh/zeroincombenze//branch/12.0
     :alt: Codecov
 .. |Tech Doc| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-12.svg
     :target: https://wiki.zeroincombenze.org/en/Odoo/12.0/dev
@@ -314,8 +302,8 @@ Last Update / Ultimo aggiornamento: 2022-12-05
 .. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-12.svg
     :target: https://erp12.zeroincombenze.it
     :alt: Try Me
-.. |OCA Codecov| image:: https://codecov.io/gh/OCA/accounting/branch/12.0/graph/badge.svg
-    :target: https://codecov.io/gh/OCA/accounting/branch/12.0
+.. |OCA Codecov| image:: https://codecov.io/gh/OCA//branch/12.0/graph/badge.svg
+    :target: https://codecov.io/gh/OCA//branch/12.0
     :alt: Codecov
 .. |Odoo Italia Associazione| image:: https://www.odoo-italia.org/images/Immagini/Odoo%20Italia%20-%20126x56.png
    :target: https://odoo-italia.org
@@ -345,4 +333,5 @@ Last Update / Ultimo aggiornamento: 2022-12-05
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
+
 

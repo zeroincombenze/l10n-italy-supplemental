@@ -92,13 +92,16 @@ class AccountPaymentOrder(models.Model):
     @api.multi
     def generated2uploaded(self):
         self.ensure_one()
-        res = super().generated2uploaded()
         if self.payment_method_id.code == 'riba_cbi':
+            self = self.with_context(account_payment_order_defer_close=True)
+            res = super().generated2uploaded()
             if self.journal_id.is_wallet is False:
                 for line in self.payment_line_ids:
                     line.move_line_id.write({
                         'incasso_effettuato': True
                     })
+        else:
+            res = super().generated2uploaded()
         return res
 
     @api.multi
@@ -134,15 +137,15 @@ class AccountPaymentOrder(models.Model):
         """
         TYPE I account move (when conto_effetti_presentati is empty):
         | Description             | Debit | Credit | Notes
-        |🕘Portafoglio SBF        |       |    100 | (3) from journal conto_effetti_attivi
-        |🕕Effetti allo sconto    |   100 |        | (3) from journal effetti_allo_sconto
+        |🕘Portafoglio SBF        |       |    100 | (3) from j. conto_effetti_attivi
+        |🕕Effetti allo sconto    |   100 |        | (3) from j. effetti_allo_sconto
 
         TYPE II account move (when conto_effetti_presentati is empty):
         | Description             | Debit | Credit | Notes
         |🕓Pay off/Effetti attivi |       |    100 | (2)(4) from journal debit/credit
-        |🕕Effetti allo sconto    |   100 |        | (3) from journal effetti_allo_sconto
-        |🕕Effetti allo sconto    |       |    100 | (3) from journal effetti_allo_sconto
-        |  Effetti presentati     |   100 |        | (3) from journal effetti_presentati
+        |🕕Effetti allo sconto    |   100 |        | (3) from j. effetti_allo_sconto
+        |🕕Effetti allo sconto    |       |    100 | (3) from j. effetti_allo_sconto
+        |  Effetti presentati     |   100 |        | (3) from j. effetti_presentati
         """
         account_expense_id = self._context.get('expenses_account_id')
         amount_expense = self._context.get('expenses_amount')
@@ -211,7 +214,7 @@ class AccountPaymentOrder(models.Model):
                         mode="auto"
                     ),
                     * payment_order.prepare_move_lines(
-                        cfg['effetti_presentati'],
+                        cfg['portafoglio_sbf'],
                         "debit",
                         mode="auto"
                     ),

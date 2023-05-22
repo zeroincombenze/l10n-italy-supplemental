@@ -1,3 +1,31 @@
+12.0.6.5.32 (2023-05-22)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Payment confirmed / Errato conferma incasso effettuato
+
+12.0.6.5.31 (2023-02-28)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Error "Accredito" with refunc / Errore "Accredito" se NC
+
+12.0.6.5.30 (2023-01-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Confirm payment of refund / Conferma incasso note credito
+* [FIX] Sometimes, after upload, payment order ha not button "Accredito" / Bottone "Accredito" a volte non appare dopo upload
+* [TEST] Primo grupo di test automatico (coverage 37% 295/197)
+
+
+12.0.6.5.29 (2023-01-16)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Commentata parte di codice che modificava il link tra payment_order_line e move_line durante la registrazione dell'incasso delle RiBa
+
+12.0.5.5.29 (2023-01-12)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Corretto nome chiave dizionario errato nella funziona di registrazione pagamento RiBa
+
 12.0.3.5.26 (2022-12-05)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,13 +1,13 @@
 # Copyright 2022 LibrERP enterprise network <https://www.librerp.it>
 # Copyright 2021-22 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-# Copyright 2021-22 Didotech s.r.l. <https://www.didotech.com>
+# Copyright 2021-23 Didotech s.r.l. <https://www.didotech.com>
 #
 # License OPL-1 or later
 # (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
 #
 {
     'name': 'Account RiBa CBI',
-    'version': '12.0.4.5.28',
+    'version': '12.0.4.5.32',
     'category': 'Banking addons',
     'summary': 'Gestione Ri.Ba.',
     'author': 'LibrERP enterprise network and other partners',
@@ -28,7 +28,7 @@
     'external_dependencies': {'python': ['ribalta']},
     'data': [
         'views/res_config.xml',
-        'views/account_payment_mode.xml',
+        # 'views/account_payment_mode.xml',
         'data/account_payment_method.xml',
         'wizard/wizard_payment_riba_supplier.xml',
     ],

@@ -99,19 +99,19 @@ class AccountMoveLine(models.Model):
                 )
                 new_move_lines.append((0, 0, effetti_incasso_line))
         else:
-            portafoglio_move_line = self.prepare_1_move_line(
-                cfg["portafoglio_sbf"].id,
+            effetti_sconto_move_line = self.prepare_1_move_line(
+                cfg["effetti_allo_sconto"].id,
                 "debit",
                 amount=debit_amount,
             )
-            new_move_lines.append((0, 0, portafoglio_move_line))
+            new_move_lines.append((0, 0, effetti_sconto_move_line))
 
-            effetti_sconto_move_line = self.prepare_1_move_line(
-                cfg["effetti_allo_sconto"].id,
+            portafoglio_move_line = self.prepare_1_move_line(
+                cfg["portafoglio_sbf"].id,
                 "credit",
                 amount=debit_amount,
             )
-            new_move_lines.append((0, 0, effetti_sconto_move_line))
+            new_move_lines.append((0, 0, portafoglio_move_line))
 
             liquidity_move_line = self.prepare_1_move_line(
                 cfg["liquidity_account"].id,
@@ -124,7 +124,7 @@ class AccountMoveLine(models.Model):
             # "Effetti all'incasso" default_credit_account_id
             for line in self:
                 effetti_incasso_line = line.prepare_1_move_line(
-                    cfg["effetti_attivi"].id,
+                    cfg["conto_effetti_attivi"].id,
                     "credit",
                 )
                 new_move_lines.append((0, 0, effetti_incasso_line))
@@ -183,11 +183,19 @@ class AccountMoveLine(models.Model):
             )
 
         opposite_side = "debit" if side == "credit" else "credit"
-        values = {
-            "account_id": account_id,
-            side: amount or self.amount_into_payment_line,
-            opposite_side: 0.0,
-        }
+        amount_db_cr = amount or self.amount_into_payment_line
+        if amount_db_cr < 0.0:
+            values = {
+                "account_id": account_id,
+                side: 0.0,
+                opposite_side: -amount_db_cr,
+            }
+        else:
+            values = {
+                "account_id": account_id,
+                side: amount_db_cr,
+                opposite_side: 0.0,
+            }
         if amount:
             payments = []
             for line in self:
@@ -199,9 +207,12 @@ class AccountMoveLine(models.Model):
                     [x.name for x in payments])
         else:
             values["name"] = f'Fattura {self.move_id.name}'
-            values["payment_line_ids"] = [
-                (6, 0, [x.id for x in self.payment_line_ids])
-            ]
+            # Le tre righe seguenti sono state commentate perchè
+            # causano comportamenti anomali.
+            # La modifica è state fatta in accordo con Antonio Vigliotti in video call
+            # values["payment_line_ids"] = [
+            #     (6, 0, [x.id for x in self.payment_line_ids])
+            # ]
         if not amount:
             values["partner_id"] = self.partner_id.id
         return values
