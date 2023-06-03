@@ -7,9 +7,9 @@
         <field name="arch" type="xml">
 
             <xpath expr="//group[@name='bank_statement']" position="after">
-                <group string="Castelletto ri.ba" >
+                <group string="Castelletto ri.ba">
                     <group>
-                        <field name="riba_limite_effetti_sbf" />
+                        <field name="riba_limite_effetti_sbf"/>
                         <field name="riba_disponibilita_effetti_sbf"/>
                     </group>
                 </group>
@@ -18,4 +18,3 @@
         </field>
     </record>
 </odoo>
-

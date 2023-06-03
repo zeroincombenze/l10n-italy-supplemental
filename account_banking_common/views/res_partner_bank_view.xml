@@ -17,7 +17,11 @@
             <!-- </xpath>-->
 
             <xpath expr="//form/group/group[2]" position="after">
-                <group colspan="4" name="invoice_financing" string="Conti di portafoglio">
+                <group
+                    colspan="4"
+                    name="invoice_financing"
+                    string="Conti di portafoglio"
+                >
                     <html>
                         <style>
                               .o_form_label{
@@ -27,18 +31,29 @@
                     </html>
                     <group colspan="2">
                         <field name="has_children" invisible="1"/>
-                        <field name="bank_is_wallet" attrs="{'readonly':[('has_children', '=', True)]}"/>
+                        <field
+                            name="bank_is_wallet"
+                            attrs="{'readonly':[('has_children', '=', True)]}"
+                        />
                     </group>
                     <!-- leaf -->
-                    <group colspan="4" attrs="{'invisible': [('bank_is_wallet', '=', False)]}">
+                    <group
+                        colspan="4"
+                        attrs="{'invisible': [('bank_is_wallet', '=', False)]}"
+                    >
                         <group colspan="2">
-                            <field name="bank_main_bank_account_id"
-                                   domain="[('partner_id', '=', partner_id), ('bank_is_wallet', '=', False)]"
-                                   attrs="{'required': [('bank_is_wallet', '=', True)]}"/>
+                            <field
+                                name="bank_main_bank_account_id"
+                                domain="[('partner_id', '=', partner_id), ('bank_is_wallet', '=', False)]"
+                                attrs="{'required': [('bank_is_wallet', '=', True)]}"
+                            />
                         </group>
                     </group>
 
-                    <group colspan="4" attrs="{'invisible': [('bank_is_wallet', '=', True)]}">
+                    <group
+                        colspan="4"
+                        attrs="{'invisible': [('bank_is_wallet', '=', True)]}"
+                    >
                         <!-- father -->
                         <field name="bank_wallet_ids"/>
                     </group>
@@ -49,4 +64,3 @@
     </record>
 
 </odoo>
-

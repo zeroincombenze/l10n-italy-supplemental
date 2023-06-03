@@ -16,7 +16,7 @@ def sia_code_valid(sia_code):
     @param sia_code: SIA code as string
     @return: True if valid, False otherwise
     """
-    if re.match(r'[A-Z0-9]{5}', sia_code):
+    if re.match(r"[A-Z0-9]{5}", sia_code):
         return True
     else:
         return False

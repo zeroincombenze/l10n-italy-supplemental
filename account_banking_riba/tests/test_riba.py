@@ -1,12 +1,15 @@
-# Copyright 2020-22 LibrERP enterprise network <https://www.librerp.it>
-# Copyright 2020-22 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-# Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
+# Copyright 2020-23 LibrERP enterprise network <https://www.librerp.it>
+# Copyright 2020-23 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2020-23 Didotech s.r.l. <https://www.didotech.com>
 #
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 #
 import os
+from datetime import datetime
 import logging
 from .testenv import MainTest as SingleTransactionCase
+
+import python_plus
 
 _logger = logging.getLogger(__name__)
 
@@ -17,12 +20,24 @@ TEST_ACCOUNT_ACCOUNT = {
         "name": "Wallet bank",
         "user_type_id": "account.data_account_type_liquidity",
     },
+    "z0bug.coa_liq_tra1": {
+        "code": "101710",
+        "name": "Effetti attivi",
+        "reconcile": True,
+        "user_type_id": "account.data_account_type_receivable",
+    },
     "z0bug.coa_liq_tra2": {
         "code": "101720",
         "name": "Effetti SBF",
         "reconcile": False,
         "user_type_id": "account.data_account_type_liquidity",
     },
+    # "z0bug.coa_liq_tra3": {
+    #     "code": "101730",
+    #     "name": "Effetti SBF",
+    #     "reconcile": False,
+    #     "user_type_id": "account.data_account_type_liquidity",
+    # },
     "z0bug.coa_tax_recv": {
         "code": "111200",
         "reconcile": False,
@@ -49,6 +64,19 @@ TEST_ACCOUNT_FISCAL_POSITION = {
     },
 }
 
+TEST_ACCOUNT_FISCAL_YEAR = {
+    "z0bug.fy_2022": {
+        "name": "2022",
+        "date_from": "2022-01-01",
+        "date_to": "2022-12-31",
+    },
+    "z0bug.fy_2023": {
+        "name": "2023",
+        "date_from": "2023-01-01",
+        "date_to": "2023-12-31",
+    },
+}
+
 TEST_ACCOUNT_JOURNAL = {
     "external.INV": {
         "code": "INV",
@@ -67,17 +95,17 @@ TEST_ACCOUNT_JOURNAL = {
     },
     "z0bug.bank1a_journal": {
         "name": "Portafoglio RiBA e SDD",
-        # "bank_account_id": "z0bug.bank_company_1a",
+        "bank_account_id": "z0bug.bank_company_1a",
         "code": "BNK1A",
         "type": "bank",
         "sequence": 20,
-        "default_debit_account_id": "z0bug.coa_liq_tra3",
-        "default_credit_account_id": "z0bug.coa_liq_tra3",
+        "default_debit_account_id": "z0bug.coa_liq_tra1",
+        "default_credit_account_id": "z0bug.coa_liq_tra1",
         "is_wallet": True,
         "main_bank_account_id": "external.BNK1",
         "update_posted": True,
         "sezionale": "external.BNK1",
-        # "limite_effetti_sbf": 5000,
+        "limite_effetti_sbf": 5000,
     },
 }
 
@@ -90,9 +118,8 @@ TEST_ACCOUNT_INVOICE = {
         "type": "out_invoice",
         "journal_id": "external.INV",
         "fiscal_position_id": "z0bug.fiscalpos_it",
-        # "partner_bank_id": "z0bug.bank_partner_1",
         "payment_term_id": "z0bug.payment_1",
-        "company_bank_id": "z0bug.bank_company_1",
+        # "company_bank_id": "z0bug.bank_company_1",
         "counterparty_bank_id": "z0bug.bank_partner_1",
     },
     "z0bug.invoice_Z0_2": {
@@ -103,7 +130,7 @@ TEST_ACCOUNT_INVOICE = {
         "type": "out_invoice",
         "journal_id": "external.INV",
         "fiscal_position_id": "z0bug.fiscalpos_it",
-        # "partner_bank_id": "z0bug.bank_partner_1",
+        # "partner_bank_id": "z0bug.bank_partner_2",
         "payment_term_id": "z0bug.payment_2",
         "company_bank_id": "z0bug.bank_company_1",
         "counterparty_bank_id": "z0bug.bank_partner_2",
@@ -111,7 +138,8 @@ TEST_ACCOUNT_INVOICE = {
 }
 
 TEST_ACCOUNT_INVOICE_LINE = {
-    "z0bug.invoice_Z0_1_01": {
+    "z0bug.invoice_Z0_1_1": {
+        "sequence": 1,
         "invoice_id": "z0bug.invoice_Z0_1",
         "product_id": "z0bug.product_product_1",
         "name": "Prodotto Alpha",
@@ -152,7 +180,7 @@ TEST_ACCOUNT_PAYMENT_METHOD = {
 
 TEST_ACCOUNT_PAYMENT_MODE = {
     "z0bug.pmode_riba": {
-        "name": "RiBA",
+        "name": "RiBA SBF",
         "bank_account_link": "variable",
         "type": "sale",
         "payment_method_id": "account_banking_riba.riba",
@@ -254,7 +282,7 @@ TEST_RES_PARTNER = {
         "property_supplier_payment_term_id": "z0bug.payment_1",
     },
     "z0bug.res_partner_2": {
-        "name": "Latte Beta Due s.n.c.",
+        "name": "Latte Beta Due Più s.n.c.",
         "street": "Via Dueville, 2",
         "country_id": "base.it",
         "zip": "10060",
@@ -277,8 +305,16 @@ TEST_RES_PARTNER_BANK = {
         "partner_id": "base.main_partner",
         "sequence": 1,
         "acc_type": "iban",
-        "codice_sia": "A7721",
         "acc_number": "IT15A0123412345100000123456",
+        "codice_sia": "A7721",
+    },
+    "z0bug.bank_company_1a": {
+        "partner_id": "base.main_partner",
+        "sequence": 2,
+        "acc_type": "bank",
+        "acc_number": "Portafoglio RiBA",
+        "bank_is_wallet": True,
+        "bank_main_bank_account_id": "z0bug.bank_company_1",
     },
     "z0bug.bank_partner_1": {
         "partner_id": "z0bug.res_partner_1",
@@ -296,6 +332,7 @@ TEST_SETUP_LIST = [
     "account.account",
     "account.tax",
     "account.fiscal.position",
+    "account.fiscal.year",
     "account.payment.method",
     "account.payment.mode",
     "account.payment.term",
@@ -309,7 +346,7 @@ TEST_SETUP_LIST = [
 ]
 
 
-class TestPaymentOrder(SingleTransactionCase):
+class TestRiba(SingleTransactionCase):
     def setUp(self):
         super().setUp()
         self.debug_level = 0
@@ -337,6 +374,7 @@ class TestPaymentOrder(SingleTransactionCase):
                 "phone": "+39 025551234",
                 "vat": "IT05111810015",
                 "website": "https://www.testcompany.org",
+                "sia_code": "A7721",
             },
         )
         self.setup_env()  # Create test environment
@@ -344,25 +382,49 @@ class TestPaymentOrder(SingleTransactionCase):
     def tearDown(self):
         super().tearDown()
         if os.environ.get("ODOO_COMMIT_TEST", ""):
-            # Save test environment, so it is available to use
             self.env.cr.commit()  # pylint: disable=invalid-commit
             _logger.info("✨ Test data committed")
 
-    def _edit_bank_config(self):
-        bnk_journal = self.resource_browse("external.BNK1")
-        bnk_journal.inbound_payment_method_ids = (
-            4,
-            self.resource_browse("account_banking_riba.riba").id,
-        )
+    def _validate_cbi_file(self, riba_cbi, due_records):
+        # Simple file validator
+        state = ""
+        ctr_recs = ctr_dues = 0
+        for ln in python_plus._u(riba_cbi).split("\n"):
+            if not ln:
+                self.assertFalse(state, "Empty line in CBI file")
+                continue
+            line_id = ln[:3]
+            self.assertTrue(
+                line_id
+                in (" IB", " 14", " 20", " 30", " 40", " 50", " 51", " 70", " EF"),
+                "Invalid CBI contents!",
+            )
+            ctr_recs += 1
+            if line_id.startswith(" IB"):
+                state = "body"
+            elif line_id.startswith(" 14"):
+                ctr_dues += 1
+            elif line_id.startswith(" EF"):
+                state = ""
+                self.assertEqual(
+                    int(ln[46:52]), ctr_dues, "Invalid # of dues in CBI file"
+                )
+                self.assertEqual(
+                    int(ln[83:89]), ctr_recs, "Invalid # of records in CBI file"
+                )
+                self.assertEqual(
+                    ctr_dues, len(due_records), "Invalid # of dues in CBI file"
+                )
+
+    def _edit_riba_config(self):
         pay_mode = self.resource_browse("z0bug.pmode_riba")
         self.resource_edit(
             resource=pay_mode,
             web_changes=[
-                ("fixed_journal_id", "external.BNK1"),
+                ("fixed_journal_id", "z0bug.bank1a_journal"),
                 ("bank_account_link", "fixed"),
             ],
         )
-
         journal = self.resource_browse("z0bug.bank1a_journal")
         self.resource_edit(
             resource=journal,
@@ -373,11 +435,13 @@ class TestPaymentOrder(SingleTransactionCase):
             ],
         )
 
-        config = journal.get_payment_method_config()
-        self.assertEqual(config["accreditation_account_debit_id"],
+        riba_config = journal.get_payment_method_config()
+        self.assertEqual(riba_config["accreditation_account_debit_id"],
                          self.env.ref("z0bug.coa_liq_tra2"))
-        self.assertEqual(config["accreditation_account_credit_id"],
+        self.assertEqual(riba_config["accreditation_account_credit_id"],
                          self.env.ref("z0bug.coa_bnk1a"))
+        self.assertEqual(riba_config["liquidity_account_id"],
+                         self.env.ref("z0bug.coa_bnk1"))
 
     def _validate_invoice(self):
         invoices = self.env["account.invoice"]
@@ -399,6 +463,8 @@ class TestPaymentOrder(SingleTransactionCase):
             order="date_maturity,partner_id",
         )
 
+        # We have 2 invoices: the 1.st one has just 1 due date, the 2.nd is split
+        # into 2 due dates. The 1.st due date is equal for all invoices.
         date_invoice = self.compute_date("####-<#-99")
         date_due1 = self.compute_date(+30, refdate=date_invoice)
         date_due2 = self.compute_date(+60, refdate=date_invoice)
@@ -409,6 +475,8 @@ class TestPaymentOrder(SingleTransactionCase):
             "date": date_invoice,
             "date_maturity": date_due1,
             "payment_method": "account_banking_riba.riba",
+            "company_bank_id": False,
+            "counterparty_bank_id": "z0bug.bank_partner_1",
         }
         template_dues.append(vals)
         vals = {
@@ -417,6 +485,8 @@ class TestPaymentOrder(SingleTransactionCase):
             "date": date_invoice,
             "date_maturity": date_due1,
             "payment_method": "account_banking_riba.riba",
+            "company_bank_id": "z0bug.bank_company_1",
+            "counterparty_bank_id": "z0bug.bank_partner_2",
         }
         template_dues.append(vals)
         vals = {
@@ -425,6 +495,8 @@ class TestPaymentOrder(SingleTransactionCase):
             "date": date_invoice,
             "date_maturity": date_due2,
             "payment_method": "account_banking_riba.riba",
+            "company_bank_id": "z0bug.bank_company_1",
+            "counterparty_bank_id": "z0bug.bank_partner_2",
         }
         template_dues.append(vals)
         self.validate_records(template_dues, due_records)
@@ -444,12 +516,30 @@ class TestPaymentOrder(SingleTransactionCase):
             act_windows=act_windows,
             web_changes=[
                 ("payment_mode_id", self.env.ref("z0bug.pmode_riba").id),
-                ("journal_id", self.resource_browse("external.BNK1").id),
+                ("journal_id", self.resource_browse("z0bug.bank1a_journal").id),
             ],
             button_name="generate",
         )
         self.assertTrue(self.is_action(act_windows))
         return self.get_records_from_act_windows(act_windows)
+
+    def _download_cbi(self, payment_order, due_records):
+        self.resource_edit(
+            payment_order,
+            actions="draft2open",
+        )
+        self.assertEqual(payment_order.state, "open", "Payment order not opened!")
+        act_windows = self.resource_edit(
+            payment_order,
+            actions="open2generated",
+        )
+        self.assertTrue(self.is_action(act_windows))
+        riba_cbi = self.field_download(
+            self.get_records_from_act_windows(act_windows), "datas"
+        )
+        self.assertTrue(riba_cbi)
+        self._validate_cbi_file(riba_cbi, due_records)
+        return riba_cbi
 
     def _payorder_accepted(self, payment_order):
         self.resource_edit(
@@ -460,7 +550,6 @@ class TestPaymentOrder(SingleTransactionCase):
 
     def _validate_accepted_moves(self, payment_order, due_records):
         acceptance_account_id = payment_order.journal_id.default_debit_account_id
-
         template = []
         for due in due_records:
             vals = {
@@ -496,14 +585,146 @@ class TestPaymentOrder(SingleTransactionCase):
         for move in payment_order.move_ids:
             if "Debit order" in move.ref:
                 acceptance_moves.append(move)
-        # self.assertTrue(acceptance_moves, "No acceptance entry found!")
+        self.assertTrue(acceptance_moves, "No acceptance entry found!")
 
-        # self.validate_records(template, acceptance_moves)
+        self.validate_records(template, acceptance_moves)
+
+    def _payorder_accreditation(self, payment_order):
+        act_windows = self.resource_edit(
+            payment_order,
+            actions=["action_accreditato"])
+        act_windows = self.wizard(
+            act_windows=act_windows,
+            records=payment_order,
+            web_changes=[("credit_date", datetime.today())],
+            button_name="registra_accredito")
+        self.assertTrue(self.is_action(act_windows))
+        self.assertEqual(payment_order.state, "done", "Payment order not done!")
+
+    def _validate_accreditation_moves(self, payment_order, due_records):
+        accreditation_account_debit_id = self.env.ref("z0bug.coa_liq_tra2").id
+        accreditation_account_credit_id = self.env.ref("z0bug.coa_bnk1a").id
+        due_date_amounts = {}
+        for line in due_records:
+            if line.date_maturity not in due_date_amounts:
+                due_date_amounts[line.date_maturity] = 0.0
+            due_date_amounts[line.date_maturity] += line.debit - line.credit
+
+        template = []
+        tmpl_move = {
+            "line_ids": []
+        }
+        for due in due_date_amounts:
+            vals = {
+                "account_id": accreditation_account_debit_id,
+                "debit": due_date_amounts[due],
+                "credit": 0.0,
+            }
+            tmpl_move["line_ids"].append(vals)
+            vals = {
+                "account_id": accreditation_account_credit_id,
+                "debit": 0.0,
+                "credit": due_date_amounts[due],
+            }
+            tmpl_move["line_ids"].append(vals)
+        template.append(tmpl_move)
+
+        accreditation_move = False
+        for move in payment_order.move_ids:
+            if "Accredito distinta" in move.ref:
+                accreditation_move = move
+                break
+        self.assertTrue(accreditation_move, "No accreditation entry found!")
+
+        self.validate_records(template, accreditation_move)
+
+    def _confirm_all_payments(self, payment_order, due_records):
+        date_invoice = self.compute_date("####-<#-99")
+        date_due1 = self.compute_date(+30, refdate=date_invoice)
+        date_due2 = self.compute_date(+60, refdate=date_invoice)
+        due1_records = self.env["account.move.line"]
+        due2_records = self.env["account.move.line"]
+        for record in due_records:
+            date_due = datetime.strftime(record.date_maturity, "%Y-%m-%d")
+            if date_due == date_due1:
+                due1_records |= record
+            elif date_due == date_due2:
+                due2_records |= record
+
+        self.resource_edit(
+            resource=due1_records,
+            actions="registra_incasso",
+        )
+        self.resource_edit(
+            resource=due2_records,
+            actions="registra_incasso",
+        )
+
+    def _validate_payment_moves(self, payment_order, due_records):
+        acceptance_account_id = self.env.ref("z0bug.coa_liq_tra1")
+        accreditation_account_debit_id = self.env.ref("z0bug.coa_liq_tra2")
+        accreditation_account_credit_id = self.env.ref("z0bug.coa_bnk1a")
+        liquidity_account_id = self.env.ref("z0bug.coa_bnk1")
+
+        template = []
+        for due in due_records:
+            vals = {
+                "account_id": acceptance_account_id.id,
+                "debit": 0.0,
+                "credit": due.credit or due.debit,
+            }
+            found = False
+            for tmpl_move in template:
+                if tmpl_move["date_maturity"] == due.date_maturity:
+                    tmpl_move["line_ids"].append(vals)
+                    tmpl_move["amount"] += vals["credit"]
+                    found = True
+            if not found:
+                tmpl_move = {
+                    "line_ids": [vals],
+                    "date_maturity": due.date_maturity,
+                    "amount": vals["credit"]
+                }
+                template.append(tmpl_move)
+        for tmpl_move in template:
+            vals = {
+                "account_id": accreditation_account_debit_id.id,
+                "debit": 0.0,
+                "credit": tmpl_move["amount"],
+            }
+            tmpl_move["line_ids"].append(vals)
+            vals = {
+                "account_id": accreditation_account_credit_id.id,
+                "debit": tmpl_move["amount"],
+                "credit": 0.0,
+            }
+            tmpl_move["line_ids"].append(vals)
+            vals = {
+                "account_id": liquidity_account_id.id,
+                "debit": tmpl_move["amount"],
+                "credit": 0.0,
+            }
+            tmpl_move["line_ids"].append(vals)
+            del tmpl_move["date_maturity"]
+            del tmpl_move["amount"]
+
+        payment_moves = []
+        for move in payment_order.move_ids:
+            if "Incasso RIBA" in move.ref:
+                payment_moves.append(move)
+        self.assertTrue(payment_moves, "No payment entry found!")
+
+        self.validate_records(template, payment_moves)
 
     def test_payment_order(self):
-        _logger.info("🎺 Starting test_riba()")
-        self._edit_bank_config()
+        _logger.info("🎺 Starting test_payment_order()")
+        self._edit_riba_config()
         invoice, due_records = self._validate_invoice()
         payment_order = self._generate_payment_order(due_records)
+        self._download_cbi(payment_order, due_records)
         self._payorder_accepted(payment_order)
         self._validate_accepted_moves(payment_order, due_records)
+        self._payorder_accreditation(payment_order)
+        self._validate_accreditation_moves(payment_order, due_records)
+        self._confirm_all_payments(payment_order, due_records)
+        self._validate_payment_moves(payment_order, due_records)

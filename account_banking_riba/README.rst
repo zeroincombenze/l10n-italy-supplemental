@@ -1,6 +1,6 @@
 
 ===================
-|icon|  12.0.4.5.32
+|icon|  12.0.4.5.33
 ===================
 
 
@@ -160,6 +160,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
+
+12.0.6.5.33 (2023-05-23)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [REF] Refactoring: migrated from 10.0
 
 12.0.6.5.32 (2023-05-22)
 ~~~~~~~~~~~~~~~~~~~~~~~~

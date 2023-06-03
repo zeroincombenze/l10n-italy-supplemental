@@ -1,0 +1,97 @@
+2023-06-13 12:03:30,246 2492824 INFO ? odoo: Odoo version 12.0 
+2023-06-13 12:03:30,247 2492824 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/account_banking_common/tests/logs/zero12.l10n-italy-supplemental.account_banking_common.conf 
+2023-06-13 12:03:30,247 2492824 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2023-06-13 12:03:30,247 2492824 INFO ? odoo: database: odoo12@localhost:default 
+2023-06-13 12:03:30,355 2492824 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2023-06-13 12:03:30,479 2492824 INFO ? odoo.addons.server_environment.serv_config: not using server_environment_files for configuration, no directory found 
+2023-06-13 12:03:30,479 2492824 INFO ? odoo.addons.server_environment.serv_config: `running_env` not found. Using default = `test`. 
+2023-06-13 12:03:30,479 2492824 INFO ? odoo.addons.server_environment.serv_config: We strongly recommend against using the rc file but instead use an explicit config file or env variable. 
+2023-06-13 12:03:30,500 2492824 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:40690 
+2023-06-13 12:03:30,532 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading 1 modules... 
+2023-06-13 12:03:30,541 2492824 INFO test_account_banking_common_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2023-06-13 12:03:30,657 2492824 INFO test_account_banking_common_12 odoo.modules.loading: updating modules list 
+2023-06-13 12:03:30,659 2492824 INFO test_account_banking_common_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2023-06-13 12:03:42,138 2492824 INFO test_account_banking_common_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['account_banking_common'] to user __system__ #1 via n/a 
+2023-06-13 12:03:42,625 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading 56 modules... 
+2023-06-13 12:03:43,031 2492824 WARNING test_account_banking_common_12 odoo.models: The model partner.duedates.datarange has no _description 
+2023-06-13 12:03:43,031 2492824 INFO test_account_banking_common_12 odoo.modules.loading: 56 modules loaded in 0.41s, 0 queries 
+2023-06-13 12:03:43,037 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading 57 modules... 
+2023-06-13 12:03:43,159 2492824 WARNING test_account_banking_common_12 odoo.fields: Field date.range.type.parent_type_id: parameter 'select' is no longer supported; use 'index' instead. 
+2023-06-13 12:03:44,436 2492824 WARNING test_account_banking_common_12 odoo.models: The model wizard.payment.order.credit has no _description 
+2023-06-13 12:03:44,679 2492824 INFO test_account_banking_common_12 odoo.modules.registry: module account_banking_common: creating or updating database tables 
+2023-06-13 12:03:45,432 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (journal_is_wallet, bank_is_wallet) of res.partner.bank() have the same label: Conto di portafoglio. 
+2023-06-13 12:03:45,432 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (journal_main_bank_account_id, bank_main_bank_account_id) of res.partner.bank() have the same label: Conto padre. 
+2023-06-13 12:03:45,432 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (display_name, bank_name) of res.partner.bank() have the same label: Name. 
+2023-06-13 12:03:45,550 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (no_delete_duedate_line_ids, duedate_line_ids) of account.invoice() have the same label: Righe scadenze. 
+2023-06-13 12:03:45,822 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (payment_difference_show, payment_difference) of wizard.account.register.payment() have the same label: Differenza di pagamento. 
+2023-06-13 12:03:45,840 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (journal_is_wallet, bank_is_wallet) of account.setup.bank.manual.config() have the same label: Conto di portafoglio. 
+2023-06-13 12:03:45,840 2492824 WARNING test_account_banking_common_12 odoo.addons.base.models.ir_model: Two fields (journal_main_bank_account_id, bank_main_bank_account_id) of account.setup.bank.manual.config() have the same label: Conto padre. 
+2023-06-13 12:03:45,987 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/res_partner_bank_view.xml 
+2023-06-13 12:03:46,065 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_insoluto.xml 
+2023-06-13 12:03:46,100 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_payment_order_confirm.xml 
+2023-06-13 12:03:46,130 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_payment_order_credit.xml 
+2023-06-13 12:03:46,157 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_payment_order_generate.xml 
+2023-06-13 12:03:46,185 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_payment_order_add_move_lines.xml 
+2023-06-13 12:03:46,215 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_set_payment_method.xml 
+2023-06-13 12:03:46,241 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_account_compensation_generate.xml 
+2023-06-13 12:03:46,267 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/wizard/wizard_account_register_payment.xml 
+2023-06-13 12:03:46,296 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/account_payment_order.xml 
+2023-06-13 12:03:46,346 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/action_order_generate.xml 
+2023-06-13 12:03:46,427 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/account_bank_journal_form.xml 
+2023-06-13 12:03:46,577 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/account_invoice_view.xml 
+2023-06-13 12:03:46,691 2492824 WARNING test_account_banking_common_12 odoo.models: @onchange('purchase_id',) parameters must be field names 
+2023-06-13 12:03:46,693 2492824 WARNING test_account_banking_common_12 odoo.models: @onchange('date_maturity',) parameters must be field names 
+2023-06-13 12:03:46,842 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/account_move_line_view.xml 
+2023-06-13 12:03:46,920 2492824 INFO test_account_banking_common_12 odoo.modules.loading: loading account_banking_common/views/res_config_settings.xml 
+2023-06-13 12:03:47,079 2492824 INFO test_account_banking_common_12 odoo.modules.loading: Module account_banking_common: loading demo 
+2023-06-13 12:03:47,100 2492824 INFO test_account_banking_common_12 odoo.modules.module: odoo.addons.account_banking_common.tests.test_payment_order running tests. 
+2023-06-13 12:03:47,102 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.test_payment_order: test_payment_order (odoo.addons.account_banking_common.tests.test_payment_order.TestPaymentOrder) 
+2023-06-13 12:03:47,578 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ xref 'z0bug.mycompany' -> 'base.main_company' 
+2023-06-13 12:03:47,579 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ xref 'z0bug.partner_mycompany' -> 'base.main_partner' 
+2023-06-13 12:03:47,586 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: 🎺🎺🎺 Starting test v2.0.7.1 (debug_level=0) 
+2023-06-13 12:03:47,592 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: 🎺🎺 Testing module: account_banking_common (12.0.3.7.50) 
+2023-06-13 12:03:47,594 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ product.product[type]: 'product' -> 'consu' 
+2023-06-13 12:03:47,594 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ product.template[type]: 'product' -> 'consu' 
+2023-06-13 12:03:47,595 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ account.payment.term.line._cvt_account_payment_term_line(all) 
+2023-06-13 12:03:47,738 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ No *2many value for account.fiscal.position.tax.[] 
+2023-06-13 12:03:48,206 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: xref ('product.template') 'z0bug.product_template_1' -> ('product.product') 'z0bug.product_product_1' 
+2023-06-13 12:03:48,334 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: xref ('product.template') 'z0bug.product_template_2' -> ('product.product') 'z0bug.product_product_2' 
+2023-06-13 12:03:48,582 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ External reference z0bug.coa_liq_tra3 not found 
+2023-06-13 12:03:48,584 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: ⚠ External reference z0bug.coa_liq_tra3 not found 
+2023-06-13 12:03:49,332 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.test_payment_order: 🎺 Starting test_riba() 
+2023-06-13 12:03:49,667 2492824 INFO test_account_banking_common_12 odoo.models.unlink: User #1 deleted account.duedate_plus.line records with IDs: [1] 
+2023-06-13 12:03:50,048 2492824 INFO test_account_banking_common_12 odoo.models.unlink: User #1 deleted account.duedate_plus.line records with IDs: [2, 3] 
+2023-06-13 12:03:50,583 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.testenv: 🏆🥇 22 tests SUCCESSFULLY completed 
+2023-06-13 12:03:50,585 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.test_payment_order: Ran 1 test in 3.484s 
+2023-06-13 12:03:50,585 2492824 INFO test_account_banking_common_12 odoo.addons.account_banking_common.tests.test_payment_order: OK 
+2023-06-13 12:03:50,602 2492824 INFO test_account_banking_common_12 odoo.modules.loading: 57 modules loaded in 7.56s, 2546 queries 
+2023-06-13 12:03:51,337 2492824 INFO test_account_banking_common_12 odoo.modules.loading: Modules loaded. 
+2023-06-13 12:03:51,344 2492824 INFO test_account_banking_common_12 odoo.service.server: Starting post tests 
+2023-06-13 12:03:51,344 2492824 INFO test_account_banking_common_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2023-06-13 12:03:51,344 2492824 INFO test_account_banking_common_12 odoo.service.server: Initiating shutdown 
+2023-06-13 12:03:51,345 2492824 INFO test_account_banking_common_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36maccount_banking_common[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Name                                                                                            Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/account_banking_common/models/account_invoice.py                           23     12    48%   32-43, 50
+l10n-italy-supplemental/account_banking_common/models/account_journal.py                          107     23    79%   71, 96, 121, 134, 152, 157, 259, 261-262, 276-290, 293, 310, 325, 331, 337-342
+l10n-italy-supplemental/account_banking_common/models/account_move_line.py                        267    238    11%   23-34, 50-54, 62-296, 308-316, 334-338, 349-350, 359, 371-398, 426-473, 493-523, 543-640, 660-795
+l10n-italy-supplemental/account_banking_common/models/account_payment_order.py                    175    151    14%   83-89, 112-123, 139-141, 149-271, 276-286, 291-299, 302-327, 332-340, 358-388, 409-425, 428-469, 477-504
+l10n-italy-supplemental/account_banking_common/models/res_company.py                                8      0   100%
+l10n-italy-supplemental/account_banking_common/models/res_config_settings.py                        6      0   100%
+l10n-italy-supplemental/account_banking_common/models/res_partner_bank.py                          67     39    42%   18-19, 37, 45-49, 93-109, 134-177
+l10n-italy-supplemental/account_banking_common/utils/validate_selection.py                         94     81    14%   15-38, 44-53, 75-89, 98-116, 127-146, 161-163, 185-197, 208-225, 236-241, 247-281, 286-303
+l10n-italy-supplemental/account_banking_common/wizard/wizard_account_compensation_generate.py      98     80    18%   18, 21, 44-127, 132-141, 144-153, 156-164, 167-183, 186-222
+l10n-italy-supplemental/account_banking_common/wizard/wizard_account_register_payment.py          168    145    14%   19-20, 23-27, 64-71, 76-86, 94-124, 127-133, 138-508
+l10n-italy-supplemental/account_banking_common/wizard/wizard_insoluto.py                           17      5    71%   48-53
+l10n-italy-supplemental/account_banking_common/wizard/wizard_payment_order_add_move_lines.py      121     97    20%   27-47, 50-51, 59-94, 107-212, 218-228, 233-241, 246-264
+l10n-italy-supplemental/account_banking_common/wizard/wizard_payment_order_confirm.py              26     16    38%   18-31, 45-55
+l10n-italy-supplemental/account_banking_common/wizard/wizard_payment_order_credit.py               20     10    50%   17-23, 42-55
+l10n-italy-supplemental/account_banking_common/wizard/wizard_payment_order_generate.py            203    110    46%   37, 42, 49-52, 57-70, 79-102, 122, 138-142, 147, 167, 179, 191-218, 231, 248-252, 272, 280-284, 294-303, 317-331, 337-347, 352-360, 365-390, 400, 404, 409-419, 423-440
+l10n-italy-supplemental/account_banking_common/wizard/wizard_set_payment_method.py                 18      9    50%   27-36
+-----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                            1418   1016    28%

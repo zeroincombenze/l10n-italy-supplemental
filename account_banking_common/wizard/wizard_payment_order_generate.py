@@ -55,7 +55,6 @@ class AccountPaymentGenerate(models.TransientModel):
 
         if payment_method and payment_method.code:
             if payment_method.code == "invoice_financing":
-
                 journal_ids = []
                 default_mode_id = self._set_default_mode()
                 if default_mode_id:
@@ -92,7 +91,6 @@ class AccountPaymentGenerate(models.TransientModel):
             and payment_method.code
             and payment_method.code == "invoice_financing"
         ):
-
             default_mode = self._set_default_mode()
             if default_mode.bank_account_link == "fixed":
                 return default_mode.fixed_journal_id.id
@@ -179,11 +177,9 @@ class AccountPaymentGenerate(models.TransientModel):
 
     @api.multi
     def generate(self):
-
         active_ids = self._context.get("active_ids")
 
         if len(active_ids) > 0:
-
             lines = self.env["account.move.line"].browse(active_ids)
 
             # Check for errors standard
@@ -278,7 +274,6 @@ class AccountPaymentGenerate(models.TransientModel):
         payment_methods = defaultdict(lambda: {"count": 0, "name": None})
 
         for line in lines:
-
             # Detect lines already assigned to a payment order
             if line.payment_line_ids:
                 # insoluto?
@@ -319,7 +314,6 @@ class AccountPaymentGenerate(models.TransientModel):
         error_method = len(payment_methods) > 1
 
         if error_busy or error_method:
-
             error_msg_busy = ""
             if error_busy:
                 error_msg_busy = self._error_msg_busy(busy_lines)

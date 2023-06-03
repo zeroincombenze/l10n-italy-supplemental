@@ -7,12 +7,23 @@
             <form string="Registra Insoluto">
                 <group>
                     <field name="expenses_account"/>
-                    <field name="charge_client" attrs="{'invisible': [('expenses_account', '=', False)]}"/>
-                    <field name="expenses_amount" attrs="{'invisible': [('expenses_account', '=', False)]}"/>
+                    <field
+                        name="charge_client"
+                        attrs="{'invisible': [('expenses_account', '=', False)]}"
+                    />
+                    <field
+                        name="expenses_amount"
+                        attrs="{'invisible': [('expenses_account', '=', False)]}"
+                    />
                 </group>
 
                 <footer>
-                    <button type="object" name="registra_insoluto" string="Registra" class="oe_highlight"/>
+                    <button
+                        type="object"
+                        name="registra_insoluto"
+                        string="Registra"
+                        class="oe_highlight"
+                    />
                     <button special="cancel" string="Cancel" class="oe_link"/>
                 </footer>
             </form>
@@ -20,4 +31,3 @@
     </record>
 
 </odoo>
-

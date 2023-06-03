@@ -11,23 +11,24 @@ from odoo.exceptions import ValidationError
 
 
 class ResCompany(models.Model):
-    _inherit = 'res.company'
+    _inherit = "res.company"
 
     sia_code = fields.Char(
-        string='Codice SIA', size=5,
+        string="Codice SIA",
+        size=5,
         help="Inserire il codice SIA attribuito all'azienda. Il codice SIA "
-             "è composta da una lettera seguita da un numero di 4 cifre."
+        "è composta da una lettera seguita da un numero di 4 cifre.",
     )
 
     @api.multi
-    @api.constrains('sia_code')
+    @api.constrains("sia_code")
     def _check_sia_code(self):
         for company in self:
             if company.sia_code and not sia_code_valid(company.sia_code):
                 raise ValidationError(
-                    f'Il codice SIA "{company.sia_code}"'
-                    f' non è valido.'
+                    f'Il codice SIA "{company.sia_code}"' f" non è valido."
                 )
             # end if
         # end for
+
     # end _check_sia_code

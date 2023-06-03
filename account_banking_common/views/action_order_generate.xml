@@ -11,9 +11,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_duedates_compensate" model="ir.actions.server">
@@ -26,9 +26,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_payment_order_generate" model="ir.actions.server">
@@ -41,9 +41,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_add_to_payment_order" model="ir.actions.server">
@@ -56,9 +56,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_payment_confirm" model="ir.actions.server">
@@ -71,9 +71,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_insoluto" model="ir.actions.server">
@@ -86,9 +86,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
     <record id="server_action_duedates_update" model="ir.actions.server">
@@ -101,10 +101,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
 </odoo>
-

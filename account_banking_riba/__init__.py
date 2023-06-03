@@ -4,17 +4,6 @@
 #
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 #
-
-import ribalta
-
 from . import models
 from . import wizard
-
-REQUIRED_RIBALTA_VERSION = '0.4'
-
-if not ribalta.__version__.startswith(REQUIRED_RIBALTA_VERSION):
-    raise RuntimeError(
-        f'Module "account_banking_riba" requires '
-        f'ribalta library version {REQUIRED_RIBALTA_VERSION}.x, '
-        f'detected version is {ribalta.__version__}'
-    )
+from ._check4deps_ import check_4_depending

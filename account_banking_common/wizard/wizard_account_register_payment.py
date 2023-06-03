@@ -136,7 +136,6 @@ class AccountRegisterPayment(models.TransientModel):
 
     def register(self):
         def payment_reg_move_create():
-
             # Create the new account.move
             payment_reg_move_vals = self.env["account.move"].default_get(
                 [
@@ -168,7 +167,6 @@ class AccountRegisterPayment(models.TransientModel):
         # end create_payment_reg_move
 
         def payment_reg_move_add_lines():
-
             bank_amount = 0.0
             left = self.total_amount
             calculated_total = self._set_total_amount()
@@ -300,7 +298,6 @@ class AccountRegisterPayment(models.TransientModel):
             # end if
 
             if client_payment_reg_op:
-
                 # bank_debit = in_debit_total - in_credit_total
 
                 # Create the bank line
@@ -314,7 +311,6 @@ class AccountRegisterPayment(models.TransientModel):
                     }
                 )
             elif supplier_payment_reg_op:
-
                 # bank_credit = in_credit_total - in_debit_total
 
                 # Create the bank line
@@ -328,16 +324,13 @@ class AccountRegisterPayment(models.TransientModel):
                     }
                 )
             else:
-
                 raise AssertionError()
             # end if
 
         # end payment_reg_move_add_lines
 
         def payment_reg_move_add_expenses():
-
             if self.expenses_account and self.expenses_account.id:
-
                 # Riga di costo
                 move_line_model_no_check.create(
                     {
@@ -362,7 +355,6 @@ class AccountRegisterPayment(models.TransientModel):
         # payment_reg_move_add_expenses
 
         def payment_reg_move_confirm_and_reconcile():
-
             # Confirm the account.move
             payment_reg_move.post()
 
@@ -455,7 +447,6 @@ class AccountRegisterPayment(models.TransientModel):
 
         # Ensure the required default account is set in the bank registry
         if client_payment_reg_op:
-
             bank_line_account = self.journal_id.default_debit_account_id
 
             if not (bank_line_account and bank_line_account.id):
@@ -465,7 +456,6 @@ class AccountRegisterPayment(models.TransientModel):
             # end if
 
         elif supplier_payment_reg_op:
-
             bank_line_account = self.journal_id.default_credit_account_id
 
             if not (bank_line_account and bank_line_account.id):
@@ -485,7 +475,6 @@ class AccountRegisterPayment(models.TransientModel):
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         # Validate expenses
         if self.expenses_account and self.expenses_account.id:
-
             # Importo spese
             if self.expenses_amount <= 0:
                 raise UserError("L'importo delle spese deve essere maggiore di zero")
@@ -519,5 +508,3 @@ class AccountRegisterPayment(models.TransientModel):
         payment_reg_move_confirm_and_reconcile()
 
     # end register
-
-

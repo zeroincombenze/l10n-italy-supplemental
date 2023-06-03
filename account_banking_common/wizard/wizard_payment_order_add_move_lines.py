@@ -57,7 +57,6 @@ class AccountPaymentAddMoveLines(models.TransientModel):
 
     @api.multi
     def add(self):
-
         active_ids = self._context.get("active_ids")
         payment_method = self.env["account.payment.method"]
         # get payment order
@@ -127,7 +126,6 @@ class AccountPaymentAddMoveLines(models.TransientModel):
         order_payment_method_name = payment_method_lines_name[0]
 
         for line in lines:
-
             # Detect lines already assigned to a payment order
             if line.payment_line_ids:
                 # insoluto?
@@ -182,7 +180,6 @@ class AccountPaymentAddMoveLines(models.TransientModel):
         error_order_payment_method = len(check_order_payment_method) > 0
 
         if error_busy or error_method or error_order_payment_method:
-
             error_msg_busy = ""
             if error_busy:
                 error_msg_busy = self._error_msg_busy(busy_lines)
@@ -248,7 +245,6 @@ class AccountPaymentAddMoveLines(models.TransientModel):
     @staticmethod
     def _error_msg_method_order(check_order_payment_method, order_payment_method_name):
         if order_payment_method_name:
-
             msg = (
                 "ATTENZIONE!\nSono state selezionate righe "
                 "con metodo di pagamento diverso da quello dell'ordine "

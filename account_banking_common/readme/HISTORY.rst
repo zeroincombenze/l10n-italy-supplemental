@@ -1,3 +1,12 @@
+12.0.3.7.50 (2023-05-23)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [REF] Partial refactoring to support accoun_banking_riba
+* [FIX] Sometimes crashes after changing data / Crash dopo alcune modifiche dati
+* [FIX] l10n_it_fiscalcode dependency
+* [IMP] Default for factoring/financing data / Valori predefiniti per anticipo fattture
+* [IMP] Journal form review / Reimpostazione vista conti bancari
+
 12.0.3.7.49 (2023-02-28)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

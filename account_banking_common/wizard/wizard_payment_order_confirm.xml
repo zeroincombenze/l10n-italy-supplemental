@@ -6,14 +6,19 @@
         <field name="arch" type="xml">
             <form string="Conferma Pgamento">
                 <group>
-                    <field name="account_expense" />
-                    <field name="amount_expense"
-                           attrs="{'invisible':[('account_expense','=', False)]}"/>
+                    <field name="account_expense"/>
+                    <field
+                        name="amount_expense"
+                        attrs="{'invisible':[('account_expense','=', False)]}"
+                    />
                 </group>
                 <footer>
-                    <button type="object" name="registra_incasso"
-                            string="Conferma"
-                            class="oe_highlight"/>
+                    <button
+                        type="object"
+                        name="registra_incasso"
+                        string="Conferma"
+                        class="oe_highlight"
+                    />
                     <button special="cancel" string="Annulla" class="oe_link"/>
                 </footer>
             </form>
@@ -21,4 +26,3 @@
     </record>
 
 </odoo>
-

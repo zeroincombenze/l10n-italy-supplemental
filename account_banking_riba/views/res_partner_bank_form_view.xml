@@ -3,12 +3,22 @@
     <record id="riba_res_partner_bank_form" model="ir.ui.view">
         <field name="name">res.partner.bank.form</field>
         <field name="model">res.partner.bank</field>
-        <field name="inherit_id" ref="account_banking_common.payment_config_notebook_res_partner_bank_form"/>
+        <field
+            name="inherit_id"
+            ref="account_banking_common.payment_config_notebook_res_partner_bank_form"
+        />
         <field name="arch" type="xml">
 
-            <xpath expr="/form/group//notebook[@name='payment_config']" position="inside">
+            <xpath
+                expr="/form/group//notebook[@name='payment_config']"
+                position="inside"
+            >
                 <!-- <page name="riba" string="Ri.Ba.">-->
-                <page name="riba" string="Ri.Ba. CBI" attrs="{'invisible': [('bank_is_wallet', '=', False)]}">
+                <page
+                    name="riba"
+                    string="Ri.Ba. CBI"
+                    attrs="{'invisible': [('bank_is_wallet', '=', False)]}"
+                >
                     <style>
                           .o_form_label{
                           white-space:nowrap;
@@ -20,7 +30,7 @@
                             <field name="riba_transfer_journal"/>
                             <field name="riba_transfer_account"/>
                             <field name="riba_effetti_allo_sconto"/>
-                            <field name="riba_default_bank_expenses_account"/>
+                            <field name="riba_bank_expense_account_id"/>
                         </group>
                         <group>
                             <field name="riba_limite_effetti_sbf"/>
@@ -35,4 +45,3 @@
         </field>
     </record>
 </odoo>
-

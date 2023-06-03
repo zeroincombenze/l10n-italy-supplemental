@@ -7,4 +7,3 @@
         <field name="bank_account_required" eval="True"/>
     </record>
 </odoo>
-

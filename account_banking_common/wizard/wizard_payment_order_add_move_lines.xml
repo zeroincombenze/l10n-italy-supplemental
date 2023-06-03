@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <form string="Add Payment Lines">
                 <group>
-                    <field name="payment_orders" />
+                    <field name="payment_orders"/>
                 </group>
 
                 <footer>
@@ -29,4 +29,3 @@
     <!-- </record>-->
 
 </odoo>
-

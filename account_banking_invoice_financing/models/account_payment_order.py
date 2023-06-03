@@ -249,12 +249,12 @@ class PaymentOrder(models.Model):
                                 "impostato.")
             # end if
 
-            if not cfg['banca_conto_effetti'].id:
+            if not cfg['accreditation_account_credit_id'].id:
                 raise UserError("Attenzione!\nBanca conto effetti "
                                 "non impostato.")
             # end if
 
-            if not cfg['effetti_allo_sconto'].id:
+            if not cfg['accreditation_account_debit_id'].id:
                 raise UserError("Attenzione!\nConto Effetti allo sconto "
                                 "non impostato.")
             # end if
@@ -290,20 +290,20 @@ class PaymentOrder(models.Model):
             # end if
 
             # banca conto effetti
-            banca_conto_effetti = {
-                'account_id': cfg['banca_conto_effetti'].id,
+            accreditation_account_credit_id = {
+                'account_id': cfg['accreditation_account_credit_id'].id,
                 # 'partner_id': partner_id,
                 'credit': 0,
                 'debit': self.bank_invoice_financing_amount,
             }
-            line_ids.append((0, 0, banca_conto_effetti))
+            line_ids.append((0, 0, accreditation_account_credit_id))
 
-            effetti_allo_sconto = {
-                'account_id': cfg['effetti_allo_sconto'].id,
+            accreditation_account_debit_id = {
+                'account_id': cfg['accreditation_account_debit_id'].id,
                 'credit': self.bank_invoice_financing_amount,
                 'debit': 0
             }
-            line_ids.append((0, 0, effetti_allo_sconto))
+            line_ids.append((0, 0, accreditation_account_debit_id))
 
             vals = self.env['account.move'].default_get([
                 # 'date_apply_balance',
@@ -359,12 +359,12 @@ class PaymentOrder(models.Model):
                                 "impostato.")
             # end if
 
-            if not cfg['banca_conto_effetti'].id:
+            if not cfg['accreditation_account_credit_id'].id:
                 raise UserError("Attenzione!\nBanca conto effetti "
                                 "non impostato.")
             # end if
 
-            if not cfg['effetti_allo_sconto'].id:
+            if not cfg['accreditation_account_debit_id'].id:
                 raise UserError("Attenzione!\nConto Effetti allo sconto "
                                 "non impostato.")
             # end if
@@ -400,19 +400,19 @@ class PaymentOrder(models.Model):
             # end if
 
             # banca conto effetti
-            banca_conto_effetti = {
-                'account_id': cfg['banca_conto_effetti'].id,
+            accreditation_account_credit_id = {
+                'account_id': cfg['accreditation_account_credit_id'].id,
                 'credit': self.bank_invoice_financing_amount,
                 'debit': 0,
             }
-            line_ids.append((0, 0, banca_conto_effetti))
+            line_ids.append((0, 0, accreditation_account_credit_id))
 
-            effetti_allo_sconto = {
-                'account_id': cfg['effetti_allo_sconto'].id,
+            accreditation_account_debit_id = {
+                'account_id': cfg['accreditation_account_debit_id'].id,
                 'credit': 0,
                 'debit': self.bank_invoice_financing_amount,
             }
-            line_ids.append((0, 0, effetti_allo_sconto))
+            line_ids.append((0, 0, accreditation_account_debit_id))
 
             vals = self.env['account.move'].default_get([
                 'date_apply_balance',

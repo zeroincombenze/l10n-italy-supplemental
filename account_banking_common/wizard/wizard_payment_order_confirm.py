@@ -26,8 +26,8 @@ class WizardPaymentOrderConfirm(models.TransientModel):
                 break
 
         cfg = payment_order.get_move_config()
-        if "conto_spese_bancarie" in cfg and cfg["conto_spese_bancarie"].id:
-            return cfg["conto_spese_bancarie"].id
+        if "bank_expense_account_id" in cfg and cfg["bank_expense_account_id"].id:
+            return cfg["bank_expense_account_id"].id
         return False
 
     account_expense = fields.Many2one(

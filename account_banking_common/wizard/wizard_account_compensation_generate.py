@@ -49,7 +49,6 @@ class AccountCompensationGenerate(models.TransientModel):
             # nothing to do only reconcile
             lines.reconcile()
         else:
-
             compensation_amount = self._compute_compensation_amount()
             comp_sign = self._compute_compensation_sign()
             to_reconcile = dict()
@@ -165,7 +164,6 @@ class AccountCompensationGenerate(models.TransientModel):
         return total_debit_amount, total_credit_amount
 
     def _totally_compensate_lines(self, lines, sign, move):
-
         totally_compensate = dict()
 
         if sign == "credit":
@@ -185,7 +183,6 @@ class AccountCompensationGenerate(models.TransientModel):
         return totally_compensate
 
     def _partial_compensate_lines(self, sign, lines, amount, move):
-
         partial_compensate = dict()
         left = amount
         if sign == "credit":
@@ -195,7 +192,6 @@ class AccountCompensationGenerate(models.TransientModel):
         # end if
 
         for line in compensate_lines:
-
             if sign == "credit":
                 amount = line.debit
             else:

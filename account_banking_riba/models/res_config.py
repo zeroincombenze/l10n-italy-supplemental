@@ -9,9 +9,9 @@ from odoo import models, fields
 
 
 class ResConfigSettings(models.TransientModel):
-    _inherit = 'res.config.settings'
+    _inherit = "res.config.settings"
 
     sia_code = fields.Char(
-        related='company_id.sia_code',
+        related="company_id.sia_code",
         readonly=False,
     )

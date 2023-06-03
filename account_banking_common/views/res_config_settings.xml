@@ -14,16 +14,35 @@
                         <div class="o_setting_right_pane">
                             <div class="content-group">
                                 <div class="row mt16">
-                                    <label string="Abbuoni attivi" for="rebate_active" class="col-lg-3 o_light_label"/>
-                                    <field name="rebate_active"
-                                           domain="[('company_id', '=', company_id), ('nature', 'in', ['R', 'C'])]"
-                                           options="{'no_create_edit':True}"/>
-                                    <label string="Abbuoni passivi" for="rebate_passive" class="col-lg-3 o_light_label"/>
-                                    <field name="rebate_passive"
-                                           domain="[('company_id', '=', company_id), ('nature', 'in', ['R', 'C'])]"
-                                           options="{'no_create_edit':True}"/>
-                                    <label string="Abbuoni delta" for="rebate_delta" class="col-lg-3 o_light_label"/>
-                                    <field name="rebate_delta" options="{'no_create_edit':True}"/>
+                                    <label
+                                        string="Abbuoni attivi"
+                                        for="rebate_active"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="rebate_active"
+                                        domain="[('company_id', '=', company_id), ('nature', 'in', ['R', 'C'])]"
+                                        options="{'no_create_edit':True}"
+                                    />
+                                    <label
+                                        string="Abbuoni passivi"
+                                        for="rebate_passive"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="rebate_passive"
+                                        domain="[('company_id', '=', company_id), ('nature', 'in', ['R', 'C'])]"
+                                        options="{'no_create_edit':True}"
+                                    />
+                                    <label
+                                        string="Abbuoni delta"
+                                        for="rebate_delta"
+                                        class="col-lg-3 o_light_label"
+                                    />
+                                    <field
+                                        name="rebate_delta"
+                                        options="{'no_create_edit':True}"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -35,4 +54,3 @@
     </record>
 
 </odoo>
-

@@ -69,7 +69,7 @@ All account entries are based on following elements:
 - conto_effetti_attivi (account): credit account of action_accreditato()
 - effetti_allo_sconto (account): debit account of action_accreditato()
                                  on journal/bank record may be called portafoglio_sbf
-- conto_spese_bancarie (account): banking expenses
+- bank_expense_account_id (account): banking expenses
 """
 from collections import defaultdict
 from odoo import models, api, fields, _
@@ -110,7 +110,6 @@ class AccountPaymentOrder(models.Model):
 
     @api.multi
     def action_accreditato(self):
-
         for order in self:
             if order.state == "uploaded":
                 # validation
@@ -132,7 +131,8 @@ class AccountPaymentOrder(models.Model):
                     ).id,
                     "target": "new",
                     "res_id": False,
-                    "binding_model_id": "account.model_account_payment_order",
+                    "binding_model_id":
+                        "account_payment_order.model_account_payment_order",
                 }
 
     @api.multi
@@ -147,7 +147,6 @@ class AccountPaymentOrder(models.Model):
 
     @api.multi
     def registra_accredito_standard(self):
-
         account_expense_id = self._context.get("expenses_account_id")
         amount_expense = self._context.get("expenses_amount")
         credit_date = self._context.get("credit_date")
@@ -156,7 +155,6 @@ class AccountPaymentOrder(models.Model):
             credit_date = fields.Date.today()
 
         for payment_order in self:
-
             cfg = payment_order.get_move_config()
 
             # validazione conti impostati
@@ -164,10 +162,8 @@ class AccountPaymentOrder(models.Model):
             if not cfg["sezionale"].id:
                 raise UserError("Attenzione!\nSezionale non " "impostato.")
 
-            if not cfg["effetti_allo_sconto"].id:
-                raise UserError(
-                    "Attenzione!\nConto effetti allo sconto " "non impostato."
-                )
+            if not cfg["accreditation_account_debit_id"].id:
+                raise UserError("Attenzione!\nConto accredito (dare) " "non impostato.")
 
             if not cfg["bank_journal"].id:
                 raise UserError("Attenzione!\nConto di costo non impostato.")
@@ -179,7 +175,6 @@ class AccountPaymentOrder(models.Model):
             )
 
             for line in lines:
-
                 # per ogni riga
                 # genero una registrazione
 
@@ -187,7 +182,6 @@ class AccountPaymentOrder(models.Model):
 
                 # se ci sono spese le aggiungo
                 if amount_expense > 0:
-
                     credit_account = self.set_expense_credit_account(
                         cfg["bank_journal"]
                     )
@@ -207,21 +201,44 @@ class AccountPaymentOrder(models.Model):
                     line_ids.append((0, 0, bank_expense_line))
                 # end if
 
-                # conto effetti allo sconto
-                effetti_allo_sconto = {
-                    "account_id": cfg["effetti_allo_sconto"].id,
+                accreditation_account_debit_id = {
+                    "account_id": cfg["accreditation_account_debit_id"].id,
+                    "partner_id": line.partner_id.id,
                     "credit": 0,
                     "debit": line.amount_currency,
                 }
-                line_ids.append((0, 0, effetti_allo_sconto))
+                line_ids.append((0, 0, accreditation_account_debit_id))
 
-                effetti_attivi = {
-                    "account_id": cfg["conto_effetti_attivi"].id,
+                accreditation_account_credit_id = {
+                    "account_id": (
+                        cfg["accreditation_account_credit_id"].id
+                        or cfg["conto_effetti_attivi"].id
+                    ),
                     "partner_id": line.partner_id.id,
                     "credit": line.amount_currency,
                     "debit": 0,
                 }
-                line_ids.append((0, 0, effetti_attivi))
+                line_ids.append((0, 0, accreditation_account_credit_id))
+
+                if (
+                    cfg["accreditation2_account_debit_id"]
+                    and cfg["accreditation2_account_debit_id"]
+                ):
+                    accreditation_account_debit_id = {
+                        "account_id": cfg["accreditation2_account_debit_id"].id,
+                        "partner_id": line.partner_id.id,
+                        "credit": 0,
+                        "debit": line.amount_currency,
+                    }
+                    line_ids.append((0, 0, accreditation_account_debit_id))
+
+                    accreditation_account_credit_id = {
+                        "account_id": cfg["accreditation2_account_credit_id"].id,
+                        "partner_id": line.partner_id.id,
+                        "credit": line.amount_currency,
+                        "debit": 0,
+                    }
+                    line_ids.append((0, 0, accreditation_account_credit_id))
 
                 vals = self.env["account.move"].default_get(
                     [
@@ -257,7 +274,6 @@ class AccountPaymentOrder(models.Model):
 
     @api.multi
     def unlink(self):
-
         for order in self:
             if order.state != "cancel":
                 raise UserError(
@@ -286,12 +302,12 @@ class AccountPaymentOrder(models.Model):
     def get_move_config(self):
         """Returns the journals and accounts to be used for new account.move records."""
 
-        po = self
-        pay_mode = po.payment_mode_id
+        payorder = self
+        pay_mode = payorder.payment_mode_id
 
         # 1 - Get default config from journal
 
-        cfg = po.journal_id.get_payment_method_config()
+        cfg = payorder.journal_id.get_payment_method_config()
 
         # 2 - Get overrides from payment mode
         if pay_mode.offsetting_account == "transfer_account":
@@ -302,11 +318,11 @@ class AccountPaymentOrder(models.Model):
             assert pay_mode.transfer_account_id.id
             cfg["transfer_account"] = pay_mode.transfer_account_id
             cfg["conto_effetti_attivi"] = cfg["transfer_account"]
-            cfg["effetti_allo_sconto"] = cfg["transfer_account"]
+            cfg["accreditation_account_debit_id"] = cfg["transfer_account"]
         # end if
 
         # 3 - Add bank journal
-        cfg["bank_journal"] = po.journal_id
+        cfg["bank_journal"] = payorder.journal_id
 
         return cfg
 
@@ -314,7 +330,6 @@ class AccountPaymentOrder(models.Model):
 
     @api.model
     def set_expense_credit_account(self, journal):
-
         if journal.is_wallet:
             main_journal = journal.main_bank_account_id
             credit_account = main_journal.default_credit_account_id
@@ -353,19 +368,18 @@ class AccountPaymentOrder(models.Model):
                 groups[line.ml_maturity_date].append(line.amount_currency)
                 for line in self.payment_line_ids
             ]
-            sum_list = [
-                (key, sum(groups[key]))
-                for key in groups.keys()
-            ]
+            sum_list = [(key, sum(groups[key])) for key in groups.keys()]
             line = self.payment_line_ids[0]
             for duedate in sum_list:
                 vals = line.prepare_1_move_line(
-                    account.id, side, duedate=duedate[0], amount=duedate[1])
+                    account.id, side, duedate=duedate[0], amount=duedate[1]
+                )
                 move_lines.append((0, 0, vals))
         elif mode == "sum":
             amount = sum([list.amount_currency for line in self.payment_line_ids])
             vals = self.payment_line_ids[0].prepare_1_move_line(
-                account.id, side, amount=amount)
+                account.id, side, amount=amount
+            )
             move_lines.append((0, 0, vals))
         else:
             raise UserError(
@@ -373,22 +387,22 @@ class AccountPaymentOrder(models.Model):
             )
         return move_lines
 
-    @api.multi
-    def _create_reconcile_move(self, hashcode, blines):
-        self.ensure_one()
-        post_move = self.payment_mode_id.post_move
-        am_obj = self.env["account.move"]
-        mvals = self._prepare_move(blines)
-        move = am_obj.create(mvals)
-        is_wallet = self.company_partner_bank_id.bank_is_wallet
-        if is_wallet:
-            move.invoice_date = move.date
-            move.date = fields.Date.today()
-        blines.reconcile_payment_lines()
-        if post_move:
-            move.post()
-
-    # end _create_reconcile_move
+    # @api.multi
+    # def _create_reconcile_move(self, hashcode, blines):
+    #     self.ensure_one()
+    #     post_move = self.payment_mode_id.post_move
+    #     am_obj = self.env["account.move"]
+    #     mvals = self._prepare_move(blines)
+    #     move = am_obj.create(mvals)
+    #     is_wallet = self.company_partner_bank_id.bank_is_wallet
+    #     if is_wallet:
+    #         move.invoice_date = move.date
+    #         move.date = fields.Date.today()
+    #     blines.reconcile_payment_lines()
+    #     if post_move:
+    #         move.post()
+    #
+    # # end _create_reconcile_move
 
     @api.multi
     def _prepare_move(self, bank_lines=None):
@@ -461,9 +475,7 @@ class AccountPaymentLine(models.Model):
     def prepare_1_move_line(self, account_id, side, duedate=None, amount=None):
         """Prepare account move line value"""
         if side not in ("debit", "credit"):
-            raise UserError(
-                "Invalid %s value: must be 'debit' or 'credit'" % side
-            )
+            raise UserError("Invalid %s value: must be 'debit' or 'credit'" % side)
         amount_side = amount or self.amount_currency
         if amount_side < 0.0:
             opposite_side = side
@@ -477,20 +489,16 @@ class AccountPaymentLine(models.Model):
             opposite_side: 0.0,
         }
         if not duedate and amount:
-            values["name"] = str(
-                f'Distinta scadenze {self.order_id.name}'
-            )
+            values["name"] = str(f"Distinta scadenze {self.order_id.name}")
         elif duedate:
             values["name"] = str(
-                f'Distinta scadenze {self.order_id.name}'
-                ' - '
-                f'Scadenza {duedate}'
+                f"Distinta scadenze {self.order_id.name}" " - " f"Scadenza {duedate}"
             )
         else:
             values["name"] = str(
-                f'Distinta scadenze {self.order_id.name}'
-                ' - '
-                f'Fattura {self.move_line_id.move_id.name}'
+                f"Distinta scadenze {self.order_id.name}"
+                " - "
+                f"Fattura {self.move_line_id.move_id.name}"
             )
             values["partner_id"] = self.partner_id.id
         return values

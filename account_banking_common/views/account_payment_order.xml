@@ -4,34 +4,38 @@
     <record id="inherit_account_payment_order_form" model="ir.ui.view">
         <field name="name">inherit.account.payment.order.form</field>
         <field name="model">account.payment.order</field>
-        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field
+            name="inherit_id"
+            ref="account_payment_order.account_payment_order_form"
+        />
 
         <field name="arch" type="xml">
 
             <xpath expr="//button[@name='action_cancel']" position="before">
-                <field name="payment_method_code" invisible="1" />
-                <field name="is_wallet_company_bank" invisible="1" />
-                <field name="has_incassi_effettuati" invisible="1" />
+                <field name="payment_method_code" invisible="1"/>
+                <field name="is_wallet_company_bank" invisible="1"/>
+                <field name="has_incassi_effettuati" invisible="1"/>
 
-                <button name="action_accreditato"
-                        type="object"
-                        attrs="{'invisible': ['|', '|', ('payment_method_code', 'in', ['invoice_financing', 'RB-o']),
+                <button
+                    name="action_accreditato"
+                    type="object"
+                    attrs="{'invisible': ['|', '|', ('payment_method_code', 'in', ['invoice_financing', 'RB-o']),
                         ('state', '!=', 'uploaded'), ('is_wallet_company_bank', '=', False)]}"
-                        string="Accredito"
-                        class="oe_highlight"/>
+                    string="Accredito"
+                    class="oe_highlight"
+                />
             </xpath>
 
             <xpath expr="//button[@name='action_done_cancel']" position="replace">
                 <button
-                       name="action_done_cancel"
-                       type="object"
-                       string="Cancel Payments"
-                       attrs="{'invisible': ['|', ('has_incassi_effettuati', '=', True), ('state', 'not in', ['uploaded', 'done'])]}"
-                       />
+                    name="action_done_cancel"
+                    type="object"
+                    string="Cancel Payments"
+                    attrs="{'invisible': ['|', ('has_incassi_effettuati', '=', True), ('state', 'not in', ['uploaded', 'done'])]}"
+                />
             </xpath>
 
         </field>
     </record>
 
 </odoo>
-

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
  Copyright 2020-2016 Powerp Enterprise Network
  License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 -->
-
-
 <!--<odoo>-->
-
-
 <!-- <record id="view_account_config_settings" model="ir.ui.view">-->
 <!-- <field name="name">sia_code.account_config_settings.form-->
 <!-- </field>-->
@@ -26,8 +21,6 @@
 <!-- </xpath>-->
 <!-- </field>-->
 <!-- </record>-->
-
-
 <!--</odoo>-->
 <odoo>
 
@@ -43,8 +36,10 @@
                         <div class="o_setting_right_pane">
                             <div class="content-group">
                                 <div class="row mt16">
-                                    <label for="sia_code"
-                                           class="col-md-3 o_light_label"/>
+                                    <label
+                                        for="sia_code"
+                                        class="col-md-3 o_light_label"
+                                    />
                                     <field name="sia_code"/>
                                 </div>
                             </div>
@@ -56,4 +51,3 @@
     </record>
 
 </odoo>
-

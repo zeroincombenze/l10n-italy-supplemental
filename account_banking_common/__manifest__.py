@@ -6,7 +6,7 @@
 #
 {
     "name": "Account Banking Common",
-    "version": "12.0.3.7.49",
+    "version": "12.0.3.7.50",
     "category": "Accounting",
     "summary": "Common stuff for payment modules",
     "author": "powERP enterprise network and other partners",
@@ -21,14 +21,15 @@
         "account_payment_method",
         "account_common_mixin",
         "l10n_it_coa_base",
+        "l10n_it_fiscalcode",
     ],
     "data": [
         "views/res_partner_bank_view.xml",
         "wizard/wizard_insoluto.xml",
         "wizard/wizard_payment_order_confirm.xml",
         "wizard/wizard_payment_order_credit.xml",
-        "wizard/wizard_account_payment_order_generate.xml",
-        "wizard/wizard_account_payment_order_add_move_lines.xml",
+        "wizard/wizard_payment_order_generate.xml",
+        "wizard/wizard_payment_order_add_move_lines.xml",
         "wizard/wizard_set_payment_method.xml",
         "wizard/wizard_account_compensation_generate.xml",
         "wizard/wizard_account_register_payment.xml",

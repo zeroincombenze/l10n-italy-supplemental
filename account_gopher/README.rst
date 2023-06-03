@@ -72,20 +72,21 @@ Installation / Installazione
     # Case 1: you have not installed zeroincombenze tools
     git clone https://github.com/zeroincombenze/tools.git
     cd $HOME/tools
-    ./install_tools.sh -p
+    ./install_tools.sh -pT
     source $HOME/devel/activate_tools
     # Case 2: you have already installed zeroincombenze tools
     cd $HOME/tools
-    ./install_tools.sh -U
+    ./install_tools.sh -UT
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository installation; OCB repository must be installed
-    odoo_install_repository l10n-italy-supplemental -b 12.0 -O zero -o $HOME/12.0
-    vem create $HOME/12.0/venv_odoo -O 12.0 -a "*" -DI -o $HOME/12.0
+    deploy_odoo clone -r l10n-italy-supplemental -b 12.0 -G zero -p $HOME/12.0
+    # Upgrade virtual environment
+    vem amend $HOME/12.0/venv_odoo
 
 From UI: go to:
 
-* |menu| Setting > Activate Developer mode 
+* |menu| Setting > Activate Developer mode
 * |menu| Apps > Update Apps List
 * |menu| Setting > Apps |right_do| Select **account_gopher** > Install
 
@@ -103,20 +104,21 @@ Upgrade / Aggiornamento
     # Case 1: you have not installed zeroincombenze tools
     git clone https://github.com/zeroincombenze/tools.git
     cd $HOME/tools
-    ./install_tools.sh -p
+    ./install_tools.sh -pT
     source $HOME/devel/activate_tools
     # Case 2: you have already installed zeroincombenze tools
     cd $HOME/tools
-    ./install_tools.sh -U
+    ./install_tools.sh -UT
     source $HOME/devel/activate_tools
     # *** End of tools installation or upgrade ***
     # Odoo repository upgrade
-    odoo_install_repository l10n-italy-supplemental -b 12.0 -o $HOME/12.0 -U
-    vem amend $HOME/12.0/venv_odoo -o $HOME/12.0
+    deploy_odoo update -r l10n-italy-supplemental -b 12.0 -G zero -p $HOME/12.0
+    vem amend $HOME/12.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
 From UI: go to:
+
 
 |
 
@@ -162,48 +164,6 @@ ChangeLog History / Cronologia modifiche
 
 * [IMP] RC configuraton / Configurazione reverse charge
 
-12.0.0.2.5 (2022-03-10)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* Not avaialable version
-
-12.0.0.2.4 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-12.0.0.2.3 (2022-03-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
-
-12.0.0.2.2 (2022-02-21)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Set account nature / Imposta natura conto
-
-12.0.0.2.1 (2022-02-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Company fiscal position / Posizione fiscale azienda
-
-12.0.0.2.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
-* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
-* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
-
-12.0.0.1.0 (2021-12-23)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor enhancements
-
-10.0.0.0.0 (2021-11-08)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] First version
-
 
 
 |
@@ -225,12 +185,17 @@ Authors / Autori
 ----------------
 
 * `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
+Authors
+-------
 
 
 Contributors / Collaboratori
 ----------------------------
 
 * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
+Contributors
+------------
+
 
 
 Maintainer / Manutenzione
@@ -262,7 +227,7 @@ La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ 
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2022-06-27
+Last Update / Ultimo aggiornamento: 2023-04-03
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
@@ -322,4 +287,5 @@ Last Update / Ultimo aggiornamento: 2022-06-27
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
+
 

@@ -9,13 +9,14 @@ from odoo import api, models
 
 
 class AccountPaymentLine(models.Model):
-    _inherit = 'account.payment.line'
+    _inherit = "account.payment.line"
 
     @api.multi
     def draft2open_payment_line_check(self):
         res = super().draft2open_payment_line_check()
         riba_lines = self.filtered(
-            lambda ln: ln.order_id.payment_method_id.code == 'riba_cbi')
+            lambda ln: ln.order_id.payment_method_id.code == "riba_cbi"
+        )
         riba_lines._check_riba_cbi_ready()
         return res
 
@@ -31,4 +32,5 @@ class AccountPaymentLine(models.Model):
             # questo contesto, sono sufficienti i controlli eseguiti
             # dalla libreria di generazione dei CBI
             pass
+
     # end _check_riba_cbi_ready

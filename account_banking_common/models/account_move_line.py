@@ -21,7 +21,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def open_wizard_insoluto(self):
-
         # Retrieve the records
         lines = self.env["account.move.line"].browse(self._context["active_ids"])
 
@@ -49,7 +48,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def registra_insoluto(self):
-
         # The payment method of the selected lines
         p_method = self.get_payment_method()
 
@@ -62,7 +60,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def registra_insoluto_standard(self):
-
         # NB: no need to perform checks on the selected lines, the checks have
         #     already been performed by the method:
         #
@@ -167,7 +164,6 @@ class AccountMoveLine(models.Model):
         # Eventuali costi bancari
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         if expenses_account_id and expenses_amount > 0:
-
             if charge_client:
                 # Spread expenses amount equally among the lines.
                 # Avoid rounding problem by adjusting the amount
@@ -224,7 +220,6 @@ class AccountMoveLine(models.Model):
         # Clienti e nuova riconciliazione
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         for move_line, expenses_charged in zip(self, charge_client_for):
-
             # Update the total amount of insoluti
             amount_insoluti = amount_insoluti + move_line.amount_into_payment_line
 
@@ -247,7 +242,7 @@ class AccountMoveLine(models.Model):
                     "name": str(
                         f"Scadenza {move_line.date_maturity}"
                         " - "
-                        f'Fattura {my_invoice.name or my_invoice.number}'
+                        f"Fattura {my_invoice.name or my_invoice.number}"
                     ),
                 }
             )
@@ -256,7 +251,6 @@ class AccountMoveLine(models.Model):
             # Modify invoices reconciliation if needed
             # - - - - - - - - - - - - - - - - - - - - - - - -
             if new_reconcile_needed:
-
                 # Ottenimento riga riconciliata con move_line
                 reconcile_line_list = move_line.full_reconcile_id.reconciled_line_ids
 
@@ -312,7 +306,6 @@ class AccountMoveLine(models.Model):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @api.multi
     def open_wizard_payment_confirm(self):
-
         # Retrieve the lines
         lines = self.env["account.move.line"].browse(self._context["active_ids"])
 
@@ -339,7 +332,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def registra_incasso(self):
-
         # The payment method of the selected lines
         p_method = self.get_payment_method()
 
@@ -365,7 +357,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def open_wizard_payment_order_generate(self):
-
         # Retrieve the records
         lines = self.env["account.move.line"].browse(self._context["active_ids"])
         # Perform validations
@@ -433,7 +424,6 @@ class AccountMoveLine(models.Model):
 
     @api.multi
     def open_wizard_payment_order_add_move_lines(self):
-
         # Retrieve the records
         lines = self.env["account.move.line"].browse(self._context["active_ids"])
 
@@ -775,7 +765,6 @@ class AccountMoveLine(models.Model):
         partner_lines = list()
         partner_ids = list()
         if len(lines) > 0:
-
             for line in lines:
                 # Detect lines already reconciled
                 if (

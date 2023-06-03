@@ -11,23 +11,24 @@ from odoo.exceptions import ValidationError
 
 
 class AccountPaymentMode(models.Model):
-    _inherit = 'account.payment.mode'
+    _inherit = "account.payment.mode"
 
     sia_code = fields.Char(
-        string='Codice SIA', size=5,
+        string="Codice SIA",
+        size=5,
         help="Inserire il codice SIA attribuito all'azienda. Il codice SIA "
-             "è composta da una lettera seguita da un numero di 4 cifre."
+        "è composta da una lettera seguita da un numero di 4 cifre.",
     )
 
     @api.multi
-    @api.constrains('sia_code')
+    @api.constrains("sia_code")
     def _check_sia_code(self):
         for pay_mode in self:
             if pay_mode.sia_code and not sia_code_valid(pay_mode.sia_code):
                 raise ValidationError(
-                    f'Il codice SIA "{pay_mode.sia_code}"'
-                    f' non è valido.'
+                    f'Il codice SIA "{pay_mode.sia_code}"' f" non è valido."
                 )
             # end if
         # end for
+
     # end _check_sia_code

@@ -30,8 +30,8 @@
                             <group colspan="2">
                                 <group>
                                     <field name="sezionale"/>
-                                    <field name="effetti_allo_sconto"/>
-                                    <field name="banca_conto_effetti"/>
+                                    <field name="accreditation_account_debit_id"/>
+                                    <field name="accreditation_account_credit_id"/>
                                     <field name="conto_costi_bancari"/>
                                 </group>
                                 <group>

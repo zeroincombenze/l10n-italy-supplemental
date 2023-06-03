@@ -6,13 +6,18 @@
         <field name="arch" type="xml">
             <form string="Create Payment Lines">
                 <group>
-                    <field name="payment_mode_id" />
-                    <field name="journal_id" />
-                    <field name="description" />
+                    <field name="payment_mode_id"/>
+                    <field name="journal_id"/>
+                    <field name="description"/>
                 </group>
 
                 <footer>
-                    <button type="object" name="generate" string="Create" class="oe_highlight"/>
+                    <button
+                        type="object"
+                        name="generate"
+                        string="Create"
+                        class="oe_highlight"
+                    />
                     <button special="cancel" string="Cancel" class="oe_link"/>
                 </footer>
             </form>
@@ -20,4 +25,3 @@
     </record>
 
 </odoo>
-

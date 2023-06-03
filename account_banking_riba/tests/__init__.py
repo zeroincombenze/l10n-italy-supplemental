@@ -5,4 +5,4 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 #
 from . import testenv
-from . import test_riba_type_1
+from . import test_riba

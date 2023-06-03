@@ -11,10 +11,9 @@
                # end if
         </field>
         <field
-              name="binding_model_id"
-              ref="account_banking_common.model_account_move_line"
-              />
+            name="binding_model_id"
+            ref="account_banking_common.model_account_move_line"
+        />
     </record>
 
 </odoo>
-

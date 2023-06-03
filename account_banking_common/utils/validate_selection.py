@@ -17,7 +17,6 @@ def same_payment_method(account_move_lines):
     pay_method = None
 
     for line in account_move_lines:
-
         line_pay_method = line.payment_method
 
         if pay_method is None:
@@ -50,7 +49,6 @@ def allowed_payment_method(account_move_lines, payment_method_codes: typing.List
     )
 
     for line in account_move_lines:
-
         if line.payment_method.code not in payment_method_codes:
             raise UserError(
                 "La funzione è supportata solo "
@@ -77,7 +75,6 @@ def assigned_to_payment_order(account_move_lines, assigned: bool):
     assert len(account_move_lines) > 0
 
     for line in account_move_lines:
-
         if assigned and not line.in_order:
             raise UserError(
                 "Le scadenze selezionate devono essere "
@@ -103,7 +100,6 @@ def same_payment_order(account_move_lines):
     po_name = account_move_lines[0].payment_order_name
 
     for line in account_move_lines:
-
         if line.payment_order_name != po_name:
             raise UserError(
                 "Per poter procedere con l'operazione tutte le righe "
@@ -136,9 +132,7 @@ def allowed_payment_order_status(
     )
 
     for line in account_move_lines:
-
         if line.state not in payment_order_status:
-
             # Translate the values to user friendly labels
             val_to_label = dict(line.fields_get(["state"])["state"]["selection"])
             labels_list = [val_to_label[x] for x in payment_order_status]
@@ -165,7 +159,6 @@ def except_payment_order_status(account_move_lines, payment_order_status: typing
     """
 
     for line in account_move_lines:
-
         if line.state in payment_order_status:
             raise UserError(
                 "Per poter procedere con l'operazione l'ordine "
@@ -192,7 +185,6 @@ def lines_has_payment(account_move_lines, paid: bool):
     assert len(account_move_lines) > 0
 
     for line in account_move_lines:
-
         if paid and not line.incasso_effettuato:
             raise UserError(
                 "Le scadenze selezionate devono avere " "l'incasso effettuato"
@@ -229,7 +221,6 @@ def lines_check_invoice_type(account_move_lines, allowed_documents: typing.List[
     # end for
 
     for line in account_move_lines:
-
         if line.invoice_id.type not in allowed_documents:
             raise UserError(
                 "La funzione è supportata solo "
@@ -258,7 +249,6 @@ def same_bank_account_wallet(account_move_lines):
     bank_wallet = None
 
     for line in account_move_lines:
-
         # line_company_bank = line.company_bank_id
         line_company_bank = (
             line.payment_line_ids
@@ -292,7 +282,6 @@ def same_bank_account_wallet(account_move_lines):
 
 
 def payment_confirm(account_move_lines):
-
     # incasso effettuato deve essere False
     lines_has_payment(account_move_lines, paid=False)
 

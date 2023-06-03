@@ -13,7 +13,6 @@ _logger = logging.getLogger(__name__)
 
 
 class WizardInsoluto(models.TransientModel):
-
     _name = "wizard.account.banking.common.insoluto"
     _description = "Gestione insoluti"
 
@@ -23,13 +22,13 @@ class WizardInsoluto(models.TransientModel):
             (
                 "user_type_id",
                 "=",
-                self.env.ref("account.data_account_type_expenses").id
+                self.env.ref("account.data_account_type_expenses").id,
             ),
             (
                 "user_type_id",
                 "=",
-                self.env.ref("account.data_account_type_direct_costs").id
-            )
+                self.env.ref("account.data_account_type_direct_costs").id,
+            ),
         ]
 
     expenses_account = fields.Many2one(
