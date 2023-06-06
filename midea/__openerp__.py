@@ -33,5 +33,5 @@ This module does nothing, it is a just a simple example of Odoo Module
     "demo": [],
     "test": [],
     "active": False,
-    'installable': True
+    'installable': False
 }
