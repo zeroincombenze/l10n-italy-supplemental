@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-10 11:23+0000\n"
-"PO-Revision-Date: 2023-06-10 11:23+0000\n"
+"POT-Creation-Date: 2023-06-20 12:08+0000\n"
+"PO-Revision-Date: 2023-06-20 12:08+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it_IT\n"
@@ -129,6 +129,6 @@ msgstr ""
 #. module: account_banking_riba
 #: model:ir.model,name:account_banking_riba.model_wizard_payment_riba_supplier
 msgid "wizard.payment.riba.supplier"
-msgstr ""
+msgstr "wizard.payment.riba.fornitore"
 
 

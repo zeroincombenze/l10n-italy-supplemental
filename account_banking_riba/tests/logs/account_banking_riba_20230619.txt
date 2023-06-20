@@ -1,0 +1,17 @@
+
++===================================================================
+| please test [36maccount_banking_riba[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Name                                                                                  Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/account_banking_riba/models/account_move_line.py                 80     72    10%   16-24, 29-37, 42-173, 180-218
+l10n-italy-supplemental/account_banking_riba/models/account_payment_line.py              13      2    85%   15, 23
+l10n-italy-supplemental/account_banking_riba/models/account_payment_mode.py              12      4    67%   24-27
+l10n-italy-supplemental/account_banking_riba/models/account_payment_order.py            115     64    44%   22, 30, 41, 68, 71-76, 93, 99-104, 108-112, 117, 122-123, 128, 136-280, 286
+l10n-italy-supplemental/account_banking_riba/models/common.py                             7      1    86%   22
+l10n-italy-supplemental/account_banking_riba/models/res_company.py                       12      2    83%   24, 27
+l10n-italy-supplemental/account_banking_riba/models/res_config.py                         4      0   100%
+l10n-italy-supplemental/account_banking_riba/wizard/wizard_payment_riba_supplier.py      52     42    19%   19-26, 39-105
+-------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                   295    187    37%

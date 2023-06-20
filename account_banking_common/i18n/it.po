@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-10 16:15+0000\n"
-"PO-Revision-Date: 2023-06-10 16:15+0000\n"
+"POT-Creation-Date: 2023-06-20 12:03+0000\n"
+"PO-Revision-Date: 2023-06-20 12:03+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it_IT\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__liquidity_account_id
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__liquidity_account_id
 msgid "A/C Bank Account"
-msgstr ""
+msgstr "Conto Banca C/C"
 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.res_config_settings_view_common_form
@@ -52,31 +52,31 @@ msgstr ""
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.view_account_bank_journal_form_banking_common
 msgid "Accreditation (debit / credit)"
-msgstr ""
+msgstr "Accredito (dare / avere)"
 
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation_account_credit_id
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__accreditation_account_credit_id
 msgid "Accreditation account (credit side - C/O portfolio bank)"
-msgstr ""
+msgstr "Conto contabile accredito avere (Banca SBF)"
 
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation2_account_credit_id
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__accreditation2_account_credit_id
 msgid "Accreditation account (credit side – supplemental)"
-msgstr ""
+msgstr "Conto contabile accredito avere (supplementare)"
 
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation_account_debit_id
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__accreditation_account_debit_id
 msgid "Accreditation account (debit side - Subject To Collection C/O)"
-msgstr ""
+msgstr "Conto contabile accredito dare (Effetti SBF)"
 
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation2_account_debit_id
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__accreditation2_account_debit_id
 msgid "Accreditation account (debit side – supplemental)"
-msgstr ""
+msgstr "Conto contabile accredito dare (supplementare)"
 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.inherit_account_payment_order_form
@@ -137,8 +137,8 @@ msgid "Annulla"
 msgstr ""
 
 #. module: account_banking_common
-#: code:addons/account_banking_common/models/account_journal.py:286
-#: code:addons/account_banking_common/models/account_journal.py:298
+#: code:addons/account_banking_common/models/account_journal.py:269
+#: code:addons/account_banking_common/models/account_journal.py:281
 #: code:addons/account_banking_common/wizard/wizard_account_register_payment.py:88
 #, python-format
 msgid "Attenzione"
@@ -160,6 +160,12 @@ msgid "Bank Accounts"
 msgstr "Conti bancari"
 
 #. module: account_banking_common
+#: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__bank_expense_account_id
+#: model:ir.model.fields,field_description:account_banking_common.field_account_journal__bank_expense_account_id
+msgid "Bank Expenses account"
+msgstr "Conto spese bancarie"
+
+#. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_wizard_account_payment_generate__journal_id
 msgid "Bank Journal"
 msgstr "Registro banca"
@@ -172,7 +178,7 @@ msgstr "Registro banca"
 #: model_terms:ir.ui.view,arch_db:account_banking_common.wizard_account_register_payment
 #: model_terms:ir.ui.view,arch_db:account_banking_common.wizard_set_payment_method
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "Annullare"
 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.inherit_account_payment_order_form
@@ -230,7 +236,7 @@ msgstr ""
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.wizard_account_compensation_generate
 msgid "Confirm"
-msgstr "Conferma"
+msgstr "Confermare"
 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.view_account_bank_journal_form_banking_common
@@ -259,12 +265,6 @@ msgid "Conto Spese"
 msgstr ""
 
 #. module: account_banking_common
-#: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__bank_expense_account_id
-#: model:ir.model.fields,field_description:account_banking_common.field_account_journal__bank_expense_account_id
-msgid "Conto di default per spese bancarie"
-msgstr ""
-
-#. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__is_wallet
 #: model:ir.model.fields,field_description:account_banking_common.field_account_journal__is_wallet
 #: model:ir.model.fields,field_description:account_banking_common.field_account_setup_bank_manual_config__bank_is_wallet
@@ -277,15 +277,6 @@ msgstr ""
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_payment_order__is_wallet_company_bank
 msgid "Conto di portafoglio aziendale"
-msgstr ""
-
-#. module: account_banking_common
-#: model:ir.model.fields,help:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation_account_credit_id
-#: model:ir.model.fields,help:account_banking_common.field_account_journal__accreditation_account_credit_id
-msgid "Conto di portafoglio bancario SBF dopo accredito distinta\n"
-"Questo conto è la copia del conto di portafoglio del e-banking\n"
-"Non può esser usato in caso di uso effetti presentati\n"
-""
 msgstr ""
 
 #. module: account_banking_common
@@ -322,27 +313,9 @@ msgid "Conto spese bancarie"
 msgstr ""
 
 #. module: account_banking_common
-#: model:ir.model.fields,help:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation_account_debit_id
-#: model:ir.model.fields,help:account_banking_common.field_account_journal__accreditation_account_debit_id
-msgid "Conto usato (in dare) per l'accredito distinta\n"
-"Per gestire il controllo del credito cliente\n"
-"usare un conto di tipo credito cliente"
-msgstr ""
-
-#. module: account_banking_common
-#: model:ir.model.fields,help:account_banking_common.field_account_bank_statement_import_journal_creation__accreditation2_account_debit_id
-#: model:ir.model.fields,help:account_banking_common.field_account_journal__accreditation2_account_debit_id
-msgid "Conto usato (in dare) per l'incasso cliente in 3 passi\n"
-"L'effetto transita per i conti attivo->sconto->presentato\n"
-"invece dell'usuale ciclo attivo->sconto\n"
-"Attenzione! Si perde il controllo del credito verso il cliente\n"
-"e non è possibile gestire la disponibilità del portafoglio!"
-msgstr ""
-
-#. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.wizard_account_payment_generate
 msgid "Create"
-msgstr "Crea"
+msgstr "Creare"
 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.wizard_account_payment_generate
@@ -468,13 +441,13 @@ msgid "ID"
 msgstr ""
 
 #. module: account_banking_common
-#: code:addons/account_banking_common/models/account_journal.py:299
+#: code:addons/account_banking_common/models/account_journal.py:282
 #, python-format
 msgid "Il conto avere predefinito deve essere un conto di tipo credito clienti"
 msgstr ""
 
 #. module: account_banking_common
-#: code:addons/account_banking_common/models/account_journal.py:287
+#: code:addons/account_banking_common/models/account_journal.py:270
 #, python-format
 msgid "Il conto dare predefinito deve essere un conto di tipo credito clienti"
 msgstr ""
@@ -526,7 +499,7 @@ msgstr "Opera come conto predefinito per l'importo in dare"
 #. module: account_banking_common
 #: model:ir.model,name:account_banking_common.model_account_journal
 msgid "Journal"
-msgstr "Registro"
+msgstr "Sezionale"
 
 #. module: account_banking_common
 #: model:ir.model,name:account_banking_common.model_account_move_line
@@ -625,7 +598,7 @@ msgstr "Riga di pagamenti"
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_wizard_account_payment_generate__payment_mode_id
 msgid "Payment Mode"
-msgstr "Modalità di Pagamento"
+msgstr "Modo di pagamento"
 
 #. module: account_banking_common
 #: model:ir.model,name:account_banking_common.model_account_payment_order
@@ -691,7 +664,7 @@ msgstr "Impostare o attiva questo campo solo per specificare un modello diverso 
 #. module: account_banking_common
 #: model_terms:ir.ui.view,arch_db:account_banking_common.view_account_bank_journal_form_banking_common
 msgid "Settlement"
-msgstr ""
+msgstr "Liquidazione"
 
 #. module: account_banking_common
 #: model:ir.model.fields,field_description:account_banking_common.field_account_bank_statement_import_journal_creation__sezionale
