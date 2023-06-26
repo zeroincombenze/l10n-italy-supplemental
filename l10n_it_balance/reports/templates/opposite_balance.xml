@@ -13,7 +13,7 @@
         <field name="margin_left">5</field>
         <field name="margin_right">5</field>
         <field name="header_line" eval="False"/>
-        <field name="header_spacing">30</field>
+        <field name="header_spacing">35</field>
         <field name="dpi">90</field>
     </record>
 
@@ -44,16 +44,24 @@
                             <caption>Attività</caption>
                             <thead>
                                 <tr>
-                                    <th style="padding: 5px;">Conto</th>
-                                    <th style="padding: 5px;">Descrizione</th>
-                                    <th style="padding: 5px;">Saldo</th>
+                                    <th style="font-size: 13px;padding: 3px;">Conto</th>
+                                    <th style="font-size: 13px;padding: 3px;">Descrizione</th>
+                                    <th style="font-size: 13px;padding: 3px;">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.balance_line_asset_ids" t-as="l" style="padding: 5px;">
-                                    <td style="padding: 5px;"><span t-field="l.code"/></td>
-                                    <td style="padding: 5px;"><span t-field="l.name"/></td>
-                                    <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    <t t-if="l.pos_balance == 'H' or l.pos_balance == 'I'">
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.code"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.name"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><b><span t-field="l.amount_balance"/></b></td>
+                                    </t>
+                                    <t t-else="" >
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.code"/></td>
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.name"/></td>
+                                        <td style="font-size: 13px; padding: 2px;;text-align:right;"><span t-field="l.amount_balance"/></td>
+
+                                    </t>
                                 </tr>
                             </tbody>
                         </table>
@@ -62,16 +70,24 @@
                             <caption>Passività</caption>
                             <thead>
                                 <tr>
-                                    <th style="padding: 5px;">Conto</th>
-                                    <th style="padding: 5px;">Descrizione</th>
-                                    <th style="padding: 5px;">Saldo</th>
+                                    <th style="font-size: 13px; padding: 3px;">Conto</th>
+                                    <th style="font-size: 13px; padding: 3px;">Descrizione</th>
+                                    <th style="font-size: 13px; padding: 3px;">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.balance_line_liability_ids" t-as="l" style="padding: 5px;">
-                                    <td style="padding: 5px;"><span t-field="l.code"/></td>
-                                    <td style="padding: 5px;"><span t-field="l.name"/></td>
-                                    <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    <t t-if="l.pos_balance == 'H' or l.pos_balance == 'I'">
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.code"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.name"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><b><span t-field="l.amount_balance"/></b></td>
+                                    </t>
+                                      <t t-else="" >
+                                          <td style="font-size: 13px; padding: 2px;"><span t-field="l.code"/></td>
+                                          <td style="font-size: 13px; padding: 2px;"><span t-field="l.name"/></td>
+                                          <td style="font-size: 13px; padding: 2px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                      </t>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -83,16 +99,23 @@
                             <caption>Costi</caption>
                             <thead>
                                 <tr >
-                                    <th style="padding: 5px;">Conto</th>
-                                    <th style="padding: 5px;">Descrizione</th>
-                                    <th style="padding: 5px;">Saldo</th>
+                                    <th style="font-size: 13px; padding: 3px;">Conto</th>
+                                    <th style="font-size: 13px; padding: 3px;">Descrizione</th>
+                                    <th style="font-size: 13px; padding: 3px;">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.balance_line_expense_ids" t-as="l" style="padding: 5px;">
-                                    <td style="padding: 5px;"><span t-field="l.code"/></td>
-                                    <td style="padding: 5px;"><span t-field="l.name"/></td>
-                                    <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    <t t-if="l.pos_balance == 'H' or l.pos_balance == 'I'">
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.code"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.name"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><b><span t-field="l.amount_balance"/></b></td>
+                                    </t>
+                                    <t t-else="" >
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.code"/></td>
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.name"/></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    </t>
                                 </tr>
                             </tbody>
                         </table>
@@ -100,16 +123,23 @@
                             <caption>Ricavi</caption>
                             <thead>
                                 <tr>
-                                    <th style="padding: 5px;">Conto</th>
-                                    <th style="padding: 5px;">Descrizione</th>
-                                    <th style="padding: 5px;">Saldo</th>
+                                    <th style="font-size: 13px; padding: 3px;">Conto</th>
+                                    <th style="font-size: 13px; padding: 3px;">Descrizione</th>
+                                    <th style="font-size: 13px; padding: 3px;">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.balance_line_income_ids" t-as="l" style="padding: 5px;">
-                                    <td style="padding: 5px;"><span t-field="l.code"/></td>
-                                    <td style="padding: 5px;"><span t-field="l.name"/></td>
-                                    <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    <t t-if="l.pos_balance == 'H' or l.pos_balance == 'I'">
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.code"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.name"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><b><span t-field="l.amount_balance"/></b></td>
+                                    </t>
+                                    <t t-else="" >
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.code"/></td>
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.name"/></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    </t>
                                 </tr>
                             </tbody>
                         </table>
@@ -121,16 +151,23 @@
                             <caption>Conti d'ordine</caption>
                             <thead>
                                 <tr style="margin: 5px;">
-                                    <th style="padding: 5px;">Conto</th>
-                                    <th style="padding: 5px;">Descrizione</th>
-                                    <th style="padding: 5px;">Saldo</th>
+                                    <th style="font-size: 13px; padding: 3px;">Conto</th>
+                                    <th style="font-size: 13px; padding: 3px;">Descrizione</th>
+                                    <th style="font-size: 13px; padding: 3px;">Saldo</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="doc.balance_line_memorandum_ids" t-as="l" style="padding: 5px;">
-                                    <td style="padding: 5px;"><span t-field="l.code"/></td>
-                                    <td style="padding: 5px;"><span t-field="l.name"/></td>
-                                    <td style="padding: 5px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    <t t-if="l.pos_balance == 'H' or l.pos_balance == 'I'">
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.code"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;"><b><span t-field="l.name"/></b></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><b><span t-field="l.amount_balance"/></b></td>
+                                    </t>
+                                    <t t-else="" >
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.code"/></td>
+                                        <td style="font-size: 13px; padding: 2px;"><span t-field="l.name"/></td>
+                                        <td style="font-size: 13px; padding: 2px;text-align:right;"><span t-field="l.amount_balance"/></td>
+                                    </t>
                                 </tr>
                             </tbody>
                         </table>

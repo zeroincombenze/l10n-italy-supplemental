@@ -1,6 +1,7 @@
 # Copyright 2021 powERP enterprise network <https://www.powerp.it>
 #
-# License OPL-1 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
+# License OPL-1 or later
+# (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
 #
 import logging
 import base64
@@ -61,7 +62,6 @@ class WizardBalanceOppositeExportXls(models.TransientModel):
             'type': 'ir.actions.act_window',
             'target': 'new',
         }
-
 
     @api.one
     def _generate_opposite_sheet_xls(self, balance_id):
@@ -222,7 +222,7 @@ class WizardBalanceOppositeExportXls(models.TransientModel):
 
         line_model = self.env['italy.account.balance.line.asset']
         row_index = 0
-        ws_asset_liability.write_merge(0, 0, 0, 6,'Stato patrimoniale',
+        ws_asset_liability.write_merge(0, 0, 0, 6, 'Stato patrimoniale',
                                        scg.STYLE_CENTER)
         row_index += 1
         ws_asset_liability.write_merge(1, 1, 0, 2, 'Attività',
@@ -286,7 +286,7 @@ class WizardBalanceOppositeExportXls(models.TransientModel):
             row_index += 1
         line_model = self.env['italy.account.balance.line.expense']
         row_index = 0
-        ws_economics.write_merge(0, 0, 0, 6,'Conto economico', scg.STYLE_CENTER)
+        ws_economics.write_merge(0, 0, 0, 6, 'Conto economico', scg.STYLE_CENTER)
         row_index += 1
         ws_economics.write_merge(1, 1, 0, 2, 'Costi', scg.STYLE_CENTER)
         row_index += 1
@@ -409,7 +409,7 @@ class WizardBalanceOppositeExportXls(models.TransientModel):
 
         line_model = self.env['italy.account.balance.line.asset']
         row_index = 0
-        ws.write_merge(0, 0, 0, 6,'Stato patrimoniale', scg.STYLE_CENTER)
+        ws.write_merge(0, 0, 0, 6, 'Stato patrimoniale', scg.STYLE_CENTER)
         row_index += 1
         ws.write_merge(1, 1, 0, 2, 'Attività', scg.STYLE_CENTER)
         row_index += 1
@@ -530,7 +530,7 @@ class WizardBalanceOppositeExportXls(models.TransientModel):
 
         row_index += 4
         line_model = self.env['italy.account.balance.line.memorandum']
-        ws.write_merge(row_index, row_index, 0, 6,'Conti d\'ordine',
+        ws.write_merge(row_index, row_index, 0, 6, 'Conti d\'ordine',
                        scg.STYLE_CENTER)
         row_index += 1
         ws.write(row_index, 0, 'Conto', scg.STYLE_BOLD_BLACK)

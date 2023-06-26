@@ -1,6 +1,7 @@
 # Copyright 2021 powERP enterprise network <https://www.powerp.it>
 #
-# License OPL-1 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
+# License OPL-1 or later
+# (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
 #
 import datetime
 # import logging
@@ -278,7 +279,6 @@ class ItalyAccountBalance(models.Model):
         help="Selezione visualizzazione..."
     )
 
-
     @api.model
     def check_n_set(self, vals, layer=None):
         fiscalyear = self.get_actual_val(vals, 'fiscalyear_id',
@@ -543,7 +543,6 @@ class ItalyAccountBalance(models.Model):
     def generate_balance(self):
         # active_id = self._context.get('active_id')
         return {'type': 'ir.actions.act_window_close'}
-
 
 
 class ItalyAccountBalanceLine(models.Model):

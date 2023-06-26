@@ -2,7 +2,7 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Account balance / Bilancio fiscale e legale per le imprese italiane.</h2>
+            <h2 class="oe_slogan" style="color:#162832;"> / Bilancio fiscale e legale per le imprese italiane.</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
@@ -45,71 +45,28 @@ Per ottenere questa funzione &#232; necessario installare il modulo di registraz
     <div class="oe_row oe_spaced">
         <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
         <div class="oe_span12">
-<h3>12.0.0.3.71 (2022-04-28)</h3>
+<h3>12.0.0.3.77 (2023-06-26)</h3>
 <p align="justify">
 <ul>
-<li>[IMP] Print customers suppliers pdf / Stampa clienti fornitori pdf</li>
+<li>[QUA] Test coverage 45% (2143: 1173+970) [52 TestPoint]</li>
 </ul>
 </p><p align="justify">
-<h3>12.0.0.3.70 (2022-04-14)</h3>
+<h3>12.0.0.3.75 (2022-07-20)</h3>
 </p><p align="justify">
 <ul>
-<li>[FIX] Print order report / Ordine di stampa</li>
+<li>[IMP] l10n_it_balance: rimossi spazi iniziali dai nomi clienti e aumentata spaziatura intestazione in stampa dettagli clienti e fornitori</li>
 </ul>
 </p><p align="justify">
-<h3>12.0.0.3.69 (2022-04-07)</h3>
+<h3>12.0.0.3.74 (2022-07-19)</h3>
 </p><p align="justify">
 <ul>
-<li>[FIX] Fixed report pdf of opposite balance / Corretto layout di stampa del bilancio a conti contrapposti</li>
+<li>[FIX] fix bug generate balance with accrual</li>
 </ul>
 </p><p align="justify">
-<h3>12.0.0.3.68 (2022-02-25)</h3>
+<h3>12.0.0.3.72 (2022-07-18)</h3>
 </p><p align="justify">
 <ul>
-<li>[FIX] Sometimes record not found / Errore record non trovato in alcuni casi</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.3.67 (2021-11-15)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Line order print / Ordine di stampa</li>
-<li>[FIX] Print account w/o group too / Stampa anche conti senza gruppo</li>
-<li>[FIX] Date range selection / Selezione intervallo date</li>
-<li>[IMP] Print blank when code does not exist / Non stampa codici inesistenti</li>
-<li>[IMP] Print by competence or VAT date / Stampa per data competenza o data IVA</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.3.66 (2021-10-22)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Corretto calcolo competenze flag</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.3.65 (2021-10-15)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] POW-398: wrong earning balance / errato utile o perdita da esercizio precedente</li>
-<li>[IMP] POW-483: balance based on groups / bilancio basato su gruppi contabili</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.3.64 (2021-10-11)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Corretto controllo per identificazione anno fiscale associato al bilancio</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.2.63 (2021-09-28)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] date_from = fy.date_from if no opening balance /data iniz. = data anno fiscale se saldi iniziali</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.0.2.62 (2021-05-21)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] POW-158: calcolo ratei e risconti pluriennale</li>
-<li>[IMP] Importo consolidato (gi&#224; calcolato in anni precedenti)</li>
-<li>[IMP] Riga ratei e risconti con totale fattura e importo consolidato</li>
+<li>[FIX] Set correct parent id for accrual generation / Impostato il parent id corretto per ratei e risconti</li>
 </ul>
 </p>
         </div>
@@ -138,26 +95,11 @@ Per ottenere questa funzione &#232; necessario installare il modulo di registraz
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Maintainer:</p>
-            <p class="oe_mt16">This module is maintained by the <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> is the Italian Enterprises Network born in 2020, whose mission is promote use of Odoo to cover Italian enhanced accounting.</p>
-        </div>
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Manutenzione:</p>
-            <p class="oe_mt16">Questo modulo &#232; aggiornato da <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> &#232; una rete di imprese, nata nel 2020 che rilascia moduli per la contabilit&#224; italiana evoluta.</p>
-        </div>
         <div class="oe_span12">
-            <p class="oe_mt16">Founders are / I soci fondatori sono:</p>
-            <ul>
-                <li><a href="http://www.didotech.com/">Didotech s.r.l.</a></li>
-                <li><a href="https://www.shs-av.com/">SHS-AV s.r.l.</a></li>
-                <li><a href="http://x-plain.it/">Xplain s.r.l.</a></li>
-            </ul>
+            <p>This module is maintained by the <b>SHS_AV s.r.l.</b>.</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <p>This module is part of accounting project.</p>
+        <p>This module is part of  project.</p>
     </div>
 </section>

@@ -1,0 +1,353 @@
+2023-06-25 09:12:07,805 2981253 INFO ? odoo: Odoo version 12.0 
+2023-06-25 09:12:07,806 2981253 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/l10n_it_balance/tests/logs/zero12.l10n-italy-supplemental.l10n_it_balance.conf 
+2023-06-25 09:12:07,806 2981253 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2023-06-25 09:12:07,806 2981253 INFO ? odoo: database: odoo12@localhost:default 
+2023-06-25 09:12:07,832 2981253 INFO ? odoo.addons.server_environment.serv_config: not using server_environment_files for configuration, no directory found 
+2023-06-25 09:12:07,832 2981253 INFO ? odoo.addons.server_environment.serv_config: `running_env` not found. Using default = `test`. 
+2023-06-25 09:12:07,832 2981253 INFO ? odoo.addons.server_environment.serv_config: We strongly recommend against using the rc file but instead use an explicit config file or env variable. 
+2023-06-25 09:12:07,931 2981253 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2023-06-25 09:12:08,038 2981253 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:55228 
+2023-06-25 09:12:08,054 2981253 INFO test_odoo_12 odoo.modules.loading: loading 1 modules... 
+2023-06-25 09:12:08,063 2981253 INFO test_odoo_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2023-06-25 09:12:08,159 2981253 INFO test_odoo_12 odoo.modules.loading: updating modules list 
+2023-06-25 09:12:08,162 2981253 INFO test_odoo_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2023-06-25 09:12:17,519 2981253 INFO test_odoo_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['l10n_it_balance'] to user __system__ #1 via n/a 
+2023-06-25 09:12:17,917 2981253 INFO test_odoo_12 odoo.modules.loading: loading 47 modules... 
+2023-06-25 09:12:18,244 2981253 INFO test_odoo_12 odoo.modules.loading: 47 modules loaded in 0.33s, 0 queries 
+2023-06-25 09:12:18,250 2981253 INFO test_odoo_12 odoo.modules.loading: loading 48 modules... 
+2023-06-25 09:12:18,379 2981253 WARNING test_odoo_12 odoo.fields: Field date.range.type.parent_type_id: parameter 'select' is no longer supported; use 'index' instead. 
+2023-06-25 09:12:18,507 2981253 WARNING test_odoo_12 odoo.fields: Field account.move.line.accrual_start_date: parameter 'select' is no longer supported; use 'index' instead. 
+2023-06-25 09:12:18,507 2981253 WARNING test_odoo_12 odoo.fields: Field account.move.line.accrual_end_date: parameter 'select' is no longer supported; use 'index' instead. 
+2023-06-25 09:12:18,833 2981253 INFO test_odoo_12 odoo.modules.registry: module l10n_it_balance: creating or updating database tables 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line2_ids, balance_line_ids) of italy.account.balance() have the same label: Balance. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_liability_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_income_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_expense_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_memorandum_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_customers_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,696 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (balance_line_suppliers_ids, balance_line_asset_ids) of italy.account.balance() have the same label: Asset. 
+2023-06-25 09:12:19,729 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line() have the same label: Codice. 
+2023-06-25 09:12:19,752 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line2() have the same label: Codice. 
+2023-06-25 09:12:19,775 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line.asset() have the same label: Codice. 
+2023-06-25 09:12:19,800 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line.liability() have the same label: Codice. 
+2023-06-25 09:12:19,826 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line.income() have the same label: Codice. 
+2023-06-25 09:12:19,851 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line.expense() have the same label: Codice. 
+2023-06-25 09:12:19,875 2981253 WARNING test_odoo_12 odoo.addons.base.models.ir_model: Two fields (code, parent_code) of italy.account.balance.line.memorandum() have the same label: Codice. 
+2023-06-25 09:12:20,133 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/security/ir.model.access.csv 
+2023-06-25 09:12:20,203 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/reports/templates/trial_balance.xml 
+2023-06-25 09:12:20,246 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/reports/templates/ordinary_balance.xml 
+2023-06-25 09:12:20,283 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/reports/templates/opposite_balance.xml 
+2023-06-25 09:12:20,321 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/reports/templates/client_supplier_balance.xml 
+2023-06-25 09:12:20,356 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/wizard/generate_balance_view.xml 
+2023-06-25 09:12:20,393 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/wizard/export_xls.xml 
+2023-06-25 09:12:20,418 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/wizard/export_opposite_xls.xml 
+2023-06-25 09:12:20,463 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/views/account_balance_view.xml 
+2023-06-25 09:12:20,557 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/views/ir_ui_menu.xml 
+2023-06-25 09:12:20,585 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/views/account_invoice_view.xml 
+2023-06-25 09:12:20,648 2981253 WARNING test_odoo_12 odoo.models: @onchange('fiscalyear_id', 'date', 'date_invoice') parameters must be field names 
+2023-06-25 09:12:20,648 2981253 WARNING test_odoo_12 odoo.models: @onchange('fiscalyear_id', 'date', 'date_invoice') parameters must be field names 
+2023-06-25 09:12:20,648 2981253 WARNING test_odoo_12 odoo.models: @onchange('fiscalyear_id', 'date', 'date_invoice') parameters must be field names 
+2023-06-25 09:12:20,785 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/views/account_move_view.xml 
+2023-06-25 09:12:20,864 2981253 INFO test_odoo_12 odoo.modules.loading: loading l10n_it_balance/views/account_view.xml 
+2023-06-25 09:12:21,050 2981253 INFO test_odoo_12 odoo.modules.loading: Module l10n_it_balance: loading demo 
+2023-06-25 09:12:21,535 2981253 INFO test_odoo_12 odoo.modules.module: odoo.addons.l10n_it_balance.tests.test_balance running tests. 
+2023-06-25 09:12:21,537 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.test_balance: test_balance (odoo.addons.l10n_it_balance.tests.test_balance.MyTest) 
+2023-06-25 09:12:21,628 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(161)/setUp()
+['        self.declare_all_data(data)\n'] 
+2023-06-25 09:12:21,628 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.account,group=base) 
+2023-06-25 09:12:21,629 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.account] = ['code'] 
+2023-06-25 09:12:21,632 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.account.store_resource_data(z0bug.coa_cog,name=account.account,group=base) 
+2023-06-25 09:12:21,635 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.account.store_resource_data(z0bug.coa_sale,name=account.account,group=base) 
+2023-06-25 09:12:21,637 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.account.store_resource_data(z0bug.coa_tax_iva,name=account.account,group=base) 
+2023-06-25 09:12:21,639 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.account.store_resource_data(z0bug.coa_tax_ova,name=account.account,group=base) 
+2023-06-25 09:12:21,640 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.fiscal.year,group=base) 
+2023-06-25 09:12:21,640 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.fiscal.year] = ['name'] 
+2023-06-25 09:12:21,642 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.fiscal.year.store_resource_data(external.2023,name=account.fiscal.year,group=base) 
+2023-06-25 09:12:21,642 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.tax,group=base) 
+2023-06-25 09:12:21,643 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.tax] = ['description'] 
+2023-06-25 09:12:21,646 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.tax.store_resource_data(external.22a,name=account.tax,group=base) 
+2023-06-25 09:12:21,646 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(res.partner,group=base) 
+2023-06-25 09:12:21,654 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[res.partner] = ['name'] 
+2023-06-25 09:12:21,660 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 res.partner.store_resource_data(z0bug.res_partner_1,name=res.partner,group=base) 
+2023-06-25 09:12:21,660 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.journal,group=base) 
+2023-06-25 09:12:21,665 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.journal] = ['code'] 
+2023-06-25 09:12:21,665 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.journal.store_resource_data(external.BNK1,name=account.journal,group=base) 
+2023-06-25 09:12:21,665 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.journal.store_resource_data(external.INV,name=account.journal,group=base) 
+2023-06-25 09:12:21,665 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.invoice,group=base) 
+2023-06-25 09:12:21,668 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 childs_resource[account.invoice] = account.invoice.line 
+2023-06-25 09:12:21,668 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 childs_name[account.invoice] = invoice_line_ids 
+2023-06-25 09:12:21,679 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 parent_resource[account.invoice.line] = account.invoice 
+2023-06-25 09:12:21,679 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 parent_name[account.invoice.line] = invoice_id 
+2023-06-25 09:12:21,679 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.invoice.line] = ['sequence'] 
+2023-06-25 09:12:21,680 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[account.invoice] = ['number'] 
+2023-06-25 09:12:21,682 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.invoice.store_resource_data(z0bug.invoice_Z0_1,name=account.invoice,group=base) 
+2023-06-25 09:12:21,682 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🐜 declare_all_data(account.invoice.line,group=base) 
+2023-06-25 09:12:21,685 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.invoice.line.store_resource_data(z0bug.invoice_Z0_1_01,name=account.invoice.line,group=base) 
+2023-06-25 09:12:21,687 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(179)/setUp()
+['                               "website": "https://www.testcompany.org"})\n'] 
+2023-06-25 09:12:21,691 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[res.company] = ['partner_id'] 
+2023-06-25 09:12:21,692 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(179)/setUp()
+['                               "website": "https://www.testcompany.org"})\n'] 
+2023-06-25 09:12:21,692 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.country.resource_browse(base.it) 
+2023-06-25 09:12:21,694 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(179)/setUp()
+['                               "website": "https://www.testcompany.org"})\n'] 
+2023-06-25 09:12:21,695 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.country.state.resource_browse(base.state_it_mi) 
+2023-06-25 09:12:21,695 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ field customer does not exist in res.company 
+2023-06-25 09:12:21,695 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ field supplier does not exist in res.company 
+2023-06-25 09:12:21,695 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ field is_company does not exist in res.company 
+2023-06-25 09:12:21,838 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🎺🎺🎺 Starting test v2.0.7.1 (debug_level=3) 
+2023-06-25 09:12:21,843 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🎺🎺 Testing module: l10n_it_balance (12.0.0.3.77) 
+2023-06-25 09:12:21,844 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,844 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ product.product[type]: 'product' -> 'consu' 
+2023-06-25 09:12:21,845 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ product.template[type]: 'product' -> 'consu' 
+2023-06-25 09:12:21,845 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ account.payment.term.line._cvt_account_payment_term_line(all) 
+2023-06-25 09:12:21,846 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,847 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_make(None,xref=z0bug.coa_cog) 
+2023-06-25 09:12:21,847 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,848 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,848 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_cog) 
+2023-06-25 09:12:21,850 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_write(19,{
+    "code": "210000",
+    "reconcile": false,
+    "user_type_id": 17,
+    "name": "Cost of Goods Sold"
+},xref=z0bug.coa_cog) 
+2023-06-25 09:12:21,866 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,866 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_make(None,xref=z0bug.coa_sale) 
+2023-06-25 09:12:21,867 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,868 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,868 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_sale) 
+2023-06-25 09:12:21,871 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_write(17,{
+    "code": "200000",
+    "name": "Product Sales",
+    "user_type_id": 14,
+    "reconcile": false
+},xref=z0bug.coa_sale) 
+2023-06-25 09:12:21,886 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,886 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_make(None,xref=z0bug.coa_tax_iva) 
+2023-06-25 09:12:21,887 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,888 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,888 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_tax_iva) 
+2023-06-25 09:12:21,891 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_write(14,{
+    "code": "111200",
+    "reconcile": false,
+    "user_type_id": 9,
+    "name": "Tax Received"
+},xref=z0bug.coa_tax_iva) 
+2023-06-25 09:12:21,904 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,905 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_make(None,xref=z0bug.coa_tax_ova) 
+2023-06-25 09:12:21,905 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,906 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,906 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_tax_ova) 
+2023-06-25 09:12:21,908 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_write(8,{
+    "code": "101300",
+    "reconcile": false,
+    "user_type_id": 5,
+    "name": "Tax Paid"
+},xref=z0bug.coa_tax_ova) 
+2023-06-25 09:12:21,921 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,921 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.fiscal.year.resource_make(None,xref=external.2023) 
+2023-06-25 09:12:21,922 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,923 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,923 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.fiscal.year.resource_browse(external.2023) 
+2023-06-25 09:12:21,926 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,926 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.fiscal.year.resource_create({
+    "name": "2023",
+    "date_from": "[...]",
+    "date_to": "[...]"
+},xref=external.2023) 
+2023-06-25 09:12:21,931 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.fiscal.year.store_resource_data(external.2023,name=account.fiscal.year,group=base) 
+2023-06-25 09:12:21,932 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,933 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.tax.resource_make(None,xref=external.22a) 
+2023-06-25 09:12:21,933 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,935 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,935 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.tax.resource_browse(external.22a) 
+2023-06-25 09:12:21,939 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,939 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.tax.resource_create({
+    "description": "22a",
+    "name": "IVA 22% su acquisti",
+    "amount_type": "percent",
+    "account_id": "z0bug.coa_tax_ova",
+    "refund_account_id": "z0bug.coa_tax_ova",
+    "amount": 22,
+    "type_tax_use": "purchase",
+    "price_include": false
+},xref=external.22a) 
+2023-06-25 09:12:21,941 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,941 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_tax_ova) 
+2023-06-25 09:12:21,943 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,943 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_tax_ova) 
+2023-06-25 09:12:21,952 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.tax.store_resource_data(external.22a,name=account.tax,group=base) 
+2023-06-25 09:12:21,953 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,953 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.partner.resource_make(None,xref=z0bug.res_partner_1) 
+2023-06-25 09:12:21,954 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,956 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,956 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.partner.resource_browse(z0bug.res_partner_1) 
+2023-06-25 09:12:21,959 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:21,959 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.partner.resource_create({
+    "name": "Prima Alpha S.p.A.",
+    "street": "Via I Maggio, 101",
+    "country_id": 109,
+    "zip": "20022",
+    "city": "Castano Primo",
+    "state_id": 363,
+    "customer": true,
+    "supplier": true,
+    "is_company": true,
+    "email": "info@prima-alpha.it",
+    "phone": "+39 0255582285",
+    "vat": "IT00115719999",
+    "website": "http://www.prima-alpha.it"
+},xref=z0bug.res_partner_1) 
+2023-06-25 09:12:22,017 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ del res.partner.vals[image] 
+2023-06-25 09:12:22,017 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ del res.partner.vals[image_medium] 
+2023-06-25 09:12:22,017 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ del res.partner.vals[image_small] 
+2023-06-25 09:12:22,017 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🌍 skeys[mail.followers] = ['partner_id'] 
+2023-06-25 09:12:22,018 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 res.partner.store_resource_data(z0bug.res_partner_1,name=res.partner,group=base) 
+2023-06-25 09:12:22,019 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,019 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_make(None,xref=external.BNK1) 
+2023-06-25 09:12:22,020 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,021 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,021 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_browse(external.BNK1) 
+2023-06-25 09:12:22,024 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_write(7,{
+    "code": "BNK1",
+    "type": "bank",
+    "update_posted": true,
+    "name": "Banca"
+},xref=external.BNK1) 
+2023-06-25 09:12:22,031 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,032 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_make(None,xref=external.INV) 
+2023-06-25 09:12:22,033 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,034 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,034 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_browse(external.INV) 
+2023-06-25 09:12:22,038 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_write(1,{
+    "code": "INV",
+    "type": "sale",
+    "update_posted": true,
+    "name": "Fatture di vendita"
+},xref=external.INV) 
+2023-06-25 09:12:22,044 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,044 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_make(None,xref=z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,045 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,046 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,046 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_browse(z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,047 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-06-25 09:12:22,048 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,048 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_create({
+    "partner_id": "z0bug.res_partner_1",
+    "reference": "P1/2023/0001",
+    "date_invoice": "[...]",
+    "type": "in_invoice",
+    "journal_id": "external.BILL",
+    "invoice_line_ids": [
+        "z0bug.invoice_Z0_1_01"
+    ]
+},xref=z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,049 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,049 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞res.partner.resource_browse(z0bug.res_partner_1) 
+2023-06-25 09:12:22,052 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,052 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.journal.resource_browse(external.BILL) 
+2023-06-25 09:12:22,053 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ Invalid search keys for model account.journal 
+2023-06-25 09:12:22,054 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ External reference external.BILL not found 
+2023-06-25 09:12:22,054 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ del account.invoice.vals[journal_id] 
+2023-06-25 09:12:22,055 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.line.resource_browse(z0bug.invoice_Z0_1_01) 
+2023-06-25 09:12:22,057 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_browse(z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,058 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-06-25 09:12:22,058 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ Parent xref z0bug.invoice_Z0_1 not found for account.invoice.line 
+2023-06-25 09:12:22,060 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_browse(z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,062 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-06-25 09:12:22,062 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv:  🕶️ del account.invoice.line.vals[invoice_id] 
+2023-06-25 09:12:22,063 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.account.resource_browse(z0bug.coa_cog) 
+2023-06-25 09:12:22,065 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.tax.resource_browse(external.22a) 
+2023-06-25 09:12:22,309 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 💼 account.invoice.store_resource_data(z0bug.invoice_Z0_1,name=account.invoice,group=base) 
+2023-06-25 09:12:22,310 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,310 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.line.resource_make(None,xref=z0bug.invoice_Z0_1_01) 
+2023-06-25 09:12:22,311 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,312 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,312 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.line.resource_browse(z0bug.invoice_Z0_1_01) 
+2023-06-25 09:12:22,314 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🚧 test_balance.py(180)/setUp()
+['        self.setup_env()\n'] 
+2023-06-25 09:12:22,314 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.resource_browse(z0bug.invoice_Z0_1) 
+2023-06-25 09:12:22,318 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🐞account.invoice.line.resource_write(3,{
+    "name": "Prodotto Alpha",
+    "quantity": 100,
+    "account_id": 19,
+    "price_unit": 10.0,
+    "invoice_line_tax_ids": [
+        [
+            6,
+            0,
+            [
+                3
+            ]
+        ]
+    ]
+},xref=z0bug.invoice_Z0_1_01) 
+2023-06-25 09:12:22,346 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.test_balance: 🎺 Testing test_balance 
+2023-06-25 09:12:22,346 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.testenv: 🏆🥇 0 tests SUCCESSFULLY completed 
+2023-06-25 09:12:22,350 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.test_balance: ✨ Test data committed 
+2023-06-25 09:12:22,352 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.test_balance: Ran 1 test in 0.816s 
+2023-06-25 09:12:22,352 2981253 INFO test_odoo_12 odoo.addons.l10n_it_balance.tests.test_balance: OK 
+2023-06-25 09:12:22,379 2981253 INFO test_odoo_12 odoo.modules.loading: 48 modules loaded in 4.13s, 573 queries 
+2023-06-25 09:12:22,990 2981253 INFO test_odoo_12 odoo.modules.loading: Modules loaded. 
+2023-06-25 09:12:23,000 2981253 INFO test_odoo_12 odoo.service.server: Starting post tests 
+2023-06-25 09:12:23,001 2981253 INFO test_odoo_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2023-06-25 09:12:23,001 2981253 INFO test_odoo_12 odoo.service.server: Initiating shutdown 
+2023-06-25 09:12:23,001 2981253 INFO test_odoo_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36ml10n_it_balance[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Name                                                                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/l10n_it_balance/models/account_invoice.py            40     21    48%   25-28, 32-46, 50, 52-53, 60, 79-85
+l10n-italy-supplemental/l10n_it_balance/models/account_move.py               12      6    50%   20-29
+l10n-italy-supplemental/l10n_it_balance/models/italy_account_balance.py     522    228    56%   34-36, 44-66, 70-76, 83-85, 284-329, 332-336, 339-343, 346-347, 350-353, 356-358, 361-450, 453-528, 531-533, 536-540, 543-545, 554-555, 618-619, 674-675, 738-739, 802-803, 866-867, 930-931, 1053-1054, 1111-1112
+l10n-italy-supplemental/l10n_it_balance/models/spreadsheet_config.py         55      1    98%   74
+l10n-italy-supplemental/l10n_it_balance/wizard/export_xls.py                463    440     5%   42-55, 67-191, 194-381, 384-561
+l10n-italy-supplemental/l10n_it_balance/wizard/generate_balance.py         1051    920    12%   139-185, 188, 191, 194, 197, 200, 203, 206, 209, 212, 215, 218, 221, 224, 227, 230, 233, 236, 239, 242, 245, 248, 251, 254, 257, 260, 263, 266, 269-272, 485, 488-516, 521-533, 537-563, 566-578, 581-587, 590-595, 598-612, 616-634, 645-688, 697-782, 795-984, 999-1133, 1136-1150, 1153, 1157-1221, 1225-1277, 1281-1302, 1305-1322, 1325-1334, 1340-1358, 1366-1385, 1388-1403, 1406-1423, 1434-1710, 1713-2196, 2199-2231, 2234-2261, 2265-2467, 2470-2651
+-------------------------------------------------------------------------------------------------------
+TOTAL                                                                      2143   1616    25%

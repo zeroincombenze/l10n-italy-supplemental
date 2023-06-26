@@ -1,3 +1,18 @@
+12.0.0.3.77 (2023-06-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [QUA] Test coverage 45% (2143: 1173+970) [52 TestPoint]
+
+12.0.0.3.75 (2022-07-20)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] l10n_it_balance: rimossi spazi iniziali dai nomi clienti e aumentata spaziatura intestazione in stampa dettagli clienti e fornitori
+
+12.0.0.3.74 (2022-07-19)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] fix bug generate balance with accrual
+
 12.0.0.3.72 (2022-07-18)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
