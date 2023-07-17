@@ -554,8 +554,9 @@ class TestRiba(SingleTransactionCase):
         for due in due_records:
             vals = {
                 "account_id": due.account_id.id,
-                "debit": 0.0,
-                "credit": due.credit or due.debit,
+                "partner_id": due.partner_id.id,
+                "debit": 0.0 if due.debit else due.credit,
+                "credit": 0.0 if due.credit else due.debit,
             }
             found = False
             for tmpl_move in template:
@@ -566,6 +567,7 @@ class TestRiba(SingleTransactionCase):
                 tmpl_move = {
                     "line_ids": [vals],
                     "date_maturity": due.date_maturity,
+                    "date": datetime.today()
                 }
                 template.append(tmpl_move)
         for tmpl_move in template:
@@ -574,7 +576,7 @@ class TestRiba(SingleTransactionCase):
                 vals = {
                     "account_id": acceptance_account_id.id,
                     "debit": line["credit"],
-                    "credit": 0.0,
+                    "credit": line["debit"],
                     "date_maturity": tmpl_move["date_maturity"],
                 }
                 line_ids.append(vals)

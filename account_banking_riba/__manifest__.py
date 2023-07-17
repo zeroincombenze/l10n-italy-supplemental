@@ -7,7 +7,7 @@
 #
 {
     "name": "Account RiBa CBI",
-    "version": "12.0.4.5.33",
+    "version": "12.0.4.5.34",
     "category": "Banking addons",
     "summary": "Gestione Ri.Ba.",
     "author": "LibrERP enterprise network and other partners",

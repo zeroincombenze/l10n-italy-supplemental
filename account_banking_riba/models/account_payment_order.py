@@ -251,33 +251,33 @@ class AccountPaymentOrder(models.Model):
 
     # end _registra_accredito_riba
 
-    # @api.multi
-    # def _create_reconcile_move(self, hashcode, blines):
-    #     self.ensure_one()
-    #     post_move = self.payment_mode_id.post_move
-    #     am_obj = self.env["account.move"]
-    #     mvals = self._prepare_move(blines)
-    #     move = am_obj.create(mvals)
-    #     is_wallet = self.company_partner_bank_id.bank_is_wallet
-    #     pm_code = self.payment_method_id.code
-    #     if is_wallet and pm_code == "riba_cbi":
-    #         move.invoice_date = move.date
-    #         move.date = fields.Date.today()
-    #         fiscalyears = self.env["account.fiscal.year"].search(
-    #             [
-    #                 ("date_from", "<=", move.date),
-    #                 ("date_to", ">=", move.date),
-    #                 ("company_id", "=", move.company_id.id),
-    #                 ("state", "!=", "done"),
-    #             ],
-    #             limit=1,
-    #         )
-    #
-    #         if fiscalyears:
-    #             move.fiscalyear_id = fiscalyears[0]
-    #
-    #     blines.reconcile_payment_lines()
-    #     if post_move:
-    #         move.post()
-    #
-    # # end _create_reconcile_move
+    @api.multi
+    def _create_reconcile_move(self, hashcode, blines):
+        self.ensure_one()
+        post_move = self.payment_mode_id.post_move
+        am_obj = self.env["account.move"]
+        mvals = self._prepare_move(blines)
+        move = am_obj.create(mvals)
+        is_wallet = self.company_partner_bank_id.bank_is_wallet
+        pm_code = self.payment_method_id.code
+        if is_wallet and pm_code == "riba_cbi":
+            move.invoice_date = move.date
+            move.date = fields.Date.today()
+            fiscalyears = self.env["account.fiscal.year"].search(
+                [
+                    ("date_from", "<=", move.date),
+                    ("date_to", ">=", move.date),
+                    ("company_id", "=", move.company_id.id),
+                    ("state", "!=", "done"),
+                ],
+                limit=1,
+            )
+
+            if fiscalyears:
+                move.fiscalyear_id = fiscalyears[0]
+
+        blines.reconcile_payment_lines()
+        if post_move:
+            move.post()
+
+    # end _create_reconcile_move

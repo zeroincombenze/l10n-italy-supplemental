@@ -1,7 +1,14 @@
+12.0.6.5.34 (2023-07-17)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Payment move date on wallet bank / Data accettazione per conto portafoglio
+* [QUA] Test coverage 66% (460: 155+305) [117 TestPoint]
+
 12.0.6.5.33 (2023-05-23)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [REF] Refactoring: migrated from 10.0
+* [QUA] Test coverage 65% (442: 154+288) [113 TestPoint]
 
 12.0.6.5.32 (2023-05-22)
 ~~~~~~~~~~~~~~~~~~~~~~~~

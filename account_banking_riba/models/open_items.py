@@ -29,7 +29,6 @@ except ImportError:
     from odoo.exceptions import UserError
 
 
-
 class OpenItems(object):
 
     def __init__(self):

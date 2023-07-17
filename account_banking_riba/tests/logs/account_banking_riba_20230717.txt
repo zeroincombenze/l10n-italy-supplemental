@@ -1,0 +1,140 @@
+2023-07-17 19:59:52,788 2144685 INFO ? odoo: Odoo version 12.0 
+2023-07-17 19:59:52,788 2144685 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/account_banking_riba/tests/logs/zero12.l10n-italy-supplemental.account_banking_riba.conf 
+2023-07-17 19:59:52,788 2144685 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2023-07-17 19:59:52,788 2144685 INFO ? odoo: database: odoo12@localhost:default 
+2023-07-17 19:59:52,896 2144685 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2023-07-17 19:59:53,015 2144685 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:62864 
+2023-07-17 19:59:53,031 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading 1 modules... 
+2023-07-17 19:59:53,040 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2023-07-17 19:59:53,143 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: updating modules list 
+2023-07-17 19:59:53,146 2144685 INFO test_account_banking_riba_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2023-07-17 20:00:02,535 2144685 INFO test_account_banking_riba_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['account_banking_riba'] to user __system__ #1 via n/a 
+2023-07-17 20:00:03,241 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading 61 modules... 
+2023-07-17 20:00:03,677 2144685 WARNING test_account_banking_riba_12 odoo.models: The model partner.duedates.datarange has no _description 
+2023-07-17 20:00:04,136 2144685 WARNING test_account_banking_riba_12 odoo.models: The model wizard.payment.order.credit has no _description 
+2023-07-17 20:00:04,138 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: 61 modules loaded in 0.90s, 0 queries 
+2023-07-17 20:00:04,144 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading 62 modules... 
+2023-07-17 20:00:04,274 2144685 WARNING test_account_banking_riba_12 odoo.fields: Field date.range.type.parent_type_id: parameter 'select' is no longer supported; use 'index' instead. 
+2023-07-17 20:00:04,639 2144685 WARNING test_account_banking_riba_12 odoo.models: The model wizard.payment.riba.supplier has no _description 
+2023-07-17 20:00:04,828 2144685 INFO test_account_banking_riba_12 odoo.modules.registry: module account_banking_riba: creating or updating database tables 
+2023-07-17 20:00:05,342 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading account_banking_riba/views/res_config.xml 
+2023-07-17 20:00:05,500 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading account_banking_riba/data/account_payment_method.xml 
+2023-07-17 20:00:05,513 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: loading account_banking_riba/wizard/wizard_payment_riba_supplier.xml 
+2023-07-17 20:00:05,539 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: Module account_banking_riba: loading demo 
+2023-07-17 20:00:05,561 2144685 INFO test_account_banking_riba_12 odoo.modules.module: odoo.addons.account_banking_riba.tests.test_riba running tests. 
+2023-07-17 20:00:05,562 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.test_riba: test_payment_order (odoo.addons.account_banking_riba.tests.test_riba.TestRiba) 
+2023-07-17 20:00:05,947 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ xref 'z0bug.mycompany' -> 'base.main_company' 
+2023-07-17 20:00:05,948 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ xref 'z0bug.partner_mycompany' -> 'base.main_partner' 
+2023-07-17 20:00:05,956 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: 🎺🎺🎺 Starting test v2.0.11 (debug_level=0) 
+2023-07-17 20:00:05,961 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: 🎺🎺 Testing module: account_banking_riba (12.0.4.5.34) 
+2023-07-17 20:00:05,963 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ product.product[type]: 'product' -> 'consu' 
+2023-07-17 20:00:05,963 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ product.template[type]: 'product' -> 'consu' 
+2023-07-17 20:00:05,964 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ account.payment.term.line._cvt_account_payment_term_line(all) 
+2023-07-17 20:00:06,085 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ No *2many value for account.fiscal.position.[] 
+2023-07-17 20:00:06,146 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.payment_1 not found for account.payment.term.line 
+2023-07-17 20:00:06,171 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.payment_2 not found for account.payment.term.line 
+2023-07-17 20:00:06,180 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.payment_2 not found for account.payment.term.line 
+2023-07-17 20:00:06,304 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: xref ('product.template') 'z0bug.product_template_1' -> ('product.product') 'z0bug.product_product_1' 
+2023-07-17 20:00:06,401 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: xref ('product.template') 'z0bug.product_template_2' -> ('product.product') 'z0bug.product_product_2' 
+2023-07-17 20:00:06,658 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,670 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,670 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.invoice_Z0_1 not found for account.invoice.line 
+2023-07-17 20:00:06,671 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,923 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,939 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,939 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.invoice_Z0_2 not found for account.invoice.line 
+2023-07-17 20:00:06,941 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,951 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:06,951 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Parent xref z0bug.invoice_Z0_2 not found for account.invoice.line 
+2023-07-17 20:00:06,954 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: ⚠ Invalid search keys for model account.invoice 
+2023-07-17 20:00:07,252 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.test_riba: 🎺 Starting test_payment_order() 
+2023-07-17 20:00:07,472 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.duedate_plus.line records with IDs: [1] 
+2023-07-17 20:00:07,730 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [1, 2, 3] 
+2023-07-17 20:00:07,753 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [1] 
+2023-07-17 20:00:07,787 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [4, 5, 6] 
+2023-07-17 20:00:07,810 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [2] 
+2023-07-17 20:00:07,856 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [7, 8, 9] 
+2023-07-17 20:00:07,880 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [3] 
+2023-07-17 20:00:07,925 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [10, 11, 12] 
+2023-07-17 20:00:07,949 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [4] 
+2023-07-17 20:00:07,995 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [13, 14, 15] 
+2023-07-17 20:00:08,021 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [5] 
+2023-07-17 20:00:08,062 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [16, 17, 18] 
+2023-07-17 20:00:08,087 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [6] 
+2023-07-17 20:00:08,125 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [19, 20, 21] 
+2023-07-17 20:00:08,153 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [7] 
+2023-07-17 20:00:08,192 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [22, 23, 24] 
+2023-07-17 20:00:08,220 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [8] 
+2023-07-17 20:00:08,259 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [25, 26, 27] 
+2023-07-17 20:00:08,288 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [9] 
+2023-07-17 20:00:08,328 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [28, 29, 30] 
+2023-07-17 20:00:08,355 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [10] 
+2023-07-17 20:00:08,414 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [31, 32, 33] 
+2023-07-17 20:00:08,442 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [11] 
+2023-07-17 20:00:08,482 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [34, 35, 36] 
+2023-07-17 20:00:08,511 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [12] 
+2023-07-17 20:00:08,694 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [37, 38, 39] 
+2023-07-17 20:00:08,719 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [13] 
+2023-07-17 20:00:08,765 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [40, 41, 42] 
+2023-07-17 20:00:08,792 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [14] 
+2023-07-17 20:00:08,914 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [43, 44, 45] 
+2023-07-17 20:00:08,935 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [15] 
+2023-07-17 20:00:09,160 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.duedate_plus.line records with IDs: [2, 3] 
+2023-07-17 20:00:09,451 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [49, 50, 51] 
+2023-07-17 20:00:09,477 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [17] 
+2023-07-17 20:00:09,515 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [52, 53, 54] 
+2023-07-17 20:00:09,539 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [18] 
+2023-07-17 20:00:09,583 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [55, 56, 57] 
+2023-07-17 20:00:09,604 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [19] 
+2023-07-17 20:00:09,646 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [58, 59, 60] 
+2023-07-17 20:00:09,671 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [20] 
+2023-07-17 20:00:09,714 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [61, 62, 63] 
+2023-07-17 20:00:09,740 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [21] 
+2023-07-17 20:00:09,773 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [64, 65, 66] 
+2023-07-17 20:00:09,794 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [22] 
+2023-07-17 20:00:09,829 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [67, 68, 69] 
+2023-07-17 20:00:09,850 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [23] 
+2023-07-17 20:00:09,884 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [70, 71, 72] 
+2023-07-17 20:00:09,909 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [24] 
+2023-07-17 20:00:09,944 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [73, 74, 75] 
+2023-07-17 20:00:09,966 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [25] 
+2023-07-17 20:00:10,000 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [76, 77, 78] 
+2023-07-17 20:00:10,021 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [26] 
+2023-07-17 20:00:10,073 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [79, 80, 81] 
+2023-07-17 20:00:10,101 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [27] 
+2023-07-17 20:00:10,141 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [82, 83, 84] 
+2023-07-17 20:00:10,167 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [28] 
+2023-07-17 20:00:10,357 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [85, 86, 87] 
+2023-07-17 20:00:10,382 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [29] 
+2023-07-17 20:00:10,426 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [88, 89, 90] 
+2023-07-17 20:00:10,451 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [30] 
+2023-07-17 20:00:10,590 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.accountbrief records with IDs: [91, 92, 93] 
+2023-07-17 20:00:10,612 2144685 INFO test_account_banking_riba_12 odoo.models.unlink: User #1 deleted account.move.vatbrief records with IDs: [31] 
+2023-07-17 20:00:12,150 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.testenv: 🏆🥇 117 tests SUCCESSFULLY completed 
+2023-07-17 20:00:12,323 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.test_riba: Ran 1 test in 6.761s 
+2023-07-17 20:00:12,323 2144685 INFO test_account_banking_riba_12 odoo.addons.account_banking_riba.tests.test_riba: OK 
+2023-07-17 20:00:12,323 2144685 INFO test_account_banking_riba_12 odoo.modules.module: odoo.addons.account_banking_riba.tests.test_riba tested in 6.76s, 5814 queries 
+2023-07-17 20:00:12,349 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: 62 modules loaded in 8.20s, 5821 queries 
+2023-07-17 20:00:13,042 2144685 INFO test_account_banking_riba_12 odoo.modules.loading: Modules loaded. 
+2023-07-17 20:00:13,049 2144685 INFO test_account_banking_riba_12 odoo.service.server: Starting post tests 
+2023-07-17 20:00:13,050 2144685 INFO test_account_banking_riba_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2023-07-17 20:00:13,050 2144685 INFO test_account_banking_riba_12 odoo.service.server: Initiating shutdown 
+2023-07-17 20:00:13,050 2144685 INFO test_account_banking_riba_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36maccount_banking_riba[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+Name                                                                                  Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/account_banking_riba/models/account_move_line.py                 48     27    44%   16-23, 29, 37, 43, 60-97
+l10n-italy-supplemental/account_banking_riba/models/account_payment_line.py              13      2    85%   15, 24
+l10n-italy-supplemental/account_banking_riba/models/account_payment_mode.py              12      4    67%   25-28
+l10n-italy-supplemental/account_banking_riba/models/account_payment_order.py            111     34    69%   20, 28, 39, 66, 68-73, 90, 96-99, 103, 107, 113, 117-118, 123, 131, 150, 161, 163, 165, 167, 169, 174, 179, 191-199, 202-210, 255
+l10n-italy-supplemental/account_banking_riba/models/common.py                             7      1    86%   22
+l10n-italy-supplemental/account_banking_riba/models/open_items.py                       202     44    78%   61, 78, 82, 84, 89-91, 95-98, 136-150, 164, 169, 175, 179, 182, 206, 249-256, 266, 312-314, 322-323, 332-339, 342-349
+l10n-italy-supplemental/account_banking_riba/models/res_company.py                       12      2    83%   25, 28
+l10n-italy-supplemental/account_banking_riba/models/res_config.py                         4      0   100%
+l10n-italy-supplemental/account_banking_riba/wizard/wizard_payment_riba_supplier.py      51     41    20%   18-25, 39-106
+-------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                   460    155    66%
