@@ -1,6 +1,6 @@
 
 ===================
-|icon|  12.0.4.5.33
+|icon|  12.0.4.5.34
 ===================
 
 
@@ -161,10 +161,17 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+12.0.6.5.34 (2023-07-17)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Payment move date on wallet bank / Data accettazione per conto portafoglio
+* [QUA] Test coverage 66% (460: 155+305) [117 TestPoint]
+
 12.0.6.5.33 (2023-05-23)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [REF] Refactoring: migrated from 10.0
+* [QUA] Test coverage 65% (442: 154+288) [113 TestPoint]
 
 12.0.6.5.32 (2023-05-22)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,11 +215,6 @@ ChangeLog History / Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Impostato flag incasso effettuato se il conto non è di portafoglio e il file viene generato
-
-12.0.3.5.23 (2022-07-04)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Corretta dipendenza
 
 
 
