@@ -1,8 +1,15 @@
+# [antoniov: 2022-11-09]
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.a
+*.obj
+*.exe
+/.venv
+/.pytest_cache
 
 # C extensions
+*.o
 *.so
 
 # Distribution / packaging
@@ -21,6 +28,19 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+*.eggs
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# generated for windows installer?
+install/win32/*.bat
+install/win32/meta.py# needed only when building for win32
+setup/win32/static/less/
+setup/win32/static/wkhtmltopdf/
+setup/win32/static/postgresql*.exe
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -28,32 +48,38 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+cover/
+
+# Node + Javascripts packages
+*.json
 
 # Translations
 *.mo
 
 # Pycharm
-.idea
+.idea/
+
+# Eclipse
+.settings
+
+# Visual Studio cache/options directory
+.vs/
+.vscode
+
+# OSX Files
+.DS_Store
+
+# Django stuff:
+*.log
+
+# Komodo
+*.komodoproject
+.komodotools
 
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
-# Rope
-.ropeproject
-# Sphinx documentation & documentation
-docs/_build/
-_build/
-latex/
-html/
-# docs/
-# Backup files & Temporay files
-*~
-*.swp
-*.log
-*.bak
-*.out
-=======
 
 # Rope
 .ropeproject
@@ -61,13 +87,31 @@ html/
 # Sphinx documentation
 docs/_build/
 
+# Bazaar
+.bzr/
+
+# hg stuff
+*.orig
+
 # Backup files
 *~
 *.swp
 
-# unit test generated files
+# Junks
+*.bak
+*.out
+*.conf
+.tmp
+.tracehis
+.tracehistory
+test*.pdf
+tmp.*
+example_*
+/.settings/
+/share/
 stdout.log
 *.oca
 *.z0i
-l10n-italy-supplemental/
-.gitrepname
+#
+# tools building path
+!static/lib/
