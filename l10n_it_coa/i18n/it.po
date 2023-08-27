@@ -1,0 +1,154 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_it_coa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-27 14:06+0000\n"
+"PO-Revision-Date: 2023-08-27 14:06+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_at
+msgid "EU-OSS AT - Austria"
+msgstr "EU-OSS AT - Austria"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_be
+msgid "EU-OSS BE – Belgio"
+msgstr "EU-OSS BE – Belgio"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_bg
+msgid "EU-OSS BG – Bulgaria"
+msgstr "EU-OSS BG – Bulgaria"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_cy
+msgid "EU-OSS CY – Cipro"
+msgstr "EU-OSS CY – Cipro"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_cz
+msgid "EU-OSS CZ – Rep. Ceca"
+msgstr "EU-OSS CZ – Rep. Ceca"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_de
+msgid "EU-OSS DE – Germania"
+msgstr "EU-OSS DE – Germania"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_dk
+msgid "EU-OSS DK – Danimarca"
+msgstr "EU-OSS DK – Danimarca"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_ee
+msgid "EU-OSS EE – Estonia"
+msgstr "EU-OSS EE – Estonia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_el
+msgid "EU-OSS EL – Grecia"
+msgstr "EU-OSS EL – Grecia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_es
+msgid "EU-OSS ES – Spagna"
+msgstr "EU-OSS ES – Spagna"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_fi
+msgid "EU-OSS FI – Finlandia"
+msgstr "EU-OSS FI – Finlandia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_fr
+msgid "EU-OSS FR – Francia"
+msgstr "EU-OSS FR – Francia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_hr
+msgid "EU-OSS HR – Croazia"
+msgstr "EU-OSS HR – Croazia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_hu
+msgid "EU-OSS HU – Ungheria"
+msgstr "EU-OSS HU – Ungheria"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_ie
+msgid "EU-OSS IE – Eire"
+msgstr "EU-OSS IE – Eire"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_it
+msgid "EU-OSS IT – Italia"
+msgstr "EU-OSS IT – Italia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_lt
+msgid "EU-OSS LT – Lituania"
+msgstr "EU-OSS LT – Lituania"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_lu
+msgid "EU-OSS LU – Lussemburgo"
+msgstr "EU-OSS LU – Lussemburgo"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_lv
+msgid "EU-OSS LV – Lettonia"
+msgstr "EU-OSS LV – Lettonia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_mt
+msgid "EU-OSS MT – Malta"
+msgstr "EU-OSS MT – Malta"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_nl
+msgid "EU-OSS NL – Paesi Bassi"
+msgstr "EU-OSS NL – Paesi Bassi"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_pl
+msgid "EU-OSS PL – Polonia"
+msgstr "EU-OSS PL – Polonia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_pt
+msgid "EU-OSS PT – Portogallo"
+msgstr "EU-OSS PT – Portogallo"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_ro
+msgid "EU-OSS RO – Romania"
+msgstr "EU-OSS RO – Romania"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_se
+msgid "EU-OSS SE – Svezia"
+msgstr "EU-OSS SE – Svezia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_si
+msgid "EU-OSS SI – Slovenia"
+msgstr "EU-OSS SI – Slovenia"
+
+#. module: l10n_it_coa
+#: model:account.tax.group,name:l10n_it_coa.tax_group_sk
+msgid "EU-OSS SK – Slovacchia"
+msgstr "EU-OSS SK – Slovacchia"
+
+
