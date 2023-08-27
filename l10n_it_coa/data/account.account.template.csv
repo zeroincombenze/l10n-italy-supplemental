@@ -483,7 +483,6 @@ id,code,name,user_type_id:id,group_id:id,reconcile,chart_template_id:id
 550560,550560,Insussistenze attive ordinarie diverse,account.data_account_type_revenue,55,FALSE,l10n_chart_it_zeroincombenze
 610100,610100,Acq. Merce,account.data_account_type_direct_costs,61,FALSE,l10n_chart_it_zeroincombenze
 610110,610110,Acq. Materie prime,account.data_account_type_direct_costs,61,FALSE,l10n_chart_it_zeroincombenze
-621120,621120,Spese di Incasso,account.data_account_type_expenses,62,FALSE,l10n_chart_it_zeroincombenze
 610140,610140,Acq. Imballaggi,account.data_account_type_direct_costs,61,FALSE,l10n_chart_it_zeroincombenze
 610200,610200,Acq. Materiali di consumo,account.data_account_type_direct_costs,61,FALSE,l10n_chart_it_zeroincombenze
 610250,610250,Acq. Semilavorati,account.data_account_type_direct_costs,61,FALSE,l10n_chart_it_zeroincombenze

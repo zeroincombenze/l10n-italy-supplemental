@@ -1,0 +1,37 @@
+2023-08-27 14:35:21,545 78318 INFO ? odoo: Odoo version 12.0 
+2023-08-27 14:35:21,545 78318 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/l10n_it_coa/tests/logs/zero12.l10n-italy-supplemental.l10n_it_coa.conf 
+2023-08-27 14:35:21,545 78318 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2023-08-27 14:35:21,546 78318 INFO ? odoo: database: odoo12@localhost:default 
+2023-08-27 14:35:21,650 78318 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2023-08-27 14:35:21,755 78318 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:43914 
+2023-08-27 14:35:21,770 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading 1 modules... 
+2023-08-27 14:35:21,779 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2023-08-27 14:35:21,880 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: updating modules list 
+2023-08-27 14:35:21,883 78318 INFO test_l10n_it_coa_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2023-08-27 14:35:31,239 78318 INFO test_l10n_it_coa_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['l10n_it_coa'] to user __system__ #1 via n/a 
+2023-08-27 14:35:31,525 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading 37 modules... 
+2023-08-27 14:35:31,816 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: 37 modules loaded in 0.29s, 0 queries 
+2023-08-27 14:35:31,822 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading 38 modules... 
+2023-08-27 14:35:32,299 78318 INFO test_l10n_it_coa_12 odoo.modules.registry: module l10n_it_coa: creating or updating database tables 
+2023-08-27 14:35:32,311 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/l10n_it_chart_data.xml 
+2023-08-27 14:35:32,337 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.group.xml 
+2023-08-27 14:35:32,483 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.account.template.csv 
+2023-08-27 14:35:34,327 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.tax.group.csv 
+2023-08-27 14:35:34,350 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.tax.template.csv 
+2023-08-27 14:35:34,968 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.fiscal.position.template.csv 
+2023-08-27 14:35:35,017 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account.chart.template.csv 
+2023-08-27 14:35:35,044 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: loading l10n_it_coa/data/account_chart_template_data.xml 
+2023-08-27 14:35:35,055 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: Module l10n_it_coa: loading demo 
+2023-08-27 14:35:35,101 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: 38 modules loaded in 3.28s, 5 queries 
+2023-08-27 14:35:35,661 78318 INFO test_l10n_it_coa_12 odoo.modules.loading: Modules loaded. 
+2023-08-27 14:35:35,667 78318 INFO test_l10n_it_coa_12 odoo.service.server: Starting post tests 
+2023-08-27 14:35:35,668 78318 INFO test_l10n_it_coa_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2023-08-27 14:35:35,668 78318 INFO test_l10n_it_coa_12 odoo.service.server: Initiating shutdown 
+2023-08-27 14:35:35,668 78318 INFO test_l10n_it_coa_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36ml10n_it_coa[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+No data to report.
+No data to report.
