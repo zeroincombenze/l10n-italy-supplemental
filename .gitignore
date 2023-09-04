@@ -1,79 +1,117 @@
-# dotfiles
-.*
-!.gitignore
-#
+# [antoniov: 2022-11-09]
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.a
+*.obj
+*.exe
+/.venv
+/.pytest_cache
+
 # C extensions
+*.o
 *.so
-# hg stuff
-*.orig
-status
-# odoo filestore
-openerp/filestore
-# maintenance migration scripts
-openerp/addons/base/maintenance
-# generated for windows installer?
-install/win32/*.bat
-install/win32/meta.py
-# various virtualenv / Distribution / packaging
+
+# Distribution / packaging
 .Python
-/bin/
-/build/
-/dist/
-/include/
-/lib/
-/lib64/
-/man/
-/share/
-/src/
 env/
+bin/
+build/
 develop-eggs/
+dist/
 eggs/
+lib/
+lib64/
 parts/
 sdist/
 var/
 *.egg-info/
 .installed.cfg
 *.egg
-*.egg-info
+*.eggs
 
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+
+# generated for windows installer?
+install/win32/*.bat
+install/win32/meta.py# needed only when building for win32
+setup/win32/static/less/
+setup/win32/static/wkhtmltopdf/
+setup/win32/static/postgresql*.exe
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
-# .coverage
-**/.coverage
+.coverage
 .cache
 nosetests.xml
 coverage.xml
 cover/
+
+# Node + Javascripts packages
+*.json
+
 # Translations
 *.mo
+
 # Pycharm
-.idea
+.idea/
+
+# Eclipse
+.settings
+
+# Visual Studio cache/options directory
+.vs/
+.vscode
+
+# OSX Files
+.DS_Store
+
+# Django stuff:
+*.log
+
+# Komodo
+*.komodoproject
+.komodotools
+
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
+
 # Rope
 .ropeproject
-# Sphinx documentation & documentation
+
+# Sphinx documentation
 docs/_build/
-_build/
-latex/
-html/
-# docs/
-# Backup files & Temporay files
+
+# Bazaar
+.bzr/
+
+# hg stuff
+*.orig
+
+# Backup files
 *~
 *.swp
-*.log
+
+# Junks
 *.bak
 *.out
-l10n-italy-supplemental/
+*.conf
+.tmp
+.tracehis
+.tracehistory
+test*.pdf
+tmp.*
+example_*
+/.settings/
+/share/
 stdout.log
 *.oca
 *.z0i
+#
+# tools building path
+!static/lib/
