@@ -1,0 +1,30 @@
+2023-09-04 07:51:55,375 3552551 INFO ? odoo: Odoo version 10.0
+2023-09-04 07:51:55,376 3552551 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/l10n_it_coa_minimal/tests/logs/zero10.l10n-italy-supplemental.l10n_it_coa_minimal.conf
+2023-09-04 07:51:55,376 3552551 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/apps-store', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/business-requirement', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/donation', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/event', u'/home/odoo/10.0/geospatial', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/infrastructure', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/manufacture-reporting', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/mgmtsystem', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/operating-unit', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/pos', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/project-agile', u'/home/odoo/10.0/project-reporting', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/webkit-tools', u'/home/odoo/10.0/website', u'/home/odoo/10.0/website-cms', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2023-09-04 07:51:55,376 3552551 INFO ? odoo: database: odoo10@localhost:default
+2023-09-04 07:51:55,396 3552551 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:20905
+2023-09-04 07:51:55,412 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading 1 modules...
+2023-09-04 07:51:55,501 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: 1 modules loaded in 0.09s, 0 queries
+2023-09-04 07:51:56,258 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading 33 modules...
+2023-09-04 07:51:56,364 3552551 INFO test_l10n_it_coa_minimal_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2023-09-04 07:51:56,529 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: 33 modules loaded in 0.27s, 0 queries
+2023-09-04 07:51:56,535 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading 34 modules...
+2023-09-04 07:51:56,836 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.registry: module l10n_it_coa_minimal: creating or updating database tables
+2023-09-04 07:51:56,912 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading l10n_it_coa_minimal/data/l10n_it_chart_data.xml
+2023-09-04 07:51:56,937 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading l10n_it_coa_minimal/data/account.account.template.csv
+2023-09-04 07:51:57,115 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading l10n_it_coa_minimal/data/account.tax.template.csv
+2023-09-04 07:51:57,162 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading l10n_it_coa_minimal/data/account.chart.template.csv
+2023-09-04 07:51:57,187 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: loading l10n_it_coa_minimal/data/account_chart_template_data.yml
+2023-09-04 07:51:57,246 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: 34 modules loaded in 0.71s, 5 queries
+2023-09-04 07:51:57,707 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: Modules loaded.
+2023-09-04 07:51:57,711 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2023-09-04 07:51:57,712 3552551 INFO test_l10n_it_coa_minimal_10 odoo.modules.registry: Registry changed, signaling through the database
+2023-09-04 07:51:57,713 3552551 INFO test_l10n_it_coa_minimal_10 odoo.service.server: Initiating shutdown
+2023-09-04 07:51:57,713 3552551 INFO test_l10n_it_coa_minimal_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36ml10n_it_coa_minimal[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+No data to report.
+No data to report.
