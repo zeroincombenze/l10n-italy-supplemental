@@ -461,14 +461,19 @@ class AccountInvoice(models.Model):
         If the document is an inbound document from e_invoice
         ensure "date" >= "e_invoice_received_date"
         """
-        if hasattr(self, "rc_self_invoice_id") and self._context.get('autofattura', False) is False and self.rc_self_invoice_id is False:
+        if (
+                hasattr(self, "rc_self_invoice_id")
+                and self._context.get('autofattura', False) is False
+                and self.rc_self_invoice_id is False
+        ):
 
             # Check if document is an incoming document
             is_in_doc = self.type in ("in_invoice", "in_refund")
 
             # Check if document has been generated from e_invoice
             from_e_invoice = (
-                hasattr(self, "e_invoice_received_date") and self.e_invoice_received_date
+                hasattr(self, "e_invoice_received_date")
+                and self.e_invoice_received_date
             )
 
             # Check if journal is set and is purchase
@@ -587,23 +592,20 @@ class AccountInvoice(models.Model):
             return fiscalyears[0].id
         else:
             return None
-        # end if
-
-    # end _search_fy
 
 
-class AccountInvoiceLine(models.Model):
-    _inherit = "account.invoice.line"
-
-    @api.onchange("account_id")
-    def _onchange_account_id(self):
-        if not self.account_id:
-            return
-        if self.account_id.is_parent:
-            self.account_id = False
-            warning_mess = {
-                "title": "Tipo non accettabile!",
-                "message": "Usare solo sottoconti",
-            }
-            return {"warning": warning_mess}
-        return super()._onchange_account_id()
+# class AccountInvoiceLine(models.Model):
+#     _inherit = "account.invoice.line"
+#
+#     @api.onchange("account_id")
+#     def _onchange_account_id(self):
+#         if not self.account_id:
+#             return
+#         if self.account_id.is_parent:
+#             self.account_id = False
+#             warning_mess = {
+#                 "title": "Tipo non accettabile!",
+#                 "message": "Usare solo sottoconti",
+#             }
+#             return {"warning": warning_mess}
+#         return super()._onchange_account_id()

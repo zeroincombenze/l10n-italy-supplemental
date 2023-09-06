@@ -1,3 +1,10 @@
+12.0.1.9.30 (2023-09-06)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Ignore partner check on closing records / Controllo nomitavo disabilitato per opearazioni di chiusura/apertura
+* [IMP] Removed old code about is_parent flag / Rimosso vecchio codice inutile
+* [QUA] Test coverage 25% (423: 317+106) 
+
 12.0.1.9.29 (2023-02-16)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -99,62 +106,62 @@
 * [FIX] No constraints se stato bozza o annullata
 
 12.0.1.8.9 (2020-09-29)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Rimosse definizioni dei campi e commentato controllo su termini di pagamento
 
 12.0.1.8.8 (2020-09-10)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * Patch per validazione fatture: ATTENZIONE Da approfondire
 
 12.0.1.8.8 (2020-09-10)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * Patch per validazione fatture: ATTENZIONE Da approfondire
 
 
 12.0.1.8.7 (2020-09-02)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [REF] AXI - 133 Account move lines mandatory / Avviso bloccante per registrazione senza linee
 
 
 12.0.1.7.7 (2020-09-02)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] AXI - 133 Account move lines mandatory / Avviso bloccante per registrazione senza linee
 
 
 12.0.1.6.7 (2020-09-02)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Invoice date mandatory in view / Data fattura per clenti e fornitori viene resa obbligatoria sulla vista
 
 
 12.0.1.6.6 (2020-09-01)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [MOD] modificate etichette dei campi data
 
 
 12.0.0.6.5 (2020-08-26)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Invoice date mandatory for invoices and credit notes / Data fattura obbligatoria per fatture e note di credito
 
 12.0.0.6.4 (2020-08-26)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] filter on journal / Filtro del registro sul tipo di movimento
 
 12.0.0.6.3 (2020-08-25)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] check partner enabled / Verifica sul conto e messaggio di errore se manca il partner
 
 12.0.0.5.3 (2020-08-21)
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] type readonly if account.move has lines / Il campo type è reso readonly se ha almeno una registrazione
 

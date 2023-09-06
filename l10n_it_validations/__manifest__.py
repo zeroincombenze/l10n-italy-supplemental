@@ -1,18 +1,18 @@
-# Copyright 2021-22 LibrERP enterprise network <https://www.librerp.it>
-# Copyright 2021-22 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-# Copyright 2021-22 Didotech s.r.l. <https://www.didotech.com>
+# Copyright 2021-23 LibrERP enterprise network <https://www.librerp.it>
+# Copyright 2021-23 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2021-23 Didotech s.r.l. <https://www.didotech.com>
 #
-# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 #
 {
     "name": "Account validations",
-    "version": "12.0.1.9.29",
+    "version": "12.0.1.9.30",
     "category": "Accounting",
     "summary": "Account validation for Italian Localization",
-    "author": "powERP enterprise network and other partners",
-    "website": "https://github.com/OCA/l10n-italy",
+    "author": "LibrERP enterprise network,SHS-AV s.r.l.,Didotech s.r.l.",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
     "development_status": "Beta",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "depends": [
         "account",
         "base",
@@ -23,5 +23,6 @@
         "account_fiscal_year_plus",
     ],
     "data": ["views/account_invoice_view.xml"],
+    "maintainer": "LibrERP enterprise network",
     "installable": True,
 }

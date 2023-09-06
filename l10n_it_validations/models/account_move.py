@@ -370,31 +370,27 @@ class AccountMoveLine(models.Model):
         types = self.env["account.account.type"].search(
             [("type", "in", ["receivable", "payable"])]
         )
-        # if types and self.move_id.type in VAT_DOCUMENTS:
-        if types:
-            type_ids = [ty.id for ty in types]
-            if self.account_id.user_type_id.id in type_ids:
-
-                if self.partner_id.id is False:
-                    return False
-                # end if
-
-            # end if
-
-        # end if
-        return True
+        return bool(
+            # Not payable neither receivable account
+            self.account_id.user_type_id not in types
+            # or valid partner
+            or self.partner_id
+            # No fiscal year closing record
+            or ("fyc_id" in self.move_id
+                and self.move_id.fyc_id)
+        )
 
     @api.onchange("account_id")
     def _onchange_account_id(self):
         if not self.account_id:
             return
-        if self.account_id.is_parent:
-            self.account_id = False
-            warning_mess = {
-                "title": "Tipo non accettabile!",
-                "message": "Usare solo sottoconti",
-            }
-            return {"warning": warning_mess}
+        # if self.account_id.is_parent:
+        #     self.account_id = False
+        #     warning_mess = {
+        #         "title": "Tipo non accettabile!",
+        #         "message": "Usare solo sottoconti",
+        #     }
+        #     return {"warning": warning_mess}
 
         has_partner = self.check_partner()
         if has_partner is False:
