@@ -1,0 +1,6 @@
+id,description,name,sequence,amount,amount_type,type_tax_use,price_include,account_id/id,refund_account_id/id,tag_ids/id,children_tax_ids/id,chart_template_id:id
+22a,22a,IVA 22% da acquisti,2,22,percent,purchase,False,,,,,l10n_chart_it_zeroincombenze
+10a,10a,IVA 10% da acquisti,4,10,percent,purchase,False,,,,,l10n_chart_it_zeroincombenze
+5a,5a,IVA 5% da acquisti,6,5,percent,purchase,False,,,,,l10n_chart_it_zeroincombenze
+4a,4a,IVA 4% da acquisti,8,4,percent,purchase,False,,,,,l10n_chart_it_zeroincombenze
+a1v,a1v,Vend.FC IVA,2,,percent,sale,False,,,,,l10n_chart_it_zeroincombenze

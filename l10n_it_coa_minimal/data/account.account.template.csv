@@ -1,0 +1,22 @@
+id,code,name,user_type_id:id,reconcile,chart_template_id:id
+1521,1521,Crediti v/clienti,account.data_account_type_receivable,TRUE,l10n_chart_it_zeroincombenze
+2460,2460,Mutui passivi,account.data_account_type_current_liabilities,FALSE,l10n_chart_it_zeroincombenze
+2501,2501,Debiti v/fornitori,account.data_account_type_payable,TRUE,l10n_chart_it_zeroincombenze
+2502,2502,Debiti da liquidare,account.data_account_type_current_liabilities,FALSE,l10n_chart_it_zeroincombenze
+2601,2601,Debiti per imposte,account.data_account_type_current_liabilities,FALSE,l10n_chart_it_zeroincombenze
+5100,5100,"Ricavi da salari, stipendi o attività",account.data_account_type_revenue,FALSE,l10n_chart_it_zeroincombenze
+6213,6213,Spese inerenti l’automobile,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6214,6214,Spese per trasporti,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6215,6215,Spese per alimentazione (food),account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6221,6221,Spese per gas,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6231,6231,"Spese per l’abitazione (condominiali, locazione)",account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6234,6234,Spese legali e notarili,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6235,6235,Spese per il tempo libero,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6250,6250,Spese telefoniche,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6251,6251,Spese per luce e energia elettrica,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6252,6252,Spese per riscaldamento,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6255,6255,Altre spese diverse,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6273,6273,Spese bancarie,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6410,6410,Spese sanitarie,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6910,6910,Imposte e tasse,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
+6920,6920,Spese previdenziali e pensionistiche,account.data_account_type_expenses,FALSE,l10n_chart_it_zeroincombenze
