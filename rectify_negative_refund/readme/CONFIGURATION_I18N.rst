@@ -1,0 +1,1 @@
+Non è necessaria alcuna configurazione.
