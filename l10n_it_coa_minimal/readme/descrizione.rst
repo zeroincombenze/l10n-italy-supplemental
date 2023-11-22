@@ -1,4 +1,4 @@
 Piano dei conti e Codici IVA
 ----------------------------
 
-Piano dei contri semplificato per usa casalingo
+Piano dei conti semplificato per usa casalingo

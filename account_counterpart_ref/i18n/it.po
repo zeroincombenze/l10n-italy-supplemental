@@ -1,0 +1,127 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_counterpart_ref
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-10 16:36+0000\n"
+"PO-Revision-Date: 2023-10-10 16:36+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_counterpart_ref
+#: model:ir.model,name:account_counterpart_ref.model_account_move
+msgid "Account Entry"
+msgstr "Registrazione contabile"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,help:account_counterpart_ref.field_account_move_counterpart_ids
+msgid "Add or select counterpart journal entry"
+msgstr "Add o select counterpart journal entry"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,help:account_counterpart_ref.field_account_move_line_counterpart_ids
+msgid "Add or select counterpart journal item, if different from header.\n"
+"Leave empty if is the same of the header counterpart reference"
+msgstr "Add o select counterpart journal item, if different from header.\n"
+"Leave empty if is the same of the header counterpart riferimento"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_date_counterpart
+msgid "Counterpart Date"
+msgstr "Data controparte"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_move_counterpart_ids
+msgid "Counterpart Journal Entries"
+msgstr "Counterpart Journal Entries"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_move_line_counterpart_ids
+msgid "Counterpart Journal Items"
+msgstr "Counterpart Journal Items"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_partner_id
+msgid "Counterpart Name"
+msgstr "Nome controparte"
+
+#. module: account_counterpart_ref
+#: model:ir.actions.act_window,name:account_counterpart_ref.action_account_counterpart_form
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_name
+#: model:ir.ui.menu,name:account_counterpart_ref.menu_action_account_counterpart_form
+#: model:ir.ui.view,arch_db:account_counterpart_ref.iew_account_counterpart_form
+#: model:ir.ui.view,arch_db:account_counterpart_ref.view_account_counterpart_tree
+msgid "Counterpart Reference"
+msgstr "Riferimento controparte"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_move_ids
+#: model:ir.ui.view,arch_db:account_counterpart_ref.iew_account_counterpart_form
+msgid "Journal Entries"
+msgstr "Registrazioni contabili"
+
+#. module: account_counterpart_ref
+#: model:ir.model,name:account_counterpart_ref.model_account_move_line
+msgid "Journal Item"
+msgstr "Movimento contabile"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_line_ids
+#: model:ir.ui.view,arch_db:account_counterpart_ref.iew_account_counterpart_form
+msgid "Journal Items"
+msgstr "Movimenti contabili"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: account_counterpart_ref
+#: model:ir.model.fields,field_description:account_counterpart_ref.field_account_counterpart_write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: account_counterpart_ref
+#: model:ir.model,name:account_counterpart_ref.model_account_counterpart
+msgid "account.counterpart"
+msgstr "account.counterpart"
+
+

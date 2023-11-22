@@ -1,85 +1,40 @@
+
 =================================================================================
-|icon| Rectify Negative Invoice / Refund/Rettifica fatture/NC negative 10.0.0.1.1
+|icon| Account Counterpart Reference/Riferimento contabile controparte 10.0.0.1.0
 =================================================================================
 
-**User can rectify negative invoice or negative refund**
+**Add counterpart reference in journal entries**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/rectify_negative_refund/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/account_counterpart_ref/static/description/icon.png
 
 
 .. contents::
 
 
 
-Overview | Panoramica
+Overview / Panoramica
 =====================
 
-|en| Sometimes, supplier send electronic refund with negative sign.
-So account entry becomes an invoice but orignal supplier means a refund.
+|en| This module add counterpart reference in journal entries and journal items.
 
-This module update the sign of account invoice lines and relative
-account move lines in order to rectify the refund.
+|
 
-This module can rectify negative invoice. In this case, the negative invoice is
-transformed into positive refund.
+|it| Questo modulo aggiunge il riferimento di controparte nelle registrazioni contabili e
+nelle righe contabili.
 
+|
 
-|it| A volte i fornitori inviano una nota credito elettronica con segno negativo.
-La registrazione contabile diventa una fattura anche se per il fornitore è una nota di
-accredito.
-
-Questo modulo cambia il segno delle righe della fattura e delle relative righe di
-contabilità.
-
-Il modulo può anche modificare una fattura negativa. In questo caso, la fattura negativa
-è trasformata in una nota di accredito positiva.
-
-
-
-Configuration | Configurazione
-------------------------------
-
-No configuration needed.
-
-
-
-Usage | Utilizzo
-----------------
-
-When open a form of a negative invoice o negative refund, you can see the
-button [Rectify] on form header.
-
-Click on button [Rectify] and the invoice / refund is rectified.
-No message is displayed.
-
-
-
-Getting started | Primi passi
+Getting started / Primi passi
 =============================
 
 |Try Me|
 
 
-Prerequisites | Prerequisiti
+|
+
+Installation / Installazione
 ----------------------------
 
-* python 2.7+ (best 2.7.5+)
-* postgresql 9.2+ (best 9.5)
-
-::
-
-    cd $HOME
-    # Follow statements activate deployment, installation and upgrade tools
-    cd $HOME
-    [[ ! -d ./tools ]] && git clone https://github.com/zeroincombenze/tools.git
-    cd ./tools
-    ./install_tools.sh -pUT
-    source $HOME/devel/activate_tools
-
-
-
-Installation | Installazione
-----------------------------
 
 +---------------------------------+------------------------------------------+
 | |en|                            | |it|                                     |
@@ -99,33 +54,76 @@ Installation | Installazione
 
 ::
 
+    cd $HOME
+    # *** Tools installation & activation ***
+    # Case 1: you have not installed zeroincombenze tools
+    git clone https://github.com/zeroincombenze/tools.git
+    cd $HOME/tools
+    ./install_tools.sh -pT
+    source $HOME/devel/activate_tools
+    # Case 2: you have already installed zeroincombenze tools
+    cd $HOME/tools
+    ./install_tools.sh -UT
+    source $HOME/devel/activate_tools
+    # *** End of tools installation or upgrade ***
     # Odoo repository installation; OCB repository must be installed
     deploy_odoo clone -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     # Upgrade virtual environment
     vem amend $HOME/10.0/venv_odoo
 
+From UI: go to:
+
+* |menu| Setting > Activate Developer mode
+* |menu| Apps > Update Apps List
+* |menu| Setting > Apps |right_do| Select **account_counterpart_ref** > Install
 
 
-Upgrade | Aggiornamento
+|
+
+Upgrade / Aggiornamento
 -----------------------
+
 
 ::
 
+    cd $HOME
+    # *** Tools installation & activation ***
+    # Case 1: you have not installed zeroincombenze tools
+    git clone https://github.com/zeroincombenze/tools.git
+    cd $HOME/tools
+    ./install_tools.sh -pT
+    source $HOME/devel/activate_tools
+    # Case 2: you have already installed zeroincombenze tools
+    cd $HOME/tools
+    ./install_tools.sh -UT
+    source $HOME/devel/activate_tools
+    # *** End of tools installation or upgrade ***
+    # Odoo repository upgrade
     deploy_odoo update -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     vem amend $HOME/10.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
+From UI: go to:
+
+* |menu| Setting > Activate Developer mode
+* |menu| Apps > Update Apps List
+* |menu| Setting > Apps |right_do| Select **account_counterpart_ref** > Update
 
 
-Support | Supporto
+|
+
+Support / Supporto
 ------------------
+
 
 |Zeroincombenze| This module is supported by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
+|
+|
 
-Get involved | Ci mettiamo in gioco
+Get involved / Ci mettiamo in gioco
 ===================================
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
@@ -134,10 +132,9 @@ and/or submit pull requests on `GitHub Issues
 
 In case of trouble, please check there if your issue has already been reported.
 
-
-
 Proposals for enhancement
 -------------------------
+
 
 |en| If you have a proposal to change this module, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
@@ -145,24 +142,19 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 |it| Se hai proposte per migliorare questo modulo, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-
-ChangeLog History | Cronologia modifiche
+ChangeLog History / Cronologia modifiche
 ----------------------------------------
-
-10.0.0.1.1 (2023-11-22)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Recognize negativa self-invoice / Riconosciento auto-fatture negative
 
 10.0.0.1.0 (2023-10-16)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [NEW] Initial implementation
-* [QUA] Test coverage 21% (38: 30+8) [0 TestPoints] - quality rating 5 (target 100)
+* Initial implementation
 
 
+|
+|
 
-Credits | Didascalie
+Credits / Didascalie
 ====================
 
 Copyright
@@ -171,28 +163,27 @@ Copyright
 Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
 
-Authors | Autori
+|
+
+Authors / Autori
 ----------------
 
-* `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
+* SHS-AV s.r.l. <https://www.zeroincombenze.it>
 
-
-
-Contributors | Contributi da
+Contributors / Contributi da
 ----------------------------
 
-* `Antonio M. Vigliotti <info@shs-av.com>`__
+* Antonio M. Vigliotti <info@shs-av.com>
 
-
-
-Maintainer | Manutenzione
+Maintainer / Manutenzione
 -------------------------
 
-* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
+Antonio Maria Vigliotti <False>
 
-
+|
 
 ----------------
+
 
 |en| **zeroincombenze®** is a trademark of `SHS-AV s.r.l. <https://www.shs-av.com/>`__
 which distributes and promotes ready-to-use **Odoo** on own cloud infrastructure.
@@ -205,11 +196,10 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 
 |
-|
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2023-11-22
+Last Update / Ultimo aggiornamento: 2023-10-20
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
@@ -269,3 +259,5 @@ Last Update / Ultimo aggiornamento: 2023-11-22
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/Assitenza_clienti_powERP
+
+
