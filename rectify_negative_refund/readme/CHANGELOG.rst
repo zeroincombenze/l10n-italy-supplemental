@@ -1,4 +1,10 @@
+10.0.0.1.1 (2023-11-22)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Recognize negativa self-invoice / Riconosciento auto-fatture negative
+
 10.0.0.1.0 (2023-10-16)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* Initial implementation
+* [NEW] Initial implementation
+* [QUA] Test coverage 21% (39: 31+8) [0 TestPoints] - quality rating 5 (target 100)

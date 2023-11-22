@@ -11,7 +11,7 @@ class AccountInvoice(models.Model):
         for invoice in self:
             saved_state = invoice.state
             new_invoice_type = invoice.type
-            if "invoice" in invoice.type:
+            if "_invoice" in invoice.type:
                 new_invoice_type = invoice.type.replace("_invoice", "_refund")
             if invoice.state == "open":
                 saved_attachment_id = invoice.fatturapa_attachment_out_id
@@ -33,8 +33,11 @@ class AccountInvoice(models.Model):
                 continue
             if invoice.type != new_invoice_type:
                 invoice.type = new_invoice_type
-            for line in invoice.invoice_line_ids:
-                line.price_unit = -line.price_unit
+            if invoice.type.startswith("in_") and invoice.check_total < 0.0:
+                invoice.check_total = -invoice.check_total
+            else:
+                for line in invoice.invoice_line_ids:
+                    line.price_unit = -line.price_unit
             invoice.compute_taxes()
             ctr = 1
             if saved_state == "open":
@@ -49,6 +52,5 @@ class AccountInvoice(models.Model):
                                           saved_fatturapa_state,
                                           invoice.id)
                     )
-                    # self.env.cr.commit()
         if ctr == 0:
             return False

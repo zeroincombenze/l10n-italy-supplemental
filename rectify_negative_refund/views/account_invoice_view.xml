@@ -25,7 +25,7 @@
                 <button name="rectify_invoice"
                         string="Rectify"
                         type="object"
-                        attrs="{'invisible': [('amount_total', '&gt;=', 0.00), ('state', 'not in in', ['draft','open'])]}"
+                        attrs="{'invisible': [('check_total', '&gt;=', 0.00), ('amount_total', '&gt;=', 0.00), ('state', 'not in in', ['draft','open'])]}"
                 />
             </header>
         </field>
