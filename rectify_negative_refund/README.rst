@@ -158,7 +158,7 @@ ChangeLog History | Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [NEW] Initial implementation
-* [QUA] Test coverage 21% (38: 30+8) [0 TestPoints] - quality rating 5 (target 100)
+* [QUA] Test coverage 21% (39: 31+8) [0 TestPoints] - quality rating 5 (target 100)
 
 
 

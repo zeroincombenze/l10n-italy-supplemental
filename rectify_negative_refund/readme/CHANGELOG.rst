@@ -7,4 +7,4 @@
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [NEW] Initial implementation
-* [QUA] Test coverage 21% (39: 31+8) [0 TestPoints] - quality rating 5 (target 100)
+* [QUA] Test coverage 19% (42: 34+8) [0 TestPoints] - quality rating 5 (target 100)

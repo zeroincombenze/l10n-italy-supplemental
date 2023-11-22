@@ -9,6 +9,17 @@ class AccountInvoice(models.Model):
     def rectify_invoice(self):
         ctr = 0
         for invoice in self:
+            if invoice.type.startswith("in_") and invoice.check_total < 0.0:
+                self.env.cr.execute(
+                    "UPDATE account_invoice"
+                    " SET type='in_refund'"
+                    ",check_total=%f"
+                    " WHERE id=%d" % (-invoice.check_total,
+                                      invoice.id)
+                )
+                ctr = 1
+                continue
+
             saved_state = invoice.state
             new_invoice_type = invoice.type
             if "_invoice" in invoice.type:
@@ -33,11 +44,8 @@ class AccountInvoice(models.Model):
                 continue
             if invoice.type != new_invoice_type:
                 invoice.type = new_invoice_type
-            if invoice.type.startswith("in_") and invoice.check_total < 0.0:
-                invoice.check_total = -invoice.check_total
-            else:
-                for line in invoice.invoice_line_ids:
-                    line.price_unit = -line.price_unit
+            for line in invoice.invoice_line_ids:
+                line.price_unit = -line.price_unit
             invoice.compute_taxes()
             ctr = 1
             if saved_state == "open":
