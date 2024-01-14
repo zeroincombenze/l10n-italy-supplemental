@@ -9,7 +9,8 @@ omit = *system_site_packages*, *site-packages*, *virtualenv*, *venv_odoo*
 [report]
 include =
 #    ${TRAVIS_BUILD_DIR}/*
-    *.py
+#    *.py
+    /home/odoo/12.0/l10n-italy-supplemental/l10n_it_coa/*
 
 omit =
     */scenario/*

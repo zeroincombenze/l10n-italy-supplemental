@@ -1,1 +1,1 @@
-* Antonio M. Vigliotti <info@shs-av.com>
+* `Antonio M. Vigliotti <info@shs-av.com>`__

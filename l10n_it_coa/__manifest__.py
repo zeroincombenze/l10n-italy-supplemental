@@ -1,11 +1,12 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    "name": "Italy - Fiscal localization by Librerp-zeroincombenze(R)",
+    "name": "ITA - Fiscal localization by Zeroincombenze(R)",
     "version": "12.0.0.2.11",
     "category": "Localization/Account Charts",
-    "author": "Librerp enterprise network, SHS-AV s.r.l.",
-    "website": "https://www.librerp.it",
-    "development_status": "Beta",
+    "summary": "ITA - Fiscal localization by Zeroincombenze(R)",
+    "author": "SHS-AV s.r.l.",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
+    "development_status": "Production/Stable",
     "license": "LGPL-3",
     "depends": [
         "account",
@@ -22,6 +23,6 @@
         "data/account.chart.template.csv",
         "data/account_chart_template_data.xml",
     ],
-    "maintainer": "Librerp enterprise network",
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }
