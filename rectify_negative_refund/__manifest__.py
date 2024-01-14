@@ -7,7 +7,7 @@
     "author": "SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
     "development_status": "Alpha",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "depends": [
         "account",
         "account_invoice_check_total",
