@@ -1,6 +1,3 @@
-Chart of Account and Tax codes
-------------------------------
-
 Very detailed Chart of Account, available to any Italian Company.
 Tree structure may be expanded by end-user, adding new records.
 

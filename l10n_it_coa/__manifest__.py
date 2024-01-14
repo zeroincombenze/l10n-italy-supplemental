@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Italy - Fiscal localization by zeroincombenze(R)",
+    "name": "ITA - Fiscal localization by Zeroincombenze(R)",
     "version": "10.0.0.2.11",
     "category": "Localization/Account Charts",
+    "summary": "ITA - Fiscal localization by Zeroincombenze(R)",
     "author": "SHS-AV s.r.l.",
-    "website": "https://github.com/zeroincombenze/l10n-italy-supplemental",
-    "development_status": "Beta",
-    "license": "LGPL-3",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
+    "development_status": "Production/Stable",
+    "license": "AGPL-3",
     "depends": [
         "account_group",
         "base_vat",
@@ -22,6 +23,6 @@
         "data/account.chart.template.csv",
         "data/account_chart_template_data.yml",
     ],
-    "maintainer": "Antonio Maria Vigliotti",
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }

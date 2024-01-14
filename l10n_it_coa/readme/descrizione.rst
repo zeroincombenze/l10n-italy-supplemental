@@ -1,6 +1,3 @@
-Piano dei conti e Codici IVA
-----------------------------
-
 Piano dei conti molto dettagliato utilizzabile da qualsiasi impresa italiana.
 La struttura può  essere ulteriormente espansa dall'utente finale
 con l'inserimento di nuovi record.
