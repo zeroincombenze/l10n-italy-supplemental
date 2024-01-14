@@ -25,4 +25,5 @@
     ],
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
+    "application": True,
 }
