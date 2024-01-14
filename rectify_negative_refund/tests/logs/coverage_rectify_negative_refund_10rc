@@ -9,7 +9,8 @@ omit = *system_site_packages*, *site-packages*, *virtualenv*, *venv_odoo*
 [report]
 include =
 #    ${TRAVIS_BUILD_DIR}/*
-    *.py
+#    *.py
+    /home/odoo/10.0/l10n-italy-supplemental/rectify_negative_refund/*
 
 omit =
     */scenario/*
