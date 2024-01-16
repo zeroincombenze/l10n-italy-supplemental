@@ -46,6 +46,27 @@ I codici IVA coprono una grande varietà di casistiche fiscali:
 .. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/l10n_it_coa/static/description/description.png
 
 
+Configuration | Configurazione
+------------------------------
+
+Some configurations require to activate developer mode:
+
+☰ Setting > Activate Developer mode
+
+Multi company setting:
+
+☰ Invoicing > Configuration > Settings > Fiscal Localization > Italy: Piano dei Conti Zeroincombenze(R)
+
+Configuration items:
+
+☰ Invoicing > Configuration > Accounting > Chart of account
+
+☰ Invoicing > Configuration > Accounting > Taxes
+
+☰ Invoicing > Configuration > Accounting > Fiscal Positions
+
+
+
 Getting started | Primi passi
 =============================
 
@@ -207,7 +228,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-01-14
+Last Update / Ultimo aggiornamento: 2024-01-16
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Mature-green.png
     :target: https://odoo-community.org/page/development-status
