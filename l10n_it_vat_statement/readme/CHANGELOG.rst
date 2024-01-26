@@ -1,3 +1,10 @@
+12.0.1.9.2 (2024-01-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Regression tests
+* [IMP] Print down payment / Imporot acconto in stampa liquidazione
+* [QUA] Test coverage 56% (685: 304+381) [14 TestPoints] - quality rating 37 (target 100)
+
 12.0.1.9.1_2 (2021-12-27)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -121,4 +128,3 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Inserita la verifica sulla data fattura e la data di applicazione iva
-

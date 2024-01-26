@@ -149,13 +149,13 @@ class WizardImportPartners(models.Model):
                 vals['id'] = recs[0].id
             else:
                 if html_txt:
-                        html += html_txt('', 'tr')
-                        html += html_txt('%s' % numrec, 'td')
-                        html += html_txt('', 'td')
-                        html += html_txt(vals.get('name', ''), 'td')
-                        html += html_txt(row.get('vat', ''), 'td')
-                        html += html_txt(_('New record added!'), 'td')
-                        html += html_txt('', '/tr')
+                    html += html_txt('', 'tr')
+                    html += html_txt('%s' % numrec, 'td')
+                    html += html_txt('', 'td')
+                    html += html_txt(vals.get('name', ''), 'td')
+                    html += html_txt(row.get('vat', ''), 'td')
+                    html += html_txt(_('New record added!'), 'td')
+                    html += html_txt('', '/tr')
             vals['is_company'] = True
             vals['type'] = 'contact'
             return vals, html

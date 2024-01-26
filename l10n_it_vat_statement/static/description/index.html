@@ -1,12 +1,31 @@
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Allow to create the "VAT Statement". / Versamento Iva periodica</h2>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Allow to create the 'VAT Statement'</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Permette di creare la liquidzione IVA</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">This module evaluates VAT to pay (or on credit).
 <p align="justify">
@@ -16,7 +35,7 @@ to its payments status.
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Versamento Iva periodica
 <p align="justify">
@@ -51,8 +70,8 @@ Tutti i soggetti passivi IVA in regime non forfettario
 </code>
 </p><p align="justify">
 <ul>
-<li><a href="https://www.gazzettaufficiale.it/eli/id/1972/11/11/072U0633/sg/">Articolo 23 del  DPR n. 633/72 - Registrazione fatture emesse</a></li>
-<li><a href="https://www.gazzettaufficiale.it/eli/id/1972/11/11/072U0633/sg/">Articolo 25 del  DPR n. 633/72 - Registrazione fatture degli acquisti</a></li>
+<li><a href="https://www.gazzettaufficiale.it/eli/id/1972/11/11/072U0633/sg">Articolo 23 del  DPR n. 633/72 - Registrazione fatture emesse</a></li>
+<li><a href="https://www.gazzettaufficiale.it/eli/id/1972/11/11/072U0633/sg">Articolo 25 del  DPR n. 633/72 - Registrazione fatture degli acquisti</a></li>
 <li>Articolo 39 del DPR n. 633/72 - Della tenuta e conservazione dei registri</li>
 </ul>
 </p><p align="justify">
@@ -64,127 +83,71 @@ Normativa non supportata da questo software:
 </p></p>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h3>12.0.1.9.1_2 (2021-12-27)</h3>
+<h4>12.0.1.9.2 (2024-01-26)</h4>
 <p align="justify">
 <ul>
+<li>[IMP] Regression tests</li>
+<li>[IMP] Print down payment / Imporot acconto in stampa liquidazione</li>
+<li>[QUA] Test coverage 56% (685: 304+381) [14 TestPoints] - quality rating 37 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>12.0.1.9.1_2 (2021-12-27)</h4>
+</p><p align="justify">
+<ul>
 <li>[REF] Inserito migrations per aggiornamento valori pregressi</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.9.1_1 (2021-12-24)</h3>
-</p><p align="justify">
-<ul>
-<li>[REF] Refactoring campi per liquidazioine EU-OSS</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.9.1 (2021-10-01)</h3>
-</p><p align="justify">
-<ul>
-<li>[REF] Refactoring campo date_apply_vat rimosso e spostato in modulo common</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.9.0 (2021-09-30)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Refactoring funzione di calcolo delle tasse (spostata in apposito modulo l10n_it_vat_common)</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.13 (2021-09-22)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Rimozione statement_credit_group_line da it.po perch&#232; impediva caricamento della lingua IT</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.12 (2021-09-17)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Aggiornato stampa liquidazione e fix bugs</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.11 (2021-09-14)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Impostato filtro per i movimenti contabili dell'iva</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.10 (2021-09-13)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Inserito i totali nella visualizzazione e nella stampa</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.9 (2021-09-08)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Corretto il comportamento con i codici iva di EU OSS</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.8 (2021-07-22)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiornato il model delle righe tasse di debito con campo deducibile</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.7 (2021-07-15)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiornato il model delle righe tasse di debito con campo deducibile</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.1.8.6 (2021-07-05)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiornato il template</li>
 </ul>
 </p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_separator"/>
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Known issues | Problemi conosciuti</h3>
+        <div class="oe_span12">
+This module replaces some feature of the base Odoo function that cannob be overridden.
+For this reason, this module depends on specific 12.0.1.3 version of <i>base</i> that is the
+latest version.
+<p align="justify">
+Please, before buy this module, check for base version and if it is older, update base
+module to most recent version.
+</p>
+        </div>
+    </div>
+</section>
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16">Authors | Autori:</p>
             <p class="oe_mt16"><ul>
-<li><a href="https://www.powerp.it/">powERP</a></li>
-<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
-<li><a href="https://www.didotech.com/">Didotech s.r.l.</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.didotech.com">Didotech s.r.l.</a></li>
+<li><a href="https://www.powerp.it">powERP</a></li>
 </ul></p>
         </div>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16">Contributors | Contributi da:</p>
             <p class="oe_mt16"><ul>
-<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
-<li>Marco Tosato &lt;marco.tosato@didotech.com&gt;</li>
-<li>Fabio Giovannelli &lt;fabio.giovannelli@didotech.com&gt;</li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+<li><a href="mailto:marco.tosato@didotech.com">Marco Tosato</a></li>
+<li><a href="mailto:fabio.giovannelli@didotech.com">Fabio Giovannelli</a></li>
 </ul></p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Maintainer:</p>
-            <p class="oe_mt16">This module is maintained by the <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> is the Italian Enterprises Network born in 2020, whose mission is promote use of Odoo to cover Italian enhanced accounting.</p>
-        </div>
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Manutenzione:</p>
-            <p class="oe_mt16">Questo modulo &#232; aggiornato da <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> &#232; una rete di imprese, nata nel 2020 che rilascia moduli per la contabilit&#224; italiana evoluta.</p>
-        </div>
         <div class="oe_span12">
-            <p class="oe_mt16">Founders are / I soci fondatori sono:</p>
-            <ul>
-                <li><a href="http://www.didotech.com/">Didotech s.r.l.</a></li>
-                <li><a href="https://www.shs-av.com/">SHS-AV s.r.l.</a></li>
-                <li><a href="http://x-plain.it/">Xplain s.r.l.</a></li>
-            </ul>
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <p>This module is part of l10n-italy project.</p>
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2024-01-26</p>
     </div>
 </section>

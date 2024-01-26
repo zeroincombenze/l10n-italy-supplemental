@@ -1,11 +1,5 @@
-# Copyright 2011-12 Domsense s.r.l. <http://www.domsense.com>.
-# Copyright 2012-15 Agile Business Group sagl <http://www.agilebg.com>
-# Copyright 2015 Associazione Odoo Italia <http://www.odoo-italia.org>
-# Copyright 2020-21 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-#
-# Copyright 2021 powERP enterprise network <https://www.powerp.it>
-#
-# License OPL-1 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
+# Copyright 2021-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2021 Didotech s.r.l. <https://www.didotech.com>
 #
 import math
 from odoo import models, fields, api
@@ -422,6 +416,9 @@ class AccountVatPeriodEndStatement(models.Model):
 
     @api.multi
     def _write(self, vals):
+        # TODO> Patch against bug detected on test
+        if "payment_ids" in vals and vals["payment_ids"] == [(6, 0, [])]:
+            del vals["payment_ids"]
         pre_not_reconciled = self.filtered(
             lambda statement: not statement.reconciled
         )

@@ -191,6 +191,15 @@
                         <t t-set="total_to_pay" t-value="(total_to_pay - statement.tax_credit_amount)"/>
                     </tr>
 
+                    <!-- down payment -->
+                    <tr>
+                        <td/>
+                        <td class="text-right">Down payment</td>
+                        <td class="text-right">-<span t-esc="formatLang(env, statement.advance_amount)"/></td>
+                        <!-- sum -->
+                        <t t-set="total_to_pay" t-value="(total_to_pay - statement.advance_amount)"/>
+                    </tr>
+
                     <!-- ...Other tot debit/credit -->
                     <t t-foreach="statement.generic_vat_account_line_ids" t-as="generic_vat">
                         <tr>
@@ -330,4 +339,3 @@
         </t>
     </template>
 </odoo>
-

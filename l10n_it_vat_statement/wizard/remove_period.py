@@ -1,11 +1,5 @@
-# Copyright 2012 Domsense s.r.l. <http://www.domsense.com>.
-# Copyright 2012-15 Agile Business Group sagl <http://www.agilebg.com>
-# Copyright 2015 Associazione Odoo Italia <http://www.odoo-italia.org>
-# Copyright 2020-21 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-#
-# Copyright 2021 powERP enterprise network <https://www.powerp.it>
-#
-# License OPL-1 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
+# Copyright 2021-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2021 Didotech s.r.l. <https://www.didotech.com>
 #
 
 from odoo import models, fields, api

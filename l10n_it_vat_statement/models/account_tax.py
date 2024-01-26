@@ -1,6 +1,8 @@
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2021-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2021 Didotech s.r.l. <https://www.didotech.com>
+#
 import logging
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 _logger = logging.getLogger(__name__)
@@ -91,4 +93,3 @@ class AccountTax(models.Model):
     #         return (
     #             tax_name, base_balance, tax_balance, deductible, undeductible
     #         )
-

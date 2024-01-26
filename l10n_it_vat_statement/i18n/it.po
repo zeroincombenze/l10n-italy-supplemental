@@ -1,26 +1,26 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * l10n_it_vat_statement
+# 	* l10n_it_vat_statement
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-05 18:24+0000\n"
-"PO-Revision-Date: 2022-06-05 18:24+0000\n"
+"POT-Creation-Date: 2024-01-26 13:53+0000\n"
+"PO-Revision-Date: 2024-01-26 16:16+0100\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
 msgid "<span>&amp;nbsp;</span>"
-msgstr "<span>&amp;nbsp;</span>"
+msgstr ""
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
@@ -72,15 +72,15 @@ msgid "Account Lines"
 msgstr "Righe del conto"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/report/vat_statement.py:113
-#: code:addons/l10n_it_vat_statement/report/vat_statement.py:113
+#: code:addons/l10n_it_vat_statement/report/vat_statement.py:105
+#, python-format
 msgid "Account type neither credit and debit !"
-msgstr "!"
+msgstr "Tipo di conto nè di debito nè di credito!"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_tax__vat_statement_account_id
 msgid "Account used for VAT statement"
-msgstr "Conto utilizzato per la liquidazione IVA"
+msgstr "Conto IVA di liquidazione"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
@@ -145,7 +145,7 @@ msgstr "Importo IVA Erario"
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_tax_code
 msgid "Base"
-msgstr "Base"
+msgstr ""
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_credit_account_line__base_amount
@@ -179,7 +179,6 @@ msgstr "Calcolare interessi"
 
 #. module: l10n_it_vat_statement
 #: selection:account.vat.period.end.statement,state:0
-#: selection:account.vat.period.end.statement,state
 msgid "Confirmed"
 msgstr "Confermato"
 
@@ -228,8 +227,8 @@ msgid "Credit Group Amount Lines"
 msgstr "Righe totali a credito"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:497
-#: code:addons/l10n_it_vat_statement/models/account.py:497
+#: code:addons/l10n_it_vat_statement/models/account.py:494
+#, python-format
 msgid "Credit VAT"
 msgstr "IVA a credito"
 
@@ -241,7 +240,7 @@ msgstr "IVA a credito da periodo precedente"
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__credit_vat_group_line_ids
 msgid "Credit group line VAT"
-msgstr ""
+msgstr "Avere gruppo riga PARTITA IVA"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__credit_vat_account_line_ids
@@ -249,10 +248,8 @@ msgid "Credit line VAT"
 msgstr "Riga IVA credito"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/wizard/add_period.py:44
-#: code:addons/l10n_it_vat_statement/wizard/remove_period.py:36
-#: code:addons/l10n_it_vat_statement/wizard/add_period.py:44
-#: code:addons/l10n_it_vat_statement/wizard/remove_period.py:36
+#: code:addons/l10n_it_vat_statement/wizard/add_period.py:38 code:addons/l10n_it_vat_statement/wizard/remove_period.py:30
+#, python-format
 msgid "Current statement not found"
 msgstr "Dichiarazione non trovata"
 
@@ -260,7 +257,7 @@ msgstr "Dichiarazione non trovata"
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_move__date_apply_vat
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_move_line__date_apply_vat
 msgid "Data applicazione IVA"
-msgstr ""
+msgstr "Dati applicazione IVA"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__date
@@ -278,10 +275,10 @@ msgid "Debit Group Amount Lines"
 msgstr "Righe totali a debito"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:478
-#: code:addons/l10n_it_vat_statement/models/account.py:478
+#: code:addons/l10n_it_vat_statement/models/account.py:475
+#, python-format
 msgid "Debit VAT"
-msgstr "IVA a debito"
+msgstr "IVA dovuta"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__previous_debit_vat_account_id
@@ -291,7 +288,7 @@ msgstr "IVA a debito da periodo precedente"
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__debit_vat_group_line_ids
 msgid "Debit group line VAT"
-msgstr ""
+msgstr "Dare gruppo riga PARTITA IVA"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__debit_vat_account_line_ids
@@ -339,6 +336,7 @@ msgstr "Nome visualizzato"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__advance_account_id
+#: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
 msgid "Down payment"
 msgstr "Acconto"
 
@@ -354,16 +352,15 @@ msgstr "Acconto dovuto"
 
 #. module: l10n_it_vat_statement
 #: selection:account.vat.period.end.statement,state:0
-#: selection:account.vat.period.end.statement,state
 msgid "Draft"
 msgstr "Bozza"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:602
+#: code:addons/l10n_it_vat_statement/models/account.py:599
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__interests_debit_vat_account_id
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:602
+#, python-format
 msgid "Due interests"
 msgstr "Interessi dovuti"
 
@@ -393,7 +390,7 @@ msgstr "Anno fiscale per rapporto"
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_debit_group_line__id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_generic_account_line__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_credit_group_line__amount
@@ -423,15 +420,16 @@ msgstr "Interessi su liquidazione - Conto"
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__reconciled
 msgid ""
-"It indicates that the statement has been paid and the journal entry of "
-"the statement has been reconciled with one or several journal entries of "
-"payment."
-msgstr "."
+"It indicates that the statement has been paid and the journal entry of the statement has been reconciled with one or "
+"several journal entries of payment."
+msgstr ""
+"It indicates that il modulo \" statement has been pagato e il modulo \" sezionale registrazione of il modulo \" "
+"statement has been reconciled with one o several sezionale entries of pagamento."
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_credit_account_line__deductible_amount
 msgid "Iva "
-msgstr " "
+msgstr "IVA "
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
@@ -503,32 +501,23 @@ msgid "Last printed page"
 msgstr "Ultima pagina su bollato"
 
 #. module: l10n_it_vat_statement
-#: selection:account.vat.period.end.statement,statement_type:0
-#: selection:add.period.to.vat.statement,statement_type:0
-#: selection:account.vat.period.end.statement,statement_type
-#: selection:add.period.to.vat.statement,statement_type
+#: selection:account.vat.period.end.statement,statement_type:0 selection:add.period.to.vat.statement,statement_type:0
 msgid "Liquidazione EU-OSS"
 msgstr ""
 
 #. module: l10n_it_vat_statement
-#: selection:account.vat.period.end.statement,statement_type:0
-#: selection:add.period.to.vat.statement,statement_type:0
-#: selection:account.vat.period.end.statement,statement_type
-#: selection:add.period.to.vat.statement,statement_type
+#: selection:account.vat.period.end.statement,statement_type:0 selection:add.period.to.vat.statement,statement_type:0
 msgid "Liquidazione annuale"
 msgstr ""
 
 #. module: l10n_it_vat_statement
-#: selection:account.vat.period.end.statement,statement_type:0
-#: selection:add.period.to.vat.statement,statement_type:0
-#: selection:account.vat.period.end.statement,statement_type
-#: selection:add.period.to.vat.statement,statement_type
+#: selection:account.vat.period.end.statement,statement_type:0 selection:add.period.to.vat.statement,statement_type:0
 msgid "Liquidazione periodica"
 msgstr ""
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:623
-#: code:addons/l10n_it_vat_statement/models/account.py:623
+#: code:addons/l10n_it_vat_statement/models/account.py:620
+#, python-format
 msgid "Other VAT Credits / Debits"
 msgstr "Altri Crediti / Debiti per IVA"
 
@@ -539,12 +528,8 @@ msgstr "Altri Crediti / Debiti per IVA o compensazioni di imposta"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
-msgid ""
-"Other VAT Credits / Debits or Tax Compensations (Positive amounts for "
-"credits, negative for debits)"
-msgstr ""
-"Altri crediti / debiti per IVA o compensazioni di imposta (importi "
-"positivi per i crediti, negativi per i debiti)"
+msgid "Other VAT Credits / Debits or Tax Compensations (Positive amounts for credits, negative for debits)"
+msgstr "Altri crediti / debiti per IVA o compensazioni di imposta (importi positivi per i crediti, negativi per i debiti)"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
@@ -553,7 +538,6 @@ msgstr ""
 
 #. module: l10n_it_vat_statement
 #: selection:account.vat.period.end.statement,state:0
-#: selection:account.vat.period.end.statement,state
 msgid "Paid"
 msgstr "Pagato"
 
@@ -580,11 +564,10 @@ msgid "Period"
 msgstr "Periodo"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/wizard/add_period.py:60
-#: code:addons/l10n_it_vat_statement/wizard/add_period.py:60
+#: code:addons/l10n_it_vat_statement/wizard/add_period.py:47
 #, python-format
 msgid "Period %s is associated to statement %s yet"
-msgstr ""
+msgstr "Periodo %s is associated a statement %s yet"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement_search
@@ -598,10 +581,10 @@ msgid "Periods"
 msgstr "Periodi"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:518
+#: code:addons/l10n_it_vat_statement/models/account.py:515
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__previous_credit_vat_account_id
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:518
+#, python-format
 msgid "Previous Credits VAT"
 msgstr "IVA credito precedente"
 
@@ -611,10 +594,10 @@ msgid "Previous Credits VAT Amount"
 msgstr "Ammontare IVA credito precedente"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:581
+#: code:addons/l10n_it_vat_statement/models/account.py:578
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__previous_debit_vat_account_id
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:581
+#, python-format
 msgid "Previous Debits VAT"
 msgstr "IVA debito precedente"
 
@@ -661,7 +644,7 @@ msgstr "Importo dovuto residuo."
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.remove_period
 msgid "Remove"
-msgstr "Rimuovere"
+msgstr "Rimuovi"
 
 #. module: l10n_it_vat_statement
 #: model:ir.actions.act_window,name:l10n_it_vat_statement.action_remove_period
@@ -673,15 +656,14 @@ msgstr "Rimuovere periodo"
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_remove_period_from_vat_statement
 msgid "Remove period from VAT Statement"
-msgstr ""
+msgstr "Rimuovere periodo da PARTITA IVA Dichiarazione"
 
 #. module: l10n_it_vat_statement
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
 msgid ""
-"Reverse charge: comprende RevCharge, Op.SM, Op.Vat., Op.FUE, Beni UE in "
-"Italia, Beni FUE in Italia, Cell., Microproc.\n"
-"                                    Operazioni UE: Servizi Si Intra, "
-"Servizi No Intra, Beni UE, Rev.Charge UE, Cell. UE, Microproc. UE"
+"Reverse charge: comprende RevCharge, Op.SM, Op.Vat., Op.FUE, Beni UE in Italia, Beni FUE in Italia, Cell., Microproc.\n"
+"                                    Operazioni UE: Servizi Si Intra, Servizi No Intra, Beni UE, Rev.Charge UE, Cell. "
+"UE, Microproc. UE"
 msgstr ""
 
 #. module: l10n_it_vat_statement
@@ -697,7 +679,7 @@ msgstr "Bozza"
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__state
 msgid "State"
-msgstr "Provincia"
+msgstr "Stato Federale"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_account_tax
@@ -717,8 +699,8 @@ msgid "Tax Authority Partner"
 msgstr "Agenzia delle Entrate"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:639
-#: code:addons/l10n_it_vat_statement/models/account.py:639
+#: code:addons/l10n_it_vat_statement/models/account.py:636
+#, python-format
 msgid "Tax Authority VAT"
 msgstr "IVA erario"
 
@@ -728,19 +710,17 @@ msgid "Tax Authority VAT Account"
 msgstr "Conto IVA erario"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:539
-#: code:addons/l10n_it_vat_statement/models/account.py:560
-#: code:addons/l10n_it_vat_statement/models/account.py:539
-#: code:addons/l10n_it_vat_statement/models/account.py:560
+#: code:addons/l10n_it_vat_statement/models/account.py:536 code:addons/l10n_it_vat_statement/models/account.py:557
+#, python-format
 msgid "Tax Credits"
-msgstr "Crediti d'imposta"
+msgstr "Credito d'imposta"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__tax_credit_account_id
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.report_vatperiodendstatement_document
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_account_vat_period_end_statement
 msgid "Tax credits"
-msgstr "Crediti d'imposta"
+msgstr "Credito d'imposta"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__tax_credit_amount
@@ -754,36 +734,34 @@ msgstr "Ammontare crediti d'imposta"
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_debit_group_line__kind_id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_generic_account_line__kind_id
 msgid "Tax nature"
-msgstr "Natura"
+msgstr "Natura dell'IVA"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:1084
-#: code:addons/l10n_it_vat_statement/models/account.py:1084
+#: code:addons/l10n_it_vat_statement/models/account.py:1081
+#, python-format
 msgid "The account for vat interest must be configurated"
-msgstr ""
+msgstr "Il modulo \" conto non valida in codice IVA IVA interesse must be configurated"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__credit_vat_group_line_ids
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__debit_vat_group_line_ids
 msgid "The accounts containing the VAT amount total to write-off"
-msgstr ""
+msgstr "Il modulo \" conti containing il modulo \" PARTITA IVA importo totale a storno"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__credit_vat_account_line_ids
 msgid "The accounts containing the credit VAT amount to write-off"
-msgstr ""
+msgstr "Io conti contenenti l'IVA a credito da stornare"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_vat_period_end_statement__debit_vat_account_line_ids
 msgid "The accounts containing the debit VAT amount to write-off"
-msgstr ""
+msgstr "Io conti contenenti l'IVA a debito da stornare"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,help:l10n_it_vat_statement.field_account_tax__vat_statement_account_id
-msgid ""
-"The tax balance will be associated to this account after selecting the "
-"period in VAT statement"
-msgstr ""
+msgid "The tax balance will be associated to this account after selecting the period in VAT statement"
+msgstr "Il saldo dell'imposta verrà associato a questo conto dopo la selezione del periodo in liquidazione IVA"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_account_vat_period_end_statement__statement_type
@@ -859,7 +837,7 @@ msgstr "Riga liquidazione IVA conto credito"
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_statement_credit_group_line
 msgid "VAT Statement credit group line"
-msgstr ""
+msgstr "PARTITA IVA Dichiarazione avere gruppo riga"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_statement_debit_account_line
@@ -869,7 +847,7 @@ msgstr "Riga liquidazione IVA conto debito"
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_statement_debit_group_line
 msgid "VAT Statement debit group line"
-msgstr ""
+msgstr "PARTITA IVA Dichiarazione dare gruppo riga"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_statement_generic_account_line
@@ -879,7 +857,7 @@ msgstr "Riga liquidazione IVA conto generico"
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_report_l10n_it_vat_statement_vat_statement
 msgid "VAT Statement report"
-msgstr ""
+msgstr "PARTITA IVA Dichiarazione rendiconto"
 
 #. module: l10n_it_vat_statement
 #: model:ir.model,name:l10n_it_vat_statement.model_account_vat_period_end_statement
@@ -887,14 +865,14 @@ msgid "VAT period end statement"
 msgstr "Liquidazione IVA"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:464
+#: code:addons/l10n_it_vat_statement/models/account.py:461
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_credit_account_line__statement_id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_credit_group_line__statement_id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_debit_account_line__statement_id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_debit_group_line__statement_id
 #: model:ir.model.fields,field_description:l10n_it_vat_statement.field_statement_generic_account_line__statement_id
 #: model_terms:ir.ui.view,arch_db:l10n_it_vat_statement.view_vat_period_end_statement_company_form
-#: code:addons/l10n_it_vat_statement/models/account.py:464
+#, python-format
 msgid "VAT statement"
 msgstr "Liquidazione IVA"
 
@@ -931,9 +909,7 @@ msgid "Vat statement"
 msgstr "Liquidazione IVA"
 
 #. module: l10n_it_vat_statement
-#: code:addons/l10n_it_vat_statement/models/account.py:411
-#: code:addons/l10n_it_vat_statement/models/account.py:411
+#: code:addons/l10n_it_vat_statement/models/account.py:405
+#, python-format
 msgid "You cannot delete a confirmed or paid statement"
 msgstr "Non è possibile eliminare una liquidazione confermata o pagata"
-
-
