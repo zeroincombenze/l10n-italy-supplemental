@@ -10,6 +10,7 @@
     'license': 'OPL-1',
     'depends': [
         'account',
+        'account_move_line_type',
     ],
     'data': [],
     'installable': True,

@@ -1,180 +1,191 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * import_account_opening
+#	* import_partners
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 14:14+0000\n"
-"PO-Revision-Date: 2021-12-23 15:15+0100\n"
+"POT-Creation-Date: 2024-01-18 10:36+0000\n"
+"PO-Revision-Date: 2024-01-18 10:36+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. module: import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening_result
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid ""
+"\"Codice\" \"Nome\" \"Cliente\" \"Fornitore\" \"Partita IVA\" \"Riferimento\" "
+"\"Dare\" \"Avere\""
+msgstr ""
+
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_import_partners_result
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
 msgid "Cancel"
-msgstr "Annullare"
+msgstr "Annulla"
 
-#. module: import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
 msgid "Choose a file to import..."
-msgstr "Seleziona un file da importare..."
+msgstr ""
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:196
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:196
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:210
+#, python-format
 msgid "Code"
-msgstr "Codice"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__create_uid
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__create_uid
 msgid "Created by"
 msgstr "Creato da"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__create_date
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__create_date
 msgid "Created on"
 msgstr "Creato il"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__display_name
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__display_name
 msgid "Display Name"
 msgstr "Nome visualizzato"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__dry_run
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__dry_run
 msgid "Dry-run"
 msgstr "Simulazione"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__data_file
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__data_file
 msgid "Excel Data File"
-msgstr "File Excel"
+msgstr "File dati Excel"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__filename
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__filename
 msgid "Filename"
 msgstr "Nome file"
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:129
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:160
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:129
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:160
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:147
+#, python-format
 msgid "Found multiple records."
-msgstr "Rilevati più record."
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__id
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
-#. module: import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
 msgid "Import"
-msgstr "Importazione"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.actions.act_window,name:import_account_opening.action_import_account_opening
-#: model:ir.ui.menu,name:import_account_opening.menu_account_opening_import
+#. module: import_partners
+#: model:ir.actions.act_window,name:import_partners.action_import_partners
 msgid "Import Account Opening"
 msgstr "Importare apertura conti"
 
-#. module: import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
 msgid "Import Account Opening from file Excel"
-msgstr "Importare apertura conti da Excel"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model,name:import_account_opening.model_wizard_import_account_opening
-msgid "Import Account Opening from xlsx"
-msgstr "Importare apertura conti da xlsx"
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:205
+#: model:ir.ui.menu,name:import_partners.menu_import_partners
+#, python-format
+msgid "Import Partners"
+msgstr "Importazione Nominativi"
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:191
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:191
-msgid "Import account entries"
-msgstr "Importare registrazioni contabili"
+#. module: import_partners
+#: model:ir.model,name:import_partners.model_wizard_import_partners
+msgid "Import Partners from xlsx"
+msgstr "Importazione Nominativi da xlsx"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__journal_id
-msgid "Journal"
-msgstr "Sezionale"
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid "Import file heade ìr must be:"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening____last_update
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners____last_update
 msgid "Last Modified on"
 msgstr "Ultima modifica il"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__write_uid
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__write_uid
 msgid "Last Updated by"
 msgstr "Ultimo aggiornamento di"
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__write_date
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__write_date
 msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:197
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:197
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:211
+#, python-format
 msgid "Name"
-msgstr "Descrizione"
+msgstr ""
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:146
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:162
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:146
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:162
-msgid "No record found!"
-msgstr "Nessun record trovato!"
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:157
+#, python-format
+msgid "New record added!"
+msgstr "Nuovo documentazione added!"
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:199
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:199
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:213
+#, python-format
 msgid "Note"
-msgstr "Nota"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__account_id
-msgid "Open account"
-msgstr "Apertura conto"
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid "Parameters"
+msgstr "Parametri"
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:174
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:174
-msgid "Record without data"
-msgstr "Riga senza dati"
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid "Please set 1 in one of \"Cliente\" or \"Fornitore\" for partner"
+msgstr ""
 
-#. module: import_account_opening
-#: model:ir.model.fields,field_description:import_account_opening.field_wizard_import_account_opening__tracelog
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid "Please set only one value in one of \"Dare\" \"Avere\""
+msgstr ""
+
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_partners_opening
+msgid "Please, import just xlsx files."
+msgstr ""
+
+#. module: import_partners
+#: model:ir.model.fields,field_description:import_partners.field_wizard_import_partners__tracelog
 msgid "Result History"
 msgstr "Cronologia dei risultati"
 
-#. module: import_account_opening
-#: model_terms:ir.ui.view,arch_db:import_account_opening.wizard_import_account_opening_result
+#. module: import_partners
+#: model_terms:ir.ui.view,arch_db:import_partners.wizard_import_partners_result
 msgid "Result of Account Opening"
-msgstr "Risultato apertura conti"
+msgstr ""
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:195
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:195
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:209
+#, python-format
 msgid "Row"
-msgstr "Riga"
+msgstr ""
 
-#. module: import_account_opening
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:198
-#: code:addons/import_account_opening/wizard/wizard_file_import.py:198
+#. module: import_partners
+#: code:addons/import_partners/wizard/wizard_file_import.py:212
+#, python-format
 msgid "Vat"
-msgstr "Iva"
+msgstr ""
 
 

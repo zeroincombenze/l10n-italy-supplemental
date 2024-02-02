@@ -1,0 +1,39 @@
+2024-02-02 12:39:43,000 2454839 DAEMON test_l10n_it_efattura_sdi_2c_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+2024-02-02 11:42:16,505 2465447 INFO ? odoo: Odoo version 12.0 
+2024-02-02 11:42:16,505 2465447 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/l10n_it_efattura_sdi_2c/tests/logs/zero12.l10n-italy-supplemental.l10n_it_efattura_sdi_2c.conf 
+2024-02-02 11:42:16,505 2465447 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/apps-store', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/business-requirement', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/geospatial', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/iot', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/mgmtsystem', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/manufacture-reporting', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/mis-builder-contrib', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/pos', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/project-agile', '/home/odoo/12.0/project-reporting', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2024-02-02 11:42:16,505 2465447 INFO ? odoo: database: odoo12@localhost:default 
+2024-02-02 11:42:16,631 2465447 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2024-02-02 11:42:16,790 2465447 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:62980 
+2024-02-02 11:42:16,830 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: loading 1 modules... 
+2024-02-02 11:42:16,840 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2024-02-02 11:42:17,027 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: updating modules list 
+2024-02-02 11:42:17,040 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2024-02-02 11:42:32,075 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['l10n_it_efattura_sdi_2c'] to user __system__ #1 via n/a 
+2024-02-02 11:42:33,187 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: loading 69 modules... 
+2024-02-02 11:42:34,150 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: 69 modules loaded in 0.96s, 0 queries 
+2024-02-02 11:42:34,157 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: loading 70 modules... 
+2024-02-02 11:42:34,904 2465447 DEBUG test_l10n_it_efattura_sdi_2c_12 odoo.addons.l10n_it_efattura_sdi_2c.models.document_2c_fatturapa: cannot import name 'Settings' from 'zeep' (/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/zeep/__init__.py) 
+2024-02-02 11:42:35,165 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.registry: module l10n_it_efattura_sdi_2c: creating or updating database tables 
+2024-02-02 11:42:35,254 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: loading l10n_it_efattura_sdi_2c/data/2c_data.xml 
+2024-02-02 11:42:35,271 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: Module l10n_it_efattura_sdi_2c: loading demo 
+2024-02-02 11:42:35,328 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: 70 modules loaded in 1.17s, 6 queries 
+2024-02-02 11:42:36,229 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.modules.loading: Modules loaded. 
+2024-02-02 11:42:36,240 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.service.server: Starting post tests 
+2024-02-02 11:42:36,241 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2024-02-02 11:42:36,241 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.service.server: Initiating shutdown 
+2024-02-02 11:42:36,241 2465447 INFO test_l10n_it_efattura_sdi_2c_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36ml10n_it_efattura_sdi_2c[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/12.0/l10n-italy-supplemental/l10n_it_efattura_sdi_2c/tests/logs/coverage_l10n_it_efattura_sdi_2c_12rc -m
+[34;107mName                                                                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------------------------
+l10n-italy-supplemental/l10n_it_efattura_sdi_2c/models/document_2c_fatturapa.py       103     77    25%   17-20, 28-44, 54-84, 93-116, 119-135, 145-163, 172-189, 192, 205-218, 223-235, 255-262, 268-269, 277, 280-284
+l10n-italy-supplemental/l10n_it_efattura_sdi_2c/models/efattura_attachment_out.py     129    109    16%   23-46, 59-104, 107, 110-132, 135-161, 164-192, 207-227
+l10n-italy-supplemental/l10n_it_efattura_sdi_2c/wizard/wizard_import_invoice.py        33     23    30%   17-80
+-----------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                 265    209    21%
+[0m

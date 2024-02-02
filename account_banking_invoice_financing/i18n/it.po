@@ -1,21 +1,20 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * account_banking_invoice_financing
+#	* account_banking_invoice_financing
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 13:17+0000\n"
-"PO-Revision-Date: 2022-01-09 13:17+0000\n"
+"POT-Creation-Date: 2024-02-02 11:39+0000\n"
+"PO-Revision-Date: 2024-02-02 11:39+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
@@ -43,22 +42,9 @@ msgid "<strong>Totale</strong>"
 msgstr ""
 
 #. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_bank_statement_import_journal_creation__limite_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_journal__limite_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__limite_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__limite_anticipo_fatture
-msgid "Affidamento bancario SBF"
-msgstr ""
-
-#. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.wizard_payment_order_close_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.wizard_payment_order_open_credit
 msgid "Annulla"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.invoice_financing_res_partner_bank_form
-msgid "Anticipo Fatture"
 msgstr ""
 
 #. module: account_banking_invoice_financing
@@ -83,24 +69,8 @@ msgid "Apri anticipo"
 msgstr ""
 
 #. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__banca_conto_effetti
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__banca_conto_effetti
-msgid "Banca c/Effetti"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model:ir.model,name:account_banking_invoice_financing.model_res_partner_bank
-msgid "Bank Accounts"
-msgstr "Conti bancari"
-
-#. module: account_banking_invoice_financing
 #: model:account.payment.method,name:account_banking_invoice_financing.riba
 msgid "Bonifico da cliente (Anticipo fatture)"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.view_account_bank_journal_form_invoice_financing
-msgid "Castelletto anticipo fatture"
 msgstr ""
 
 #. module: account_banking_invoice_financing
@@ -125,12 +95,6 @@ msgid "Conto"
 msgstr ""
 
 #. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__conto_costi_bancari
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__conto_costi_bancari
-msgid "Conto per spese bancarie"
-msgstr ""
-
-#. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_wizard_payment_order_close_financing__account_expense
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_wizard_payment_order_invoice_financing__account_expense
 msgid "Conto spese"
@@ -152,6 +116,8 @@ msgstr "Creato il"
 #: model:ir.model,name:account_banking_invoice_financing.model_report_account_banking_invoice_financing_print_apo_main_ita
 msgid "Custom technical model for printing payment order"
 msgstr ""
+"Personalizzato funzioni tecniche modello non valida in codice IVA stampa "
+"pagamento ordine"
 
 #. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
@@ -161,17 +127,17 @@ msgstr ""
 #. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_payment_order__bank_invoice_financing_date
 msgid "Data apertura anticipo"
-msgstr ""
+msgstr "Dati apertura anticipo"
 
 #. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_payment_order__forecast_payment_date
 msgid "Data previsto incasso"
-msgstr ""
+msgstr "Dati previsto incasso"
 
 #. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_payment_order__bank_return_payment_date
 msgid "Data rimborso"
-msgstr ""
+msgstr "Dati rimborso"
 
 #. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
@@ -186,20 +152,6 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_bank_statement_import_journal_creation__disponibilita_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_journal__disponibilita_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__disponibilita_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__disponibilita_anticipo_fatture
-msgid "Disponibilità residua"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__effetti_allo_sconto
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__effetti_allo_sconto
-msgid "Effetti allo sconto"
-msgstr ""
-
-#. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
 msgid "Fattura"
 msgstr ""
@@ -209,7 +161,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_wizard_payment_order_close_financing__id
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_wizard_payment_order_invoice_financing__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_wizard_payment_order_close_financing__amount_expense
@@ -227,11 +179,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_move_line__bank_invoice_financing_amount
 msgid "Importo anticipato"
 msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model:ir.model,name:account_banking_invoice_financing.model_account_journal
-msgid "Journal"
-msgstr "Sezionale"
 
 #. module: account_banking_invoice_financing
 #: model:ir.model,name:account_banking_invoice_financing.model_account_move_line
@@ -268,12 +215,6 @@ msgid "Massimale anticipo alla conferma ordine"
 msgstr ""
 
 #. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__invoice_financing_evaluate
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__invoice_financing_evaluate
-msgid "Metodo calcolo anticipo"
-msgstr ""
-
-#. module: account_banking_invoice_financing
 #: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_payment_order__bank_invoice_financing_number
 msgid "Numero anticipo"
 msgstr ""
@@ -281,48 +222,16 @@ msgstr ""
 #. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
 msgid "Partner"
-msgstr "Nominativo"
+msgstr ""
 
 #. module: account_banking_invoice_financing
 #: model:ir.model,name:account_banking_invoice_financing.model_account_payment_order
 msgid "Payment Order"
-msgstr "Ordini di pagamento"
-
-#. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__invoice_financing_percent
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__invoice_financing_percent
-msgid "Percentuale di anticipo"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__importo_anticipo_fatture
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__importo_anticipo_fatture
-msgid "Portafoglio utilizzato"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_account_setup_bank_manual_config__sezionale
-#: model:ir.model.fields,field_description:account_banking_invoice_financing.field_res_partner_bank__sezionale
-msgid "Sezionale"
-msgstr ""
+msgstr "Distinta pagamento"
 
 #. module: account_banking_invoice_financing
 #: model_terms:ir.ui.view,arch_db:account_banking_invoice_financing.print_apo_invoice_financing
 msgid "Totale (Valuta)"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: selection:res.partner.bank,invoice_financing_evaluate:0
-#: selection:res.partner.bank,invoice_financing_evaluate
-#: selection:res.partner.bank,invoice_financing_evaluate
-msgid "imponibile su imponibile"
-msgstr ""
-
-#. module: account_banking_invoice_financing
-#: selection:res.partner.bank,invoice_financing_evaluate:0
-#: selection:res.partner.bank,invoice_financing_evaluate
-#: selection:res.partner.bank,invoice_financing_evaluate
-msgid "percentuale su totale"
 msgstr ""
 
 #. module: account_banking_invoice_financing

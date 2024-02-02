@@ -1,8 +1,10 @@
-======================================================================================
-|icon| Account banking invoice financing/account_banking_invoice_financing 12.0.8.9.19
-======================================================================================
+=================================================================
+|icon| Import partner opening/Importa saldi nominativi 12.0.0.1.0
+=================================================================
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_banking_invoice_financing/static/description/icon.png
+**Import partner opening from Excel file**
+
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/import_partner_opening/static/description/icon.png
 
 
 .. contents::
@@ -12,15 +14,57 @@
 Overview | Panoramica
 =====================
 
-|en| This module add some new fields in account.move.line
+|en| Excel file must have following structure:
+
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+| Codice  | Nome                    | Cliente  | Fornitore | Partita IVA       | Dare | Avere  |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+|         | Global Trading Ltd      | 1        |           | GB250072348000    | 1000 |        |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+|         | Rossi e Bianchi srl     |          | 1         | IT05111810015     |      | 500    |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+| 180003  | Banca                   |          |           |                   | 100  |        |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
 
 
-|it| Questo modulo aggiunge alcuni campi ai movimenti delle registrazioni di prima nota
+
+Notes:
+
+* Please, import just xlsx files
+* The labels of the header must be exactly as you see above
+* Partners are searched by vat code and name
+* Ref field is not required; use it if you want load partner by code
+
+You can find Excel example in example directory.
+
+
+|it| Il file Excel ha la seguente struttura:
+
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+| Codice  | Nome                    | Cliente  | Fornitore | Partita IVA       | Dare | Avere  |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+|         | Global Trading Ltd      | 1        |           | GB250072348000    | 1000 |        |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+|         | Rossi e Bianchi srl     |          | 1         | IT05111810015     |      | 500    |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+| 180003  | Banca                   |          |           |                   | 100  |        |
++---------+-------------------------+----------+-----------+-------------------+------+--------+
+
+
+
+Note:
+
+* Si possono importare solo file .xlsx
+* Le etichette dell'intestazione devono essere rispettate
+* Sono cercati per partita IVA o codice fiscale e nome simile
+* Il campo Ref è facoltativo; serve se evantuali ricerche per codice
+
+Si può vedere un esempio nella cartella example.
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_banking_invoice_financing/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/import_partner_opening/static/description/description.png
 
 
 Getting started | Primi passi
@@ -118,20 +162,21 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-12.0.8.9.19 (2023-01-11)
-~~~~~~~~~~~~~~~~~~~~~~~~
+12.0.0.1.1 (2024-01-15)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] Changed name of field "payment_order_lines" to "payment_line_ids" to reflect the change made in the "account_duedates" module from which this module has a dependency.
+* [IMP] Documentation upgrade
+* [QUA]
 
-12.0.7.9.19 (2022-01-18)
-~~~~~~~~~~~~~~~~~~~~~~~~
+12.0.0.1.0 (2022-02-07)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* [REF] Refactoring impostazione conti trasferiti nel registro
+* [IMP] Draft code / Bozza iniziale
 
 
 
-Credits | Ringraziamenti
-========================
+Credits | Didascalie
+====================
 
 Copyright
 ---------
@@ -142,19 +187,13 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 Authors | Autori
 ----------------
 
-* powERP enterprise network and other partners <False>
-* `PowerP Enterprise Network <https://www.powerp.it>`__
 * `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
-* `Didotech s.r.l. <https://www.didotech.com>`__
 
 
 
-Contributors | Partecipanti
----------------------------
+Contributors | Contributi da
+----------------------------
 
-* `Antonio M. Vigliotti <info@shs-av.com>`__
-* `Marco Tosato <marco.tosato@didotech.com>`__
-* `Fabio Giovannelli <fabio.giovannelli@didotech.com>`__
 * `Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 
@@ -162,7 +201,7 @@ Contributors | Partecipanti
 Maintainer | Manutenzione
 -------------------------
 
-* powERP enterprise network <False>
+* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 
 
@@ -183,9 +222,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-02-02
+Last Update / Ultimo aggiornamento: 2024-01-18
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg
