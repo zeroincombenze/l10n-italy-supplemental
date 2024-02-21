@@ -7,11 +7,11 @@
 #
 {
     "name": "l10n_it_mastrini",
-    "version": "12.0.10.12.34",
+    "version": "12.0.10.12.35",
     "category": "Mastrini",
-    "summary": "Mastrini",
-    "author": "powERP enterprise network and other partners",
-    "website": "https://www.powerp.it",
+    "summary": "Mastrino contabile",
+    "author": "SHS-AV s.r.l.,Didotech s.r.l.,Odoo Community Association (OCA)",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
     "development_status": "Beta",
     "license": "AGPL-3",
     "depends": [
@@ -27,5 +27,6 @@
         "wizard/account_mastrini.xml",
         "views/ir_ui_menu.xml",
     ],
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }

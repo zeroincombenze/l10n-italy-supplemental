@@ -318,11 +318,12 @@ class AccountMastriniWizard(models.TransientModel):
 
     # Output control fields
     show_contropartite = fields.Selection(
-        string="Contropartite",
+        string="Composizione",
         selection=[
-            ("no", "No"),
+            ("no", "Base"),
             ("partite", "Partite"),
             ("valori", "Valori"),
+            ("ccy", "Divise e Valute"),
         ],
         default="no",
         required=True,

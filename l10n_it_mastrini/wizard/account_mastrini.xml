@@ -167,8 +167,12 @@
                                 <field name="hide_zeros" invisible="1"/>
                                 <field name="date"/>
                                 <field name="journal_id" invisible="1"/>
-                                <field name="journal_code"/>
-                                <field name="move_type"/>
+                                <field name="journal_code"
+                                       attrs="{'column_invisible': [('parent.show_contropartite', '==', 'ccy')]}"
+                                       />
+                                <field name="move_type"
+                                       attrs="{'column_invisible': [('parent.show_contropartite', '==', 'ccy')]}"
+                                       />
                                 <field name="move_id"/>
                                 <field name="ref" style="width: 15em;"/>
                                 <field name="ref_date"/>
@@ -176,36 +180,35 @@
                                 <field
                                       name="debit_ccy"
                                       digits="[14,2]"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False), ('parent.show_contropartite', '!=', 'ccy')], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
+                                      style="width: 10em;"
+                                      />
+                                <field
+                                      name="debit"
+                                      digits="[14,2]"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False), ('parent.show_contropartite', '!=', 'ccy')], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
                                       style="width: 10em;"
                                       />
                                 <field
                                       name="credit_ccy"
                                       digits="[14,2]"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
-                                      style="width: 10em;"
-                                      />
-                                <field
-                                      name="balance_ccy"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)], 'invisible': ['&amp;', ('hide_zeros', '=', True), ('balance', '=', 0)]}"
-                                      style="width: 12em;"
-                                      />
-                                <field
-                                      name="sym_ccy"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False)]}"
-                                      />
-
-                                <field
-                                      name="debit"
-                                      digits="[14,2]"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('debit', '=', 0.0)]}"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False), ('parent.show_contropartite', '!=', 'ccy')], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
                                       style="width: 10em;"
                                       />
                                 <field
                                       name="credit"
                                       digits="[14,2]"
-                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False)], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '=', False), ('parent.show_contropartite', '!=', 'ccy')], 'invisible':['&amp;', ('hide_zeros', '=', True), ('credit', '=', 0.0)]}"
                                       style="width: 10em;"
+                                      />
+                                <field
+                                      name="balance_ccy"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False), ('parent.show_contropartite', '!=', 'ccy')], 'invisible': ['&amp;', ('hide_zeros', '=', True), ('balance', '=', 0)]}"
+                                      style="width: 12em;"
+                                      />
+                                <field
+                                      name="sym_ccy"
+                                      attrs="{'column_invisible': [('parent.is_company_currency', '!=', False), ('parent.show_contropartite', '!=', 'ccy')]}"
                                       />
                                 <field
                                       name="balance"
@@ -230,7 +233,9 @@
                                 <field name="name"/>
                                 <field name="accrual_start_date" attrs="{'column_invisible': [('parent.accrual_dates_show', '=', False)]}"/>
                                 <field name="accrual_end_date" attrs="{'column_invisible': [('parent.accrual_dates_show', '=', False)]}"/>
-                                <field name="date_maturity"/>
+                                <field name="date_maturity"
+                                       attrs="{'column_invisible': [('parent.show_contropartite', '==', 'ccy')]}"
+                                       />
                                 <field name="full_reconcile_id"/>
                                 <field name="move_state"/>
                             </tree>
