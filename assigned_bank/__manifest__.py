@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2019-20 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2019-24 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -9,14 +9,18 @@
 #
 {
     "name": "Assigned bank",
-    "summary": "Assign internal bank to customers or supplier",
-    "version": "10.0.0.1.2",
+    "version": "10.0.0.1.3",
     "category": "Generic Modules/Accounting",
+    "summary": "Assign internal bank to customers or supplier",
     "author": "SHS-AV s.r.l.",
-    "website": "https://github.com/OCA/l10n-italy",
-    "depends": ["base", "account"],
-    "data": [
-        "views/partner_view.xml",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
+    "development_status": "Beta",
+    "license": "LGPL-3",
+    "depends": [
+        "base",
+        "account",
     ],
+    "data": ["views/partner_view.xml"],
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }
