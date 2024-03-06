@@ -1,9 +1,6 @@
-
 =============================================
 |Zeroincombenze| l10n-italy-supplemental 10.0
 =============================================
-|Build Status| |Codecov Status| |license gpl| |Try Me|
-
 
 .. contents::
 
@@ -12,63 +9,77 @@
 Overview / Panoramica
 =====================
 
-|en| 
+|en| Italian supplemental Odoo modules.
+This repository contains some useful addons, mainly targetted for Italian
+marketplace.
 
-|it| N/D
+
+|it| Moduli supplementari per localizzazione italiana Odoo.
+Questo catalogo contiene moduli utitli, principalmente orientati al mercato italiano.
+
 Avaiable Addons / Moduli disponibili
 ------------------------------------
 
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| Name / Nome                    | Version    | OCA Ver.   | Description / Descrizione                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_export                 | 10.0.0.1.0 | |no_check| | Export account moves                                                             |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_gopher                 | 10.0.0.2.6 | |no_check| | Configure account records                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_add_sale_order | 10.0.0.1.1 | |no_check| | Add sale order to sale account invoice                                           |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_import_xlsx    | 10.0.0.1.3 | |no_check| | Import invoice from Excel file                                                   |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_last_number    | |halt|     | |no_check| | Decrement invoice sequence if unlink last invoice                                |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_line_report    | 10.0.1.0.0 | |no_check| | New views to manage invoice lines information                                    |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_line_view      | 10.0.1.0.5 | |no_check| | Adds Invoice Line menu items                                                     |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| account_invoice_renum_lines    | 10.0.0.1.1 | |no_check| | Sort invoice lines by sale order, DdT, sequence, id                              |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| import_account_opening         | 10.0.0.1.7 | |no_check| | Import account opening                                                           |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| module_plus                    | 10.0.0.1.0 | |no_check| | Module enhanced functions                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| purchase_order_line_form       | 10.0.8.0.0 | |no_check| | Purchase Order lines easy editor                                                 |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| refocus_report                 | 10.0.0.1.7 | |no_check| | Customized report for Refocus                                                    |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_import_xlsx               | 10.0.0.1.1 | |no_check| | Import sale order lines from a Excel                                             |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_plus                      | 10.0.0.1.0 | |no_check| | Operator can full invoice multiple sale orders.                                  |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sale_resellers                 | 10.0.1.5.4 | |no_check| | Manage Sale Resellers                                                            |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| sequence_recovery_last         | 10.0.0.0.1 | |no_check| | Sequence Recovery                                                                |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| status_widget                  | 10.0.1.0.0 | |no_check| | Status Widget                                                                    |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
-| vg7_report                     | |halt|     | |no_check| | Customized report for VG7                                                        |
-+--------------------------------+------------+------------+----------------------------------------------------------------------------------+
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| Name / Nome                        | Version    | Description / Descrizione                                                        |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_bank_statement_import_xlsx | 10.0.0.1.0 | Import account bank statement from Excel                                         |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_bank_statement_liquidity   | 10.0.0.1.1 | Liquidity accounts can be reconciled bye bank statement                          |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_counterpart_ref            | 10.0.0.1.0 | Add counterpart reference in journal entries                                     |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_export                     | 10.0.0.1.0 | Export account moves                                                             |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_gopher                     | 10.0.0.2.8 | Configure account records                                                        |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_add_sale_order     | 10.0.0.1.1 | Add sale order to sale account invoice                                           |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_import_xlsx        | 10.0.0.2.0 | Import invoice from Excel file                                                   |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_last_number        | |halt|     | Decrement invoice sequence if unlink last invoice                                |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_line_report        | 10.0.1.0.0 | New views to manage invoice lines information                                    |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_line_view          | 10.0.1.0.6 | Adds Invoice Line menu items                                                     |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_renum_lines        | 10.0.0.1.1 | Sort invoice lines by sale order, DdT, sequence, id                              |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_invoice_search_more        | 10.0.0.1.0 | Search invoices by products and more                                             |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| assigned_bank                      | 10.0.0.1.3 | Assign internal bank to customers or supplier                                    |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| calendar_task_link                 | 10.0.0.1.1 | Add project task to calendar event                                               |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| crm_calendar_link                  | 10.0.0.1.0 | Add opportunity link to calendar event                                           |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| import_account_opening             | 10.0.0.1.7 | Import account opening                                                           |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| l10n_it_coa                        | 10.0.0.2.1 | ITA - Fiscal localization by Zeroincombenze(R)                                   |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| l10n_it_coa_minimal                | 10.0.0.1.0 | Italy - Fiscal localization by zeroincombenze(R)                                 |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| purchase_order_line_form           | 10.0.8.0.0 | Purchase Order lines easy editor                                                 |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| rectify_negative_refund            | 10.0.0.1.1 | User can rectify negative invoice or negative refund                             |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| refocus_report                     | 10.0.0.1.7 | Customized report for Refocus                                                    |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| sale_import_xlsx                   | 10.0.0.1.1 | Import sale order lines from a Excel                                             |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| sale_plus                          | 10.0.0.1.0 | Operator can full invoice multiple sale orders.                                  |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| sale_resellers                     | 10.0.1.5.4 | Manage Sale Resellers                                                            |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| sequence_recovery_last             | 10.0.0.0.1 | Sequence Recovery                                                                |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| so_convert_po                      | 10.0.0.6.1 | Converting Sale Order to Purchase Order/RFQ with single button click, transfer a |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| status_widget                      | 10.0.1.0.0 | Status Widget                                                                    |
++------------------------------------+------------+----------------------------------------------------------------------------------+
+| vg7_report                         | |halt|     | Customized report for VG7                                                        |
++------------------------------------+------------+----------------------------------------------------------------------------------+
 
-
-
-OCA comparation / Confronto con OCA
------------------------------------
-
-
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
-| Description / Descrizione                                       | Zeroincombenze    | OCA            | Notes / Note                   |
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
-| Coverage / Copertura test                                       |  |Codecov Status| | |OCA Codecov|  |                                |
-+-----------------------------------------------------------------+-------------------+----------------+--------------------------------+
 
 
 
@@ -81,14 +92,22 @@ Getting started / Come iniziare
 Prerequisites / Prerequisiti
 ----------------------------
 
-
 * python 2.7+ (best 2.7.5+)
 * postgresql 9.2+ (best 9.5)
+
+::
+
+    cd $HOME
+    # Follow statements activate deployment, installation and upgrade tools
+    cd $HOME
+    [[ ! -d ./tools ]] && git clone https://github.com/zeroincombenze/tools.git
+    cd ./tools
+    ./install_tools.sh -pUT
+    source $HOME/devel/activate_tools
 
 
 Installation / Installazione
 ----------------------------
-
 
 +---------------------------------+------------------------------------------+
 | |en|                            | |it|                                     |
@@ -99,54 +118,28 @@ Installation / Installazione
 |                                 |                                          |
 | Installation is built with:     | L'installazione è costruita con:         |
 +---------------------------------+------------------------------------------+
-| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__    |
+| `Zeroincombenze Tools <https://zeroincombenze-tools.readthedocs.io/>`__ |
 +---------------------------------+------------------------------------------+
 | Suggested deployment is:        | Posizione suggerita per l'installazione: |
 +---------------------------------+------------------------------------------+
-| $HOME/10.0                                                                 |
+| $HOME/10.0 |
 +----------------------------------------------------------------------------+
 
 ::
 
-    cd $HOME
-    # *** Tools installation & activation ***
-    # Case 1: you have not installed zeroincombenze tools
-    git clone https://github.com/zeroincombenze/tools.git
-    cd $HOME/tools
-    ./install_tools.sh -p
-    source $HOME/devel/activate_tools
-    # Case 2: you have already installed zeroincombenze tools
-    cd $HOME/tools
-    ./install_tools.sh -U
-    source $HOME/devel/activate_tools
-    # *** End of tools installation or upgrade ***
     # Odoo repository installation; OCB repository must be installed
-    odoo_install_repository l10n-italy-supplemental -b 10.0 -O zero -o $HOME/10.0
-    vem create $HOME/10.0/venv_odoo -O 10.0 -a "*" -DI -o $HOME/10.0
-
+    deploy_odoo clone -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
+    # Upgrade virtual environment
+    vem amend $HOME/10.0/venv_odoo
 
 
 Upgrade / Aggiornamento
 -----------------------
 
-
 ::
 
-    cd $HOME
-    # *** Tools installation & activation ***
-    # Case 1: you have not installed zeroincombenze tools
-    git clone https://github.com/zeroincombenze/tools.git
-    cd $HOME/tools
-    ./install_tools.sh -p
-    source $HOME/devel/activate_tools
-    # Case 2: you have already installed zeroincombenze tools
-    cd $HOME/tools
-    ./install_tools.sh -U
-    source $HOME/devel/activate_tools
-    # *** End of tools installation or upgrade ***
-    # Odoo repository upgrade
-    odoo_install_repository l10n-italy-supplemental -b 10.0 -o $HOME/10.0 -U
-    vem amend $HOME/10.0/venv_odoo -o $HOME/10.0
+    deploy_odoo update -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
+    vem amend $HOME/10.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
@@ -154,9 +147,7 @@ Upgrade / Aggiornamento
 Support / Supporto
 ------------------
 
-
-|Zeroincombenze| This project is mainly maintained by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
-
+|Zeroincombenze| This project is mainly supported by the `SHS-AV s.r.l. <https://www.zeroincombenze.it/>`__
 
 
 
@@ -169,9 +160,9 @@ and/or submit pull requests on `GitHub Issues
 
 In case of trouble, please check there if your issue has already been reported.
 
+
 Proposals for enhancement
 -------------------------
-
 
 |en| If you have a proposal to change on oh these modules, you may want to send an email to <cc@shs-av.com> for initial feedback.
 An Enhancement Proposal may be submitted if your idea gains ground.
@@ -179,104 +170,68 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 |it| Se hai proposte per migliorare uno dei moduli, puoi inviare una mail a <cc@shs-av.com> per un iniziale contatto.
 
 
-History / Cronologia
---------------------
+ChangeLog History / Cronologia modifiche
+----------------------------------------
 
-account_invoice_import_xlsx: 10.0.0.0.3 (2022-07-07)
+assigned_bank: 10.0.0.1.3 (2024-03-04)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Aggiornamento documentazione
+
+
+account_invoice_search_more: 10.0.0.1.0 (2024-01-21)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] Name form file xlsx / Descrizione riga da file Excel
+* Initial implementation / Implementazione iniziale
+* [QUA] Test coverage 100% (6: 0+6) [0 TestPoints] - quality rating 61 (target 100)
 
 
-account_gopher: 10.0.0.2.7 (2022-06-27)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rectify_negative_refund: 10.0.0.1.1 (2023-11-22)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] RC new checks / Nuovi controlli RC
-
-
-account_invoice_line_view: 10.0.1.0.5 (2022-06-24)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Invoice line read-only / Dati righe in sola lettura
-* [FIX] Signed quantity & amount / Quantità e totale riga segnati (per note credito)
-* [IMP] quantity & amount totals / Totale quantità e totale riga
+* [IMP] Recognize negativa self-invoice / Riconosciento auto-fatture negative
 
 
+rectify_negative_refund: 10.0.0.1.0 (2023-10-16)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-account_gopher: 10.0.0.2.6 (2022-06-24)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* [NEW] Initial implementation
+* [QUA] Test coverage 19% (42: 34+8) [0 TestPoints] - quality rating 5 (target 100)
 
-* [IMP] RC configuraton / Configurazione reverse charge
+account_counterpart_ref: 10.0.0.1.0 (2023-10-16)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-account_gopher: 10.0.0.2.5 (2022-06-20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Tax nature rename
-
-
-account_invoice_import_xlsx: 10.0.0.0.2 (2022-06-14)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Variuous fixes
+* Initial implementation
 
 
-account_gopher: 10.0.0.2.4 (2022-03-09)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+l10n_it_coa_minimal: 10.0.0.1.0 (2023-09-04)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] gopher_reload_taxes
-
-
-account_gopher: 10.0.0.2.3 (2022-03-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] gopher_reload_taxes
+* [IMP] First release
 
 
-account_gopher: 10.0.0.2.2 (2022-02-21)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+l10n_it_coa: 10.0.0.2.11 (2023-08-27)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Set account nature / Imposta natura conto
-
-
-account_gopher: 10.0.0.2.1 (2022-02-08)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Company fiscal position / Posizione fiscale azienda
+* [FIX] Duplicate key during installation / Chiave duplicata in installazione
+* [FIX] Wrong external name for account.group / Errati identificativi account.group
+* [IMP] Module name changed (l10n_it_coa -> l10n_it_coa, only Odoo 10.0)
 
 
-account_gopher: 10.0.0.2.0 (2022-02-07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+calendar_task_link: 10.0.0.1.1 (2023-05-19)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Menu visible for account manager / Meù visibile di manager di contabilità
-* [IMP] New function Reload taxes / Nuova funzione ricarica tasse
-* [IMP] New function Reload CoA / Nuova funzione ricarica PdC
+* [IMP] Meeting in task form
 
 
-import_account_opening: 10.0.0.1.7 (2022-02-03)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+calendar_task_link: 10.0.0.1.0 (2023-05-18)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] Missed some error message / In alcuni casi non si vedevamo i messaggi di errore
-
-
-import_account_opening: 10.0.0.1.6 (2022-01-31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Search partner by fiscal code o only name / Riceca clienti o fornitori per codice fiscale o solo nome
+* [IMP] First release
 
 
-
-account_invoice_line_view: 10.0.1.0.4 (2022-01-31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] ValueError: field `number` does not exist / ValueError: Il campo `number` non esiste
-
-
-
-
-
-Credits / Didascalie
-====================
+Credits / Ringraziamenti
+========================
 
 Copyright
 ---------
@@ -286,59 +241,33 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 
 ----------------
 
-
 |en| **zeroincombenze®** is a trademark of `SHS-AV s.r.l. <https://www.shs-av.com/>`__
 which distributes and promotes ready-to-use **Odoo** on own cloud infrastructure.
-`Zeroincombenze® distribution of Odoo <https://wiki.zeroincombenze.org/en/Odoo>`__
+`Zeroincombenze® distribution of Odoo <https://www.zeroincombenze.it/>`__
 is mainly designed to cover Italian law and markeplace.
 
 |it| **zeroincombenze®** è un marchio registrato da `SHS-AV s.r.l. <https://www.shs-av.com/>`__
 che distribuisce e promuove **Odoo** pronto all'uso sulla propria infrastuttura.
-La distribuzione `Zeroincombenze® <https://wiki.zeroincombenze.org/en/Odoo>`__ è progettata per le esigenze del mercato italiano.
+La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è progettata per le esigenze del mercato italiano.
 
-
-
-|chat_with_us|
-
-
+|
 |
 
 
-Last Update / Ultimo aggiornamento: 2022-07-07
+Last Update / Ultimo aggiornamento: 2024-03-06
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
-.. |Build Status| image:: https://travis-ci.org/zeroincombenze/l10n-italy-supplemental.svg?branch=10.0
-    :target: https://travis-ci.com/zeroincombenze/l10n-italy-supplemental
-    :alt: github.com
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |license opl| image:: https://img.shields.io/badge/licence-OPL-7379c3.svg
     :target: https://www.odoo.com/documentation/user/14.0/legal/licenses/licenses.html
     :alt: License: OPL
-.. |Coverage Status| image:: https://coveralls.io/repos/github/zeroincombenze/l10n-italy-supplemental/badge.svg?branch=10.0
-    :target: https://coveralls.io/github/zeroincombenze/l10n-italy-supplemental?branch=10.0
-    :alt: Coverage
-.. |Codecov Status| image:: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/10.0/graph/badge.svg
-    :target: https://codecov.io/gh/zeroincombenze/l10n-italy-supplemental/branch/10.0
-    :alt: Codecov
-.. |Tech Doc| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-docs-10.svg
-    :target: https://wiki.zeroincombenze.org/en/Odoo/10.0/dev
-    :alt: Technical Documentation
-.. |Help| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-help-10.svg
-    :target: https://wiki.zeroincombenze.org/it/Odoo/10.0/man
-    :alt: Technical Documentation
 .. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-10.svg
     :target: https://erp10.zeroincombenze.it
     :alt: Try Me
-.. |OCA Codecov| image:: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/10.0/graph/badge.svg
-    :target: https://codecov.io/gh/OCA/l10n-italy-supplemental/branch/10.0
-    :alt: Codecov
-.. |Odoo Italia Associazione| image:: https://www.odoo-italia.org/images/Immagini/Odoo%20Italia%20-%20126x56.png
-   :target: https://odoo-italia.org
-   :alt: Odoo Italia Associazione
 .. |Zeroincombenze| image:: https://avatars0.githubusercontent.com/u/6972555?s=460&v=4
    :target: https://www.zeroincombenze.it/
    :alt: Zeroincombenze
@@ -362,7 +291,3 @@ Last Update / Ultimo aggiornamento: 2022-07-07
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/Desktoptelematico.md
 .. |FatturaPA| image:: https://raw.githubusercontent.com/zeroincombenze/grymb/master/certificates/ade/icons/fatturapa.png
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
-.. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
-   :target: https://t.me/Assitenza_clienti_powERP
-
-
