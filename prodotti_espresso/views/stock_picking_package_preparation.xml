@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- DdT Views -->
+
+    <record id="ddt_stock_picking_package_preparation_form" model="ir.ui.view">
+        <field name="name">ddt.stock.picking.package.preparation.form</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field
+            name="inherit_id"
+            ref="l10n_it_ddt.ddt_stock_picking_package_preparation_form"
+        />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='show_price']" position="after">
+                <field name="to_send_mail" />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

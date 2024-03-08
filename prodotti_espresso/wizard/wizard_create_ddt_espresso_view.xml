@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <record id="wizard_create_ddt_espresso_view" model="ir.ui.view">
+            <field name="name">Create Express Delivery Note</field>
+            <field name="model">wizard.create.ddt.espresso</field>
+            <field name="arch" type="xml">
+                <form string="Create Express Delivery Note">
+                    <group>
+                        <field name="validate_ddt"/>
+                        <field name="to_send_mail"/>
+                    </group>
+                    <footer>
+                        <button name="create_ddt_espresso" string="Create" type="object"
+                            class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wizard_create_ddt_espresso" model="ir.actions.act_window">
+            <field name="name">Create Express Delivery Note</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.ddt.espresso</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
+        </record>
+
+        <record model="ir.values" id="wizard_create_ddt_espresso">
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="name">Create Express Delivery Note</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_wizard_create_ddt_espresso'))"/>
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+
+</odoo>
