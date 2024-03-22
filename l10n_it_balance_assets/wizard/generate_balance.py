@@ -126,7 +126,7 @@ class WizardGenerateBalance(models.TransientModel):
         return super().generate_balance()
 
     def write_depreciations(self, params):
-        res = super().write_depreciations(params)
+        super().write_depreciations(params)
         conf = self.env['res.company'].browse(self.company_id.id)
         civilistico = conf.compute_civilistico()
 
@@ -263,7 +263,7 @@ class WizardGenerateBalance(models.TransientModel):
     # end write_depreciations
 
     def write_L_n_P(self, params, sel=None):
-        res = super().write_L_n_P(params, sel)
+        super().write_L_n_P(params, sel)
         if not self.evaluate_accrual:
             return
 

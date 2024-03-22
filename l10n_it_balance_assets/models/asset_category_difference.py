@@ -81,5 +81,4 @@ class AssetCategoryDifference(models.Model):
                 'currency_id': company_id.currency_id.id,
             }
 
-            adpc = self.create(vals)
-
+            self.create(vals)

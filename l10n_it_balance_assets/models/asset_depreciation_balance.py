@@ -143,7 +143,18 @@ class AssetDepreciationBalance(models.Model):
         amount_current = adp.get_depreciation_amount(date)
         # residual plus amount
         # if nr_lines > 1:
-        left_residual = adp.calculate_residual_summary(date) + amount_current
+        amount_res = 0.0
+        if adp.line_ids:
+            for line in adp.line_ids:
+                if line.move_type != 'depreciated':
+                    continue
+
+                if line.date < date:
+                    amount_res += line.amount
+                # end if
+        left_residual = amount_res + amount_current
+
+        # left_residual = adp.calculate_residual_summary(date) + amount_current
         # else:
         #     left_residual = adp.calculate_residual_summary(
         #         date)
@@ -206,6 +217,5 @@ class AssetDepreciationBalance(models.Model):
             ('category_id', '=', category_id),
             ('type_id', '=', nature_id),
         ])
-        tt = sum(lines.mapped('amount_current'))
         return sum(lines.mapped('amount_current'))
 

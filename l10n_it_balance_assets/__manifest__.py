@@ -5,24 +5,25 @@
 #    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 #
 {
-    'name': 'Assets into balance',
-    'version': '12.0.1.0.11',
-    'category': 'Generic Modules/Accounting',
-    'summary': 'Account balance with assets',
-    'author': 'powERP enterprise network and other partners',
-    'website': 'https://www.powerp.it',
-    'development_status': 'Beta',
-    'license': 'AGPL-3',
-    'depends': [
-        'base',
-        'account',
-        'assets_management',
-        'l10n_it_balance',
+    "name": "Assets into balance",
+    "version": "12.0.1.0.12",
+    "category": "Generic Modules/Accounting",
+    "summary": "Account balance with assets",
+    "author": "SHS-AV s.r.l.,Didotech s.r.l.",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
+    "development_status": "Beta",
+    "license": "AGPL-3",
+    "depends": [
+        "base",
+        "account",
+        "assets_management",
+        "l10n_it_balance",
     ],
-    'data': [
-        'security/ir.model.access.csv',
-        'views/generate_balance_view.xml',
-        'wizard/wizard_confirm_depreciation.xml',
+    "data": [
+        "security/ir.model.access.csv",
+        "views/generate_balance_view.xml",
+        "wizard/wizard_confirm_depreciation.xml",
     ],
-    'installable': True,
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "installable": True,
 }
