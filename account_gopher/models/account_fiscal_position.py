@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-24 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -8,7 +8,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
 from python_plus import _u
-from odoo import models, _
+from odoo import _, models
 
 DEFAULT_VALUES = {
     "l10n_it_fiscal.intra": {
@@ -69,16 +69,18 @@ class AccountFiscalPosition(models.Model):
                 if hasattr(fiscalpos, "rc_type_id"):
                     vals = {
                         "rc_type_id": self.env.ref(
-                            DEFAULT_VALUES[xref]["rc_type_id"]).id
+                            DEFAULT_VALUES[xref]["rc_type_id"]
+                        ).id
                     }
                 elif hasattr(fiscalpos, "rc_type"):
                     vals = {
-                        "rc_type": self.env.ref(
-                            DEFAULT_VALUES[xref]["rc_type"]),
+                        "rc_type": self.env.ref(DEFAULT_VALUES[xref]["rc_type"]),
                         "partner_type": self.env.ref(
-                            DEFAULT_VALUES[xref]["partner_type"]),
+                            DEFAULT_VALUES[xref]["partner_type"]
+                        ),
                         "rc_fiscal_document_type_id": self.env.ref(
-                            DEFAULT_VALUES[xref]["rc_fiscal_document_type_id"]),
+                            DEFAULT_VALUES[xref]["rc_fiscal_document_type_id"]
+                        ),
                     }
                 try:
                     fiscalpos[0].write(vals)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-24 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -363,13 +363,14 @@ class AccountTax(models.Model):
         for tax in parsed:
             vals = {}
             if res[tax].get("use") and (
-                    res[tax].get("use") != tax.type_tax_use
-                    or tax.description.startswith("aa")):
+                res[tax].get("use") != tax.type_tax_use
+                or tax.description.startswith("aa")
+            ):
                 if "non usare" not in tax.name:
                     actioned += _("do not use!; ")
                     vals["name"] = res[tax]["nme"] + " (non usare)"
                     vals["active"] = False
-            if (res[tax]["nat"].startswith("N3") and res[tax]["nat"] != "N3.5"):
+            if res[tax]["nat"].startswith("N3") and res[tax]["nat"] != "N3.5":
                 res[tax]["rc"] = True
                 if tax.type_tax_use == "purchase":
                     del res[tax]["nat"]
@@ -431,9 +432,11 @@ class AccountTax(models.Model):
                         actioned += _("set law reference to %s; ") % res[tax].get("law")
                     else:
                         actioned += _("reset law reference; ")
-                if (hasattr(tax, "rc")
-                        and res[tax].get("rc")
-                        and res[tax]["rc"] != tax.rc):
+                if (
+                    hasattr(tax, "rc")
+                    and res[tax].get("rc")
+                    and res[tax]["rc"] != tax.rc
+                ):
                     vals["rc"] = res[tax]["rc"]
                     actioned += _("set RC type tax; ")
                 tax.write(vals)
@@ -481,12 +484,15 @@ class AccountTax(models.Model):
                 if hasattr(tax, name) and getattr(tax, name) and tax.rc_type:
                     actioned += _("Invalid RC type")
                 if getattr(tax, NATURE_ID):
-                    if (getattr(tax, NATURE_ID).code.startswith("N3")
-                            and getattr(tax, NATURE_ID).code != "N3.5"):
+                    if (
+                        getattr(tax, NATURE_ID).code.startswith("N3")
+                        and getattr(tax, NATURE_ID).code != "N3.5"
+                    ):
                         if tax.type_tax_use == "purchase":
                             actioned += _(
                                 "Remove invalid nature %s; "
-                                % getattr(tax, NATURE_ID).code)
+                                % getattr(tax, NATURE_ID).code
+                            )
                             setattr(tax, NATURE_ID, False)
                         elif tax.amount:
                             tax.amount = 0.0

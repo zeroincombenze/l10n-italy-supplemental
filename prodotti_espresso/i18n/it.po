@@ -1,32 +1,182 @@
-
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * MODULE
+# 	* prodotti_espresso
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
-"
-"Report-Msgid-Bugs-To: 
-"
-"POT-Creation-Date: 2021-06-18 12:39+0000
-"
-"PO-Revision-Date: 2021-09-28 10:37+0200
-"
-"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
-"Language: it_IT\n"
-"
-"MIME-Version: 1.0
-"
-"Content-Type: text/plain; charset=UTF-8
-"
-"Content-Transfer-Encoding: 8bit
-"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"
-"X-Generator: Poedit 3.0
-"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-08 13:44+0000\n"
+"PO-Revision-Date: 2024-03-08 14:48+0100\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
-"
-"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
+#. module: prodotti_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_stock_picking_package_preparation_to_send_mail
+#: model:ir.model.fields,help:prodotti_espresso.field_wizard_create_ddt_espresso_to_send_mail
+msgid "Automatically send mail"
+msgstr "Inviare automaticamente email"
+
+#. module: prodotti_espresso
+#: model:ir.ui.view,arch_db:prodotti_espresso.wizard_create_ddt_espresso_view
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: prodotti_espresso
+#: model:ir.ui.view,arch_db:prodotti_espresso.wizard_create_ddt_espresso_view
+msgid "Create"
+msgstr "Creare"
+
+#. module: prodotti_espresso
+#: model:ir.actions.act_window,name:prodotti_espresso.action_wizard_create_ddt_espresso
+#: model:ir.ui.view,arch_db:prodotti_espresso.wizard_create_ddt_espresso_view
+msgid "Create Express Delivery Note"
+msgstr "Creare DdT Espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: prodotti_espresso
+#: code:addons/prodotti_espresso/wizard/wizard_create_ddt_espresso.py:37
+#, python-format
+msgid "DdT espresso"
+msgstr "DdT espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_account_invoice_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_account_invoice_report_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_sale_order_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_sale_report_espresso
+msgid "Documento con prodotti espresso"
+msgstr "Documento con prodotti espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_delivery_carrier_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_product_product_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_product_template_espresso
+msgid "Espresso"
+msgstr "Espresso"
+
+#. module: prodotti_espresso
+#: model:ir.actions.server,name:prodotti_espresso.espresso_generate_ddt
+msgid "Generate DDT espresso"
+msgstr "Generare DDT espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_id
+msgid "ID"
+msgstr "ID"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_account_invoice_line_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_delivery_carrier_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_product_product_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_product_template_espresso
+#: model:ir.model.fields,help:prodotti_espresso.field_sale_order_line_espresso
+msgid "If flagged this product will be automatically insert into DDT from delivery note."
+msgstr "Se impostati, questo prodotto sarà automaticamente inserito in DDT"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Riga fattura"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "Statistiche fatture"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_stock_picking_package_preparation
+msgid "Package Preparation"
+msgstr "Preparazione collo"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_account_invoice_line_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_sale_order_line_espresso
+msgid "Prodotto espresso"
+msgstr "Prodotto espresso"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_product_product
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_product_template
+msgid "Product Template"
+msgstr "Prodotto radice"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga ordine di vendita"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_sale_report
+msgid "Sales Orders Statistics"
+msgstr "Statistiche Ordini di Vendita"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento di magazzino"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_stock_picking_package_preparation_to_send_mail
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_to_send_mail
+msgid "To send mail"
+msgstr "Mail da inviare"
+
+#. module: prodotti_espresso
+#: model:ir.model.fields,field_description:prodotti_espresso.field_wizard_create_ddt_espresso_validate_ddt
+msgid "Validate DdT"
+msgstr "Validare DdT"
+
+#. module: prodotti_espresso
+#: model:ir.model,name:prodotti_espresso.model_wizard_create_ddt_espresso
+msgid "wizard.create.ddt.espresso"
+msgstr "wizard.create.ddt.espresso"

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2022-23 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2022-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
 #
 {
     "name": "Prodotti Espresso",
     "version": "10.0.1.0.6",
     "category": "Accounting",
-    "summary": "Prodotti espresso",
+    "summary": "Ordini e fatture con prodotti espresso",
     "author": "SHS-AV s.r.l.",
-    "website": "",
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
     "development_status": "Beta",
     "license": "LGPL-3",
     "depends": [
@@ -28,5 +28,6 @@
         "report/account_invoice_report_view.xml",
         "report/sale_order_report_view.xml",
     ],
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }

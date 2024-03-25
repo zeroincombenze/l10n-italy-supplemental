@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2020-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
+# Copyright 2020-24 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
 #
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 #
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 
 
 class GopherConfigureWizard(models.TransientModel):
@@ -59,7 +59,7 @@ class GopherConfigureWizard(models.TransientModel):
         return html
 
     @api.multi
-    def account_wizard(self):
+    def configure_wizard(self):
         tracelog = self.html_txt(_("Result"), "h2")
         if (
             self.env.user.company_id.fatturapa_fiscal_position_id
@@ -81,10 +81,12 @@ class GopherConfigureWizard(models.TransientModel):
             )
         if self.set_rc_config and "account.rc.type" in self.env:
             tracelog += self.env["account.rc.type"].gopher_set_rc_type(
-                html_txt=self.html_txt)
+                html_txt=self.html_txt
+            )
         if self.check_4_tax:
             tracelog += self.env["account.tax"].gopher_configure_tax(
-                html_txt=self.html_txt)
+                html_txt=self.html_txt
+            )
         if self.set_rc_config or self.check_4_tax:
             tracelog += self.env["account.fiscal.position"].gopher_configure_fiscalpos(
                 html_txt=self.html_txt

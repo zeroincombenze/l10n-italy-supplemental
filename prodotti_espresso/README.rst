@@ -1,8 +1,8 @@
-=====================================================
-|icon| Prodotti Espresso/prodotti_espresso 10.0.1.0.6
-=====================================================
+===================================
+|icon| Prodotti Espresso 10.0.1.0.6
+===================================
 
-**Prodotti espresso**
+**Ordini e fatture con prodotti espresso**
 
 .. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/prodotti_espresso/static/description/icon.png
 
@@ -23,6 +23,20 @@ Overview | Panoramica
 |thumbnail|
 
 .. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/prodotti_espresso/static/description/description.png
+
+
+Configuration | Configurazione
+------------------------------
+
+Mark product expresso with flag expresso
+
+
+
+Usage | Utilizzo
+----------------
+
+Select sale orders e from action select Create Espresso Delivery Notes
+
 
 
 Getting started | Primi passi

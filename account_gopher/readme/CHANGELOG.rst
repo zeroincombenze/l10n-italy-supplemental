@@ -1,3 +1,9 @@
+10.0.0.2.9 (2024-03-25)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Documentation upgrade
+* [IMP] New menu reconcile move / Nuovo menù riconciliazione contabile
+
 10.0.0.2.8 (2022-07-22)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -54,3 +60,5 @@
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] First version
+* [QUA] Test coverage 9% (649: 590+59) [0 TestPoints] - quality rating 6 (target 100)
+* [QUA] Test coverage 9% (649: 590+59) [0 TestPoints] - quality rating 6 (target 100)

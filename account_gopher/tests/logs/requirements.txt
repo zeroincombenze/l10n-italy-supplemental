@@ -71,7 +71,7 @@ num2words==0.5.13
 numpy==1.16.6
 odoo==10.0
 odoo-score==2.0.7
-OdooRPC==0.9.0
+OdooRPC==0.8.0
 OERPLib==0.8.4
 ofxparse==0.16
 openpyxl==2.6.4

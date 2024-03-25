@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="wizard_reconcile_view" model="ir.ui.view">
+        <field name="name">Account Reconciliation Assistant</field>
+        <field name="model">gopher.reconcile.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Account Reconciliation Assistant">
+                <group>
+                    <field name="account_id"/>
+                    <field name="partner_id"/>
+                    <field name="reconcile_anonymous"/>
+                </group>
+                <footer>
+                    <button name="reconcile_wizard" string="Reconcile" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="result_wizard_reconcile_view" model="ir.ui.view">
+        <field name="name">Account Reconciliation Assistant</field>
+        <field name="model">gopher.reconcile.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Account Reconciliation Assistant Report">
+                <group>
+                    <field name="tracelog" readonly="1"/>
+                </group>
+                <footer>
+                    <button name="close_window" string="Close" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_reconcile_wizard"
+        key2="client_action_multi"
+        name="Account Reconciliation Assistant"
+        res_model="gopher.reconcile.wizard"
+        view_mode="form"
+        target="new"
+        />
+
+    <menuitem id="account_reconcile_gopher" name="Account Reconciliation Assistant"
+              action="action_reconcile_wizard"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_manager"
+              sequence="100"/>
+
+</odoo>
