@@ -1,54 +1,54 @@
 #
-# Copyright 2020-22 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-# Copyright 2020-22 librERP enterprise network <https://www.librerp.it>
-# Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
+# Copyright 2020-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2020-24 librERP enterprise network <https://www.librerp.it>
+# Copyright 2020-24 Didotech s.r.l. <https://www.didotech.com>
 #
 
-from odoo import models, fields, api
+from odoo import api, fields, models
 from odoo.tools.float_utils import float_is_zero
 
 
 class DueDateLine(models.Model):
-    _name = 'account.duedate_plus.line'
-    _description = 'Scadenze collegate ad una fattura/nota di credito'
+    _name = "account.duedate_plus.line"
+    _description = "Scadenze collegate ad una fattura/nota di credito"
 
-    _order = 'due_date'
+    _order = "due_date"
 
     duedate_manager_id = fields.Many2one(
-        comodel_name='account.duedate_plus.manager',
-        string='Gestore scadenze',
+        comodel_name="account.duedate_plus.manager",
+        string="Gestore scadenze",
         requred=True,
-        ondelete='cascade',
+        ondelete="cascade",
     )
 
-    due_date = fields.Date('Data di scadenza', requred=True)
+    due_date = fields.Date("Data di scadenza", requred=True)
     payment_method_id = fields.Many2one(
-        comodel_name='account.payment.method',
-        string='Metodo di pagamento',
+        comodel_name="account.payment.method",
+        string="Metodo di pagamento",
         # Metodo pagamento non sempre impostato nei termini di pagamento
         requred=False,
     )
     # Invoice currency amount
-    due_amount = fields.Float(string='Importo', required=True)
+    due_amount = fields.Float(string="Importo", required=True)
 
     move_line_id = fields.One2many(
-        comodel_name='account.move.line',
-        inverse_name='duedate_line_id',
-        string='Riferimento riga registrazione contabile',
+        comodel_name="account.move.line",
+        inverse_name="duedate_line_id",
+        string="Riferimento riga registrazione contabile",
     )
 
-    proposed_new_value = fields.Float(string='Importo proposto')
+    proposed_new_value = fields.Float(string="Importo proposto")
 
-    is_paid = fields.Boolean(string='Pagato', compute='_get_paid')
+    is_paid = fields.Boolean(string="Pagato", compute="_get_paid")
 
     schedule_payment = fields.Boolean(
-        string='In pagamento', compute='_get_scheduled_payment'
+        string="In pagamento", compute="_get_scheduled_payment"
     )
 
     def _get_scheduled_payment(self):
         for line in self:
-            rec = self.env['account.payment.line'].search(
-                [('move_line_id', 'in', [x.id for x in line.move_line_id])]
+            rec = self.env["account.payment.line"].search(
+                [("move_line_id", "in", [x.id for x in line.move_line_id])]
             )
             if rec:
                 line.schedule_payment = True
@@ -71,43 +71,33 @@ class DueDateLine(models.Model):
     def create(self, values):
 
         # Check if fields are empty
-        dd_miss = not values['due_date']
-        da_miss = not values['due_amount']
+        dd_miss = not values["due_date"]
+        da_miss = not values["due_amount"]
 
         # If all fields are empty return an empty recordset,
         # otherwise return the newly created record
         if dd_miss or da_miss:
-            empty_recordset = self.env['account.duedate_plus.line']
+            empty_recordset = self.env["account.duedate_plus.line"]
             return empty_recordset.search([])
         else:
             result = super().create(values)
             return result
-        # end if
-    # end create
 
     @api.multi
     def write(self, values):
 
         result = super().write(values)
 
-        if not self.env.context.get('RecStop'):
-            if 'due_date' in values:
+        if not self.env.context.get("RecStop"):
+            if "due_date" in values:
                 for duedate_line in self:
                     duedate_line.with_context(RecStop=True).update_duedate()
-                # end for
-            # end for
 
-            if 'payment_method_id' in values:
+            if "payment_method_id" in values:
                 for duedate_line in self:
-                    duedate_line.with_context(
-                        RecStop=True
-                    ).update_payment_method()
-                # end for
-            # end if
-        # end if
+                    duedate_line.with_context(RecStop=True).update_payment_method()
 
         return result
-    # end write
 
     # ORM METHODS OVERRIDE - end
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -115,17 +105,17 @@ class DueDateLine(models.Model):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # ONCHANGE METHODS
 
-    @api.onchange('due_amount')
+    @api.onchange("due_amount")
     def _onchange_due_amount(self):
-        '''
+        """
         Reset proposed_new_value if it is equal to due_amount
-        '''
+        """
         precision = self.env.user.company_id.currency_id.rounding
         difference = self.due_amount - self.proposed_new_value
 
         if float_is_zero(difference, precision_rounding=precision):
             self.proposed_new_value = 0
-        # end if
+
     # end _onchange_due_amount
 
     # @api.onchange('due_date')
@@ -167,7 +157,6 @@ class DueDateLine(models.Model):
     #     error = self._validate_due_amount()
     #     if error:
     #         raise UserError(error['message'])
-    # end if
     # end _check_due_amount
 
     # CONSTRAINTS - end
@@ -186,18 +175,18 @@ class DueDateLine(models.Model):
     # UPDATE MOVE LINE METHODS - begin
 
     # Update the associated duedate_line
-    @api.onchange('date_maturity')
+    @api.onchange("date_maturity")
     def update_duedate(self):
         if self.move_line_id:
             self.move_line_id[0].date_maturity = self.due_date
-        # end if
+
     # end _update_duedate
 
-    @api.onchange('payment_method_id')
+    @api.onchange("payment_method_id")
     def update_payment_method(self):
         if self.move_line_id:
             self.move_line_id[0].payment_method = self.payment_method_id
-        # end if
+
     # end _update_payment_method
 
     # UPDATE MOVE LINE METHODS - end

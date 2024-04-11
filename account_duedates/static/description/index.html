@@ -1,12 +1,31 @@
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Enhanced due dates management / Gestione evoluta delle scadenze</h2>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Enhanced due dates management</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Gestione evoluta data pagamento in fattura</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">This module adds stuff to manage due date from invoice and from due date menu.
 Due date can be change after invoice is validated too.
@@ -20,7 +39,7 @@ Due date can be change after invoice is validated too.
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Questo modulo gestisce le scadenza della fattura e del relativo men&#249;.
 Le date di scadenza possono essere modificate anche in fatture validate.
@@ -33,119 +52,75 @@ Le date di scadenza possono essere modificate anche in fatture validate.
 </p></p>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h3>12.0.4.8.37_4 (2023-01-11)</h3>
+<h4>12.0.4.8.38 (2024-04-11)</h4>
 <p align="justify">
+<ul>
+<li>[IMP] Documentation upgrade</li>
+<li>[IMP] Source code linting</li>
+<li>[QUA] Test coverage 46% (924: 499+425) [0 TestPoints] - quality rating 28 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>12.0.4.8.37_6 (2023-04-28)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Deposit management - Gestione anticipi/acconti/caparre in fattura</li>
+<li>[FIX] Undocumentated bug</li>
+</ul>
+</p><p align="justify">
+<h4>12.0.4.8.37_3 (2023-01-11)</h4>
+</p><p align="justify">
 <ul>
 <li>[FIX] Field account_move_line.payment_order_lines renamed to payment_line_ids - updated the account_due_list_view.xml view to use the new field name</li>
 </ul>
 </p><p align="justify">
-<h3>12.0.4.8.37_2 (2022-11-22)</h3>
-<p align="justify">
+<h4>12.0.4.8.37_2 (2022-11-22)</h4>
+</p><p align="justify">
 <ul>
 <li>[IMP] Field account_move_line.payment_order_lines renamed to payment_line_ids</li>
 </ul>
 </p><p align="justify">
-<h3>12.0.4.8.37_1 (2022-05-04)</h3>
+<h4>12.0.4.8.37_1 (2022-05-04)</h4>
 </p><p align="justify">
 <ul>
 <li>[FIX] Impostato campo fattura in sola lettura</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.37 (2022-04-21)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Division by zero</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.36 (2022-03-09)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Aggiunto il campo importo in distinta nella scadenza</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.35 (2022-03-02)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiunto il campo pagamento effettuato per le scadenze fornitore</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.34 (2022-02-25)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Currency invoces / Fatture in valuta</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.33 (2022-02-16)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Refund cannot be validated / N.C. non pu&#242; essere validata</li>
-<li>[IMP] Regression test</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.32 (2022-02-14)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Move down date_effective in view / Spostata data competeneza in tab</li>
-<li>[FIX] Currency invoice cannot be validated / Fattura in valuta non pu&#242; essere validata</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.31 (2022-01-27)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Update dependencies</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.30 (2022-01-20)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Standard OCA</li>
-<li>[IMP] sale.order model moved to account_duedate_sale module</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.29 (2021-12-22)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Hotfix0.23 Rimosso ricalcolo scadenze nelle creazione fattura</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.4.8.28 (2021-12-17)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Rimosso gestione campi conti bancari</li>
 </ul>
 </p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_separator"/>
-
 <section class="oe_container">
     <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
             <p class="oe_mt16"><ul>
-<li><a href="https://www.librerp.it/">librERP</a></li>
-<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
-<li><a href="https://www.didotech.com/">Didotech srl</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.didotech.com">Didotech s.r.l.</a></li>
 </ul></p>
         </div>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
             <p class="oe_mt16"><ul>
-<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+<li><a href="mailto:marco.tosato@didotech.com">Marco Tosato</a></li>
+<li><a href="mailto:fabio.giovannelli@didotech.com">Fabio Giovannelli</a></li>
 </ul></p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <p>This module is maintained by the <b>SHS_AV s.r.l.</b>.</p>
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <p>This module is part of l10n-italy project.</p>
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2024-04-11</p>
     </div>
 </section>

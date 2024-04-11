@@ -1,3 +1,2 @@
-* librERP <https://www.librerp.it>
 * SHS-AV s.r.l. <https://www.zeroincombenze.it>
-* Didotech srl <https://www.didotech.com>
+* Didotech s.r.l. <https://www.didotech.com>

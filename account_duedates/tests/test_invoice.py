@@ -112,6 +112,24 @@ TEST_ACCOUNT_PAYMENT_TERM = {
         'fatturapa_pm_id': 'l10n_it_fiscal_payment_term.fatturapa_mp05',
     },
 }
+TEST_ACCOUNT_PAYMENT_TERM_LINE = {
+    'z0bug.payment_1_1': {
+        'payment_id': 'z0bug.payment_1',
+        'sequence': 1,
+        'days': '30',
+        'value': 'balance',
+        'payment_method_credit': 'account.account_payment_method_manual_in',
+        'payment_method_debit': 'account.account_payment_method_manual_out',
+    },
+    'z0bug.payment_5_1': {
+        'payment_id': 'z0bug.payment_5',
+        'sequence': 1,
+        'days': '45',
+        'value': 'balance',
+        'payment_method_credit': 'account.account_payment_method_manual_in',
+        'payment_method_debit': 'account.account_payment_method_manual_out',
+    },
+}
 TEST_ACCOUNT_TAX = {
     'by': 'description',
     'external.22v': {
@@ -282,6 +300,7 @@ TEST_SETUP = {
     'account.fiscal.position': TEST_ACCOUNT_FISCAL_POSITION,
     'account.journal': TEST_ACCOUNT_JOURNAL,
     'account.payment.term': TEST_ACCOUNT_PAYMENT_TERM,
+    'account.payment.term.line': TEST_ACCOUNT_PAYMENT_TERM_LINE,
     'account.tax': TEST_ACCOUNT_TAX,
     'product.template': TEST_PRODUCT_TEMPLATE,
     'res.bank': TEST_RES_BANK,

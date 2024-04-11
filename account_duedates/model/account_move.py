@@ -1,10 +1,10 @@
 #
-# Copyright 2020-22 SHS-AV s.r.l. <https://www.zeroincombenze.it>
-# Copyright 2020-22 librERP enterprise network <https://www.librerp.it>
-# Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
+# Copyright 2020-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2020-24 librERP enterprise network <https://www.librerp.it>
+# Copyright 2020-24 Didotech s.r.l. <https://www.didotech.com>
 #
 
-from odoo import models, fields, api
+from odoo import api, fields, models
 from odoo.tools.float_utils import float_is_zero
 
 # from odoo.addons.account_common_mixin.models.mixin_base import BaseMixin
@@ -14,34 +14,34 @@ from ..utils.misc import MOVE_TYPE_INV_CN
 
 # class AccountMove(models.Model, BaseMixin):
 class AccountMove(models.Model):
-    _inherit = 'account.move'
+    _inherit = "account.move"
 
     duedate_manager_id = fields.One2many(
-        string='Gestore scadenze',
-        comodel_name='account.duedate_plus.manager',
-        inverse_name='move_id',
+        string="Gestore scadenze",
+        comodel_name="account.duedate_plus.manager",
+        inverse_name="move_id",
     )
 
     duedate_line_ids = fields.One2many(
-        string='Righe scadenze',
-        comodel_name='account.duedate_plus.line',
-        related='duedate_manager_id.duedate_line_ids',
+        string="Righe scadenze",
+        comodel_name="account.duedate_plus.line",
+        related="duedate_manager_id.duedate_line_ids",
         readonly=False,
     )
 
     duedates_amount_current = fields.Monetary(
-        string='Ammontare scadenze', compute='_compute_duedates_amounts'
+        string="Ammontare scadenze", compute="_compute_duedates_amounts"
     )
 
     duedates_amount_unassigned = fields.Monetary(
-        string='Ammontare non assegnato a scadenze',
-        compute='_compute_duedates_amounts',
+        string="Ammontare non assegnato a scadenze",
+        compute="_compute_duedates_amounts",
     )
 
     date_effective = fields.Date(
-        string='Data di decorrenza',
+        string="Data di decorrenza",
         readonly=True,
-        states={'draft': [('readonly', False)]},
+        states={"draft": [("readonly", False)]},
     )
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -54,7 +54,6 @@ class AccountMove(models.Model):
     #
     #     # Return the result of the write command
     #     return new_move
-    # end create
 
     @api.multi
     def write(self, values):
@@ -72,8 +71,8 @@ class AccountMove(models.Model):
         #       to restore the original value of "writing_c_d_m_l" before
         #       calling write_credit_debit_move_lines()
 
-        writing_c_d_m_l = self.env.context.get('writing_c_d_m_l', False)
-        check_move_validity = self.env.context.get('check_move_validity', True)
+        writing_c_d_m_l = self.env.context.get("writing_c_d_m_l", False)
+        check_move_validity = self.env.context.get("check_move_validity", True)
 
         self = self.with_context(writing_c_d_m_l=True)
         result = super().write(values)
@@ -86,11 +85,8 @@ class AccountMove(models.Model):
             #     when adding lines manually)
             #   - infinite recursion guard variable (writing_c_d_m_l) is False
             self.write_credit_debit_move_lines()
-        # end if
 
         return result
-
-    # end write
 
     # ORM METHODS OVERRIDE - end
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -98,7 +94,7 @@ class AccountMove(models.Model):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # ONCHANGE METHODS - begin
 
-    @api.onchange('duedate_line_ids')
+    @api.onchange("duedate_line_ids")
     def _onchange_duedate_line_ids(self):
         # Perform the computations only if there are move lines
         if self.line_ids:
@@ -106,11 +102,10 @@ class AccountMove(models.Model):
             self._ensure_duedate()
             # Aggiorno il totale delle righe
             self._compute_duedates_amounts()
-        # end if
 
     # end _onchange_duedate_line_ids
 
-    @api.onchange('amount')
+    @api.onchange("amount")
     def _onchange_amount(self):
 
         if not self.duedate_line_ids:
@@ -126,51 +121,41 @@ class AccountMove(models.Model):
             if self.duedates_amount_current == 0:
                 ratio = 0
             else:
-                ratio = (
-                    self.duedates_amount_unassigned
-                    / self.duedates_amount_current
-                )
-            # end if
+                ratio = self.duedates_amount_unassigned / self.duedates_amount_current
 
             for line in self.duedate_line_ids:
                 line.proposed_new_value = line.due_amount * (1 + ratio)
-            # end for
-        # end if
 
     # end _onchange_amount
 
-    @api.onchange('duedates_amount_unassigned')
+    @api.onchange("duedates_amount_unassigned")
     def _onchange_duedates_amount_unassigned(self):
-        '''
+        """
         Reset proposed_new_value if duedates_amount_unassigned is zero
-        '''
+        """
         precision = self.env.user.company_id.currency_id.rounding
 
-        if float_is_zero(
-            self.duedates_amount_unassigned, precision_rounding=precision
-        ):
+        if float_is_zero(self.duedates_amount_unassigned, precision_rounding=precision):
             for line in self.duedate_line_ids:
                 line.proposed_new_value = 0
-            # end for
-        # end if
 
     # end _onchange_duedates_amount_unassigned
 
     # NB: il campo 'payment_term_id' è definito nel modulo 'account_move_plus'
     #     che è una dipendenza di questo modulo
-    @api.onchange('payment_term_id')
+    @api.onchange("payment_term_id")
     def _onchange_payment_term_id(self):
         self.gen_duedates_and_update()
 
     # end _onchange_duedate_line_ids
 
-    @api.onchange('invoice_date')
+    @api.onchange("invoice_date")
     def _onchange_invoice_date(self):
         self.gen_duedates_and_update()
 
     # end _onchange_invoice_date
 
-    @api.onchange('date_effective')
+    @api.onchange("date_effective")
     def _onchange_date_effective(self):
         if not self.date_effective:
             self.date_effective = self.invoice_date
@@ -178,18 +163,17 @@ class AccountMove(models.Model):
 
     # end _onchange_invoice_date
 
-    @api.onchange('type')
+    @api.onchange("type")
     def _onchange_type(self):
-        if self.type == 'out_invoice':
-            self.move_type = 'receivable'
-        elif self.type == 'out_refund':
-            self.move_type = 'receivable_refund'
-        elif self.type == 'in_invoice':
-            self.move_type = 'payable'
-        elif self.type == 'in_refund':
-            self.move_type = 'payable_refund'
+        if self.type == "out_invoice":
+            self.move_type = "receivable"
+        elif self.type == "out_refund":
+            self.move_type = "receivable_refund"
+        elif self.type == "in_invoice":
+            self.move_type = "payable"
+        elif self.type == "in_refund":
+            self.move_type = "payable_refund"
         return super()._onchange_type()
-        # end if
 
     # end def _onchange_type
 
@@ -202,7 +186,7 @@ class AccountMove(models.Model):
     @api.multi
     def write_credit_debit_move_lines(self):
 
-        writing_c_d_m_l = self.env.context.get('writing_c_d_m_l', False)
+        writing_c_d_m_l = self.env.context.get("writing_c_d_m_l", False)
 
         if not writing_c_d_m_l:
 
@@ -215,38 +199,23 @@ class AccountMove(models.Model):
                 # Check if the move is an invoice or a credit note
                 move_type_ok = move.type in MOVE_TYPE_INV_CN
 
-                is_draft = move.state == 'draft'
-                has_duedates = (
-                    move.duedate_line_ids and len(move.duedate_line_ids) > 0
-                )
+                is_draft = move.state == "draft"
+                has_duedates = move.duedate_line_ids and len(move.duedate_line_ids) > 0
 
                 if move_type_ok and is_draft and has_duedates:
 
                     # Compute the modifications to be performed
-                    move_lines_mods = (
-                        move._compute_new_credit_debit_move_lines()
-                    )
+                    move_lines_mods = move._compute_new_credit_debit_move_lines()
 
                     # Save changes
                     if move_lines_mods:
                         move.write(move_lines_mods)
-                    # end if
-
-                # end if
-            # end for
-
-        # end if
-
-    # end write_credit_debit_move_lines
 
     @api.multi
     def action_update_duedates_and_move_lines(self):
         # Update account.duedate_plus.line records
         for move in self:
             move.gen_duedates_and_write()
-        # end for
-
-    # end update_duedates_and_move_lines
 
     # PUBLIC METHODS - end
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -255,7 +224,7 @@ class AccountMove(models.Model):
     # COMPUTE METHODS - begin
 
     @api.multi
-    @api.depends('duedate_line_ids', 'amount')
+    @api.depends("duedate_line_ids", "amount")
     def _compute_duedates_amounts(self):
 
         for inv in self:
@@ -270,7 +239,6 @@ class AccountMove(models.Model):
 
             # Aggiornamento campo ammontare non assegnato a scadenze
             inv.duedates_amount_unassigned = inv.amount - lines_total
-        # end for
 
     # end _compute_duedate_lines_amount
 
@@ -289,7 +257,6 @@ class AccountMove(models.Model):
         # Update the record
         if duedate_lines_mods:
             self.update(duedate_lines_mods)
-        # end if
 
     # end _gen_duedates_and_update
 
@@ -302,19 +269,18 @@ class AccountMove(models.Model):
         # Write the new data
         if duedate_lines_mods:
             self.write(duedate_lines_mods)
-        # end if
 
     # end _gen_duedates_and_write
 
     @api.model
     def _gen_duedates(self):
-        '''
+        """
         Compute the duedates.
         Note: this method only returns a list of modifications to be performed
               to the duedates, it does NOT:
             - call write() or update() to store the generated modifications
             - modify the lines of the move object
-        '''
+        """
         # Ensure duedate_manager is configured
         self._get_duedate_manager()
 
@@ -327,36 +293,28 @@ class AccountMove(models.Model):
         # Remove old records
         if self.duedate_line_ids:
             updates_list += [
-                (2, duedate_line.id, 0)
-                for duedate_line in self.duedate_line_ids
+                (2, duedate_line.id, 0) for duedate_line in self.duedate_line_ids
             ]
-        # end if
 
         # Create new records
         if duedate_line_list:
-            updates_list += [
-                (0, 0, duedate_line) for duedate_line in duedate_line_list
-            ]
-        # end if
+            updates_list += [(0, 0, duedate_line) for duedate_line in duedate_line_list]
 
         # Update the record
         if updates_list:
-            return {'duedate_line_ids': updates_list}
+            return {"duedate_line_ids": updates_list}
         else:
             return None
-        # end if
 
     # end _write_duedates
 
     @api.model
     def _compute_new_credit_debit_move_lines(self):
-        '''Rewrite move lines generating the new lines from the duedates.'''
+        """Rewrite move lines generating the new lines from the duedates."""
 
         # Check if the move is an invoice or a credit note
         move_type_ok = self.type in MOVE_TYPE_INV_CN
-        move_has_duedates = (
-            self.duedate_line_ids and len(self.duedate_line_ids) > 0
-        )
+        move_has_duedates = self.duedate_line_ids and len(self.duedate_line_ids) > 0
         move_has_lines = self.line_ids and len(self.line_ids) > 0
 
         if not move_type_ok:
@@ -384,22 +342,21 @@ class AccountMove(models.Model):
                     line._compute_line_type()
                 line_type = line.line_type
                 # TODO> 'debit' / 'credit' will be removed early
-                if line_type in ('credit', 'debit', 'receivable', 'payable'):
+                if line_type in ("credit", "debit", "receivable", "payable"):
                     lines_cd.append(line)
-                    if line['amount_currency']:
-                        if line['debit']:
-                            rate = abs(line['amount_currency']) / line['debit']
-                        elif line['credit']:
-                            rate = abs(line['amount_currency']) / line['credit']
+                    if line["amount_currency"]:
+                        if line["debit"]:
+                            rate = abs(line["amount_currency"]) / line["debit"]
+                        elif line["credit"]:
+                            rate = abs(line["amount_currency"]) / line["credit"]
                 else:
                     lines_other.append(line)
-                # end if
-            # end for
-
+            if not lines_cd and not invoice_id:
+                return None
             # Build the move line template dictionary
             move_line_template = lines_cd[0].copy_data()[0]
             # remove 'move_id' because it is set by the update method
-            del move_line_template['move_id']
+            del move_line_template["move_id"]
 
             # List of modifications to move lines one2many field
             move_lines_mods = list()
@@ -415,44 +372,43 @@ class AccountMove(models.Model):
                     new_data = move_line_template.copy()
 
                     # Set the linked account.duedate_plus.line record
-                    new_data['duedate_line_id'] = duedate_line.id
+                    new_data["duedate_line_id"] = duedate_line.id
 
                     # Set the date_maturity field
-                    new_data['date_maturity'] = duedate_line.due_date
+                    new_data["date_maturity"] = duedate_line.due_date
 
-                    if self.type in ('in_refund', 'out_invoice'):
-                        new_data['amount_currency'] = duedate_line.due_amount
+                    if self.type in ("in_refund", "out_invoice"):
+                        new_data["amount_currency"] = duedate_line.due_amount
                     else:
-                        new_data['amount_currency'] = -duedate_line.due_amount
+                        new_data["amount_currency"] = -duedate_line.due_amount
                     if (ii + 1) == len(self.duedate_line_ids):
-                        if new_data['credit']:
-                            new_data['credit'] = round_curr(residual)
-                        elif new_data['debit']:
-                            new_data['debit'] = round_curr(residual)
+                        if new_data["credit"]:
+                            new_data["credit"] = round_curr(residual)
+                        elif new_data["debit"]:
+                            new_data["debit"] = round_curr(residual)
                     else:
-                        if new_data['credit']:
-                            new_data['credit'] = round_curr(
-                                duedate_line.due_amount / rate)
-                            residual -= new_data['credit']
-                        elif new_data['debit']:
-                            new_data['debit'] = round_curr(
-                                duedate_line.due_amount / rate)
-                            residual -= new_data['debit']
+                        if new_data["credit"]:
+                            new_data["credit"] = round_curr(
+                                duedate_line.due_amount / rate
+                            )
+                            residual -= new_data["credit"]
+                        elif new_data["debit"]:
+                            new_data["debit"] = round_curr(
+                                duedate_line.due_amount / rate
+                            )
+                            residual -= new_data["debit"]
 
                     # Set payment method
-                    new_data[
-                        'payment_method_id'
-                    ] = duedate_line.payment_method_id.id
+                    new_data["payment_method_id"] = duedate_line.payment_method_id.id
 
                     if invoice_id:
-                        new_data['invoice_id'] = invoice_id.id
+                        new_data["invoice_id"] = invoice_id.id
 
                     move_lines_mods.append((0, False, new_data))
 
                 else:
                     # Duedate lines without due date or w/o amount are ignored
                     pass
-            # end for
 
             # Schedule deletion of old lines
             move_lines_mods += [(4, line.id) for line in lines_other]
@@ -461,8 +417,7 @@ class AccountMove(models.Model):
             move_lines_mods += [(2, line.id) for line in lines_cd]
 
             # Return the modifications to be performed
-            return {'line_ids': move_lines_mods}
-        # end if
+            return {"line_ids": move_lines_mods}
 
     # end _compute_new_credit_debit_move_lines
 
@@ -487,11 +442,11 @@ class AccountMove(models.Model):
 
     @api.model
     def _get_duedate_manager(self):
-        '''
+        """
         Return the duedates manager for this invoice
         :return: The duedates manager object for the invoice
                  (account.duedate_plus.manager)
-        '''
+        """
 
         # Check if duedate manager is missing
         duedate_mgr_miss = not self.duedate_manager_id
@@ -499,7 +454,6 @@ class AccountMove(models.Model):
         # Add the Duedate Manager if it's missing
         if duedate_mgr_miss:
             self._create_duedate_manager()
-        # end if
 
         # Return the manager
         return self.duedate_manager_id
@@ -508,31 +462,30 @@ class AccountMove(models.Model):
 
     def _create_duedate_manager(self):
         # Add the Duedates Manager
-        duedate_manager = self.env['account.duedate_plus.manager'].create(
-            {'move_id': self.id}
+        duedate_manager = self.env["account.duedate_plus.manager"].create(
+            {"move_id": self.id}
         )
 
-        self.update({'duedate_manager_id': duedate_manager})
+        self.update({"duedate_manager_id": duedate_manager})
 
     # end _create_duedate_manager
 
     @api.model
     def _ensure_duedate(self):
-        '''
+        """
         Ensures that there is always a duedate set, if no duedate
         is found creates a new one and set the due date equal to
         the invoice date.
         :return:
-        '''
+        """
         if not self.duedate_line_ids and self.line_ids:
             new_duedate_line = {
-                'due_date': self.invoice_date,
-                'due_amount': self.amount,
-                'duedate_manager_id': self.duedate_manager_id.id,
+                "due_date": self.invoice_date,
+                "due_amount": self.amount,
+                "duedate_manager_id": self.duedate_manager_id.id,
             }
 
-            self.update({'duedate_line_ids': [(0, 0, new_duedate_line)]})
-        # end if
+            self.update({"duedate_line_ids": [(0, 0, new_duedate_line)]})
 
     # end _ensure_duedate
 

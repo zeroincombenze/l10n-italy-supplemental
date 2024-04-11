@@ -20,8 +20,6 @@ def get_company_bank_account(document):
         else:
             return adoc['default_company_bank']
 
-        # end if
-
     elif is_supplier_doc(adoc):
 
         if adoc['assigned_bank']:
@@ -30,12 +28,8 @@ def get_company_bank_account(document):
         else:
             return adoc['default_company_bank']
 
-        # end if
-
     else:
         return None
-    # end if
-# end get_company_bank_account
 
 
 def get_counterparty_bank_account(document):
@@ -46,7 +40,6 @@ def get_counterparty_bank_account(document):
         return adapted_doc['default_counterparty_bank']
     else:
         return False
-    # end if
 # end get_counterpart_bank_account
 
 
@@ -68,8 +61,6 @@ def is_client_doc(adapted_doc):
 
     else:
         return False
-    # end if
-# _is_client_doc
 
 
 def is_supplier_doc(adapted_doc):
@@ -86,5 +77,3 @@ def is_supplier_doc(adapted_doc):
 
     else:
         return False
-    # end if
-# _is_client_doc
