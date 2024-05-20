@@ -1,0 +1,222 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* microsoft_outlook_z0
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-15 18:23+0000\n"
+"PO-Revision-Date: 2024-05-15 18:23+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form
+msgid ""
+"<i class=\"fa fa-arrow-right\"/>\n"
+"                        Connect your Outlook account"
+msgstr ""
+"<i class=\"fa fa-arrow-right\"/>\n"
+"                        conto outlook la vostra connect"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form
+msgid ""
+"<i class=\"fa fa-cog\"/>\n"
+"                        Edit Settings"
+msgstr ""
+"<i class=\"fa fa-cog\"/>\n"
+"                        Impostazioni modificare"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form
+msgid ""
+"<span attrs=\"{'invisible': ['|', ('use_microsoft_outlook_service', '=', False), ('microsoft_outlook_refresh_token', '=', False)]}\" class=\"badge badge-success\">\n"
+"                        Outlook Token Valid\n"
+"                    </span>"
+msgstr ""
+"<span attrs=\"{'invisible': ['|', ('use_microsoft_outlook_service', '=', False), ('microsoft_outlook_refresh_token', '=', False)]}\" class=\"badge badge-success\">\n"
+"                        Valid token outlook\n"
+"                    </span>"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Outlook Credentials</span>"
+msgstr "<span class=\"o_form_label\">Credenziali outlook</span>"
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:192
+#, python-format
+msgid "An error occurred when fetching the access token. %s"
+msgstr ""
+"token accesso il modulo \" fetching è impostato a form solamente occurred "
+"errore an. %s"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_microsoft_outlook_uri
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_microsoft_outlook_uri
+msgid "Authentication URI"
+msgstr "URI autenticazione"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.res_config_settings_view_form
+msgid "Client ID"
+msgstr "Cliente ID"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.res_config_settings_view_form
+msgid "Client Secret"
+msgstr "Cliente Secret"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.microsoft_outlook_oauth_error
+msgid "Go back to your mail server"
+msgstr "server posta la vostra a indietro go"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_id
+msgid "ID"
+msgstr "ID"
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/ir_mail_server.py:35
+#, python-format
+msgid ""
+"Incorrect Connection Security for Outlook mail server %r. Please set it to "
+"\"TLS (STARTTLS)\"."
+msgstr ""
+"server posta outlook non valida in codice iva sicurezza connection non "
+"corretto %r. TLS\" a supporta impostare per (STARTTLS)\"."
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_is_microsoft_outlook_configured
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_is_microsoft_outlook_configured
+msgid "Is Outlook Credential Configured"
+msgstr "Configured credential outlook ore"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model,name:microsoft_outlook_z0.model_microsoft_outlook_mixin
+msgid "Microsoft Outlook Mixin"
+msgstr "Mixin outlook microsoft"
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:111
+#, python-format
+msgid "Only the administrator can link an Outlook mail server."
+msgstr ""
+"server posta outlook an collegamento can amministratore il modulo \" solo "
+"un'imposta per fattura è supportata."
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form
+msgid "Outlook"
+msgstr "Outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_microsoft_outlook_access_token
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_microsoft_outlook_access_token
+msgid "Outlook Access Token"
+msgstr "Token accesso outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_microsoft_outlook_access_token_expiration
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_microsoft_outlook_access_token_expiration
+msgid "Outlook Access Token Expiration Timestamp"
+msgstr "Timestamp expiration token accesso outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_use_microsoft_outlook_service
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_use_microsoft_outlook_service
+msgid "Outlook Authentication"
+msgstr "Autenticazione outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_base_config_settings_microsoft_outlook_client_identifier
+msgid "Outlook Client Id"
+msgstr "Id cliente outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_base_config_settings_microsoft_outlook_client_secret
+msgid "Outlook Client Secret"
+msgstr "Secret cliente outlook"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_ir_mail_server_microsoft_outlook_refresh_token
+#: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_microsoft_outlook_refresh_token
+msgid "Outlook Refresh Token"
+msgstr "Token riaggiornare outlook"
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:118
+#, python-format
+msgid "Please configure your Outlook credentials."
+msgstr "credenziali outlook la vostra configurazione per."
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/ir_mail_server.py:26
+#, python-format
+msgid ""
+"Please leave the password field empty for Outlook mail server %r. The OAuth "
+"process does not require it"
+msgstr ""
+"server posta outlook non valida in codice iva vuoto campo parola il modulo \" "
+"partire per %r. supporta require not does questo corso è per i nuovi sviluppatori o per i professionisti dell'it desiderosi di imparare gli aspetti tecnici oauth il modulo \""
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:213
+#, python-format
+msgid "Please login your Outlook mail server before using it."
+msgstr "it. usando before server posta outlook la vostra accedere per"
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.res_config_settings_view_form
+msgid "Send and receive email with your Outlook account."
+msgstr "conto outlook la vostra if e-mail ricevi e le invia."
+
+#. module: microsoft_outlook_z0
+#: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form
+msgid ""
+"Setup your Outlook API credentials in the general settings to link a Outlook account."
+msgstr ""
+"conto outlook https collegamento a impostazioni generale il modulo \" "
+"applicazioni credenziali api outlook la vostra configurazione."
+
+#. module: microsoft_outlook_z0
+#: model:ir.model.fields,help:microsoft_outlook_z0.field_ir_mail_server_microsoft_outlook_uri
+#: model:ir.model.fields,help:microsoft_outlook_z0.field_microsoft_outlook_mixin_microsoft_outlook_uri
+msgid "The URL to generate the authorization code from Outlook"
+msgstr "Outlook da codice authorization il modulo \" genera a url il modulo \""
+
+#. module: microsoft_outlook_z0
+#: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:190
+#, python-format
+msgid "Unknown error."
+msgstr "Errore sconosciuto."
+
+#. module: microsoft_outlook_z0
+#: model:ir.model,name:microsoft_outlook_z0.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"
+
+#. module: microsoft_outlook_z0
+#: model:ir.model,name:microsoft_outlook_z0.model_ir_mail_server
+msgid "ir.mail_server"
+msgstr "ir.mail_server"
+
+
