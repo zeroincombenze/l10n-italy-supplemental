@@ -1,0 +1,171 @@
+2024-05-17 14:01:53,000 1150653 DAEMON test_account_duedates_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+2024-05-17 12:02:01,359 1152174 INFO ? odoo: Odoo version 12.0 
+2024-05-17 12:02:01,359 1152174 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/account_duedates/tests/logs/zero12.l10n-italy-supplemental.account_duedates.conf 
+2024-05-17 12:02:01,359 1152174 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/management-system', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2024-05-17 12:02:01,359 1152174 INFO ? odoo: database: odoo12@localhost:5432 
+2024-05-17 12:02:01,501 1152174 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2024-05-17 12:02:01,597 1152174 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:28311 
+2024-05-17 12:02:01,616 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading 1 modules... 
+2024-05-17 12:02:01,626 1152174 INFO test_account_duedates_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2024-05-17 12:02:01,744 1152174 INFO test_account_duedates_12 odoo.modules.loading: updating modules list 
+2024-05-17 12:02:01,750 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2024-05-17 12:02:10,698 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['account_duedates'] to user __system__ #1 via n/a 
+2024-05-17 12:02:11,110 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading 51 modules... 
+2024-05-17 12:02:11,521 1152174 INFO test_account_duedates_12 odoo.modules.loading: 51 modules loaded in 0.41s, 0 queries 
+2024-05-17 12:02:11,526 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading 52 modules... 
+2024-05-17 12:02:11,657 1152174 WARNING test_account_duedates_12 odoo.fields: Field date.range.type.parent_type_id: parameter 'select' is no longer supported; use 'index' instead. 
+2024-05-17 12:02:12,023 1152174 WARNING test_account_duedates_12 odoo.models: The model partner.duedates.datarange has no _description 
+2024-05-17 12:02:12,241 1152174 INFO test_account_duedates_12 odoo.modules.registry: module account_duedates: creating or updating database tables 
+2024-05-17 12:02:12,607 1152174 WARNING test_account_duedates_12 odoo.addons.base.models.ir_model: Two fields (no_delete_duedate_line_ids, duedate_line_ids) of account.invoice() have the same label: Righe scadenze. 
+2024-05-17 12:02:12,922 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/security/ir.model.access.csv 
+2024-05-17 12:02:12,958 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/account_invoice_view.xml 
+2024-05-17 12:02:13,042 1152174 WARNING test_account_duedates_12 odoo.models: @onchange('date_maturity',) parameters must be field names 
+2024-05-17 12:02:13,195 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/account_move_view.xml 
+2024-05-17 12:02:13,284 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/account_move_line_view.xml 
+2024-05-17 12:02:13,350 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/account_due_list_view.xml 
+2024-05-17 12:02:13,423 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/partner_view.xml 
+2024-05-17 12:02:13,555 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/view/report_invoice.xml 
+2024-05-17 12:02:13,576 1152174 WARNING test_account_duedates_12 odoo.addons.base.models.ir_ui_view: Error-prone use of @class in view Duedates (): use the hasclass(*classes) function to filter elements by their classes 
+2024-05-17 12:02:13,596 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/data/update_year_cron.xml 
+2024-05-17 12:02:13,621 1152174 INFO test_account_duedates_12 odoo.modules.loading: loading account_duedates/data/date_range_type.xml 
+2024-05-17 12:02:13,635 1152174 INFO test_account_duedates_12 odoo.modules.loading: Module account_duedates: loading demo 
+2024-05-17 12:02:13,671 1152174 INFO test_account_duedates_12 odoo.modules.module: odoo.addons.account_duedates.tests.test_invoice running tests. 
+2024-05-17 12:02:13,671 1152174 INFO test_account_duedates_12 odoo.addons.account_duedates.tests.test_invoice: test_invoice (odoo.addons.account_duedates.tests.test_invoice.TestAccountMove) 
+2024-05-17 12:02:13,772 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module base: loading translation file (it) for language it_IT 
+2024-05-17 12:02:13,772 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/it.po 
+2024-05-17 12:02:15,529 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,530 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web/i18n/it.po 
+2024-05-17 12:02:15,648 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module base_setup: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,648 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/base_setup/i18n/it.po 
+2024-05-17 12:02:15,666 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module decimal_precision: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,667 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/decimal_precision/i18n/it.po 
+2024-05-17 12:02:15,672 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Warning!' (code, addons/decimal_precision/models/decimal_precision.py, 24) not found in reference pot, skipping 
+2024-05-17 12:02:15,683 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module bus: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,684 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/bus/i18n/it.po 
+2024-05-17 12:02:15,699 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_tour: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,700 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_tour/i18n/it.po 
+2024-05-17 12:02:15,715 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module mail: loading translation file (it) for language it_IT 
+2024-05-17 12:02:15,715 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/mail/i18n/it.po 
+2024-05-17 12:02:16,088 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module uom: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,089 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/uom/i18n/it.po 
+2024-05-17 12:02:16,108 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module product: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,108 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/product/i18n/it.po 
+2024-05-17 12:02:16,199 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module analytic: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,199 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/analytic/i18n/it.po 
+2024-05-17 12:02:16,223 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module http_routing: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,223 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/http_routing/i18n/it.po 
+2024-05-17 12:02:16,235 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module portal: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,235 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/portal/i18n/it.po 
+2024-05-17 12:02:16,263 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module digest: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,263 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/digest/i18n/it.po 
+2024-05-17 12:02:16,283 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,283 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/account/i18n/it.po 
+2024-05-17 12:02:16,837 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_bank_statement_import: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,837 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/account_bank_statement_import/i18n/it.po 
+2024-05-17 12:02:16,860 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_invoice_13_more: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,860 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/l10n-italy-supplemental/account_invoice_13_more/i18n/it.po 
+2024-05-17 12:02:16,876 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module assigned_bank: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,876 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/l10n-italy-supplemental/assigned_bank/i18n/it.po 
+2024-05-17 12:02:16,890 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module l10n_it_fiscal_payment_term: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,891 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/l10n-italy/l10n_it_fiscal_payment_term/i18n/it.po 
+2024-05-17 12:02:16,906 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_common_mixin: no translation for language it 
+2024-05-17 12:02:16,908 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_due_list: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,908 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/account-payment/account_due_list/i18n/it.po 
+2024-05-17 12:02:16,921 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_facturx: no translation for language it 
+2024-05-17 12:02:16,924 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module date_range: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,925 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/server-ux/date_range/i18n/it.po 
+2024-05-17 12:02:16,928 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'A date range must be unique per company !' (code, sql_constraint, date.range) not found in reference pot, skipping 
+2024-05-17 12:02:16,929 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'A date range type must be unique per company !' (code, sql_constraint, date.range.type) not found in reference pot, skipping 
+2024-05-17 12:02:16,930 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'days' (code, selection, date.range.generator,unit_of_time) not found in reference pot, skipping 
+2024-05-17 12:02:16,930 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'months' (code, selection, date.range.generator,unit_of_time) not found in reference pot, skipping 
+2024-05-17 12:02:16,930 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'weeks' (code, selection, date.range.generator,unit_of_time) not found in reference pot, skipping 
+2024-05-17 12:02:16,930 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'years' (code, selection, date.range.generator,unit_of_time) not found in reference pot, skipping 
+2024-05-17 12:02:16,944 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_fiscal_year: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,944 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/account-financial-tools/account_fiscal_year/i18n/it.po 
+2024-05-17 12:02:16,958 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_move_line_type: no translation for language it 
+2024-05-17 12:02:16,960 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module date_range_plus: no translation for language it 
+2024-05-17 12:02:16,963 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_move_plus: no translation for language it 
+2024-05-17 12:02:16,967 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_payment_mode: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,967 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/bank-payment/account_payment_mode/i18n/it.po 
+2024-05-17 12:02:16,984 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_payment_method: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,985 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/l10n-italy-supplemental/account_payment_method/i18n/it.po 
+2024-05-17 12:02:16,997 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_payment_partner: loading translation file (it) for language it_IT 
+2024-05-17 12:02:16,998 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/bank-payment/account_payment_partner/i18n/it.po 
+2024-05-17 12:02:17,011 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module base_iban: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,011 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/base_iban/i18n/it.po 
+2024-05-17 12:02:17,024 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_payment_order: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,024 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/bank-payment/account_payment_order/i18n/it.po 
+2024-05-17 12:02:17,051 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module account_payment_term_plus: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,052 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/l10n-italy-supplemental/account_payment_term_plus/i18n/it.po 
+2024-05-17 12:02:17,066 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module auth_signup: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,066 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/auth_signup/i18n/it.po 
+2024-05-17 12:02:17,085 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module base_import: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,086 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/base_import/i18n/it.po 
+2024-05-17 12:02:17,115 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module fetchmail: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,115 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/fetchmail/i18n/it.po 
+2024-05-17 12:02:17,132 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_settings_dashboard: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,133 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_settings_dashboard/i18n/it.po 
+2024-05-17 12:02:17,149 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module iap: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,149 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/iap/i18n/it.po 
+2024-05-17 12:02:17,352 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module l10n_generic_coa: no translation for language it 
+2024-05-17 12:02:17,354 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module l10n_us: no translation for language it 
+2024-05-17 12:02:17,356 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module mail_bot: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,356 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/mail_bot/i18n/it.po 
+2024-05-17 12:02:17,374 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module module_version: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,374 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/uncovered/module_version/i18n/it.po 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'To upgrade' (view, ir.module.module, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Upgrade' (view, ir.module.module, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Not Installed' (view, ir.module.module, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Cancel Upgrade' (view, ir.module.module, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Need Upgrade' (code, addons/module_version/module.py, 60) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Need Upgrade' (field, ir.module.module,check_upgrade, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,378 1152174 INFO test_account_duedates_12 odoo.tools.translate: Translation 'Need Upgrade' (field, ir.module.module,need_upgrade, 0) not found in reference pot, skipping 
+2024-05-17 12:02:17,388 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module partner_autocomplete: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,388 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/partner_autocomplete/i18n/it.po 
+2024-05-17 12:02:17,403 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module payment: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,404 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/payment/i18n/it.po 
+2024-05-17 12:02:17,460 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module payment_transfer: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,460 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/payment_transfer/i18n/it.po 
+2024-05-17 12:02:17,473 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module sms: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,473 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/sms/i18n/it.po 
+2024-05-17 12:02:17,487 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module snailmail: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,487 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/snailmail/i18n/it.po 
+2024-05-17 12:02:17,502 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module snailmail_account: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,503 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/snailmail_account/i18n/it.po 
+2024-05-17 12:02:17,516 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_diagram: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,516 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_diagram/i18n/it.po 
+2024-05-17 12:02:17,575 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_editor: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,575 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_editor/i18n/it.po 
+2024-05-17 12:02:17,618 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_kanban_gauge: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,618 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_kanban_gauge/i18n/it.po 
+2024-05-17 12:02:17,629 1152174 INFO test_account_duedates_12 odoo.addons.base.models.ir_translation: module web_unsplash: loading translation file (it) for language it_IT 
+2024-05-17 12:02:17,629 1152174 INFO test_account_duedates_12 odoo.tools.translate: loading /home/odoo/12.0/addons/web_unsplash/i18n/it.po 
+2024-05-17 12:02:21,435 1152174 INFO test_account_duedates_12 odoo.addons.account_duedates.tests.test_invoice: Ran 1 test in 7.764s 
+2024-05-17 12:02:21,435 1152174 INFO test_account_duedates_12 odoo.addons.account_duedates.tests.test_invoice: OK 
+2024-05-17 12:02:21,435 1152174 INFO test_account_duedates_12 odoo.modules.module: odoo.addons.account_duedates.tests.test_invoice tested in 7.76s, 3570 queries 
+2024-05-17 12:02:21,468 1152174 INFO test_account_duedates_12 odoo.modules.loading: 52 modules loaded in 9.94s, 3589 queries 
+2024-05-17 12:02:22,159 1152174 INFO test_account_duedates_12 odoo.modules.loading: Modules loaded. 
+2024-05-17 12:02:22,166 1152174 INFO test_account_duedates_12 odoo.service.server: Starting post tests 
+2024-05-17 12:02:22,167 1152174 INFO test_account_duedates_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2024-05-17 12:02:22,167 1152174 INFO test_account_duedates_12 odoo.service.server: Initiating shutdown 
+2024-05-17 12:02:22,168 1152174 INFO test_account_duedates_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36maccount_duedates[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/12.0/l10n-italy-supplemental/account_duedates/tests/logs/coverage_account_duedates_12rc -m
+[34;107mName                                                                                             Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------------------------------------------------------------
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/init_hook.py                               23      0   100%
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_duedate_plus_line.py         61     30    51%   49-56, 59-65, 71, 80-81, 87, 93-94, 97-98, 109-117, 179-181, 186-188
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_duedate_plus_manager.py     230    117    49%   62-76, 79, 86, 90, 113-114, 123, 128, 138, 143, 148, 158-159, 168-181, 191, 202-204, 218, 239-272, 277, 286-289, 304, 323, 330, 346-366, 374, 388, 400, 413-422, 425-426, 445, 449-454, 459-471, 475-496, 501, 505-511, 519-527, 535-541, 549-563, 575, 584, 587, 590, 593, 598, 603, 606, 611, 618, 629
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_invoice.py                  237     97    59%   65, 76, 93-94, 102-108, 129, 132, 144-147, 150, 162, 171, 189, 206, 219, 222, 257-262, 280, 289, 303, 318-325, 330-337, 346-350, 355-356, 361-362, 367-368, 373-374, 380-388, 393, 398, 401, 409-410, 415-434, 451-457, 462, 482, 493, 497-500, 506, 524, 531-563
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_move.py                     187    142    24%   59, 98-104, 109-127, 132-140, 147-148, 153-154, 159-162, 167-176, 187, 208-212, 215-218, 228-241, 252-259, 264-271, 276-307, 312-420, 444-459, 465-469, 474-488
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_move_line.py                100     59    41%   18-24, 27, 33, 40-48, 134-156, 162-169, 172-179, 182-184, 187-196, 201-210, 219, 225-226, 229-230, 236-238, 241-243
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/account_payment_term_line.py         22     16    27%   16-38
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/model/partner_duedates_data_range.py       63     38    40%   22-23, 25-26, 45-57, 60-74, 77-103
+/home/odoo/12.0/l10n-italy-supplemental/account_duedates/utils/misc.py                               1      0   100%
+------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                              924    499    46%
+[0m

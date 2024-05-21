@@ -32,7 +32,7 @@ Le date di scadenza possono essere modificate anche in fatture validate.
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_duedates/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/account_duedates/static/description/
 
 
 Getting started | Primi passi
@@ -153,11 +153,6 @@ ChangeLog History | Cronologia modifiche
 
 * [IMP] Field account_move_line.payment_order_lines renamed to payment_line_ids
 
-12.0.4.8.37_1 (2022-05-04)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Impostato campo fattura in sola lettura
-
 
 
 Credits | Ringraziamenti
@@ -210,7 +205,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-04-11
+Last Update / Ultimo aggiornamento: 2024-05-17
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

@@ -1,21 +1,20 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * account_duedates
+#	* account_duedates
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (12.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-05 18:33+0000\n"
-"PO-Revision-Date: 2022-06-05 18:33+0000\n"
+"POT-Creation-Date: 2024-05-17 11:48+0000\n"
+"PO-Revision-Date: 2024-05-17 11:48+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_duedates
 #: model_terms:ir.ui.view,arch_db:account_duedates.view_account_move_due_dates_form
@@ -68,12 +67,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_duedates.field_account_invoice__duedates_amount_current
 #: model:ir.model.fields,field_description:account_duedates.field_account_move__duedates_amount_current
 msgid "Ammontare scadenze"
-msgstr ""
+msgstr "scadenze ammontare"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__counterparty_bank_id
 msgid "Banca d'appoggio"
-msgstr ""
+msgstr "appoggio'd banca"
 
 #. module: account_duedates
 #: model:ir.model,name:account_duedates.model_res_partner
@@ -130,7 +129,7 @@ msgstr ""
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__calculate_field
 msgid "Domain test"
-msgstr ""
+msgstr "ambiente dominio"
 
 #. module: account_duedates
 #: model:date.range.type,name:account_duedates.duedate_period
@@ -147,7 +146,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_duedates.field_account_invoice__duedate_manager_id
 #: model:ir.model.fields,field_description:account_duedates.field_account_move__duedate_manager_id
 msgid "Gestore scadenze"
-msgstr ""
+msgstr "scadenze gestore"
 
 #. module: account_duedates
 #: model:ir.model,name:account_duedates.model_account_duedate_plus_manager
@@ -169,7 +168,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_manager__id
 #: model:ir.model.fields,field_description:account_duedates.field_partner_duedates_datarange__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_line__due_amount
@@ -180,18 +179,18 @@ msgstr ""
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__amount_into_payment_line
 msgid "Importo in distinta"
-msgstr ""
+msgstr "distinta applicazioni importo"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_line__proposed_new_value
 msgid "Importo proposto"
-msgstr ""
+msgstr "proposto importo"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__in_order
 #: model_terms:ir.ui.view,arch_db:account_duedates.inherit_view_payments_filter
 msgid "In distinta"
-msgstr ""
+msgstr "distinta applicazioni"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_line__schedule_payment
@@ -211,12 +210,12 @@ msgstr "Fattura"
 #. module: account_duedates
 #: model:ir.model,name:account_duedates.model_account_move
 msgid "Journal Entries"
-msgstr "Registrazioni contabili"
+msgstr "Registrazioni sezionale"
 
 #. module: account_duedates
 #: model:ir.model,name:account_duedates.model_account_move_line
 msgid "Journal Item"
-msgstr "Movimento contabile"
+msgstr "Oggetto sezionale"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_line____last_update
@@ -287,16 +286,18 @@ msgstr "Nominativo"
 #: model:ir.cron,name:account_duedates.update_year_cron
 msgid "Partner split period update"
 msgstr ""
-
-#. module: account_duedates
-#: model:ir.model.fields,field_description:account_duedates.field_account_move_line__payment_order_lines
-msgid "Payment Order Lines"
-msgstr ""
+"attiva questo campo solo per specificare un modello diverso dal modello di "
+"base periodo dividi nominativo"
 
 #. module: account_duedates
 #: model:ir.model,name:account_duedates.model_account_payment_term_line
 msgid "Payment Terms Line"
 msgstr "Riga termini di pagamento"
+
+#. module: account_duedates
+#: model:ir.model.fields,field_description:account_duedates.field_account_move_line__payment_line_ids
+msgid "Payment lines"
+msgstr "righe pagamento"
 
 #. module: account_duedates
 #: model_terms:ir.ui.view,arch_db:account_duedates.view_partner_property_form_split_date
@@ -322,7 +323,7 @@ msgstr ""
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_manager__move_id
 msgid "Registrazione contabile"
-msgstr ""
+msgstr "contabile registrazione"
 
 #. module: account_duedates
 #: model_terms:ir.ui.view,arch_db:account_duedates.view_account_move_due_dates_form
@@ -334,12 +335,12 @@ msgstr ""
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_duedate_plus_line__move_line_id
 msgid "Riferimento riga registrazione contabile"
-msgstr ""
+msgstr "contabile registrazione riga riferimento"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__duedate_line_id
 msgid "Riferimento riga scadenza"
-msgstr ""
+msgstr "scadenza riga riferimento"
 
 #. module: account_duedates
 #: model:ir.model.fields,field_description:account_duedates.field_account_move_line__is_duedate
@@ -352,7 +353,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_duedates.field_account_invoice__no_delete_duedate_line_ids
 #: model:ir.model.fields,field_description:account_duedates.field_account_move__duedate_line_ids
 msgid "Righe scadenze"
-msgstr ""
+msgstr "scadenze righe"
 
 #. module: account_duedates
 #: model_terms:ir.ui.view,arch_db:account_duedates.view_account_move_due_dates_form
