@@ -50,7 +50,8 @@ class IrMailServer(models.Model):
     @api.onchange("use_microsoft_outlook_service")
     def _onchange_use_microsoft_outlook_service(self):
         if self.use_microsoft_outlook_service:
-            self.smtp_host = "smtp.outlook.com"
+            if "outlook" not in self.smtp_host and "office365" not in self.smtp_host:
+                self.smtp_host = "smtp.outlook.com"
             self.smtp_encryption = "starttls"
             self.smtp_port = 587
         else:
