@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     "name": "Microsoft Outlook",
-    "version": "10.0.1.0",
+    "version": "10.0.1.1",
     "category": "Hidden",
     "summary": "Microsoft Outlook Outgoing email server",
     "author": "SHS-AV s.r.l.",

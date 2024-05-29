@@ -62,7 +62,8 @@ class MicrosoftOutlookController(http.Controller):
         if not record:
             raise Forbidden()
 
-        if not csrf_token or not consteq(csrf_token, record._get_outlook_csrf_token()):
+        if not csrf_token or not consteq(csrf_token,
+                                         unicode(record._get_outlook_csrf_token())):
             _logger.error(
                 "Microsoft Outlook: Wrong CSRF token during Outlook authentication."
             )

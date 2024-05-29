@@ -16,7 +16,7 @@ cffi==1.15.1
 chardet==4.0.0
 checksumdir==1.1.7
 click==7.1.2
-clodoo==2.0.10
+clodoo==2.0.11
 codicefiscale==0.9
 configparser==4.0.2
 contextlib2==0.6.0.post1

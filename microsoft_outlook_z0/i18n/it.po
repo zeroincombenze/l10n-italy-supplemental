@@ -71,7 +71,7 @@ msgstr "Client ID"
 #. module: microsoft_outlook_z0
 #: model:ir.ui.view,arch_db:microsoft_outlook_z0.res_config_settings_view_form
 msgid "Client Secret"
-msgstr "Cliente Secret"
+msgstr "Client Secret"
 
 #. module: microsoft_outlook_z0
 #: model:ir.model.fields,field_description:microsoft_outlook_z0.field_microsoft_outlook_mixin_display_name
@@ -114,7 +114,7 @@ msgstr "Microsoft Outlook Mixin"
 #: code:addons/microsoft_outlook_z0/models/microsoft_outlook_mixin.py:111
 #, python-format
 msgid "Only the administrator can link an Outlook mail server."
-msgstr "Solo l'amministratore può collegare un server e-mail Outllok."
+msgstr "Solo l'amministratore può collegare un server e-mail Outlook."
 
 #. module: microsoft_outlook_z0
 #: model:ir.ui.view,arch_db:microsoft_outlook_z0.ir_mail_server_view_form

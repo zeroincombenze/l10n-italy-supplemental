@@ -49,16 +49,60 @@ Il modulo &#232; un backport da Odoo 12.0.</p>
                 <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
                 <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify"><span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; General Setting &#187; Email
+            <p class="oe_mt16" align="justify">Create a new application
 <p align="justify">
-Load "Client ID" and "Client secret" from Outlook365.
+To get started, go to Microsoft&#8217;s Azure Portal. Log in with the Microsoft Outlook Office
+365 account if there is one, otherwise log in with the personal Microsoft account.
+A user with administrative access to the Azure Settings will need to connect and
+perform the following configuration.
+Next, navigate to the section labeled Manage Microsoft Entra ID (formally Azure Active
+Directory).
+</p><p align="justify">
+Now, click on Add (+), located in the top menu, and then select App registration.
+On the Register an application screen, rename the Name to Odoo or something
+recognizable. Under the Supported account types section select Accounts in any
+organizational directory (Any Microsoft Entra ID directory - Multitenant) and personal
+Microsoft accounts (e.g. Skype, Xbox).
+</p><p align="justify">
+</p><p align="justify">
+Under the Redirect URL section, select Web as the platform, and then input
+"https://&lt;odoo base url&gt;/microsoft_outlook/confirm" in the URL field.
+The Odoo base URL is the canonical domain at which your Odoo instance can be reached
+in the URL field.
+</p><p align="justify">
+Assign users and groups.
+</p><p align="justify">
+Create credentials.
+Create "Client ID" and "Client secret" for successfully use into Odoo.
+</p><p align="justify">
+Setup in Odoo
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; General Setting &#187; Email
+</p><p align="justify">
+Set the alias domain to right value.
+</p><p align="justify">
+Load "Client ID" and "Client secret" created in Outlook365.
+</p><p align="justify">
+Activate the flag "Use external authentication provider"
 </p><p align="justify">
 </p><p align="justify">
 <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; Activate the developer mode
 </p><p align="justify">
 <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; Technical &#187; Emails &#187; Outgoing Mail Server
 </p><p align="justify">
-To connect a Outlook365 mail server, set tha flag Outlook.
+</p><p align="justify">
+To connect a Outlook365 mail server, set tha flag Outlook, check the smtp.server:
+this module set smtp.outlook.com, however smtp server should be smtp.office365.com.
+Port should be 587 and security should be "TLS (StartTLS)".
+Set the user name but the password must be clean.
+</p><p align="justify">
+Save configuration than click on the right arrow to Connect your Outlook account.
+</p><p align="justify">
+A new window from Microsoft opens to complete the authorization process.
+Select the appropriate email address that is being configured in Odoo.
+</p><p align="justify">
+</p><p align="justify">
+Find mode info <a href="https://www.odoo.com/documentation/17.0/applications/general/email_communication/azure_oauth.html">Setup Odoo  in Microsoft Azure Portal</a>
 </p></p>
         </div>
         <div class="oe_span6">
@@ -81,10 +125,49 @@ Per connettere un server Outlook365 attivare l'indicatore Outlook.
 
 <section>
     <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">if you have some trouble using this module, execute the following steps:
+<p align="justify">
+</p><p align="justify">
+<ol>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; Activate the developer mode</li>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; Technical &#187; Parameters &#187; System parameters</li>
+<li> Check for web.base.url value</li>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; General Setting &#187; Email</li>
+<li> Set the alias domain to right value</li>
+<li> Check or reload "Client ID" and "Client secret"</li>
+<li> <span class="fa fa-th-large" style="color:#7C7BAD"/> Settings &#187; Technical &#187; Emails &#187; Outgoing Mail Server</li>
+<li> Repeat the "Connect your Outlook account" process</li>
+</ol>
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.0 (2024-05-22)</h4>
+<h4>10.0.0.1.1 (2024-05-29)</h4>
 <p align="justify">
+<ul>
+<li>[FIX] Outlook authentication</li>
+<li>[QUA] Test coverage 34% (176: 116+60) [0 TestPoints] - quality rating 21 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.0 (2024-05-22)</h4>
+</p><p align="justify">
 <ul>
 <li>Initial implementation / Implementazione iniziale</li>
 <li>[QUA] Test coverage 34% (176: 116+60) [0 TestPoints] - quality rating 21 (target 100)</li>
@@ -118,6 +201,6 @@ Per connettere un server Outlook365 attivare l'indicatore Outlook.
     </div>
     <div class="oe_row oe_spaced">
         <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
-        <p>Published information on | Informazioni pubblicate: 2024-05-22</p>
+        <p>Published information on | Informazioni pubblicate: 2024-05-29</p>
     </div>
 </section>
