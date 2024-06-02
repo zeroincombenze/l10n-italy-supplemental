@@ -9,22 +9,22 @@ from odoo.tools import float_is_zero, float_compare
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     delivery_state = fields.Selection(
         [
-            ('no', 'No delivery'),
-            ('unprocessed', 'Unprocessed'),
-            ('partially', 'Partially processed'),
-            ('done', 'Done'),
+            ("no", "No delivery"),
+            ("unprocessed", "Unprocessed"),
+            ("partially", "Partially processed"),
+            ("done", "Done"),
         ],
-        string='Delivery state',
-        compute='_compute_delivery_state',
+        string="Delivery state",
+        compute="_compute_delivery_state",
         store=True,
     )
 
     force_delivery_state = fields.Boolean(
-        string='Force delivery state',
+        string="Force delivery state",
         help=(
             "Allow to enforce done state of delivery, for instance if some"
             " quantities were cancelled"
@@ -42,8 +42,8 @@ class SaleOrder(models.Model):
         self.ensure_one()
         # Skip delivery costs lines
         sale_lines = self.order_line.filtered(lambda rec: not rec._is_delivery())
-        precision = self.env['decimal.precision'].precision_get(
-            'Product Unit of Measure'
+        precision = self.env["decimal.precision"].precision_get(
+            "Product Unit of Measure"
         )
         return all(
             float_compare(
@@ -62,8 +62,8 @@ class SaleOrder(models.Model):
         self.ensure_one()
         # Skip delivery costs lines
         sale_lines = self.order_line.filtered(lambda rec: not rec._is_delivery())
-        precision = self.env['decimal.precision'].precision_get(
-            'Product Unit of Measure'
+        precision = self.env["decimal.precision"].precision_get(
+            "Product Unit of Measure"
         )
         return any(
             not float_is_zero(line.qty_delivered, precision_digits=precision)
@@ -71,31 +71,32 @@ class SaleOrder(models.Model):
         )
 
     @api.depends(
-        'order_line', 'order_line.qty_delivered', 'state', 'force_delivery_state'
+        "order_line", "order_line.qty_delivered", "state", "force_delivery_state"
     )
     def _compute_delivery_state(self):
         for order in self:
-            if order.state in ('draft', 'cancel'):
-                order.delivery_state = 'no'
+            if order.state in ("draft", "cancel"):
+                order.delivery_state = "no"
             elif order.force_delivery_state or order._all_qty_delivered():
-                order.delivery_state = 'done'
+                order.delivery_state = "done"
             elif order._partially_delivered():
-                order.delivery_state = 'partially'
+                order.delivery_state = "partially"
             else:
-                order.delivery_state = 'unprocessed'
+                order.delivery_state = "unprocessed"
 
     def action_force_delivery_state(self):
-        self.write({'force_delivery_state': True})
+        self.write({"force_delivery_state": True})
 
     def action_unforce_delivery_state(self):
-        self.write({'force_delivery_state': False})
+        self.write({"force_delivery_state": False})
 
 
 class SaleOrderLine(models.Model):
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
     def _is_delivery(self):
         return (
             hasattr(self.product_id, "is_delivery")
             and self.product_id
-            and self.product_id.is_delivery)
+            and self.product_id.is_delivery
+        )
