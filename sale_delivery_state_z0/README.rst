@@ -30,7 +30,9 @@ This module also works with delivery.carrier fees that are added as a
 sale order line. Those line are special as they will never be considered delivered.
 Delivery fees lines are ignored in the computation of the delivery state.
 
-This module is the backport from Odoo 12.0
+This module is the backport from Odoo 12.0. Its name is *sale_delivery_state_zo* to
+avoid conflict with OCA module *sale_delivery_state* that is avaialbel starting from
+Odoo 12.0. You should rename this module into *sale_delivery_state*.
 
 
 |it| Questo modulo aggiunge lo stato di consegna negli ordini clienti.
@@ -50,7 +52,9 @@ Questo modulo tiene conto anche le righe di spese di trasporto, qualora venga in
 il modulo *delivery* per il calcolo e l'addebito delle spese di trasporto che non
 rientrno nel calcolo dello stato consegnato.
 
-Questo modulo è un backport da Odoo 12.0
+Questo modulo è un backport da Odoo 12.0. Il suo nome è *sale_delivery_state_zo* per
+evitare conflitti con il modulo OCA *sale_delivery_state* che è disponibile a partire
+da Odoo 12.0. Si dovrebbe rinomainare questo modulo come *sale_delivery_state*.
 
 
 |thumbnail|
