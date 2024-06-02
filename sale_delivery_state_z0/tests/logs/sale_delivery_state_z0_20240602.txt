@@ -1,0 +1,38 @@
+2024-06-02 14:06:22,000 2858873 DAEMON test_sale_delivery_state_z0_10 run_odoo_debug.sh: cd /home/odoo/10.0/venv_odoo && source ./bin/activate
+2024-06-02 12:06:29,062 2860575 INFO ? odoo: Odoo version 10.0
+2024-06-02 12:06:29,063 2860575 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/sale_delivery_state_z0/tests/logs/zero10.l10n-italy-supplemental.sale_delivery_state_z0.conf
+2024-06-02 12:06:29,063 2860575 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/.local/share/Odoo12/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/mis-builder', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/website', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2024-06-02 12:06:29,063 2860575 INFO ? odoo: database: odoo10@localhost:5432
+2024-06-02 12:06:29,090 2860575 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:30979
+2024-06-02 12:06:29,106 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: loading 1 modules...
+2024-06-02 12:06:29,256 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: 1 modules loaded in 0.15s, 0 queries
+2024-06-02 12:06:30,123 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: loading 33 modules...
+2024-06-02 12:06:30,336 2860575 INFO test_sale_delivery_state_z0_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2024-06-02 12:06:30,497 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: 33 modules loaded in 0.37s, 0 queries
+2024-06-02 12:06:30,503 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: loading 34 modules...
+2024-06-02 12:06:31,004 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.registry: module sale_delivery_state_z0: creating or updating database tables
+2024-06-02 12:06:31,103 2860575 INFO test_sale_delivery_state_z0_10 odoo.models: Storing computed values of sale.order fields delivery_state
+2024-06-02 12:06:31,208 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: loading sale_delivery_state_z0/views/sale_order_views.xml
+2024-06-02 12:06:31,330 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: loading sale_delivery_state_z0/demo/sale_demo.xml
+2024-06-02 12:06:31,651 2860575 INFO test_sale_delivery_state_z0_10 odoo.tests: skip sending email in test mode
+2024-06-02 12:06:31,657 2860575 INFO test_sale_delivery_state_z0_10 odoo.addons.mail.models.mail_mail: Mail with ID 6 and Message-Id u'<1717329991.625205993652344.706093350243165-openerp-9-sale.order@nb200z0>' successfully sent
+2024-06-02 12:06:31,704 2860575 INFO test_sale_delivery_state_z0_10 odoo.models.unlink: User #1 deleted mail.mail records with IDs: [6]
+2024-06-02 12:06:31,715 2860575 INFO test_sale_delivery_state_z0_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [183]
+2024-06-02 12:06:32,145 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: 34 modules loaded in 1.64s, 16 queries
+2024-06-02 12:06:32,680 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: Modules loaded.
+2024-06-02 12:06:32,686 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2024-06-02 12:06:32,687 2860575 INFO test_sale_delivery_state_z0_10 odoo.modules.registry: Registry changed, signaling through the database
+2024-06-02 12:06:32,688 2860575 INFO test_sale_delivery_state_z0_10 odoo.service.server: Initiating shutdown
+2024-06-02 12:06:32,688 2860575 INFO test_sale_delivery_state_z0_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36msale_delivery_state_z0[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/10.0/l10n-italy-supplemental/sale_delivery_state_z0/tests/logs/coverage_sale_delivery_state_z0_10rc -m
+[34;107mName                                                                                  Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------
+/home/odoo/10.0/l10n-italy-supplemental/sale_delivery_state_z0/models/sale_order.py      34      5    85%   76, 81, 83, 88, 91
+-------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                    34      5    85%
+[0m
