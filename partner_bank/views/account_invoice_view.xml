@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="invoice_form_bank" model="ir.ui.view">
+        <field name="name">partner_bank.invoice_form_bank</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <field name="partner_bank_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="invoice_supplier_form_bank" model="ir.ui.view">
+        <field name="name">partner_bank.invoice_supplier_form_bank</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <field name="partner_bank_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
+

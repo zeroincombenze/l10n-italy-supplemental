@@ -15,4 +15,6 @@ Questo modulo tiene conto anche le righe di spese di trasporto, qualora venga in
 il modulo *delivery* per il calcolo e l'addebito delle spese di trasporto che non
 rientrno nel calcolo dello stato consegnato.
 
-Questo modulo è un backport da Odoo 12.0
+Questo modulo è un backport da Odoo 12.0. Il suo nome è *sale_delivery_state_zo* per
+evitare conflitti con il modulo OCA *sale_delivery_state* che è disponibile a partire
+da Odoo 12.0. Si dovrebbe rinomainare questo modulo come *sale_delivery_state*.

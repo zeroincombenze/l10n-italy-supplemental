@@ -1,10 +1,10 @@
-============================================================
-|icon| Sale delivery State/Statto consegna ordini 10.0.1.0.0
-============================================================
+====================================================================
+|icon| Bank account in partner/Conto bancario in nominativo 10.0.0.3
+====================================================================
 
-**Show the delivery state on the sale order**
+**Add bank account sheet in partner view like previous Odoo 10.0**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/sale_delivery_state_z0/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/partner_bank/static/description/icon.png
 
 
 .. contents::
@@ -14,52 +14,27 @@
 Overview | Panoramica
 =====================
 
-|en| This odoo module add delivery state on the sale order.
+|en| This module add some features to bank account:
 
-Delivery state is computed based on ``qty_delivered`` field on sale order lines.
-
-This is usefull for other modules to provide the state of delivery.
-The state of the sale order can be forced to fully delivered in case
-some quantities were cancelled by the customer and you consider you have
-nothing more to deliver.
-
-Sale order lines can have products or services, as long as the field ``qty_delivered``
-is set, it will trigger the computation of delivery state.
-
-This module also works with delivery.carrier fees that are added as a
-sale order line. Those line are special as they will never be considered delivered.
-Delivery fees lines are ignored in the computation of the delivery state.
-
-This module is the backport from Odoo 12.0. Its name is *sale_delivery_state_zo* to
-avoid conflict with OCA module *sale_delivery_state* that is avaialbel starting from
-Odoo 12.0. You should rename this module into *sale_delivery_state*.
+* Add bank account sheet in partner view like Odoo version before 10.0
+* Extend bank type with 'iban' (with check) and normal
+* Add bic/swift code in partner bank view
+* Make visible the account number in invoice form
 
 
-|it| Questo modulo aggiunge lo stato di consegna negli ordini clienti.
+|it| Estensione conti bancari
 
-Lo stato di consegna è dipende dal campo ``qty_delivered`` nelle rige ordini.
+Questo modulo estende le funzionalità dei conti bancari:
 
-Può essere utile per altri moduli che dipendono dallo stato di consegna.
-
-Lo stato di consegna può essere forzato a consegnato nel caso che qualche quantità
-o qualche riga in ordine sia successivamente annullata dal cliente finale e non si
-debba più consegnare altri prodotti.
-
-Questo modulo migliora la visibilità dello stato ordine completando l'informazione
-dello stato di fatturazione con lo stato di consegna.
-
-Questo modulo tiene conto anche le righe di spese di trasporto, qualora venga installato
-il modulo *delivery* per il calcolo e l'addebito delle spese di trasporto che non
-rientrno nel calcolo dello stato consegnato.
-
-Questo modulo è un backport da Odoo 12.0. Il suo nome è *sale_delivery_state_zo* per
-evitare conflitti con il modulo OCA *sale_delivery_state* che è disponibile a partire
-da Odoo 12.0. Si dovrebbe rinomainare questo modulo come *sale_delivery_state*.
+* Permette di inserire le banche da tab contabilità del cliente come nelle versioni Odoo precedenti alla 10.0
+* Estende il tipo con 'iban' (con relativo controllo) e 'normal'
+* Aggiunge il codice bic/swift nella vista conti bancari
+* Rende visibile in conto bancario in fattura
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/sale_delivery_state_z0/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/partner_bank/static/description/description.png
 
 
 Getting started | Primi passi
@@ -157,11 +132,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.0 (2024-06-02)
-~~~~~~~~~~~~~~~~~~~~~~~
+10.0.0.3 (2020-12-07-07)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Initial implementation: backport from 12.0
-* [QUA] Test coverage 85% (34: 5+29) [0 TestPoints] - quality rating 52 (target 100)
+* [IMP] Show bank name in IBAN / Mostra nome banca in IBAN
+* [IMP] Select IBAN in in invoice / Selezione IBAN in fattura
+* [IMP] Deactivable IBAN / IBAN disattivabili
+* [IMP] Account type: IBAN or bank / Tipo di conto: IBAN o banca
 
 
 
@@ -177,8 +154,6 @@ Odoo is a trademark of `Odoo S.A. <https://www.odoo.com/>`__ (formerly OpenERP)
 Authors | Autori
 ----------------
 
-* `Akretion <https://www.akretion.com>`__
-* `Odoo Community Association (OCA) <https://odoo-community.org>`__
 * `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
 
 
@@ -186,10 +161,7 @@ Authors | Autori
 Contributors | Partecipanti
 ---------------------------
 
-* `Pierrick BRUN <pierrick.brun@akretion.com>`__
-* `Benoît Guillot <benoit.guillot@akretion.com>`__
-* `Yannick Vaucher <yannick.vaucher@camptocamp.com>`__
-* `Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>`__
+* `Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>`__
 
 
 

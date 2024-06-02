@@ -1,0 +1,31 @@
+<odoo>
+
+    <record id="view_partner_property_form" model="ir.ui.view">
+        <field name="name">>partner_bank.view_partner_property_form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='accounting']" position="inside">
+                <field name="bank_ids" context="{'default_partner_id': active_id, 'form_view_ref': 'base.view_partner_bank_form'}">
+                    <tree string="Bank Details">
+                        <field name="sequence" invisible="1"/>
+                        <field name="acc_number"/>
+                        <field name="bank_name"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_bank_form" model="ir.ui.view">
+        <field name="name">partner_bank.view_partner_bank_form</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="acc_number" position="after">
+                <field name="bank_bic"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
