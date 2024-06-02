@@ -1,0 +1,121 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Show the delivery state on the sale order</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Mostra lo stato di consegna negli ordini</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.png" alt="Sale delivery State" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This odoo module add delivery state on the sale order.
+<p align="justify">
+Delivery state is computed based on <code>qty_delivered</code> field on sale order lines.
+</p><p align="justify">
+This is usefull for other modules to provide the state of delivery.
+The state of the sale order can be forced to fully delivered in case
+some quantities were cancelled by the customer and you consider you have
+nothing more to deliver.
+</p><p align="justify">
+Sale order lines can have products or services, as long as the field <code>qty_delivered</code>
+is set, it will trigger the computation of delivery state.
+</p><p align="justify">
+This module also works with delivery.carrier fees that are added as a
+sale order line. Those line are special as they will never be considered delivered.
+Delivery fees lines are ignored in the computation of the delivery state.
+</p><p align="justify">
+This module is the backport from Odoo 12.0
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo aggiunge lo stato di consegna negli ordini clienti.
+<p align="justify">
+Lo stato di consegna &#232; dipende dal campo <code>qty_delivered</code> nelle rige ordini.
+</p><p align="justify">
+Pu&#242; essere utile per altri moduli che dipendono dallo stato di consegna.
+</p><p align="justify">
+Lo stato di consegna pu&#242; essere forzato a consegnato nel caso che qualche quantit&#224;
+o qualche riga in ordine sia successivamente annullata dal cliente finale e non si
+debba pi&#249; consegnare altri prodotti.
+</p><p align="justify">
+Questo modulo migliora la visibilit&#224; dello stato ordine completando l'informazione
+dello stato di fatturazione con lo stato di consegna.
+</p><p align="justify">
+Questo modulo tiene conto anche le righe di spese di trasporto, qualora venga installato
+il modulo <i>delivery</i> per il calcolo e l'addebito delle spese di trasporto che non
+rientrno nel calcolo dello stato consegnato.
+</p><p align="justify">
+Questo modulo &#232; un backport da Odoo 12.0
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.1.0 (2024-06-01)</h4>
+<p align="justify">
+<ul>
+<li>Initial implementation: backport from 12.0</li>
+<li>[QUA] Test coverage 85% (34: 5+29) [0 TestPoints] - quality rating 52 (target 100)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.akretion.com">Akretion</a></li>
+<li><a href="https://odoo-community.org">Odoo Community Association (OCA)</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:pierrick.brun@akretion.com">Pierrick BRUN</a></li>
+<li><a href="mailto:benoit.guillot@akretion.com">Beno&#238;t Guillot</a></li>
+<li><a href="mailto:yannick.vaucher@camptocamp.com">Yannick Vaucher</a></li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio M. Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2024-06-01</p>
+    </div>
+</section>
