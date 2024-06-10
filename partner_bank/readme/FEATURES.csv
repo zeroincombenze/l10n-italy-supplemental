@@ -1,0 +1,4 @@
+Description | Descrizione,Z0incombenze(R),Note(s)
+Bank sheet in Account tab | Lista banche in linguetta Contabilità,✅,Like before Odoo 10.0
+Check IBAN | Controllo validità IBAN,✅,
+BIC/SWIFT in bank view | BIC/SWIFT in vista banca,✅,Can be disabled

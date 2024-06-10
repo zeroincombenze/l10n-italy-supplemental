@@ -27,4 +27,5 @@
         "views/bank_view.xml",
     ],
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "application": True,
 }

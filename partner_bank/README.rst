@@ -37,6 +37,21 @@ Questo modulo estende le funzionalità dei conti bancari:
 .. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/partner_bank/static/description/description.png
 
 
+Features | Caratteristiche
+--------------------------
+
++-------------------------------------------------------------------+----------+-----------------------+
+| Description | Descrizione                                         | Z0incomb | Note(s)               |
++-------------------------------------------------------------------+----------+-----------------------+
+| Bank sheet in Account tab | Lista banche in linguetta Contabilità | ✅       | Like before Odoo 10.0 |
++-------------------------------------------------------------------+----------+-----------------------+
+| Check IBAN | Controllo validità IBAN                              | ✅       |                       |
++-------------------------------------------------------------------+----------+-----------------------+
+| BIC/SWIFT in bank view | BIC/SWIFT in vista banca                 | ✅       | Can be disabled       |
++-------------------------------------------------------------------+----------+-----------------------+
+
+
+
 Getting started | Primi passi
 =============================
 
@@ -132,8 +147,8 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.3 (2020-12-07-07)
-~~~~~~~~~~~~~~~~~~~~~~~~
+10.0.0.3 (2020-12-07)
+~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Show bank name in IBAN / Mostra nome banca in IBAN
 * [IMP] Select IBAN in in invoice / Selezione IBAN in fattura
@@ -189,7 +204,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-06-02
+Last Update / Ultimo aggiornamento: 2024-06-10
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
