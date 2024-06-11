@@ -1,0 +1,6 @@
+Product,Quantity,Price,Subtotal,Tax Amount,Sub.Rounded,Tax Rounded
+Alpha,50.00,0.1267,6.3350,1.3937,6.34,1.39
+Beta,94.00,0.1167,10.9698,2.4134,10.97,2.41
+Gamma,88.00,0.1210,10.6480,2.3426,10.65,2.34
+TOTAL (by SUM),,,,,27.96,6.14
+TOTAL (Revaluated),,,,,,6.15
