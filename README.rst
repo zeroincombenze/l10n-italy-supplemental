@@ -47,6 +47,8 @@ Avaiable Addons / Moduli disponibili
 +------------------------------------+------------+----------------------------------------------------------------------------------+
 | account_invoice_search_more        | 10.0.0.1.0 | Search invoices by products and more                                             |
 +------------------------------------+------------+----------------------------------------------------------------------------------+
+| account_tax_rounded                | 10.0.12.0. | Round taxes to comply italian laws                                               |
++------------------------------------+------------+----------------------------------------------------------------------------------+
 | assigned_bank                      | 10.0.0.1.3 | Assign internal bank to customers or supplier                                    |
 +------------------------------------+------------+----------------------------------------------------------------------------------+
 | calendar_task_link                 | 10.0.0.1.1 | Add project task to calendar event                                               |
@@ -181,6 +183,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History / Cronologia modifiche
 ----------------------------------------
 
+account_tax_rounded: 10.0.0.1.0 (2024-06-11)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] First version
+* [QUA] Test coverage 24% (29: 22+7) [0 TestPoints] - quality rating 15 (target 100)
+
+
 sale_delivery_state_z0: 10.0.0.1.0 (2024-06-02)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -253,14 +262,6 @@ l10n_it_coa: 10.0.0.2.11 (2023-08-27)
 * [IMP] Module name changed (l10n_it_coa -> l10n_it_coa, only Odoo 10.0)
 
 
-prodotti_espresso: 10.0.1.0.6 (2023-05-30)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Flag espresso on sale order line form / Form righe ordini con flag prodotto espresso
-* [IMP] Flag espresso on sale order form / Form ordini con flag prodotto espresso
-* [IMP] Sale order BI with espresso filter / Filtro espresso in BI ordini
-
-
 Credits / Ringraziamenti
 ========================
 
@@ -285,7 +286,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 |
 
 
-Last Update / Ultimo aggiornamento: 2024-06-02
+Last Update / Ultimo aggiornamento: 2024-06-11
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-red.png
     :target: https://odoo-community.org/page/development-status
