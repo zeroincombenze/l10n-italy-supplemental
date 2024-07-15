@@ -1,0 +1,45 @@
+2024-07-15 14:31:17,000 46817 DAEMON test_account_invoice_13_more_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+2024-07-15 12:31:22,093 48245 INFO ? odoo: Odoo version 12.0 
+2024-07-15 12:31:22,094 48245 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/account_invoice_13_more/tests/logs/zero12.l10n-italy-supplemental.account_invoice_13_more.conf 
+2024-07-15 12:31:22,094 48245 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/ddmrp', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/management-system', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-kitting', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-financial', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-tracking', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/webhook', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2024-07-15 12:31:22,094 48245 INFO ? odoo: database: odoo12@localhost:5432 
+2024-07-15 12:31:22,244 48245 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2024-07-15 12:31:22,387 48245 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:21674 
+2024-07-15 12:31:22,403 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: loading 1 modules... 
+2024-07-15 12:31:22,411 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2024-07-15 12:31:22,513 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: updating modules list 
+2024-07-15 12:31:22,516 48245 INFO test_account_invoice_13_more_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2024-07-15 12:31:31,471 48245 INFO test_account_invoice_13_more_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['account_invoice_13_more'] to user __system__ #1 via n/a 
+2024-07-15 12:31:31,735 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: loading 35 modules... 
+2024-07-15 12:31:32,058 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: 35 modules loaded in 0.32s, 0 queries 
+2024-07-15 12:31:32,065 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: loading 36 modules... 
+2024-07-15 12:31:32,617 48245 INFO test_account_invoice_13_more_12 odoo.modules.registry: module account_invoice_13_more: creating or updating database tables 
+2024-07-15 12:31:32,826 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: loading account_invoice_13_more/views/account_move_view.xml 
+2024-07-15 12:31:32,899 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: Module account_invoice_13_more: loading demo 
+2024-07-15 12:31:32,921 48245 INFO test_account_invoice_13_more_12 odoo.modules.module: odoo.addons.account_invoice_13_more.tests.test_move running tests. 
+2024-07-15 12:31:32,922 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: test_invoice_validate (odoo.addons.account_invoice_13_more.tests.test_move.TestAccountMove) 
+2024-07-15 12:31:33,959 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: 🎺 Testing account.invoice[z0bug.invoice_Z0_1] 
+2024-07-15 12:31:34,278 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: 🎺 Testing account.invoice[z0bug.invoice_Z0_7] 
+2024-07-15 12:31:34,511 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: 🎺 Testing account.invoice[z0bug.invoice_ZI_2] 
+2024-07-15 12:31:34,768 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: 🎺 Testing account.invoice[z0bug.invoice_ZI_7] 
+2024-07-15 12:31:35,008 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: Ran 1 test in 2.087s 
+2024-07-15 12:31:35,008 48245 INFO test_account_invoice_13_more_12 odoo.addons.account_invoice_13_more.tests.test_move: OK 
+2024-07-15 12:31:35,022 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: 36 modules loaded in 2.96s, 2245 queries 
+2024-07-15 12:31:35,595 48245 INFO test_account_invoice_13_more_12 odoo.modules.loading: Modules loaded. 
+2024-07-15 12:31:35,605 48245 INFO test_account_invoice_13_more_12 odoo.service.server: Starting post tests 
+2024-07-15 12:31:35,606 48245 INFO test_account_invoice_13_more_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2024-07-15 12:31:35,606 48245 INFO test_account_invoice_13_more_12 odoo.service.server: Initiating shutdown 
+2024-07-15 12:31:35,606 48245 INFO test_account_invoice_13_more_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36maccount_invoice_13_more[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/12.0/l10n-italy-supplemental/account_invoice_13_more/tests/logs/coverage_account_invoice_13_more_12rc -m
+[34;107mName                                                                                        Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------------------------
+/home/odoo/12.0/l10n-italy-supplemental/account_invoice_13_more/models/account_invoice.py      17      1    94%   13
+/home/odoo/12.0/l10n-italy-supplemental/account_invoice_13_more/models/account_move.py         51     10    80%   29, 38, 42, 47-49, 150, 152, 154, 158
+-------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                          68     11    84%
+[0m

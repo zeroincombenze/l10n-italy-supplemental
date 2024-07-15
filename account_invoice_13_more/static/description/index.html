@@ -1,18 +1,37 @@
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Invoice like Odoo 13+ / Fatture come in Odoo 13+</h2>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Invoice like Odoo 13+</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Sommario non disponibile</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">This module replicates some account.invoice fields on account.move.
 The account.move model has the some structure of Odoo 13.0 and more.
 This module simplify the backport from Odoo 13.0+.
 <p align="justify">
-<h2>Invoice like Odoo 13+ / Fatture come in Odoo 13+</h2>
+<h3>Common structure with Odoo 13.0+</h3>
 </p><p align="justify">
 <ul>
 <li>account.move.invoice_date</li>
@@ -23,7 +42,7 @@ This module simplify the backport from Odoo 13.0+.
 <li>account.move.partner_bank_id</li>
 </ul>
 </p><p align="justify">
-<h2>Invoice like Odoo 13+ / Fatture come in Odoo 13+</h2>
+<h3>Difference from Odoo 13.0+</h3>
 </p><p align="justify">
 <ul>
 <li>Draft and cancelled invoice has no account.move records</li>
@@ -34,13 +53,13 @@ This module simplify the backport from Odoo 13.0+.
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Questo modulo replica alcuni campi della fattura nella registrazione contabile.
 Il modello account.move ha la stessa struttura di Odoo 13.0 e successive.
 Il modulo semplifica il backport da Odoo 13.0+
 <p align="justify">
-<h2>Invoice like Odoo 13+ / Fatture come in Odoo 13+</h2>
+<h3>Strutture comuni con Odoo 13.0+</h3>
 </p><p align="justify">
 <ul>
 <li>account.move.invoice_date</li>
@@ -51,7 +70,7 @@ Il modulo semplifica il backport da Odoo 13.0+
 <li>account.move.partner_bank_id</li>
 </ul>
 </p><p align="justify">
-<h2>Invoice like Odoo 13+ / Fatture come in Odoo 13+</h2>
+<h3>Differenze da Odoo 13.0+</h3>
 </p><p align="justify">
 <ul>
 <li>Le fatture in bozza e cancellate non hanno registrazioni contabili</li>
@@ -61,92 +80,69 @@ Il modulo semplifica il backport da Odoo 13.0+
 </p></p>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Known issues | Problemi conosciuti</h3>
         <div class="oe_span12">
-<h3>12.0.3.3.16 (2022-03-01)</h3>
+<ul>
+<li>Field with name "type" will be removed: it is replaced by "move_type" field</li>
+<li>Add onchange control to avoid entry type with VAT registries and vice-versa</li>
+</ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>12.0.3.3.17 (2024-07-15)</h4>
 <p align="justify">
 <ul>
+<li>[FIX] Domain fiscal position</li>
+<li>[QUA] Test coverage 84% (68: 11+57) [0 TestPoints] - quality rating 51 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>12.0.3.3.16 (2022-03-01)</h4>
+</p><p align="justify">
+<ul>
 <li>[FIX] Aggiornata vista con valori corretti del campo move_type</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.3.3.15 (2022-01-20)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Standard OCA</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.3.3.14 (2021-11-24)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Aggiornato dipendenze</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.3.3.13 (2021-11-24)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiornato campi company bank e counterparty bank</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.3.3.12 (2021-10-20)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Aggiornata gestione del conto bancario</li>
-<li>[IMP] Inserito po file</li>
-</ul>
-</p><p align="justify">
-<h3>12.0.3.3.11 (2021-08-10)</h3>
-</p><p align="justify">
-<ul>
-<li>[IMP] Aggiunto campo partner_bank_id ad account.move</li>
 </ul>
 </p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_separator"/>
-
 <section class="oe_container">
     <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
             <p class="oe_mt16"><ul>
-<li><a href="https://www.powerp.it/">powERP</a></li>
-<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
-<li><a href="https://www.didotech.com/">Didotech srl</a></li>
+<li>powERP enterprise network and other partners &lt;False&gt;</li>
+<li><a href="https://www.powerp.it">powERP</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.didotech.com">Didotech s.r.l.</a></li>
 </ul></p>
         </div>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
             <p class="oe_mt16"><ul>
-<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
-<li>Marco Tosato &lt;marco.tosato@didotech.com&gt;</li>
-<li>Fabio Giovannelli &lt;fabio.giovannelli@didotech.com&gt;</li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+<li><a href="mailto:marco.tosato@didotech.com">Marco Tosato</a></li>
+<li><a href="mailto:fabio.giovannelli@didotech.com">Fabio Giovannelli</a></li>
 </ul></p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Maintainer:</p>
-            <p class="oe_mt16">This module is maintained by the <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> is the Italian Enterprises Network born in 2020, whose mission is promote use of Odoo to cover Italian enhanced accounting.</p>
-        </div>
-        <div class="oe_span6" align="left">
-            <p class="oe_mt16">Manutenzione:</p>
-            <p class="oe_mt16">Questo modulo &#232; aggiornato da <b>Powerp</b>.</p>
-            <p class="oe_mt16" align="justify"><a href="http://www.powerp.it/">Powerp</a> &#232; una rete di imprese, nata nel 2020 che rilascia moduli per la contabilit&#224; italiana evoluta.</p>
-        </div>
         <div class="oe_span12">
-            <p class="oe_mt16">Founders are / I soci fondatori sono:</p>
-            <ul>
-                <li><a href="http://www.didotech.com/">Didotech s.r.l.</a></li>
-                <li><a href="https://www.shs-av.com/">SHS-AV s.r.l.</a></li>
-                <li><a href="http://x-plain.it/">Xplain s.r.l.</a></li>
-            </ul>
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <p>This module is part of l10n-italy project.</p>
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2024-07-15</p>
     </div>
 </section>

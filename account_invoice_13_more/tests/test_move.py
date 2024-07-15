@@ -220,7 +220,7 @@ TEST_RES_PARTNER = {
         'property_supplier_payment_term_id': 'z0bug.payment_1',
         'electronic_invoice_subjected': True,
         'codice_destinatario': 'A1B2C3X',
-        'lang': 'it_IT',
+        # 'lang': 'it_IT',
     },
     'base.main_partner': {
         'name': 'Test Company',
@@ -236,7 +236,7 @@ TEST_RES_PARTNER = {
         'phone': '+39 025551234',
         'vat': 'IT05111810015',
         'website': 'https://www.testcompany.org',
-        'lang': 'it_IT',
+        # 'lang': 'it_IT',
     },
     'z0bug.res_partner_11': {
         'name': 'Caffè Eleven S.p.A.',
@@ -253,7 +253,7 @@ TEST_RES_PARTNER = {
         'vat': 'IT01250630504',
         'website': 'http://www.eleven-caffe.it',
         'property_supplier_payment_term_id': 'z0bug.payment_5',
-        'lang': 'it_IT',
+        # 'lang': 'it_IT',
     },
 }
 TEST_RES_PARTNER_BANK = {

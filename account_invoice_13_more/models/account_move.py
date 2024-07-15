@@ -106,7 +106,7 @@ class AccountMove(models.Model):
         string='Fiscal Position',
         readonly=True,
         states={'draft': [('readonly', False)]},
-        domain="[('company_id', '=', company_id)]",
+        domain=lambda self: [('company_id', '=', self.company_id)],
         help="Fiscal positions are used to adapt taxes and accounts for "
         "particular customers or sales orders/invoices. "
         "The default value comes from the customer.",

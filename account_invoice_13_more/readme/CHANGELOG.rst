@@ -1,3 +1,9 @@
+12.0.3.3.17 (2024-07-15)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Domain fiscal position
+* [QUA] Test coverage 84% (68: 11+57) [0 TestPoints] - quality rating 51 (target 100)
+
 12.0.3.3.16 (2022-03-01)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
