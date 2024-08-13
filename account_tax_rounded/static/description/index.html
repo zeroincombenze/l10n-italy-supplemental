@@ -39,15 +39,15 @@ Look at the following example:
 <table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
 <td>Product</td><td>Quantity</td><td>Price</td><td>Subtotal</td><td>Tax Amoun</td><td>Sub.Round</td><td>Tax Round</td><td/>
 </tr><tr>
-<td>Alpha</td><td>50.00</td><td>0.1267</td><td>6.3350</td><td>1.3937</td><td>6.34</td><td>1.39</td><td/>
+<td>Alpha</td><td>34.00</td><td>0.6914</td><td>23.5276</td><td>5.1717</td><td>23.51</td><td>5.17</td><td/>
 </tr><tr>
-<td>Beta</td><td>94.00</td><td>0.1167</td><td>10.9698</td><td>2.4134</td><td>10.97</td><td>2.41</td><td/>
+<td>Beta</td><td>34.00</td><td>0.6914</td><td>23.5276</td><td>5.1717</td><td>23.51</td><td>5.17</td><td/>
 </tr><tr>
-<td>Gamma</td><td>88.00</td><td>0.1210</td><td>10.6480</td><td>2.3426</td><td>10.65</td><td>2.34</td><td/>
+<td>Gamma</td><td>32.00</td><td>0.7658</td><td>24.5056</td><td>5.3912</td><td>24.5</td><td>5.39</td><td/>
 </tr><tr>
-<td>TOTAL (by SUM)</td><td/><td/><td/><td/><td>27.96</td><td>6.14</td><td/>
+<td>TOTAL (by SUM)</td><td/><td/><td/><td/><td>71.52</td><td>15.73</td><td/>
 </tr><tr>
-<td>TOTAL (Revaluated)</td><td/><td/><td/><td/><td/><td>6.15</td><td/>
+<td>TOTAL (Revaluated)</td><td/><td/><td/><td/><td/><td>15.74</td><td/>
 </tr><tr/></table>
 </p><p align="justify">
 </p><p align="justify">
@@ -75,15 +75,15 @@ Questo &#232; un esempio:
 <table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
 <td>Product</td><td>Quantity</td><td>Price</td><td>Subtotal</td><td>Tax Amoun</td><td>Sub.Round</td><td>Tax Round</td><td/>
 </tr><tr>
-<td>Alpha</td><td>50.00</td><td>0.1267</td><td>6.3350</td><td>1.3937</td><td>6.34</td><td>1.39</td><td/>
+<td>Alpha</td><td>34.00</td><td>0.6914</td><td>23.5276</td><td>5.1717</td><td>23.51</td><td>5.17</td><td/>
 </tr><tr>
-<td>Beta</td><td>94.00</td><td>0.1167</td><td>10.9698</td><td>2.4134</td><td>10.97</td><td>2.41</td><td/>
+<td>Beta</td><td>34.00</td><td>0.6914</td><td>23.5276</td><td>5.1717</td><td>23.51</td><td>5.17</td><td/>
 </tr><tr>
-<td>Gamma</td><td>88.00</td><td>0.1210</td><td>10.6480</td><td>2.3426</td><td>10.65</td><td>2.34</td><td/>
+<td>Gamma</td><td>32.00</td><td>0.7658</td><td>24.5056</td><td>5.3912</td><td>24.5</td><td>5.39</td><td/>
 </tr><tr>
-<td>TOTAL (by SUM)</td><td/><td/><td/><td/><td>27.96</td><td>6.14</td><td/>
+<td>TOTAL (by SUM)</td><td/><td/><td/><td/><td>71.52</td><td>15.73</td><td/>
 </tr><tr>
-<td>TOTAL (Revaluated)</td><td/><td/><td/><td/><td/><td>6.15</td><td/>
+<td>TOTAL (Revaluated)</td><td/><td/><td/><td/><td/><td>15.74</td><td/>
 </tr><tr/></table>
 </p><p align="justify">
 </p><p align="justify">
@@ -101,23 +101,17 @@ in modifica non funziona.
 
 <section>
     <div class="oe_row oe_spaced">
-        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Known issues | Problemi conosciuti</h3>
-        <div class="oe_span12">
-This module replaces the standard Odoo function <code>get_taxes_values()</code>
-of the module <i>account</i>. The function, revaluate precisely the tax amound depending on
-base amount. This behavior is due to avoid refusing invocie from Italian Tax Authority
-which check tax amount MUST be: base amount * tax rate +/- 1 cent
-For this reason, this module depends on specific 10.0.1.1.2 version of <i>account</i>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.0 (2024-06-11)</h4>
+<h4>10.0.0.1.1 (2024-08-13)</h4>
 <p align="justify">
+<ul>
+<li>[IMP] No more monkey patch for <code>get_taxes_values()</code></li>
+<li>[QUA] Test coverage 64% (14: 5+9) [2 TestPoints] - quality rating 62 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.0 (2023-06-11)</h4>
+</p><p align="justify">
 <ul>
 <li>[IMP] First version</li>
 <li>[QUA] Test coverage 24% (29: 22+7) [0 TestPoints] - quality rating 15 (target 100)</li>
@@ -150,6 +144,6 @@ For this reason, this module depends on specific 10.0.1.1.2 version of <i>accoun
     </div>
     <div class="oe_row oe_spaced">
         <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
-        <p>Published information on | Informazioni pubblicate: 2024-06-11</p>
+        <p>Published information on | Informazioni pubblicate: 2024-08-13</p>
     </div>
 </section>

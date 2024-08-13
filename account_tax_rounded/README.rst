@@ -1,5 +1,5 @@
 =====================================================================
-|icon| Account Invoice - Tax round/Arrotondamento IVA 10.0.12.0.0.1.0
+|icon| Account Invoice - Tax round/Arrotondamento IVA 10.0.12.0.0.1.1
 =====================================================================
 
 **Round taxes to comply italian laws**
@@ -26,15 +26,15 @@ Look at the following example:
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
 | Product                | Quantity  | Price   | Subtotal  | Tax Amoun | Sub.Round | Tax Round |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Alpha                  | 50.00     | 0.1267  | 6.3350    | 1.3937    | 6.34      | 1.39      |
+| Alpha                  | 34.00     | 0.6914  | 23.5276   | 5.1717    | 23.51     | 5.17      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Beta                   | 94.00     | 0.1167  | 10.9698   | 2.4134    | 10.97     | 2.41      |
+| Beta                   | 34.00     | 0.6914  | 23.5276   | 5.1717    | 23.51     | 5.17      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Gamma                  | 88.00     | 0.1210  | 10.6480   | 2.3426    | 10.65     | 2.34      |
+| Gamma                  | 32.00     | 0.7658  | 24.5056   | 5.3912    | 24.5      | 5.39      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| TOTAL (by SUM)         |           |         |           |           | 27.96     | 6.14      |
+| TOTAL (by SUM)         |           |         |           |           | 71.52     | 15.73     |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| TOTAL (Revaluated)     |           |         |           |           |           | 6.15      |
+| TOTAL (Revaluated)     |           |         |           |           |           | 15.74     |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
 
 
@@ -58,15 +58,15 @@ Questo è un esempio:
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
 | Product                | Quantity  | Price   | Subtotal  | Tax Amoun | Sub.Round | Tax Round |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Alpha                  | 50.00     | 0.1267  | 6.3350    | 1.3937    | 6.34      | 1.39      |
+| Alpha                  | 34.00     | 0.6914  | 23.5276   | 5.1717    | 23.51     | 5.17      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Beta                   | 94.00     | 0.1167  | 10.9698   | 2.4134    | 10.97     | 2.41      |
+| Beta                   | 34.00     | 0.6914  | 23.5276   | 5.1717    | 23.51     | 5.17      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| Gamma                  | 88.00     | 0.1210  | 10.6480   | 2.3426    | 10.65     | 2.34      |
+| Gamma                  | 32.00     | 0.7658  | 24.5056   | 5.3912    | 24.5      | 5.39      |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| TOTAL (by SUM)         |           |         |           |           | 27.96     | 6.14      |
+| TOTAL (by SUM)         |           |         |           |           | 71.52     | 15.73     |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
-| TOTAL (Revaluated)     |           |         |           |           |           | 6.15      |
+| TOTAL (Revaluated)     |           |         |           |           |           | 15.74     |
 +------------------------+-----------+---------+-----------+-----------+-----------+-----------+
 
 
@@ -166,17 +166,6 @@ In case of trouble, please check there if your issue has already been reported.
 
 
 
-Known issues | Roadmap
-----------------------
-
-This module replaces the standard Odoo function ``get_taxes_values()``
-of the module *account*. The function, revaluate precisely the tax amound depending on
-base amount. This behavior is due to avoid refusing invocie from Italian Tax Authority
-which check tax amount MUST be: base amount * tax rate +/- 1 cent
-For this reason, this module depends on specific 10.0.1.1.2 version of *account*
-
-
-
 Proposals for enhancement
 -------------------------
 
@@ -190,22 +179,17 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.0 (2024-06-11)
+10.0.0.1.1 (2024-08-13)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] No more monkey patch for ``get_taxes_values()``
+* [QUA] Test coverage 64% (14: 5+9) [2 TestPoints] - quality rating 62 (target 100)
+
+10.0.0.1.0 (2023-06-11)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] First version
 * [QUA] Test coverage 24% (29: 22+7) [0 TestPoints] - quality rating 15 (target 100)
-
-
-
-FAQ | Domande & Risposte
-------------------------
-
-*I read about issue! May this module conflict with Odoo modules?*
-
-No. This module is fully integrated with Odoo and OCA modules.
-This module checks for Odoo module version. If Odoo module will be updated,
-we will ASAP upgrade this module.
 
 
 
@@ -256,9 +240,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-06-11
+Last Update / Ultimo aggiornamento: 2024-08-13
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg

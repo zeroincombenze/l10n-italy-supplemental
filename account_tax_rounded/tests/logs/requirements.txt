@@ -16,7 +16,7 @@ cffi==1.15.1
 chardet==4.0.0
 checksumdir==1.1.7
 click==7.1.2
-clodoo==2.0.11
+clodoo==2.0.12
 codicefiscale==0.9
 configparser==4.0.2
 contextlib2==0.6.0.post1
@@ -62,6 +62,7 @@ jmespath==0.10.0
 josepy==1.6.0
 jsonlib==1.6.1
 lazy-object-proxy==1.6.0
+Levenshtein==0.13.0
 lxml==5.0.2
 Mako==1.1.6
 MarkupSafe==0.23
@@ -71,7 +72,7 @@ more-itertools==5.0.0
 num2words==0.5.0
 numpy==1.16.6
 odoo==10.0
-odoo-score==2.0.8
+odoo-score==2.0.9
 OdooRPC==0.9.0
 OERPLib==0.8.4
 ofxparse==0.16
@@ -129,12 +130,12 @@ python-http-client==3.3.7
 python-ldap==2.4.27
 python-magic==0.4.27
 python-openid==2.2.5
-python-plus==2.0.13
+python-plus==2.0.15
 python-stdnum==1.20
 pytz==2024.1
 pyusb==1.0.0
 PyWebDAV==0.9.4.1
-PyXB==1.2.5
+PyXB==1.2.6
 PyYAML==3.12
 qrcode==5.3
 QUnitSuite==0.4
@@ -183,7 +184,7 @@ xlrd==1.0.0
 XlsxWriter==0.9.3
 xlwt==1.1.2
 z0bug-odoo==2.0.19
-z0lib==2.0.9
+z0lib==2.0.11
 zerobug==2.0.15
 zipp==1.2.0
 zpl2==1.0
