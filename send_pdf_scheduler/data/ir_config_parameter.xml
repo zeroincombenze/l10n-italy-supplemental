@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="config_to_send_mail" model="ir.config_parameter">
+        <field name="key">default_to_send_mail</field>
+        <field name="value" eval="True"/>
+    </record>
+
+</odoo>

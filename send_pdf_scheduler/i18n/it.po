@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* send_pdf_scheduler
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-31 13:24+0000\n"
+"PO-Revision-Date: 2024-08-31 15:34+0200\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,help:send_pdf_scheduler.field_account_fiscal_position_to_send_mail
+#: model:ir.model.fields,help:send_pdf_scheduler.field_account_invoice_to_send_mail
+#: model:ir.model.fields,help:send_pdf_scheduler.field_res_partner_to_send_mail
+#: model:ir.model.fields,help:send_pdf_scheduler.field_res_users_to_send_mail
+msgid "Automatically send invoice mail"
+msgstr "Inviare automaticamente mail fattura"
+
+#. module: send_pdf_scheduler
+#: selection:account.fiscal.position,to_send_mail:0
+#: selection:res.partner,to_send_mail:0
+msgid "Avoid sending by cron"
+msgstr "Impedire invio"
+
+#. module: send_pdf_scheduler
+#: model:ir.model,name:send_pdf_scheduler.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,help:send_pdf_scheduler.field_account_config_settings_to_send_mail
+msgid "Default automatically send invoice mail"
+msgstr "Predefinito per inviare automaticamente"
+
+#. module: send_pdf_scheduler
+#: model:ir.model,name:send_pdf_scheduler.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Posizione fiscale"
+
+#. module: send_pdf_scheduler
+#: model:ir.model,name:send_pdf_scheduler.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_account_config_settings_invoice_mail_template_id
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_res_company_invoice_mail_template_id
+msgid "Invoice Mail Template"
+msgstr "Modello mail  fattura"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,help:send_pdf_scheduler.field_account_config_settings_invoice_mail_template_id
+#: model:ir.model.fields,help:send_pdf_scheduler.field_res_company_invoice_mail_template_id
+msgid "Mail template to use in order to send Invice pdf"
+msgstr "Modello di mail per inviare fattura"
+
+#. module: send_pdf_scheduler
+#: model:ir.model,name:send_pdf_scheduler.model_res_partner
+msgid "Partner"
+msgstr "Nominativo"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_account_fiscal_position_to_send_mail
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_res_partner_to_send_mail
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_res_users_to_send_mail
+msgid "Schedule sending document pdf mail"
+msgstr "Schedulare invio documenti pdf con mail"
+
+#. module: send_pdf_scheduler
+#: selection:account.fiscal.position,to_send_mail:0
+#: selection:res.partner,to_send_mail:0
+msgid "Send by cron"
+msgstr "Schedulare invio"
+
+#. module: send_pdf_scheduler
+#: model:ir.ui.view,arch_db:send_pdf_scheduler.view_account_config_settings
+msgid "Sending document pdf mail scheduler"
+msgstr "Schedulatore invio mail documento pdf "
+
+#. module: send_pdf_scheduler
+#: model:ir.ui.view,arch_db:send_pdf_scheduler.view_account_config_settings
+msgid "Templates"
+msgstr "Modelli"
+
+#. module: send_pdf_scheduler
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_account_config_settings_to_send_mail
+#: model:ir.model.fields,field_description:send_pdf_scheduler.field_account_invoice_to_send_mail
+msgid "To send mail"
+msgstr "Mail da inviare"
+
+#. module: send_pdf_scheduler
+#: model:ir.model,name:send_pdf_scheduler.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"

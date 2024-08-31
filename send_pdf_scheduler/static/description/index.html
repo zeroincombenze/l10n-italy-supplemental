@@ -1,0 +1,164 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Schedule sending invoice pdf by cron</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Scheduazione per invio pdf tramite cron</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.gif" alt="Send pdf scheduler" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module sends mails with invoice pdf to invoice customers using cron.
+In this way ala invoices can be automatically sent to customers.</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo invia le mail con le fatture pdf ai clienti usando lo schedulatore.
+IN questo modo le fatture pdf possono essere inviate automaticamente.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Global configuration:
+<p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Invoicing &#187; Configuration &#187; Sending document pdf mail scheduler &#187; To send mail
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Invoicing &#187; Configuration &#187; Sending document pdf mail scheduler &#187; Invoice Mail Template
+</p><p align="justify">
+Specific configuration:
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Invoicing &#187; Configuration &#187; Accounting &#187; Fiscal Position &#187; To send mail
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Invoicing &#187; Sales &#187; Customers &#187; To send mail
+</p><p align="justify">
+Mail are scheduled depending on above values as follow:
+</p><p align="justify">
+If global "To send mail" is True, invoice pdf will be sent if customer and fiscal position are not disabled.
+If global "To send mail" is False, invoice pdf will be sent if customer or fiscal position is enabled.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Configurazione globale:
+<p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Contabilit&#224; &#187; Configurazione &#187; Schedulatore invio documenti pdf con mail &#187; Inviare mail
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Contabilit&#224; &#187; Configurazione &#187; Schedulatore invio documenti pdf con mail &#187; Modello mail
+</p><p align="justify">
+Configurazione specifica:
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Contabilit&#224; &#187; Configurazione &#187; Contabilit&#224; &#187; Posizione fiscale &#187; Inviare mail
+</p><p align="justify">
+<span class="fa fa-th-large" style="color:#7C7BAD"/> Contabilit&#224; &#187; Vendite &#187; Clienti &#187; Inviare mail
+</p><p align="justify">
+</p><p align="justify">
+la schedulazione avviene in base ai parametri precedenti come segue:
+</p><p align="justify">
+Se il valore gloable "Inviare mail" &#232; vero, i pdf sono inviati se il cliente e la posizione fiscale non disabilitano l'azione.
+Se il valore gloable "Inviare mail" &#232; false, i pdf sono inviati se il cliente o la posizione fiscale abilitano l'azione.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">When an invoice is create, the flag "To send mail" is set or reset based on
+configuration values. This value can be updated by user.
+<p align="justify">
+When cron action starts, it sends mail for all invoices which have flag "To send mail"
+set to true. After invoice pdf is sent, the flag is reset.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Quando viene creata una fattura l'indicatore "Inviare mail" &#232; impostato in base alle
+regole di configurazione. Questo valore pu&#224; essere modificato dall'utente finale.
+<p align="justify">
+Quando l'azioni programmata parte, tutte le fatture con il flag "Inviare mail" attivo
+son inviare al cliente ed l'indicatore viene azzerato.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.1.0 (2024-08-31)</h4>
+<p align="justify">
+<ul>
+<li>Initial implementation / Implementazione iniziale</li>
+<li>[QUA] Test coverage 59% (58: 24+34) [0 TestPoints] - quality rating 36 (target 100)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2024-08-31</p>
+    </div>
+</section>

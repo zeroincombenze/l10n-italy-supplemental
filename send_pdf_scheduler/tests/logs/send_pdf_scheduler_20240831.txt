@@ -1,0 +1,17 @@
+2024-08-31 15:09:34,000 662016 DAEMON test_send_pdf_scheduler_10 run_odoo_debug.sh: cd /home/odoo/10.0/venv_odoo && source ./bin/activate
+
++===================================================================
+| please test [36msend_pdf_scheduler[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/tests/logs/coverage_send_pdf_scheduler_10rc -m
+[34;107mName                                                                                           Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_fiscal_position.py       4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_invoice.py              25     11    56%   11, 15, 17, 27-33, 36-42
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/config_settings.py              21     13    38%   19-30, 33-34, 40-43
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_company.py                   4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_partner.py                   4      0   100%
+----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             58     24    59%
+[0m

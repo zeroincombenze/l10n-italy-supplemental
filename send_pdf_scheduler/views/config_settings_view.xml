@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_account_config_settings" model="ir.ui.view">
+        <field name="name">view_account_config_settings</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='followup']" position="before">
+                <group name="send_pdf_scheduled"
+                       string="Sending document pdf mail scheduler">
+                    <label for="id" string="Templates"/>
+                    <div name="send_pdf_scheduled_template">
+                        <div>
+                            <label for="invoice_mail_template_id"/>
+                            <field name="invoice_mail_template_id"
+                                   options="{'no_create': True}"
+                                   class="oe_inline"/>
+                        </div>
+                        <div>
+                            <label for="to_send_mail"/>
+                            <field name="to_send_mail" class="oe_inline"/>
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
