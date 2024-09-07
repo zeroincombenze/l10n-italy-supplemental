@@ -1,4 +1,4 @@
-# __version__=2.0.4
+# __version__=2.0.6
 # python2
 exclude: |
   (?x)
@@ -74,7 +74,7 @@ repos:
       - id: arcangelo
         name: arcangelo
         language: python
-        entry: arcangelo -i -b14.0
+        entry: arcangelo -i -b16.0
       # odoo repositories
       - id: please_docs
         name: please docs
