@@ -1,1 +1,0 @@
-Verifica sequenza date in fatture clienti e fornitori

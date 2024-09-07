@@ -1,1 +1,0 @@
-Gestione stampa IBAN nei documenti

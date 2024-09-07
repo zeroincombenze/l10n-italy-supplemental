@@ -1,1 +1,0 @@
-Funzionalità semplificate utilizzate dai metodi di pagamento

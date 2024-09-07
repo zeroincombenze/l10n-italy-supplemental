@@ -1,4 +1,0 @@
-id,description,chart_template_id:id,name,sequence,amount,amount_type,type_tax_use,price_include,account_id/id,refund_account_id/id,tag_ids/id,children_tax_ids/id
-22%v,22%v,l10n_chart_it_nocoa,IVA 22% vendite,1,22,percent,sale,False,IVA000,IVA000,,
-22%a,22%a,l10n_chart_it_nocoa,IVA 22% acquisti,2,22,percent,purchase,False,IVA000,IVA000,,
-

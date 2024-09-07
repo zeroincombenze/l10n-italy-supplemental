@@ -1,1 +1,0 @@
-IBAN moved in bank journal 

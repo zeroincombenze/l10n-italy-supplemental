@@ -1,1 +1,0 @@
-Simplified features used by payment methods

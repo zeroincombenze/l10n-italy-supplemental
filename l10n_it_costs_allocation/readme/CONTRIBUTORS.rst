@@ -1,3 +1,0 @@
-* Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
-* Fabio Giovannelli <fabio.giovannelli@didotech.com>
-* Marco Tosato <marco.tosato@didotech.com>

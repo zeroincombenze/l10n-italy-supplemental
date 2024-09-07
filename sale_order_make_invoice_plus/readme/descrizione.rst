@@ -1,1 +1,0 @@
-Fattura d'acconto estesa
