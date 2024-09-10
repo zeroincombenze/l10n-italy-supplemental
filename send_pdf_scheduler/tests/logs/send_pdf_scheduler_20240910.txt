@@ -1,0 +1,40 @@
+2024-09-10 16:25:27,045 13989 INFO ? odoo: Odoo version 10.0
+2024-09-10 16:25:27,045 13989 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/tests/logs/zero10.l10n-italy-supplemental.send_pdf_scheduler.conf
+2024-09-10 16:25:27,045 13989 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/.local/share/Odoo12/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/mis-builder', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/website', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2024-09-10 16:25:27,045 13989 INFO ? odoo: database: odoo10@localhost:5432
+2024-09-10 16:25:27,064 13989 INFO ? odoo.service.server: HTTP service (werkzeug) running on nb200z0.:38516
+2024-09-10 16:25:27,080 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 1 modules...
+2024-09-10 16:25:27,174 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 1 modules loaded in 0.09s, 0 queries
+2024-09-10 16:25:27,709 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 30 modules...
+2024-09-10 16:25:27,815 13989 INFO test_send_pdf_scheduler_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2024-09-10 16:25:27,922 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 30 modules loaded in 0.21s, 0 queries
+2024-09-10 16:25:27,928 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 31 modules...
+2024-09-10 16:25:28,230 13989 INFO test_send_pdf_scheduler_10 odoo.modules.registry: module send_pdf_scheduler: creating or updating database tables
+2024-09-10 16:25:28,548 13989 INFO test_send_pdf_scheduler_10 odoo.addons.auth_crypt.models.res_users: Hashing passwords, may be slow for databases with many users...
+2024-09-10 16:25:28,624 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/account_invoice_view.xml
+2024-09-10 16:25:28,721 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/account_fiscal_position_view.xml
+2024-09-10 16:25:28,766 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/res_partner_view.xml
+2024-09-10 16:25:28,841 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/config_settings_view.xml
+2024-09-10 16:25:28,897 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/data/ir_cron.xml
+2024-09-10 16:25:28,911 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/data/ir_config_parameter.xml
+2024-09-10 16:25:29,067 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 31 modules loaded in 1.14s, 11 queries
+2024-09-10 16:25:29,535 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: Modules loaded.
+2024-09-10 16:25:29,540 13989 INFO test_send_pdf_scheduler_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2024-09-10 16:25:29,541 13989 INFO test_send_pdf_scheduler_10 odoo.modules.registry: Registry changed, signaling through the database
+2024-09-10 16:25:29,543 13989 INFO test_send_pdf_scheduler_10 odoo.service.server: Initiating shutdown
+2024-09-10 16:25:29,543 13989 INFO test_send_pdf_scheduler_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36msend_pdf_scheduler[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m[34;107mName                                                                                           Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_fiscal_position.py       4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_invoice.py              27     12    56%   11, 13, 17, 19, 29-35, 38-45
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/config_settings.py              21     13    38%   19-30, 33-34, 40-43
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_company.py                   4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_partner.py                   4      0   100%
+----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             60     25    58%
+[0m

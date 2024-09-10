@@ -9,6 +9,8 @@ class AccountInvoice(models.Model):
 
     @api.model
     def _get_to_send_mail(self):
+        if self.type in ("in_invoice", "in_refund"):
+            return False
         res = self.env["ir.config_parameter"].get_param("default_to_send_mail")
         modifier = []
         if self.partner_id.to_send_mail:
@@ -38,5 +40,6 @@ class AccountInvoice(models.Model):
             datetime.today().date().weekday() < 5
             and datetime.today().date() not in holidays.IT()
         ):
-            for inv in self.search([("to_send_mail", "=", True)]):
+            for inv in self.search([("to_send_mail", "=", True),
+                                    ("type", "in", ["out_invoice", "out_refund"])]):
                 inv.action_auto_send_invoice_mail()
