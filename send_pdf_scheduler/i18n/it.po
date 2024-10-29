@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-31 13:24+0000\n"
-"PO-Revision-Date: 2024-08-31 15:34+0200\n"
+"PO-Revision-Date: 2024-10-29 07:12+0100\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: send_pdf_scheduler
 #: model:ir.model.fields,help:send_pdf_scheduler.field_account_fiscal_position_to_send_mail
@@ -84,7 +84,7 @@ msgstr "Schedulare invio"
 #. module: send_pdf_scheduler
 #: model:ir.ui.view,arch_db:send_pdf_scheduler.view_account_config_settings
 msgid "Sending document pdf mail scheduler"
-msgstr "Schedulatore invio mail documento pdf "
+msgstr "Schedulatore invio mail documento pdf"
 
 #. module: send_pdf_scheduler
 #: model:ir.ui.view,arch_db:send_pdf_scheduler.view_account_config_settings

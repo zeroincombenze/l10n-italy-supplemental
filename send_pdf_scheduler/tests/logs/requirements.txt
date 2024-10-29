@@ -76,6 +76,7 @@ odoo==10.0
 odoo-score==2.0.9
 OdooRPC==0.9.0
 OERPLib==0.8.4
+oerplib3==0.8.5
 ofxparse==0.16
 openpyxl==2.6.4
 openupgradelib==3.6.2.dev10+g9d08460
@@ -161,6 +162,7 @@ smmap2==3.0.1
 soupsieve==1.9.6
 SQLAlchemy==1.4.52
 starkbank-ecdsa==2.2.0
+suds==0.4
 suds-jurko==0.6
 typing==3.10.0.0
 tzlocal==2.1
@@ -184,8 +186,8 @@ wrapt==1.15.0
 xlrd==1.0.0
 XlsxWriter==0.9.3
 xlwt==1.1.2
-z0bug-odoo==2.0.19
+z0bug-odoo==2.0.20
 z0lib==2.0.12
-zerobug==2.0.15
+zerobug==2.0.18
 zipp==1.2.0
 zpl2==1.0

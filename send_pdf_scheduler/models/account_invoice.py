@@ -1,7 +1,7 @@
 from datetime import datetime
 import holidays
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class AccountInvoice(models.Model):
@@ -27,12 +27,12 @@ class AccountInvoice(models.Model):
 
     @api.multi
     def action_auto_send_invoice_mail(self):
-        template = template = (
+        template = (
             self.company_id.invoice_mail_template_id
             or self.env.ref("account.email_template_edi_invoice")
         )
-        template.send_mail(self.id)
-        self.to_send_mail = False
+        self.message_post(body=_("Invoice sent"))
+        template.send_mail(self.id, force_send=True)
 
     @api.multi
     def cron_send_all_invoice_mail(self):
@@ -43,3 +43,20 @@ class AccountInvoice(models.Model):
             for inv in self.search([("to_send_mail", "=", True),
                                     ("type", "in", ["out_invoice", "out_refund"])]):
                 inv.action_auto_send_invoice_mail()
+
+
+class MailComposeMessage(models.TransientModel):
+    _inherit = 'mail.compose.message'
+
+    @api.multi
+    def send_mail(self, auto_commit=False):
+        context = self._context
+        if (
+                context.get("default_model") == "account.invoice"
+                and context.get("default_res_id")
+                and context.get("mark_invoice_as_sent")
+        ):
+            invoice = self.env["account.invoice"].browse(context["default_res_id"])
+            invoice.to_send_mail = False
+        return super(MailComposeMessage, self).send_mail(auto_commit=auto_commit)
+
