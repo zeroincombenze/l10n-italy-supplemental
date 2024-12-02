@@ -153,6 +153,7 @@ s3transfer==0.3.7
 scandir==1.10.0
 sendgrid==6.11.0
 setuptools==44.1.1
+shell==1.0.1
 simplejson==3.19.2
 singledispatch==3.7.0
 six==1.10.0
@@ -187,7 +188,7 @@ xlrd==1.0.0
 XlsxWriter==0.9.3
 xlwt==1.1.2
 z0bug-odoo==2.0.20
-z0lib==2.0.12
+z0lib==2.0.13
 zerobug==2.0.18
 zipp==1.2.0
 zpl2==1.0

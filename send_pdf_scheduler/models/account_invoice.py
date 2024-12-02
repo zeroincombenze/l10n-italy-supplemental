@@ -1,7 +1,7 @@
 from datetime import datetime
 import holidays
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 
 class AccountInvoice(models.Model):
@@ -46,5 +46,6 @@ class AccountInvoice(models.Model):
             and datetime.today().date() not in holidays.IT()
         ):
             for inv in self.search([("to_send_mail", "=", True),
+                                    ("state", "not in", ["drfat", "cancelled"]),
                                     ("type", "in", ["out_invoice", "out_refund"])]):
                 inv.action_auto_send_invoice_mail()
