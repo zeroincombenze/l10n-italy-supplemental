@@ -1,5 +1,5 @@
 ====================================================================
-|icon| Bank account in partner/Conto bancario in nominativo 10.0.0.3
+|icon| Bank account in partner/Conto bancario in nominativo 10.0.0.4
 ====================================================================
 
 **Add bank account sheet in partner view like previous Odoo 10.0**
@@ -147,6 +147,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.4 (2025-01-30)
+~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Crash with some user configuration
+
 10.0.0.3 (2020-12-07)
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -154,6 +159,7 @@ ChangeLog History | Cronologia modifiche
 * [IMP] Select IBAN in in invoice / Selezione IBAN in fattura
 * [IMP] Deactivable IBAN / IBAN disattivabili
 * [IMP] Account type: IBAN or bank / Tipo di conto: IBAN o banca
+* [QUA] Test coverage 47% (15: 8+7) [0 TestPoints] - quality rating 29 (target 100)
 
 
 
@@ -204,7 +210,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-06-10
+Last Update / Ultimo aggiornamento: 2025-01-30
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

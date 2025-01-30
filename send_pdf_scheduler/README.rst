@@ -1,5 +1,5 @@
 ==========================================================
-|icon| Send pdf scheduler/schedulatoreinvio pdf 10.0.0.1.3
+|icon| Send pdf scheduler/schedulatoreinvio pdf 10.0.0.1.4
 ==========================================================
 
 **Schedule sending invoice pdf by cron**
@@ -155,6 +155,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.4 (2024-12-12)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Cron troubles
+* [QUA] Test coverage 44% (81: 45+36) [0 TestPoints] - quality rating 27 (target 100)
+
 10.0.0.1.2 (2024-10-04)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -173,7 +179,6 @@ ChangeLog History | Cronologia modifiche
 
 * Initial implementation / Implementazione iniziale
 * [QUA] Test coverage 59% (58: 24+34) [0 TestPoints] - quality rating 36 (target 100)
-* [QUA] Test coverage 57% (69: 30+39) [0 TestPoints] - quality rating 34 (target 100)
 
 
 

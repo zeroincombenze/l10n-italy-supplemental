@@ -9,7 +9,7 @@
 #
 {
     "name": "Bank account in partner",
-    "version": "10.0.0.3",
+    "version": "10.0.0.4",
     "category": "Accounting & Finance",
     "summary": "Add bank account sheet in partner view like previous Odoo 10.0",
     "author": "SHS-AV s.r.l.",

@@ -21,6 +21,10 @@
                             <label for="to_send_mail"/>
                             <field name="to_send_mail" class="oe_inline"/>
                         </div>
+                        <div>
+                            <label for="time_interval"/>
+                            <field name="time_interval" class="oe_inline"/>
+                        </div>
                     </div>
                 </group>
             </xpath>
