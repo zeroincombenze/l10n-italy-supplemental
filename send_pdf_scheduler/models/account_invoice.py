@@ -35,9 +35,8 @@ class AccountInvoice(models.Model):
         # Post message on chatter
         # self.message_post(body=_("Invoice sent"))
         # Send mail
-        template.send_mail(self.id,
-                           force_send=True,
-                           email_values={"email_cc": mailbox})
+        template.with_context(lang=self.company_id.partner_id.lang).send_mail(
+            self.id, force_send=True, email_values={"email_cc": mailbox})
 
     @api.multi
     def cron_send_all_invoice_mail(self):

@@ -1,8 +1,8 @@
-10.0.0.1.2 (2024-10-04)
+10.0.0.1.4 (2025-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Send mail reset "mail_to_send" / Invio fattura (anche manuale) azzera flag
-* [QUA] Test coverage 57% (69: 30+39) [0 TestPoints] - quality rating 34 (target 100)
+* [QUA] Test coverage 57% (68: 29+39) [0 TestPoints] - quality rating 35 (target 100)
 
 
 10.0.0.1.1 (2024-09-10)
@@ -16,4 +16,3 @@
 
 * Initial implementation / Implementazione iniziale
 * [QUA] Test coverage 59% (58: 24+34) [0 TestPoints] - quality rating 36 (target 100)
-* [QUA] Test coverage 57% (69: 30+39) [0 TestPoints] - quality rating 34 (target 100)

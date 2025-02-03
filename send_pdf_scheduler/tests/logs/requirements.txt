@@ -132,7 +132,7 @@ python-http-client==3.3.7
 python-ldap==2.4.27
 python-magic==0.4.27
 python-openid==2.2.5
-python-plus==2.0.15
+python-plus==2.0.16
 python-stdnum==1.20
 pytz==2024.1
 pyusb==1.0.0
@@ -188,7 +188,7 @@ xlrd==1.0.0
 XlsxWriter==0.9.3
 xlwt==1.1.2
 z0bug-odoo==2.0.20
-z0lib==2.0.13
+z0lib==2.0.14
 zerobug==2.0.18
 zipp==1.2.0
 zpl2==1.0
