@@ -159,7 +159,7 @@ ChangeLog History | Cronologia modifiche
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Send mail reset "mail_to_send" / Invio fattura (anche manuale) azzera flag
-* [QUA] Test coverage 57% (68: 29+39) [0 TestPoints] - quality rating 35 (target 100)
+* [QUA] Test coverage 56% (73: 32+41) [0 TestPoints] - quality rating 34 (target 100)
 
 
 10.0.0.1.1 (2024-09-10)

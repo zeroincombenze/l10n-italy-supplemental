@@ -1,7 +1,10 @@
 from datetime import datetime
+import logging
 import holidays
 
 from odoo import models, fields, api
+
+_logger = logging.getLogger(__name__)
 
 
 class AccountInvoice(models.Model):
@@ -44,7 +47,11 @@ class AccountInvoice(models.Model):
             datetime.today().date().weekday() < 5
             and datetime.today().date() not in holidays.IT()
         ):
+            _logger.info("cron_send_all_invoice_mail()")
             for inv in self.search([("to_send_mail", "=", True),
-                                    ("state", "not in", ["drfat", "cancelled"]),
+                                    ("state", "not in", ["draft", "cancelled"]),
                                     ("type", "in", ["out_invoice", "out_refund"])]):
+                _logger.info("Sending invoice %s" % inv.number)
                 inv.action_auto_send_invoice_mail()
+        else:
+            _logger.info("Cannnot send pdf invocie because holiday")
