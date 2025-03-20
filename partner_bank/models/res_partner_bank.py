@@ -31,4 +31,3 @@ class ResPartnerBank(models.Model):
                 name = bank.acc_number
             result.append((bank.id, name))
         return result
-
