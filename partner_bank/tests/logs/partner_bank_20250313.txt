@@ -1,0 +1,93 @@
+2025-03-13 21:24:53,000 204277 DAEMON test_partner_bank_10 run_odoo_debug.sh: cd /home/odoo/10.0/venv_odoo && source ./bin/activate
+2025-03-13 20:26:23,904 213103 DEBUG ? odoo.netsvc: logger level set: "odoo.workflow.workitem:WARNING"
+2025-03-13 20:26:23,904 213103 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.request:INFO"
+2025-03-13 20:26:23,904 213103 DEBUG ? odoo.netsvc: logger level set: "odoo.http.rpc.response:INFO"
+2025-03-13 20:26:23,905 213103 DEBUG ? odoo.netsvc: logger level set: "odoo.addons.web.http:INFO"
+2025-03-13 20:26:23,905 213103 DEBUG ? odoo.netsvc: logger level set: "odoo.sql_db:INFO"
+2025-03-13 20:26:23,905 213103 DEBUG ? odoo.netsvc: logger level set: ":INFO"
+2025-03-13 20:26:23,905 213103 DEBUG ? odoo.netsvc: logger level set: "odoo:DEBUG"
+2025-03-13 20:26:23,905 213103 DEBUG ? odoo.netsvc: logger level set: ":INFO"
+2025-03-13 20:26:23,905 213103 INFO ? odoo: Odoo version 10.0
+2025-03-13 20:26:23,905 213103 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/partner_bank/tests/logs/zero10.l10n-italy-supplemental.partner_bank.conf
+2025-03-13 20:26:23,905 213103 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/.local/share/Odoo10/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/marketplace', u'/home/odoo/10.0/mis-builder', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/website', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2025-03-13 20:26:23,906 213103 INFO ? odoo: database: odoo10@localhost:5432
+2025-03-13 20:26:23,923 213103 DEBUG ? odoo.service.server: Setting signal handlers
+2025-03-13 20:26:23,924 213103 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.:34491
+2025-03-13 20:26:23,937 213103 DEBUG ? odoo.modules.registry: Multiprocess load registry signaling: [Registry: 2] [Cache: 1]
+2025-03-13 20:26:23,941 213103 INFO test_partner_bank_10 odoo.modules.loading: loading 1 modules...
+2025-03-13 20:26:23,942 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module base (1/1)
+2025-03-13 20:26:24,001 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'Selecting the "Warning" option will notify user with the message, Selecting "Blocking Message" will throw an exception with the message and block the flow. The Message has to be written in the next field.'", skipped
+2025-03-13 20:26:24,039 213103 INFO test_partner_bank_10 odoo.modules.loading: 1 modules loaded in 0.10s, 0 queries
+2025-03-13 20:26:24,718 213103 DEBUG test_partner_bank_10 odoo.modules.loading: Updating graph with 30 more modules
+2025-03-13 20:26:24,719 213103 INFO test_partner_bank_10 odoo.modules.loading: loading 31 modules...
+2025-03-13 20:26:24,719 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module auth_crypt (2/31)
+2025-03-13 20:26:24,740 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module decimal_precision (3/31)
+2025-03-13 20:26:24,743 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web (4/31)
+2025-03-13 20:26:24,744 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module bus (5/31)
+2025-03-13 20:26:24,758 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_calendar (6/31)
+2025-03-13 20:26:24,760 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_diagram (7/31)
+2025-03-13 20:26:24,762 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_editor (8/31)
+2025-03-13 20:26:24,782 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_kanban (9/31)
+2025-03-13 20:26:24,782 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_planner (10/31)
+2025-03-13 20:26:24,795 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_tour (11/31)
+2025-03-13 20:26:24,799 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module base_import (12/31)
+2025-03-13 20:26:24,829 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module base_setup (13/31)
+2025-03-13 20:26:24,832 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_kanban_gauge (14/31)
+2025-03-13 20:26:24,834 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module web_settings_dashboard (15/31)
+2025-03-13 20:26:24,836 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module mail (16/31)
+2025-03-13 20:26:24,849 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'Customers'", skipped
+2025-03-13 20:26:24,872 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module report (17/31)
+2025-03-13 20:26:24,909 213103 INFO test_partner_bank_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2025-03-13 20:26:24,919 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module analytic (18/31)
+2025-03-13 20:26:24,923 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module auth_signup (19/31)
+2025-03-13 20:26:24,929 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module fetchmail (20/31)
+2025-03-13 20:26:24,935 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module product (21/31)
+2025-03-13 20:26:24,938 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'Consumable'", skipped
+2025-03-13 20:26:24,938 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'Service'", skipped
+2025-03-13 20:26:24,942 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'A barcode can only be assigned to one product !'", skipped
+2025-03-13 20:26:24,948 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'The conversion ratio for a unit of measure cannot be 0!'", skipped
+2025-03-13 20:26:24,948 213103 DEBUG test_partner_bank_10 odoo.tools.translate: translation went wrong for "'The rounding precision must be greater than 0!'", skipped
+2025-03-13 20:26:24,953 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module account (22/31)
+2025-03-13 20:26:24,986 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module portal (23/31)
+2025-03-13 20:26:24,990 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module procurement (24/31)
+2025-03-13 20:26:24,993 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module account_bank_statement_import (25/31)
+2025-03-13 20:26:24,996 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module account_check_printing (26/31)
+2025-03-13 20:26:25,000 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module base_iban (27/31)
+2025-03-13 20:26:25,003 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module l10n_generic_coa (28/31)
+2025-03-13 20:26:25,005 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module payment (29/31)
+2025-03-13 20:26:25,009 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module l10n_us (30/31)
+2025-03-13 20:26:25,011 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module payment_transfer (31/31)
+2025-03-13 20:26:25,014 213103 INFO test_partner_bank_10 odoo.modules.loading: 31 modules loaded in 0.29s, 0 queries
+2025-03-13 20:26:25,019 213103 DEBUG test_partner_bank_10 odoo.modules.loading: Updating graph with 1 more modules
+2025-03-13 20:26:25,019 213103 INFO test_partner_bank_10 odoo.modules.loading: loading 32 modules...
+2025-03-13 20:26:25,019 213103 DEBUG test_partner_bank_10 odoo.modules.loading: loading module partner_bank (31/32)
+2025-03-13 20:26:25,322 213103 INFO test_partner_bank_10 odoo.modules.registry: module partner_bank: creating or updating database tables
+2025-03-13 20:26:25,345 213103 DEBUG test_partner_bank_10 odoo.models.schema: Table 'res_partner_bank': added column 'acc_type' with definition=VARCHAR
+2025-03-13 20:26:25,351 213103 DEBUG test_partner_bank_10 odoo.models.schema: Table 'res_partner_bank': added column 'active' with definition=bool
+2025-03-13 20:26:25,351 213103 DEBUG test_partner_bank_10 odoo.models: Table 'res_partner_bank': setting default value of new column active to True
+2025-03-13 20:26:25,411 213103 INFO test_partner_bank_10 odoo.modules.loading: loading partner_bank/views/res_partner_view.xml
+2025-03-13 20:26:25,533 213103 INFO test_partner_bank_10 odoo.modules.loading: loading partner_bank/views/account_invoice_view.xml
+2025-03-13 20:26:25,617 213103 INFO test_partner_bank_10 odoo.modules.loading: loading partner_bank/views/bank_view.xml
+2025-03-13 20:26:25,783 213103 INFO test_partner_bank_10 odoo.modules.loading: 32 modules loaded in 0.76s, 14 queries
+2025-03-13 20:26:25,902 213103 DEBUG test_partner_bank_10 odoo.models: column web is in the table ir_module_module but not in the corresponding object ir.module.module
+2025-03-13 20:26:25,972 213103 DEBUG test_partner_bank_10 odoo.models: column account_analytic_id is in the table account_invoice_report but not in the corresponding object account.invoice.report
+2025-03-13 20:26:26,138 213103 INFO test_partner_bank_10 odoo.modules.loading: Modules loaded.
+2025-03-13 20:26:26,141 213103 INFO test_partner_bank_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2025-03-13 20:26:26,142 213103 INFO test_partner_bank_10 odoo.modules.registry: Registry changed, signaling through the database
+2025-03-13 20:26:26,143 213103 INFO test_partner_bank_10 odoo.service.server: Initiating shutdown
+2025-03-13 20:26:26,143 213103 INFO test_partner_bank_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+2025-03-13 20:26:26,432 213103 DEBUG test_partner_bank_10 odoo.service.server: current thread: <_MainThread(MainThread, started 140180919019328)>
+2025-03-13 20:26:26,433 213103 DEBUG test_partner_bank_10 odoo.service.server: process <_MainThread(MainThread, started 140180919019328)> (False)
+2025-03-13 20:26:26,433 213103 DEBUG test_partner_bank_10 odoo.service.server: --
+
++===================================================================
+| please test [36mpartner_bank[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/10.0/l10n-italy-supplemental/partner_bank/tests/logs/coverage_partner_bank_10rc -m
+[34;107mName                                                              Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------
+l10n-italy-supplemental/partner_bank/models/res_partner_bank.py      15      8    47%   25-33
+-----------------------------------------------------------------------------------------------
+TOTAL                                                                15      8    47%
+[0m
