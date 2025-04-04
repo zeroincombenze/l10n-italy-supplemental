@@ -1,10 +1,10 @@
-====================================================================
-|icon| Bank account in partner/Conto bancario in nominativo 10.0.0.4
-====================================================================
+===============================================================================================================
+|icon| Show more commission details in commission tree view/Mostra più dettagli in lista provvigioni 10.0.0.1.0
+===============================================================================================================
 
-**Add bank account sheet in partner view like previous Odoo 10.0**
+**Add commission rate, customer and other info on tree view**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/partner_bank/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/commission_view_detailed/static/description/icon.png
 
 
 .. contents::
@@ -14,42 +14,15 @@
 Overview | Panoramica
 =====================
 
-|en| This module add some features to bank account:
-
-* Add bank account sheet in partner view like Odoo version before 10.0
-* Extend bank type with 'iban' (with check) and normal
-* Add bic/swift code in partner bank view
-* Make visible the account number in invoice form
+|en| Missed description
 
 
-|it| Estensione conti bancari
-
-Questo modulo estende le funzionalità dei conti bancari:
-
-* Permette di inserire le banche da tab contabilità del cliente come nelle versioni Odoo precedenti alla 10.0
-* Estende il tipo con 'iban' (con relativo controllo) e 'normal'
-* Aggiunge il codice bic/swift nella vista conti bancari
-* Rende visibile in conto bancario in fattura
+|it| Descrizione non disponibile
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/partner_bank/static/description/description.png
-
-
-Features | Caratteristiche
---------------------------
-
-+-------------------------------------------------------------------+----------+-----------------------+
-| Description | Descrizione                                         | Z0incomb | Note(s)               |
-+-------------------------------------------------------------------+----------+-----------------------+
-| Bank sheet in Account tab | Lista banche in linguetta Contabilità | ✅       | Like before Odoo 10.0 |
-+-------------------------------------------------------------------+----------+-----------------------+
-| Check IBAN | Controllo validità IBAN                              | ✅       |                       |
-+-------------------------------------------------------------------+----------+-----------------------+
-| BIC/SWIFT in bank view | BIC/SWIFT in vista banca                 | ✅       | Can be disabled       |
-+-------------------------------------------------------------------+----------+-----------------------+
-
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/commission_view_detailed/static/description/
 
 
 Getting started | Primi passi
@@ -147,19 +120,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.4 (2025-01-30)
-~~~~~~~~~~~~~~~~~~~~~
+10.0.0.1.0 (2025-04-04)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] Crash with some user configuration
-
-10.0.0.3 (2020-12-07)
-~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Show bank name in IBAN / Mostra nome banca in IBAN
-* [IMP] Select IBAN in in invoice / Selezione IBAN in fattura
-* [IMP] Deactivable IBAN / IBAN disattivabili
-* [IMP] Account type: IBAN or bank / Tipo di conto: IBAN o banca
-* [QUA] Test coverage 47% (15: 8+7) [0 TestPoints] - quality rating 29 (target 100)
+* Initial implementation / Implementazione iniziale
+* [QUA] Test coverage 64% (11: 4+7) [0 TestPoints] - quality rating 39 (target 100)
 
 
 
@@ -212,7 +177,7 @@ This module is part of l10n-italy-supplemental project.
 
 Last Update / Ultimo aggiornamento: 2025-04-04
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg

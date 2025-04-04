@@ -155,7 +155,7 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.4 (2024-12-12)
+10.0.0.1.4 (2025-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Cron troubles
@@ -229,7 +229,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-12-12
+Last Update / Ultimo aggiornamento: 2025-04-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
