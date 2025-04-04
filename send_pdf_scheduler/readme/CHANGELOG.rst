@@ -1,8 +1,14 @@
 10.0.0.1.4 (2025-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+* [FIX] Cron troubles
+* [QUA] Test coverage 44% (81: 45+36) [0 TestPoints] - quality rating 27 (target 100)
+
+10.0.0.1.2 (2024-10-04)
+~~~~~~~~~~~~~~~~~~~~~~~
+
 * [IMP] Send mail reset "mail_to_send" / Invio fattura (anche manuale) azzera flag
-* [QUA] Test coverage 53% (78: 37+41) [0 TestPoints] - quality rating 32 (target 100)
+* [QUA] Test coverage 57% (69: 30+39) [0 TestPoints] - quality rating 34 (target 100)
 
 
 10.0.0.1.1 (2024-09-10)

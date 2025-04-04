@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models, api
+from odoo import api, fields, models
 
 
 class AccountConfigSettings(models.TransientModel):
@@ -13,6 +13,11 @@ class AccountConfigSettings(models.TransientModel):
     to_send_mail = fields.Boolean(
         string="To send mail",
         help="Default automatically send invoice mail",
+    )
+    time_interval = fields.Char(
+        string="Send Time Interval",
+        help="Use FROM-TO (24h): i.e 10-16 meand from 10:00 to 16:00",
+        default="09-18",
     )
 
     @api.onchange("company_id")
@@ -32,8 +37,17 @@ class AccountConfigSettings(models.TransientModel):
     @api.model
     def get_default_to_send_mail(self, fields):
         return {
-            "to_send_mail": self.env["ir.config_parameter"].sudo().get_param(
-                "default_to_send_mail")
+            "to_send_mail": self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("default_to_send_mail")
+        }
+
+    @api.model
+    def get_default_time_interval(self, fields):
+        return {
+            "time_interval": self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("default_time_interval")
         }
 
     @api.multi
@@ -41,3 +55,9 @@ class AccountConfigSettings(models.TransientModel):
         self.ensure_one()
         ICP = self.env["ir.config_parameter"]
         ICP.set_param("default_to_send_mail", self.to_send_mail)
+
+    @api.multi
+    def set_time_interval(self):
+        self.ensure_one()
+        ICP = self.env["ir.config_parameter"]
+        ICP.set_param("default_time_interval", self.time_interval)
