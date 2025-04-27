@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form_view_area" model="ir.ui.view">
+        <field name="name">account.invoice.form.area</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='date_due']" position="after">
+                <field name="area_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

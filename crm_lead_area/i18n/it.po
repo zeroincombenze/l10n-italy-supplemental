@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_lead_area
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-27 19:44+0000\n"
+"PO-Revision-Date: 2025-04-27 19:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_lead_area
+#: model:ir.model.fields,field_description:crm_lead_area.field_account_invoice_area_id
+#: model:ir.model.fields,field_description:crm_lead_area.field_crm_lead_area_id
+#: model:ir.model.fields,field_description:crm_lead_area.field_sale_order_area_id
+#: model:ir.ui.view,arch_db:crm_lead_area.crm_lead_view_area_form
+#: model:ir.ui.view,arch_db:crm_lead_area.res_partner_view_area_search
+msgid "Area"
+msgstr "Area"
+
+#. module: crm_lead_area
+#: model:ir.ui.view,arch_db:crm_lead_area.crm_lead_view_area_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: crm_lead_area
+#: model:ir.model,name:crm_lead_area.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: crm_lead_area
+#: model:ir.model,name:crm_lead_area.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Opportunità"
+
+#. module: crm_lead_area
+#: model:ir.ui.view,arch_db:crm_lead_area.crm_lead_view_area_form
+msgid "Link to customer if exists"
+msgstr "Collegamento a cliente, se esiste"
+
+#. module: crm_lead_area
+#: model:ir.model,name:crm_lead_area.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
