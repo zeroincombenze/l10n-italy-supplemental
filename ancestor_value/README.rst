@@ -1,10 +1,10 @@
-=========================================
-|icon| CRM lead Area/Area lead 10.0.1.0.1
-=========================================
+==================================================
+|icon| Ancestor Value/Valore ascendente 10.0.1.0.0
+==================================================
 
-**Assign CRM lead to Commercial Area**
+**Get the ancestor value from current record by a field value**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/crm_lead_area/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/ancestor_value/static/description/icon.png
 
 
 .. contents::
@@ -14,29 +14,98 @@
 Overview | Panoramica
 =====================
 
-|en| This module extends the functionality of the CRM lead  to support
-commercial areas.
+|en| This module is not directly useful for end user.
 
-Commercial area is inherited in sale orders and in customer invoices too.
+It gives available the function ancestor_value which returns a valid ancestor with
+specific field value.
+This function makes available a fallback value of record through its parents.
+Imagine to manage some kinds of product recognized by a special boolean value in
+product category.
+From product you can easily get special value from its category but if this value is
+on a ascendent category you have to navigate upward tree until you find a valid value.
+The function ancestor_value does this action for you on any model with parent_id field.
+
+Example:
+
+    product.product Alpha, categ_id -> product.category A3
+
+    product.category A3, special = False, parent_id = A2
+
+    product.category A2, special = False, parent_id = A1
+
+    product.category A1, special = "Foo", parent_id = A
+
+    product.category A, special = "Bar", parent_id = False
+
+    product.ancestor_value("special") return "Foo" (from product.category A1)
 
 
-|it| Questo modulo estende le funzionalità dei lead/opportunità aggiungendo
-l'area commerciale.
+|it| Questo modulo non ha alcuno scopo per l'utente finale.
 
-L'area commerciale è ereditata anche negli ordini di vendita e nelle fatture clienti.
+Rende disponibile la funzione ancestor_value che restituisce un antenato valido
+con un valore di campo specifico.
+Questa funzione rende disponibile un valore di fallback del record attraverso
+i suoi ascendenti.
+Immaginiamo di gestire alcuni tipi di prodotti riconosciuti da uno speciale valore
+booleano nella categoria di prodotto.
+Dal prodotto si può facilmente ottenere un valore speciale dalla sua categoria,
+ma se questo valore si trova in una categoria ascendente, occorre navigare verso l'alto
+nell'albero fino a trovare un valore valido.
+La funzione ancestor_value esegue questa azione su qualsiasi modello dotatto di
+campo parent_id.
+
+Esempio:
+
+    product.product Alpha, categ_id -> product.category A3
+
+    product.category A3, special=False, parent_id=A2
+
+    product.category A2, special=False, parent_id=A1
+
+    product.category A1, special="Foo", parent_id=A
+
+    product.category A, special="Bar", parent_id=False
+
+    product.ancestor_value("special") restituisce "Foo"
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/crm_lead_area/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/ancestor_value/static/description/description.gif
 
 
-Configuration | Configurazione
-------------------------------
+Usage | Utilizzo
+----------------
 
-Activate the developer mode
+Based on following hierarchy:
 
-☰ Sales > Configuration > Contact > Localization > Areas
+    top_record: ref="valid", comment="top"
+
+    middle_record: ref=False, comment="middle", parent_id=top_record
+
+    bottom_record: ref=False, comment="bottom", parent_id=middle_record
+
+Search for ancestor with various search expressions:
+
+    bottom_record.ancestor_value("ref") -> "Valid" (from top_record)
+
+    bottom_record.ancestor_value("comment") -> "bottom" (from current record)
+
+    bottom_record.ancestor_value("comment", skip_current=True) -> "middle"
+
+    bottom_record.ancestor_value("ref", field="comment") -> "top"
+
+    bottom_record.ancestor_value("ref", value="Valid", field="comment") -> "top"
+
+Return a record (not only a field value):
+
+    bottom_record.ancestor_value("ref", value="Valid", field="self") -> top_record
+
+Return if a record is an ancestor:
+
+    bottom_record.ancestor_value("self", value=record_top)) -> True
+
+    bottom_record.ancestor_value("self", value=record_middle)) -> True
 
 
 
@@ -135,18 +204,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.1 (2025-04-29)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Area in sale order (related to partner) / Area in ordini di vendita (da cliente)
-* [IMP] Area in customer invoice (related to partner) / Area in fatture clienti (da cliente)
-* [QUA] Test coverage 100% (12: 0+12) [0 TestPoints] - quality rating 61 (target 100)
-
-10.0.0.1.0 (2024-04-18)
+10.0.0.1.0 (2025-05-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation / Implementazione iniziale
-* [QUA] Test coverage 100% (4: 0+4) [0 TestPoints] - quality rating 61 (target 100)
+* [QUA] Test coverage 100% (11: 0+11) [17 TestPoints] - quality rating 308 (target 100)
 
 
 
@@ -197,7 +259,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-04-29
+Last Update / Ultimo aggiornamento: 2025-05-01
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

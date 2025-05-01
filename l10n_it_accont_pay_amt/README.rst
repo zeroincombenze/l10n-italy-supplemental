@@ -1,10 +1,10 @@
-=========================================
-|icon| CRM lead Area/Area lead 10.0.1.0.1
-=========================================
+====================================================================
+|icon| ITA - Contabilità base/l10n_it_accont_pay_amt 10.0.12.0.1.0.0
+====================================================================
 
-**Assign CRM lead to Commercial Area**
+**Module useful for other modules**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/crm_lead_area/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_accont_pay_amt/static/description/icon.png
 
 
 .. contents::
@@ -14,30 +14,20 @@
 Overview | Panoramica
 =====================
 
-|en| This module extends the functionality of the CRM lead  to support
-commercial areas.
+|en| This module has 2 features:
+1. Add the field amount_net_pay to invoice model
+2. Keep account date value for purchase invoice when invoice is set to draft
 
-Commercial area is inherited in sale orders and in customer invoices too.
 
+|it| Questo modulo ha 2 caratteristiche:
 
-|it| Questo modulo estende le funzionalità dei lead/opportunità aggiungendo
-l'area commerciale.
-
-L'area commerciale è ereditata anche negli ordini di vendita e nelle fatture clienti.
+1. Aggiunge il campo amount_net_pay alla fattura
+2. Mantiene la data contabile della fattura fornitore quando ritorna bozza
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/crm_lead_area/static/description/description.png
-
-
-Configuration | Configurazione
-------------------------------
-
-Activate the developer mode
-
-☰ Sales > Configuration > Contact > Localization > Areas
-
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_accont_pay_amt/static/description/
 
 
 Getting started | Primi passi
@@ -135,18 +125,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.1 (2025-04-29)
-~~~~~~~~~~~~~~~~~~~~~~~
+10.0.0
+~~~~~~
 
-* [IMP] Area in sale order (related to partner) / Area in ordini di vendita (da cliente)
-* [IMP] Area in customer invoice (related to partner) / Area in fatture clienti (da cliente)
-* [QUA] Test coverage 100% (12: 0+12) [0 TestPoints] - quality rating 61 (target 100)
+* Split from l10n_it_account / Separato da l10n_it_account
 
-10.0.0.1.0 (2024-04-18)
-~~~~~~~~~~~~~~~~~~~~~~~
+10.0.0
+~~~~~~
 
 * Initial implementation / Implementazione iniziale
-* [QUA] Test coverage 100% (4: 0+4) [0 TestPoints] - quality rating 61 (target 100)
+* [QUA] Test coverage 39% (18: 11+7) [0 TestPoints] - quality rating 26 (target 100)
 
 
 
@@ -197,7 +185,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-04-29
+Last Update / Ultimo aggiornamento: 2025-05-30
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

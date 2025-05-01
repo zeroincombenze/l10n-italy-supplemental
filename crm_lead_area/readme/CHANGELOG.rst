@@ -1,4 +1,4 @@
-10.0.0.1.1 (2025-04-27)
+10.0.0.1.1 (2025-04-29)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Area in sale order (related to partner) / Area in ordini di vendita (da cliente)

@@ -1,0 +1,209 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Get the ancestor value from current record by a field value</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Restituisce il valore ascendente dal record corrente tramite il valore di un campo</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.gif" alt="Ancestor Value" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module is not directly useful for end user.
+<p align="justify">
+It gives available the function ancestor_value which returns a valid ancestor with
+specific field value.
+This function makes available a fallback value of record through its parents.
+Imagine to manage some kinds of product recognized by a special boolean value in
+product category.
+From product you can easily get special value from its category but if this value is
+on a ascendent category you have to navigate upward tree until you find a valid value.
+The function ancestor_value does this action for you on any model with parent_id field.
+</p><p align="justify">
+Example:
+</p><p align="justify">
+    product.product Alpha, categ_id -&gt; product.category A3
+</p><p align="justify">
+    product.category A3, special = False, parent_id = A2
+</p><p align="justify">
+    product.category A2, special = False, parent_id = A1
+</p><p align="justify">
+    product.category A1, special = "Foo", parent_id = A
+</p><p align="justify">
+    product.category A, special = "Bar", parent_id = False
+</p><p align="justify">
+    product.ancestor_value("special") return "Foo" (from product.category A1)
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo non ha alcuno scopo per l'utente finale.
+<p align="justify">
+Rende disponibile la funzione ancestor_value che restituisce un antenato valido
+con un valore di campo specifico.
+Questa funzione rende disponibile un valore di fallback del record attraverso
+i suoi ascendenti.
+Immaginiamo di gestire alcuni tipi di prodotti riconosciuti da uno speciale valore
+booleano nella categoria di prodotto.
+Dal prodotto si pu&#242; facilmente ottenere un valore speciale dalla sua categoria,
+ma se questo valore si trova in una categoria ascendente, occorre navigare verso l'alto
+nell'albero fino a trovare un valore valido.
+La funzione ancestor_value esegue questa azione su qualsiasi modello dotatto di
+campo parent_id.
+</p><p align="justify">
+Esempio:
+</p><p align="justify">
+    product.product Alpha, categ_id -&gt; product.category A3
+</p><p align="justify">
+    product.category A3, special=False, parent_id=A2
+</p><p align="justify">
+    product.category A2, special=False, parent_id=A1
+</p><p align="justify">
+    product.category A1, special="Foo", parent_id=A
+</p><p align="justify">
+    product.category A, special="Bar", parent_id=False
+</p><p align="justify">
+    product.ancestor_value("special") restituisce "Foo"
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Based on following hierarchy:
+<p align="justify">
+    top_record: ref="valid", comment="top"
+</p><p align="justify">
+    middle_record: ref=False, comment="middle", parent_id=top_record
+</p><p align="justify">
+    bottom_record: ref=False, comment="bottom", parent_id=middle_record
+</p><p align="justify">
+Search for ancestor with various search expressions:
+</p><p align="justify">
+    bottom_record.ancestor_value("ref") -&gt; "Valid" (from top_record)
+</p><p align="justify">
+    bottom_record.ancestor_value("comment") -&gt; "bottom" (from current record)
+</p><p align="justify">
+    bottom_record.ancestor_value("comment", skip_current=True) -&gt; "middle"
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", field="comment") -&gt; "top"
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", value="Valid", field="comment") -&gt; "top"
+</p><p align="justify">
+Return a record (not only a field value):
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", value="Valid", field="self") -&gt; top_record
+</p><p align="justify">
+Return if a record is an ancestor:
+</p><p align="justify">
+    bottom_record.ancestor_value("self", value=record_top)) -&gt; True
+</p><p align="justify">
+    bottom_record.ancestor_value("self", value=record_middle)) -&gt; True
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Basato su seguente gerarchia:
+<p align="justify">
+    top_record: ref="valid", comment="top"
+</p><p align="justify">
+    middle_record: ref=False, comment="middle", parent_id=top_record
+</p><p align="justify">
+    bottom_record: ref=False, comment="bottom", parent_id=middle_record
+</p><p align="justify">
+Ricerca ascendente con varie espressioni:
+</p><p align="justify">
+    bottom_record.ancestor_value("ref") -&gt; "Valid" (from top_record)
+</p><p align="justify">
+    bottom_record.ancestor_value("comment") -&gt; "bottom" (from current record)
+</p><p align="justify">
+    bottom_record.ancestor_value("comment", skip_current=True) -&gt; "middle"
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", field="comment") -&gt; "top"
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", value="Valid", field="comment") -&gt; "top"
+</p><p align="justify">
+Restituisce un record (non solo un valore di campo):
+</p><p align="justify">
+    bottom_record.ancestor_value("ref", value="Valid", field="self") -&gt; top_record
+</p><p align="justify">
+Restituisce se un record &#232; nella gerarchia:
+</p><p align="justify">
+    bottom_record.ancestor_value("self", value=record_top)) -&gt; True
+</p><p align="justify">
+    bottom_record.ancestor_value("self", value=record_middle)) -&gt; True
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.1.0 (2025-05-01)</h4>
+<p align="justify">
+<ul>
+<li>Initial implementation / Implementazione iniziale</li>
+<li>[QUA] Test coverage 100% (11: 0+11) [17 TestPoints] - quality rating 308 (target 100)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2025-05-01</p>
+    </div>
+</section>
