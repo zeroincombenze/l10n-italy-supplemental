@@ -1,0 +1,46 @@
+2025-05-01 12:18:26,411 428549 INFO ? odoo: Odoo version 12.0 
+2025-05-01 12:18:26,411 428549 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/ancestor_value/tests/logs/zero12.l10n-italy-supplemental.ancestor_value.conf 
+2025-05-01 12:18:26,411 428549 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/ddmrp', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/field-service', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/management-system', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/marketplace', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-kitting', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-financial', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-tracking', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/webhook', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2025-05-01 12:18:26,412 428549 INFO ? odoo: database: odoo12@localhost:5432 
+2025-05-01 12:18:26,439 428549 INFO ? odoo.addons.server_environment.serv_config: not using server_environment_files for configuration, no directory found 
+2025-05-01 12:18:26,439 428549 INFO ? odoo.addons.server_environment.serv_config: `running_env` not found. Using default = `test`. 
+2025-05-01 12:18:26,439 428549 INFO ? odoo.addons.server_environment.serv_config: We strongly recommend against using the rc file but instead use an explicit config file or env variable. 
+2025-05-01 12:18:26,543 428549 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2025-05-01 12:18:26,622 428549 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.:52868 
+2025-05-01 12:18:26,633 428549 INFO test_ancestor_value_12 odoo.modules.loading: loading 1 modules... 
+2025-05-01 12:18:26,640 428549 INFO test_ancestor_value_12 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries 
+2025-05-01 12:18:26,727 428549 INFO test_ancestor_value_12 odoo.modules.loading: updating modules list 
+2025-05-01 12:18:26,730 428549 INFO test_ancestor_value_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-05-01 12:18:34,177 428549 INFO test_ancestor_value_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['ancestor_value'] to user __system__ #1 via n/a 
+2025-05-01 12:18:34,358 428549 INFO test_ancestor_value_12 odoo.modules.loading: loading 10 modules... 
+2025-05-01 12:18:34,403 428549 INFO test_ancestor_value_12 odoo.modules.loading: 10 modules loaded in 0.04s, 0 queries 
+2025-05-01 12:18:34,407 428549 INFO test_ancestor_value_12 odoo.modules.loading: loading 11 modules... 
+2025-05-01 12:18:34,620 428549 INFO test_ancestor_value_12 odoo.modules.registry: module ancestor_value: creating or updating database tables 
+2025-05-01 12:18:35,662 428549 INFO test_ancestor_value_12 odoo.modules.loading: Module ancestor_value: loading demo 
+2025-05-01 12:18:35,881 428549 INFO test_ancestor_value_12 odoo.modules.module: odoo.addons.ancestor_value.tests.test_get_ancestor running tests. 
+2025-05-01 12:18:35,882 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.test_get_ancestor: test_ancestor_value (odoo.addons.ancestor_value.tests.test_get_ancestor.TestInvoiceRound) 
+2025-05-01 12:18:35,976 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.testenv: 🎺🎺🎺 Starting test v2.0.22 (debug_level=0, commit=True) 
+2025-05-01 12:18:35,978 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.testenv: 🎺🎺 Testing module: ancestor_value (12.0.1.0.0) 
+2025-05-01 12:18:35,979 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.testenv: 🎺🎺 Loading data from:   
+2025-05-01 12:18:35,981 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.test_get_ancestor: 🎺 Testing Ancestor Value 
+2025-05-01 12:18:36,038 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.testenv: 🏆🥇 [1;32m37 tests SUCCESSFULLY completed[0m 
+2025-05-01 12:18:36,067 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.test_get_ancestor: Ran 1 test in 0.186s 
+2025-05-01 12:18:36,067 428549 INFO test_ancestor_value_12 odoo.addons.ancestor_value.tests.test_get_ancestor: OK 
+2025-05-01 12:18:36,078 428549 INFO test_ancestor_value_12 odoo.modules.loading: 11 modules loaded in 1.67s, 70 queries 
+2025-05-01 12:18:36,228 428549 INFO test_ancestor_value_12 odoo.modules.loading: Modules loaded. 
+2025-05-01 12:18:36,232 428549 INFO test_ancestor_value_12 odoo.service.server: Starting post tests 
+2025-05-01 12:18:36,232 428549 INFO test_ancestor_value_12 odoo.service.server: All post-tested in 0.00s, 0 queries 
+2025-05-01 12:18:36,232 428549 INFO test_ancestor_value_12 odoo.service.server: Initiating shutdown 
+2025-05-01 12:18:36,232 428549 INFO test_ancestor_value_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36mancestor_value[0m (12.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/12.0/l10n-italy-supplemental/ancestor_value/tests/logs/coverage_ancestor_value_12rc -m
+[34;107mName                                                        Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------
+l10n-italy-supplemental/ancestor_value/models/ir_model.py      11      0   100%
+-----------------------------------------------------------------------------------------
+TOTAL                                                          11      0   100%
+[0m
