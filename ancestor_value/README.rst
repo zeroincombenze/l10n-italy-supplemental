@@ -1,10 +1,10 @@
 ==================================================
-|icon| Ancestor Value/Valore ascendente 16.0.1.0.0
+|icon| Ancestor Value/Valore ascendente 18.0.1.0.0
 ==================================================
 
 **Get the ancestor value from current record by a field value**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/16.0/ancestor_value/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/18.0/ancestor_value/static/description/icon.png
 
 
 .. contents::
@@ -71,7 +71,7 @@ Esempio:
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/16.0/ancestor_value/static/description/description.gif
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/18.0/ancestor_value/static/description/description.gif
 
 
 Usage | Utilizzo
@@ -118,9 +118,6 @@ Getting started | Primi passi
 Prerequisites | Prerequisiti
 ----------------------------
 
-* python 3.8
-* postgresql 12.0+ (warning for 14.0)
-
 ::
 
     cd $HOME
@@ -149,15 +146,15 @@ Installation | Installazione
 +---------------------------------+------------------------------------------+
 | Suggested deployment is:        | Posizione suggerita per l'installazione: |
 +---------------------------------+------------------------------------------+
-| $HOME/16.0 |
+| $HOME/18.0 |
 +----------------------------------------------------------------------------+
 
 ::
 
     # Odoo repository installation; OCB repository must be installed
-    deploy_odoo clone -r l10n-italy-supplemental -b 16.0 -G zero -p $HOME/16.0
+    deploy_odoo clone -r l10n-italy-supplemental -b 18.0 -G zero -p $HOME/18.0
     # Upgrade virtual environment
-    vem amend $HOME/16.0/venv_odoo
+    vem amend $HOME/18.0/venv_odoo
 
 
 
@@ -166,8 +163,8 @@ Upgrade | Aggiornamento
 
 ::
 
-    deploy_odoo update -r l10n-italy-supplemental -b 16.0 -G zero -p $HOME/16.0
-    vem amend $HOME/16.0/venv_odoo
+    deploy_odoo update -r l10n-italy-supplemental -b 18.0 -G zero -p $HOME/18.0
+    vem amend $HOME/18.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
 
@@ -204,8 +201,8 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-16.0.0.1.0 (2025-05-01)
-~~~~~~~~~~~~~~~~~~~~~~~
+18.0.0
+~~~~~~
 
 * Initial implementation / Implementazione iniziale
 * [QUA] Test coverage 100% (11: 0+11) [37 TestPoints] - quality rating 599 (target 100)
@@ -270,8 +267,8 @@ Last Update / Ultimo aggiornamento: 2025-05-01
 .. |license opl| image:: https://img.shields.io/badge/licence-OPL-7379c3.svg
     :target: https://www.odoo.com/documentation/user/14.0/legal/licenses/licenses.html
     :alt: License: OPL
-.. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-16.svg
-    :target: https://erp16.zeroincombenze.it
+.. |Try Me| image:: https://www.zeroincombenze.it/wp-content/uploads/ci-ct/prd/button-try-it-18.svg
+    :target: https://erp18.zeroincombenze.it
     :alt: Try Me
 .. |Zeroincombenze| image:: https://avatars0.githubusercontent.com/u/6972555?s=460&v=4
    :target: https://www.zeroincombenze.it/
