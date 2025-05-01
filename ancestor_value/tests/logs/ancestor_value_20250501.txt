@@ -1,0 +1,50 @@
+2025-05-01 12:23:22,111 435018 INFO ? odoo: Odoo version 14.0 
+2025-05-01 12:23:22,111 435018 INFO ? odoo: Using configuration file at /home/odoo/odoo14/l10n-italy-supplemental/ancestor_value/tests/logs/zero14.l10n-italy-supplemental.ancestor_value.conf 
+2025-05-01 12:23:22,111 435018 INFO ? odoo: addons paths: ['/home/odoo/odoo14/odoo/addons', '/home/odoo/odoo14/venv_odoo/lib/python3.8/site-packages/odoo/addons', '/home/odoo/.local/share/Odoo14/addons/14.0', '/home/odoo/odoo14/addons', '/home/odoo/.local/share/Odoo14/addons', '/home/odoo/odoo14/account-analytic', '/home/odoo/odoo14/account-budgeting', '/home/odoo/odoo14/account-closing', '/home/odoo/odoo14/account-consolidation', '/home/odoo/odoo14/account-financial-reporting', '/home/odoo/odoo14/account-financial-tools', '/home/odoo/odoo14/account-fiscal-rule', '/home/odoo/odoo14/account-invoice-reporting', '/home/odoo/odoo14/account-invoicing', '/home/odoo/odoo14/account-payment', '/home/odoo/odoo14/account-reconcile', '/home/odoo/odoo14/bank-payment', '/home/odoo/odoo14/bank-statement-import', '/home/odoo/odoo14/brand', '/home/odoo/odoo14/calendar', '/home/odoo/odoo14/commission', '/home/odoo/odoo14/community-data-files', '/home/odoo/odoo14/connector', '/home/odoo/odoo14/contract', '/home/odoo/odoo14/credit-control', '/home/odoo/odoo14/crm', '/home/odoo/odoo14/currency', '/home/odoo/odoo14/data-protection', '/home/odoo/odoo14/ddmrp', '/home/odoo/odoo14/delivery-carrier', '/home/odoo/odoo14/dms', '/home/odoo/odoo14/e-commerce', '/home/odoo/odoo14/edi', '/home/odoo/odoo14/helpdesk', '/home/odoo/odoo14/hr', '/home/odoo/odoo14/intrastat-extrastat', '/home/odoo/odoo14/knowledge', '/home/odoo/odoo14/l10n-italy', '/home/odoo/odoo14/l10n-italy-supplemental', '/home/odoo/odoo14/maintenance', '/home/odoo/odoo14/management-system', '/home/odoo/odoo14/manufacture', '/home/odoo/odoo14/margin-analysis', '/home/odoo/odoo14/marketplace', '/home/odoo/odoo14/mis-builder', '/home/odoo/odoo14/multi-company', '/home/odoo/odoo14/partner-contact', '/home/odoo/odoo14/product-attribute', '/home/odoo/odoo14/product-kitting', '/home/odoo/odoo14/product-pack', '/home/odoo/odoo14/product-variant', '/home/odoo/odoo14/profiles', '/home/odoo/odoo14/project', '/home/odoo/odoo14/purchase-reporting', '/home/odoo/odoo14/purchase-workflow', '/home/odoo/odoo14/queue', '/home/odoo/odoo14/report-print-send', '/home/odoo/odoo14/reporting-engine', '/home/odoo/odoo14/rma', '/home/odoo/odoo14/sale-financial', '/home/odoo/odoo14/sale-reporting', '/home/odoo/odoo14/sale-workflow', '/home/odoo/odoo14/search-engine', '/home/odoo/odoo14/server-auth', '/home/odoo/odoo14/server-backend', '/home/odoo/odoo14/server-brand', '/home/odoo/odoo14/server-env', '/home/odoo/odoo14/server-tools', '/home/odoo/odoo14/server-ux', '/home/odoo/odoo14/social', '/home/odoo/odoo14/stock-logistics-barcode', '/home/odoo/odoo14/stock-logistics-reporting', '/home/odoo/odoo14/stock-logistics-tracking', '/home/odoo/odoo14/stock-logistics-transport', '/home/odoo/odoo14/stock-logistics-warehouse', '/home/odoo/odoo14/stock-logistics-workflow', '/home/odoo/odoo14/storage', '/home/odoo/odoo14/timesheet', '/home/odoo/odoo14/uncovered', '/home/odoo/odoo14/web', '/home/odoo/odoo14/webhook', '/home/odoo/odoo14/website', '/home/odoo/odoo14/wms', '/home/odoo/odoo14/zerobug-test'] 
+2025-05-01 12:23:22,111 435018 INFO ? odoo: database: odoo14@localhost:5432 
+2025-05-01 12:23:22,280 435018 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-05-01 12:23:22,284 435018 WARNING ? py.warnings: /home/odoo/odoo14/odoo/addons/base/models/ir_actions_report.py:73: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(version) < LooseVersion('0.12.0'):
+ 
+2025-05-01 12:23:22,284 435018 WARNING ? py.warnings: /home/odoo/odoo14/odoo/addons/base/models/ir_actions_report.py:78: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if LooseVersion(version) >= LooseVersion('0.12.2'):
+ 
+2025-05-01 12:23:22,374 435018 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.:53171 
+2025-05-01 12:23:22,384 435018 INFO test_ancestor_value_14 odoo.modules.loading: loading 1 modules... 
+2025-05-01 12:23:22,396 435018 INFO test_ancestor_value_14 odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-05-01 12:23:22,473 435018 INFO test_ancestor_value_14 odoo.modules.loading: updating modules list 
+2025-05-01 12:23:22,475 435018 INFO test_ancestor_value_14 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-05-01 12:23:28,932 435018 INFO test_ancestor_value_14 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['Ancestor Value'] to user __system__ #1 via n/a 
+2025-05-01 12:23:29,021 435018 INFO test_ancestor_value_14 odoo.modules.loading: loading 7 modules... 
+2025-05-01 12:23:29,061 435018 INFO test_ancestor_value_14 odoo.modules.loading: 7 modules loaded in 0.04s, 2 queries (+0 extra) 
+2025-05-01 12:23:29,064 435018 INFO test_ancestor_value_14 odoo.modules.loading: loading 8 modules... 
+2025-05-01 12:23:29,064 435018 INFO test_ancestor_value_14 odoo.modules.loading: Loading module ancestor_value (2/8) 
+2025-05-01 12:23:29,260 435018 INFO test_ancestor_value_14 odoo.modules.registry: module ancestor_value: creating or updating database tables 
+2025-05-01 12:23:29,631 435018 INFO test_ancestor_value_14 odoo.modules.loading: Module ancestor_value: loading demo 
+2025-05-01 12:23:30,145 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.test_get_ancestor: Starting TestInvoiceRound.test_ancestor_value ... 
+2025-05-01 12:23:30,212 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.testenv: 🎺🎺🎺 Starting test v2.0.22 (debug_level=0, commit=True) 
+2025-05-01 12:23:30,214 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.testenv: 🎺🎺 Testing module: ancestor_value (14.0.1.0.0) 
+2025-05-01 12:23:30,214 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.testenv: 🎺🎺 Loading data from:   
+2025-05-01 12:23:30,216 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.test_get_ancestor: 🎺 Testing Ancestor Value 
+2025-05-01 12:23:30,311 435018 INFO test_ancestor_value_14 odoo.addons.ancestor_value.tests.testenv: 🏆🥇 [1;32m37 tests SUCCESSFULLY completed[0m 
+2025-05-01 12:23:30,352 435018 INFO test_ancestor_value_14 odoo.modules.loading: Module ancestor_value loaded in 1.29s (incl. 0.19s test), 677 queries (+41 test) 
+2025-05-01 12:23:30,352 435018 INFO test_ancestor_value_14 odoo.modules.loading: 8 modules loaded in 1.29s, 677 queries (+41 extra) 
+2025-05-01 12:23:30,516 435018 INFO test_ancestor_value_14 odoo.modules.loading: Modules loaded. 
+2025-05-01 12:23:30,519 435018 INFO test_ancestor_value_14 odoo.service.server: Starting post tests 
+2025-05-01 12:23:30,520 435018 INFO test_ancestor_value_14 odoo.service.server: 0 post-tests in 0.00s, 0 queries 
+2025-05-01 12:23:30,520 435018 INFO test_ancestor_value_14 odoo.tests.runner: 0 failed, 0 error(s) of 1 tests when loading database 'test_ancestor_value_14' 
+2025-05-01 12:23:30,521 435018 INFO test_ancestor_value_14 odoo.service.server: Initiating shutdown 
+2025-05-01 12:23:30,521 435018 INFO test_ancestor_value_14 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-05-01 12:23:30,902 435018 INFO test_ancestor_value_14 odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 2 connections  
+
++===================================================================
+| please test [36mancestor_value[0m (14.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/odoo14/l10n-italy-supplemental/ancestor_value/tests/logs/coverage_ancestor_value_14rc -m
+[34;107mName                                                        Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------
+l10n-italy-supplemental/ancestor_value/models/ir_model.py      11      0   100%
+-----------------------------------------------------------------------------------------
+TOTAL                                                          11      0   100%
+[0m
