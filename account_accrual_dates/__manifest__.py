@@ -6,7 +6,7 @@
 # Copyright 2021 powERP enterprise network <https://www.powerp.it>
 # Copyright 2021 Didotech s.r.l. <https://www.didotech.com>
 #
-# License OPL-1 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
+# License LGPL-3 or later (https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps).
 #
 {
     'name': 'Account accrual dates',
@@ -16,7 +16,7 @@
     'author': 'powERP enterprise network and other partners',
     'website': 'https://www.powerp.it',
     'development_status': 'Beta',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'depends': ['account'],
     'data': [
         'views/account_invoice.xml',

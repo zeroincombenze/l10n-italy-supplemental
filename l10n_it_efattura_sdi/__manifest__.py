@@ -1,4 +1,4 @@
-# License OPL-1.0 or later (https://www.odoo.com/documentation/12.0/legal/licenses/licenses.html).
+# License LGPL-3.0 or later (https://www.odoo.com/documentation/12.0/legal/licenses/licenses.html).
 {
     'name': 'Generic SDI',
     'version': '2.5.8',
@@ -7,9 +7,10 @@
     'author': 'powERP enterprise network',
     'website': 'https://www.powerp.it',
     'development_status': 'Alpha',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'depends': [
         'base',
+        'l10n_it_efattura_sdi',
         'l10n_it_fatturapa_in',
         'l10n_it_fatturapa_out',
     ],

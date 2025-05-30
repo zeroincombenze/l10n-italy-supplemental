@@ -7,6 +7,6 @@
     'author': 'powERP enterprise network',
     'website': 'https://www.powerp.it',
     'development_status': 'Alpha',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'depends': ['base'],
 }

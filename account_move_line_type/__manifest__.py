@@ -11,7 +11,7 @@
     'author': 'powERP enterprise network and other partners',
     'website': 'https://www.powerp.it',
     'development_status': 'Alpha',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'depends': ['account'],
     'data': ['views/account_move_line_view.xml'],
     'installable': True,

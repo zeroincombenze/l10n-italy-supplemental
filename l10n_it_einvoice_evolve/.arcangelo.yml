@@ -1,0 +1,8 @@
+module_l10n_it_fatturapa:
+  match: '.*["'']l10n_it_einvoice_base["'']'
+  prio: '7'
+  do:
+    - action: 's'
+      args:
+      - 'l10n_it_einvoice_base'
+      - 'l10n_it_sdi_channel'

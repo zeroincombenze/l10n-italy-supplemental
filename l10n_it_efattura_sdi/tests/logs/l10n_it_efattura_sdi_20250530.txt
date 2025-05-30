@@ -1,0 +1,1072 @@
+2025-05-30 20:29:23,000 169378 DAEMON test_l10n_it_efattura_sdi_12 run_odoo_debug.sh: cd /home/odoo/12.0/venv_odoo && source ./bin/activate
+2025-05-30 18:29:27,704 171443 INFO ? odoo: Odoo version 12.0 
+2025-05-30 18:29:27,704 171443 INFO ? odoo: Using configuration file at /home/odoo/12.0/l10n-italy-supplemental/l10n_it_efattura_sdi/tests/logs/zero12.l10n-italy-supplemental.l10n_it_efattura_sdi.conf 
+2025-05-30 18:29:27,704 171443 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo12/addons/12.0', '/home/odoo/12.0/odoo/addons', '/home/odoo/12.0/addons', '/home/odoo/.local/share/Odoo12/addons', '/home/odoo/12.0/account-analytic', '/home/odoo/12.0/account-budgeting', '/home/odoo/12.0/account-closing', '/home/odoo/12.0/account-consolidation', '/home/odoo/12.0/account-financial-reporting', '/home/odoo/12.0/account-financial-tools', '/home/odoo/12.0/account-fiscal-rule', '/home/odoo/12.0/account-invoice-reporting', '/home/odoo/12.0/account-invoicing', '/home/odoo/12.0/account-payment', '/home/odoo/12.0/account-reconcile', '/home/odoo/12.0/bank-payment', '/home/odoo/12.0/bank-statement-import', '/home/odoo/12.0/brand', '/home/odoo/12.0/calendar', '/home/odoo/12.0/commission', '/home/odoo/12.0/community-data-files', '/home/odoo/12.0/connector', '/home/odoo/12.0/contract', '/home/odoo/12.0/credit-control', '/home/odoo/12.0/crm', '/home/odoo/12.0/currency', '/home/odoo/12.0/data-protection', '/home/odoo/12.0/ddmrp', '/home/odoo/12.0/delivery-carrier', '/home/odoo/12.0/dms', '/home/odoo/12.0/e-commerce', '/home/odoo/12.0/edi', '/home/odoo/12.0/field-service', '/home/odoo/12.0/helpdesk', '/home/odoo/12.0/hr', '/home/odoo/12.0/intrastat-extrastat', '/home/odoo/12.0/knowledge', '/home/odoo/12.0/l10n-italy', '/home/odoo/12.0/l10n-italy-supplemental', '/home/odoo/12.0/maintenance', '/home/odoo/12.0/management-system', '/home/odoo/12.0/manufacture', '/home/odoo/12.0/margin-analysis', '/home/odoo/12.0/marketplace', '/home/odoo/12.0/mis-builder', '/home/odoo/12.0/multi-company', '/home/odoo/12.0/partner-contact', '/home/odoo/12.0/product-attribute', '/home/odoo/12.0/product-kitting', '/home/odoo/12.0/product-pack', '/home/odoo/12.0/product-variant', '/home/odoo/12.0/profiles', '/home/odoo/12.0/project', '/home/odoo/12.0/purchase-reporting', '/home/odoo/12.0/purchase-workflow', '/home/odoo/12.0/queue', '/home/odoo/12.0/report-print-send', '/home/odoo/12.0/reporting-engine', '/home/odoo/12.0/rma', '/home/odoo/12.0/sale-financial', '/home/odoo/12.0/sale-reporting', '/home/odoo/12.0/sale-workflow', '/home/odoo/12.0/search-engine', '/home/odoo/12.0/server-auth', '/home/odoo/12.0/server-backend', '/home/odoo/12.0/server-brand', '/home/odoo/12.0/server-env', '/home/odoo/12.0/server-tools', '/home/odoo/12.0/server-ux', '/home/odoo/12.0/social', '/home/odoo/12.0/stock-logistics-barcode', '/home/odoo/12.0/stock-logistics-reporting', '/home/odoo/12.0/stock-logistics-tracking', '/home/odoo/12.0/stock-logistics-transport', '/home/odoo/12.0/stock-logistics-warehouse', '/home/odoo/12.0/stock-logistics-workflow', '/home/odoo/12.0/storage', '/home/odoo/12.0/timesheet', '/home/odoo/12.0/uncovered', '/home/odoo/12.0/web', '/home/odoo/12.0/webhook', '/home/odoo/12.0/website', '/home/odoo/12.0/wms', '/home/odoo/12.0/zerobug-test', '/home/odoo/12.0/venv_odoo/lib/python3.7/site-packages/odoo/addons'] 
+2025-05-30 18:29:27,704 171443 INFO ? odoo: database: odoo12@localhost:5432 
+2025-05-30 18:29:27,795 171443 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /home/odoo/12.0/venv_odoo/bin/wkhtmltopdf 
+2025-05-30 18:29:27,880 171443 INFO ? odoo.addons.server_environment.serv_config: not using server_environment_files for configuration, no directory found 
+2025-05-30 18:29:27,881 171443 INFO ? odoo.addons.server_environment.serv_config: `running_env` not found. Using default = `test`. 
+2025-05-30 18:29:27,881 171443 INFO ? odoo.addons.server_environment.serv_config: We strongly recommend against using the rc file but instead use an explicit config file or env variable. 
+2025-05-30 18:29:27,894 171443 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.localdomain:50758 
+2025-05-30 18:29:27,911 171443 INFO ? odoo.modules.loading: init db 
+2025-05-30 18:29:35,244 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading 1 modules... 
+2025-05-30 18:29:35,319 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.registry: module base: creating or updating database tables 
+2025-05-30 18:29:35,554 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Computing parent_path for table ir_ui_menu... 
+2025-05-30 18:29:36,214 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Computing parent_path for table res_partner_category... 
+2025-05-30 18:29:36,680 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.model.fields.relation_field_id 
+2025-05-30 18:29:36,683 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.model.fields.related_field_id 
+2025-05-30 18:29:36,852 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.attachment.res_name 
+2025-05-30 18:29:36,853 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.attachment.res_model_name 
+2025-05-30 18:29:36,900 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.rule.global 
+2025-05-30 18:29:36,971 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.module.module.menus_by_module 
+2025-05-30 18:29:36,977 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.module.module.reports_by_module 
+2025-05-30 18:29:36,981 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of ir.module.module.views_by_module 
+2025-05-30 18:29:37,065 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.partner.display_name 
+2025-05-30 18:29:37,075 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.partner.partner_share 
+2025-05-30 18:29:37,077 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.partner.commercial_partner_id 
+2025-05-30 18:29:37,077 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.partner.commercial_company_name 
+2025-05-30 18:29:37,094 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.partner.bank.sanitized_acc_number 
+2025-05-30 18:29:37,114 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.currency.decimal_places 
+2025-05-30 18:29:37,131 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.company.logo_web 
+2025-05-30 18:29:37,167 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models: Storing computed values of res.users.share 
+2025-05-30 18:29:37,557 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res.lang.csv 
+2025-05-30 18:29:37,625 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_lang_data.xml 
+2025-05-30 18:29:37,635 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_partner_data.xml 
+2025-05-30 18:29:37,745 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_company_data.xml 
+2025-05-30 18:29:37,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_users_data.xml 
+2025-05-30 18:29:37,926 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2025-05-30 18:29:37,934 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_currency_data.xml 
+2025-05-30 18:29:38,304 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_country_data.xml 
+2025-05-30 18:29:39,852 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2025-05-30 18:29:39,868 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/security/base_groups.xml 
+2025-05-30 18:29:40,043 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/security/base_security.xml 
+2025-05-30 18:29:40,138 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/base_menus.xml 
+2025-05-30 18:29:40,227 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_config_views.xml 
+2025-05-30 18:29:40,245 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res.country.state.csv 
+2025-05-30 18:29:40,682 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2025-05-30 18:29:40,875 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2025-05-30 18:29:40,907 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2025-05-30 18:29:40,969 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2025-05-30 18:29:41,004 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2025-05-30 18:29:41,041 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_model_views.xml 
+2025-05-30 18:29:41,263 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2025-05-30 18:29:41,309 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2025-05-30 18:29:41,349 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2025-05-30 18:29:41,391 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_translation_views.xml 
+2025-05-30 18:29:41,441 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2025-05-30 18:29:41,488 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2025-05-30 18:29:41,563 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_default_views.xml 
+2025-05-30 18:29:41,600 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2025-05-30 18:29:41,609 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/report/ir_model_report.xml 
+2025-05-30 18:29:41,613 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2025-05-30 18:29:41,625 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2025-05-30 18:29:41,664 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2025-05-30 18:29:41,683 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_module_views.xml 
+2025-05-30 18:29:41,786 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2025-05-30 18:29:41,851 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_module_module.xml 
+2025-05-30 18:29:41,925 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2025-05-30 18:29:41,929 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2025-05-30 18:29:41,939 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2025-05-30 18:29:41,959 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2025-05-30 18:29:41,981 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2025-05-30 18:29:41,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2025-05-30 18:29:42,030 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2025-05-30 18:29:42,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2025-05-30 18:29:42,069 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_update_translations_views.xml 
+2025-05-30 18:29:42,087 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2025-05-30 18:29:42,109 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_actions_data.xml 
+2025-05-30 18:29:42,114 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2025-05-30 18:29:42,135 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_company_views.xml 
+2025-05-30 18:29:42,221 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_lang_views.xml 
+2025-05-30 18:29:42,258 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_partner_views.xml 
+2025-05-30 18:29:42,457 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_bank_views.xml 
+2025-05-30 18:29:42,517 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_country_views.xml 
+2025-05-30 18:29:42,586 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_currency_views.xml 
+2025-05-30 18:29:42,661 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_users_views.xml 
+2025-05-30 18:29:42,873 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/ir_property_views.xml 
+2025-05-30 18:29:42,915 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2025-05-30 18:29:42,928 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2025-05-30 18:29:42,968 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/views/onboarding_views.xml 
+2025-05-30 18:29:43,024 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/security/ir.model.access.csv 
+2025-05-30 18:29:43,231 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: Module base: loading demo 
+2025-05-30 18:29:43,231 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_company_demo.xml 
+2025-05-30 18:29:43,241 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_users_demo.xml 
+2025-05-30 18:29:43,534 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_partner_bank_demo.xml 
+2025-05-30 18:29:43,539 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_currency_rate_demo.xml 
+2025-05-30 18:29:43,703 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_bank_demo.xml 
+2025-05-30 18:29:43,708 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_partner_demo.xml 
+2025-05-30 18:29:44,206 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: loading base/data/res_partner_image_demo.xml 
+2025-05-30 18:29:44,845 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_acl running tests. 
+2025-05-30 18:29:44,845 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_field_crud_restriction (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:44,846 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Read/Write RPC access to restricted field should be forbidden 
+2025-05-30 18:29:44,991 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_field_visibility_restriction (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:44,991 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Check that model-level ``groups`` parameter effectively restricts access to that field for users who do not belong to one of the explicitly allowed groups 
+2025-05-30 18:29:45,097 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_fields_browse_restriction (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:45,097 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Test access to records having restricted fields 
+2025-05-30 18:29:45,107 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_m2o_field_create_edit_invisibility (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:45,107 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Test many2one field Create and Edit option visibility based on access rights of relation field 
+2025-05-30 18:29:45,122 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_m2o_field_create_edit_visibility (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:45,122 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Test many2one field Create and Edit option visibility based on access rights of relation field 
+2025-05-30 18:29:45,193 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_view_create_edit_button_invisibility (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:45,193 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Test form view Create, Edit, Delete button visibility based on access right of model 
+2025-05-30 18:29:45,208 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_view_create_edit_button_visibility (odoo.addons.base.tests.test_acl.TestACL) 
+2025-05-30 18:29:45,208 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: ` Test form view Create, Edit, Delete button visibility based on access right of model 
+2025-05-30 18:29:45,275 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: test_ir_rule (odoo.addons.base.tests.test_acl.TestIrRule) 
+2025-05-30 18:29:45,399 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [4264, 5102, 4266, 4265, 4259, 4277] 
+2025-05-30 18:29:45,404 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.rule records with IDs: [1, 19, 7, 8, 6, 20] 
+2025-05-30 18:29:45,408 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: Ran 8 tests in 0.563s 
+2025-05-30 18:29:45,408 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_acl: OK 
+2025-05-30 18:29:45,408 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_api running tests. 
+2025-05-30 18:29:45,409 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_00_query (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,409 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Build a recordset, and check its contents. 
+2025-05-30 18:29:45,410 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_01_query_offset (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,410 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Build a recordset with offset, and check equivalence. 
+2025-05-30 18:29:45,411 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_02_query_limit (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,411 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Build a recordset with offset, and check equivalence. 
+2025-05-30 18:29:45,413 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_03_query_offset_limit (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,413 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Build a recordset with offset and limit, and check equivalence. 
+2025-05-30 18:29:45,415 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_04_query_count (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,415 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Test the search method with count=True. 
+2025-05-30 18:29:45,416 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_05_immutable (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,416 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check that a recordset remains the same, even after updates. 
+2025-05-30 18:29:45,428 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_06_fields (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,428 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check that relation fields return records, recordsets or nulls. 
+2025-05-30 18:29:45,448 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_07_null (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,448 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check behavior of null instances. 
+2025-05-30 18:29:45,451 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_40_new_new (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,451 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Call new-style methods in the new API style. 
+2025-05-30 18:29:45,463 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_45_new_new (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,463 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Call new-style methods on records (new API style). 
+2025-05-30 18:29:45,483 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_50_environment (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,483 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Test environment on records. 
+2025-05-30 18:29:45,531 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_55_draft (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,532 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Test draft mode nesting. 
+2025-05-30 18:29:45,532 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_60_cache (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,532 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check the record cache behavior 
+2025-05-30 18:29:45,634 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner records with IDs: [47] 
+2025-05-30 18:29:45,645 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_60_prefetch (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,645 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check the record cache prefetching 
+2025-05-30 18:29:45,656 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_60_prefetch_object (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,656 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check the prefetching model. 
+2025-05-30 18:29:45,681 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_60_prefetch_read (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,681 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check that reading a field computes it on self only. 
+2025-05-30 18:29:45,704 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_70_one (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,704 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check method one(). 
+2025-05-30 18:29:45,706 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_80_contains (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,706 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Test membership on recordset. 
+2025-05-30 18:29:45,707 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_80_filter (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,707 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check filter on recordsets. 
+2025-05-30 18:29:45,717 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_80_map (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,717 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check map on recordsets. 
+2025-05-30 18:29:45,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_80_set_operations (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check set operations on recordsets. 
+2025-05-30 18:29:45,755 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: test_80_sorted (odoo.addons.base.tests.test_api.TestAPI) 
+2025-05-30 18:29:45,755 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: ` Check sorted on recordsets. 
+2025-05-30 18:29:45,764 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: Ran 22 tests in 0.356s 
+2025-05-30 18:29:45,764 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_api: OK 
+2025-05-30 18:29:45,766 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_base running tests. 
+2025-05-30 18:29:45,766 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_00_res_partner_name_create (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,799 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_10_res_partner_find_or_create (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,842 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_15_res_partner_name_search (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,877 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_20_res_partner_address_sync (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,910 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_30_res_partner_first_contact_sync (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,910 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Test initial creation of company/contact pair where contact address gets copied to company 
+2025-05-30 18:29:45,934 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_40_res_partner_address_get (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:45,934 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Test address_get address resolution mechanism: it should first go down through descendants, stopping when encountering another is_copmany entity, then go up, stopping again at the first is_company entity or the root ancestor and if nothing matches, it should use the provided partner itself 
+2025-05-30 18:29:46,029 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_50_res_partner_commercial_sync (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:46,139 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_60_read_group (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:46,261 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_70_archive_internal_partners (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:46,296 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_commercial_partner_nullcompany (odoo.addons.base.tests.test_base.TestBase) 
+2025-05-30 18:29:46,296 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` The commercial partner is the first/nearest ancestor-or-self which is a company or doesn't have a parent 
+2025-05-30 18:29:46,395 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_res_group_copy (odoo.addons.base.tests.test_base.TestGroups) 
+2025-05-30 18:29:46,519 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_res_group_recursion (odoo.addons.base.tests.test_base.TestGroups) 
+2025-05-30 18:29:46,679 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_res_groups_fullname_search (odoo.addons.base.tests.test_base.TestGroups) 
+2025-05-30 18:29:46,688 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_duplicate_children_01 (odoo.addons.base.tests.test_base.TestParentStore) 
+2025-05-30 18:29:46,688 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Duplicate the children then reassign them to the new parent (1st method). 
+2025-05-30 18:29:46,720 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_duplicate_children_02 (odoo.addons.base.tests.test_base.TestParentStore) 
+2025-05-30 18:29:46,720 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Duplicate the children then reassign them to the new parent (2nd method). 
+2025-05-30 18:29:46,746 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_duplicate_children_03 (odoo.addons.base.tests.test_base.TestParentStore) 
+2025-05-30 18:29:46,747 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Duplicate the children then reassign them to the new parent (3rd method). 
+2025-05-30 18:29:46,775 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_duplicate_parent (odoo.addons.base.tests.test_base.TestParentStore) 
+2025-05-30 18:29:46,775 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Duplicate the parent category and verify that the children have been duplicated too 
+2025-05-30 18:29:46,800 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_100_res_partner_recursion (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,832 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_101_res_partner_recursion (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,863 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_102_res_partner_recursion (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,894 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_103_res_partner_recursion (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,923 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_104_res_partner_recursion_indirect_cycle (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,923 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Indirect hacky write to create cycle in children 
+2025-05-30 18:29:46,967 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_110_res_partner_recursion_multi_update (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:46,967 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` multi-write on several partners in same hierarchy must not trigger a false cycle detection 
+2025-05-30 18:29:46,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_111_res_partner_recursion_infinite_loop (odoo.addons.base.tests.test_base.TestPartnerRecursion) 
+2025-05-30 18:29:47,000 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` The recursion check must not loop forever 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_01_safe_eval (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Try a few common expressions to verify they work with safe_eval 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_02_literal_eval (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Try simple literal definition to verify it works with literal_eval 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_03_literal_eval_arithmetic (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Try arithmetic expression in literal_eval to verify it does not work 
+2025-05-30 18:29:47,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_04_literal_eval_forbidden (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Try forbidden expressions in literal_eval to verify they are not allowed 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_05_safe_eval_forbiddon (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` Try forbidden expressions in safe_eval to verify they are not allowed (open) 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_const (odoo.addons.base.tests.test_base.TestSafeEval) 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: test_superuser (odoo.addons.base.tests.test_base.TestUsers) 
+2025-05-30 18:29:47,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: ` The superuser is inactive and must remain as such. 
+2025-05-30 18:29:47,052 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: Ran 31 tests in 1.286s 
+2025-05-30 18:29:47,052 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_base: OK 
+2025-05-30 18:29:47,052 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_basecase running tests. 
+2025-05-30 18:29:47,052 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_00 (odoo.addons.base.tests.test_basecase.TestSingleTransactionCase) 
+2025-05-30 18:29:47,052 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Create a partner. 
+2025-05-30 18:29:47,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_01 (odoo.addons.base.tests.test_basecase.TestSingleTransactionCase) 
+2025-05-30 18:29:47,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Find the created partner. 
+2025-05-30 18:29:47,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_20a (odoo.addons.base.tests.test_basecase.TestSingleTransactionCase) 
+2025-05-30 18:29:47,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Create a partner with a XML ID 
+2025-05-30 18:29:47,074 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_20b (odoo.addons.base.tests.test_basecase.TestSingleTransactionCase) 
+2025-05-30 18:29:47,074 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Resolve xml id with ref() and browse_ref() 
+2025-05-30 18:29:47,076 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_00 (odoo.addons.base.tests.test_basecase.TestTransactionCase) 
+2025-05-30 18:29:47,076 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Create a partner. 
+2025-05-30 18:29:47,088 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_01 (odoo.addons.base.tests.test_basecase.TestTransactionCase) 
+2025-05-30 18:29:47,088 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Don't find the created partner. 
+2025-05-30 18:29:47,089 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: test_20a (odoo.addons.base.tests.test_basecase.TestTransactionCase) 
+2025-05-30 18:29:47,089 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: ` Create a partner with a XML ID then resolve xml id with ref() and browse_ref() 
+2025-05-30 18:29:47,102 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: Ran 7 tests in 0.050s 
+2025-05-30 18:29:47,102 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_basecase: OK 
+2025-05-30 18:29:47,103 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_cache running tests. 
+2025-05-30 18:29:47,103 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: test_cache (odoo.addons.base.tests.test_cache.TestRecordCache) 
+2025-05-30 18:29:47,103 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: ` Check the record cache object. 
+2025-05-30 18:29:47,108 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: test_memory (odoo.addons.base.tests.test_cache.TestRecordCache) 
+2025-05-30 18:29:47,108 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: ` Check memory consumption of the cache. 
+2025-05-30 18:29:48,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: Ran 2 tests in 1.890s 
+2025-05-30 18:29:48,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cache: OK 
+2025-05-30 18:29:48,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_cloc running tests. 
+2025-05-30 18:29:48,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cloc: test_parser (odoo.addons.base.tests.test_cloc.TestCloc) 
+2025-05-30 18:29:49,020 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cloc: Ran 1 test in 0.026s 
+2025-05-30 18:29:49,020 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_cloc: OK 
+2025-05-30 18:29:49,020 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_db_cursor running tests. 
+2025-05-30 18:29:49,020 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: test_execute_bad_params (odoo.addons.base.tests.test_db_cursor.TestExecute) 
+2025-05-30 18:29:49,020 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: `  Try to use iterable but non-list or int params in query parameters. 
+2025-05-30 18:29:49,021 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: test_single_cursor (odoo.addons.base.tests.test_db_cursor.TestTestCursor) 
+2025-05-30 18:29:49,022 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: ` Check the behavior of a single test cursor. 
+2025-05-30 18:29:49,034 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: test_sub_commit (odoo.addons.base.tests.test_db_cursor.TestTestCursor) 
+2025-05-30 18:29:49,035 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: ` Check the behavior of a subcursor that commits. 
+2025-05-30 18:29:49,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: test_sub_rollback (odoo.addons.base.tests.test_db_cursor.TestTestCursor) 
+2025-05-30 18:29:49,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: ` Check the behavior of a subcursor that rollbacks. 
+2025-05-30 18:29:49,066 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: Ran 4 tests in 0.046s 
+2025-05-30 18:29:49,067 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_db_cursor: OK 
+2025-05-30 18:29:49,067 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_expression running tests. 
+2025-05-30 18:29:49,067 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_auto_join (odoo.addons.base.tests.test_expression.TestAutoJoin) 
+2025-05-30 18:29:49,137 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_00_in_not_in_m2m (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,201 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_05_not_str_m2m (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,273 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_10_equivalent_id (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,280 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_10_hierarchy_in_m2m (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,293 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_15_equivalent_one2many_1 (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,496 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_15_equivalent_one2many_2 (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,509 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_15_m2o (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,674 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_15_o2m (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,681 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_20_expression_parse (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,746 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_30_normalize_domain (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,747 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_35_negating_thruty_leafs (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,748 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_40_negating_long_expression (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,763 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_accent (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,764 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_active (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,789 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_in_boolean (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,789 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: ` Check the 'in' operator for boolean fields. 
+2025-05-30 18:29:49,792 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_in_operator (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,792 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: ` check that we can use the 'in' operator for plain fields 
+2025-05-30 18:29:49,820 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_invalid (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,820 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: ` verify that invalid expressions are refused, even for magic fields 
+2025-05-30 18:29:49,822 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_like_wildcards (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,824 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_long_table_alias (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,826 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_lp1071710 (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:49,826 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: ` Check that we can exclude translated fields (bug lp:1071710) 
+2025-05-30 18:29:49,829 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:29:49,829 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:29:51,464 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_or_with_implicit_and (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:51,465 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_proper_combine_unit_leaves (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:51,466 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_pure_function (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:51,467 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: test_translate_search (odoo.addons.base.tests.test_expression.TestExpression) 
+2025-05-30 18:29:51,471 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: Ran 25 tests in 2.403s 
+2025-05-30 18:29:51,471 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_expression: OK 
+2025-05-30 18:29:51,471 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_float running tests. 
+2025-05-30 18:29:51,471 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_amount_to_text_10 (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,471 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` verify that amount_to_text works as expected 
+2025-05-30 18:29:51,478 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_float_split_05 (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,478 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` Test split method with 2 digits. 
+2025-05-30 18:29:51,480 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_rounding_02 (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,480 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` Test rounding methods with 2 digits. 
+2025-05-30 18:29:51,483 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_rounding_03 (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,483 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` Test rounding methods with 3 digits. 
+2025-05-30 18:29:51,533 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_rounding_04 (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,533 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` check that proper rounding is performed for float persistence 
+2025-05-30 18:29:51,540 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: test_rounding_invalid (odoo.addons.base.tests.test_float.TestFloatPrecision) 
+2025-05-30 18:29:51,540 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: ` verify that invalid parameters are forbidden 
+2025-05-30 18:29:51,540 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: Ran 6 tests in 0.069s 
+2025-05-30 18:29:51,540 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_float: OK 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_func running tests. 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: test_basic (odoo.addons.base.tests.test_func.TestCompose) 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: test_decorator (odoo.addons.base.tests.test_func.TestCompose) 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: ` ensure compose() can be partially applied as a decorator 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: test_frozendict_hash (odoo.addons.base.tests.test_func.TestFrozendict) 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: ` Ensure that a frozendict is hashable. 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: test_frozendict_immutable (odoo.addons.base.tests.test_func.TestFrozendict) 
+2025-05-30 18:29:51,541 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: ` Ensure that a frozendict is immutable. 
+2025-05-30 18:29:51,542 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: Ran 4 tests in 0.001s 
+2025-05-30 18:29:51,542 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_func: OK 
+2025-05-30 18:29:51,542 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_actions running tests. 
+2025-05-30 18:29:51,542 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_bindings (odoo.addons.base.tests.test_ir_actions.TestActionBindings) 
+2025-05-30 18:29:51,542 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` check the action bindings on models 
+2025-05-30 18:29:51,549 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [5263] 
+2025-05-30 18:29:51,551 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.actions.act_window records with IDs: [44] 
+2025-05-30 18:29:51,625 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_create_custom (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:51,625 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` custom field names must be start with 'x_' 
+2025-05-30 18:29:51,630 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_create_unique (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:51,630 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` one cannot create two fields with the same name on a given model 
+2025-05-30 18:29:51,731 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_create_valid (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:51,731 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` field names must be valid pg identifiers 
+2025-05-30 18:29:51,737 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_related_field (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:51,737 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` create a custom related field, and check filled values 
+2025-05-30 18:29:52,240 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_remove_with_view (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:52,240 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` try removing a custom field that occurs in a view 
+2025-05-30 18:29:52,331 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field `x_foo` does not exist
+
+Error context:
+View `yet another view`
+[view_id: 162, xml_id: n/a, model: res.partner, parent_id: n/a] 
+2025-05-30 18:29:52,379 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_remove_without_view (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:52,379 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` try removing a custom field that does not occur in views 
+2025-05-30 18:29:52,507 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1278] 
+2025-05-30 18:29:52,595 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_rename_custom (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:52,595 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` custom field names must be start with 'x_' 
+2025-05-30 18:29:52,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_rename_unique (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:52,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` one cannot create two fields with the same name on a given model 
+2025-05-30 18:29:52,937 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_rename_valid (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:52,938 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` field names must be valid pg identifiers 
+2025-05-30 18:29:53,066 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_rename_with_view (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:53,066 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` try renaming a custom field that occurs in a view 
+2025-05-30 18:29:53,164 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field `x_foo` does not exist
+
+Error context:
+View `yet another view`
+[view_id: 163, xml_id: n/a, model: res.partner, parent_id: n/a] 
+2025-05-30 18:29:53,214 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_rename_without_view (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:53,214 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` try renaming a custom field that does not occur in views 
+2025-05-30 18:29:53,419 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_unlink_with_dependant (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:53,420 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` create a computed field, then delete its dependency 
+2025-05-30 18:29:53,579 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1295] 
+2025-05-30 18:29:53,613 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1293] 
+2025-05-30 18:29:53,638 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_unlink_with_inverse (odoo.addons.base.tests.test_ir_actions.TestCustomFields) 
+2025-05-30 18:29:53,638 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: ` create a custom o2m and then delete its m2o inverse 
+2025-05-30 18:29:53,805 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1297] 
+2025-05-30 18:29:53,844 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.fields records with IDs: [1296] 
+2025-05-30 18:29:53,869 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_00_action (odoo.addons.base.tests.test_ir_actions.TestServerActions) 
+2025-05-30 18:29:53,903 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_10_code (odoo.addons.base.tests.test_ir_actions.TestServerActions) 
+2025-05-30 18:29:53,932 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_20_crud_create (odoo.addons.base.tests.test_ir_actions.TestServerActions) 
+2025-05-30 18:29:53,974 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.server.object.lines records with IDs: [78, 79] 
+2025-05-30 18:29:53,988 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_30_crud_write (odoo.addons.base.tests.test_ir_actions.TestServerActions) 
+2025-05-30 18:29:54,017 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: test_40_multi (odoo.addons.base.tests.test_ir_actions.TestServerActions) 
+2025-05-30 18:29:54,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: Ran 19 tests in 2.522s 
+2025-05-30 18:29:54,064 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_actions: OK 
+2025-05-30 18:29:54,065 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_attachment running tests. 
+2025-05-30 18:29:54,065 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: test_01_store_in_db (odoo.addons.base.tests.test_ir_attachment.TestIrAttachment) 
+2025-05-30 18:29:54,086 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: test_02_store_on_disk (odoo.addons.base.tests.test_ir_attachment.TestIrAttachment) 
+2025-05-30 18:29:54,095 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: test_03_no_duplication (odoo.addons.base.tests.test_ir_attachment.TestIrAttachment) 
+2025-05-30 18:29:54,108 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: test_04_keep_file (odoo.addons.base.tests.test_ir_attachment.TestIrAttachment) 
+2025-05-30 18:29:54,129 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.attachment records with IDs: [362] 
+2025-05-30 18:29:54,130 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: test_05_change_data_change_file (odoo.addons.base.tests.test_ir_attachment.TestIrAttachment) 
+2025-05-30 18:29:54,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: Ran 5 tests in 0.081s 
+2025-05-30 18:29:54,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_attachment: OK 
+2025-05-30 18:29:54,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_default running tests. 
+2025-05-30 18:29:54,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: test_conditions (odoo.addons.base.tests.test_ir_default.TestIrDefault) 
+2025-05-30 18:29:54,147 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: ` check user-defined defaults with condition 
+2025-05-30 18:29:54,151 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.default records with IDs: [1] 
+2025-05-30 18:29:54,159 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: test_defaults (odoo.addons.base.tests.test_ir_default.TestIrDefault) 
+2025-05-30 18:29:54,159 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: ` check the mechanism of user-defined defaults 
+2025-05-30 18:29:54,272 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.default records with IDs: [1] 
+2025-05-30 18:29:54,283 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: test_invalid (odoo.addons.base.tests.test_ir_default.TestIrDefault) 
+2025-05-30 18:29:54,283 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: ` check error cases with 'ir.default' 
+2025-05-30 18:29:54,287 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: test_removal (odoo.addons.base.tests.test_ir_default.TestIrDefault) 
+2025-05-30 18:29:54,287 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: ` check defaults for many2one with their value being removed 
+2025-05-30 18:29:54,291 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.default records with IDs: [1] 
+2025-05-30 18:29:54,298 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.default records with IDs: [8] 
+2025-05-30 18:29:54,299 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner.title records with IDs: [8] 
+2025-05-30 18:29:54,300 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: Ran 4 tests in 0.153s 
+2025-05-30 18:29:54,300 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_default: OK 
+2025-05-30 18:29:54,300 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_filters running tests. 
+2025-05-30 18:29:54,300 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_global_filters (odoo.addons.base.tests.test_ir_filters.TestGetFilters) 
+2025-05-30 18:29:54,312 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_no_third_party_filters (odoo.addons.base.tests.test_ir_filters.TestGetFilters) 
+2025-05-30 18:29:54,322 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_own_filters (odoo.addons.base.tests.test_ir_filters.TestGetFilters) 
+2025-05-30 18:29:54,333 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_new_filter_existing_default (odoo.addons.base.tests.test_ir_filters.TestGlobalDefaults) 
+2025-05-30 18:29:54,333 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When creating a @is_default filter where an existing filter is already @is_default, an error should be generated 
+2025-05-30 18:29:54,343 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_new_filter_not_default (odoo.addons.base.tests.test_ir_filters.TestGlobalDefaults) 
+2025-05-30 18:29:54,343 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When creating a @is_default filter with existing non-default filters, the new filter gets the flag 
+2025-05-30 18:29:54,355 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_update_default_filter (odoo.addons.base.tests.test_ir_filters.TestGlobalDefaults) 
+2025-05-30 18:29:54,355 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  Replacing the current default global filter should not generate any error 
+2025-05-30 18:29:54,370 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_update_filter_set_default (odoo.addons.base.tests.test_ir_filters.TestGlobalDefaults) 
+2025-05-30 18:29:54,371 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When updating an existing filter to @is_default, if an other filter already has the flag an error should be generated 
+2025-05-30 18:29:54,381 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_new_filter_existing_default (odoo.addons.base.tests.test_ir_filters.TestOwnDefaults) 
+2025-05-30 18:29:54,381 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When creating a @is_default filter where an existing filter is already @is_default, the flag should be *moved* from the old to the new filter 
+2025-05-30 18:29:54,398 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_new_filter_not_default (odoo.addons.base.tests.test_ir_filters.TestOwnDefaults) 
+2025-05-30 18:29:54,398 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When creating a @is_default filter with existing non-default filters, the new filter gets the flag 
+2025-05-30 18:29:54,417 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_new_no_filter (odoo.addons.base.tests.test_ir_filters.TestOwnDefaults) 
+2025-05-30 18:29:54,417 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When creating a @is_default filter with no existing filter, that new filter gets the default flag 
+2025-05-30 18:29:54,433 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_update_filter_set_default (odoo.addons.base.tests.test_ir_filters.TestOwnDefaults) 
+2025-05-30 18:29:54,433 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: `  When updating an existing filter to @is_default, if an other filter already has the flag the flag should be moved 
+2025-05-30 18:29:54,450 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: test_read_group_1 (odoo.addons.base.tests.test_ir_filters.TestReadGroup) 
+2025-05-30 18:29:54,455 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: Ran 12 tests in 0.154s 
+2025-05-30 18:29:54,455 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_filters: OK 
+2025-05-30 18:29:54,455 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_http running tests. 
+2025-05-30 18:29:54,455 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: test_ir_http_attachment_access (odoo.addons.base.tests.test_ir_http.test_ir_http_mimetype) 
+2025-05-30 18:29:54,455 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: ` Test attachment access with and without access token 
+2025-05-30 18:29:54,488 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.attachment records with IDs: [368] 
+2025-05-30 18:29:54,490 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.attachment records with IDs: [367] 
+2025-05-30 18:29:54,492 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: test_ir_http_mimetype_attachment (odoo.addons.base.tests.test_ir_http.test_ir_http_mimetype) 
+2025-05-30 18:29:54,492 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: ` Test mimetype for attachment 
+2025-05-30 18:29:54,508 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: test_ir_http_mimetype_attachment_name (odoo.addons.base.tests.test_ir_http.test_ir_http_mimetype) 
+2025-05-30 18:29:54,508 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: ` Test mimetype for attachment with bad name 
+2025-05-30 18:29:54,522 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: test_ir_http_mimetype_basic_field (odoo.addons.base.tests.test_ir_http.test_ir_http_mimetype) 
+2025-05-30 18:29:54,522 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: ` Test mimetype for classic field 
+2025-05-30 18:29:54,551 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: test_ir_http_mimetype_computed_field (odoo.addons.base.tests.test_ir_http.test_ir_http_mimetype) 
+2025-05-30 18:29:54,551 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: ` Test mimetype for computed field wich resize picture 
+2025-05-30 18:29:54,559 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: Ran 5 tests in 0.103s 
+2025-05-30 18:29:54,559 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_http: OK 
+2025-05-30 18:29:54,559 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_model running tests. 
+2025-05-30 18:29:54,559 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,568 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create_inherits (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,593 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create_noupdate (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,599 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create_noupdate_multi (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,606 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create_order (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,614 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_create_xmlids (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,662 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: test_recreate (odoo.addons.base.tests.test_ir_model.TestXMLID) 
+2025-05-30 18:29:54,671 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [5747] 
+2025-05-30 18:29:54,673 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner.category records with IDs: [59] 
+2025-05-30 18:29:54,677 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: Ran 7 tests in 0.117s 
+2025-05-30 18:29:54,677 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_model: OK 
+2025-05-30 18:29:54,677 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_sequence running tests. 
+2025-05-30 18:29:54,677 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_1_create (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceChangeImplementation) 
+2025-05-30 18:29:54,677 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to create a sequence object. 
+2025-05-30 18:29:54,685 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_2_write (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceChangeImplementation) 
+2025-05-30 18:29:54,694 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_3_unlink (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceChangeImplementation) 
+2025-05-30 18:29:54,699 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [1, 2] 
+2025-05-30 18:29:54,703 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_create (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceGenerate) 
+2025-05-30 18:29:54,703 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to create a sequence object. 
+2025-05-30 18:29:54,718 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_create_no_gap (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceGenerate) 
+2025-05-30 18:29:54,718 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to create a sequence object. 
+2025-05-30 18:29:54,746 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [3] 
+2025-05-30 18:29:54,753 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [4] 
+2025-05-30 18:29:54,755 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_00 (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceInit) 
+2025-05-30 18:29:54,755 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` test whether the read method returns the right number_next value (from postgreSQL sequence and not ir_sequence value) 
+2025-05-30 18:29:54,760 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_create_no_gap (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceNoGap) 
+2025-05-30 18:29:54,761 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to create a sequence object. 
+2025-05-30 18:29:54,765 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_draw_no_gap (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceNoGap) 
+2025-05-30 18:29:54,765 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to draw a number. 
+2025-05-30 18:29:54,770 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_draw_twice_no_gap (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceNoGap) 
+2025-05-30 18:29:54,770 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to draw a number from two transactions. This is expected to not work. 
+2025-05-30 18:29:54,788 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [6] 
+2025-05-30 18:29:54,790 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_create (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceStandard) 
+2025-05-30 18:29:54,790 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to create a sequence object. 
+2025-05-30 18:29:54,794 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_draw (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceStandard) 
+2025-05-30 18:29:54,794 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to draw a number. 
+2025-05-30 18:29:54,799 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_draw_twice (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceStandard) 
+2025-05-30 18:29:54,799 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try to draw a number from two transactions. 
+2025-05-30 18:29:54,804 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: test_ir_sequence_search (odoo.addons.base.tests.test_ir_sequence.TestIrSequenceStandard) 
+2025-05-30 18:29:54,804 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: ` Try a search. 
+2025-05-30 18:29:54,810 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [7] 
+2025-05-30 18:29:54,812 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: Ran 13 tests in 0.135s 
+2025-05-30 18:29:54,812 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence: OK 
+2025-05-30 18:29:54,813 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ir_sequence_date_range running tests. 
+2025-05-30 18:29:54,813 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_1_create (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeChangeImplementation) 
+2025-05-30 18:29:54,813 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Try to create a sequence object. 
+2025-05-30 18:29:54,816 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_2_use (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeChangeImplementation) 
+2025-05-30 18:29:54,816 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Make some use of the sequences to create some subsequences 
+2025-05-30 18:29:54,855 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_3_write (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeChangeImplementation) 
+2025-05-30 18:29:54,856 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` swap the implementation method on both 
+2025-05-30 18:29:54,861 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_4_unlink (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeChangeImplementation) 
+2025-05-30 18:29:54,865 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [8, 9] 
+2025-05-30 18:29:54,866 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_1_create_no_gap (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeNoGap) 
+2025-05-30 18:29:54,867 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Try to create a sequence object. 
+2025-05-30 18:29:54,869 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_2_change_dates (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeNoGap) 
+2025-05-30 18:29:54,869 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Draw numbers to create a first subsequence then change its date range. Then, try to draw a new number adn check a new subsequence was correctly created. 
+2025-05-30 18:29:54,884 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_3_unlink (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeNoGap) 
+2025-05-30 18:29:54,889 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [10] 
+2025-05-30 18:29:54,890 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_1_create (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeStandard) 
+2025-05-30 18:29:54,890 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Try to create a sequence object with date ranges enabled. 
+2025-05-30 18:29:54,893 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_2_change_dates (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeStandard) 
+2025-05-30 18:29:54,893 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: ` Draw numbers to create a first subsequence then change its date range. Then, try to draw a new number adn check a new subsequence was correctly created. 
+2025-05-30 18:29:54,910 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: test_ir_sequence_date_range_3_unlink (odoo.addons.base.tests.test_ir_sequence_date_range.TestIrSequenceDateRangeStandard) 
+2025-05-30 18:29:54,915 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.sequence records with IDs: [11] 
+2025-05-30 18:29:54,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: Ran 10 tests in 0.103s 
+2025-05-30 18:29:54,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ir_sequence_date_range: OK 
+2025-05-30 18:29:54,917 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_mail running tests. 
+2025-05-30 18:29:54,918 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_default_email_from (odoo.addons.base.tests.test_mail.EmailConfigCase) 
+2025-05-30 18:29:54,918 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: ` Email from setting is respected. 
+2025-05-30 18:29:54,931 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.config_parameter records with IDs: [10] 
+2025-05-30 18:29:54,935 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_email_from_rewrite (odoo.addons.base.tests.test_mail.EmailConfigCase) 
+2025-05-30 18:29:54,951 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.config_parameter records with IDs: [12] 
+2025-05-30 18:29:54,960 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_decode_smtp_header_email (odoo.addons.base.tests.test_mail.TestEmailTools) 
+2025-05-30 18:29:54,961 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_email_split (odoo.addons.base.tests.test_mail.TestEmailTools) 
+2025-05-30 18:29:54,961 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_append_to_html (odoo.addons.base.tests.test_mail.TestHtmlTools) 
+2025-05-30 18:29:54,962 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_plaintext2html (odoo.addons.base.tests.test_mail.TestHtmlTools) 
+2025-05-30 18:29:54,962 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_basic_sanitizer (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,963 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_cid_with_at (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,963 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_edi_source (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,964 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_evil_malicious_code (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,968 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_html (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,969 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_mako (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,969 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_misc (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,970 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_basic_text (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,970 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_blockquote (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,971 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_bugs (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,971 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_gmail (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,972 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_hotmail_html (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,973 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_signature (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,973 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_text (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,974 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_thunderbird (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,974 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_quote_thunderbird_html (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,975 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_sanitize_escape_emails (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,975 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_sanitize_unescape_emails (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,976 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_style_class (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,976 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_style_class_only (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,977 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: test_style_parsing (odoo.addons.base.tests.test_mail.TestSanitizer) 
+2025-05-30 18:29:54,978 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: Ran 27 tests in 0.060s 
+2025-05-30 18:29:54,978 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mail: OK 
+2025-05-30 18:29:54,978 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_menu running tests. 
+2025-05-30 18:29:54,978 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_menu: test_00_menu_deletion (odoo.addons.base.tests.test_menu.TestMenu) 
+2025-05-30 18:29:54,978 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_menu: ` Verify that menu deletion works properly when there are child menus, and those are indeed made orphans 
+2025-05-30 18:29:54,991 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.ui.menu records with IDs: [62] 
+2025-05-30 18:29:54,992 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_menu: Ran 1 test in 0.014s 
+2025-05-30 18:29:54,992 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_menu: OK 
+2025-05-30 18:29:54,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_mimetypes running tests. 
+2025-05-30 18:29:54,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_default_mimetype (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_default_mimetype_empty (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_bmp (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_gif (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_jpg (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_octet_stream (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_png (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: test_mimetype_svg (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: FAIL 
+2025-05-30 18:29:54,995 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: ====================================================================== 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: FAIL: test_mimetype_svg (odoo.addons.base.tests.test_mimetypes.test_guess_mimetype) 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: Traceback (most recent call last): 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: `   File "/home/odoo/12.0/odoo/addons/base/tests/test_mimetypes.py", line 70, in test_mimetype_svg 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: `     self.assertNotIn("svg", mimetype) 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: ` AssertionError: 'svg' unexpectedly found in 'image/svg+xml' 
+2025-05-30 18:29:54,995 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: Ran 8 tests in 0.002s 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes: FAILED 
+2025-05-30 18:29:54,995 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_mimetypes:  (failures=1) 
+2025-05-30 18:29:54,995 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.modules.module: Module base: 1 failures, 0 errors 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_misc running tests. 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_empty_stream (odoo.addons.base.tests.test_misc.TestCountingStream) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_full (odoo.addons.base.tests.test_misc.TestCountingStream) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_repeated (odoo.addons.base.tests.test_misc.TestCountingStream) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Once the CountingStream has stopped iterating, the index should not increase anymore (the internal state should not be allowed to change) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_single (odoo.addons.base.tests.test_misc.TestCountingStream) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_date_range_with_hour (odoo.addons.base.tests.test_misc.TestDateRangeFunction) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Test date range with hour and naive datetime. 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_date_range_with_inconsistent_datetimes (odoo.addons.base.tests.test_misc.TestDateRangeFunction) 
+2025-05-30 18:29:54,996 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Check date_range with a timezone-aware datetime and a naive one. 
+2025-05-30 18:29:54,997 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_date_range_with_mismatching_zones (odoo.addons.base.tests.test_misc.TestDateRangeFunction) 
+2025-05-30 18:29:54,997 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Check date_range with mismatching zone should raise an exception. 
+2025-05-30 18:29:54,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_date_range_with_naive_datetimes (odoo.addons.base.tests.test_misc.TestDateRangeFunction) 
+2025-05-30 18:29:54,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Check date_range with naive datetimes. 
+2025-05-30 18:29:54,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_date_range_with_timezone_aware_datetimes_other_than_utc (odoo.addons.base.tests.test_misc.TestDateRangeFunction) 
+2025-05-30 18:29:54,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: ` Check date_range with timezone-aware datetimes other than UTC. 
+2025-05-30 18:29:54,999 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_00_accepted_types (odoo.addons.base.tests.test_misc.TestFormatLangDate) 
+2025-05-30 18:29:55,003 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_01_code_and_format (odoo.addons.base.tests.test_misc.TestFormatLangDate) 
+2025-05-30 18:29:55,021 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_empty_string (odoo.addons.base.tests.test_misc.TestRemoveAccents) 
+2025-05-30 18:29:55,021 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_latin (odoo.addons.base.tests.test_misc.TestRemoveAccents) 
+2025-05-30 18:29:55,022 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: test_non_latin (odoo.addons.base.tests.test_misc.TestRemoveAccents) 
+2025-05-30 18:29:55,022 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: Ran 14 tests in 0.026s 
+2025-05-30 18:29:55,022 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_misc: OK 
+2025-05-30 18:29:55,023 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_orm running tests. 
+2025-05-30 18:29:55,023 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_copy (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,023 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` copying a user should automatically copy its partner, too 
+2025-05-30 18:29:55,109 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_copy_with_ancestor (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,109 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` copying a user with 'parent_id' in defaults should not duplicate the partner 
+2025-05-30 18:29:55,196 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_create (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,196 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` creating a user should automatically create a new partner 
+2025-05-30 18:29:55,220 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_create_with_ancestor (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,220 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` creating a user with a specific 'partner_id' should not create a new partner 
+2025-05-30 18:29:55,249 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_default (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,249 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` `default_get` cannot return a dictionary or a new id 
+2025-05-30 18:29:55,251 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_read (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,251 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` inherited fields should be read without any indirection 
+2025-05-30 18:29:55,308 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_write_date (odoo.addons.base.tests.test_orm.TestInherits) 
+2025-05-30 18:29:55,308 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` modifying inherited fields must update write_date 
+2025-05-30 18:29:55,334 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_CREATE_commands (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,335 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` returns the VALUES dict as-is 
+2025-05-30 18:29:55,335 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_DELETE_command (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,335 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` deleted records are not returned at all. 
+2025-05-30 18:29:55,361 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_LINK_TO_command (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,361 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` reads the records from the database, records are returned with their ids. 
+2025-05-30 18:29:55,387 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_LINK_TO_pairs (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,387 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` LINK_TO commands can be written as pairs, instead of triplets 
+2025-05-30 18:29:55,414 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_UPDATE_command (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,414 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` take the in-db records and merge the provided information in 
+2025-05-30 18:29:55,443 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_bare_ids_command (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,443 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` same as the equivalent LINK_TO commands 
+2025-05-30 18:29:55,470 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_mixed_commands (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,519 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_no_command (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,519 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` empty list of commands yields an empty list of records 
+2025-05-30 18:29:55,519 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_singleton_commands (odoo.addons.base.tests.test_orm.TestO2MSerialization) 
+2025-05-30 18:29:55,520 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` DELETE_ALL can appear as a singleton 
+2025-05-30 18:29:55,520 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_access_deleted_records (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,520 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` Verify that accessing deleted records works as expected 
+2025-05-30 18:29:55,544 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner records with IDs: [306] 
+2025-05-30 18:29:55,577 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner records with IDs: [306] 
+2025-05-30 18:29:55,579 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_access_filtered_records (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,579 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` Verify that accessing filtered records works as expected for non-admin user 
+2025-05-30 18:29:55,631 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_model: Access Denied by ACLs for operation: write, uid: 34, model: res.partner 
+2025-05-30 18:29:55,633 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_model: Access Denied by ACLs for operation: unlink, uid: 34, model: res.partner 
+2025-05-30 18:29:55,641 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.partner records with IDs: [310] 
+2025-05-30 18:29:55,644 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_model: Access Denied by ACLs for operation: unlink, uid: 34, model: res.partner 
+2025-05-30 18:29:55,645 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_create_multi (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,645 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` create for multiple records 
+2025-05-30 18:29:55,658 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_exists (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,662 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_groupby_date (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,730 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_m2m_store_trigger (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,894 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_read (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_search_read (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,937 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_unlink_with_property (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:55,937 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: ` Verify that unlink removes the related ir.property as unprivileged user 
+2025-05-30 18:29:55,983 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.property records with IDs: [2] 
+2025-05-30 18:29:55,990 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #36 deleted res.partner records with IDs: [324] 
+2025-05-30 18:29:55,991 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: test_write_duplicate (odoo.addons.base.tests.test_orm.TestORM) 
+2025-05-30 18:29:56,005 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: Ran 26 tests in 0.982s 
+2025-05-30 18:29:56,005 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_orm: OK 
+2025-05-30 18:29:56,006 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_ormcache running tests. 
+2025-05-30 18:29:56,006 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ormcache: test_ormcache (odoo.addons.base.tests.test_ormcache.TestOrmcache) 
+2025-05-30 18:29:56,006 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ormcache: ` Test the effectiveness of the ormcache() decorator. 
+2025-05-30 18:29:56,008 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ormcache: Ran 1 test in 0.002s 
+2025-05-30 18:29:56,008 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_ormcache: OK 
+2025-05-30 18:29:56,008 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_osv running tests. 
+2025-05-30 18:29:56,008 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: test_basic_query (odoo.addons.base.tests.test_osv.QueryTestCase) 
+2025-05-30 18:29:56,008 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: test_mixed_query_chained_explicit_implicit_joins (odoo.addons.base.tests.test_osv.QueryTestCase) 
+2025-05-30 18:29:56,009 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: test_query_chained_explicit_joins (odoo.addons.base.tests.test_osv.QueryTestCase) 
+2025-05-30 18:29:56,009 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: test_raise_missing_lhs (odoo.addons.base.tests.test_osv.QueryTestCase) 
+2025-05-30 18:29:56,009 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: Ran 4 tests in 0.001s 
+2025-05-30 18:29:56,009 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_osv: OK 
+2025-05-30 18:29:56,014 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_qweb running tests. 
+2025-05-30 18:29:56,014 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_dontsplit (odoo.addons.base.tests.test_qweb.TestPageSplit) 
+2025-05-30 18:29:56,026 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_split_after (odoo.addons.base.tests.test_qweb.TestPageSplit) 
+2025-05-30 18:29:56,039 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_split_before (odoo.addons.base.tests.test_qweb.TestPageSplit) 
+2025-05-30 18:29:56,053 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_barcode (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,078 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_code_error (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,078 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that, when rendering a template containing a namespaced node that evaluates code with errors, the proper exception is raised 
+2025-05-30 18:29:56,095 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespace_2 (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,113 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespace_t_attf (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,113 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that rendering a template containing a node having both an ns declaration and a t-attf attribute correctly handles the t-attf attribute and keep the ns declaration. 
+2025-05-30 18:29:56,129 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespace_t_attf_with_useless_distributed_namespace (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,129 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that rendering a template containing a node having both an ns declaration and a t-attf attribute correctly handles the t-attf attribute and that redundant namespaces are stripped upon rendering. 
+2025-05-30 18:29:56,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespace_t_esc (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,146 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that rendering a template containing a node having both an ns declaration and a t-esc attribute correctly handles the t-esc attribute and keep the ns declaration. 
+2025-05-30 18:29:56,163 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespace_t_esc_with_useless_distributed_namespace (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,163 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that rendering a template containing a node having both an ns declaration and a t-esc attribute correctly handles the t-esc attribute and keep the ns declaration, and distribute correctly the ns declaration to its children. 
+2025-05-30 18:29:56,178 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_dynamic_xml_with_namespaced_attributes (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,194 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_extension (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,194 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test the extension of a view by an xpath expression on a ns prefixed element. 
+2025-05-30 18:29:56,221 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_namespace (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,221 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test the rendering on a namespaced view with no static content. The resulting string should be untouched. 
+2025-05-30 18:29:56,238 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_namespace_2 (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,238 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test the rendering on a namespaced view with no static content. The resulting string should be untouched. 
+2025-05-30 18:29:56,255 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_namespace_3 (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,270 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_namespaced_attributes (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,285 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_t_call (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,313 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_static_xml_with_useless_distributed_namespace (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,313 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: ` Test that redundant namespaces are stripped upon rendering. 
+2025-05-30 18:29:56,328 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_t_call_propagates_t_lang (odoo.addons.base.tests.test_qweb.TestQWebNS) 
+2025-05-30 18:29:56,362 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_i18n (odoo.addons.base.tests.test_qweb.TestQWebTField) 
+2025-05-30 18:29:56,435 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_reject_crummy_tags (odoo.addons.base.tests.test_qweb.TestQWebTField) 
+2025-05-30 18:29:56,437 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_reject_t_tag (odoo.addons.base.tests.test_qweb.TestQWebTField) 
+2025-05-30 18:29:56,439 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_render_t_options (odoo.addons.base.tests.test_qweb.TestQWebTField) 
+2025-05-30 18:29:56,459 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_trivial (odoo.addons.base.tests.test_qweb.TestQWebTField) 
+2025-05-30 18:29:56,529 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_call (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,539 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_output (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,546 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_foreach (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,555 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_attributes (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,565 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_utf8tags (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,567 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_widgets (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,578 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_set (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,584 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_global (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,592 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: test_qweb_conditionals (odoo.addons.base.tests.test_qweb.TestQWeb) 
+2025-05-30 18:29:56,598 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: Ran 33 tests in 0.584s 
+2025-05-30 18:29:56,598 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_qweb: OK 
+2025-05-30 18:29:56,598 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_res_config running tests. 
+2025-05-30 18:29:56,599 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: test_00_get_option_path (odoo.addons.base.tests.test_res_config.TestResConfig) 
+2025-05-30 18:29:56,599 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: ` The get_option_path() method should return a tuple containing a string and an integer 
+2025-05-30 18:29:56,604 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: test_10_get_option_name (odoo.addons.base.tests.test_res_config.TestResConfig) 
+2025-05-30 18:29:56,604 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: ` The get_option_name() method should return a string 
+2025-05-30 18:29:56,608 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: test_20_get_config_warning (odoo.addons.base.tests.test_res_config.TestResConfig) 
+2025-05-30 18:29:56,608 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: ` The get_config_warning() method should return a RedirectWarning 
+2025-05-30 18:29:56,613 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: test_30_get_config_warning_wo_menu (odoo.addons.base.tests.test_res_config.TestResConfig) 
+2025-05-30 18:29:56,613 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: ` The get_config_warning() method should return a Warning exception 
+2025-05-30 18:29:56,618 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: Ran 4 tests in 0.019s 
+2025-05-30 18:29:56,618 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_config: OK 
+2025-05-30 18:29:56,618 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_res_lang running tests. 
+2025-05-30 18:29:56,619 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_lang: test_00_intersperse (odoo.addons.base.tests.test_res_lang.test_res_lang) 
+2025-05-30 18:29:56,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_lang: Ran 1 test in 0.001s 
+2025-05-30 18:29:56,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_lang: OK 
+2025-05-30 18:29:56,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_res_partner running tests. 
+2025-05-30 18:29:56,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner: test_name_search (odoo.addons.base.tests.test_res_partner.TestPartner) 
+2025-05-30 18:29:56,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner: ` Check name_search on partner, especially with domain based on auto_join user_ids field. Check specific SQL of name_search correctly handle joined tables. 
+2025-05-30 18:29:56,652 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner: Ran 1 test in 0.032s 
+2025-05-30 18:29:56,652 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner: OK 
+2025-05-30 18:29:56,652 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_res_partner_bank running tests. 
+2025-05-30 18:29:56,652 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner_bank: test_sanitized_acc_number (odoo.addons.base.tests.test_res_partner_bank.TestResPartnerBank) 
+2025-05-30 18:29:56,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner_bank: Ran 1 test in 0.008s 
+2025-05-30 18:29:56,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_partner_bank: OK 
+2025-05-30 18:29:56,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_res_users running tests. 
+2025-05-30 18:29:56,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_users: test_name_search (odoo.addons.base.tests.test_res_users.TestUsers) 
+2025-05-30 18:29:56,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_users: ` Check name_search on user. 
+2025-05-30 18:29:56,725 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_users: Ran 1 test in 0.064s 
+2025-05-30 18:29:56,725 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_res_users: OK 
+2025-05-30 18:29:56,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_search running tests. 
+2025-05-30 18:29:56,726 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: test_00_search_order (odoo.addons.base.tests.test_search.test_search) 
+2025-05-30 18:29:56,779 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: test_10_inherits_m2order (odoo.addons.base.tests.test_search.test_search) 
+2025-05-30 18:29:56,871 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: test_11_indirect_inherits_m2o_order (odoo.addons.base.tests.test_search.test_search) 
+2025-05-30 18:29:56,951 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: test_12_m2o_order_loop_self (odoo.addons.base.tests.test_search.test_search) 
+2025-05-30 18:29:56,956 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: test_13_m2o_order_loop_multi (odoo.addons.base.tests.test_search.test_search) 
+2025-05-30 18:29:57,080 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: Ran 5 tests in 0.355s 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_search: OK 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_test_suite running tests. 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_test_suite: test_test_suite (odoo.addons.base.tests.test_test_suite.TestTestSuite) 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_test_suite: ` Check that OdooSuite handles unittest.TestCase correctly. 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_test_suite: Ran 1 test in 0.000s 
+2025-05-30 18:29:57,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_test_suite: OK 
+2025-05-30 18:29:57,082 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_tests_tags running tests. 
+2025-05-30 18:29:57,082 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_selector_parser (odoo.addons.base.tests.test_tests_tags.TestSelector) 
+2025-05-30 18:29:57,082 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test the parser part of the TagsSelector class 
+2025-05-30 18:29:57,083 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_selector_selection (odoo.addons.base.tests.test_tests_tags.TestSelectorSelection) 
+2025-05-30 18:29:57,083 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test check_tags use cases 
+2025-05-30 18:29:57,084 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_inheritance (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,084 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test inheritance when using the 'tagged' decorator 
+2025-05-30 18:29:57,084 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_set_tags_empty (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,084 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test the set_tags decorator with an empty set of tags 
+2025-05-30 18:29:57,085 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_set_tags_multiple_tags (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,085 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test the set_tags decorator with multiple tags 
+2025-05-30 18:29:57,086 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_set_tags_not_decorated (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,086 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test that a TransactionCase has some test_tags by default 
+2025-05-30 18:29:57,086 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_set_tags_single_tag (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,087 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test the set_tags decorator with a single tag 
+2025-05-30 18:29:57,087 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: test_untagging (odoo.addons.base.tests.test_tests_tags.TestSetTags) 
+2025-05-30 18:29:57,087 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: ` Test that one can remove the 'standard' tag 
+2025-05-30 18:29:57,088 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: Ran 8 tests in 0.006s 
+2025-05-30 18:29:57,088 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_tests_tags: OK 
+2025-05-30 18:29:57,088 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_translate running tests. 
+2025-05-30 18:29:57,089 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_101_create_translated_record (odoo.addons.base.tests.test_translate.TestTranslation) 
+2025-05-30 18:29:57,092 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:29:57,092 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:29:58,692 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_102_duplicate_record (odoo.addons.base.tests.test_translate.TestTranslation) 
+2025-05-30 18:29:58,696 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:29:58,696 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:00,238 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_103_duplicate_record_fr (odoo.addons.base.tests.test_translate.TestTranslation) 
+2025-05-30 18:30:00,243 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:00,243 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:01,846 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_104_orderby_translated_field (odoo.addons.base.tests.test_translate.TestTranslation) 
+2025-05-30 18:30:01,847 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test search ordered by a translated field. 
+2025-05-30 18:30:01,852 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:01,852 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:03,394 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_105_duplicated_translation (odoo.addons.base.tests.test_translate.TestTranslation) 
+2025-05-30 18:30:03,395 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test synchronizing translations with duplicated source 
+2025-05-30 18:30:03,399 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:03,399 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:05,010 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_copy (odoo.addons.base.tests.test_translate.TestXMLTranslation) 
+2025-05-30 18:30:05,011 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Create a simple view, fill in translations, and copy it. 
+2025-05-30 18:30:05,019 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:05,019 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:06,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (nl) for language nl_NL 
+2025-05-30 18:30:06,620 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/nl.po 
+2025-05-30 18:30:08,354 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_spaces (odoo.addons.base.tests.test_translate.TestXMLTranslation) 
+2025-05-30 18:30:08,354 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Create translations where value has surrounding spaces. 
+2025-05-30 18:30:08,360 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:08,360 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:09,957 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (nl) for language nl_NL 
+2025-05-30 18:30:09,957 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/nl.po 
+2025-05-30 18:30:11,779 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_sync (odoo.addons.base.tests.test_translate.TestXMLTranslation) 
+2025-05-30 18:30:11,779 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Check translations after minor change in source terms. 
+2025-05-30 18:30:11,785 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:11,785 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:13,379 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (nl) for language nl_NL 
+2025-05-30 18:30:13,379 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/nl.po 
+2025-05-30 18:30:15,266 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_sync_update (odoo.addons.base.tests.test_translate.TestXMLTranslation) 
+2025-05-30 18:30:15,266 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Check translations after minor change in source terms. 
+2025-05-30 18:30:15,272 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (fr) for language fr_FR 
+2025-05-30 18:30:15,272 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/fr.po 
+2025-05-30 18:30:17,061 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_translation: module base: loading translation file (nl) for language nl_NL 
+2025-05-30 18:30:17,061 171443 INFO test_l10n_it_efattura_sdi_12 odoo.tools.translate: loading /home/odoo/12.0/odoo/addons/base/i18n/nl.po 
+2025-05-30 18:30:18,902 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted ir.translation records with IDs: [124572, 124573] 
+2025-05-30 18:30:18,912 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_quote_unquote (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,912 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_html (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,912 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test html_translate(). 
+2025-05-30 18:30:18,912 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_html_i (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,912 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() and html_translate() with <i> elements. 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_a (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with <a> elements. 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_attribute (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with <attribute> elements. 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_base (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() without formatting elements. 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_inline1 (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with formatting elements. 
+2025-05-30 18:30:18,913 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_inline2 (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with formatting elements embedding other elements. 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_inline3 (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with formatting elements without actual text. 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_inline4 (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with inline elements with translated attrs only. 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_inline5 (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with inline elements with empty translated attrs only. 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_invalid_translations (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,914 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with invalid translations. 
+2025-05-30 18:30:18,915 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_off (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,915 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with attribute translate="off". 
+2025-05-30 18:30:18,915 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_t (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() with t-* attributes. 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_text (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() on plain text. 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_text_entity (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() on plain text with HTML escaped entities. 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_unicode (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() on plain text with unicode characters. 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: test_translate_xml_with_namespace (odoo.addons.base.tests.test_translate.TranslationToolsTestCase) 
+2025-05-30 18:30:18,916 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: ` Test xml_translate() on elements with namespaces. 
+2025-05-30 18:30:18,917 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: Ran 27 tests in 21.828s 
+2025-05-30 18:30:18,917 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_translate: OK 
+2025-05-30 18:30:18,917 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_translate tested in 21.83s, 547 queries 
+2025-05-30 18:30:18,918 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_user_has_group running tests. 
+2025-05-30 18:30:18,918 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_demote_user (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:18,918 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: ` When a user is demoted to the status of portal/public, we should strip him of all his (previous) rights 
+2025-05-30 18:30:19,126 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_env_uid (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:19,211 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_implied_groups (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:19,211 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: ` We check that the adding of implied ids works correctly for normal users and portal users. In the second case, working normally means raising if a group implies to give 'group_user' rights to a portal user. 
+2025-05-30 18:30:19,553 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_portal_creation (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:19,553 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: ` Here we check that portal user creation fails if it tries to create a user who would also have group_user by implied_group. Otherwise, it succeeds with the groups we asked for. 
+2025-05-30 18:30:19,903 171443 INFO test_l10n_it_efattura_sdi_12 odoo.models.unlink: User #1 deleted res.users records with IDs: [58] 
+2025-05-30 18:30:20,018 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_portal_write (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:20,018 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: ` Check that adding a new group to a portal user works as expected, except if it implies group_user/public, in chich case it should raise. 
+2025-05-30 18:30:20,244 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_record (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:20,330 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_two_user_types (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:20,608 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: test_two_user_types_implied_groups (odoo.addons.base.tests.test_user_has_group.TestHasGroup) 
+2025-05-30 18:30:20,608 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: ` Contrarily to test_two_user_types, we simply add an implied_id to a group. This will trigger the addition of the relevant users to the relevant groups; if, say, this was done in SQL and thus bypassing the ORM, it would bypass the constraints and thus give us a case uncovered by the aforementioned test. 
+2025-05-30 18:30:20,759 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: Ran 8 tests in 1.842s 
+2025-05-30 18:30:20,759 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_user_has_group: OK 
+2025-05-30 18:30:20,760 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_view_validation running tests. 
+2025-05-30 18:30:20,760 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_a11y_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,761 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_all_field_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,761 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_all_label_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,761 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_col_datatype_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,761 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_colspan_datatype_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_form_string_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_graph_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_page_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: test_tree_validation (odoo.addons.base.tests.test_view_validation.TestViewValidation) 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: Ran 9 tests in 0.002s 
+2025-05-30 18:30:20,762 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_view_validation: OK 
+2025-05-30 18:30:20,764 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.module: odoo.addons.base.tests.test_views running tests. 
+2025-05-30 18:30:20,764 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_incorrect_move_1 (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,768 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_incorrect_move_2 (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,770 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_incorrect_move_3 (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,771 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_after (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,772 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_before (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,773 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_inside (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,774 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_replace (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,775 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_with_other_1 (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,776 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_move_with_other_2 (odoo.addons.base.tests.test_views.TestApplyInheritanceMoveSpecs) 
+2025-05-30 18:30:20,776 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_delete (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,777 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_incorrect_version (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,779 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_insert_after (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,779 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_insert_before (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,780 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_insert_inside (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,780 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_invalid_position (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,782 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_replace (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,783 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_target_not_found (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,785 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_unpack_data (odoo.addons.base.tests.test_views.TestApplyInheritanceSpecs) 
+2025-05-30 18:30:20,786 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_replace (odoo.addons.base.tests.test_views.TestApplyInheritanceWrapSpecs) 
+2025-05-30 18:30:20,787 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testDefaultViewBase (odoo.addons.base.tests.test_views.TestDefaultView) 
+2025-05-30 18:30:20,803 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testDefaultViewPrimary (odoo.addons.base.tests.test_views.TestDefaultView) 
+2025-05-30 18:30:20,828 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_create_view_nomodel (odoo.addons.base.tests.test_views.TestNoModel) 
+2025-05-30 18:30:20,840 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_qweb_translation (odoo.addons.base.tests.test_views.TestNoModel) 
+2025-05-30 18:30:20,840 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  Test if translations work correctly without a model 
+2025-05-30 18:30:20,854 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_attribute_filter (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,855 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_attribute_mismatch (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,855 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  Non-xpath non-field are filtered by matching attributes on spec and matched nodes 
+2025-05-30 18:30:20,856 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_match_field (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,857 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_match_other (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,857 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_match_xpath (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,858 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_no_match_field (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,858 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  A field spec will match by @name against all fields of the view 
+2025-05-30 18:30:20,859 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_no_match_other (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,859 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  Non-xpath non-fields are matched by node name first 
+2025-05-30 18:30:20,859 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_no_match_xpath (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,859 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  xpath simply uses the provided @expr pattern to find a node 
+2025-05-30 18:30:20,860 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_version_mismatch (odoo.addons.base.tests.test_views.TestNodeLocator) 
+2025-05-30 18:30:20,860 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  A @version on the spec will be matched against the view's version 
+2025-05-30 18:30:20,860 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_applied (odoo.addons.base.tests.test_views.TestOptionalViews) 
+2025-05-30 18:30:20,861 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` mandatory and enabled views should be applied 
+2025-05-30 18:30:20,905 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_applied_state_toggle (odoo.addons.base.tests.test_views.TestOptionalViews) 
+2025-05-30 18:30:20,905 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Change active states of v2 and v3, check that the results are as expected 
+2025-05-30 18:30:20,979 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_render (odoo.addons.base.tests.test_views.TestQWebRender) 
+2025-05-30 18:30:21,038 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_attribute_groups (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_distribute_inner (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,049 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Checks that the branding is correctly distributed within a view extension 
+2025-05-30 18:30:21,070 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_inherit (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,091 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_inherit_replace_node (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,113 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_inherit_replace_node2 (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,134 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_inherit_top_t_field (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,171 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_branding_primary_inherit (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,192 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_call_no_branding (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,204 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_esc_no_branding (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,215 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_ignore_unbrand (odoo.addons.base.tests.test_views.TestTemplating) 
+2025-05-30 18:30:21,237 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_basic_read (odoo.addons.base.tests.test_views.TestViewCombined) 
+2025-05-30 18:30:21,372 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_cross_model_double (odoo.addons.base.tests.test_views.TestViewCombined) 
+2025-05-30 18:30:21,511 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_cross_model_simple (odoo.addons.base.tests.test_views.TestViewCombined) 
+2025-05-30 18:30:21,654 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_read_from_child (odoo.addons.base.tests.test_views.TestViewCombined) 
+2025-05-30 18:30:21,784 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_read_from_child_primary (odoo.addons.base.tests.test_views.TestViewCombined) 
+2025-05-30 18:30:21,920 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_default_view (odoo.addons.base.tests.test_views.TestViewInheritance) 
+2025-05-30 18:30:22,076 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_get_inheriting_views_arch (odoo.addons.base.tests.test_views.TestViewInheritance) 
+2025-05-30 18:30:22,236 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_no_default_view (odoo.addons.base.tests.test_views.TestViewInheritance) 
+2025-05-30 18:30:22,396 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_no_recursion (odoo.addons.base.tests.test_views.TestViewInheritance) 
+2025-05-30 18:30:22,607 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_attrs_field (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,627 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in attrs="{'readonly': [('model', '=', 'ir.ui.view')]}"
+
+Error context:
+View `valid attrs`
+[view_id: 331, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:22,628 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_attrs_subfield (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,660 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_attrs_subfield_with_parent (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,694 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_check_xml_on_reenable (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,735 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_context_in_subsubview_with_parent (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,781 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_context_in_subview (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,814 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_context_in_subview_with_parent (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,846 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_context_in_view (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,865 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_custom_view_validation (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,887 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_in_subview (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,921 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_in_subview_with_parent (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,954 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_in_view (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,973 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_field_in_noneditable_subview (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:22,993 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', model)]"
+
+Error context:
+View `valid domain`
+[view_id: 364, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:22,994 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_field_in_subview (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,014 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', model)]"
+
+Error context:
+View `valid domain`
+[view_id: 366, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:23,027 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', model)]"
+
+Error context:
+View `valid domain`
+[view_id: 367, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:23,028 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_field_in_subview_with_parent (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,048 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', parent.model)]"
+
+Error context:
+View `valid domain`
+[view_id: 369, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:23,059 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', parent.model)]"
+
+Error context:
+View `valid domain`
+[view_id: 370, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:23,060 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_field_in_view (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,081 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_readonly_field_in_subview (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,100 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_ui_view: Field 'model' used in attributes must be present in view but is missing:
+ - 'model' in domain="[('model', '=', model)]"
+
+Error context:
+View `valid domain`
+[view_id: 374, xml_id: n/a, model: ir.ui.view, parent_id: n/a] 
+2025-05-30 18:30:23,102 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_domain_on_readonly_field_in_view (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,118 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_invalid_field (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,131 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_invalid_subfield (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,144 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_modifiers (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,145 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_nonexistent_attribute_removal (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,161 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_view_inheritance (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,202 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_view_inheritance_divergent_models (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,242 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_view_inheritance_text_after (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,242 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Test view inheritance when adding elements and text. 
+2025-05-30 18:30:23,270 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_view_inheritance_text_before (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,270 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Test view inheritance when adding elements and text. 
+2025-05-30 18:30:23,295 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_view_inheritance_text_inside (odoo.addons.base.tests.test_views.TestViews) 
+2025-05-30 18:30:23,295 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Test view inheritance when adding elements and text. 
+2025-05-30 18:30:23,323 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_hasclass (odoo.addons.base.tests.test_views.TestXPathExtentions) 
+2025-05-30 18:30:23,323 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testChangeInheritOfPrimary (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,323 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  A primary view with an inherit_id must remain primary when changing the inherit_id 
+2025-05-30 18:30:23,353 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testDefaultExtensionToPrimary (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,354 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  An extension view can be converted to primary 
+2025-05-30 18:30:23,374 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testInheritPrimaryToExtension (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,375 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  A primary view with an inherit_id can be converted to extension 
+2025-05-30 18:30:23,395 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testModeExplicit (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,415 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testModeImplicitValue (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,415 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` mode is auto-generated from inherit_id: * inherit_id -> mode=extension * not inherit_id -> mode=primary 
+2025-05-30 18:30:23,437 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: testPurePrimaryToExtension (odoo.addons.base.tests.test_views.ViewModeField) 
+2025-05-30 18:30:23,437 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: `  A primary view with inherit_id=None can't be converted to extension 
+2025-05-30 18:30:23,449 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: test_model_data_id (odoo.addons.base.tests.test_views.ViewXMLID) 
+2025-05-30 18:30:23,449 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: ` Check whether views know their xmlid record. 
+2025-05-30 18:30:23,453 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: Ran 89 tests in 2.689s 
+2025-05-30 18:30:23,453 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.tests.test_views: OK 
+2025-05-30 18:30:23,492 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: 1 modules loaded in 48.25s, 26431 queries 
+2025-05-30 18:30:23,514 171443 INFO test_l10n_it_efattura_sdi_12 odoo.modules.loading: updating modules list 
+2025-05-30 18:30:23,516 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-05-30 18:30:29,927 171443 INFO test_l10n_it_efattura_sdi_12 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on ['l10n_it_efattura_sdi'] to user __system__ #1 via n/a 
+2025-05-30 18:30:30,139 171443 WARNING test_l10n_it_efattura_sdi_12 odoo.modules.loading: Transient module states were reset 
+2025-05-30 18:30:30,141 171443 ERROR test_l10n_it_efattura_sdi_12 odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/home/odoo/12.0/odoo/modules/registry.py", line 87, in new
+    odoo.modules.load_modules(registry._db, force_demo, status, update_module)
+  File "/home/odoo/12.0/odoo/modules/loading.py", line 386, in load_modules
+    modules.button_install()
+  File "<decorator-gen-61>", line 2, in button_install
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 395, in button_install
+    modules._state_update('to install', ['uninstalled'])
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  [Previous line repeated 97 more times]
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 350, in _state_update
+    raise UserError(_('Recursion error in modules dependencies !'))
+odoo.exceptions.UserError: ('Recursion error in modules dependencies !', '')
+2025-05-30 18:30:30,142 171443 CRITICAL test_l10n_it_efattura_sdi_12 odoo.service.server: Failed to initialize database `test_l10n_it_efattura_sdi_12`. 
+Traceback (most recent call last):
+  File "/home/odoo/12.0/odoo/service/server.py", line 1164, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "/home/odoo/12.0/odoo/modules/registry.py", line 87, in new
+    odoo.modules.load_modules(registry._db, force_demo, status, update_module)
+  File "/home/odoo/12.0/odoo/modules/loading.py", line 386, in load_modules
+    modules.button_install()
+  File "<decorator-gen-61>", line 2, in button_install
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 395, in button_install
+    modules._state_update('to install', ['uninstalled'])
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 367, in _state_update
+    update_demo = update_mods._state_update(newstate, states_to_update, level=level-1)
+  [Previous line repeated 97 more times]
+  File "/home/odoo/12.0/odoo/addons/base/models/ir_module.py", line 350, in _state_update
+    raise UserError(_('Recursion error in modules dependencies !'))
+odoo.exceptions.UserError: ('Recursion error in modules dependencies !', '')
+2025-05-30 18:30:30,143 171443 INFO test_l10n_it_efattura_sdi_12 odoo.service.server: Initiating shutdown 
+2025-05-30 18:30:30,143 171443 INFO test_l10n_it_efattura_sdi_12 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+
++===================================================================
+| please test [36ml10n_it_efattura_sdi[0m (12.0): [31mFAILED![0m
++===================================================================
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_fatturapa_evolve_attachment_form">
+        <field name="name">fatturapa.attachment.out.form</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field name="inherit_id" ref="l10n_it_einvoice_out.view_fatturapa_out_attachment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div" position="before">
+              <header>
+                  <button name="send_einvoice" states="ready" string="Invia a SDI" type="object" class="oe_highlight"/>
+                  <button name="send_verify" states="sent,sender_error,recipient_error,rejected" string="Verifica invio" type="object" class="oe_highlight"/>
+                  <button name="reset_to_ready" states="sender_error,recipient_error,rejected" string="Reset to ready" type="object"/>
+                  <button name="set_to_delivered" states="recipient_error" string="Set to delivered" type="object"/>
+                  <field name="state"/>
+              </header>
+            </xpath>
+            <xpath expr="//div/group[last()]" position="after">
+                <group name="last_sdi_response" string="Last Response from Exchange System" attrs="{'invisible':[('state', '=', 'ready')]}">
+                    <field name="last_sdi_response" nolabel="1"/>
+                </group>
+            </xpath>
+            <field name="datas" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', 'not in', ['ready', 'sender_error'])]}</attribute>
+            </field>
+            <div name="creation_div" position="after">
+                <label for="sending_user" string="Sent by" attrs="{'invisible': [('sending_user' ,'=', False)]}"/>
+                <div name="sending_user" attrs="{'invisible': [('sending_user' ,'=', False)]}">
+                    <field name="sending_user" readonly="1" class="oe_inline"/> on
+                    <field name="sending_date" readonly="1" class="oe_inline"/>
+                </div>
+                <label for="delivered_date" string="Delivered" attrs="{'invisible': [('delivered_date' ,'=', False)]}"/>
+                <div name="delivered_date" attrs="{'invisible': [('delivered_date' ,'=', False)]}">
+                    <field name="delivered_date" readonly="1" class="oe_inline"/>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>

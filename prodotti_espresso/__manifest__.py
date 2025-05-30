@@ -9,7 +9,7 @@
     'author': 'SHS-AV s.r.l. and other partners',
     'website': '',
     'development_status': 'Beta',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'depends': [
         'base',
         'sale',
