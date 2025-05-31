@@ -11,5 +11,5 @@ class ResCompany(models.Model):
         domain=lambda self: [
             ("model_id", "=", self.env.ref("account.model_account_invoice").id)],
         default=lambda self: self.env.ref("account.email_template_edi_invoice").id,
-        help="Mail template to use in order to send Invice pdf",
+        help="Mail template to use in order to send Invoice pdf",
     )

@@ -1,3 +1,9 @@
+10.0.0.1.5 (2025-05-31)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] No draft invoices / No fatture in stato bozza
+* [QUA] Test coverage 52% (81: 39+42) [0 TestPoints] - quality rating 32 (target 100)
+
 10.0.0.1.4 (2025-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

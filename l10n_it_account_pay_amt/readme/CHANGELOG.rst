@@ -1,4 +1,4 @@
-12.0.0.1.1 (2025-05-30)
+12.0.0.1.1 (2025-06-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Split from l10n_it_account / Separato da l10n_it_account
@@ -7,4 +7,4 @@
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Initial implementation / Implementazione iniziale
-* [QUA] Test coverage 39% (18: 11+7) [0 TestPoints] - quality rating 26 (target 100)
+* [QUA] Test coverage 81% (26: 5+21) [1 TestPoints] - quality rating 47 (target 100)

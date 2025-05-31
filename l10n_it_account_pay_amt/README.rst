@@ -4,7 +4,7 @@
 
 **Module useful for other modules**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_accont_pay_amt/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_account_pay_amt/static/description/icon.png
 
 
 .. contents::
@@ -27,7 +27,7 @@ Overview | Panoramica
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_accont_pay_amt/static/description/
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_account_pay_amt/static/description/
 
 
 Getting started | Primi passi
@@ -134,7 +134,7 @@ ChangeLog History | Cronologia modifiche
 ~~~~~~
 
 * Initial implementation / Implementazione iniziale
-* [QUA] Test coverage 39% (18: 11+7) [0 TestPoints] - quality rating 26 (target 100)
+* [QUA] Test coverage 81% (26: 5+21) [1 TestPoints] - quality rating 47 (target 100)
 
 
 
@@ -185,7 +185,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-05-30
+Last Update / Ultimo aggiornamento: 2025-06-01
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

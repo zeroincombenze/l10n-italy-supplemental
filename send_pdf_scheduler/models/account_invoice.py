@@ -63,7 +63,7 @@ class AccountInvoice(models.Model):
                 for inv in self.search(
                     [
                         ("to_send_mail", "=", True),
-                        ("state", "not in", ["drfat", "cancelled"]),
+                        ("state", "not in", ["draft", "cancelled"]),
                         ("type", "in", ["out_invoice", "out_refund"]),
                     ]
                 ):

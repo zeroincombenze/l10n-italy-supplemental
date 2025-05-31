@@ -8,7 +8,7 @@ class AccountConfigSettings(models.TransientModel):
     invoice_mail_template_id = fields.Many2one(
         related="company_id.invoice_mail_template_id",
         string="Invoice Mail Template",
-        help="Mail template to use in order to send Invice pdf",
+        help="Mail template to use in order to send Invoice pdf",
     )
     to_send_mail = fields.Boolean(
         string="To send mail",
@@ -16,7 +16,7 @@ class AccountConfigSettings(models.TransientModel):
     )
     time_interval = fields.Char(
         string="Send Time Interval",
-        help="Use FROM-TO (24h): i.e 10-16 meand from 10:00 to 16:00",
+        help="Use FROM-TO (24h): i.e 10-16 means from 10:00 to 16:00",
         default="09-18",
     )
 

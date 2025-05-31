@@ -15,13 +15,35 @@ class AccountInvoice(models.Model):
         string="Net to pay",
         store=True,
         digits=dp.get_precision("Account"),
+        readonly=True,
         compute="_compute_net_pay",
     )
+    hide_net_pay = fields.Boolean(string="Hide Net to pay",
+                                  store=True,
+                                  readonly=True,
+                                  compute="_compute_net_pay")
 
-    @api.depends("amount_total")
+    @api.depends("amount_total", "amount_tax")
     def _compute_net_pay(self):
+        # TODO> Need to overidden
         for inv in self:
-            inv.amount_net_pay = inv.amount_total
+            if not inv.amount_total:
+                inv.hide_net_pay = True
+                continue
+            amount_sp = inv.amount_sp if hasattr(inv, "amount_sp") else 0.0
+            amount_rc = inv.amount_rc if hasattr(inv, "amount_rc") else 0.0
+            withholding_tax_amount = (
+                inv.withholding_tax_amount
+                if hasattr(inv, "withholding_tax_amount")
+                else 0.0
+            )
+            inv.amount_net_pay = (
+                inv.amount_total
+                + amount_sp
+                - withholding_tax_amount
+                + amount_rc
+            )
+            inv.hide_net_pay = inv.amount_net_pay == inv.amount_total
 
     @api.multi
     def action_invoice_draft(self):
