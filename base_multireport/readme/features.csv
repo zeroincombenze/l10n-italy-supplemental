@@ -1,0 +1,15 @@
+Feature / Funzione ,Notes / Note
+Print original Odoo reports / Stampa modelli originali di Odoo,Style configuration = Odoo/Configurazione a livello di stile = Odoo
+Header line-up: logo and slogan / Intestazione solo logo e slogan,
+Header line-up: logo and company data / Intestazione solo logo e dati azienda,Company data shifted up / Dati aziende spostati in alto
+Header line-up: logo and customized data / Intestazione solo logo e dati personalizzati,You can use macroes to retriebe company data / Disponibili macro per caricare dati aziendali
+Header with only wide logo / Intestazione solo logo largo,Logo with company data / Logo con i dati dell'azienda
+Header without data / No intestazione,Use preprinted paper / Utilizzo su carta intestata
+Custom footer / Piede personalizzato,You can use macroes to retriebe company data / Disponibili macro per caricare dati aziendali
+Optional separation line / Linea di separazione opzionale,
+Address mode / Modo stampa indirizzo,Print 2 addresses or only the specific one / Stampa doppio indirizzo o solo specifico
+Print product code / Stampa codice prodotto,
+Print description without code / Stampa descrizione senza codice,Extract code from description / Estrapola il codice dalla descrizione
+Configurable documents / Documenti configurabili:,"Sale order, Delivery document, Invoice, Purchase order / Ordine cliente, DdT, Fattura, Ordine a fornitore"
+Watermark / Filigrana,High quality report / Stampa di alta qualità
+Ending page / Pagina finale,Ending page with commercial info / Pagina finale con informazioni commerciali

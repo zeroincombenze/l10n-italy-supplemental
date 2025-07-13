@@ -1,0 +1,33 @@
+<odoo>
+
+    <template id="report_ddt_main">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                    t-set="style"
+                    t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                    t-if="style == 'odoo_based'"
+                    t-call="base_multireport.report_ddt"
+                    t-lang="o.partner_id.lang"
+                />
+                <t
+                    t-if="style == 'odoo'"
+                    t-call="l10n_it_ddt.report_ddt"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="base_multireport.action_report_ddt"
+        model="stock.picking.package.preparation"
+        string="DdT (personalizzato)"
+        report_type="qweb-pdf"
+        name="base_multireport.report_ddt_main"
+        file="base_multireport.report_ddt_main"
+    />
+
+</odoo>

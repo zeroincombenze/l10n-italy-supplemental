@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_multireport_template_tree" model="ir.ui.view">
+        <field name="name">view.multireport.template.tree</field>
+        <field name="model">multireport.template</field>
+        <field name="arch" type="xml">
+            <tree string="Report Template">
+                <field name="name" />
+                <field name="header_id" />
+                <field name="footer_id" />
+                <field name="ir_model_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_multireport_template_form" model="ir.ui.view">
+        <field name="name">view.multireport.template.form</field>
+        <field name="model">multireport.template</field>
+        <field name="arch" type="xml">
+            <form string="Multi Report Template values">
+                <header>
+                    <button
+                        name="%(action_wizard_build_report)d"
+                        type="action"
+                        string="Build report"
+                    />
+                </header>
+                <group string="Header and Footer">
+                    <field name="name" />
+                    <field name="header_mode" />
+                    <field name="address_mode" />
+                    <field name="logo_style" />
+                    <field name="payment_term_position" />
+                    <field name="footer_mode" />
+                    <field name="bottom_text" />
+                </group>
+                <group string="Body">
+                    <field name="code_mode" />
+                    <field name="description_mode" />
+                    <field name="order_ref_text" />
+                    <field name="ddt_ref_text" />
+                </group>
+                <group string="Other">
+                    <field name="ir_model_id" />
+                    <field name="header_id" />
+                    <field name="footer_id" />
+                    <field name="pdf_watermark" />
+                    <field name="pdf_watermark_expression" />
+                    <field name="pdf_ending_page" />
+                    <field name="pdf_ending_page_expression" />
+                </group>
+                <group>
+                    <field name="custom_header" />
+                    <field name="custom_footer" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_multireport_template" model="ir.actions.act_window">
+        <field name="name">Multireport Template</field>
+        <field name="res_model">multireport.template</field>
+        <field name="view_id" ref="view_multireport_template_tree" />
+    </record>
+
+    <menuitem
+        id="menu_multireport_template"
+        name="Multi-Report Template"
+        action="action_multireport_template"
+        parent="report.reporting_menuitem"
+        sequence="80"
+        groups="base.group_no_one"
+    />
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="view_multireport_config_settings" model="ir.ui.view">
+        <field name="name">view_multireport_config_settings</field>
+        <field name="model">base.config.settings</field>
+        <field name="inherit_id" ref="base_setup.view_general_configuration" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='report']" position="inside">
+                <label for="report_model_style" />
+                <div>
+                    <field name="report_model_style" class="oe_inline" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

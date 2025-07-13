@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_purchase_order_footer">
+
+        <div class="row">
+            <div class="col-xs-4 pull-right">
+                <table class="table table-condensed">
+                    <tr class="border-black">
+                        <td><strong>Imponibile</strong></td>
+                        <td class="text-right">
+                            <span
+                                t-field="o.amount_untaxed"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </tr>
+                    <tr class="border-black">
+                        <td><strong>Totale</strong></td>
+                        <td class="text-right">
+                            <strong><span
+                                    t-field="o.amount_total"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                /></strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <p t-field="o.notes" />
+        <div class="oe_structure" />
+    </template>
+
+</odoo>

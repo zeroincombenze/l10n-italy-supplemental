@@ -1,0 +1,63 @@
+<odoo>
+
+    <template id="report_picking">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                        t-set="style"
+                        t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                        t-if="style == 'odoo_based'"
+                        t-call="base_multireport.report_picking"
+                        t-lang="o.partner_id.lang"
+                />
+                <t
+                        t-if="style == 'odoo'"
+                        t-call="stock.report_picking"
+                        t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="base_multireport.action_report_picking"
+            model="stock.picking"
+            string="Ordine di prelievo (personalizzato)"
+            report_type="qweb-pdf"
+            name="base_multireport.report_picking"
+            file="base_multireport.report_picking_operations"
+    />
+
+    <template id="report_deliveryslip">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                        t-set="style"
+                        t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                        t-if="style == 'odoo_based'"
+                        t-call="base_multireport.report_delivery_document"
+                        t-lang="o.partner_id.lang"
+                />
+                <t
+                        t-if="style == 'odoo'"
+                        t-call="stock.report_delivery_document"
+                        t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="base_multireport.action_report_delivery"
+            model="stock.picking"
+            string="Ordine di consegna (personalizzato)"
+            report_type="qweb-pdf"
+            name="base_multireport.report_deliveryslip"
+            file="base_multireport.report_deliveryslip"
+    />
+
+</odoo>

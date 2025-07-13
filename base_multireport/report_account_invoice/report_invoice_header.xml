@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="shipping_addres">
+        <t
+            t-set="address_mode"
+            t-value="report.get_report_attrib('address_mode', o, doc_opts)"
+        />
+        <div class="row">
+            <div class="col-xs-6">
+                <div
+                    t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id != o.partner_id"
+                >
+                    <strong>Indirizzo di spedizione:</strong>
+                    <p t-if="o.partner_id.name" t-field="o.partner_id.name" />
+                    <p
+                        t-if="not o.partner_id.name"
+                        t-field="o.partner_id.parent_id.name"
+                    />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_invoice_header">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+        <t
+            t-set="address_mode"
+            t-value="report.get_report_attrib('address_mode', o, doc_opts)"
+        />
+        <div class="row">
+            <div class="col-xs-6">
+                <div
+                    t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id != o.partner_id"
+                >
+                    <strong>Indirizzo di spedizione:</strong>
+                    <address
+                        t-field="o.partner_shipping_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+                    />
+                    <div t-if="o.partner_shipping_id.phone">Telefono: <span
+                            t-field="o.partner_shipping_id.phone"
+                        /></div>
+                    <div t-if="not o.partner_shipping_id.phone">Telefono: <span
+                            t-field="o.partner_id.phone"
+                        /></div>
+                </div>
+                <div t-if="address_mode == 'docnum'">
+                    <h2 style="color: #90BF3F;">
+                        <t
+                            t-if="o.state.startswith('proforma')"
+                            t-set="desdoc"
+                            t-value="'PRO-FORMA'"
+                        />
+                        <t
+                            t-if="o.state == 'draft'"
+                            t-set="desdoc"
+                            t-value="'bozza ' + doctype"
+                        />
+                        <t
+                            t-if="o.state == 'cancel'"
+                            t-set="desdoc"
+                            t-value="doctype + ' annullata!'"
+                        />
+                        <t t-if="not desdoc" t-set="desdoc" t-value="doctype" />
+                        <span t-esc="desdoc" />
+                        <span
+                            t-if="o.state not in ('draft','cancel', 'proforma', 'proforma2')"
+                            t-field="o.number"
+                        />
+                        <span
+                            t-if="o.state in ('draft','cancel')"
+                            t-field="o.move_name"
+                        />
+                        <span
+                            t-if="o.state in ('proforma', 'proforma2') and 'pro_forma_number' in o"
+                            t-field="o.pro_forma_number"
+                        />
+                        <p
+                            style="color: #90BF3F; font-size: 2em;"
+                            t-if="o.date_invoice"
+                        > del <span t-field="o.date_invoice" /></p>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-xs-5 col-xs-offset-1">
+                <strong
+                    t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id == o.partner_id"
+                >Indirizzo di spedizione e fatturazione:</strong>
+                <strong
+                    t-if="address_mode == 'standard' and (not o.partner_shipping_id or o.partner_shipping_id != o.partner_id)"
+                >Indirizzo di fatturazione:</strong>
+                <strong t-if="address_mode != 'standard'">Spett.le:</strong>
+                <address
+                    t-field="o.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'
+                />
+                <p t-if="o.partner_id.vat">P.IVA: <span
+                        t-field="o.partner_id.vat"
+                    /></p>
+                <p t-if="o.partner_id.fiscalcode">CF: <span
+                        t-field="o.partner_id.fiscalcode"
+                    /></p>
+            </div>
+        </div>
+
+        <t t-call="base_multireport.report_invoice_body_header" />
+
+    </template>
+
+    <template id="report_invoice_body_header">
+        <t
+            t-set="term_position"
+            t-value="report.get_report_attrib('payment_term_position',o,doc_opts)"
+        />
+        <t
+            t-if="report.get_report_attrib('payment_term_position',o,doc_opts) == 'header' or (report.get_report_attrib('payment_term_position',o,doc_opts) == 'auto' and len(o.due_records) &lt; 2)"
+            t-set="term_position"
+            t-value="'header'"
+        />
+        <t
+            t-if="report.get_report_attrib('payment_term_position',o,doc_opts) != 'header' and (report.get_report_attrib('payment_term_position',o,doc_opts) == 'auto' and len(o.due_records) &gt;= 2)"
+            t-set="term_position"
+            t-value="'footer'"
+        />
+        <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'" />
+        <t
+            t-if="not doctype and o.type == 'in_invoice'"
+            t-set="doctype"
+            t-value="'Ft. fornitore'"
+        />
+        <t
+            t-if="not doctype and o.type == 'in_refund'"
+            t-set="doctype"
+            t-value="'NC fornitore'"
+        />
+        <t
+            t-if="not doctype and o.type == 'out_refund'"
+            t-set="doctype"
+            t-value="'Nota credito'"
+        />
+        <t t-if="not doctype" t-set="doctype" t-value="'Fattura'" />
+        <t
+            t-if="o.state.startswith('proforma')"
+            t-set="desdoc"
+            t-value="'PRO-FORMA'"
+        />
+        <t t-if="o.state == 'draft'" t-set="desdoc" t-value="'bozza ' + doctype" />
+        <t
+            t-if="o.state == 'cancel'"
+            t-set="desdoc"
+            t-value="doctype + ' annullata!'"
+        />
+        <t t-if="not desdoc" t-set="desdoc" t-value="doctype" />
+        <t
+            t-if="o.payment_term_id and o.type != 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+            t-set="partner_bank"
+            t-value="'partner'"
+        />
+        <t
+            t-if="o.payment_term_id and o.type != 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+            t-set="partner_bank"
+            t-value="'company'"
+        />
+        <t
+            t-if="o.payment_term_id and o.type == 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+            t-set="partner_bank"
+            t-value="'company'"
+        />
+        <t
+            t-if="o.payment_term_id and o.type == 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+            t-set="partner_bank"
+            t-value="'partner'"
+        />
+        <t
+            t-if="partner_bank == 'company' and o.partner_bank_id"
+            t-set="partner_bank"
+            t-value="'document'"
+        />
+        <t t-if="not partner_bank" t-set="partner_bank" t-value="'none'" />
+        <h2 t-if="address_mode != 'docnum'">
+            <span t-esc="desdoc" />
+            <span t-if="o.state not in ('draft','cancel', 'proforma', 'proforma2')" t-field="o.number" />
+            <span t-if="o.state in ('draft','cancel')" t-field="o.move_name" />
+            <span t-if="o.state in ('proforma', 'proforma2') and 'pro_forma_number' in o" t-field="o.pro_forma_number" />
+        </h2>
+        <div class="row mt32 mb32">
+            <div class="col-xs-2" t-if="o.name">
+                <strong>Descrizione:</strong>
+                <p t-field="o.name" />
+            </div>
+            <div class="col-xs-2" t-if="address_mode != 'docnum' and o.date_invoice">
+                <strong>Data fattura:</strong>
+                <p t-field="o.date_invoice" />
+            </div>
+            <div
+                class="col-xs-2"
+                t-if="term_position == 'odoo' and o.date_due and o.type == 'out_invoice' and o.state in ('open', 'paid')"
+            >
+                <strong>Data scadenza:</strong>
+                <p t-field="o.date_due" />
+            </div>
+            <div class="col-xs-2" t-if="term_position in ('header', 'header_no_iban')">
+                <strong>Data scadenza:</strong>
+                <!--
+                <p t-if="len(o.due_records) &lt; 2" t-field="o.date_due" />
+                <p t-if="len(o.due_records) &gt;= 2">
+                -->
+                <p>
+                    <t
+                        t-foreach="o.due_records.sorted(key=lambda r: r.date_maturity)"
+                        t-as="p"
+                    >
+                        <span t-field="p.date_maturity" />
+                    </t>
+                </p>
+            </div>
+            <div class="col-xs-2" t-if="address_mode != 'docnum' and  o.state in ('open', 'paid') and 'pro_forma_number' in o and o.pro_forma_number">
+                <strong>Ns. pro-forma:</strong>
+                <p t-field="o.pro_forma_number" />
+            </div>
+            <div class="col-xs-2" t-if="address_mode != 'docnum' and o.origin">
+                <strong>Origine:</strong>
+                <p t-field="o.origin" />
+            </div>
+            <div class="col-xs-2" t-if="o.partner_id.ref">
+                <strong>Codice cliente:</strong>
+                <p t-field="o.partner_id.ref" />
+            </div>
+            <div name="reference" class="col-xs-2" t-if="o.reference">
+                <strong>Riferimento:</strong>
+                <p t-field="o.reference" />
+            </div>
+            <div class="col-xs-4" t-if="term_position == 'odoo'">
+                <strong>Termine di pagamento:</strong>
+                <p t-field="o.payment_term_id" />
+            </div>
+            <div class="col-xs-4" t-if="term_position in ('header', 'header_no_iban')">
+                <strong>Termine di pagamento:</strong>
+                <p t-if="o.payment_term_id.note" t-field="o.payment_term_id.note" />
+                <p t-if="not o.payment_term_id.note" t-field="o.payment_term_id" />
+            </div>
+            <div
+                class="col-xs-4"
+                t-if="term_position in ('header', 'odoo') and partner_bank == 'document'"
+            >
+                <strong>IBAN:</strong>
+                <p t-field="o.partner_bank_id.acc_number" />
+            </div>
+            <div
+                class="col-xs-4"
+                t-if="term_position in ('header', 'odoo') and partner_bank == 'partner'"
+            >
+                <strong>IBAN:</strong>
+                <p>
+                    <t t-foreach="o.partner_id.bank_ids" t-as="bank"><span
+                            t-field="bank.acc_number"
+                        /></t>
+                </p>
+            </div>
+            <div
+                class="col-xs-4"
+                t-if="term_position in ('header', 'odoo') and partner_bank == 'company'"
+            >
+                <strong>IBAN:</strong>
+                <p>
+                    <t t-foreach="o.company_id.partner_id.bank_ids" t-as="bank"><span
+                            t-if="bank.journal_id and any([x.display_on_footer for x in bank.journal_id])"
+                            t-field="bank.acc_number"
+                        /><br /></t>
+                </p>
+            </div>
+        </div>
+    </template>
+
+</odoo>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="external_layout">
+        <link position="after">
+            <link
+                href="/base_multireport/static/src/css/report_qweb_pdf_watermark.css"
+                rel="stylesheet"
+            />
+        </link>
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc" />
+        </t>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id" />
+            <t t-set="company_partner" t-value="company.partner_id" />
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company" />
+        </t>
+        <t t-set="style" t-value="company.report_model_style.origin or 'odoo'" />
+        <t
+            t-if="style == 'odoo_based'"
+            t-call="base_multireport.external_layout_header"
+        />
+        <t t-if="style == 'odoo'" t-call="report.external_layout_header" />
+        <t t-raw="0" />
+        <t
+            t-if="style == 'odoo_based'"
+            t-call="base_multireport.external_layout_footer"
+        />
+        <t t-if="style == 'odoo'" t-call="report.external_layout_footer" />
+    </template>
+
+    <template id="external_layout_header">
+        <div class="header">
+            <div
+                t-if="report.get_report_attrib('header_mode', o, doc_opts) != 'no_header'"
+                class="row"
+            >
+                <t
+                    t-set="logo_style"
+                    t-value="report.get_report_attrib('logo_style', o, doc_opts)"
+                />
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('logo', 'only_logo', 'line-up25', 'line-up26')"
+                    class="col-xs-12"
+                >
+                    <img
+                        t-if="company.logo"
+                        t-att-src="'data:image/png;base64,%s' % company.logo"
+                        t-att-style="report.get_report_attrib('logo_style', o, doc_opts)"
+                    />
+                </div>
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('standard', 'line-up', 'line-up2', 'line-up3', 'line-up4', 'line-up5', 'line-up6')"
+                    class="col-xs-3"
+                >
+                    <img
+                        t-if="company.logo"
+                        t-att-src="'data:image/png;base64,%s' % company.logo"
+                        t-att-style="report.get_report_attrib('logo_style', o, doc_opts)"
+                    />
+                </div>
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('standard', 'line-up', 'line-up2')"
+                    class="col-xs-9 text-right"
+                    style="margin-top:20px;"
+                    t-field="company.rml_header1"
+                />
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('line-up3', 'line-up4')"
+                    class="col-xs-9 text-right"
+                    t-field="company.partner_id"
+                    t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                />
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('line-up5', 'line-up6')"
+                    class="col-xs-9 text-right"
+                >
+                    <t
+                        t-set="rml_header"
+                        t-value="report.get_report_attrib('custom_header', o, doc_opts)"
+                    />
+                    <span t-raw="rml_header" />
+                </div>
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('line-up25', 'line-up26')"
+                    class="col-xs-12"
+                >
+                    <t
+                        t-set="rml_header"
+                        t-value="report.get_report_attrib('custom_header', o, doc_opts)"
+                    />
+                    <span t-raw="rml_header" />
+                </div>
+            </div>
+            <div class="row zero_min_height">
+                <div
+                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('standard', 'logo', 'line-up', 'line-up3', 'line-up5', 'line-up25')"
+                    class="col-xs-12"
+                >
+                    <div style="border-bottom: 1px solid black;" />
+                </div>
+            </div>
+
+            <div
+                t-if="report.get_report_attrib('header_mode', o, doc_opts) == 'standard'"
+                class="row"
+            >
+                <div class="col-xs-6">
+                    <div
+                        t-field="company.partner_id"
+                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                        style="border-bottom: 1px solid black;"
+                    />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="external_layout_footer">
+        <div class="footer">
+            <t
+                t-set="footer_attr"
+                t-if="report.get_report_attrib('footer_mode', o, doc_opts) != 'no_footer'"
+                t-value="'border-top: 1px solid black'"
+            />
+            <t
+                t-set="footer_attr"
+                t-if="report.get_report_attrib('footer_mode', o, doc_opts) == 'no_footer'"
+                t-value="'border-top: none'"
+            />
+            <div class="text-center" t-att-style="footer_attr">
+                <ul
+                    t-if="report.get_report_attrib('footer_mode', o, doc_opts) == 'auto'"
+                    class="list-inline"
+                >
+                    <t t-set="company" t-value="company.sudo()" />
+                    <li t-if="company.phone">Telefono: <span
+                            t-field="company.phone"
+                        /></li>
+                    <li t-if="company.fax and company.phone">&amp;bull;</li>
+                    <li t-if="company.fax">Fax: <span t-field="company.fax" /></li>
+                    <li
+                        t-if="company.email and company.fax or company.email and company.phone"
+                    >&amp;bull;</li>
+                    <li t-if="company.email">Email: <span
+                            t-field="company.email"
+                        /></li>
+                    <li
+                        t-if="company.website and company.email or company.website and company.fax or company.website and company.phone"
+                    >&amp;bull;</li>
+                    <li t-if="company.website">Sito web: <span
+                            t-field="company.website"
+                        /></li>
+                </ul>
+
+                <ul
+                    t-if="report.get_report_attrib('footer_mode', o, doc_opts) == 'auto'"
+                    class="list-inline"
+                    name="financial_infos"
+                >
+                    <li t-if="company.vat">P.IVA: <span t-field="company.vat" /></li>
+                </ul>
+
+                <t
+                    t-if="report.get_report_attrib('footer_mode', o, doc_opts) == 'custom'"
+                >
+                    <t
+                        t-set="rml_footer"
+                        t-value="report.get_report_attrib('custom_footer', o, doc_opts)"
+                    />
+                    <span t-raw="rml_footer" />
+                </t>
+
+                <ul class="list-inline" style="font-size: small;">
+                    <li>Pag.:</li>
+                    <li><span class="page" /></li>
+                    <li>/</li>
+                    <li><span class="topage" /></li>
+                </ul>
+            </div>
+        </div>
+    </template>
+</odoo>

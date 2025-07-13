@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_ddt_footer">
+        <div class="row">
+            <div class="col-xs-4 pull-right">
+                <table class="table table-condensed" t-if="o.show_price">
+                    <tr class="border-black">
+                        <td><strong>Imponibile</strong></td>
+                        <td class="text-right">
+                            <span
+                                t-field="o.amount_untaxed"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IVA</td>
+                        <td class="text-right">
+                            <span
+                                t-field="o.amount_tax"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </tr>
+                    <tr class="border-black">
+                        <td><strong>Totale</strong></td>
+                        <td class="text-right">
+                            <strong><span
+                                    t-field="o.amount_total"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                /></strong>
+                        </td>
+                    </tr>
+                    <tr
+                        t-if="'amount_net_pay' in o and o.amount_net_pay != o.amount_total"
+                        class="border-black"
+                    >
+                        <td><strong>Totale a pagare</strong></td>
+                        <td class="text-right">
+                            <strong><span
+                                    t-field="o.amount_net_pay"
+                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                /></strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <template id="delivery_data">
+        <style type="text/css">
+table.delivery_data td h6 {
+    margin: 0;
+}
+.signature {
+    min-height: 4em;
+}
+        </style>
+        <table class="table table-condensed table-bordered delivery_data">
+            <tr>
+                <td>
+                    <h6>Transportation Reason</h6>
+                    <div class="signature" t-field="o.transportation_reason_id" />
+                </td>
+                <td>
+                    <h6>Carriage Condition</h6>
+                    <div t-field="o.carriage_condition_id" />
+                </td>
+                <td>
+                    <h6>Transportation Method</h6>
+                    <div t-field="o.transportation_method_id" />
+                </td>
+                <td>
+                    <h6>Goods Description</h6>
+                    <div class="signature" t-field="o.goods_description_id" />
+                </td>
+                <td>
+                    <h6>Net Weight</h6>
+                    <div class="signature" t-field="o.weight" />
+                </td>
+                <td>
+                    <h6>Gross Weight</h6>
+                    <div class="signature" t-field="o.gross_weight" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h6>Carrier</h6>
+                    <div class="signature" t-field="o.partner_carrier_id.name" />
+                </td>
+                <td>
+                    <h6>Date</h6>
+                    <div class="signature" t-field="o.date_done" />
+                </td>
+                <td>
+                    <h6>Pick up time</h6>
+                    <div class="signature" />
+                </td>
+                <td>
+                    <h6>Parcels</h6>
+                    <div class="signature" t-field="o.parcels" />
+                </td>
+                <td>
+                    <h6>Size</h6>
+                    <div class="signature" t-field="o.volume" />
+                </td>
+            </tr>
+        </table>
+        <table class="table table-condensed table-bordered delivery_data">
+            <tr>
+                <td>
+                    <h6>Carrier's Signature</h6>
+                    <div class="signature" />
+                </td>
+                <td>
+                    <h6>Driver's Signature</h6>
+                    <div class="signature" />
+                </td>
+                <td>
+                    <h6>Recipient's Signature</h6>
+                    <div class="signature" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><h6>Notes</h6>
+                    <div class="signature" t-field="o.note" />
+                </td>
+            </tr>
+        </table>
+    </template>
+
+</odoo>

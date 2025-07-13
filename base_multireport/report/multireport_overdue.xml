@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_overdue">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="base_multireport.report_overdue_document" t-lang="o.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="action_report_print_overdue"
+        model="res.partner"
+        report_type="qweb-pdf"
+        string="Due Payments (follow up)"
+        name="base_multireport.report_overdue"
+        file="base_multireport.report_overdue"
+    />
+
+</odoo>

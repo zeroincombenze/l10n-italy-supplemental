@@ -1,1 +1,0 @@
-This module add counterpart reference in journal entries and journal items.

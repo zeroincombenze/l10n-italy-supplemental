@@ -1,0 +1,111 @@
+<odoo>
+
+    <template id="report_invoice">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                    t-set="style"
+                    t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                    t-if="style == 'odoo_based'"
+                    t-call="base_multireport.report_invoice_document"
+                    t-lang="o.partner_id.lang"
+                />
+                <t
+                    t-if="style == 'odoo'"
+                    t-call="account.report_invoice_document"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <!--
+    <record id="base_multireport.account_invoices" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
+    -->
+
+    <report
+        id="base_multireport.account_invoices"
+        model="account.invoice"
+        string="Fattura (personalizzata)"
+        report_type="qweb-pdf"
+        name="base_multireport.report_invoice"
+        file="base_multireport.report_invoice"
+        attachment_use="True"
+        attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+    />
+
+    <template id="account_invoice_report_duplicate_main">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                    t-set="style"
+                    t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                    t-if="style == 'odoo_based'"
+                    t-call="base_multireport.account_invoice_report_duplicate"
+                    t-lang="o.partner_id.lang"
+                />
+                <t
+                    t-if="style == 'odoo'"
+                    t-call="base_multireport.account_invoice_report_duplicate"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <!--
+    <record id="base_multireport.account_invoice_action_report_duplicate" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
+    -->
+
+    <report
+        id="base_multireport.account_invoice_action_report_duplicate"
+        model="account.invoice"
+        string="Ft. di cortesia (personalizzata)"
+        report_type="qweb-pdf"
+        name="base_multireport.account_invoice_report_duplicate_main"
+        file="base_multireport.account_invoice_report_duplicate_main"
+        attachment_use="False"
+    />
+
+    <template id="report_delivery_invoice">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                    t-set="style"
+                    t-value="o.company_id.report_model_style.origin or 'odoo'"
+                />
+                <t
+                    t-if="style == 'odoo_based'"
+                    t-call="base_multireport.report_delivery_invoice_document"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <!--
+    <record id="base_multireport.delivery_invoice_action_report" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
+    -->
+
+    <report
+        id="base_multireport.delivery_invoice_action_report"
+        model="account.invoice"
+        string="Fattura di accompagnamento"
+        report_type="qweb-pdf"
+        name="base_multireport.report_delivery_invoice"
+        file="base_multireport.report_delivery_invoice"
+        attachment_use="True"
+        attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+    />
+
+</odoo>
