@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_ddt_header">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+        <t
+            t-set="address_mode"
+            t-value="report.get_report_attrib('address_mode', o, doc_opts)"
+        />
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>Cessionario</h2>
+                <div
+                    t-field="o.partner_id"
+                    t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                />
+                <div t-if="o.partner_id">VAT number: <span
+                        t-field="o.partner_id.vat"
+                    /></div>
+            </div>
+            <div class="col-xs-6">
+                <h2>Destinatario</h2>
+                <div
+                    t-field="o.partner_shipping_id"
+                    t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                />
+                <!-- <div t-if="o.partner_shipping_id">VAT number: <span t-field="o.partner_shipping_id.vat"/></div> -->
+                <div
+                    t-if="o.partner_shipping_id and o.partner_shipping_id.phone"
+                >Telefono: <span t-field="o.partner_shipping_id.phone" /></div>
+                <div
+                    t-if="o.partner_shipping_id and not o.partner_shipping_id.phone"
+                >Telefono: <span t-field="o.partner_id.phone" /></div>
+            </div>
+        </div>
+        <h1>Numero DdT: <span t-field="o.ddt_number" /> del <span
+                t-field="o.date"
+                t-options="{'widget': 'date'}"
+            /></h1>
+    </template>
+
+</odoo>

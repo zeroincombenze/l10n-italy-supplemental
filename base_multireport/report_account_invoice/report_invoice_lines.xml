@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_invoice_lines">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+
+        <!-- Is there a discount on at least one line? -->
+        <t
+            t-set="display_discount"
+            t-value="any([l.discount for l in o.invoice_line_ids])"
+        />
+        <table class="table table-condensed">
+            <t
+                t-set="code_mode"
+                t-value="report.get_report_attrib('code_mode', o, doc_opts)"
+            />
+            <t
+                t-set="description_mode"
+                t-value="report.get_report_attrib('description_mode', o, doc_opts)"
+            />
+            <thead>
+                <tr>
+                    <th t-if="code_mode == 'print'">Codice</th>
+                    <th>Descrizione</th>
+                    <th class="hidden">Documento di origine</th>
+                    <th class="text-right">Quantità</th>
+                    <th class="text-right">Prezzo unitario</th>
+                    <th t-if="display_discount" class="text-right">Sc.(%)</th>
+                    <th class="text-right">C.IVA</th>
+                    <th class="text-right">Totale riga</th>
+                </tr>
+            </thead>
+            <t t-set="last_order" t-value="''" />
+            <t t-set="last_ddt" t-value="''" />
+            <tbody class="invoice_tbody">
+                <t
+                    t-set="order_ref_text"
+                    t-if="order_ref_text != 'False'"
+                    t-value="report.get_report_attrib('order_ref_text', o, doc_opts)"
+                />
+                <t
+                    t-set="ddt_ref_text"
+                    t-if="ddt_ref_text != 'False'"
+                    t-value="report.get_report_attrib('ddt_ref_text',o,doc_opts)"
+                />
+                <t t-foreach="o.invoice_line_ids" t-as="l">
+                    <tr
+                        t-if="(order_ref_text or ddt_ref_text) and (l.sale_line_ids and last_order != l.sale_line_ids.order_id.name) or (l.ddt_line_id and last_ddt != l.ddt_line_id.package_preparation_id.ddt_number)"
+                    >
+                        <td t-if="code_mode == 'print'" />
+                        <td>
+                            <p>
+                                <t
+                                    t-if="l.sale_line_ids and last_order != l.sale_line_ids.order_id.name"
+                                >
+                                    <strong><span
+                                            t-esc="l.get_order_ref_text(o,doc_opts,l)"
+                                        /></strong>
+                                    <t
+                                        t-set="last_order"
+                                        t-value="l.sale_line_ids.order_id.name"
+                                    />
+                                </t>
+                                <br t-if="order_ref_text and ddt_ref_text" />
+                                <t
+                                    t-if="l.ddt_line_id and last_ddt != l.ddt_line_id.package_preparation_id.ddt_number"
+                                >
+                                    <strong><span
+                                            t-esc="l.get_ddt_ref_text(o,doc_opts,l)"
+                                        /></strong>
+                                    <t
+                                        t-set="last_ddt"
+                                        t-value="l.ddt_line_id.package_preparation_id.ddt_number"
+                                    />
+                                </t>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td t-if="code_mode == 'print'"><span t-field="l.product_code" /></td>
+                        <td>
+                            <span
+                                style="white-space: pre-wrap"
+                                t-esc="l.description_2_print(description_mode)"
+                            />
+                        </td>
+                        <td class="hidden"><span t-field="l.origin" /></td>
+                        <td class="text-right" style="vertical-align: bottom;">
+                            <span t-field="l.quantity" />
+                            <span t-field="l.uom_id" groups="product.group_uom" />
+                        </td>
+                        <td class="text-right" style="vertical-align: bottom;">
+                            <span t-field="l.price_unit" />
+                        </td>
+                        <td
+                            t-if="display_discount"
+                            class="text-right"
+                            style="vertical-align: bottom;"
+                        >
+                            <span t-field="l.discount" />
+                        </td>
+                        <td class="text-right" style="vertical-align: bottom;">
+                            <span
+                                t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"
+                            />
+                        </td>
+                        <td class="text-right" style="vertical-align: bottom;">
+                            <span
+                                t-field="l.price_subtotal"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </template>
+
+</odoo>

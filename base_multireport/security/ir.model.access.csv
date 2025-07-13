@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_multireport_style_manager,multireport.style manager,model_multireport_style,,1,1,1,1
+access_multireport_style_user,multireport.style user,model_multireport_style,,1,1,0,0
+access_multireport_template_manager,multireport.template manager,model_multireport_template,,1,1,1,1
+access_multireport_template_user,multireport.template user,model_multireport_template,,1,1,0,0
+access_multireport_selection_rules_manager,multireport.selection.rules manager,model_multireport_selection_rules,,1,1,1,1
+access_multireport_selection_rules_user,multireport.selection.rules user,model_multireport_selection_rules,,1,1,0,0
+

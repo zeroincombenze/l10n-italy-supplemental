@@ -1,0 +1,474 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Manage document multiple reports</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Gestisce modelli diversi di stampa</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.png" alt="base_rule_multireport" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Install this module if you wish to wish customize your report printing.
+<p align="justify">
+The module is built on follow concepts:
+</p><p align="justify">
+<ul>
+<li>You can customize order, invoice and delivery documents</li>
+<li>Module does not disable standard Odoo report: you can use them whenever you want</li>
+<li>You can use this module as base for your custom report module</li>
+<li>Configuration parameters are organized as a hierarchical tree</li>
+</ul>
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Installate questo modulo se volete personalizzare i modelli di stampa.
+<p align="justify">
+Il modulo &#232; costruito sui seguenti concetti:
+</p><p align="justify">
+<ul>
+<li>Personalizza ordini, fatture e documenti di trasporto</li>
+<li>Il modulo non disabilita i modelli standard di Odoo, che potete utilizzare in qualsiasi momento</li>
+<li>Potete usare questo modulo come base per un vostro modulo di personalizzazione stampe</li>
+<li>I parametri di configurazione sono organizzati tramite albero gerarchico</li>
+</ul>
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Features | Caratteristiche</h3>
+        <div class="oe_span12">
+<table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
+<td>Feature / Funzione</td><td>Notes / Note</td><td/>
+</tr><tr>
+<td>Print original Odoo reports / Stampa modelli originali di Odoo</td><td>Style configuration = Odoo/Configurazione a livello di stile = Odoo</td><td/>
+</tr><tr>
+<td>Header line-up: logo and slogan / Intestazione solo logo e slogan</td><td/><td/>
+</tr><tr>
+<td>Header line-up: logo and company data / Intestazione solo logo e dati azienda</td><td>Company data shifted up / Dati aziende spostati in alto</td><td/>
+</tr><tr>
+<td>Header line-up: logo and customized data / Intestazione solo logo e dati personalizzati</td><td>You can use macroes to retriebe company data / Disponibili macro per caricare dati aziendali</td><td/>
+</tr><tr>
+<td>Header with only wide logo / Intestazione solo logo largo</td><td>Logo with company data / Logo con i dati dell'azienda</td><td/>
+</tr><tr>
+<td>Header without data / No intestazione</td><td>Use preprinted paper / Utilizzo su carta intestata</td><td/>
+</tr><tr>
+<td>Custom footer / Piede personalizzato</td><td>You can use macroes to retriebe company data / Disponibili macro per caricare dati aziendali</td><td/>
+</tr><tr>
+<td>Optional separation line / Linea di separazione opzionale</td><td/><td/>
+</tr><tr>
+<td>Address mode / Modo stampa indirizzo</td><td>Print 2 addresses or only the specific one / Stampa doppio indirizzo o solo specifico</td><td/>
+</tr><tr>
+<td>Print product code / Stampa codice prodotto</td><td/><td/>
+</tr><tr>
+<td>Print description without code / Stampa descrizione senza codice</td><td>Extract code from description / Estrapola il codice dalla descrizione</td><td/>
+</tr><tr>
+<td>Configurable documents / Documenti configurabili:</td><td>Sale order, Delivery document, Invoice, Purchase order / Ordine cliente, DdT, Fattura, Ordine a fornitore</td><td/>
+</tr><tr>
+<td>Watermark / Filigrana</td><td>High quality report / Stampa di alta qualit&#224;</td><td/>
+</tr><tr>
+<td>Ending page / Pagina finale</td><td>Ending page with commercial info / Pagina finale con informazioni commerciali</td><td/>
+</tr><tr>
+</tr></table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module gives a lot of pretty features to print nice reports.
+<p align="justify">
+Inside every report it is possible check for some characteristics and/or add some values.
+The value of every parameter is evaluate in fallback way.
+The fallback path is:
+</p><p align="justify">
+1. Valid value (not null and not space) in report (model ir_action_report_xml)
+2. Valid value (not null and not space) in template of report (model multireport.template), if declared
+3. Valid value (not null and not space) in specific document style (model multireport.style)
+4. Value in default document style (model multireport.style)
+5. For some parameters, for historical reason, value may be load from other sources (i.e. custom footer)
+</p><p align="justify">
+In report the fallback function is report.get_report_attrib(PARAM,o,doc_opts), where param is parameter to get value.
+</p><p align="justify">
+Report may load specific value if declare field as follow:
+</p><p align="justify">
+<ul>
+<li>If field name beginning with `doc_opts`, value is from the specific report which is printing.</li>
+<li>If Field name beginning with `doc_style`, value is from the style of the company.</li>
+</ul>
+</p><p align="justify">
+Warning! If report get value directly from report or style, can get a None value and result may be unexpected.
+</p><p align="justify">
+Look at follow table for details:
+</p><p align="justify">
+<table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
+<td>Name</td><td>Description</td><td>Notes / Example</td><td/><td/>
+</tr><tr>
+<td>address_mode</td><td>Which addresses are printed</td><td>Only invoices, order and deliveires</td><td/><td/>
+</tr><tr>
+<td>bottom_text</td><td>Text to print at the bottom of the document</td><td/><td/><td/>
+</tr><tr>
+<td>code</td><td>Product code</td><td/><td/><td/>
+</tr><tr>
+<td>code_mode</td><td>Print code in document body</td><td>&lt;t t-set="code_mode" t-value="report.get_report_attrib('code_mode',o,doc_opts)"/&gt;</td><td/><td/>
+</tr><tr>
+<td>company</td><td>Company of current document</td><td>Set by external layout</td><td/><td/>
+</tr><tr>
+<td>company_partner</td><td>Company partner of current document</td><td>Set by external layout</td><td/><td/>
+</tr><tr>
+<td>datetime</td><td>Python datetime instance</td><td>Only in render by Odoo core</td><td/><td/>
+</tr><tr>
+<td>ddt_ref_text</td><td>Text at every change of delivery document</td><td/><td/><td/>
+</tr><tr>
+<td>debug</td><td>Session in developer mode</td><td>Only in render by Odoo core</td><td/><td/>
+</tr><tr>
+<td>description_mode</td><td>Print code in document body</td><td>&lt;t t-set="description_mode" t-value="report.get_report_attrib('description_mode',o,doc_opts)"/&gt;</td><td/><td/>
+</tr><tr>
+<td>doc</td><td>Current document which is printing</td><td>Set by module. External layout set 'o' to compatibility with Odoo reports</td><td/><td/>
+</tr><tr>
+<td>doc_ids</td><td>Document object Id(s)</td><td>Set by Odoo core</td><td/><td/>
+</tr><tr>
+<td>doc_model</td><td>Document model</td><td>It is the same of use doc_opts.model</td><td/><td/>
+</tr><tr>
+<td>doc_opts</td><td>Document parametes</td><td/><td/><td/>
+</tr><tr>
+<td>doc_opts.model</td><td>Document model</td><td>Same as doc_model, set by Odoo core</td><td/><td/>
+</tr><tr>
+<td>doc_opts.paperformat_id</td><td>ID to paperformat</td><td>Only invoices, order and deliveires</td><td/><td/>
+</tr><tr>
+<td>doc_opts.report_name</td><td>Report Name</td><td/><td/><td/>
+</tr><tr>
+<td>doc_style</td><td>Style parameteres</td><td/><td/><td/>
+</tr><tr>
+<td>doc_style.name</td><td>Name of Style</td><td/><td/><td/>
+</tr><tr>
+<td>doc_style.origin</td><td>`Report Identity` (see below)</td><td/><td/><td/>
+</tr><tr>
+<td>docs</td><td>Document objects list</td><td>Set by Odoo core</td><td/><td/>
+</tr><tr>
+<td>env</td><td>Environment</td><td>Only in render by Odoo core</td><td/><td/>
+</tr><tr>
+<td>footer_mode</td><td>How to print footer</td><td/><td/><td/>
+</tr><tr>
+<td>header_mode</td><td>How to print header</td><td/><td/><td/>
+</tr><tr>
+<td>l</td><td>Current invoice line when printing</td><td>Alias used only in invoice print</td><td/><td/>
+</tr><tr>
+<td>logo style</td><td>Html logo style</td><td>Default is &#8220;max-height: 45px</td><td>&#8221;</td><td/>
+</tr><tr>
+<td>o</td><td>Current invoice which is printing</td><td>Alias used in invoice print set by external layout</td><td/><td/>
+</tr><tr>
+<td>order_ref_text</td><td>Text at every change of order reference</td><td/><td/><td/>
+</tr><tr>
+<td>payment_term_position</td><td>Payment data position</td><td>Only invoices, order and deliveries</td><td/><td/>
+</tr><tr>
+<td>pdf_ending_page</td><td>Default Ending Page for this report</td><td/><td/><td/>
+</tr><tr>
+<td>pdf_ending_page_expression</td><td>Default Ending Page for this report</td><td/><td/><td/>
+</tr><tr>
+<td>pdf_watermark</td><td>Default watermark for this report</td><td/><td/><td/>
+</tr><tr>
+<td>pdf_watermark_expression</td><td>Default watermark for this report</td><td/><td/><td/>
+</tr><tr>
+<td>relativedelta</td><td>relativedelta.docutils.relativedelta.relativedelta</td><td>Only in render by Odoo core</td><td/><td/>
+</tr><tr>
+<td>report</td><td>Document report class</td><td>Only invoices, order and deliveires</td><td/><td/>
+</tr><tr>
+<td>report.get_report_attrib</td><td>Get specific fallback value</td><td>&lt;div t-if="report.get_report_attrib('header_mode',o,doc_opts)"&gt; .. &lt;/div&gt;.</td><td/><td/>
+</tr><tr>
+<td>res_company</td><td>Default company</td><td>Set by Odoo report module</td><td/><td/>
+</tr><tr>
+<td>res_company</td><td>Company of current document</td><td>Set by Odoo core</td><td/><td/>
+</tr><tr>
+<td>style</td><td>Current `Report Identity` (see below)</td><td/><td/><td/>
+</tr><tr>
+<td>time</td><td>Python time instance</td><td>No invoices, orders and deliveries</td><td/><td/>
+</tr><tr>
+<td>xmlid</td><td>External identifier of current report</td><td>Only in render by Odoo core</td><td/><td/>
+</tr><tr/></table>
+</p><p align="justify">
+</p><p align="justify">
+</p><p align="justify">
+`Report Identity`
+</p><p align="justify">
+Report Identity is used to select standard Odoo reports or customized reports.
+If value is 'Odoo' all customization is disabled and original Odoo reports are printed.
+It is only an attribute of company style.
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Header mode`
+</p><p align="justify">
+This parameter, named `header_mode` set how the header is printed.
+May be one of 'standard', 'logo', 'only_logo', 'line-up', 'line-up2', 'line-up3', 'line-up4', 'line-up5', 'line-up6', 'no_header'
+</p><p align="justify">
+<ul>
+<li>standard: standard Odoo header is printed</li>
+<li>logo: only the wide logo is printed which must contain company informations; separation line after logo</li>
+<li>only_logo: only the wide logo is printed which must contain company informations; no separation line is printed</li>
+<li>line-up:  logo and slogan, separation line but no company data</li>
+<li>line-up2:  logo and slogan but no separation line neither company data</li>
+<li>line-up3:  logo and company data and separation line; no slogan</li>
+<li>line-up4:  logo and company data; no separation line neither slogan</li>
+<li>line-up5:  logo and custom data and separation line; no slogan</li>
+<li>line-up6:  logo and custom data; no separation line neither slogan</li>
+<li>no_header: no header is printed; used on pre-printed paper</li>
+</ul>
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Footer mode`
+</p><p align="justify">
+This parameter, name `footer_mode` set how the footer is printed.
+May be one of 'standard', 'auto', 'custom', 'no_footer'
+</p><p align="justify">
+<ul>
+<li>standard: standard Odoo footer is printed; may be as 'auto' or as 'custom' based on company.custom_footer field</li>
+<li>auto: footer is printed with company data</li>
+<li>custom: user data is printed in footer (like Odoo custom footer)</li>
+<li>no_footer: no footer is printed; anyway pages are printed</li>
+</ul>
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Address mode`
+</p><p align="justify">
+This parameter, named `address_mode` set how the partner address is printed.
+May be on of 'standard', 'only_one'.
+</p><p align="justify">
+<ul>
+<li>standard: standard Odoo behavior; id shipping and invoice addresses are different, both of them are printed</li>
+<li>only_on: just the specific address is printed; specific is shipping address on delivery document, invoice addres on invoice document</li>
+</ul>
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Payment Term Position`
+</p><p align="justify">
+This parameter, named `payment_term_position` set where the payment datas (payment term, due date and payment term notes) are printed.
+May be one of 'odoo', 'auto', 'header', 'header_no_iban', 'footer', 'footer_no_iban', 'footer_notes', 'none'
+</p><p align="justify">
+<ul>
+<li>odoo: standard Odoo behavior; payment term on header, payment term notes on footer</li>
+<li>auto: when due payment is whole in one date, all datas are printed on header otherwise on footer</li>
+<li>header: all the payment datas are printed on header</li>
+<li>header_no_iban: like "header" but without IBAN</li>
+<li>footer: all the payment data are printed on footer</li>
+<li>footer_no_iban: like "footer" but without IBAN</li>
+<li>footer_notes: just payment term notes in footer</li>
+<li>none: no any payment data is printed</li>
+</ul>
+</p><p align="justify">
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Print code`
+</p><p align="justify">
+This parameter, name `code_mode` manage the printing of product code in document lines.
+May be one of: 'print', 'no_print'
+</p><p align="justify">
+<ul>
+<li>noprint: standard Odoo behavior</li>
+<li>print: print a column with code in body of documents</li>
+</ul>
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Print description`
+</p><p align="justify">
+This parameter, name `description_mode` manage the printing of description in document lines.
+May be one of: 'as_is', 'line1', 'nocode', 'nocode1'
+</p><p align="justify">
+<ul>
+<li>as_is: that is the default value; it means description is printed as is, without manipulations</li>
+<li>line1: only the 1st line of description is printed</li>
+<li>nocode: product code (text between <span style="color:white;background-color:#7C7BAD">&#160;brackets&#160;</span>) is removed</li>
+<li>nocode1: same of line1 + nocode</li>
+</ul>
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Order reference text`
+</p><p align="justify">
+This parameter, named `order_ref_text` contains the text to print before every line of document body when order changes.
+May be used following macroes:
+</p><p align="justify">
+%(client_order_ref)s =&gt; Customer reference of order
+%(order_name)s =&gt; Sale order number
+%(date_order)s =&gt; Sale order date
+</p><p align="justify">
+i.e. "Order #: %(order_name)s - Your ref: %(client_order_ref)s"'
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`DdT reference text`
+</p><p align="justify">
+This parameter, named `ddt_ref_text` contains the text to print before every line of document body when delivery document changes.
+May be used following macroes:
+</p><p align="justify">
+%(ddt_number)s =&gt; Delivery document number
+%(date_ddt)s =&gt; Delivery document date
+%(date_done)s =&gt; Delivery date
+</p><p align="justify">
+'i.e. "Ddt #: %(ddt_number)s of %(date_ddt)s"'
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Delivery Date`
+</p><p align="justify">
+In sale order you can print Delivery Date of every line. This feature requires the sale_order_line_date
+module installed.
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+`Custom Header`
+</p><p align="justify">
+This parameter, named `custom_header` contains the html code to print when header_mode is set to line_up5 or line_up6.
+May be used following macroes:
+</p><p align="justify">
+%(banks)s =&gt; IBAN of company
+%(city)s =&gt; City of company
+%(email)s =&gt; e-mail of company
+%(fax)s
+%(mobile)s
+%(name)s
+%(phone)s
+%(street)s
+%(street2)s
+%(vat)s
+%(website)s
+%(zip)s
+%(codice_destinatario)s (solo se installato modulo fattura elettronica)
+%(fatturapa_rea_capital)s (solo se installato modulo fattura elettronica)
+%(fatturapa_rea_number)s (solo se installato modulo fattura elettronica)
+%(fatturapa_rea_office)s (solo se installato modulo fattura elettronica)
+%(fiscalcode)s (solo se installato modulo codice fiscale)
+%(ipa_code)s (solo se installato modulo codice ipa)
+</p><p align="justify">
+<br/>
+</p><p align="justify">
+In xml report it is also possible test the existence of a field. The should be as follow:
+</p><p align="justify">
+`
+&lt;div t-if="'some_field' in docs[0]"&gt;FOUND SOME FIELD&lt;/div&gt;
+&lt;div t-if="'some_field' not in docs[0]"&gt;NOT FOUND SOME FIELD&lt;/div&gt;
+`
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.2.33 (2025-07-14)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Requested date in sale order line (requires sale_order_line_date)</li>
+<li>[QUA] Test coverage 80% (524: 106+418) [13 TestPoints] - quality rating 47 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.2.32 (2024-02-28)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Picking: no delivery note / No note consegna in prelievo</li>
+<li>[QUA] Test coverage 39% (650: 395+255)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.2.31 (2024-02-27)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Picking: net weight, delivery note / Peso netto, note consegna in prelievo</li>
+<li>[QUA] Test coverage 39% (650: 395+255)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.2.30 (2024-02-15)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] New custom report picking / Nuova stampa prelievo personalizzato</li>
+<li>[QUA] Test coverage 39% (650: 395+255)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.2.29 (2024-01-15)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] New custom report picking slip</li>
+<li>[QUA] Test coverage 39% (650: 395+255)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.2.29 (2024-01-15)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] Sometimes, some random reports fall in crash</li>
+<li>[FIX] Purchase order, sometime status was not recognized</li>
+<li>[IMP] New custom report delivery slip</li>
+<li>[QUA] Test coverage 39% (650: 395+255)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2025-07-14</p>
+    </div>
+</section>

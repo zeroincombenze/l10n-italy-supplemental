@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="mr_odoo" model="multireport.style">
+        <field name="name">Original Odoo</field>
+        <field name="origin">odoo</field>
+    </record>
+    <record id="mr_style_odoo" model="multireport.style">
+        <field name="name">Odoo based</field>
+        <field name="origin">odoo_based</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_purchase_order_header">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+        <t
+            t-set="address_mode"
+            t-value="report.get_report_attrib('address_mode',o,doc_opts)"
+        />
+        <div class="oe_structure">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div t-if="address_mode == 'standard'">
+                        <div t-if="o.dest_address_id">
+                            <strong>Indirizzo di spedizione:</strong>
+                            <div
+                                t-field="o.dest_address_id"
+                                t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
+                            />
+                        </div>
+                        <div
+                            t-if="not o.dest_address_id and o.picking_type_id and o.picking_type_id.warehouse_id"
+                        >
+                            <span t-field="o.picking_type_id.warehouse_id.name" />
+                            <div
+                                t-field="o.picking_type_id.warehouse_id.partner_id"
+                                t-options='{"widget": "contact", "fields": ["address", "phone", "fax"], "no_marker": True, "phone_icons": True}'
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-5 col-xs-offset-1">
+                    <div
+                        t-field="o.partner_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
+                    />
+                    <p t-if="o.partner_id.vat">VAT: <span
+                            t-field="o.partner_id.vat"
+                        /></p>
+                </div>
+            </div>
+        </div>
+
+        <h2 t-if="o.state not in ('draft', 'sent', 'to approve')">Conferma Ordine #<span t-field="o.name" /></h2>
+        <h2 t-if="o.state in ('draft', 'sent', 'to approve')">Richiesta di Acquisto #<span
+                t-field="o.name"
+            /></h2>
+
+        <!--
+        <t t-set="term_position" t-value="report.get_report_attrib('payment_term_position',o,doc_opts)"/>
+        <t t-if="report.get_report_attrib('payment_term_position',o,doc_opts) == 'header' or (report.get_report_attrib('payment_term_position',o,doc_opts) == 'auto' and len(o.due_records) &lt; 2)" t-set="term_position" t-value="'header'"/>
+        <t t-if="report.get_report_attrib('payment_term_position',o,doc_opts) != 'header' and (report.get_report_attrib('payment_term_position',o,doc_opts) == 'auto' and len(o.due_records) &gt;= 2)" t-set="term_position" t-value="'footer'"/>
+        <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'"/>
+        -->
+        <div class="row mt32 mb32">
+            <div class="col-xs-2" t-if="o.name">
+                <strong>Descrizione:</strong>
+                <p t-field="o.name" />
+            </div>
+            <div class="col-xs-2" t-if="o.partner_id.ref">
+                <strong>Codice cliente:</strong>
+                <p t-field="o.partner_id.ref" />
+            </div>
+            <div t-if="o.partner_ref" class="col-xs-3">
+                <strong>Vostro Riferimento:</strong>
+                <p t-field="o.partner_ref" />
+            </div>
+            <div t-if="o.date_order" class="col-xs-3">
+                <strong>Data Ordine:</strong>
+                <p t-field="o.date_order" />
+            </div>
+        </div>
+    </template>
+
+</odoo>

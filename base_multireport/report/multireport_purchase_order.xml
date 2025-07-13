@@ -1,0 +1,33 @@
+<odoo>
+
+    <template id="base_multireport.report_purchaseorder2">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t
+                    t-set="style"
+                    t-value="res_company.report_model_style.origin or 'odoo'"
+                />
+                <t
+                    t-if="style == 'odoo_based'"
+                    t-call="base_multireport.report_purchaseorder_document"
+                    t-lang="o.partner_id.lang"
+                />
+                <t
+                    t-if="style == 'odoo'"
+                    t-call="purchase.report_purchaseorder_document"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="base_multireport.report_purchaseorde2"
+        model="purchase.order"
+        string="Ordine (personalizzato)"
+        report_type="qweb-pdf"
+        name="base_multireport.report_purchaseorder2"
+        file="base_multireport.report_purchaseorder2"
+    />
+
+</odoo>

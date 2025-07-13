@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_purchase_order_lines">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+
+        <table class="table table-condensed">
+            <t
+                t-set="code_mode"
+                t-value="report.get_report_attrib('code_mode', o, doc_opts)"
+            />
+            <t
+                t-set="description_mode"
+                t-value="report.get_report_attrib('description_mode', o, doc_opts)"
+            />
+            <thead>
+                <tr>
+                    <th t-if="code_mode == 'print'">Codice</th>
+                    <th>Descrizione</th>
+                    <th><strong>C.IVA</strong></th>
+                    <th class="text-center"><strong>Data Rich.</strong></th>
+                    <th class="text-right"><strong>Q.ty</strong></th>
+                    <th class="text-right"><strong>Prezzo unitario</strong></th>
+                    <th class="text-right"><strong>Totale riga</strong></th>
+                </tr>
+            </thead>
+            <tbody class="purchase_order_tbody">
+                <tr t-foreach="o.order_line" t-as="line">
+                    <td t-if="code_mode == 'print'"><span t-field="line.code" /></td>
+                        <td>
+                            <span
+                                style="white-space: pre-wrap"
+                                t-esc="line.description_2_print(description_mode)"
+                            />
+                        </td>
+                    <td>
+                        <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))" />
+                    </td>
+                    <td class="text-center">
+                        <span t-field="line.date_planned" />
+                    </td>
+                    <td class="text-right" style="vertical-align: bottom;">
+                        <span t-field="line.product_qty" />
+                        <span
+                            t-field="line.product_uom.name"
+                            groups="product.group_uom"
+                        />
+                    </td>
+                    <td class="text-right" style="vertical-align: bottom;">
+                        <span t-field="line.price_unit" />
+                    </td>
+                    <td class="text-right" style="vertical-align: bottom;">
+                        <span
+                            t-field="line.price_subtotal"
+                            t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                        />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+</odoo>
