@@ -3,12 +3,12 @@
 
     <template id="report_ddt">
         <t t-call="base_multireport.external_layout">
-            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
             <div class="page">
-                <t t-call="base_multireport.report_ddt_header" />
-                <t t-call="base_multireport.report_ddt_lines" />
-                <t t-call="base_multireport.report_ddt_footer" />
-                <t t-call="base_multireport.delivery_data" />
+                <t t-call="base_multireport.report_ddt_header"/>
+                <t t-call="base_multireport.report_ddt_lines"/>
+                <t t-call="base_multireport.report_ddt_footer"/>
+                <t t-call="base_multireport.delivery_data"/>
             </div>
         </t>
     </template>

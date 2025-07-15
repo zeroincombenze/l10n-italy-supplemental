@@ -4,98 +4,133 @@
     <template id="report_ddt_lines">
         <table class="table table-condensed">
             <t
-                t-set="has_serial_number"
-                t-value="o.line_ids.filtered('move_id.lot_ids')"
-                groups="stock.group_production_lot"
+                    t-set="has_serial_number"
+                    t-value="o.line_ids.filtered('move_id.lot_ids')"
+                    groups="stock.group_production_lot"
             />
             <t
-                t-set="code_mode"
-                t-value="report.get_report_attrib('code_mode',o,doc_opts)"
+                    t-set="code_mode"
+                    t-value="report.get_report_attrib('code_mode',o,doc_opts)"
             />
             <t
-                t-set="description_mode"
-                t-value="report.get_report_attrib('description_mode',o,doc_opts)"
+                    t-set="description_mode"
+                    t-value="report.get_report_attrib('description_mode',o,doc_opts)"
             />
             <thead>
                 <tr>
                     <th t-if="code_mode == 'print'">Codice</th>
-                    <th><strong>Descrizione</strong></th>
-                    <th class="text-right"><strong>UM</strong></th>
-                    <th class="text-right"><strong>Quantità</strong></th>
+                    <th>
+                        <strong>Descrizione</strong>
+                    </th>
+                    <th class="text-right">
+                        <strong>UM</strong>
+                    </th>
+                    <th class="text-right">
+                        <strong>Quantità</strong>
+                    </th>
                     <th name="lot_serial" t-if="has_serial_number" class="text-right">
                         <strong>Lots/Serial Numbers</strong>
                     </th>
                     <t t-if="o.show_price">
-                        <th class="text-right"><strong>Prezzo unitario</strong></th>
-                        <th class="text-right"><strong>Sc.(%)</strong></th>
-                        <th class="text-right"><strong>Totale riga</strong></th>
+                        <th class="text-right">
+                            <strong>Prezzo unitario</strong>
+                        </th>
+                        <th class="text-right">
+                            <strong>Sc.(%)</strong>
+                        </th>
+                        <th class="text-right">
+                            <strong>Totale riga</strong>
+                        </th>
                     </t>
                 </tr>
             </thead>
-            <t t-set="last_order" t-value="''" />
+            <t t-set="last_order" t-value="''"/>
             <tbody>
                 <t
-                    t-set="order_ref_text"
-                    t-if="order_ref_text != 'False'"
-                    t-value="report.get_report_attrib('order_ref_text', o, doc_opts)"
+                        t-set="order_ref_text"
+                        t-if="order_ref_text != 'False'"
+                        t-value="report.get_report_attrib('order_ref_text', o, doc_opts)"
                 />
                 <tr t-foreach="o.line_ids" t-as="line">
-                    <t t-set="lot_dict" t-value="line.quantity_by_lot()" />
+                    <t t-set="lot_dict" t-value="line.quantity_by_lot()"/>
                     <tr
-                        t-if="(order_ref_text or ddt_ref_text) and (line.sale_id and last_order != line.sale_id.name)"
+                            t-if="(order_ref_text or ddt_ref_text) and (line.sale_id and last_order != line.sale_id.name)"
                     >
-                        <td t-if="code_mode == 'print'" />
+                        <td t-if="code_mode == 'print'"/>
                         <td>
-                            <strong><span
-                                    t-esc="line.get_order_ref_text(o, doc_opts, line)"
-                                /></strong>
-                            <t t-set="last_order" t-value="line.sale_id.name" />
+                            <strong>
+                                <span
+                                        t-esc="line.get_order_ref_text(o, doc_opts, line)"
+                                />
+                            </strong>
+                            <t t-set="last_order" t-value="line.sale_id.name"/>
                         </td>
                     </tr>
-                    <td t-if="code_mode == 'print'"><span t-field="line.product_code" /></td>
-                    <td><span
-                            style="white-space: pre-wrap"
-                            t-esc="line.description_2_print(description_mode)"
-                        /></td>
-                    <td class="text-right" style="vertical-align: bottom;"><span
-                            t-field="line.product_uom_id"
-                        /></td>
-                    <td class="text-right" style="vertical-align: bottom;"><span
-                            t-field="line.product_uom_qty"
-                        /></td>
+                    <td t-if="code_mode == 'print'">
+                        <span
+                                style="white-space: pre-wrap"
+                                t-esc="line.code_2_print(code_mode)"
+                        />
+                    </td>
+                    <td>
+                        <span
+                                style="white-space: pre-wrap"
+                                t-esc="line.description_2_print(description_mode)"
+                        />
+                    </td>
+                    <td class="text-right" style="vertical-align: bottom;">
+                        <span
+                                t-field="line.product_uom_id"
+                        />
+                    </td>
+                    <td class="text-right" style="vertical-align: bottom;">
+                        <span
+                                t-field="line.product_uom_qty"
+                        />
+                    </td>
                     <t t-if="has_serial_number">
                         <td
-                            t-if="line.move_id.lot_ids"
-                            class="text-right"
-                            style="vertical-align: bottom;"
+                                t-if="line.move_id.lot_ids"
+                                class="text-right"
+                                style="vertical-align: bottom;"
                         >
                             <t t-foreach="lot_dict" t-as="lot">
-                                <div>· <t t-esc="lot.name" /> <t
-                                        t-if="lot_dict[lot]"
-                                    >(<t t-esc="lot_dict[lot]" />)</t></div>
+                                <div>·
+                                    <t t-esc="lot.name"/>
+                                    <t
+                                            t-if="lot_dict[lot]"
+                                    >(<t t-esc="lot_dict[lot]"/>)
+                                    </t>
+                                </div>
                             </t>
                         </td>
-                        <td t-if="not line.move_id.lot_ids" />
+                        <td t-if="not line.move_id.lot_ids"/>
                     </t>
                     <t t-if="o.show_price">
                         <td
-                            class="text-right"
-                            id="line_price_unit"
-                            style="vertical-align: bottom;"
-                        ><span t-field="line.price_unit" /></td>
+                                class="text-right"
+                                id="line_price_unit"
+                                style="vertical-align: bottom;"
+                        >
+                            <span t-field="line.price_unit"/>
+                        </td>
                         <td
-                            class="text-right"
-                            id="line_discount"
-                            style="vertical-align: bottom;"
-                        ><span t-field="line.discount" /></td>
+                                class="text-right"
+                                id="line_discount"
+                                style="vertical-align: bottom;"
+                        >
+                            <span t-field="line.discount"/>
+                        </td>
                         <td
-                            class="text-right"
-                            id="line_subtotal"
-                            style="vertical-align: bottom;"
-                        ><span t-field="line.price_subtotal" /></td>
+                                class="text-right"
+                                id="line_subtotal"
+                                style="vertical-align: bottom;"
+                        >
+                            <span t-field="line.price_subtotal"/>
+                        </td>
                     </t>
                 </tr>
-                <tr />
+                <tr/>
             </tbody>
         </table>
     </template>

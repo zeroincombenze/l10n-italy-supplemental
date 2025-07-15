@@ -1,0 +1,190 @@
+2025-07-15 15:12:24,000 343675 DAEMON test_base_multireport_10 run_odoo_debug.sh: cd /home/odoo/10.0/venv_odoo && source ./bin/activate
+2025-07-15 13:12:29,080 346165 INFO ? odoo: Odoo version 10.0
+2025-07-15 13:12:29,081 346165 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/base_multireport/tests/logs/zero10.l10n-italy-supplemental.base_multireport.conf
+2025-07-15 13:12:29,081 346165 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/.local/share/Odoo10/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/marketplace', u'/home/odoo/10.0/mis-builder', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/website', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2025-07-15 13:12:29,081 346165 INFO ? odoo: database: odoo10@localhost:5432
+2025-07-15 13:12:29,094 346165 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.localdomain:50142
+2025-07-15 13:12:29,103 346165 INFO test_base_multireport_10 odoo.modules.loading: loading 1 modules...
+2025-07-15 13:12:29,185 346165 INFO test_base_multireport_10 odoo.modules.loading: 1 modules loaded in 0.08s, 0 queries
+2025-07-15 13:12:33,056 346165 INFO test_base_multireport_10 odoo.modules.loading: loading 60 modules...
+2025-07-15 13:12:33,143 346165 INFO test_base_multireport_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2025-07-15 13:12:33,403 346165 INFO test_base_multireport_10 odoo.modules.loading: 60 modules loaded in 0.35s, 0 queries
+2025-07-15 13:12:33,407 346165 INFO test_base_multireport_10 odoo.modules.loading: loading 61 modules...
+2025-07-15 13:12:33,898 346165 INFO test_base_multireport_10 odoo.modules.registry: module base_multireport: creating or updating database tables
+2025-07-15 13:12:34,397 346165 WARNING test_base_multireport_10 py.warnings: /home/odoo/10.0/odoo/models.py:362: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  elif not all(cols[field.name][key] == vals[key] for key in vals):
+
+2025-07-15 13:12:34,794 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/security/ir.model.access.csv
+2025-07-15 13:12:34,869 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/data/multireport_style.xml
+2025-07-15 13:12:34,880 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/data/multireport_template.xml
+2025-07-15 13:12:34,913 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/data/multireport_selection_rules.xml
+2025-07-15 13:12:34,928 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/wizard/wizard_build_report_view.xml
+2025-07-15 13:12:34,969 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/multireport_style_view.xml
+2025-07-15 13:12:35,025 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/ir_actions_report_xml_view.xml
+2025-07-15 13:12:35,057 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/multireport_template_view.xml
+2025-07-15 13:12:35,112 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/multireport_selection_rules_view.xml
+2025-07-15 13:12:35,165 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/config_view.xml
+2025-07-15 13:12:35,204 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/views/layout_templates.xml
+2025-07-15 13:12:35,228 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/paper_format.xml
+2025-07-15 13:12:35,238 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/header-footer.xml
+2025-07-15 13:12:35,292 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_sale_order.xml
+2025-07-15 13:12:35,323 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_ddt.xml
+2025-07-15 13:12:35,393 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_invoice.xml
+2025-07-15 13:12:35,466 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_purchase_order.xml
+2025-07-15 13:12:35,497 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_picking.xml
+2025-07-15 13:12:35,548 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report/multireport_overdue.xml
+2025-07-15 13:12:35,573 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_ddt/report_ddt.xml
+2025-07-15 13:12:35,592 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_ddt/report_ddt_header.xml
+2025-07-15 13:12:35,611 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_ddt/report_ddt_lines.xml
+2025-07-15 13:12:35,630 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_ddt/report_ddt_footer.xml
+2025-07-15 13:12:35,664 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_sale_order/report_sale_order.xml
+2025-07-15 13:12:35,681 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_sale_order/report_sale_order_header.xml
+2025-07-15 13:12:35,717 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_sale_order/report_sale_order_lines.xml
+2025-07-15 13:12:35,736 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_sale_order/report_sale_order_footer.xml
+2025-07-15 13:12:35,759 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_account_invoice/report_invoice.xml
+2025-07-15 13:12:35,812 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_account_invoice/report_invoice_header.xml
+2025-07-15 13:12:35,859 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_account_invoice/report_invoice_lines.xml
+2025-07-15 13:12:35,878 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_account_invoice/report_invoice_footer.xml
+2025-07-15 13:12:35,927 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_purchase_order/report_purchase_order.xml
+2025-07-15 13:12:35,944 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_purchase_order/report_purchase_order_header.xml
+2025-07-15 13:12:35,963 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_purchase_order/report_purchase_order_lines.xml
+2025-07-15 13:12:35,981 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_purchase_order/report_purchase_order_footer.xml
+2025-07-15 13:12:36,002 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_overdue/report_overdue.xml
+2025-07-15 13:12:36,037 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_picking/report_deliveryslip.xml
+2025-07-15 13:12:36,056 346165 INFO test_base_multireport_10 odoo.modules.loading: loading base_multireport/report_picking/report_stockpicking_operations.xml
+2025-07-15 13:12:36,565 346165 INFO test_base_multireport_10 odoo.modules.module: odoo.addons.base_multireport.tests.test_print running tests.
+2025-07-15 13:12:36,565 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: test_print (odoo.addons.base_multireport.tests.test_print.TestInvoiceRound)
+2025-07-15 13:12:36,658 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference base.multi_report.mr_style_odoo not found
+2025-07-15 13:12:36,819 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ xref 'z0bug.mycompany' -> 'base.main_company'
+2025-07-15 13:12:36,820 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ xref 'z0bug.partner_mycompany' -> 'base.main_partner'
+2025-07-15 13:12:37,291 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: 🎺🎺🎺 Starting test v2.0.22 (debug_level=0, commit=True)
+2025-07-15 13:12:37,294 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: 🎺🎺 Testing module: base_multireport (10.0.0.2.34)
+2025-07-15 13:12:37,294 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: 🎺🎺 Loading data from: account.account, account.tax, account.journal, product.template, res.partner, sale.order, sale.order.line, purchase.order, purchase.order.line, account.invoice, account.invoice.line 
+2025-07-15 13:12:42,335 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:42,339 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_1 not found
+2025-07-15 13:12:42,341 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_1 not found
+2025-07-15 13:12:42,442 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:42,444 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:42,446 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:42,544 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_5 not found
+2025-07-15 13:12:42,665 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_eu not found
+2025-07-15 13:12:42,666 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_5 not found
+2025-07-15 13:12:42,769 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_eu not found
+2025-07-15 13:12:42,770 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_5 not found
+2025-07-15 13:12:42,869 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:42,872 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,044 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:43,131 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_sp not found
+2025-07-15 13:12:43,133 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,213 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_sp not found
+2025-07-15 13:12:43,216 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,303 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,388 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:43,391 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_1 not found
+2025-07-15 13:12:43,392 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_1 not found
+2025-07-15 13:12:43,476 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_xx not found
+2025-07-15 13:12:43,477 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_0 not found
+2025-07-15 13:12:43,562 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_nl not found
+2025-07-15 13:12:43,564 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_0 not found
+2025-07-15 13:12:43,735 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:43,736 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_2 not found
+2025-07-15 13:12:43,820 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:43,822 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,823 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_3 not found
+2025-07-15 13:12:43,907 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_rc not found
+2025-07-15 13:12:43,909 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_2 not found
+2025-07-15 13:12:43,910 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_2 not found
+2025-07-15 13:12:43,997 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:44,082 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_li not found
+2025-07-15 13:12:44,083 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_4 not found
+2025-07-15 13:12:44,165 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_li not found
+2025-07-15 13:12:44,166 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_4 not found
+2025-07-15 13:12:44,250 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_xx not found
+2025-07-15 13:12:44,251 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_4 not found
+2025-07-15 13:12:44,252 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_4 not found
+2025-07-15 13:12:44,350 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_sp not found
+2025-07-15 13:12:44,351 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.payment_1 not found
+2025-07-15 13:12:44,435 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: ⚠ External reference z0bug.fiscalpos_it not found
+2025-07-15 13:12:46,728 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺🎺 Testing Document Print
+2025-07-15 13:12:46,728 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print sale order
+2025-07-15 13:12:47,137 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:47,137 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/58/58fd4f74ff005d177019f05fa0a5fad6562b5fcf
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/58/58fd4f74ff005d177019f05fa0a5fad6562b5fcf'
+2025-07-15 13:12:50,003 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print purchase order
+2025-07-15 13:12:50,233 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:50,400 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print picking order
+2025-07-15 13:12:50,404 346165 WARNING test_base_multireport_10 odoo.osv.expression: The domain term '('product_id', '=', [40, 41, 42])' should use the 'in' or 'not in' operator.
+2025-07-15 13:12:51,533 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:51,554 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print delivery note
+2025-07-15 13:12:51,911 346165 INFO test_base_multireport_10 odoo.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [12, 13]
+2025-07-15 13:12:51,936 346165 INFO test_base_multireport_10 odoo.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [14, 15]
+2025-07-15 13:12:51,951 346165 INFO test_base_multireport_10 odoo.models.unlink: User #1 deleted stock.move.operation.link records with IDs: [16, 17]
+2025-07-15 13:12:52,537 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:52,570 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print invoice
+2025-07-15 13:12:53,321 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:53,344 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print invoice
+2025-07-15 13:12:54,394 346165 INFO test_base_multireport_10 odoo.addons.base.ir.ir_attachment: _read_file reading /home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227
+Traceback (most recent call last):
+  File "/home/odoo/10.0/odoo/addons/base/ir/ir_attachment.py", line 100, in _file_read
+    r = open(full_path,'rb').read().encode('base64')
+IOError: [Errno 2] No such file or directory: u'/home/odoo/.local/share/Odoo10/filestore/test_base_multireport_10/d6/d6c84c13589b2232842fdbb26d2c476c52075227'
+2025-07-15 13:12:54,408 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: 🎺 Test print overdue
+2025-07-15 13:12:54,456 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.testenv: 🏆🥇 [1;32m13 tests SUCCESSFULLY completed[0m
+2025-07-15 13:12:54,458 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: Ran 1 test in 17.892s
+2025-07-15 13:12:54,458 346165 INFO test_base_multireport_10 odoo.addons.base_multireport.tests.test_print: OK
+2025-07-15 13:12:54,458 346165 INFO test_base_multireport_10 odoo.modules.module: odoo.addons.base_multireport.tests.test_print tested in 17.89s, 27770 queries
+2025-07-15 13:12:54,492 346165 INFO test_base_multireport_10 odoo.modules.loading: 61 modules loaded in 21.08s, 27776 queries
+2025-07-15 13:12:54,874 346165 INFO test_base_multireport_10 odoo.modules.loading: Modules loaded.
+2025-07-15 13:12:54,879 346165 INFO test_base_multireport_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2025-07-15 13:12:54,880 346165 INFO test_base_multireport_10 odoo.models: Computing parent left and right for table ir_ui_menu...
+2025-07-15 13:12:54,943 346165 INFO test_base_multireport_10 odoo.modules.registry: Registry changed, signaling through the database
+2025-07-15 13:12:54,944 346165 INFO test_base_multireport_10 odoo.service.server: Initiating shutdown
+2025-07-15 13:12:54,944 346165 INFO test_base_multireport_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36mbase_multireport[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/10.0/l10n-italy-supplemental/base_multireport/tests/logs/coverage_base_multireport_10rc -m
+[34;107mName                                                                                                   Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------------------------------------------------------------------
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/account_invoice.py                        59      8    86%   29, 46, 51, 63, 76, 81, 93, 100
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/account_overdue_report.py                 39      1    97%   77
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/ir_actions_report_xml.py                  33      7    79%   186-193
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/multireport_mixin.py                      21      8    62%   22-24, 41, 44, 46-48
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/multireport_selection_rules.py            24      1    96%   21
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/multireport_style.py                      26      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/multireport_template.py                   34      7    79%   42-56
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/purchase_order.py                          4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/report.py                                120     30    75%   59, 70, 84, 89-90, 96, 120, 134, 137, 141-143, 145, 147-187
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/res_company.py                             7      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/sale_order.py                             21      4    81%   18, 36, 38-39
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/models/stock_picking_package_preparation.py      43     13    70%   33-45, 57, 62, 74
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/post_install.py                                  57      4    93%   139-140, 143-144
+/home/odoo/10.0/l10n-italy-supplemental/base_multireport/wizard/wizard_build_report.py                    30     20    33%   46-69
+------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                    518    103    80%
+[0m

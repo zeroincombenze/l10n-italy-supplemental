@@ -9,12 +9,12 @@
         <t t-foreach="o.order_lines_layouted()" t-as="page">
             <table class="table table-condensed">
                 <t
-                    t-set="code_mode"
-                    t-value="report.get_report_attrib('code_mode', o, doc_opts)"
+                        t-set="code_mode"
+                        t-value="report.get_report_attrib('code_mode', o, doc_opts)"
                 />
                 <t
-                    t-set="description_mode"
-                    t-value="report.get_report_attrib('description_mode', o, doc_opts)"
+                        t-set="description_mode"
+                        t-value="report.get_report_attrib('description_mode', o, doc_opts)"
                 />
                 <thead>
                     <tr>
@@ -57,13 +57,18 @@
                         <!-- Lines associated -->
                         <t t-foreach="layout_category['lines']" t-as="l">
                             <tr>
-                                <td t-if="code_mode == 'print'"><span t-field="l.product_code" /></td>
+                                <td t-if="code_mode == 'print'">
+                                    <span
+                                            style="white-space: pre-wrap"
+                                            t-esc="l.code_2_print(code_mode)"
+                                    />
+                                </td>
                                 <td>
-                            <span
-                                style="white-space: pre-wrap"
-                                t-esc="l.description_2_print(description_mode)"
-                            />
-                        </td>
+                                    <span
+                                            style="white-space: pre-wrap"
+                                            t-esc="l.description_2_print(description_mode)"
+                                    />
+                                </td>
                                 <td t-if="display_deliverydate">
                                     <span t-field="l.delivery_date"/>
                                 </td>

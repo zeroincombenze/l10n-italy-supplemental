@@ -1,3 +1,9 @@
+10.0.0.2.34 (2025-07-15)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Purchase order print / Stampa ordine fornitore
+* [QUA] Test coverage 80% (518: 103+415) [13 TestPoints] - quality rating 47 (target 100)
+
 10.0.0.2.33 (2025-07-14)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

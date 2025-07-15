@@ -6,7 +6,7 @@
 #
 {
     "name": "base_rule_multireport",
-    "version": "10.0.0.2.33",
+    "version": "10.0.0.2.34",
     "category": "Generic Modules/Accounting",
     "summary": "Manage document multiple reports",
     "author": "SHS-AV s.r.l.",
