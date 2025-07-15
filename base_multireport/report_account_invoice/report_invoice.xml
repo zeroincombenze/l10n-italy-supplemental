@@ -3,30 +3,30 @@
 
     <template id="report_invoice_document">
         <t t-call="base_multireport.external_layout">
-            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
             <div class="page">
-                <t t-call="base_multireport.report_invoice_header" />
-                <t t-call="base_multireport.report_invoice_lines" />
-                <t t-call="base_multireport.report_invoice_footer" />
+                <t t-call="base_multireport.report_invoice_header"/>
+                <t t-call="base_multireport.report_invoice_lines"/>
+                <t t-call="base_multireport.report_invoice_footer"/>
             </div>
         </t>
     </template>
 
     <template
-        id="account_invoice_report_duplicate"
-        inherit_id="base_multireport.report_invoice_document"
-        primary="True"
+            id="account_invoice_report_duplicate"
+            inherit_id="base_multireport.report_invoice_document"
+            primary="True"
     >
         <xpath
-            expr="//t[@t-call='base_multireport.report_invoice_header']"
-            position="before"
+                expr="//t[@t-call='base_multireport.report_invoice_header']"
+                position="before"
         >
             <t
-                t-if="o.type == 'out_refund'"
-                t-set="doctype"
-                t-value="'NC di cortesia'"
+                    t-if="o.type == 'out_refund'"
+                    t-set="doctype"
+                    t-value="'NC di cortesia'"
             />
-            <t t-if="not doctype" t-set="doctype" t-value="'Fattura di cortesia'" />
+            <t t-if="not doctype" t-set="doctype" t-value="'Fattura di cortesia'"/>
         </xpath>
         <!--
         <xpath expr="//t[@t-call='base_multireport.report_invoice_footer']" position="before">
@@ -37,27 +37,27 @@
     </template>
 
     <template
-        id="report_delivery_invoice_document"
-        inherit_id="base_multireport.report_invoice_document"
-        primary="True"
+            id="report_delivery_invoice_document"
+            inherit_id="base_multireport.report_invoice_document"
+            primary="True"
     >
         <xpath
-            expr="//t[@t-call='base_multireport.report_invoice_header']"
-            position="before"
+                expr="//t[@t-call='base_multireport.report_invoice_header']"
+                position="before"
         >
             <t
-                t-if="o.type == 'out_refund'"
-                t-set="doctype"
-                t-value="'Nota Credito accompagnatoria'"
+                    t-if="o.type == 'out_refund'"
+                    t-set="doctype"
+                    t-value="'Nota Credito accompagnatoria'"
             />
-            <t t-if="not doctype" t-set="doctype" t-value="'Fattura accompagnatoria'" />
-            <t t-set="ddt_ref_text" t-value="'False'" />
+            <t t-if="not doctype" t-set="doctype" t-value="'Fattura accompagnatoria'"/>
+            <t t-set="ddt_ref_text" t-value="'False'"/>
         </xpath>
         <xpath
-            expr="//t[@t-call='base_multireport.report_invoice_footer']"
-            position="after"
+                expr="//t[@t-call='base_multireport.report_invoice_footer']"
+                position="after"
         >
-            <t t-call="base_multireport.delivery_data_in_invoice" />
+            <t t-call="base_multireport.delivery_data_in_invoice"/>
         </xpath>
     </template>
 

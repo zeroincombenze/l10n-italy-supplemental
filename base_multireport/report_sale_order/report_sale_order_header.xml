@@ -2,81 +2,88 @@
 <odoo>
 
     <template id="report_saleorder_header">
-        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
         <t
-            t-set="address_mode"
-            t-value="report.get_report_attrib('address_mode', o, doc_opts)"
+                t-set="address_mode"
+                t-value="report.get_report_attrib('address_mode', o, doc_opts)"
         />
         <div class="row">
             <div class="col-xs-6">
                 <div
-                    t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id != o.partner_id"
+                        t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id != o.partner_id"
                 >
                     <strong>Indirizzo di spedizione:</strong>
                     <div
-                        t-field="o.partner_shipping_id"
-                        t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
+                            t-field="o.partner_shipping_id"
+                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
                     />
                 </div>
             </div>
             <div class="col-xs-5 col-xs-offset-1">
                 <strong
-                    t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id == o.partner_id"
-                >Indirizzo di spedizione e fatturazione:</strong>
+                        t-if="address_mode == 'standard' and o.partner_shipping_id and o.partner_shipping_id == o.partner_id"
+                >Indirizzo di spedizione e fatturazione:
+                </strong>
                 <strong
-                    t-if="address_mode == 'standard' and (not o.partner_shipping_id or o.partner_shipping_id != o.partner_id)"
-                >Indirizzo di fatturazione:</strong>
+                        t-if="address_mode == 'standard' and (not o.partner_shipping_id or o.partner_shipping_id != o.partner_id)"
+                >Indirizzo di fatturazione:
+                </strong>
                 <strong
-                    t-if="address_mode != 'standard'"
-                >Indirizzo di fatturazione:</strong>
+                        t-if="address_mode != 'standard'"
+                >Indirizzo di fatturazione:
+                </strong>
                 <div
-                    t-field="o.partner_invoice_id"
-                    t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
+                        t-field="o.partner_invoice_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": True, "phone_icons": True}'
                 />
-                <p t-if="o.partner_id.vat">P.IVA: <span
-                        t-field="o.partner_id.vat"
-                    /></p>
-                <p t-if="o.partner_id.fiscalcode">CF: <span
-                        t-field="o.partner_id.fiscalcode"
-                    /></p>
+                <p t-if="o.partner_id.vat">P.IVA:
+                    <span
+                            t-field="o.partner_id.vat"
+                    />
+                </p>
+                <p t-if="o.partner_id.fiscalcode">CF:
+                    <span
+                            t-field="o.partner_id.fiscalcode"
+                    />
+                </p>
             </div>
         </div>
 
-        <t t-call="base_multireport.report_saleorder_body_header" />
+        <t t-call="base_multireport.report_saleorder_body_header"/>
 
     </template>
 
     <template id="report_saleorder_body_header">
         <t
-            t-set="term_position"
-            t-value="report.get_report_attrib('payment_term_position', o ,doc_opts)"
+                t-set="term_position"
+                t-value="report.get_report_attrib('payment_term_position', o ,doc_opts)"
         />
         <!--
         <t t-if="report.get_report_attrib('payment_term_position', o ,doc_opts) == 'header' or (report.get_report_attrib('payment_term_position', o ,doc_opts) == 'auto' and len(o.due_records) &lt; 2)" t-set="term_position" t-value="'header'"/>
         <t t-if="report.get_report_attrib('payment_term_position', o ,doc_opts) != 'header' and (report.get_report_attrib('payment_term_position', o ,doc_opts) == 'auto' and len(o.due_records) &gt;= 2)" t-set="term_position" t-value="'footer'"/>
         -->
-        <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'" />
+        <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'"/>
         <h2>
             <span t-if="o.state not in ['draft','sent']">Ordine N.</span>
             <span t-if="o.state in ['draft','sent']">Preventivo N.</span>
-            <span t-field="o.name" />
+            <span t-field="o.name"/>
         </h2>
         <div class="row mt32 mb32" id="informations">
             <div t-if="o.client_order_ref" class="col-xs-3">
                 <strong>Vs. riferimento:</strong>
-                <p t-field="o.client_order_ref" />
+                <p t-field="o.client_order_ref"/>
             </div>
             <div t-if="o.date_order" class="col-xs-2">
                 <strong t-if="o.state not in ('draft', 'sent')">Data ordine:</strong>
                 <strong t-if="o.state in ('draft', 'sent')">Date preventivo:</strong>
-                <p t-field="o.date_order" t-options="{'widget': 'date'}" />
+                <p t-field="o.date_order" t-options="{'widget': 'date'}"/>
             </div>
             <div
-                class="col-xs-2"
-                t-if="o.validity_date and o.state in ('draft', 'sent')"
+                    class="col-xs-2"
+                    t-if="o.validity_date and o.state in ('draft', 'sent')"
             >
                 <strong>Data validità:</strong>
-                <p t-field="o.validity_date" />
+                <p t-field="o.validity_date"/>
             </div>
             <!--
             <div class="col-xs-2" t-if="o.validity_date and o.validity_date > o.date_order and o.state not in ('draft', 'sent')">
@@ -86,11 +93,11 @@
             -->
             <div t-if="o.user_id.name" class="col-xs-3">
                 <strong>Commerciale:</strong>
-                <p t-field="o.user_id" />
+                <p t-field="o.user_id"/>
             </div>
             <div class="col-xs-4" name="payment_term" t-if="o.payment_term_id">
                 <strong>Termini di pagamento:</strong>
-                <p t-field="o.payment_term_id" />
+                <p t-field="o.payment_term_id"/>
             </div>
         </div>
     </template>
