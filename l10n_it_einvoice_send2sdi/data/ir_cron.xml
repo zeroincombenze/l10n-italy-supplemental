@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="validate_sent_einvoice" model="ir.cron">
+        <field name="name">Check for delivered e-invoices</field>
+        <field name="active" eval="True"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'fatturapa.attachment.out'"/>
+        <field name="function" eval="'send_verify_all'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+
+    <record id="receive_einvoice" model="ir.cron">
+        <field name="name">Receive supplier e-invoices</field>
+        <field name="active" eval="True"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'fatturapa.attachment.in'"/>
+        <field name="function" eval="'import_xml_invoice'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+
+    <record id="send_einvoice" model="ir.cron">
+        <field name="name">Send all e-invoices</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'fatturapa.attachment.out'"/>
+        <field name="function" eval="'send_all_xml_invoices'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+</odoo>

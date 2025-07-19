@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_invoice_fatturapa_send2sdi_tree" model="ir.ui.view">
+        <field name="name">view.invoice.fatturapa.send2sdi.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="fatturapa_state" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_fatturapa_send2sdi_form" model="ir.ui.view">
+        <field name="name">view.invoice.fatturapa.send2sdi.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+          <button name="action_invoice_proforma2" position="before">
+              <button
+                    name="send_einvoice"
+                    states="open,paid"
+                    string="Invia a SDI"
+                    type="object"
+                    class="oe_highlight"
+                />
+          </button>
+            <xpath expr="//field[@name='date_invoice']" position="after">
+                <field name="fatturapa_state" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_fatturapa_send2sdi_filter" model="ir.ui.view">
+        <field name="name">view.account.invoice.fatturapa.send2sdi.filter</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='late']" position="after">
+                <separator />
+                <filter
+                    name="fatturapa_ready"
+                    string="Electronic Invoice Ready to Send"
+                    domain="[('fatturapa_state','=','ready')]"
+                />
+                <filter
+                    name="fatturapa_errors"
+                    string="Electronic Invoice Error"
+                    domain="[('fatturapa_state','=','error')]"
+                />
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter
+                    string="Electronic Invoice State"
+                    context="{'group_by':'fatturapa_state'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

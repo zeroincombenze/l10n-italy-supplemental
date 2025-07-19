@@ -1,0 +1,239 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Send E-Invoice to customer through SdI</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Invio e-fatture a clienti tramite SdI</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.png" alt="Send E-Invoice to SdI" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module can send Italian e-invoices to Customer through
+<a href="http://www.fatturapa.gov.it/export/fatturazione/it/sdi.htm">Sdi</a></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo permette di inviare le fatture tramite uno canale
+<a href="http://www.fatturapa.gov.it/export/fatturazione/it/sdi.htm">Sdi</a>
+<p align="justify">
+In questa versione &#232; implementato uno specifico canale JSON verso hub di
+terzo incaricato e il canale PEC.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><span class="fa fa-th-large" style="color:#7C7BAD"/> Accounting &#187; Configuration &#187; Accounting &#187; Tax Authority Definition &#187; Sender Channel
+<p align="justify">
+Values:
+</p><p align="justify">
+<ul>
+<li>SDI Channel = JSON</li>
+<li>Client ID = <i>Supplied by Evolve</i></li>
+<li>Client key = <i>Supplied by Evolve</i></li>
+<li>URL Sender = https://www.certdoc.it/rest/api/v1/</li>
+<li>Company ID = <i>Supplied by Evolve</i></li>
+<li>Custom1 = <i>Evolve out channel</i> (default 1)</li>
+<li>Custom2 = <i>Evolve in channel</i> (default 2)</li>
+<li>Custom3 = <i>Evolve sent channel</i> (default 3)</li>
+<li>Custom4 = # day before today to read (max 60), (default 59)</li>
+</ul>
+</p><p align="justify">
+Warning: Custom4 &gt; 0 and &lt; 60 disable downloaded flag
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><span class="fa fa-th-large" style="color:#7C7BAD"/> Contabilit&#224; &#187; Configurazione &#187; Contabilit&#224; &#187; Definizioni Agenzia delle Entrate &#187; Canale Invio
+<p align="justify">
+Valori:
+</p><p align="justify">
+<ul>
+<li>SDI Channel = JSON</li>
+<li>Client ID = <i>Fornito da Evolve</i></li>
+<li>Client key = <i>Fornito da Evolve</i></li>
+<li>URL Sender = https://www.certdoc.it/rest/api/v1/</li>
+<li>Company ID = <i>Fornito da Evolve</i></li>
+<li>Custom1 = <i>Canale Evolve versamento fatture attive</i> (predefinito 1)</li>
+<li>Custom2 = <i>Canale Evolve fatture passive</i> (predefinito 2)</li>
+<li>Custom3 = <i>Canale Evolve fatture attive</i> (predefinito 3)</li>
+<li>Custom4 = N. giorni indetro da leggere (max 60), (predefinito 59)</li>
+</ul>
+</p><p align="justify">
+Attenzione: Custom4 &gt; 0 e &lt; 60 disbailita il controllo fattura gi&#224; scaricata
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Click on button <span style="color:white;background-color:#7C7BAD">&#160;Invia&#160;a&#160;Sdi&#160;</span></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Clicccare su bottone <span style="color:white;background-color:#7C7BAD">&#160;Invia&#160;a&#160;Sdi&#160;</span></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.1.0.56 (2025-07-19)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Move from repo l10n-italy</li>
+<li>[QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.55 (2025-05-27)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] Received filename .xml.p7m are equal to .xml / File firmati equiparati a non firmati</li>
+<li>[IMP] Search incremental documents / Ricerca incrementale dei documenti</li>
+<li>[QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.54 (2025-05-15)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] New domain mode based on invoice date</li>
+<li>[QUA] Test coverage 15% (824: 697+127) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.53 (2025-03-14)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Minor improvements</li>
+<li>[QUA] Test coverage 15% (821: 694+127) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.52 (2025-02-18)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Minor improvements</li>
+<li>[QUA] Test coverage 15% (821: 694+127) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+</p><p align="justify">
+<h4>10.0.1.0.51 (2025-01-13)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] New Evolve PA states / Nuovi stati fattura PA</li>
+<li>[QUA] Test coverage 15% (821: 694+127) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.50 (2024-12-12)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] New Evolve PA states / Nuovi stati fattura PA</li>
+<li>[QUA] Test coverage 15% (821: 694+127) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.49 (2024-09-09)</h4>
+</p><p align="justify">
+<ul>
+<li>[QUA] Test coverage 15% (817: 692+125) [0 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.48 (2024-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Send by cron / Invio fatture schedulato</li>
+<li>[QUA] Test coverage 15% (817: 692+125) [0 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.46 (2024-08-07)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Minor improvements</li>
+<li>[QUA] Test coverage 15% (812: 688+124) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.45 (2024-07-03)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Minor improvements</li>
+<li>[QUA] Test coverage 15% (814: 688+126) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.0.44 (2024-05-14)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] Invoice rejected in some cases</li>
+<li>[QUA] Test coverage 15% (814: 688+126) [1 TestPoints] - quality rating 10 (target 100)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.pointec.it">Pointec s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:cesare@pointec.it">Cesare Pellegrini</a></li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2025-07-19</p>
+    </div>
+</section>
