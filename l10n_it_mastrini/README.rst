@@ -1,5 +1,5 @@
 ==============================================
-|icon| l10n_it_mastrini/mastrino 12.0.10.12.35
+|icon| l10n_it_mastrini/mastrino 12.0.10.12.36
 ==============================================
 
 **Mastrino contabile**
@@ -144,17 +144,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+12.0.10.12.36 (2025-07-22)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Comparing currency / Confronto importi valuta e interni
+* [QUA] Test coverage 29% (464: 331+133) [0 TestPoints] - quality rating 20 (target 100)
+
 12.0.10.12.35 (2024-02-21)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Comparing currency / Confronto importi valuta e interni
-
-12.0.10.12.34 (2022-06-30)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Currency statement / E/C in valuta
-* [IMP] Residual amounts (experimental) / Importo partite aperte (sperimentale)
-* [QUA] Test coverage 29% (456: 326+130) [0 TestPoints] - quality rating 18 (target 100)
 
 
 
@@ -172,6 +171,7 @@ Authors | Autori
 
 * `SHS-AV s.r.l. <https://www.zeroincombenze.it>`__
 * `Didotech s.r.l. <https://www.didotech.com>`__
+* `Odoo Community Association (OCA) <https://odoo-community.org>`__
 
 
 
@@ -208,7 +208,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-02-21
+Last Update / Ultimo aggiornamento: 2025-07-22
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

@@ -7,7 +7,7 @@
 #
 {
     "name": "l10n_it_mastrini",
-    "version": "12.0.10.12.35",
+    "version": "12.0.10.12.36",
     "category": "Mastrini",
     "summary": "Mastrino contabile",
     "author": "SHS-AV s.r.l.,Didotech s.r.l.,Odoo Community Association (OCA)",

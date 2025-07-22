@@ -3,7 +3,8 @@
 # License OPL-1 or later
 #   https://www.odoo.com/documentation/user/12.0/legal/licenses/licenses.html#odoo-apps)
 #
-import datetime
+from datetime import datetime, date, timedelta
+import calendar
 
 from odoo import fields, models, api
 
@@ -241,16 +242,30 @@ class AccountMastriniWizard(models.TransientModel):
         string="Tipo", comodel_name="account.account.type"
     )
 
-    # Data iniziale -> default primo giorno esercizio corrente
     @api.model
     def _default_fy(self):
-        if self._search_fy(datetime.date.today()):
-            return self._search_fy(datetime.date.today()).id
+        if self._search_fy(date.today()):
+            return self._search_fy(date.today()).id
         else:
             return False
-        # end if
 
-    # end _default_fy
+    @api.model
+    def _default_date_from(self):
+        ordinal = date.today().toordinal() - (28 if date.today().day < 8 else 0)
+        return date(
+            date.fromordinal(ordinal).year,
+            date.fromordinal(ordinal).month,
+            1
+        )
+
+    def _default_date_to(self):
+        ordinal = date.today().toordinal() - (28 if date.today().day < 8 else 0)
+        return date(
+            date.fromordinal(ordinal).year,
+            date.fromordinal(ordinal).month,
+            calendar.monthrange(date.fromordinal(ordinal).year,
+                                date.fromordinal(ordinal).month)[1]
+        )
 
     @api.model
     def _is_company_currency(self):
@@ -258,7 +273,7 @@ class AccountMastriniWizard(models.TransientModel):
                 or self.currency_id == self.env.user.company_id.currency_id)
 
     fiscalyear_id = fields.Many2one(
-        string="Anno fiscale:", comodel_name="account.fiscal.year", default=_default_fy
+        string="Anno fiscale:", comodel_name="account.fiscal.year"
     )
 
     date_range_id = fields.Many2one(
@@ -281,11 +296,8 @@ class AccountMastriniWizard(models.TransientModel):
         comodel_name="res.partner",
     )
 
-    # Data iniziale -> default primo giorno esercizio corrente
-    date_from = fields.Date(string="Da:")
-
-    # Data finale -> default primo giorno esercizio corrente
-    date_to = fields.Date(string="A:")
+    date_from = fields.Date(string="Da:", default=_default_date_from)
+    date_to = fields.Date(string="A:", default=_default_date_to)
 
     # Journal
     journal_id = fields.Many2one(string="Registro", comodel_name="account.journal")
@@ -402,10 +414,6 @@ class AccountMastriniWizard(models.TransientModel):
             self.date_from = self.fiscalyear_id.date_from
             self.date_to = self.fiscalyear_id.date_to
 
-        # end if
-
-    # end onchange_fy
-
     @api.onchange("date_range_id")
     def _onchange_date_range_id(self):
 
@@ -415,13 +423,8 @@ class AccountMastriniWizard(models.TransientModel):
             self.date_from = self.date_range_id.date_start
             self.date_to = self.date_range_id.date_end
 
-        # end if
-
-    # end onchange_fy
-
     @api.onchange("date_from", "date_to")
     def _onchange_date_from_to(self):
-
         fy = self.fiscalyear_id
         dr = self.date_range_id
 
@@ -429,34 +432,23 @@ class AccountMastriniWizard(models.TransientModel):
         if fy:
             if fy.date_from != self.date_from:
                 self.fiscalyear_id = False
-            # end if
 
             if fy.date_to != self.date_to:
                 self.fiscalyear_id = False
-            # end if
-        # end if
 
         # Unset date range if start and end dates does not match
         if dr:
             if dr.date_start != self.date_from:
                 self.date_range_id = False
-            # end if
 
             if dr.date_end != self.date_to:
                 self.date_range_id = False
-            # end if
-        # end if
-
-    # end onchange_date_from_to
 
     @api.multi
     @api.onchange("filter_by_partner")
     def _onchange_filter_by_partner(self):
         if self.filter_by_partner:
             self.max_rows = self.MAX_ROWS_SELECTION[0]
-        # end if
-
-    # end onchange_filter_by_partner
 
     @api.multi
     @api.onchange("account_id")
@@ -467,9 +459,6 @@ class AccountMastriniWizard(models.TransientModel):
         else:
             self.account_nature = False
             self.account_user_type = False
-        # end if
-        # return {"domain": self.select_currency()}
-    # end onchange_filter_by_partner
 
     @api.onchange("currency_id")
     def _onchange_currency_id(self):
@@ -495,9 +484,6 @@ class AccountMastriniWizard(models.TransientModel):
             }
         else:
             return None
-        # end if
-
-    # end _onchange_move_line_ids
 
     #
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -619,7 +605,7 @@ class AccountMastriniWizard(models.TransientModel):
 
         self.ensure_one()
         _logger.debug(
-            f"[{datetime.datetime.now()}] DEBUG - _compute_move_line_ids start"
+            f"[{datetime.now()}] DEBUG - _compute_move_line_ids start"
         )
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -648,7 +634,7 @@ class AccountMastriniWizard(models.TransientModel):
 
             if self.pre_date_from and self.pre_date_to:
 
-                ts = datetime.datetime.now()
+                ts = datetime.now()
                 _logger.debug(
                     f"[{ts}] DEBUG - _compute_move_line_ids\t"
                     "\tSomme periodo precedente BEGIN"
@@ -673,7 +659,7 @@ class AccountMastriniWizard(models.TransientModel):
                     [self.get_line_credit(line) for line in move_lines])
                 pre_balance_ccy = pre_debit_ccy - pre_credit_ccy
 
-                te = datetime.datetime.now()
+                te = datetime.now()
                 _logger.debug(
                     f"[{te}] DEBUG - _compute_move_line_ids\t"
                     "\tSomme periodo precedente END ({te - ts})"
@@ -702,13 +688,13 @@ class AccountMastriniWizard(models.TransientModel):
             #
 
             # Estrazione linee periodo
-            ts = datetime.datetime.now()
+            ts = datetime.now()
             _logger.debug(
                 f"[{ts}] DEBUG - _compute_move_line_ids\t"
                 "\tEstrazione linee periodo BEGIN"
             )
             move_lines = self._get_lines(self.date_from, self.date_to, self.move_state)
-            te = datetime.datetime.now()
+            te = datetime.now()
             _logger.debug(
                 f"[{te}] DEBUG - _compute_move_line_ids\t"
                 "\tEstrazione linee periodo END ({te - ts})"
@@ -726,7 +712,7 @@ class AccountMastriniWizard(models.TransientModel):
             # Limitazione numero di righe visualizzate
             move_lines = move_lines[: self.max_rows]
 
-            ts = datetime.datetime.now()
+            ts = datetime.now()
             _logger.debug(
                 f"[{ts}] DEBUG - _compute_move_line_ids\t\tWrapping linee periodo BEGIN"
             )
@@ -745,14 +731,14 @@ class AccountMastriniWizard(models.TransientModel):
                 }
                 for line in move_lines
             ]  # SLOW FUNCTION
-            te = datetime.datetime.now()
+            te = datetime.now()
             _logger.debug(
                 f"[{te}] DEBUG - _compute_move_line_ids\t"
                 "\tWrapping linee periodo END ({te - ts})"
             )
 
-            # Add balance to each line ts = datetime.datetime.now()
-            ts = datetime.datetime.now()
+            # Add balance to each line ts = datetime.now()
+            ts = datetime.now()
             _logger.debug(
                 f"[{ts}] DEBUG - _compute_move_line_ids\t\tRolling balance BEGIN"
             )
@@ -761,7 +747,7 @@ class AccountMastriniWizard(models.TransientModel):
                 initial_balance_ccy=pre_balance_ccy,
                 wrapped_lines=period_wrapped_lines
             )
-            te = datetime.datetime.now()
+            te = datetime.now()
             _logger.debug(
                 f"[{te}] DEBUG - _compute_move_line_ids\t"
                 "\tRolling balance END ({te - ts})"
@@ -828,7 +814,7 @@ class AccountMastriniWizard(models.TransientModel):
             wrapped_lines_values += post_period_wrapped_lines
 
             # Create the wrapped lines
-            ts = datetime.datetime.now()
+            ts = datetime.now()
             _logger.debug(
                 f'[{ts}] DEBUG - _compute_move_line_ids\t"'
                 f'"\t"Create" delle linee wrapped BEGIN'
@@ -836,7 +822,7 @@ class AccountMastriniWizard(models.TransientModel):
             line_wrappers = self.env["account.move.line.wrapper"].create(
                 wrapped_lines_values
             )
-            te = datetime.datetime.now()
+            te = datetime.now()
             _logger.debug(
                 f'[{te}] DEBUG - _compute_move_line_ids\t"'
                 f'"\t"Create" delle linee wrapped END ({te - ts})'
@@ -845,27 +831,27 @@ class AccountMastriniWizard(models.TransientModel):
 
             # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
             # Assegnazione linee a wizard recordset
-            ts = datetime.datetime.now()
+            ts = datetime.now()
             _logger.debug(
                 f"[{ts}] DEBUG - _compute_move_line_ids"
                 f"\t\tAssegnazione delle wrapped lines al wizard BEGIN"
             )
             self.move_line_ids = line_wrappers
-            te = datetime.datetime.now()
+            te = datetime.now()
             _logger.debug(
                 f"[{te}] DEBUG - _compute_move_line_ids"
                 f"\t\tAssegnazione delle wrapped lines al wizard END ({te - ts})"
             )
 
             _logger.debug(
-                f"[{datetime.datetime.now()}] "
+                f"[{datetime.now()}] "
                 "DEBUG - _compute_move_line_ids end ({len(self.move_line_ids)} lines)"
             )
             # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         else:
             _logger.debug(
-                f"[{datetime.datetime.now()}] "
+                f"[{datetime.now()}] "
                 "DEBUG - _compute_move_line_ids end (no lines)"
             )
             self.move_line_ids = False
@@ -970,9 +956,7 @@ class AccountMastriniWizard(models.TransientModel):
     def _compute_pre_date_from(self):
 
         self.ensure_one()
-
         if self.account_id:
-
             account_nature = self.account_id.user_type_id.nature.lower()
 
             # Selezione data di inizio
@@ -989,13 +973,10 @@ class AccountMastriniWizard(models.TransientModel):
                 if self.date_from:
                     fy = self._search_fy(self.date_from)
                     self.pre_date_from = fy and fy.date_from or False
-                #  else:
-                #     date_from = False
-                # end if
 
             elif account_nature in self.CONTI_PATRIMONIALI:
                 # Conti patrimoniali: si parte dall'inizio dei tempi
-                self.pre_date_from = datetime.date(1, 1, 1)
+                self.pre_date_from = date(1900, 1, 1)
 
             else:
                 assert False, (
@@ -1004,10 +985,6 @@ class AccountMastriniWizard(models.TransientModel):
                     "(natura 'a', 'p', 'o'). Natura rilevata {}".format(
                         account_nature)
                 )
-            # end if
-        # end if
-
-    # end _compute_pre_date_from
 
     @api.multi
     @api.depends("date_from")
@@ -1015,13 +992,10 @@ class AccountMastriniWizard(models.TransientModel):
         self.ensure_one()
 
         assert self.date_from, 'Data "Da:" non impostata!'
-        assert self.date_from > datetime.date(
-            1, 1, 1
+        assert self.date_from > date(
+            1900, 1, 1
         ), 'Data "Da:" fuori intervallo validità!'
-
-        self.pre_date_to = self.date_from - datetime.timedelta(days=1)
-
-    # end _compute_pre_date_to
+        self.pre_date_to = self.date_from - timedelta(days=1)
 
     #
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
