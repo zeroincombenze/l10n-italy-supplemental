@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+# Copyright 2013 Agile Business Group sagl (<http://www.agilebg.com>)
+# Copyright 2016 Serpent Consulting Services Pvt. Ltd.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+{
+    "name": "Sale order revisions",
+    "version": "10.0.1.0.3",
+    "category": "Sale Management",
+    "summary": "Sale order revisions",
+    "author": ("Agile Business Group,Camptocamp,Akretion"
+               ",Odoo Community Association (OCA)"
+               ",Serpent Consulting Services Pvt. Ltd.,SHS-AV s.r.l."),
+    "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
+    "development_status": "Alpha",
+    "license": "AGPL-3",
+    "depends": ["sale"],
+    "data": ["view/sale_order.xml"],
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "installable": True,
+    "post_init_hook": "populate_unrevisioned_name",
+    "SHS-AV s.r.l.website": "https://github.com/OCA/sale-workflow",
+}
