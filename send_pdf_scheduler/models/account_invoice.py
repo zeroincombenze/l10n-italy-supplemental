@@ -9,22 +9,33 @@ class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
     @api.model
-    def _get_to_send_mail(self):
-        if self.type in ("in_invoice", "in_refund"):
+    def _compute_to_send_mail(self):
+        if (
+            self.type in ("in_invoice", "in_refund")
+            or self.partner_id.to_send_mail == "disable"
+            or (not self.partner_id.to_send_mail
+                and self.fiscal_position_id
+                and self.fiscal_position_id.to_send_mail == "disable")
+        ):
             return False
-        res = self.env["ir.config_parameter"].get_param("default_to_send_mail")
-        modifier = []
-        if self.partner_id.to_send_mail:
-            modifier.append(self.partner_id.to_send_mail != "disable")
-        if self.fiscal_position_id and self.fiscal_position_id.to_send_mail:
-            modifier.append(self.fiscal_position_id.to_send_mail != "disable")
-        return all(modifier) if res else any(modifier)
+        return (
+            self.partner_id.to_send_mail == "enable"
+            or (self.fiscal_position_id
+                and self.fiscal_position_id.to_send_mail == "enable")
+            or self.env["ir.config_parameter"].get_param("default_to_send_mail")
+        )
 
     to_send_mail = fields.Boolean(
         string="To send mail",
-        default=_get_to_send_mail,
+        default=lambda self: self._compute_to_send_mail(),
         help="Automatically send invoice mail",
     )
+
+    @api.onchange("fiscal_position_id")
+    @api.depends("fiscal_position_id", "partner_id")
+    def _onchange_fiscal_position_2_send(self):
+        for invoice in self:
+            invoice.to_send_mail = invoice._compute_to_send_mail()
 
     @api.multi
     def action_auto_send_invoice_mail(self):

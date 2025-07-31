@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Send pdf scheduler",
-    "version": "10.0.0.1.5",
+    "version": "10.0.0.1.6",
     "category": "Accounting",
     "summary": "Schedule sending invoice pdf by cron",
     "author": "SHS-AV s.r.l.",

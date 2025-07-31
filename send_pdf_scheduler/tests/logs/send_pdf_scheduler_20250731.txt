@@ -1,0 +1,79 @@
+2025-07-31 18:26:35,000 379979 DAEMON test_send_pdf_scheduler_10 run_odoo_debug.sh: cd /home/odoo/10.0/venv_odoo && source ./bin/activate
+2025-07-31 16:26:39,017 382521 INFO ? odoo: Odoo version 10.0
+2025-07-31 16:26:39,017 382521 INFO ? odoo: Using configuration file at /home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/tests/logs/zero10.l10n-italy-supplemental.send_pdf_scheduler.conf
+2025-07-31 16:26:39,017 382521 INFO ? odoo: addons paths: ['/home/odoo/.local/share/Odoo10/addons/10.0', u'/home/odoo/10.0/odoo/addons', u'/home/odoo/10.0/addons', u'/home/odoo/.local/share/Odoo10/addons', u'/home/odoo/10.0/account-analytic', u'/home/odoo/10.0/account-budgeting', u'/home/odoo/10.0/account-closing', u'/home/odoo/10.0/account-consolidation', u'/home/odoo/10.0/account-financial-reporting', u'/home/odoo/10.0/account-financial-tools', u'/home/odoo/10.0/account-fiscal-rule', u'/home/odoo/10.0/account-invoice-reporting', u'/home/odoo/10.0/account-invoicing', u'/home/odoo/10.0/account-payment', u'/home/odoo/10.0/account-reconcile', u'/home/odoo/10.0/bank-payment', u'/home/odoo/10.0/bank-statement-import', u'/home/odoo/10.0/calendar', u'/home/odoo/10.0/commission', u'/home/odoo/10.0/community-data-files', u'/home/odoo/10.0/connector', u'/home/odoo/10.0/contract', u'/home/odoo/10.0/credit-control', u'/home/odoo/10.0/crm', u'/home/odoo/10.0/currency', u'/home/odoo/10.0/data-protection', u'/home/odoo/10.0/delivery-carrier', u'/home/odoo/10.0/e-commerce', u'/home/odoo/10.0/edi', u'/home/odoo/10.0/helpdesk', u'/home/odoo/10.0/hr', u'/home/odoo/10.0/intrastat-extrastat', u'/home/odoo/10.0/knowledge', u'/home/odoo/10.0/l10n-italy', u'/home/odoo/10.0/l10n-italy-supplemental', u'/home/odoo/10.0/maintenance', u'/home/odoo/10.0/management-system', u'/home/odoo/10.0/manufacture', u'/home/odoo/10.0/margin-analysis', u'/home/odoo/10.0/marketplace', u'/home/odoo/10.0/mis-builder', u'/home/odoo/10.0/multi-company', u'/home/odoo/10.0/partner-contact', u'/home/odoo/10.0/product-attribute', u'/home/odoo/10.0/product-kitting', u'/home/odoo/10.0/product-variant', u'/home/odoo/10.0/profiles', u'/home/odoo/10.0/project', u'/home/odoo/10.0/purchase-reporting', u'/home/odoo/10.0/purchase-workflow', u'/home/odoo/10.0/queue', u'/home/odoo/10.0/report-print-send', u'/home/odoo/10.0/reporting-engine', u'/home/odoo/10.0/rma', u'/home/odoo/10.0/sale-financial', u'/home/odoo/10.0/sale-reporting', u'/home/odoo/10.0/sale-workflow', u'/home/odoo/10.0/search-engine', u'/home/odoo/10.0/server-auth', u'/home/odoo/10.0/server-tools', u'/home/odoo/10.0/server-ux', u'/home/odoo/10.0/social', u'/home/odoo/10.0/stock-logistics-barcode', u'/home/odoo/10.0/stock-logistics-reporting', u'/home/odoo/10.0/stock-logistics-tracking', u'/home/odoo/10.0/stock-logistics-transport', u'/home/odoo/10.0/stock-logistics-warehouse', u'/home/odoo/10.0/stock-logistics-workflow', u'/home/odoo/10.0/storage', u'/home/odoo/10.0/timesheet', u'/home/odoo/10.0/uncovered', u'/home/odoo/10.0/web', u'/home/odoo/10.0/webhook', u'/home/odoo/10.0/website', u'/home/odoo/10.0/wms', u'/home/odoo/10.0/zerobug-test']
+2025-07-31 16:26:39,018 382521 INFO ? odoo: database: odoo10@localhost:5432
+2025-07-31 16:26:39,032 382521 INFO ? odoo.service.server: HTTP service (werkzeug) running on NB200Z0.localdomain:64193
+2025-07-31 16:26:39,042 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 1 modules...
+2025-07-31 16:26:39,112 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 1 modules loaded in 0.07s, 0 queries
+2025-07-31 16:26:39,476 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 30 modules...
+2025-07-31 16:26:39,548 382521 INFO test_send_pdf_scheduler_10 odoo.addons.report.models.report: Will use the Wkhtmltopdf binary at /home/odoo/10.0/venv_odoo/bin/wkhtmltopdf
+2025-07-31 16:26:39,615 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 30 modules loaded in 0.14s, 0 queries
+2025-07-31 16:26:39,619 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading 31 modules...
+2025-07-31 16:26:39,836 382521 INFO test_send_pdf_scheduler_10 odoo.modules.registry: module send_pdf_scheduler: creating or updating database tables
+2025-07-31 16:26:40,013 382521 INFO test_send_pdf_scheduler_10 odoo.addons.auth_crypt.models.res_users: Hashing passwords, may be slow for databases with many users...
+2025-07-31 16:26:40,041 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/account_invoice_view.xml
+2025-07-31 16:26:40,091 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/account_fiscal_position_view.xml
+2025-07-31 16:26:40,117 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/res_partner_view.xml
+2025-07-31 16:26:40,165 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/views/config_settings_view.xml
+2025-07-31 16:26:40,197 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/data/ir_cron.xml
+2025-07-31 16:26:40,205 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: loading send_pdf_scheduler/data/ir_config_parameter.xml
+2025-07-31 16:26:40,519 382521 INFO test_send_pdf_scheduler_10 odoo.modules.module: odoo.addons.send_pdf_scheduler.tests.test_invoice running tests.
+2025-07-31 16:26:40,520 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.test_invoice: test_invoice (odoo.addons.send_pdf_scheduler.tests.test_invoice.TestInvoice)
+2025-07-31 16:26:40,672 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: ⚠ xref 'z0bug.mycompany' -> 'base.main_company'
+2025-07-31 16:26:40,673 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: ⚠ xref 'z0bug.partner_mycompany' -> 'base.main_partner'
+2025-07-31 16:26:40,710 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: 🎺🎺🎺 Starting test v2.0.22 (debug_level=0, commit=True)
+2025-07-31 16:26:40,713 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: 🎺🎺 Testing module: send_pdf_scheduler (10.0.0.1.6)
+2025-07-31 16:26:40,713 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: 🎺🎺 Loading data from: account.fiscal.position, account.invoice, account.invoice.line 
+2025-07-31 16:26:40,915 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [146]
+2025-07-31 16:26:40,925 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9054]
+2025-07-31 16:26:40,934 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [7]
+2025-07-31 16:26:40,937 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [103]
+2025-07-31 16:26:41,188 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9050]
+2025-07-31 16:26:41,189 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.config_parameter records with IDs: [8]
+2025-07-31 16:26:41,213 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [147]
+2025-07-31 16:26:41,224 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9055]
+2025-07-31 16:26:41,232 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [8]
+2025-07-31 16:26:41,235 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [104]
+2025-07-31 16:26:41,503 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [148]
+2025-07-31 16:26:41,514 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9056]
+2025-07-31 16:26:41,522 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [9]
+2025-07-31 16:26:41,526 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [105]
+2025-07-31 16:26:41,792 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [149]
+2025-07-31 16:26:41,805 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9057]
+2025-07-31 16:26:41,813 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [10]
+2025-07-31 16:26:41,817 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [106]
+2025-07-31 16:26:42,126 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [150]
+2025-07-31 16:26:42,137 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9058]
+2025-07-31 16:26:42,145 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [11]
+2025-07-31 16:26:42,148 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [107]
+2025-07-31 16:26:42,448 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.message records with IDs: [151]
+2025-07-31 16:26:42,458 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [9059]
+2025-07-31 16:26:42,467 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted account.invoice records with IDs: [12]
+2025-07-31 16:26:42,470 382521 INFO test_send_pdf_scheduler_10 odoo.models.unlink: User #1 deleted mail.followers records with IDs: [108]
+2025-07-31 16:26:42,731 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.testenv: 🏆🥇 [1;32m6 tests SUCCESSFULLY completed[0m
+2025-07-31 16:26:42,733 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.test_invoice: Ran 1 test in 2.213s
+2025-07-31 16:26:42,733 382521 INFO test_send_pdf_scheduler_10 odoo.addons.send_pdf_scheduler.tests.test_invoice: OK
+2025-07-31 16:26:42,741 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: 31 modules loaded in 3.12s, 3830 queries
+2025-07-31 16:26:42,975 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: Modules loaded.
+2025-07-31 16:26:42,978 382521 INFO test_send_pdf_scheduler_10 odoo.modules.loading: All post-tested in 0.00s, 0 queries
+2025-07-31 16:26:42,978 382521 INFO test_send_pdf_scheduler_10 odoo.modules.registry: Registry changed, signaling through the database
+2025-07-31 16:26:42,979 382521 INFO test_send_pdf_scheduler_10 odoo.service.server: Initiating shutdown
+2025-07-31 16:26:42,979 382521 INFO test_send_pdf_scheduler_10 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown.
+
++===================================================================
+| please test [36msend_pdf_scheduler[0m (10.0): [32mSUCCESS![0m
++===================================================================
+
+[1;37;44m$ coverage report --rcfile=/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/tests/logs/coverage_send_pdf_scheduler_10rc -m
+[34;107mName                                                                                           Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_fiscal_position.py       4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/account_invoice.py              30     14    53%   12, 36, 41-49, 57-83
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/config_settings.py              30     19    37%   24-35, 38-39, 46-47, 54-57, 60-63
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/mail_mail.py                     8      4    50%   9-13
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_company.py                   4      0   100%
+/home/odoo/10.0/l10n-italy-supplemental/send_pdf_scheduler/models/res_partner.py                   4      0   100%
+----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             80     37    54%
+[0m

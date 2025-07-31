@@ -3,14 +3,14 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
-                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
             </p>
             <h2 class="oe_slogan" style="color:#162832;">Schedule sending invoice pdf by cron</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
             <h2 class="oe_slogan" style="color:#162832;">Scheduazione per invio pdf tramite cron</h2>
         </div>
@@ -24,15 +24,15 @@
     <div>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
-                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">This module sends mails with invoice pdf to invoice customers using cron.
 In this way ala invoices can be automatically sent to customers.</p>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Questo modulo invia le mail con le fatture pdf ai clienti usando lo schedulatore.
 IN questo modo le fatture pdf possono essere inviate automaticamente.</p>
@@ -45,8 +45,8 @@ IN questo modo le fatture pdf possono essere inviate automaticamente.</p>
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
-                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Global configuration:
 <p align="justify">
@@ -68,7 +68,7 @@ If global "To send mail" is False, invoice pdf will be sent if customer or fisca
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Configurazione globale:
 <p align="justify">
@@ -97,8 +97,8 @@ Se il valore gloable "Inviare mail" &#232; false, i pdf sono inviati se il clien
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_uk/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
-                <img src="/l10n_us/static/description/icon.png" alt="English" style="width:16px;height:16px;"/>
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">When an invoice is create, the flag "To send mail" is set or reset based on
 configuration values. This value can be updated by user.
@@ -109,7 +109,7 @@ set to true. After invoice pdf is sent, the flag is reset.
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="/l10n_it/static/description/icon.png" alt="Italiano" style="width:16px;height:16px;"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
             <p class="oe_mt16" align="justify">Quando viene creata una fattura l'indicatore "Inviare mail" &#232; impostato in base alle
 regole di configurazione. Questo valore pu&#224; essere modificato dall'utente finale.
@@ -125,8 +125,15 @@ son inviare al cliente ed l'indicatore viene azzerato.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.5 (2025-05-31)</h4>
+<h4>10.0.0.1.6 (2025-07-31)</h4>
 <p align="justify">
+<ul>
+<li>[FIX] to_send_mail flag / Impostazione flag to_send_mail</li>
+<li>[QUA] Test coverage 54% (80: 37+43) [6 TestPoints] - quality rating 37 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.5 (2025-05-31)</h4>
+</p><p align="justify">
 <ul>
 <li>[FIX] No draft invoices / No fatture in stato bozza</li>
 <li>[QUA] Test coverage 52% (81: 39+42) [0 TestPoints] - quality rating 32 (target 100)</li>
@@ -188,6 +195,6 @@ son inviare al cliente ed l'indicatore viene azzerato.
     </div>
     <div class="oe_row oe_spaced">
         <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
-        <p>Published information on | Informazioni pubblicate: 2025-05-31</p>
+        <p>Published information on | Informazioni pubblicate: 2025-07-31</p>
     </div>
 </section>

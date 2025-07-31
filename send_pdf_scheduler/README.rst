@@ -1,5 +1,5 @@
 ==========================================================
-|icon| Send pdf scheduler/schedulatoreinvio pdf 10.0.0.1.5
+|icon| Send pdf scheduler/schedulatoreinvio pdf 10.0.0.1.6
 ==========================================================
 
 **Schedule sending invoice pdf by cron**
@@ -155,6 +155,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.6 (2025-07-31)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] to_send_mail flag / Impostazione flag to_send_mail
+* [QUA] Test coverage 54% (80: 37+43) [6 TestPoints] - quality rating 37 (target 100)
+
 10.0.0.1.5 (2025-05-31)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -235,7 +241,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-05-31
+Last Update / Ultimo aggiornamento: 2025-07-31
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
