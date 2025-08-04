@@ -75,7 +75,7 @@ more-itertools==5.0.0
 num2words==0.5.0
 numpy==1.16.6
 odoo==10.0
-odoo-score==2.0.9
+odoo-score==2.0.11
 OdooRPC==0.9.0
 OERPLib==0.8.4
 oerplib3==0.8.5
@@ -195,7 +195,7 @@ wrapt==1.15.0
 xlrd==1.0.0
 XlsxWriter==0.9.3
 xlwt==1.1.2
-z0bug-odoo==2.0.21
+z0bug-odoo==2.0.23
 z0lib==2.0.15
 zerobug==2.0.19
 zipp==1.2.0
