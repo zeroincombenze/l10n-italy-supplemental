@@ -1,3 +1,9 @@
+10.0.1.0.57 (2025-08-08)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Move from repo l10n-italy
+* [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
+
 10.0.1.0.56 (2025-08-04)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
