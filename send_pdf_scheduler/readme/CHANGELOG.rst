@@ -1,3 +1,9 @@
+10.0.0.1.7 (2025-08-14)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] to_send_mail flag / Impostazione flag to_send_mail
+* [QUA] Test coverage 56% (86: 38+48) [6 TestPoints] - quality rating 38 (target 100)
+
 10.0.0.1.6 (2025-07-31)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

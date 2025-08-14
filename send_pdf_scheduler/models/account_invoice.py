@@ -12,23 +12,25 @@ class AccountInvoice(models.Model):
     def _compute_to_send_mail(self):
         if (
             self.type in ("in_invoice", "in_refund")
-            or self.partner_id.to_send_mail == "disable"
-            or (not self.partner_id.to_send_mail
+            or (self.partner_id and self.partner_id.to_send_mail == "disable")
+            or (self.partner_id
+                and not self.partner_id.to_send_mail
                 and self.fiscal_position_id
                 and self.fiscal_position_id.to_send_mail == "disable")
         ):
             return False
-        return (
-            self.partner_id.to_send_mail == "enable"
+        return bool(
+            (self.partner_id and self.partner_id.to_send_mail == "enable")
             or (self.fiscal_position_id
                 and self.fiscal_position_id.to_send_mail == "enable")
-            or self.env["ir.config_parameter"].get_param("default_to_send_mail")
+            or eval(self.env["ir.config_parameter"].get_param("default_to_send_mail",
+                                                              "False"))
         )
 
     to_send_mail = fields.Boolean(
         string="To send mail",
         default=lambda self: self._compute_to_send_mail(),
-        help="Automatically send invoice mail",
+        help="Automatically set invoice to send mail",
     )
 
     @api.onchange("fiscal_position_id")
@@ -81,3 +83,11 @@ class AccountInvoice(models.Model):
                     inv.action_auto_send_invoice_mail()
                     if datetime.now() > time_limit:
                         break
+
+    @api.model
+    def create(self, values):
+        # Sometimes default of to_send_mail cannot work!
+        res = super(AccountInvoice, self).create(values)
+        for invoice in res:
+            invoice.write({"to_send_mail": invoice._compute_to_send_mail()})
+        return res

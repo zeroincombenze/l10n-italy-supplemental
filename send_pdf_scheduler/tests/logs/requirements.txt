@@ -75,7 +75,7 @@ more-itertools==5.0.0
 num2words==0.5.0
 numpy==1.16.6
 odoo==10.0
-odoo-score==2.0.9
+odoo-score==2.0.11
 OdooRPC==0.9.0
 OERPLib==0.8.4
 oerplib3==0.8.5

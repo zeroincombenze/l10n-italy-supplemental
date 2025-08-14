@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Send pdf scheduler",
-    "version": "10.0.0.1.6",
+    "version": "10.0.0.1.7",
     "category": "Accounting",
     "summary": "Schedule sending invoice pdf by cron",
     "author": "SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it/fatturazione-elettronica",
-    "development_status": "Alpha",
+    "development_status": "Beta",
     "license": "LGPL-3",
     "depends": ["base", "account"],
     "external_dependencies": {

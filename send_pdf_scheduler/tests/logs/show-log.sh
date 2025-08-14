@@ -1,1 +1,1 @@
-less -R $(readlink -f $(dirname $0))/send_pdf_scheduler_20250731.txt
+less -R $(readlink -f $(dirname $0))/send_pdf_scheduler_20250814.txt
