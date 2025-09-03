@@ -1,4 +1,4 @@
-# [antoniov: 2022-11-09]
+# [antoniov: 2025-09-02]
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -45,10 +45,13 @@ setup/win32/static/postgresql*.exe
 htmlcov/
 .tox/
 .coverage
+.*coverage
+*coveragerc
 .cache
 nosetests.xml
 coverage.xml
 cover/
+logs/
 
 # Node + Javascripts packages
 *.json
