@@ -1,45 +1,120 @@
-# sphinx build directories
-_build/
-
-# dotfiles
-.*
-!.gitignore
-!.mailmap
-# compiled python files
-*.py[co]
+# [antoniov: 2025-09-02]
+# Byte-compiled / optimized / DLL files
 __pycache__/
-# setup.py egg_info
-*.egg-info
-# emacs backup files
-*~
-# hg stuff
-*.orig
-status
-# odoo filestore
-odoo/filestore
-# maintenance migration scripts
-odoo/addons/base/maintenance
+*.py[cod]
+*.a
+*.obj
+*.exe
+/.venv
+/.pytest_cache
+
+# C extensions
+*.o
+*.so
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.eggs
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
 # generated for windows installer?
 install/win32/*.bat
-install/win32/meta.py
-
-# needed only when building for win32
+install/win32/meta.py# needed only when building for win32
 setup/win32/static/less/
 setup/win32/static/wkhtmltopdf/
 setup/win32/static/postgresql*.exe
 
-# various virtualenv
-/bin/
-/build/
-/dist/
-/include/
-/lib/
-/man/
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.*coverage
+*coveragerc
+.cache
+nosetests.xml
+coverage.xml
+cover/
+logs/
+
+# Node + Javascripts packages
+*.json
+
+# Translations
+*.mo
+
+# Pycharm
+.idea/
+
+# Eclipse
+.settings
+
+# Visual Studio cache/options directory
+.vs/
+.vscode
+
+# OSX Files
+.DS_Store
+
+# Django stuff:
+*.log
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Sphinx documentation
+docs/_build/
+
+# Bazaar
+.bzr/
+
+# hg stuff
+*.orig
+
+# Backup files
+*~
+*.swp
+
+# Junks
+*.bak
+*.out
+*.conf
+.tmp
+.tracehis
+.tracehistory
+test*.pdf
+tmp.*
+example_*
+/.settings/
 /share/
-/src/
-OCB/
 stdout.log
 *.oca
 *.z0i
-.gitrepname
+#
+# tools building path
+!static/lib/
