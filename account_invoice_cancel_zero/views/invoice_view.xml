@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_invoice_zero_draft_form" model="ir.ui.view">
+        <field name="name">view.invoice.zero.draft.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_cancel']" position="after">
+              <button
+                    name="action_cancel_zero"
+                    states="paid"
+                    string="Unpaid"
+                    type="object"
+                    attrs="{'invisible': ['|',('amount_total','!=',0.0),('state','!=','paid')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_supplier_zero_draft_form" model="ir.ui.view">
+        <field name="name">view.invoice.supplier.zero.draft.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_cancel']" position="after">
+              <button
+                    name="action_cancel_zero"
+                    states="paid"
+                    string="Cancel"
+                    type="object"
+                    attrs="{'invisible': ['|',('amount_total','!=',0.0),('state','!=','paid')]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
