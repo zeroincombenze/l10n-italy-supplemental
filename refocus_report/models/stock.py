@@ -33,7 +33,8 @@ class StockPicking(models.Model):
 
     @api.one
     def get_picking_date(self):
-        picking_date = datetime.strptime(self.date, DEFAULT_SERVER_DATETIME_FORMAT).date()
+        picking_date = datetime.strptime(
+            self.date, DEFAULT_SERVER_DATETIME_FORMAT).date()
         self.picking_date = picking_date.strftime("%d.%m.%Y")
 
     @api.one

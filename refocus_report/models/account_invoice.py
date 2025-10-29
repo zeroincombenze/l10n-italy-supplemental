@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, models, fields
+from odoo import api, models
 
 
 class AccountInvoiceModel(models.AbstractModel):
@@ -17,5 +17,4 @@ class AccountInvoiceModel(models.AbstractModel):
             'doc_model': report.model,
             'docs': self,
         }
-        return report_obj.render('refocus_report.report_invoice_document',
-                                 docargs)
+        return report_obj.render('refocus_report.report_invoice_document', docargs)

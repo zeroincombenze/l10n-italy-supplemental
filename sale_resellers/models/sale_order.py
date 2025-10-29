@@ -14,6 +14,7 @@ class SaleOrder(models.Model):
                           related='order_line.hs_code',
                           readonly=True)
 
+
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
