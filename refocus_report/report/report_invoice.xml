@@ -24,7 +24,7 @@
 
                 <div class="row mt32 mb32" style="line-height: 6pt">
                     <div class="col-xs-3" name="doctype">
-                        <p><strong>Document type &amp; Numer</strong></p>
+                        <p><strong>Doc. type &amp; Number</strong></p>
                         <p>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>

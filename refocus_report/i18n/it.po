@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-29 19:41+0000\n"
-"PO-Revision-Date: 2025-10-29 19:41+0000\n"
+"POT-Creation-Date: 2025-10-29 20:04+0000\n"
+"PO-Revision-Date: 2025-10-29 20:04+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -28,8 +28,8 @@ msgstr "- Cap. Sociale:"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.external_layout_footer
-msgid "- Italia | web: refocus.media | VAT:"
-msgstr "- Italia | web: refocus.media | VAT:"
+msgid "- Italia | VAT:"
+msgstr "- Italia | VAT:"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.external_layout_footer
@@ -43,7 +43,7 @@ msgstr "<strong>Data doc.:</strong>"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document
-msgid "<strong>Document type &amp; Numer</strong>"
+msgid "<strong>Doc. type &amp; Number</strong>"
 msgstr "<strong>Tipo &amp; N. documento</strong>"
 
 #. module: refocus_report
