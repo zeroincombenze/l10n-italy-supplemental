@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-01 16:58+0000\n"
-"PO-Revision-Date: 2025-11-01 16:58+0000\n"
+"POT-Creation-Date: 2025-11-01 16:48+0000\n"
+"PO-Revision-Date: 2025-11-01 16:48+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -78,8 +78,8 @@ msgstr "<strong>Imposte</strong>"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.account_invoice_report_duplicate
-msgid "<strong>Tipo &amp; N. documento</strong>"
-msgstr "<strong>Tipo &amp; N. documento</strong>"
+msgid "<strong>Tipo &amp; Numero documento</strong>"
+msgstr "<strong>Tipo &amp; Numero documento</strong>"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document
@@ -209,7 +209,7 @@ msgstr "Prezzo Unitario"
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document
 msgid "VAT"
-msgstr "VAT"
+msgstr "IVA"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document

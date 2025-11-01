@@ -1,5 +1,5 @@
 ================================================
-|icon| Refocus reports/refocus_report 10.0.0.1.7
+|icon| Refocus reports/refocus_report 10.0.0.1.8
 ================================================
 
 **Customized report for Refocus**
@@ -120,16 +120,15 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.7 (2025-10-20)
+10.0.0.1.8 (2025-10-30)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [FIX] Translated text / Traduzione testi
 
-
-10.0.0.1.6 (2019-09-30)
+10.0.0.1.7 (2025-10-20)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [FIX] Translated text "Partita IVA" / Testo "Partita IVA" tradotto
+* [FIX] Translated text / Traduzione testi
 
 
 
@@ -180,7 +179,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-10-29
+Last Update / Ultimo aggiornamento: 2025-11-01
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

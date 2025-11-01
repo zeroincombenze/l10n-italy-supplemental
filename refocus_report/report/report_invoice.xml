@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-xs-4" t-if="o.payment_term_id and not o.payment_term_id.riba">
                         <p><strong>IBAN:</strong></p>
-                        <p>IT75 V020 0812 8240 0010 5084 186</p>
+                        <p>IT75V0200812824000105084186</p>
                     </div>
                     <div class="col-xs-4" t-if="(not o.payment_term_id or o.payment_term_id.riba) and o.partner_bank_id">
                         <p><strong>IBAN:</strong></p>
@@ -70,7 +70,6 @@
                     <thead>
                         <tr>
                             <th>Code &amp; Description</th>
-                            <!-- <th class="text-left">Vs. Ordine</th> -->
                             <th class="text-right">Q.ty</th>
                             <th class="text-right">Unit Price</th>
                             <th t-if="display_discount" class="text-right">Disc.(%)</th>
@@ -201,7 +200,7 @@
         <xpath expr="//div[@name='doctype']" position="replace">
                     <div class="col-xs-3" name="doctype">
                         <!-- <p><strong>Doc.Type &amp; Number</strong></p> -->
-                        <p><strong>Tipo &amp; Numero documento</strong></p>
+                        <p><strong>Tipo &amp; N. documento</strong></p>
                         <p>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Ft.Cortesia</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
