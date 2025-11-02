@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_account_config_settings">
+        <field name="name">view_account_config_settings</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/group[6]" position="after">
+                <separator string="Tax Stamp Product" />
+                <group name="tax_stamp">
+                    <label for="id" string="Configuration" />
+                    <div>
+                        <div>
+                            <label for="tax_stamp_product_id" />
+                            <field
+                                name="tax_stamp_product_id"
+                                required="1"
+                                class="oe_inline"
+                                domain="[('is_stamp', '=', True)]"
+                                context="{'default_is_stamp': True}"
+                            />
+                        </div>
+                        <div>
+                            <label for="text_stamp" />
+                            <field name="text_stamp" />
+                        </div>
+                        <div>
+                            <label for="aut_min_bv" />
+                            <field name="aut_min_bv" />
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

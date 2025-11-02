@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="0">
+
+        <record id="a_recv" model="account.account">
+            <field name="code">1501</field>
+            <field name="name">Crediti v/clienti</field>
+            <field eval="True" name="reconcile" />
+            <field name="user_type_id" ref="account.data_account_type_receivable" />
+        </record>
+        <record id="ova" model="account.account">
+            <field name="code">2601</field>
+            <field name="name">IVA n/debito</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets" />
+        </record>
+        <record id="a_sale" model="account.account">
+            <field name="code">3101</field>
+            <field name="name">Ricavi c/vendita</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue" />
+        </record>
+
+</odoo>

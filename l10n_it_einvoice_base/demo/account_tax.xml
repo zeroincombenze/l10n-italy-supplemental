@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<odoo noupdate="1">
+
+    <!-- account.tax -->
+
+    <record id="tax_22a" model="account.tax">
+        <field name="name">22% acquisti</field>
+        <field name="description">22% acq.</field>
+        <field name="amount">22</field>
+    </record>
+
+    <record id="tax_22v" model="account.tax">
+        <field name="name">22% vendite</field>
+        <field name="description">22% vend.</field>
+        <field name="amount">22</field>
+    </record>
+
+    <record id="tax_22a_SP" model="account.tax">
+        <field name="name">SP22%</field>
+        <field name="description">22 Split Payment</field>
+        <field name="amount">22</field>
+        <field name="payability">S</field>
+    </record>
+
+    <record id="tax_00_minimi" model="account.tax">
+        <field name="name">Esente</field>
+        <field name="description">00</field>
+        <field name="amount">0.00</field>
+        <field name="non_taxable_nature">N4</field>
+        <field
+            name="law_reference"
+        >regime contribuenti minimi art.27 c.1-2 DL.98/11</field>
+    </record>
+
+    <record id="tax_00_e15" model="account.tax">
+        <field name="name">Esculso Art. 15</field>
+        <field name="description">00</field>
+        <field name="amount">0.00</field>
+        <field name="non_taxable_nature">N1</field>
+        <field name="law_reference">Escluso Articolo 15</field>
+    </record>
+
+    <record id="tax_00_ns" model="account.tax">
+        <field name="name">Non soggetto Iva</field>
+        <field name="description">00</field>
+        <field name="amount">0.00</field>
+        <field name="non_taxable_nature">N2</field>
+        <field name="law_reference">Non Soggetto Iva legge</field>
+    </record>
+
+    <record id="tax_00_ni" model="account.tax">
+        <field name="name">Non Imponibile</field>
+        <field name="description">00</field>
+        <field name="amount">0.00</field>
+        <field name="non_taxable_nature">N3</field>
+        <field name="law_reference">Non Soggetto Iva legge</field>
+    </record>
+
+    <record id="tax_00_rc" model="account.tax">
+        <field name="name">Inversione Contabile</field>
+        <field name="description">00</field>
+        <field name="amount">0.00</field>
+        <field name="non_taxable_nature">N6</field>
+        <field name="law_reference">Reverse Charge</field>
+    </record>
+
+</odoo>

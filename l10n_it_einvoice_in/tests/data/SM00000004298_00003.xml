@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fatturapa_v1.2.xsl"?>
+<p:FatturaElettronica xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12" SistemaEmittente="iFatturaPA">
+  <FatturaElettronicaHeader>
+    <DatiTrasmissione>
+      <IdTrasmittente>
+        <IdPaese>SM</IdPaese>
+        <IdCodice>03473</IdCodice>
+      </IdTrasmittente>
+      <ProgressivoInvio>862</ProgressivoInvio>
+      <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+      <CodiceDestinatario>URCROKA</CodiceDestinatario>
+    </DatiTrasmissione>
+    <CedentePrestatore>
+      <DatiAnagrafici>
+        <IdFiscaleIVA>
+          <IdPaese>SM</IdPaese>
+          <IdCodice>00000004298</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>00000004298</CodiceFiscale>
+        <Anagrafica>
+          <Denominazione>PC MAC DUE SRL</Denominazione>
+        </Anagrafica>
+        <RegimeFiscale>RF01</RegimeFiscale>
+      </DatiAnagrafici>
+      <Sede>
+        <Indirizzo>Via Dueville</Indirizzo>
+        <NumeroCivico>2</NumeroCivico>
+        <CAP>47899</CAP>
+        <Comune>SECONDO TITANO</Comune>
+        <Provincia>SM</Provincia>
+        <Nazione>SM</Nazione>
+      </Sede>
+      <Contatti>
+        <Telefono>0549/987654</Telefono>
+        <Email>AMMINISTRAZIONE@PCMAC2.SM</Email>
+      </Contatti>
+    </CedentePrestatore>
+    <CessionarioCommittente>
+        <DatiAnagrafici>
+            <CodiceFiscale>05111810015</CodiceFiscale>
+            <Anagrafica>
+                <Denominazione>TEST COMPANY</Denominazione>
+            </Anagrafica>
+        </DatiAnagrafici>
+        <Sede>
+            <Indirizzo>Via dei Matti, 0</Indirizzo>
+            <CAP>20080</CAP>
+            <Comune>Ozzero</Comune>
+            <Provincia>MI</Provincia>
+            <Nazione>IT</Nazione>
+        </Sede>
+    </CessionarioCommittente>
+    <TerzoIntermediarioOSoggettoEmittente>
+      <DatiAnagrafici>
+        <IdFiscaleIVA>
+          <IdPaese>SM</IdPaese>
+          <IdCodice>03473</IdCodice>
+        </IdFiscaleIVA>
+        <Anagrafica>
+          <Denominazione>Passepartout S.p.A</Denominazione>
+        </Anagrafica>
+      </DatiAnagrafici>
+    </TerzoIntermediarioOSoggettoEmittente>
+    <SoggettoEmittente>TZ</SoggettoEmittente>
+  </FatturaElettronicaHeader>
+  <FatturaElettronicaBody>
+    <DatiGenerali>
+      <DatiGeneraliDocumento>
+        <TipoDocumento>TD01</TipoDocumento>
+        <Divisa>EUR</Divisa>
+        <Data>2022-12-31</Data>
+        <Numero>22-2-862</Numero>
+        <ImportoTotaleDocumento>149.01</ImportoTotaleDocumento>
+      </DatiGeneraliDocumento>
+    </DatiGenerali>
+    <DatiBeniServizi>
+      <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Contratto di manutenzione PC</Descrizione>
+        <Quantita>1.00000</Quantita>
+        <PrezzoUnitario>131.39000</PrezzoUnitario>
+        <PrezzoTotale>131.39000</PrezzoTotale>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N6.9</Natura>
+        <AltriDatiGestionali>
+          <TipoDato>TM</TipoDato>
+          <RiferimentoTesto>3</RiferimentoTesto>
+          <RiferimentoNumero>0.00</RiferimentoNumero>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Contratto di manutenzione
+stampante digitale a colori
+</Descrizione>
+        <Quantita>1.00000</Quantita>
+        <PrezzoUnitario>17.62000</PrezzoUnitario>
+        <PrezzoTotale>17.62000</PrezzoTotale>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N6.9</Natura>
+        <AltriDatiGestionali>
+          <TipoDato>TM</TipoDato>
+          <RiferimentoTesto>3</RiferimentoTesto>
+          <RiferimentoNumero>0.00</RiferimentoNumero>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DatiRiepilogo>
+        <AliquotaIVA>0.00</AliquotaIVA>
+        <Natura>N6.9</Natura>
+        <ImponibileImporto>149.01</ImponibileImporto>
+        <Imposta>0.00</Imposta>
+        <RiferimentoNormativo>TM:3,Servizi/Conto lavoro senza MP</RiferimentoNormativo>
+      </DatiRiepilogo>
+    </DatiBeniServizi>
+    <DatiPagamento>
+      <CondizioniPagamento>TP02</CondizioniPagamento>
+      <DettaglioPagamento>
+        <Beneficiario>PC MAC DUE SRL</Beneficiario>
+        <ModalitaPagamento>MP05</ModalitaPagamento>
+        <DataRiferimentoTerminiPagamento>2022-12-31</DataRiferimentoTerminiPagamento>
+        <GiorniTerminiPagamento>30</GiorniTerminiPagamento>
+        <DataScadenzaPagamento>2023-01-31</DataScadenzaPagamento>
+        <ImportoPagamento>149.01</ImportoPagamento>
+        <IBAN>SM89X0606709803000030149569</IBAN>
+      </DettaglioPagamento>
+    </DatiPagamento>
+  </FatturaElettronicaBody>
+</p:FatturaElettronica>

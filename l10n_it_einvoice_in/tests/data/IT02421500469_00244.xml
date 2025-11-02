@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:FatturaElettronica versione="FPR12" xmlns:ns2="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>DLLGTN63C24H703Q</IdCodice>
+            </IdTrasmittente>
+            <ProgressivoInvio>244</ProgressivoInvio>
+            <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+            <CodiceDestinatario>URCROKA</CodiceDestinatario>
+        </DatiTrasmissione>
+        <CedentePrestatore>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>02421500469</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>02421500469</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>CAFFE' ALPHA SRL</Denominazione>
+                </Anagrafica>
+                <RegimeFiscale>RF01</RegimeFiscale>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>VIA IDONE</Indirizzo>
+                <NumeroCivico>6</NumeroCivico>
+                <CAP>55042</CAP>
+                <Comune>FORTE DEI MARMI</Comune>
+                <Provincia>LU</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+        </CedentePrestatore>
+
+        <CessionarioCommittente>
+            <DatiAnagrafici>
+                <CodiceFiscale>05111810015</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TEST COMPANY</Denominazione>
+                </Anagrafica>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via dei Matti, 0</Indirizzo>
+                <CAP>20080</CAP>
+                <Comune>Ozzero</Comune>
+                <Provincia>MI</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+        </CessionarioCommittente>
+
+    </FatturaElettronicaHeader>
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>TD01</TipoDocumento>
+                <Divisa>EUR</Divisa>
+                <Data>2024-06-18</Data>
+                <Numero>28</Numero>
+                <ImportoTotaleDocumento>42.99</ImportoTotaleDocumento>
+                <Arrotondamento>43.00</Arrotondamento>
+            </DatiGeneraliDocumento>
+        </DatiGenerali>
+        <DatiBeniServizi>
+            <DettaglioLinee>
+                <NumeroLinea>1</NumeroLinea>
+                <Descrizione>PANINO 43</Descrizione>
+                <Quantita>1.00</Quantita>
+                <PrezzoUnitario>12.73</PrezzoUnitario>
+                <PrezzoTotale>12.73</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>2</NumeroLinea>
+                <Descrizione>FILETTO DI POLLO E FUNGHI</Descrizione>
+                <Quantita>1.00</Quantita>
+                <PrezzoUnitario>9.09</PrezzoUnitario>
+                <PrezzoTotale>9.09</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>3</NumeroLinea>
+                <Descrizione>BIRRA MEDIA</Descrizione>
+                <Quantita>2.00</Quantita>
+                <PrezzoUnitario>7.27</PrezzoUnitario>
+                <PrezzoTotale>14.54</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>4</NumeroLinea>
+                <Descrizione>CAFFÈ</Descrizione>
+                <Quantita>2.00</Quantita>
+                <PrezzoUnitario>1.36</PrezzoUnitario>
+                <PrezzoTotale>2.72</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DatiRiepilogo>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <ImponibileImporto>39.08</ImponibileImporto>
+                <Imposta>3.91</Imposta>
+            </DatiRiepilogo>
+        </DatiBeniServizi>
+    </FatturaElettronicaBody>
+</ns2:FatturaElettronica>

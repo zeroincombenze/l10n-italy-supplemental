@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?xml-stylesheet type="text/xsl" href="fatturapa_v1.2.xsl"?>
+<p:FatturaElettronica versione="FPR12"
+                      xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                      xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>05262890014</IdCodice>
+            </IdTrasmittente>
+            <ProgressivoInvio>572326</ProgressivoInvio>
+            <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+            <CodiceDestinatario>URCROKA</CodiceDestinatario>
+        </DatiTrasmissione>
+		<CedentePrestatore>
+			<DatiAnagrafici>
+				<IdFiscaleIVA>
+					<IdPaese>IT</IdPaese>
+					<IdCodice>02538160033</IdCodice>
+				</IdFiscaleIVA>
+				<Anagrafica>
+					<Denominazione>Autogrill Italia Spa</Denominazione>
+				</Anagrafica>
+				<RegimeFiscale>RF01</RegimeFiscale>
+			</DatiAnagrafici>
+			<Sede>
+				<Indirizzo>VIA GREPPI, 2</Indirizzo>
+				<CAP>28100</CAP>
+				<Comune>Novara</Comune>
+				<Provincia>NO</Provincia>
+				<Nazione>IT</Nazione>
+			</Sede>
+			<IscrizioneREA>
+				<Ufficio>NO</Ufficio>
+				<NumeroREA>242516</NumeroREA>
+				<CapitaleSociale>68688000.00</CapitaleSociale>
+				<SocioUnico>SU</SocioUnico>
+				<StatoLiquidazione>LN</StatoLiquidazione>
+			</IscrizioneREA>
+		</CedentePrestatore>
+        <CessionarioCommittente>
+            <DatiAnagrafici>
+                <CodiceFiscale>05111810015</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TEST COMPANY</Denominazione>
+                </Anagrafica>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via dei Matti, 0</Indirizzo>
+                <CAP>20080</CAP>
+                <Comune>Ozzero</Comune>
+                <Provincia>MI</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+        </CessionarioCommittente>
+    </FatturaElettronicaHeader>
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>TD01</TipoDocumento>
+                <Divisa>EUR</Divisa>
+                <Data>2024-06-07</Data>
+                <Numero>1/8955</Numero>
+                <ImportoTotaleDocumento>69.38</ImportoTotaleDocumento>
+                <Causale>VENDITA</Causale>
+            </DatiGeneraliDocumento>
+            <DatiTrasporto>
+                <NumeroColli>11</NumeroColli>
+                <DataOraRitiro>2024-06-07T13:21:00</DataOraRitiro>
+                <DataInizioTrasporto>2024-06-07</DataInizioTrasporto>
+            </DatiTrasporto>
+        </DatiGenerali>
+        <DatiBeniServizi>
+            <DettaglioLinee>
+                <NumeroLinea>1</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8054729871757</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>MAREBLU TONNO EXTRA GUSTO IN OLIO GIRASOLE+EVO GR.80X3
+
+                </Descrizione>
+                <Quantita>2.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>2.190000</PrezzoUnitario>
+                <PrezzoTotale>4.38</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 137170 - Qtà: 2</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>2</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8076809576925</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>BARILLA SALSA PRONTA CILIEGINO GR.300
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.150000</PrezzoUnitario>
+                <PrezzoTotale>1.15</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 140967 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>3</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>80050803</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>ESTATHE' BICCHIERE CL.20X3 PESCA
+
+                </Descrizione>
+                <Quantita>2.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.390000</PrezzoUnitario>
+                <PrezzoTotale>2.78</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 142506 - Qtà: 2</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>4</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8076809580748</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>MULINO BIANCO PAN DI STELLE GR.350
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.650000</PrezzoUnitario>
+                <PrezzoTotale>1.65</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 160808 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>5</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8076809582803</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>MULINO BIANCO BISCOTTI INTRECCI GR.300
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.990000</PrezzoUnitario>
+                <PrezzoTotale>1.99</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 160811 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>6</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8076809507127</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>MULINO BIANCO GALLETTI GR.800
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>2.890000</PrezzoUnitario>
+                <PrezzoTotale>2.89</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 159885 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>7</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>5059319021157</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>KELLOGG'S SPECIAL K CLASSIC GR.450
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>2.740000</PrezzoUnitario>
+                <PrezzoTotale>2.74</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 159312 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>8</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8001440114250</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>YOGA SUCCHI DI FRUTTA PERA ML.125X6
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.550000</PrezzoUnitario>
+                <PrezzoTotale>1.55</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 143548 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>9</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8001440006920</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>VALFRUTTA SUCCO PESCA ML.125X6
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.420000</PrezzoUnitario>
+                <PrezzoTotale>1.42</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 142200 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>10</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>42040613</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>BIRRA BECK'S CL.33
+
+                </Descrizione>
+                <Quantita>24.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>0.670000</PrezzoUnitario>
+                <PrezzoTotale>16.08</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 157657 - Qtà: 24</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>11</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8005200106578</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>VERA ACQUA NATURALE LT.2
+
+                </Descrizione>
+                <Quantita>48.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>0.245000</PrezzoUnitario>
+                <PrezzoTotale>11.76</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 159165 - Qtà: 48</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>12</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>80177340</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>ESTATHE LIMONE LT.1,5
+
+                </Descrizione>
+                <Quantita>6.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.320000</PrezzoUnitario>
+                <PrezzoTotale>7.92</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 159324 - Qtà: 6</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>13</NumeroLinea>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8008417001032</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>SVEVA ACQUA MINERALE EFFERV LT.1,5
+
+                </Descrizione>
+                <Quantita>6.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>0.290000</PrezzoUnitario>
+                <PrezzoTotale>1.74</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 160145 - Qtà: 6</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>14</NumeroLinea>
+                <TipoCessionePrestazione>SC</TipoCessionePrestazione>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8001720445876</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>BAULI CROISSANT CREMA GR.300
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.840000</PrezzoUnitario>
+                <PrezzoTotale>1.84</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 157125 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>15</NumeroLinea>
+                <TipoCessionePrestazione>SC</TipoCessionePrestazione>
+                <CodiceArticolo>
+                    <CodiceTipo>PROPRIETARIO</CodiceTipo>
+                    <CodiceValore>8001100071022</CodiceValore>
+                </CodiceArticolo>
+                <Descrizione>BALOCCO ZEROPIU' SENZA SUCCHERI CLASSICO GR.230
+
+                </Descrizione>
+                <Quantita>1.000000</Quantita>
+                <UnitaMisura>PZ</UnitaMisura>
+                <PrezzoUnitario>1.490000</PrezzoUnitario>
+                <PrezzoTotale>1.49</PrezzoTotale>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <AltriDatiGestionali>
+                    <TipoDato>DATI LOTTO</TipoDato>
+                    <RiferimentoTesto>Id: 142869 - Qtà: 1</RiferimentoTesto>
+                </AltriDatiGestionali>
+            </DettaglioLinee>
+            <DatiRiepilogo>
+                <AliquotaIVA>10.00</AliquotaIVA>
+                <ImponibileImporto>18.13</ImponibileImporto>
+                <Imposta>1.81</Imposta>
+                <EsigibilitaIVA>I</EsigibilitaIVA>
+            </DatiRiepilogo>
+            <DatiRiepilogo>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <ImponibileImporto>43.25</ImponibileImporto>
+                <Imposta>9.52</Imposta>
+                <EsigibilitaIVA>I</EsigibilitaIVA>
+            </DatiRiepilogo>
+        </DatiBeniServizi>
+    </FatturaElettronicaBody>
+</p:FatturaElettronica>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

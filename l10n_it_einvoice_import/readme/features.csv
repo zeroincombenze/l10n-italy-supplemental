@@ -1,0 +1,17 @@
+Descrizione,Stato,Note
+"e-fattura da fornitore, righe con IVA",|check|,
+"e-fattura da fornitore, righe senza IVA",|check|,Non riconosce esatto codice IVA
+e-fattura da fornitori con ritenuta d'acconto,|check|,
+e-fattura da fornitori da agenti (enasarco),|check|,
+e-fattura da fornitori con controllo su totale fattura,|check|,
+e-fattura da fornitori con split-payment,|no_check|,
+e-fattura da fornitori con reverse charge,|info|,Non riconosce esatto codice IVA
+E-Nota Credito da fornitore,|check|,
+Gestione multi-aziendale,|check|,
+Validazione e-fattura per azienda,|check|,
+Generazione scadenzario passivo da e-fattura,|check|,
+Livello contabile solo testata senza dettagli,|check|,Per collegare fatture manuali
+Livello righe contabili per aliquote IVA,|check|,Per fatture con troppe righe
+Livelllo righe contabili in dettaglio ,|check|,
+e-fattura da stabile organizzazione estera,|info|,
+e-fattura da rappresentante fiscale,|info|,

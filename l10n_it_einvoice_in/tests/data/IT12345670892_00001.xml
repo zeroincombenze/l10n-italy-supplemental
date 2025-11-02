@@ -1,0 +1,142 @@
+<p:FatturaElettronica xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12">
+<FatturaElettronicaHeader>
+    <DatiTrasmissione>
+        <IdTrasmittente>
+            <IdPaese>IT</IdPaese>
+            <IdCodice>01234560017</IdCodice>
+        </IdTrasmittente>
+        <ProgressivoInvio>00173</ProgressivoInvio>
+        <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+        <CodiceDestinatario>CE961TO</CodiceDestinatario>
+    </DatiTrasmissione>
+    <CedentePrestatore>
+        <DatiAnagrafici>
+            <IdFiscaleIVA>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>12345670892</IdCodice>
+            </IdFiscaleIVA>
+            <Anagrafica>
+                <Denominazione>TRIFOGLIO IMPORT EXPORT SRL</Denominazione>
+            </Anagrafica>
+            <RegimeFiscale>RF01</RegimeFiscale>
+        </DatiAnagrafici>
+        <Sede>
+            <Indirizzo>Centro commerciale Gatta Treviso</Indirizzo>
+            <CAP>15010</CAP>
+            <Comune>TERZO</Comune>
+            <Provincia>AL</Provincia>
+            <Nazione>IT</Nazione>
+        </Sede>
+        <IscrizioneREA>
+            <Ufficio>AL</Ufficio>
+            <NumeroREA>158165</NumeroREA>
+            <CapitaleSociale>20000.00</CapitaleSociale>
+            <SocioUnico>SM</SocioUnico>
+            <StatoLiquidazione>LN</StatoLiquidazione>
+        </IscrizioneREA>
+        <Contatti>
+            <Telefono>0161 555999</Telefono>
+            <Fax>0161 555753</Fax>
+            <Email>china@export.it</Email>
+        </Contatti>
+    </CedentePrestatore>
+    <CessionarioCommittente>
+        <DatiAnagrafici>
+            <IdFiscaleIVA>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>05111810015</IdCodice>
+            </IdFiscaleIVA>
+            <CodiceFiscale>05111810015</CodiceFiscale>
+            <Anagrafica>
+                <Denominazione>TEST COMPANY</Denominazione>
+            </Anagrafica>
+        </DatiAnagrafici>
+        <Sede>
+            <Indirizzo>Via dei Matti, 0</Indirizzo>
+            <CAP>20080</CAP>
+            <Comune>Ozzero</Comune>
+            <Provincia>MI</Provincia>
+            <Nazione>IT</Nazione>
+        </Sede>
+    </CessionarioCommittente>
+    <TerzoIntermediarioOSoggettoEmittente>
+        <DatiAnagrafici>
+            <IdFiscaleIVA>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>01533080675</IdCodice>
+            </IdFiscaleIVA>
+            <Anagrafica>
+                <Denominazione>Alias Consulting S.r.l.</Denominazione>
+            </Anagrafica>
+        </DatiAnagrafici>
+    </TerzoIntermediarioOSoggettoEmittente>
+    <SoggettoEmittente>TZ</SoggettoEmittente>
+</FatturaElettronicaHeader>
+<FatturaElettronicaBody>
+    <DatiGenerali>
+        <DatiGeneraliDocumento>
+            <TipoDocumento>TD24</TipoDocumento>
+            <Divisa>EUR</Divisa>
+            <Data>2022-10-31</Data>
+            <Numero>888/D</Numero>
+            <ImportoTotaleDocumento>1213.90</ImportoTotaleDocumento>
+            <Causale>vendita</Causale>
+        </DatiGeneraliDocumento>
+        <DatiDDT>
+            <NumeroDDT>667/NS</NumeroDDT>
+            <DataDDT>2022-10-15</DataDDT>
+            <RiferimentoNumeroLinea>1</RiferimentoNumeroLinea>
+            <RiferimentoNumeroLinea>2</RiferimentoNumeroLinea>
+        </DatiDDT>
+    </DatiGenerali>
+    <DatiBeniServizi>
+        <DettaglioLinee>
+            <NumeroLinea>1</NumeroLinea>
+            <Descrizione>OPZ-RACK-V30S60 - Staffe Rack per S60/V30</Descrizione>
+            <Quantita>2.000</Quantita>
+            <UnitaMisura>.</UnitaMisura>
+            <PrezzoUnitario>12.0000</PrezzoUnitario>
+            <PrezzoTotale>24.0000</PrezzoTotale>
+            <AliquotaIVA>22.00</AliquotaIVA>
+        </DettaglioLinee>
+        <DettaglioLinee>
+            <NumeroLinea>2</NumeroLinea>
+            <Descrizione>SecurityBox S60 - Garanzia HW : 12 mesi</Descrizione>
+            <Quantita>2.0000</Quantita>
+            <UnitaMisura>n.</UnitaMisura>
+            <PrezzoUnitario>478.0000</PrezzoUnitario>
+            <PrezzoTotale>956.0000</PrezzoTotale>
+            <AliquotaIVA>22.00</AliquotaIVA>
+        </DettaglioLinee>
+        <DettaglioLinee>
+            <NumeroLinea>3</NumeroLinea>
+            <TipoCessionePrestazione>AC</TipoCessionePrestazione>
+            <Descrizione>Spese di trasporto</Descrizione>
+            <Quantita>1.0000</Quantita>
+            <PrezzoUnitario>15.0000</PrezzoUnitario>
+            <PrezzoTotale>15.0000</PrezzoTotale>
+            <AliquotaIVA>22.00</AliquotaIVA>
+        </DettaglioLinee>
+        <DatiRiepilogo>
+            <AliquotaIVA>22.00</AliquotaIVA>
+            <ImponibileImporto>995.00</ImponibileImporto>
+            <Imposta>218.90</Imposta>
+            <EsigibilitaIVA>I</EsigibilitaIVA>
+            <RiferimentoNormativo>Iva 22%</RiferimentoNormativo>
+        </DatiRiepilogo>
+    </DatiBeniServizi>
+    <DatiPagamento>
+        <CondizioniPagamento>TP02</CondizioniPagamento>
+        <DettaglioPagamento>
+            <ModalitaPagamento>MP12</ModalitaPagamento>
+            <DataRiferimentoTerminiPagamento>2022-10-31</DataRiferimentoTerminiPagamento>
+            <DataScadenzaPagamento>2022-12-10</DataScadenzaPagamento>
+            <ImportoPagamento>1213.90</ImportoPagamento>
+            <IstitutoFinanziario>BANCO POPOLARE SOFTWARE</IstitutoFinanziario>
+            <ABI>01234</ABI>
+            <CAB>12345</CAB>
+        </DettaglioPagamento>
+    </DatiPagamento>
+</FatturaElettronicaBody>
+</p:FatturaElettronica>
+

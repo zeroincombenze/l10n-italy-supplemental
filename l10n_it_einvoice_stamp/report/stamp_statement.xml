@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="l10n_it_einvoice_stamp.stamp_statement_document">
+        <tr>
+            <td>
+                <span t-field="invoice.number" />
+            </td>
+            <td>
+                <span t-field="invoice.date_invoice" />
+            </td>
+            <td>
+                <span t-field="invoice.tax_stamp" />
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="l10n_it_einvoice_stamp.stamp_statement">
+        <t t-call="report.html_container">
+            <t t-set="company" t-value="res_company" />
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <table style="width:100%;" cellspacing="5px" cellpadding="5px">
+                        <thead>
+                            <tr>
+                                <th>Numero Fattura</th>
+                                <th>Data Fattura</th>
+                                <th>Bollo virtuale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="invoice">
+                                <t
+                                    t-call="l10n_it_einvoice_stamp.stamp_statement_document"
+                                />
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <report
+        id="l10n_it_einvoice_stamp.action_report_stamp_statement"
+        model="account.invoice"
+        string="Dati per bollo virtuale"
+        report_type="qweb-pdf"
+        name="l10n_it_einvoice_stamp.stamp_statement"
+        file="l10n_it_einvoice_stamp.stamp_statement"
+        attachment_use="False"
+    />
+
+</odoo>

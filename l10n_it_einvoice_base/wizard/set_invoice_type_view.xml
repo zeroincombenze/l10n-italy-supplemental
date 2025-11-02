@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_set_invoice_type">
+        <field name="name">set invoice type</field>
+        <field name="model">wizard.set.invoice.type</field>
+        <field name="arch" type="xml">
+            <form string="Set Invoice Type">
+                <separator
+                    colspan="4"
+                    string="This wizard set default fiscal invoice type"
+                />
+                <footer>
+                    <button string="Set Type" name="set_einvoice_type" type="object" />
+                    <button string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        name="Set invoice type"
+        res_model="wizard.set.invoice.type"
+        src_model="account.invoice"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"
+        id="action_set_account_type"
+    />
+
+</odoo>

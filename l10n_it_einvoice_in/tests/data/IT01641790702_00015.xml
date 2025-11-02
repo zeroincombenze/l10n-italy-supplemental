@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:FatturaElettronica xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" versione="FPR12">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>01641790702</IdCodice>
+            </IdTrasmittente>
+            <ProgressivoInvio>01543</ProgressivoInvio>
+            <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+            <CodiceDestinatario>CE961TO</CodiceDestinatario>
+            <ContattiTrasmittente>
+                <Telefono>0874-60561</Telefono>
+                <Email>info@msc.it - amministrazioneinfo@msc.it</Email>
+            </ContattiTrasmittente>
+        </DatiTrasmissione>
+        <CedentePrestatore>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>06942950012</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>06942950012</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>M C S  S.r.l.</Denominazione>
+                </Anagrafica>
+                <RegimeFiscale>RF01</RegimeFiscale>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via Liguria</Indirizzo>
+                <NumeroCivico>52</NumeroCivico>
+                <CAP>10071</CAP>
+                <Comune>BORGARO TORINESE</Comune>
+                <Provincia>TO</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+            <IscrizioneREA>
+                <Ufficio>TO</Ufficio>
+                <NumeroREA>825361</NumeroREA>
+                <CapitaleSociale>13000.00</CapitaleSociale>
+                <StatoLiquidazione>LN</StatoLiquidazione>
+            </IscrizioneREA>
+        </CedentePrestatore>
+        <CessionarioCommittente>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>05111810015</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>05111810015</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TEST COMPANY</Denominazione>
+                </Anagrafica>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via dei Matti, 0</Indirizzo>
+                <NumeroCivico>18</NumeroCivico>
+                <CAP>20080</CAP>
+                <Comune>Ozzero</Comune>
+                <Provincia>MI</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+        </CessionarioCommittente>
+        <TerzoIntermediarioOSoggettoEmittente>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>01641790702</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>01641790702</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TEAMSYSTEM SERVICE SRL</Denominazione>
+                </Anagrafica>
+            </DatiAnagrafici>
+        </TerzoIntermediarioOSoggettoEmittente>
+        <SoggettoEmittente>TZ</SoggettoEmittente>
+    </FatturaElettronicaHeader>
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>TD24</TipoDocumento>
+                <Divisa>EUR</Divisa>
+                <Data>2022-10-31</Data>
+                <Numero>104/2022</Numero>
+                <ImportoTotaleDocumento>157.70</ImportoTotaleDocumento>
+                <Arrotondamento>0.01</Arrotondamento>
+                <Causale>CONTO LAVORAZIONE </Causale>
+            </DatiGeneraliDocumento>
+        </DatiGenerali>
+        <DatiBeniServizi>
+            <DettaglioLinee>
+                <NumeroLinea>1</NumeroLinea>
+                <Descrizione>FOGLI F.TO 50X70 CM. SERIGRAFATI IN UV LUCIDO RISERVATO MONOFACCIALI</Descrizione>
+                <Quantita>350.00</Quantita>
+                <PrezzoUnitario>0.3693</PrezzoUnitario>
+                <PrezzoTotale>129.255</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DatiRiepilogo>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <Arrotondamento>0.005</Arrotondamento>
+                <ImponibileImporto>129.26</ImponibileImporto>
+                <Imposta>28.44</Imposta>
+                <EsigibilitaIVA>I</EsigibilitaIVA>
+            </DatiRiepilogo>
+        </DatiBeniServizi>
+        <DatiPagamento>
+            <CondizioniPagamento>TP02</CondizioniPagamento>
+            <DettaglioPagamento>
+                <ModalitaPagamento>MP12</ModalitaPagamento>
+                <DataRiferimentoTerminiPagamento>2022-10-31</DataRiferimentoTerminiPagamento>
+                <DataScadenzaPagamento>2022-11-30</DataScadenzaPagamento>
+                <ImportoPagamento>157.69</ImportoPagamento>
+                <IBAN>IT15A0123412345100000123456</IBAN>
+            </DettaglioPagamento>
+        </DatiPagamento>
+    </FatturaElettronicaBody>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="id-8d557fe72e33d4c53b805bf0d61202d7"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2002/06/xmldsig-filter2"><dsig-xpath:XPath xmlns:dsig-xpath="http://www.w3.org/2002/06/xmldsig-filter2" Filter="subtract">/descendant::ds:Signature</dsig-xpath:XPath></ds:Transform><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>I/7gbXcmuLiGvIWv8PrhyBMhgpT4OqOqfxr8RHvrdUQ=</ds:DigestValue></ds:Reference><ds:Reference URI="#keyinfo-id-8d557fe72e33d4c53b805bf0d61202d7"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>asYi4cviOzj3e8NU0j5Sarh9eH7HvgJ3KaBwrkKJ8XE=</ds:DigestValue></ds:Reference><ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xades-id-8d557fe72e33d4c53b805bf0d61202d7"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>c9iU2dgH5dj9ZQHW4d/2jpL//LTQ9AnD/g81DoV+xiI=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue Id="value-id-8d557fe72e33d4c53b805bf0d61202d7">WI+HoSG6uL+9lslU9dPQ1p1C1o+HSozNeoGC9ki6Wh0/Z0Uzh5Wr0PedttShNg4RrBviTkASc+M4+JH2qRLJYs27ATaXuSaOFM6AKw2urePKvDB8GMNNUrN0ZNLlCzpX/Oy/MXSC63Kj4iObQ54zpZIIjIpT9/QJ85DPa7KnvKOyZypG5NvnU81I5lqzXa1Fakyx4ZylZDhzVwJTfBXhkic/3WHTETlQQJ4y+J1WP2WzhF0w+wA08nZztpQJSFEBnHdr6qNV9N39lBAuIe8SxfTjqCak3LBHizptib0d+KLnj7tvmjiuZvlE39zVGIVJlfPukAHc6qCrII22rilDHg==</ds:SignatureValue><ds:KeyInfo Id="keyinfo-id-8d557fe72e33d4c53b805bf0d61202d7"><ds:X509Data><ds:X509Certificate>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</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#id-8d557fe72e33d4c53b805bf0d61202d7"><xades:SignedProperties Id="xades-id-8d557fe72e33d4c53b805bf0d61202d7"><xades:SignedSignatureProperties><xades:SigningTime>2022-11-03T15:55:46Z</xades:SigningTime><xades:SigningCertificateV2><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>DZb1YaWUUh9f1Tq9jggdz5mx9CO4QjDWxSaTvXiaJ34=</ds:DigestValue></xades:CertDigest><xades:IssuerSerialV2>MIGOMIGBpH8wfTELMAkGA1UEBhMCSVQxJDAiBgNVBAoMG05hbWlyaWFsIFMucC5BLi8wMjA0NjU3MDQyNjEgMB4GA1UECwwXQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxJjAkBgNVBAMMHU5hbWlyaWFsIENBIEZpcm1hIFF1YWxpZmljYXRhAgh4lY8MAd7IeQ==</xades:IssuerSerialV2></xades:Cert></xades:SigningCertificateV2></xades:SignedSignatureProperties><xades:SignedDataObjectProperties><xades:DataObjectFormat ObjectReference="#null"><xades:MimeType>application/octet-stream</xades:MimeType></xades:DataObjectFormat></xades:SignedDataObjectProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></ns3:FatturaElettronica>
+

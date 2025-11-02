@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><p:FatturaElettronica xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>00488410010</IdCodice>
+            </IdTrasmittente>
+            <ProgressivoInvio>01422</ProgressivoInvio>
+            <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+            <CodiceDestinatario>CE961TO</CodiceDestinatario>
+            <ContattiTrasmittente>
+                <Email>contatto: info@tim.it</Email>
+            </ContattiTrasmittente>
+        </DatiTrasmissione>
+        <CedentePrestatore>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>00488410010</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>00488410010</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TIM S.p.A.</Denominazione>
+                </Anagrafica>
+                <RegimeFiscale>RF01</RegimeFiscale>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via Gaetano Negri</Indirizzo>
+                <NumeroCivico>1</NumeroCivico>
+                <CAP>20123</CAP>
+                <Comune>MILANO</Comune>
+                <Provincia>MI</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+            <IscrizioneREA>
+                <Ufficio>MI</Ufficio>
+                <NumeroREA>1580695</NumeroREA>
+                <CapitaleSociale>11677002855.10</CapitaleSociale>
+                <SocioUnico>SM</SocioUnico>
+                <StatoLiquidazione>LN</StatoLiquidazione>
+            </IscrizioneREA>
+            <Contatti>
+                <Email>amministrazione: amministrazione@tim.it</Email>
+            </Contatti>
+        </CedentePrestatore>
+        <CessionarioCommittente>
+            <DatiAnagrafici>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>05111810015</IdCodice>
+                </IdFiscaleIVA>
+                <CodiceFiscale>05111810015</CodiceFiscale>
+                <Anagrafica>
+                    <Denominazione>TEST COMPANY</Denominazione>
+                </Anagrafica>
+            </DatiAnagrafici>
+            <Sede>
+                <Indirizzo>Via dei Matti, 0</Indirizzo>
+                <CAP>20080</CAP>
+                <Comune>Ozzero</Comune>
+                <Provincia>MI</Provincia>
+                <Nazione>IT</Nazione>
+            </Sede>
+        </CessionarioCommittente>
+    </FatturaElettronicaHeader>
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>TD24</TipoDocumento>
+                <Divisa>EUR</Divisa>
+                <Data>2022-10-31</Data>
+                <Numero>7X01234467</Numero>
+                <ImportoTotaleDocumento>73.20</ImportoTotaleDocumento>
+                <Causale>4BIM 2020</Causale>
+            </DatiGeneraliDocumento>
+            <DatiContratto>
+                <IdDocumento>888010802720</IdDocumento>
+                <CodiceCommessaConvenzione>UTTT4</CodiceCommessaConvenzione>
+            </DatiContratto>
+        </DatiGenerali>
+        <DatiBeniServizi>
+            <DettaglioLinee>
+                <NumeroLinea>1</NumeroLinea>
+                <Descrizione>Contributo 5 EuroGiga VIP</Descrizione>
+                <PrezzoUnitario>10.00</PrezzoUnitario>
+                <PrezzoTotale>10.00</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>2</NumeroLinea>
+                <Descrizione>Contributo Tim Europa 1GB</Descrizione>
+                <PrezzoUnitario>20.00</PrezzoUnitario>
+                <PrezzoTotale>20.00</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>3</NumeroLinea>
+                <Descrizione>Contributo Tim Start</Descrizione>
+                <PrezzoUnitario>40.00</PrezzoUnitario>
+                <PrezzoTotale>40.00</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DettaglioLinee>
+                <NumeroLinea>4</NumeroLinea>
+                <Descrizione>Sconto Senza Limiti 5</Descrizione>
+                <PrezzoUnitario>-10.00</PrezzoUnitario>
+                <PrezzoTotale>-10.00</PrezzoTotale>
+                <AliquotaIVA>22.00</AliquotaIVA>
+            </DettaglioLinee>
+            <DatiRiepilogo>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <ImponibileImporto>70.00</ImponibileImporto>
+                <Imposta>15.40</Imposta>
+                <RiferimentoNormativo>22%</RiferimentoNormativo>
+            </DatiRiepilogo>
+            <DatiRiepilogo>
+                <AliquotaIVA>22.00</AliquotaIVA>
+                <ImponibileImporto>-10.00</ImponibileImporto>
+                <Imposta>-2.20</Imposta>
+                <RiferimentoNormativo>22%</RiferimentoNormativo>
+            </DatiRiepilogo>
+        </DatiBeniServizi>
+        <DatiPagamento>
+            <CondizioniPagamento>TP02</CondizioniPagamento>
+            <DettaglioPagamento>
+                <ModalitaPagamento>MP19</ModalitaPagamento>
+                <DataScadenzaPagamento>2022-11-30</DataScadenzaPagamento>
+                <ImportoPagamento>73.20</ImportoPagamento>
+                <CodicePagamento>319210880080272075</CodicePagamento>
+            </DettaglioPagamento>
+        </DatiPagamento>
+    </FatturaElettronicaBody>
+</p:FatturaElettronica>
+

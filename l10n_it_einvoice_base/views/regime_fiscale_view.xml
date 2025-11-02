@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_regime_fiscale_tree" model="ir.ui.view">
+        <field name="name">view.fiscal.position.tree</field>
+        <field name="model">fatturapa.fiscal_position</field>
+        <field name="arch" type="xml">
+            <tree string="Regime Fiscale">
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_regime_fiscale_form" model="ir.ui.view">
+        <field name="name">view.fiscal.position.form</field>
+        <field name="model">fatturapa.fiscal_position</field>
+        <field name="arch" type="xml">
+            <form string="Regime Fiscale">
+                <group>
+                    <field name="code" />
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ade_regime_fiscale" model="ir.actions.act_window">
+        <field name="name">Regime Fiscale</field>
+        <field name="res_model">fatturapa.fiscal_position</field>
+        <field name="view_id" ref="view_regime_fiscale_tree" />
+    </record>
+
+    <menuitem
+        id="menu_ade_regime_fiscale"
+        name="Posizione Fiscale Fattura Elettronica"
+        action="action_ade_regime_fiscale"
+        parent="l10n_it_ade.menu_ade"
+        groups="account.group_account_manager"
+        sequence="45"
+    />
+
+</odoo>

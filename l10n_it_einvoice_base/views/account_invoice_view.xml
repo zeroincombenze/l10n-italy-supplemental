@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="invoice_form_doctype" model="ir.ui.view">
+        <field name="name">invoice.form.doctype</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group[2]" position="inside">
+                <field name="is_self_invoice" invisible="1"/>
+                <field name="date"
+                       domain="[('state', '=', 'draft'), ('company_id', '=', company_id)]"
+                       attrs="{'readonly': [('is_self_invoice', '=', False)]}"
+                       groups="account.group_account_user"/>
+                <field name="fiscal_document_type_id" options="{'no_create': True}" />
+                <field name="sender" />
+                <field name="type" readonly="1" />
+            </xpath>
+            <field name="partner_bank_id" position="attributes">
+                <attribute name="readonly">0</attribute>
+                <attribute
+                    name="attrs"
+                >{'readony': [('state', '=', 'paid')]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="invoice_supplier_form_doctype" model="ir.ui.view">
+        <field name="name">invoice.supplier.form.doctype</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page/group/group/field[@name='company_id']" position="after">
+                <field name="fiscal_document_type_id" options="{'no_create': True}" />
+                <field name="type" readonly="1" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="customer_invoice_lines_not_editable" model="ir.ui.view">
+        <field name="name">customer_invoice_lines_not_editable</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute eval="False" name="editable" />
+            </xpath>
+        </field>
+    </record>
+    <record id="supplier_invoice_lines_not_editable" model="ir.ui.view">
+        <field name="name">supplier_invoice_lines_not_editable</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute eval="False" name="editable" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_form_fatturapa" model="ir.ui.view">
+        <field name="name">account.invoice.line.fatturapa</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <separator string="Electronic Invoice" />
+                <div id="admin_ref">
+                    <group>
+                        <field name="admin_ref" />
+                    </group>
+                </div>
+                <group string="Related Documents">
+                    <field name="related_documents" nolabel="1">
+                        <tree editable="bottom" string="Related Documents">
+                            <field name="type" />
+                            <field name="name" />
+                            <field name="lineRef" readonly="1" />
+                            <field name="date" />
+                            <field name="numitem" />
+                            <field name="code" />
+                            <field name="cig" />
+                            <field name="cup" />
+                        </tree>
+                    </field>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="fatturapa_payment_detail_view" model="ir.ui.view">
+        <field name="name">fatturapa.payment.detail.view</field>
+        <field name="model">fatturapa.payment.detail</field>
+        <field name="arch" type="xml">
+            <form string="Payments Details">
+                <field name="payment_due_date" />
+                <field name="payment_amount" />
+                <field name="payment_code" />
+                <field name="payment_term_start" />
+                <field name="payment_days" />
+            </form>
+        </field>
+    </record>
+
+    <record id="fatturapa_payment_detail_tree" model="ir.ui.view">
+        <field name="name">fatturapa.payment.detail.tree</field>
+        <field name="model">fatturapa.payment.detail</field>
+        <field name="arch" type="xml">
+            <tree string="Payments Details">
+                <field name="payment_due_date" />
+                <field name="payment_amount" />
+                <field name="payment_code" />
+                <field name="payment_term_start" />
+                <field name="payment_days" />
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+        name="Electronic Invoice"
+        id="menu_fattura_pa_receivables"
+        parent="account.menu_finance_receivables"
+    />
+    <menuitem
+        name="Electronic Bill"
+        id="menu_fattura_pa_payables"
+        parent="account.menu_finance_payables"
+    />
+
+</odoo>

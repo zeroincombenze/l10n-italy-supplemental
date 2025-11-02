@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_invoice_form_fatturapa" model="ir.ui.view">
+        <field name="name">account.invoice.fatturapa</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <button name="action_invoice_proforma2" position="before">
+                <button
+                    name="%(action_wizard_export_fatturapa)d"
+                    type="action"
+                    states="open,paid"
+                    string="Export E-invoice"
+                    class="oe_highlight"
+                />
+            </button>
+            <field name="partner_id" position="after">
+                <field name="electronic_invoice_subjected" invisible="1" />
+            </field>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Related Documents ">
+                    <group string="Related Documents">
+                        <field name="related_documents" nolabel="1">
+                            <tree editable="bottom" string="Related Documents">
+                                <field name="type" />
+                                <field name="name" />
+                                <field name="lineRef" readonly="1" />
+                                <field name="date" />
+                                <field name="numitem" />
+                                <field name="code" />
+                                <field name="cig" />
+                                <field name="cup" />
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page string="Electronic Invoice">
+                    <group>
+                        <group string="Results">
+                            <field name="fatturapa_attachment_out_id" />
+                            <field
+                                name="has_pdf_invoice_print"
+                                attrs="{'invisible': [('fatturapa_attachment_out_id', '=', False)]}"
+                            />
+                        </group>
+                    </group>
+                </page>
+                <page string="Electronic Invoice Attachments">
+                    <group string="Attachments">
+                        <field name="fatturapa_doc_attachments" nolabel="1">
+                            <tree string="Attachments">
+                                <field name="ir_attachment_id" />
+                                <field name="datas_fname" />
+                                <field name="description" />
+                                <field name="is_pdf_invoice_print" />
+                            </tree>
+                            <form string="Attachments">
+                                <group>
+                                    <group>
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="is_pdf_invoice_print" />
+                                    </group>
+                                    <group>
+                                        <field name="datas" filename="datas_fname" />
+                                        <field name="datas_fname" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter_fatturapa" model="ir.ui.view">
+        <field name="name">account.invoice.select.fatturapa</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <filter name="unpaid" position="after">
+                <filter
+                    name="einvoice_no"
+                    string="E-fatture da emettere"
+                    domain="[('fatturapa_attachment_out_id','=',False)]"
+                    help="Fattura B2B o FatturaPA non emesse; da inviare ad Agenzia delle Entrate"
+                />
+                <filter
+                    name="einvoice_si"
+                    string="E-fatture emesse"
+                    domain="[('fatturapa_attachment_out_id','!=',False)]"
+                    help="Fattura emessa (e inviata) ad Agenzia delle Entrate"
+                />
+            </filter>
+        </field>
+    </record>
+
+</odoo>

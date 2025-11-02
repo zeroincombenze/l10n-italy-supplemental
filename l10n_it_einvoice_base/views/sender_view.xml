@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_sender_tree" model="ir.ui.view">
+        <field name="name">view.sender.tree</field>
+        <field name="model">italy.ade.sender</field>
+        <field name="arch" type="xml">
+            <tree string="Sender Channel">
+                <field name="name" />
+                <field name="method" />
+                <field name="company_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sender_form" model="ir.ui.view">
+        <field name="name">view.sender.form</field>
+        <field name="model">italy.ade.sender</field>
+        <field name="arch" type="xml">
+            <form string="Sender Channel">
+                <group>
+                    <field name="name" />
+                    <field name="method" />
+                    <field name="company_id" />
+                    <field name="client_id" />
+                    <field name="client_key" />
+                    <field name="sender_url" />
+                    <field name="sender_company_id" />
+                    <field name="hub_ip_addr" />
+                    <field name="pec_server_id" />
+                    <field name="email_exchange_system" />
+                    <field name="email_from_for_fatturaPA" />
+                </group>
+                <group>
+                    <field name="param1" />
+                    <field name="param2" />
+                    <field name="param3" />
+                    <field name="param4" />
+                    <field name="param5" />
+                    <field name="param6" />
+                    <field name="active" />
+                    <field name="trace" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sender_channel" model="ir.actions.act_window">
+        <field name="name">Sender Channel</field>
+        <field name="res_model">italy.ade.sender</field>
+        <field name="view_id" ref="view_sender_tree" />
+    </record>
+
+    <menuitem
+        id="menu_sender"
+        name="Sender Channel"
+        action="action_sender_channel"
+        parent="l10n_it_ade.menu_ade"
+        groups="account.group_account_manager"
+    />
+
+</odoo>

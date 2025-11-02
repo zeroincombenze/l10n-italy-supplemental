@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_account_config_settings" model="ir.ui.view">
+        <field name="name">view_account_config_settings</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/group[6]" position="after">
+                <separator string="Electronic Invoice" />
+                <group name="fatturapa_settings">
+                    <label for="id" string="Configuration" />
+                    <div id="fatturapa_settings">
+                        <div>
+                            <label
+                                for="fatturapa_fiscal_position_id"
+                                options="{'no_create': True}"
+                            />
+                            <field
+                                name="fatturapa_fiscal_position_id"
+                                required="1"
+                                class="oe_inline"
+                            />
+                        </div>
+                        <div>
+                            <label for="fatturapa_sequence_id" />
+                            <field
+                                name="fatturapa_sequence_id"
+                                required="1"
+                                class="oe_inline"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="einvoice_sender_id"
+                                options="{'no_create': True}"
+                            />
+                            <field name="einvoice_sender_id" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_art73" />
+                            <field name="fatturapa_art73" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_tax_representative" />
+                            <field
+                                name="fatturapa_tax_representative"
+                                class="oe_inline"
+                            />
+                        </div>
+                        <div>
+                            <label for="fatturapa_sender_partner" />
+                            <field name="fatturapa_sender_partner" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_rea_office" />
+                            <field name="fatturapa_rea_office" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_rea_number" />
+                            <field name="fatturapa_rea_number" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_rea_capital" />
+                            <field name="fatturapa_rea_capital" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_rea_partner" />
+                            <field name="fatturapa_rea_partner" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_rea_liquidation" />
+                            <field name="fatturapa_rea_liquidation" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="fatturapa_preview_style" />
+                            <field name="fatturapa_preview_style" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="einvoice_xeu_vat_none" />
+                            <field name="einvoice_xeu_vat_none" class="oe_inline" />
+                        </div>
+                        <div>
+                            <label for="einvoice_xeu_fc_none" />
+                            <field name="einvoice_xeu_fc_none" class="oe_inline" />
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

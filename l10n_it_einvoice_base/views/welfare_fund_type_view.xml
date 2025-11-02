@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_cassa_previdenziale_tree" model="ir.ui.view">
+        <field name="name">view.fiscal.position.tree</field>
+        <field name="model">welfare.fund.type</field>
+        <field name="arch" type="xml">
+            <tree string="Regime Fiscale">
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cassa_previdenziale_form" model="ir.ui.view">
+        <field name="name">view.fiscal.position.form</field>
+        <field name="model">welfare.fund.type</field>
+        <field name="arch" type="xml">
+            <form string="Regime Fiscale">
+                <group>
+                    <field name="code" />
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ade_cassa_previdenziale" model="ir.actions.act_window">
+        <field name="name">Cassa previdenziale</field>
+        <field name="res_model">welfare.fund.type</field>
+        <field name="view_id" ref="view_cassa_previdenziale_tree" />
+    </record>
+
+    <menuitem
+        id="menu_ade_cassa_previdenziale"
+        name="Cassa previdenziale"
+        action="action_ade_cassa_previdenziale"
+        parent="l10n_it_ade.menu_ade"
+        groups="account.group_account_manager"
+        sequence="55"
+    />
+
+</odoo>

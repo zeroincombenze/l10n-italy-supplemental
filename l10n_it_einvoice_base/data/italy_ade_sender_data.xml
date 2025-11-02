@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="einvoice_no_sender" model="italy.ade.sender">
+        <field name="name">Nessun Invio</field>
+        <field name="method">NO</field>
+        <field name="active">True</field>
+    </record>
+    <record id="einvoice_pec" model="italy.ade.sender">
+        <field name="name">Tramite PEC</field>
+        <field name="method">PEC</field>
+        <field name="email_exchange_system">sid1@pcert.agenziaentrate.it</field>
+        <field name="active">True</field>
+    </record>
+    <record id="einvoice_ftp" model="italy.ade.sender">
+        <field name="name">Tramite FTP</field>
+        <field name="method">FTP</field>
+        <field name="active">True</field>
+    </record>
+    <record id="einvoice_json" model="italy.ade.sender">
+        <field name="name">Tramite JSON</field>
+        <field name="method">JSON</field>
+        <field name="client_id">shs-av@evolve.srl</field>
+        <field name="client_key">oijoidf35673TSDFiii---qwe$$45e6e</field>
+        <field name="sender_url">http://test.evolve.srl/CertDocWebApi/api/v1/</field>
+        <field name="sender_company_id">100005</field>
+        <field name="hub_ip_addr">89.189.42.244</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>

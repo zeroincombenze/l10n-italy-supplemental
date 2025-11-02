@@ -1,0 +1,1 @@
+Modulo tecnico di integrazione tra l10n_it_dichiarazione_intento e l10n_it_einvoice_out

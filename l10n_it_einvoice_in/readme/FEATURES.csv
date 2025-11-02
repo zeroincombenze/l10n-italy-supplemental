@@ -1,0 +1,17 @@
+Description | Descrizione,Z0incombenze(R),OCA,Note(s)
+"N/A | e-fattura da fornitore, righe con IVA",✅,✅,
+"N/A | e-fattura da fornitore, righe senza IVA",✅,✅,Non riconosce esatto codice IVA
+N/A | e-fattura da fornitori con ritenuta d'acconto,✅,✅,
+N/A | e-fattura da fornitori da agenti (enasarco),✅,✅,
+N/A | e-fattura da fornitori con controllo su totale fattura,✅,❌,
+N/A | e-fattura da fornitori con split-payment,❌,❌,
+N/A | e-fattura da fornitori con reverse charge,|info|,❌,Non riconosce esatto codice IVA
+N/A | E-Nota Credito da fornitore,✅,✅,
+N/A | Gestione multi-aziendale,✅,❌,
+N/A | Validazione e-fattura per azienda,✅,❌,
+N/A | Generazione scadenzario passivo da e-fattura,✅,✅,
+N/A | Livello contabile solo testata senza dettagli,✅,✅,Per collegare fatture manuali
+N/A | Livello righe contabili per aliquote IVA,✅,❌,Per fatture con troppe righe
+N/A | Livelllo righe contabili in dettaglio,✅,✅,
+N/A |e-fattura da stabile organizzazione estera,✅,❌,
+N/A | e-fattura da rappresentante fiscale,✅,❌,
