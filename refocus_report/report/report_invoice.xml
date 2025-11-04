@@ -42,8 +42,11 @@
                     </div>
                     <div class="col-xs-3">
                         <p><strong>Payment Term:</strong></p>
+                        <!--
                         <p t-if="o.payment_term_id.note" t-field="o.payment_term_id.note"/>
                         <p t-if="not o.payment_term_id.note" t-field="o.payment_term_id"/>
+                        -->
+                        <p t-field="o.payment_term_id"/>
                     </div>
                     <div class="col-xs-4" t-if="o.payment_term_id and not o.payment_term_id.riba">
                         <p><strong>IBAN:</strong></p>

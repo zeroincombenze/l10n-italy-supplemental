@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-01 16:58+0000\n"
-"PO-Revision-Date: 2025-11-01 16:58+0000\n"
+"POT-Creation-Date: 2025-11-04 05:31+0000\n"
+"PO-Revision-Date: 2025-11-04 05:31+0000\n"
 "Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
 "Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
 "Language: it\n"
@@ -209,7 +209,7 @@ msgstr "Prezzo Unitario"
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document
 msgid "VAT"
-msgstr "VAT"
+msgstr "CI"
 
 #. module: refocus_report
 #: model:ir.ui.view,arch_db:refocus_report.report_invoice_document
