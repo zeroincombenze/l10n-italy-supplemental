@@ -345,7 +345,7 @@ class TestInvoice(SingleTransactionCase):
             xml = self.field_download(invoice.fatturapa_attachment_out_id, "datas")
             if xref == "z0bug.invoice_Z0_5":
                 # Self invoice
-                self._validate_xml_self(invoice, xml)
+                self._validate_xml_self(invoice, xml, vat="IT" + invoice.partner_id.vat)
             elif xref == "z0bug.invoice_Z0_4":
                 # PA invoice
                 self._validate_xml_pa(invoice, xml)

@@ -68,19 +68,9 @@ class TestReverseCharge(SingleTransactionCase):
             "DatiTrasmissione/IdTrasmittente/IdCodice":
                 self.default_company().vat[2:],
 
-            # "CodiceDestinatario": self.default_company().partner_id.codice_destinatario,
-
-            # "CessionarioCommittente/DatiAnagrafici/IdFiscaleIVA/IdPaese":
-            #     self.default_company().vat[: 2],
-            # "CessionarioCommittente/DatiAnagrafici/IdFiscaleIVA/IdCodice":
-            #     self.default_company().vat[2:],
-            # "CessionarioCommittente/Sede/CAP": self.default_company().zip,
-            # "CessionarioCommittente/Sede/Provincia":
-            #     self.default_company().state_id.code,
-
             "DatiGenerali/DatiGeneraliDocumento/Data": invoice.date_invoice,
             "ImportoTotaleDocumento": "%1.2f" % invoice.amount_total,
-            # "TipoDocumento": "TD18",
+            "TipoDocumento": "TD29" if invoice.type == "out_invoice" else "TD18",
         }
 
     def _validate_xml_self(self, invoice, xml, vat=None, zip=None, state_code=None):
@@ -177,10 +167,16 @@ class TestReverseCharge(SingleTransactionCase):
                     button_name="exportFatturaPA")
         xml = self.field_download(invoice.fatturapa_attachment_out_id,
                                   "datas")
-        self._validate_xml_self(invoice, xml, zip="15010", state_code="AL")
+        self._validate_xml_self(
+            invoice, xml,
+            zip="15010", state_code="AL", vat="IT" + invoice.partner_id.vat)
 
     def test_rc(self):
         _logger.info("🎺 Testing Reverse Charge")
+        # BUG WORKAROUND
+        self.resource_browse("z0bug.tax_a17c6ca").rc_sale_tax_id = self.resource_browse(
+            "z0bug.tax_a17c6ca")
+        self.resource_browse("z0bug.tax_a41a").rc_sale_tax_id = self.resource_browse(
+            "z0bug.tax_aa41v")
         self._test_rc_1_purchase()
         self._test_rc_1_sale()
-

@@ -334,7 +334,7 @@ class WizardExportFatturapa(models.TransientModel):
                 IdCodice = partner.vat[2:]
                 if any([
                     x for x in invoices
-                    if x.fiscal_document_type_id.code in ('TD17', 'TD18', 'TD19')
+                    if x.fiscal_document_type_id.is_self_invoice
                 ]):
                     if IdPaese == 'IT':
                         IdPaese = partner.country_id.code

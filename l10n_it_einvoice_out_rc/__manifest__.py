@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "ITA - Emissione e-auto-fattura con reverse charge",
-    "version": "10.0.1.0.4",
+    "version": "10.0.1.0.6",
     "category": "Localization/Italy",
     "summary": "Integrazione l10n_it_fatturapa_out e l10n_it_reverse_charge",
     "author": "SHS-AV s.r.l.",
@@ -18,7 +18,10 @@
         "l10n_it_reverse_charge>=10.0.1.9",
         "l10n_it_einvoice_out>=10.0.1.0.27",
     ],
-    "data": ["views/rc_type_views.xml"],
+    "data": [
+        "views/rc_type_views.xml",
+        "views/account_fiscal_position_view.xml"
+    ],
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
 }

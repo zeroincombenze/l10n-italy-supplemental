@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo import api, models
-# from odoo.exceptions import UserError
+from odoo import api, models, _
+from odoo.exceptions import UserError
 
 
 class Invoice(models.Model):
@@ -12,7 +12,7 @@ class Invoice(models.Model):
         if self.rc_self_invoice_id:
             if self.fiscal_position_id.rc_type == "self":
                 self.rc_self_invoice_id.fiscal_document_type_id = (
-                    self.fiscal_position_id.fiscal_document_type_id.id
+                    self.fiscal_position_id.rc_fiscal_document_type_id.id
                 )
                 is_rc = True
             else:
@@ -24,6 +24,9 @@ class Invoice(models.Model):
                     )
                     is_rc = True
         if is_rc:
+            if not self.rc_self_invoice_id.fiscal_document_type_id:
+                raise UserError(
+                    _("There is no fiscal document type in fiscal position"))
             if self.fatturapa_attachment_in_id:
                 doc_id = self.fatturapa_attachment_in_id.name
             else:

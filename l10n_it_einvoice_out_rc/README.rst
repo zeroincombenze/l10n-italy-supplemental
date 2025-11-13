@@ -1,10 +1,10 @@
 ===================================================================
-|icon| ITA - Emissione e-auto-fattura con reverse charge 10.0.1.0.4
+|icon| ITA - Emissione e-auto-fattura con reverse charge 10.0.1.0.6
 ===================================================================
 
 **Integrazione l10n_it_fatturapa_out e l10n_it_reverse_charge**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_out_rc/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_out_rc/static/description/icon.png
 
 
 .. contents::
@@ -22,12 +22,12 @@ reverse charge. This module creates the e-invoice from self-invoice.
 |it| Questo module integra le funzione di *l10n_it_einvoice_out* e *l10n_it_reverse_charge*.
 Il modulo *l10n_it_reverse_charge* crea un'auto-fattura da una fattura fornitore con
 reverse charge, sia locali che esteri.
-Questo modulo creta il file xml della fattura elettronica dell'auto-fattura.
+Questo modulo crea la fattura elettronica in formato xml dell'auto-fattura.
 
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_out_rc/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_out_rc/static/description/description.png
 
 
 Getting started | Primi passi
@@ -76,7 +76,7 @@ Installation | Installazione
 ::
 
     # Odoo repository installation; OCB repository must be installed
-    deploy_odoo clone -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo clone -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     # Upgrade virtual environment
     vem amend $HOME/10.0/venv_odoo
 
@@ -87,7 +87,7 @@ Upgrade | Aggiornamento
 
 ::
 
-    deploy_odoo update -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo update -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     vem amend $HOME/10.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
@@ -106,7 +106,7 @@ Get involved | Ci mettiamo in gioco
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
 and/or submit pull requests on `GitHub Issues
-<https://github.com/zeroincombenze/l10n-italy/issues>`_.
+<https://github.com/zeroincombenze/l10n-italy-supplemental/issues>`_.
 
 In case of trouble, please check there if your issue has already been reported.
 
@@ -125,35 +125,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.1.0.6 (2025-10-24)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Data for RC self-invoice on fiscal position / Dati auto-fattura in posizione fiscale
+* [QUA] Test coverage 78% (100: 22+78) [20 TestPoints] - quality rating 79 (target 100)
+
 10.0.1.0.5 (2024-02-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * [QUA] Test coverage 78% (100: 22+78) [20 TestPoints] - quality rating 79 (target 100)
-
-10.0.1.0.4 (2023-03-07)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] AttributeError: 'DatiPagamentoType' object has no attribute 'ImportoPagamento'
-
-10.0.1.0.3 (2023-03-06)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Self-invoice TD17-19 with "IT" vat / Codice IVA italiano modificato eper autofatture TD17-19
-
-10.0.1.0.2 (2022-10-04)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] No latin chars in partner / Anagrafica estera con caratteri non latini
-
-10.0.1.0.1 (2022-09-27)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Refund of TD17..TD19 / Nota credito con TD17..TD19
-
-10.0.1.0.0 (2022-06-21)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Created documentation directory
 
 
 
@@ -202,9 +183,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 |
 |
 
-This module is part of l10n-italy project.
+This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-06-06
+Last Update / Ultimo aggiornamento: 2025-11-13
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

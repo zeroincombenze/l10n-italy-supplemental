@@ -1,10 +1,10 @@
 =============================================================
-|icon| EInvoice + FatturaPA/l10n_it_einvoice_base 10.0.2.1.27
+|icon| EInvoice + FatturaPA/l10n_it_einvoice_base 10.0.2.1.28
 =============================================================
 
 **Infrastructure for Italian Electronic Invoice + FatturaPA**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_base/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_base/static/description/icon.png
 
 
 .. contents::
@@ -141,7 +141,7 @@ installare il modulo *l10n_it_einvoice_out*
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_base/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_base/static/description/description.png
 
 
 Certifications | Certificazioni
@@ -224,7 +224,7 @@ Installation | Installazione
 ::
 
     # Odoo repository installation; OCB repository must be installed
-    deploy_odoo clone -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo clone -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     # Upgrade virtual environment
     vem amend $HOME/10.0/venv_odoo
 
@@ -235,7 +235,7 @@ Upgrade | Aggiornamento
 
 ::
 
-    deploy_odoo update -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo update -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     vem amend $HOME/10.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
@@ -254,7 +254,7 @@ Get involved | Ci mettiamo in gioco
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
 and/or submit pull requests on `GitHub Issues
-<https://github.com/zeroincombenze/l10n-italy/issues>`_.
+<https://github.com/zeroincombenze/l10n-italy-supplemental/issues>`_.
 
 In case of trouble, please check there if your issue has already been reported.
 
@@ -305,6 +305,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.2.1.28 (2025-11-13)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Fiscal document from fiscal position / Documento fiscale da posizione fiscale
+* [QUA] Test coverage 60% (520: 206+314) [0 TestPoints] - quality rating 36 (target 100)
+
 10.0.2.1.27 (2024-07-30)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -328,22 +334,6 @@ ChangeLog History | Cronologia modifiche
 
 * [IMP] Sender on invoice header / Soggetto emittente in testata fattura
 * [QUA] Test coverage 61% (515: 202+313) [0 TestPoints] - quality rating 37 (target 100)
-
-10.0.2.1.23 (2023-03-08)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Fiscal document type for refund / TD04 per note credito
-
-10.0.2.1.22 (2023-02-13)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Self invoice flag / Identificatore documento autofattura
-* [IMP] Date updatable for self invoice / Data contabile modificabile per le auto-fatture
-
-10.0.2.1.21 (2022-11-14)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Company data view with name for field extentions
 
 
 
@@ -373,6 +363,7 @@ Contributors | Partecipanti
 Acknowledges | Riconoscimenti
 -----------------------------
 
+* `Abstract <https://www.abstract.it>`__
 * `Odoo Italia Network <https://www.odoo-italia.net>`__
 * `Davide Corio <davide.corio@abstract.it>`__
 * `Lorenzo Battistini <lorenzo.battistini@agilebg.com>`__
@@ -409,9 +400,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 |
 |
 
-This module is part of l10n-italy project.
+This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-07-30
+Last Update / Ultimo aggiornamento: 2025-11-13
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

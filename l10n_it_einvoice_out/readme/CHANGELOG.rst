@@ -1,3 +1,9 @@
+10.0.1.0.31 (2025-11-13)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Riconoscimento auto-fattura da tipo documento fiscale
+* [QUA] Test coverage 64% (777: 279+498) [87 TestPoints] - quality rating 48 (target 100)
+
 10.0.1.0.30 (2025-10-02)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

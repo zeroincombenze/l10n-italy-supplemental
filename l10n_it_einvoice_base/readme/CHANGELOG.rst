@@ -1,3 +1,9 @@
+10.0.2.1.28 (2025-11-13)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Fiscal document from fiscal position / Documento fiscale da posizione fiscale
+* [QUA] Test coverage 60% (520: 206+314) [0 TestPoints] - quality rating 36 (target 100)
+
 10.0.2.1.27 (2024-07-30)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -9,7 +9,7 @@
 #
 {
     "name": "EInvoice + FatturaPA",
-    "version": "10.0.2.1.27",
+    "version": "10.0.2.1.28",
     "category": "Localization/Italy",
     "summary": "Infrastructure for Italian Electronic Invoice + FatturaPA",
     "author": "SHS-AV s.r.l.",

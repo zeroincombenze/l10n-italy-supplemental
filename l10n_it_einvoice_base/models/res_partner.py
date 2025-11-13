@@ -23,6 +23,14 @@ class AccountFiscalPosition(models.Model):
         oldname="invoice_type_id",
         help="To be used when sending self invoices to the exchange system")
 
+    @api.multi
+    def invoice_validate(self):
+        for invoice in self:
+            if not invoice.fiscal_document_type_id and invoice.fiscal_position_id:
+                invoice.fiscal_document_type_id = (
+                    invoice.fiscal_position_id.fiscal_document_type_id
+                )
+
 
 class ResPartner(models.Model):
     _inherit = "res.partner"

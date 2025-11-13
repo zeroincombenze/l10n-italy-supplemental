@@ -1,10 +1,10 @@
 =============================================================================================
-|icon| Italian Localization - FatturaPA - Emissione/Emissione fattura elettronica 10.0.1.0.30
+|icon| Italian Localization - FatturaPA - Emissione/Emissione fattura elettronica 10.0.1.0.31
 =============================================================================================
 
 **E-Invoice emission**
 
-.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_out/static/description/icon.png
+.. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_out/static/description/icon.png
 
 
 .. contents::
@@ -42,7 +42,7 @@ Per maggiori info leggere le informazioni relative al modulo *l10n_it_einvoice_b
 
 |thumbnail|
 
-.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy/10.0/l10n_it_einvoice_out/static/description/description.png
+.. |thumbnail| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/10.0/l10n_it_einvoice_out/static/description/description.png
 
 
 Features | Caratteristiche
@@ -148,7 +148,7 @@ Installation | Installazione
 ::
 
     # Odoo repository installation; OCB repository must be installed
-    deploy_odoo clone -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo clone -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     # Upgrade virtual environment
     vem amend $HOME/10.0/venv_odoo
 
@@ -159,7 +159,7 @@ Upgrade | Aggiornamento
 
 ::
 
-    deploy_odoo update -r l10n-italy -b 10.0 -G zero -p $HOME/10.0
+    deploy_odoo update -r l10n-italy-supplemental -b 10.0 -G zero -p $HOME/10.0
     vem amend $HOME/10.0/venv_odoo
     # Adjust following statements as per your system
     sudo systemctl restart odoo
@@ -178,7 +178,7 @@ Get involved | Ci mettiamo in gioco
 
 Bug reports are welcome! You can use the issue tracker to report bugs,
 and/or submit pull requests on `GitHub Issues
-<https://github.com/zeroincombenze/l10n-italy/issues>`_.
+<https://github.com/zeroincombenze/l10n-italy-supplemental/issues>`_.
 
 In case of trouble, please check there if your issue has already been reported.
 
@@ -196,6 +196,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
+
+10.0.1.0.31 (2025-11-13)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Riconoscimento auto-fattura da tipo documento fiscale
+* [QUA] Test coverage 64% (777: 279+498) [87 TestPoints] - quality rating 48 (target 100)
 
 10.0.1.0.30 (2025-10-02)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,9 +295,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 |
 |
 
-This module is part of l10n-italy project.
+This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-10-02
+Last Update / Ultimo aggiornamento: 2025-11-13
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
