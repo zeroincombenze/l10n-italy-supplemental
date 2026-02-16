@@ -11,8 +11,7 @@
             <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
             <div class="page">
                 <div class="row">
-                    <div name="invoice_address" class="col-xs-5 col-xs-offset-7" style="line-height: 6pt">
-                        <br></br>
+                    <div name="invoice_address" class="col-xs-5 col-xs-offset-7" style="line-height: 6pt; padding-top: 2px;">
                         <p>
                             <strong><p t-field="o.partner_id.name"/></strong>
                             <address t-field="o.partner_id"
@@ -76,7 +75,7 @@
                             <th class="text-right">Q.ty</th>
                             <th class="text-right">Unit Price</th>
                             <th t-if="display_discount" class="text-right">Disc.(%)</th>
-                            <th class="text-right">VAT</th>
+                            <!-- <th class="text-right">VAT</th> -->
                             <th class="text-right">Amount</th>
                         </tr>
                     </thead>
@@ -113,9 +112,11 @@
                             <td t-if="display_discount" class="text-right" style="vertical-align: bottom;">
                                 <span t-field="l.discount"/>
                             </td>
+                            <!--
                             <td class="text-right" style="vertical-align: bottom;">
                                 <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"/>
                             </td>
+                            -->
                             <td class="text-right" style="vertical-align: bottom;">
                                 <span t-field="l.price_subtotal"
                                       t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
@@ -203,7 +204,7 @@
         <xpath expr="//div[@name='doctype']" position="replace">
                     <div class="col-xs-3" name="doctype">
                         <!-- <p><strong>Doc.Type &amp; Number</strong></p> -->
-                        <p><strong>Tipo &amp; N. documento</strong></p>
+                        <p><strong>Tipo &amp; N.Documento</strong></p>
                         <p>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Ft.Cortesia</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>

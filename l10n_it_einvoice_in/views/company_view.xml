@@ -30,6 +30,10 @@
                     <label for="arrotondamenti_tax_id"/>
                     <field name="arrotondamenti_tax_id" class="oe_inline"/>
                 </div>
+                <div>
+                    <label for="supplier_payment_term"/>
+                    <field name="supplier_payment_term" class="oe_inline"/>
+                </div>
             </xpath>
         </field>
     </record>

@@ -19,19 +19,27 @@ class ResCompany(models.Model):
         help="Product used to model ScontoMaggiorazione XML element on bills.",
     )
     arrotondamenti_attivi_account_id = fields.Many2one(
-        'account.account', 'Active Rounding Account',
-        domain=[('deprecated', '=', False)],
+        "account.account", "Active Rounding Account",
+        domain=[("deprecated", "=", False)],
         help="Account used for active rounding amount on bills."
         )
     arrotondamenti_passivi_account_id = fields.Many2one(
-        'account.account', 'Passive Rounding Account',
-        domain=[('deprecated', '=', False)],
+        "account.account", "Passive Rounding Account",
+        domain=[("deprecated", "=", False)],
         help="Account used for passive rounding amount on bills."
         )
     arrotondamenti_tax_id = fields.Many2one(
-        'account.tax', 'Rounding Tax',
-        domain=[('type_tax_use', '=', 'purchase'), ('amount', '=', 0.0)],
+        "account.tax", "Rounding Tax",
+        domain=[("type_tax_use", "=", "purchase"), ("amount", "=", 0.0)],
         help="Tax used for rounding amount on bills."
+        )
+    supplier_payment_term = fields.Selection(
+        [("supplier", "From supplier invoice"), ("company", "Local payment assigned")],
+        "Supplier Payment Term",
+        default="company",
+        help="Which payment term will be loaded in local invoice; may be:"
+        "\nfrom supplier invoice (warning payment term must be exist)"
+        "\nuse assigned payment term in supplier record"
         )
 
     def xml_get_company(self, DatiAnagrafici, wizard=None):
@@ -81,13 +89,16 @@ class AccountConfigSettings(models.TransientModel):
         help="Product used to model ScontoMaggiorazione XML element on bills.",
     )
     arrotondamenti_attivi_account_id = fields.Many2one(
-        related='company_id.arrotondamenti_attivi_account_id',
+        related="company_id.arrotondamenti_attivi_account_id",
     )
     arrotondamenti_passivi_account_id = fields.Many2one(
-        related='company_id.arrotondamenti_passivi_account_id',
+        related="company_id.arrotondamenti_passivi_account_id",
     )
     arrotondamenti_tax_id = fields.Many2one(
-        related='company_id.arrotondamenti_tax_id',
+        related="company_id.arrotondamenti_tax_id",
+    )
+    supplier_payment_term = fields.Selection(
+        related="company_id.supplier_payment_term",
     )
 
     @api.onchange("company_id")

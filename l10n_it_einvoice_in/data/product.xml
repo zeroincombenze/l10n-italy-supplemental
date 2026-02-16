@@ -5,8 +5,8 @@
             <field name="default_code">C-PREVIDENZ</field>
             <field name="name">Cassa previdenziale</field>
             <field name="type">service</field>
-            <field name="list_price" eval="1.0" />
-            <field name="standard_price" eval="1.0" />
+            <field name="list_price" eval="1.0"/>
+            <field name="standard_price" eval="1.0"/>
         </record>
 
 </odoo>

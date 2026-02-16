@@ -284,7 +284,7 @@ msgstr "Allegati e-fattura"
 #, python-format
 msgid "E-invoice export file still present for invoice %s."
 msgstr ""
-"fattura non valida in codice iva present still il file esportare e-invoice %s."
+"Fattura elettronica già presente nel documento %s."
 
 #. module: l10n_it_einvoice_out
 #: code:addons/l10n_it_einvoice_out/wizard/wizard_export_fatturapa.py:326
@@ -407,7 +407,7 @@ msgstr "XML genera a impossible: fattura cliente https minusc"
 #: code:addons/l10n_it_einvoice_out/wizard/wizard_export_fatturapa.py:358
 #, python-format
 msgid "Impossible to set IdFiscaleIVA for %s"
-msgstr "non valida in codice IVA idfiscaleiva impostare a impossible %s"
+msgstr "Impossibile impostare IdFiscaleIVA per %s"
 
 #. module: l10n_it_einvoice_out
 #: model:ir.model.fields,field_description:l10n_it_einvoice_out.field_fatturapa_attachment_out_index_content

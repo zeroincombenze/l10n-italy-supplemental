@@ -1,3 +1,9 @@
+10.0.1.3.59 (2026-02-16)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Supplier payment term selection from configuration
+* [QUA] Test coverage 75% (1476: 372+1104) [0 TestPoints] - quality rating 43 (target 100)
+
 10.0.1.3.58 (2025-07-24)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

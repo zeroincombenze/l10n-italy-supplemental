@@ -555,10 +555,10 @@ class WizardImportFatturapa(models.TransientModel):
                     diff = 0 if diff < 0 else diff
                 prospect -= diff
                 prospect = 0 if prospect < 0 else prospect
-            if prospect > best_prospect:
-                best_prospect = prospect
-                payment_term_found = payment_term
-        return payment_term_found, prospect
+                if prospect > best_prospect:
+                    best_prospect = prospect
+                    payment_term_found = payment_term
+        return payment_term_found, best_prospect
 
     def set_payment_term(self, invoice, company, PaymentsData):
         # payment_term_model = self.env['account.payment.term']
@@ -591,6 +591,13 @@ class WizardImportFatturapa(models.TransientModel):
                 elif not due_date:
                     due_date = date_invoice
                 totdue.append([due_date, eval(due_amt), num_days])
+        if (
+            company.supplier_payment_term != "supplier"
+            and invoice.partner_id.property_payment_term_id
+        ):
+            invoice.write(
+                {"payment_term_id": invoice.partner_id.property_payment_term_id})
+            return
         # No due date: payment is at the same date of invoice
         if len(totdue) == 1 and totdue[0][0].date() == date_invoice.date():
             invoice.write({"payment_term_id": False, "date_due": date_invoice})
@@ -618,7 +625,10 @@ class WizardImportFatturapa(models.TransientModel):
                     }
                 )
             elif len(totdue) == 1:
-                invoice.write({"payment_term_id": False, "date_due": totdue[0][0]})
+                invoice.write({
+                    "payment_term_id": invoice.partner_id.property_payment_term_id,
+                    "date_due": totdue[0][0]
+                })
                 self.log_inconsistency(
                     _(
                         "\nNessun termine di pagamento soddisfa la fattura XML. "
@@ -646,6 +656,9 @@ class WizardImportFatturapa(models.TransientModel):
                         "Verificare le scadenze!"
                     )
                 )
+                invoice.write({
+                    "payment_term_id": invoice.partner_id.property_payment_term_id,
+                })
 
     # TODO sul partner?
     def set_StabileOrganizzazione(self, CedentePrestatore, invoice):
