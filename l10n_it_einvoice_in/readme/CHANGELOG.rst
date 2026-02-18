@@ -1,4 +1,4 @@
-10.0.1.3.59 (2026-02-16)
+10.0.1.3.59 (2026-02-18)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Supplier payment term selection from configuration

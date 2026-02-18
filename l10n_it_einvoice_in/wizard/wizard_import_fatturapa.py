@@ -626,7 +626,10 @@ class WizardImportFatturapa(models.TransientModel):
                 )
             elif len(totdue) == 1:
                 invoice.write({
-                    "payment_term_id": invoice.partner_id.property_payment_term_id,
+                    "payment_term_id": (
+                        invoice.partner_id.property_payment_term_id
+                        if invoice.partner_id.property_payment_term_id
+                        else False),
                     "date_due": totdue[0][0]
                 })
                 self.log_inconsistency(
@@ -657,7 +660,10 @@ class WizardImportFatturapa(models.TransientModel):
                     )
                 )
                 invoice.write({
-                    "payment_term_id": invoice.partner_id.property_payment_term_id,
+                    "payment_term_id": (
+                        invoice.partner_id.property_payment_term_id
+                        if invoice.partner_id.property_payment_term_id
+                        else False),
                 })
 
     # TODO sul partner?
