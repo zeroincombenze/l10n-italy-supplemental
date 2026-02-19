@@ -596,7 +596,7 @@ class WizardImportFatturapa(models.TransientModel):
             and invoice.partner_id.property_payment_term_id
         ):
             invoice.write(
-                {"payment_term_id": invoice.partner_id.property_payment_term_id})
+                {"payment_term_id": invoice.partner_id.property_payment_term_id.id})
             return
         # No due date: payment is at the same date of invoice
         if len(totdue) == 1 and totdue[0][0].date() == date_invoice.date():
@@ -628,7 +628,7 @@ class WizardImportFatturapa(models.TransientModel):
                 invoice.write({
                     "payment_term_id": (
                         invoice.partner_id.property_payment_term_id
-                        if invoice.partner_id.property_payment_term_id
+                        if invoice.partner_id.property_payment_term_id.id
                         else False),
                     "date_due": totdue[0][0]
                 })
@@ -662,7 +662,7 @@ class WizardImportFatturapa(models.TransientModel):
                 invoice.write({
                     "payment_term_id": (
                         invoice.partner_id.property_payment_term_id
-                        if invoice.partner_id.property_payment_term_id
+                        if invoice.partner_id.property_payment_term_id.id
                         else False),
                 })
 

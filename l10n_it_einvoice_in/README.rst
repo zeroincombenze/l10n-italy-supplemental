@@ -1,5 +1,5 @@
 ========================================================
-|icon| ITA - Fattura elettronica - Ricezione 10.0.1.3.58
+|icon| ITA - Fattura elettronica - Ricezione 10.0.1.3.60
 ========================================================
 
 **E-invoice receive**
@@ -219,6 +219,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.1.3.60 (2026-02-19)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Supplier payment term selection from configuration
+* [QUA] Test coverage 75% (1476: 372+1104) [0 TestPoints] - quality rating 43 (target 100)
+
 10.0.1.3.59 (2026-02-18)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -289,16 +295,6 @@ ChangeLog History | Cronologia modifiche
 * [IMP] Force validation
 * [QUA] Test coverage 70% (1460: 444+1016) [0 TestPoints] - quality rating 42 (target 100)
 
-10.0.1.3.48 (2024-07-22)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Wrong invoice total if wrong rounding / Totale fattura errato in caso di errato arrotondamento
-* [IMP] Store and show e-invoice totals / Memorizza e mostra totali e-fattura
-* [IMP] Dati terzo intermediario in fattura
-* [IMP] Cassa previdenziale in fattura
-* [IMP] Best partner searching / Migliorie ricerca partner
-* [QUA] Test coverage 69% (1386: 424+962) [0 TestPoints] - quality rating 42 (target 100)
-
 
 
 Credits | Ringraziamenti
@@ -364,7 +360,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-02-18
+Last Update / Ultimo aggiornamento: 2026-02-19
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status
