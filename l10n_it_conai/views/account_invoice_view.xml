@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="invoice_form_view_conai">
+        <field name="name">account.invoice.form.conai</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+
+            <field name="date_due" position="after">
+                <field name="conai_exemption_id"/>
+            </field>
+
+            <xpath
+                expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']"
+                position="after"
+            >
+                <field name="conai_category_id"/>
+                <field name="conai_amount" readonly="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="invoice_line_form_view_conai">
+        <field name="name">account.invoice.line_form.conai</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+
+            <field name="invoice_line_tax_ids" position="after">
+                <field name="weight"/>
+                <field name="conai_category_id"/>
+                <field name="conai_amount" readonly="1"/>
+                <field name="conai_manual"/>
+                <field name="conai_summary_line" readonly="1"/>
+            </field>
+
+        </field>
+    </record>
+
+    <!-- Invoice lines -->
+    <record id="view_invoice_line_tree" model="ir.ui.view">
+        <field name="name">view.invoice.line.tree</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <tree string="Products in invoice" create="false" delete="false">
+                <field name="invoice_id" readonly="1"/>
+                <field name="date_invoice" readonly="1"/>
+                <field name="name"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="product_id" readonly="1"/>
+                <field name="quantity" readonly="1"/>
+                <field name="price_unit" readonly="1"/>
+                <field name="conai_exemption_id"/>
+                <field name="weight" sum="Weight Total"/>
+                <field name="conai_category_id"/>
+                <field name="conai_amount" readonly="1" sum="CONAI Total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_invoice_conai_search" model="ir.ui.view">
+        <field name="name">account.invoice.conai.search</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <search string="Search CONAI">
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="conai_category_id"/>
+                <field name="conai_exemption_id"/>
+                <filter
+                    string="With CONAI"
+                    domain="[('conai_category_id','!=',False),('conai_summary_line','=',False)]"
+                />
+                <filter
+                    string="Without CONAI"
+                    domain="[('conai_category_id','=',False),('conai_summary_line','=',False)]"
+                />
+                <filter
+                    string="With weight"
+                    domain="[('weight','!=',False),('weight','!=',0.0),('conai_summary_line','=',False)]"
+                />
+                <filter
+                    string="Without weight"
+                    domain="['|',('weight','=', False), ('weight','=', 0.0),('conai_summary_line','=',False)]"
+                />
+                <filter
+                    string="CONAI lines"
+                    domain="[('conai_summary_line','!=',False)]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="group_by_category_id"
+                        string="Categoria conai"
+                        domain="[]"
+                        context="{'group_by': 'conai_category_id'}"
+                    />
+                    <filter
+                        name="group_by_exemption_id"
+                        string="Esenzione conai"
+                        domain="[]"
+                        context="{'group_by': 'conai_exemption_id'}"
+                    />
+                    <filter
+                        name="group_by_date_invoice"
+                        string="Date Invoice"
+                        domain="[]"
+                        context="{'group_by': 'date_invoice'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_invoice_line_tree">
+        <field name="name">Prodotti CONAI</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_id" ref="view_invoice_line_tree"/>
+        <!-- <field name="search_view_id" ref="ddt_sppp_line_search"/> -->
+    </record>
+
+    <menuitem
+        action="action_invoice_line_tree"
+        id="menu_invoice_line_tree"
+        parent="account.menu_finance_reports"
+        sequence="50"
+    />
+
+</odoo>

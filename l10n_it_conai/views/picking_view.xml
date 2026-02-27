@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_ddt_conai_form" model="ir.ui.view">
+        <field name="name">view.ddt.conai.form</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field
+            name="inherit_id"
+            ref="stock_picking_package_preparation_line.sppp_line_stock_picking_package_preparation_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='show_price']" position="after">
+                <field name="conai_exemption_id"/>
+            </xpath>
+            <xpath
+                expr="//field[@name='line_ids']/form//group[last()]"
+                position="after"
+            >
+                <group>
+                    <field name="conai_category_id"/>
+                    <field name="conai_amount"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="product_conai" model="product.template">
+        <field name="default_code">CONAI</field>
+        <field name="name">CONAI environmental contribution</field>
+        <field name="type">service</field>
+        <field name="list_price" eval="1.0"/>
+        <field name="standard_price" eval="1.0"/>
+        <field name="uom_id" ref="product.product_uom_kgm"/>
+        <field name="uom_po_id" ref="product.product_uom_kgm"/>
+    </record>
+
+</odoo>

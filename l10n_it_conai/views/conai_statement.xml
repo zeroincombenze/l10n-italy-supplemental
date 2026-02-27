@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="italy_conai_statement_tree_view" model="ir.ui.view">
+        <field name="name">italy.conai.statement.tree.view</field>
+        <field name="model">italy.conai.statement</field>
+        <field name="arch" type="xml">
+
+            <tree string="CONAI Statement">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="italy_conai_statement_form_view" model="ir.ui.view">
+        <field name="name">italy_conai_statement_form_view</field>
+        <field name="model">italy.conai.statement</field>
+        <field name="arch" type="xml">
+            <form string="CONAI Statement">
+                <header>
+                    <button name="compute_statement" string="Recompute" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="company_id" widget="selection"/>
+                        <field name="name"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <notebook>
+                        <page string="CONAI sales">
+                            <field name="conai_line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="conai_category_id"/>
+                                    <field name="conai_exemption_id"/>
+                                    <field name="invoice_id"/>
+                                    <field name="invoice_line_id"/>
+                                    <field name="date_invoice"/>
+                                    <field name="weight" sum="Total Weight"/>
+                                    <field name="conai_price_unit"/>
+                                    <field name="conai_amount" sum="Total CONAI"/>
+                                    <field name="conai_summary_line"/>
+                                    <field name="conai_manual"/>
+                                    <field name="weight_due" sum="Due Total Weight"/>
+                                    <field
+                                        name="conai_amount_due"
+                                        sum="Due Total CONAI"
+                                    />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="conai_category_id"/>
+                                        <field name="conai_exemption_id"/>
+                                        <field name="invoice_id"/>
+                                        <field name="invoice_line_id"/>
+                                        <field name="date_invoice"/>
+                                        <field name="weight"/>
+                                        <field name="conai_price_unit"/>
+                                        <field name="conai_amount"/>
+                                        <field name="conai_summary_line"/>
+                                        <field name="conai_manual"/>
+                                        <field name="weight_due"/>
+                                        <field name="conai_amount_due"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="CONAI summary">
+                            <field name="conai_category_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="conai_category_id"/>
+                                    <field name="conai_exemption_id"/>
+                                    <field name="weight" sum="Total Weight"/>
+                                    <field name="conai_price_unit"/>
+                                    <field name="conai_amount" sum="Total CONAI"/>
+                                     <field name="weight_due" sum="Due Total Weight"/>
+                                    <field
+                                        name="conai_amount_due"
+                                        sum="Due Total CONAI"
+                                    />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="conai_category_id"/>
+                                        <field name="conai_exemption_id"/>
+                                        <field name="weight"/>
+                                        <field name="conai_price_unit"/>
+                                        <field name="conai_amount"/>
+                                        <field name="weight_due"/>
+                                        <field name="conai_amount_due"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_conai_statement">
+        <field name="name">CONAI statement</field>
+        <field name="res_model">italy.conai.statement</field>
+        <field name="view_id" ref="italy_conai_statement_tree_view"/>
+    </record>
+
+    <menuitem
+        id="menu_conai_statement"
+        action="action_conai_statement"
+        name="CONAI statements"
+        parent="account.menu_finance_reports"
+        sequence="50"
+    />
+
+</odoo>

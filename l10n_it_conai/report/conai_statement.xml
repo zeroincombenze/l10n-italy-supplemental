@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="l10n_it_conai.conai_statement_document">
+        <tr>
+            <td>
+                <span t-field="line.product_id.name"/>
+            </td>
+            <td>
+                <span t-field="line.name"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.quantity"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.conai_category_id.conai_price_unit"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.weight"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.conai_category_id.name"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.conai_amount"/>
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="l10n_it_conai.conai_statement">
+        <t t-call="report.html_container">
+            <t t-set="company" t-value="res_company"/>
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <table style="width:100%;" cellspacing="5px" cellpadding="5px">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Unit Price</th>
+                                <th class="text-right">Weight</th>
+                                <th class="text-right">CONAI cat.</th>
+                                <th class="text-right">CONAI amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="line">
+                                <t t-call="l10n_it_conai.conai_statement_document"/>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <report
+        id="l10n_it_conai.action_report_conai_statement"
+        model="account.invoice.line"
+        string="CONAI data"
+        report_type="qweb-pdf"
+        name="l10n_it_conai.conai_statement"
+        file="l10n_it_conai.conai_statement"
+        attachment_use="False"
+    />
+
+</odoo>

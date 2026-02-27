@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_conai_product_category_tree" model="ir.ui.view">
+        <field name="name">view.conai.product.category.tree</field>
+        <field name="model">italy.conai.product.category</field>
+        <field name="arch" type="xml">
+            <tree string="CONAI Product Category">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="conai_price_unit"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_conai_product_category_form" model="ir.ui.view">
+        <field name="name">view.conai.product.category.form</field>
+        <field name="model">italy.conai.product.category</field>
+        <field name="arch" type="xml">
+            <form string="CONAI Product Category">
+                <group>
+                    <group col="2">
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="parent_id"/>
+                        <field name="conai_price_unit"/>
+                        <field name="conai_uom_id"/>
+                        <field name="conai_percent"/>
+                        <field name="type"/>
+                    </group>
+                    <group col="2">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="active"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_conai_product_category" model="ir.actions.act_window">
+        <field name="name">CONAI Product Category</field>
+        <field name="res_model">italy.conai.product.category</field>
+        <field name="view_id" ref="view_conai_product_category_tree"/>
+    </record>
+
+    <menuitem
+        id="menu_conai"
+        name="CONAI configuration"
+        parent="account.account_account_menu"
+        groups="account.group_account_manager"
+        sequence="50"
+    />
+
+    <menuitem
+        id="menu_conai_product_category"
+        name="CONAI Product Category"
+        action="action_conai_product_category"
+        parent="menu_conai"
+        groups="account.group_account_manager"
+        sequence="50"
+    />
+
+</odoo>

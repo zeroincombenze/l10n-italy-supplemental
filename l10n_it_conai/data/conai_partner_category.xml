@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record model="italy.conai.partner.category" id="prod">
+        <field name="code">PROD</field>
+        <field name="name">Produttore</field>
+        <field name="conai_percent">0.0</field>
+        <field name="sector">producer</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.partner.category" id="user">
+        <field name="code">USER</field>
+        <field name="name">Consumatore</field>
+        <field name="conai_percent">100.0</field>
+        <field name="sector">user</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.partner.category" id="excl">
+        <field name="code">EXCL</field>
+        <field name="name">Escluso</field>
+        <field name="conai_percent">0.0</field>
+        <field name="sector">excluded</field>
+        <field name="active">1</field>
+    </record>
+
+</odoo>

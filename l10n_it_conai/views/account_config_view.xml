@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="account_config_view_conai_product">
+        <field name="name">l10n_it_conai.account_config_view_conai_product</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='bank_cash']" position="after">
+                <separator string="CONAI"/>
+                <group name="conai_config">
+                    <label for="id" string="CONAI product"/>
+                    <div>
+                        <div>
+                            <field name="conai_product_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
