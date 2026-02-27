@@ -37,16 +37,12 @@ class WizardExportFatturapa(models.TransientModel):
         if not invoice.lettera_intento:
             return
         if not invoice.lettera_intento_id:
-            raise UserError(_("Missed Lettera di intento in invoice!"))
+            raise UserError(_("Missed Lettera di intento in invoice %s!"
+                              % invoice.number))
         # force_dichiarazione_intento_ids = invoice.lettera_intento.browse()
         line_no = 1
         for line in invoice.invoice_line_ids:
-            #     if line.force_dichiarazione_intento_id:
-            #         force_dichiarazione_intento_ids |= line.force_dichiarazione_intento_id
             line_no += 1
-        # to_add = invoice.lettera_intento - force_dichiarazione_intento_ids
-        # if not to_add:
-        #     return
         DettaglioLinea = DettaglioLineeType(
             NumeroLinea=str(line_no),
             Descrizione=encode_for_export("Altre lettere d'intento", 1000),
@@ -69,13 +65,6 @@ class WizardExportFatturapa(models.TransientModel):
     def setDatiRiepilogo(self, invoice, body):
         super(WizardExportFatturapa, self).setDatiRiepilogo(invoice, body)
         if invoice.lettera_intento:
-            # force_dichiarazione_intento_ids = invoice.lettera_intento.browse()
-            # for line in invoice.invoice_line_ids:
-            #     if line.force_dichiarazione_intento_id:
-            #         force_dichiarazione_intento_ids |= line.force_dichiarazione_intento_id
-            # to_add = invoice.lettera_intento - force_dichiarazione_intento_ids
-            # if not to_add:
-            #     return
             riepilogo = DatiRiepilogoType(
                 AliquotaIVA="0.00",
                 ImponibileImporto="0.00",

@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "ITA - Fattura elettronica - Emissione - Dichiarazione d'intento",
-    "version": "10.0.1.0.2",
+    "version": "10.0.1.0.3",
     "development_status": "Beta",
     "category": "Localization/Italy",
     "summary": "Dichiarazioni d'intento in fattura elettronica",
