@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_conai" model="ir.ui.view">
+        <field name="name">product.template.form.conai</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='general_information']//field[@name='categ_id']"
+                position="after"
+            >
+                <field name="conai_category_id"/>
+                <field name="conai_category2_id"/>
+                <field
+                    name="weight2"
+                    attrs="{'readonly': [('conai_category2_id', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

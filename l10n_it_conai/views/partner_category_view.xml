@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_conai_partner_category_tree" model="ir.ui.view">
+        <field name="name">view.conai.partner.category.tree</field>
+        <field name="model">italy.conai.partner.category</field>
+        <field name="arch" type="xml">
+            <tree string="CONAI Partner Category">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="sector"/>
+                <field name="conai_percent"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_conai_partner_category_form" model="ir.ui.view">
+        <field name="name">view.conai.partner.category.form</field>
+        <field name="model">italy.conai.partner.category</field>
+        <field name="arch" type="xml">
+            <form string="CONAI Partner Category">
+                <group>
+                    <group col="2">
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="sector"/>
+                        <field name="conai_percent"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_conai_partner_category" model="ir.actions.act_window">
+        <field name="name">CONAI Partner Category</field>
+        <field name="res_model">italy.conai.partner.category</field>
+        <field name="view_id" ref="view_conai_partner_category_tree"/>
+    </record>
+
+    <menuitem
+        id="menu_conai_partner_category"
+        name="CONAI Partner Category"
+        action="action_conai_partner_category"
+        parent="menu_conai"
+        groups="account.group_account_manager"
+        sequence="50"
+    />
+
+</odoo>

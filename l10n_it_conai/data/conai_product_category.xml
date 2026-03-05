@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record model="italy.conai.product.category" id="ac">
+        <field name="code">AC</field>
+        <field name="name">acciaio</field>
+        <field name="conai_price_unit">3</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="al">
+        <field name="code">AL</field>
+        <field name="name">alluminio</field>
+        <field name="conai_price_unit">15</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="ca">
+        <field name="code">CA</field>
+        <field name="name">carta</field>
+        <field name="conai_price_unit">20</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="ca2">
+        <field name="code">CA2</field>
+        <field
+            name="name"
+        >carta per gli imballaggi poliaccoppiati a prevalenza carta idonei al contenimento di liquidi</field>
+        <field name="conai_price_unit">40</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="l">
+        <field name="code">L</field>
+        <field name="name">legno</field>
+        <field name="conai_price_unit">7</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="fascia_pla">
+        <field name="code">PLA</field>
+        <field
+            name="name"
+        >plastica fascia A - Imballaggi selezionabili e riciclabili da circuito 'Commercio &amp; Industria'</field>
+        <field name="active">1</field>
+        <field name="conai_price_unit">150</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+    </record>
+    <record model="italy.conai.product.category" id="fascia_plb1">
+        <field name="code">PLB1</field>
+        <field
+            name="name"
+        >plastica fascia B1 - Imballaggi da circuito 'Domestico' con una filiera di selezione e riciclo efficace e consolidata</field>
+        <field name="conai_price_unit">208</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="fascia_plb2">
+        <field name="code">PLB2</field>
+        <field
+            name="name"
+        >plastica fascia B2 - Altri imballaggi selezionabili e riciclabili da circuito 'Domestico'</field>
+        <field name="conai_price_unit">263</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="fascia_plc">
+        <field name="code">PLC</field>
+        <field
+            name="name"
+        >plastica fascia C - Imballaggi non selezionabili/riciclabili allo stato delle tecnologie attuali</field>
+        <field name="conai_price_unit">369</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="t">
+        <field name="code">T</field>
+        <field name="name">tessile</field>
+        <field name="conai_price_unit">0</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+    <record model="italy.conai.product.category" id="v">
+        <field name="code">V</field>
+        <field name="name">vetro</field>
+        <field name="conai_price_unit">27</field>
+        <field name="conai_uom_id" ref="product.product_uom_ton"/>
+        <field name="type">packing</field>
+        <field name="active">1</field>
+    </record>
+
+</odoo>

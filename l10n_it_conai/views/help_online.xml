@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        name="help-italy.conai.product.category"
+        id="__export__.help-italy_conai_product_category'"
+        page="True"
+        key="website.italy_conai_product_category'"
+    >
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_text_block">
+                    <div class="container">
+                        <h2 class="text-center">Categoria prodotto CONAI</h2>
+                        <h3
+                            class="text-center text-muted"
+                        >Classificazione prodotto per il CONAI</h3>
+                        <div class="row">
+                            <div class="col-md-12 mb16 mt16">
+                                <p>
+                                  La categoria CONAI server per stabilire il corretto calcolo dell'importo CONAI.
+                                  Sono fornite le categorie di base della classificazione CONAI.
+                                  Si consiglia di creare le proprie categorie duplicando la categoria CONAI
+                                  più simile.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

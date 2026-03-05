@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_order_form_conai">
+        <field name="name">l10n_it_conai.view_order_form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <field name="client_order_ref" position="after">
+                <field name="conai_exemption_id"/>
+            </field>
+            <xpath
+                expr="//field[@name='order_line']//field[@name='tax_id']"
+                position="after"
+            >
+                <field name="conai_category_id"/>
+                <field
+                    name="conai_amount"
+                    attrs="{'readonly': [('conai_summary_line', '=', True)]}"
+                />
+                <field name="conai_manual"/>
+                <field name="conai_summary_line" readonly="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>

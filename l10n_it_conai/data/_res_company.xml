@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="company_conai_product_id" model="res.company">
+        <field
+            name="conai_product_id"
+            eval="lambda self: self.env['product.product'].search([('product_tmpl_id','=',ref('l10n_it_conai.product_conai'))])"
+        />
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_conai" model="ir.ui.view">
+        <field name="name">res.partner.form.conai</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_account_position_id" position="after">
+                <field name="conai_exemption_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
