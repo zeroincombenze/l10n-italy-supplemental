@@ -4,7 +4,7 @@
 # Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
 #
 import logging
-from odoo import api, fields, models
+from odoo import fields, models
 
 _logger = logging.getLogger(__name__)
 

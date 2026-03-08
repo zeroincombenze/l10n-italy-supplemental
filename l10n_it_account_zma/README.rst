@@ -1,8 +1,8 @@
 ==================================================================
-|icon| ITA - Contabilità base (ZMA)/l10n_it_account_zma 12.0.1.4.5
+|icon| ITA - Contabilità base (ZMA)/l10n_it_account_zma 12.0.1.0.0
 ==================================================================
 
-**Modulo Zeorincombenze di estesione l10n_it_account**
+**Zeroincombenze Module Addons for l10n_it_account**
 
 .. |icon| image:: https://raw.githubusercontent.com/zeroincombenze/l10n-italy-supplemental/12.0/l10n_it_account_zma/static/description/icon.png
 
@@ -16,7 +16,9 @@ Overview | Panoramica
 
 |en| No info available
 
-|it| Nessuna informazione disponibile
+
+|it| Descrizione non disponibile
+
 
 |thumbnail|
 
@@ -115,6 +117,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 
 
+ChangeLog History | Cronologia modifiche
+----------------------------------------
+
+12.0.0.1.0 (2026-03-04)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Initial implementation / Implementazione iniziale
+
+
+
 Credits | Ringraziamenti
 ========================
 
@@ -135,24 +147,6 @@ Contributors | Partecipanti
 ---------------------------
 
 Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>
-
-
-Acknowledges | Riconoscimenti
------------------------------
-
-The development of this module has been financially supported by:
-
-* Odoo Italia Network
-
-
-
-Sponsor
--------
-
-The development of this module has been financially supported by:
-
-* Odoo Italia Network
-
 
 
 Maintainer | Manutenzione
@@ -179,9 +173,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-03-05
+Last Update / Ultimo aggiornamento: 2026-03-08
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg

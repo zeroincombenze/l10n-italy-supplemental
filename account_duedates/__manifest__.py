@@ -5,7 +5,7 @@
 #
 {
     'name': 'Due dates',
-    'version': '12.0.4.8.37_4',
+    'version': '12.0.4.8.37_5',
     'category': 'Accounting',
     'summary': 'Enhanced due dates management',
     'author': 'librERP enterprise network and other partners',

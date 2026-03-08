@@ -3,7 +3,7 @@
 # Copyright 2020-22 powERP enterprise network <https://www.powerp.it>
 # Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
 #
-from odoo import api, fields, models
+from odoo import api, models
 from .mixin_base import BaseMixin
 
 
@@ -20,17 +20,14 @@ class AccountInvoice(models.Model, BaseMixin):
             new_invoice.partner_bank_id = company_bank
         elif new_invoice.type in ('in_invoice', 'in_refund') and counter_bank:
             new_invoice.partner_bank_id = counter_bank
-        # end if
 
         return new_invoice
-    # end create
 
     def write(self, vals):
         if 'company_bank_id' in vals:
 
             lines = self.move_id.line_ids.filtered(
-                lambda
-                    x: x.reconciled is False and x.payment_order.id is False
+                lambda x: x.reconciled is False and x.payment_order.id is False
             )
 
             lines.write({
@@ -38,22 +35,16 @@ class AccountInvoice(models.Model, BaseMixin):
             })
 
             if self.state == 'open':
-                self.move_id.write({
-                        'company_bank_id': vals['company_bank_id'],
-                })
-            # end if
+                self.move_id.write({'company_bank_id': vals['company_bank_id']})
             if self.state == 'draft':
                 self.write({
                     'partner_bank_id': vals['company_bank_id'],
                 })
-            # end if
 
-        # end if
         if 'counterparty_bank_id' in vals:
 
             lines = self.move_id.line_ids.filtered(
-                lambda
-                    x: x.reconciled is False and x.payment_order.id is False
+                lambda x: x.reconciled is False and x.payment_order.id is False
             )
 
             lines.write({
@@ -63,17 +54,13 @@ class AccountInvoice(models.Model, BaseMixin):
 
             if self.state == 'open':
                 self.move_id.write({
-                        'counterparty_bank_id': vals['counterparty_bank_id'],
+                    'counterparty_bank_id': vals['counterparty_bank_id'],
                 })
-            # end if
             if self.state == 'draft':
                 self.write({
                     'partner_bank_id': vals['counterparty_bank_id'],
                 })
-            # end if
-        # end if
         return super().write(vals)
-    # end write
 
     # Extend method that loads invoice data from PO
     @api.onchange('purchase_id')
@@ -90,13 +77,10 @@ class AccountInvoice(models.Model, BaseMixin):
         # Copy bank accounts related infos from Purchase Order object
         if po:
             self.company_bank_id = po.company_bank_id and po.company_bank_id
-            self.counterparty_bank_id = po.counterparty_bank_id and po.counterparty_bank_id
-        # end if
+            self.counterparty_bank_id = (
+                po.counterparty_bank_id and po.counterparty_bank_id)
 
-        # Return the result
         return res
-
-    # end purchase_order_change
 
     @api.multi
     def adapt_document(self):
@@ -114,11 +98,9 @@ class AccountInvoice(models.Model, BaseMixin):
 
         if self.payment_term_id and self.payment_term_id.fatturapa_pm_id:
             adapt_data['fatturapa_pm_id'] = self.payment_term_id.fatturapa_pm_id
-        # end if
 
         if self.payment_mode_id:
             adapt_data['payment_mode_id'] = self.payment_mode_id
-        # end if
 
         if self.company_id and self.company_id.partner_id:
             pbk = self.company_id.partner_id
@@ -128,10 +110,7 @@ class AccountInvoice(models.Model, BaseMixin):
                 for bk in pbk.bank_ids:
                     bank = bk
                     break
-                # end for
-            # end if
             adapt_data['default_company_bank'] = bank
-        # end if
 
         # Update with counterparty data
         counterparty_bank_infos = (
@@ -142,11 +121,8 @@ class AccountInvoice(models.Model, BaseMixin):
         adapt_data.update(counterparty_bank_infos)
 
         return adapt_data
-    # end adapt_document
 
     @api.multi
     def _get_doc_type(self):
         self.ensure_one()
         return self.type
-    # end _get_doc_type
-

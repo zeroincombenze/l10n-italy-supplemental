@@ -15,7 +15,6 @@ class BaseMixin:
         # Variabile separata per facilitare debug
         domain = [('partner_id', '=', self.partner_id.id)]
         return domain
-    # end _counterparty_bank_id_domain
 
     def _company_bank_id_domain(self):
         # Variabile separata per facilitare debug
@@ -25,7 +24,6 @@ class BaseMixin:
         ]
 
         return domain
-    # end _company_bank_id_domain
 
     counterparty_bank_id = fields.Many2one(
         string="Banca d'appoggio",
@@ -52,26 +50,17 @@ class BaseMixin:
             doc.company_bank_id = get_company_bank_account(doc)
             doc.counterparty_bank_id = get_counterparty_bank_account(doc)
 
-        # end for
-    # end _update_iban
-
     @api.onchange('company_bank_id')
     def _iban_onchange_company_bank_id(self):
 
         if not self._must_process_event('_iban_onchange_company_bank_id'):
             self._update_partner_bank_id()
-        # end if
-
-    # end _onchange_partner_id
 
     @api.onchange('counterparty_bank_id')
     def _iban_onchange_counterparty_bank_id(self):
 
         if not self._must_process_event('_iban_onchange_counterparty_bank_id'):
             self._update_partner_bank_id()
-        # end if
-
-    # end _onchange_partner_id
 
     @api.onchange('company_id')
     def _iban_onchange_company_id(self):
@@ -85,10 +74,6 @@ class BaseMixin:
             domain_filters = self._get_domains()
             return domain_filters
 
-        # end if
-
-    # end _onchange_partner_id
-
     @api.onchange('partner_id')
     def _iban_onchange_partner_id(self):
 
@@ -101,10 +86,6 @@ class BaseMixin:
             domain_filters = self._get_domains()
             return domain_filters
 
-        # end if
-
-    # end _iban_onchange_partner_id
-
     @api.onchange('payment_term_id')
     def _iban_onchange_payment_term_id(self):
 
@@ -116,10 +97,6 @@ class BaseMixin:
             # Change the partner bank domain
             domain_filters = self._get_domains()
             return domain_filters
-
-        # end if
-
-    # end _iban_onchange_payment_term_id
 
     @api.multi
     def _update_partner_bank_id(self):
@@ -137,24 +114,18 @@ class BaseMixin:
                 doc.partner_bank_id = comp_bnk
             elif invoice_type in ('in_invoice', 'in_refund') and ctpt_bnk:
                 doc.partner_bank_id = ctpt_bnk
-            # end if
-        # end for
-
-    # end _update_partner_bank_id
 
     @api.multi
     def _get_doc_type(self):
         """Must be implemented by subclass"""
         self.ensure_one()
-        raise NotImplemented()
-    # end _get_doc_type
+        raise NotImplementedError()
 
     def _must_process_event(self, event_name):
         """
             Skip the first "on_chage" event if
             'from_purchase_order_change'is set in context
         """
-
         ctx = self.env.context
         skipped_flag_name = event_name + 'SKIPPED'
 
@@ -166,8 +137,6 @@ class BaseMixin:
             return True
         else:
             return False
-        # end if
-    # end _must_skip_event
 
     @api.multi
     def _get_domains(self):
@@ -181,7 +150,8 @@ class BaseMixin:
         domain_filters = {
             'domain': {
                 'counterparty_bank_id': [
-                    ('partner_id', '=', counterparty_p.parent_id.id or counterparty_p.id)
+                    ('partner_id', '=',
+                     counterparty_p.parent_id.id or counterparty_p.id)
                 ],
                 'company_bank_id': [
                     ('partner_id', '=', company_p.id),
@@ -191,5 +161,3 @@ class BaseMixin:
         }
 
         return domain_filters
-    # end _get_domains
-

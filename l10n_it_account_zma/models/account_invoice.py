@@ -3,19 +3,26 @@
 # Copyright 2021-22 Didotech s.r.l. <https://www.didotech.com>
 #
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0.html).
-from odoo import models, fields, api
+from odoo import api, fields, models
 import odoo.addons.decimal_precision as dp
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = "account.invoice"
 
-    amount_net_pay = fields.Float(string='Net to pay',
+    amount_net_pay = fields.Float(
+        string="Net to pay",
+        store=True,
+        digits=dp.get_precision("Account"),
+        readonly=True,
+        compute="_compute_net_pay",
+    )
+    hide_net_pay = fields.Boolean(string="Hide Net to pay",
                                   store=True,
-                                  digits=dp.get_precision('Account'),
-                                  compute='_compute_net_pay')
+                                  readonly=True,
+                                  compute="_compute_net_pay")
 
-    @api.depends('amount_total')
+    @api.depends("amount_total", "amount_tax")
     def _compute_net_pay(self):
         for inv in self:
             inv.amount_net_pay = inv.amount_total

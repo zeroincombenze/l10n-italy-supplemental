@@ -3,10 +3,11 @@
 # Copyright 2020-22 librERP enterprise network <https://www.librerp.it>
 # Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
 #
+import logging
 import datetime
 from odoo import models, fields, api
-from odoo.exceptions import Warning as UserError
 from ..utils.misc import MOVE_TYPE_INV_CN
+_logger = logging.getLogger(__name__)
 
 
 class DueDateManager(models.Model):
@@ -67,7 +68,6 @@ class DueDateManager(models.Model):
         # Remove obsolete duedates before computing the new ones
         if self.duedate_line_ids:
             self.duedate_line_ids.unlink()
-        # end if
 
         # Get the new lines
         new_dudate_lines = self.generate_duedate_lines()
@@ -75,8 +75,6 @@ class DueDateManager(models.Model):
         # Create the new lines (if any)
         if new_dudate_lines:
             self.env['account.duedate_plus.line'].create(new_dudate_lines)
-        # end if
-    # end write_duedate_lines
 
     @api.model
     def generate_duedate_lines(self):
@@ -91,10 +89,7 @@ class DueDateManager(models.Model):
             new_dudate_lines = self._duedates_from_invoice()
         else:
             return []
-        # end if
-
         return new_dudate_lines
-    # end generate_duedate_lines
 
     # PUBLIC METHODS - end
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -339,11 +334,9 @@ class DueDateManager(models.Model):
             ].get_payment_method_tax()
         else:
             payment_method_tax = self.env['account.payment.method']
-        # end if
 
         if not param_cm['invoice_date']:
             return new_dudate_lines
-        # end if
 
         # get extra amount tax into invoice
         types_amount = self._get_amount_tax_type()
@@ -379,11 +372,9 @@ class DueDateManager(models.Model):
 
                 if extra_line:
                     new_dudate_lines.append(extra_line)
-                # end if
 
             else:
                 return new_dudate_lines
-            # end if
 
         else:
             # calculate tax according to invoice kind (sp, ra, rc, default)
@@ -411,11 +402,9 @@ class DueDateManager(models.Model):
                 new_dudate_lines.append(extra_line)
 
         return new_dudate_lines
-    # end _duedates_common
 
     def _compute_duedates_lines(self, due_dates, param_cm, tax):
         lines = list()
-        # payment_method = False
         add_tax = False
 
         if param_cm['payment_terms'].first_duedate_tax and self.invoice_id:
@@ -431,25 +420,20 @@ class DueDateManager(models.Model):
                 payment_method = due_date[2]['debit']
             elif param_cm['doc_type'] == 'out_refund':
                 payment_method = due_date[2]['credit']
-            # end if
 
             if not payment_method:
                 pt = param_cm['payment_terms']
-                error_msg = f'Termine di pagamento {pt.display_name} (id: {pt.id}) non correttamente configurato.'
-
+                error_msg = (f'Termine di pagamento {pt.display_name}'
+                             ' (id: {pt.id}) non correttamente configurato.')
                 if not pt.line_ids:
                     error_msg += '\n"Condizioni" non configurate'
-                # end if
-
-                raise UserError(error_msg)
-            # end if
+                _logger.info(error_msg)
 
             if add_tax:
                 due_amount = due_date[1] + tax
                 add_tax = False
             else:
                 due_amount = due_date[1]
-            # end if
 
             line_date = self._get_split_date_period(
                 param_cm['partner_id'], param_cm['doc_type'], due_date[0]
@@ -458,7 +442,7 @@ class DueDateManager(models.Model):
             lines.append(
                 {
                     'duedate_manager_id': self.id,
-                    'payment_method_id': payment_method.id,
+                    'payment_method_id': payment_method.id if payment_method else False,
                     'due_date': line_date,
                     'due_amount': due_amount,
                 }
@@ -478,7 +462,6 @@ class DueDateManager(models.Model):
             raise TypeError(
                 f'Parametro date di tipo non valido (tipo: {type(date)}, valore:{date})'
             )
-        # end if
 
         if parent_id.partner_duedates_dr_ids:
             for period in parent_id.partner_duedates_dr_ids:
@@ -519,8 +502,6 @@ class DueDateManager(models.Model):
         # end is_rc
 
         return line
-
-    # end _extra_lines
 
     @api.model
     def _extra_duedate_line(self, param_cm, types_amount, payment_method_id):
