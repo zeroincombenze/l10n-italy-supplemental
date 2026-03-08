@@ -5,15 +5,14 @@
 # Copyright 2020-22 Didotech s.r.l. <https://www.didotech.com>
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 {
-    "name": "Account Fiscal Year",
-    "summary": "Create a menu for Account Fiscal Year",
+    "name": "Account Fiscal Year+",
+    "summary": "Create a menu for Account Fiscal Year (deprecated)",
     "version": "12.0.1.1.1",
     "development_status": "Beta",
     "category": "Accounting",
     "website": "https://github.com/OCA/account-financial-tools",
     "author": "Agile Business Group, Camptocamp SA, "
               "Odoo Community Association (OCA) and other partners",
-    "maintainers": ["eLBati"],
     "license": "LGPL-3",
     "application": False,
     "installable": True,

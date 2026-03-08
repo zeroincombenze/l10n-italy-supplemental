@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
-                <attribute name="editable" />
+                <attribute name="editable"/>
             </xpath>
         </field>
     </record>
