@@ -3,10 +3,12 @@
   ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
   -->
 <odoo>
+
     <record id="sdi_channel_evolve" model="sdi.channel">
         <field name="name">Evolve (Web service)</field>
         <field name="channel_type">evolve</field>
         <field name="sender_url">https://www.certdoc.it/rest/api/v1/</field>
         <field name="exchange_hub">89.189.42.244</field>
     </record>
+
 </odoo>

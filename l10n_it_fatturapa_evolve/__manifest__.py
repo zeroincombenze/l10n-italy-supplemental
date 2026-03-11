@@ -1,7 +1,7 @@
 #  License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "ITA - Fattura elettronica - Supporto Evolve",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "Localization/Italy",
     "summary": "Invio fatture elettroniche tramite Evolve",
     "author": "SHS-AV s.r.l.",
@@ -17,6 +17,7 @@
     "data": [
         "views/sdi_view.xml",
         "data/sdi_channel_data.xml",
+        "data/ir_cron.xml",
     ],
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
 }
