@@ -27,6 +27,7 @@
                         <field name="archive_out"/>
                         <field name="archive_in"/>
                         <field name="capture_days"/>
+                        <field name="last_demand"/>
                     </group>
                 </xpath>
         </field>

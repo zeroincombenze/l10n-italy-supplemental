@@ -88,6 +88,10 @@ class SdIChannel(models.Model):
         default=60,
         help="Search for purchase invoices in # days (usually is 60)"
     )
+    last_demand = fields.Datetime(
+        "Invoice acquired since",
+        help="Last datetime when purchase invoices war acquires"
+    )
 
     def is_self_invoice(self, invoice):
         return invoice.fiscal_document_type_id.code in ('TD17', 'TD18', 'TD19')
@@ -157,11 +161,18 @@ class SdIChannel(models.Model):
     def evolve_add_domain(self, request, domain):
         if "Filtri" not in request:
             request["Filtri"] = []
-        request["Filtri"].append({
-            "NomeCampo": domain[0],
-            "Criterio": domain[1],
-            "FromValue": domain[2],
-        })
+        for item in domain:
+            if len(item) == 2:
+                request["Filtri"].append({
+                    "NomeCampo": item[0],
+                    "Criterio": item[1],
+                })
+            else:
+                request["Filtri"].append({
+                    "NomeCampo": item[0],
+                    "Criterio": item[1],
+                    "FromValue": item[2],
+                })
 
     @api.model
     def evolve_add_document(self, request, invoices):
@@ -246,7 +257,7 @@ class SdIChannel(models.Model):
         data, sts, errmsg = self.evolve_request(
             "Cerca",
             archive,
-            domain=["NumeroFattura", "=", invoice.number]
+            domain=(["NumeroFattura", "=", invoice.number])
         )
         return sts == 0 and data.get("Documenti", [])
 
@@ -255,7 +266,7 @@ class SdIChannel(models.Model):
         data, sts, errmsg = self.evolve_request(
             "Cerca",
             self.archive_sent,
-            domain=["NumeroFattura", "=", invoice.number]
+            domain=(["NumeroFattura", "=", invoice.number])
         )
         return sts == 0 and data.get("Documenti", [])
 
@@ -419,3 +430,22 @@ class SdIChannel(models.Model):
                     att_state = self.evolve_document_response(documents[last_ix])
             if att.state != att_state:
                 att.state = att_state
+
+    @api.model
+    def acquire_all_einvoices(self):
+        date_limit = self.last_demand or (
+            datetime.now() - timedelta(days=self.capture_days)).strftime("%Y-%m-%d")
+        data, sts, errmsg = self.evolve_request(
+            "Cerca",
+            self.archive_in,
+            domain=(
+                ["DataRicezione", ">", date_limit],
+                ["DataDownload", "nullo"],
+            )
+        )
+        if sts or not data or not data.get("Documenti"):
+            return
+        documents = self.evolve_document_list(data)
+        for doc in documents:
+            # documento = self.evolve_parse_documento(doc)
+            self.evolve_parse_documento(doc)

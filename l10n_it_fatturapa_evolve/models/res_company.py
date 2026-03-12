@@ -14,3 +14,12 @@ class ResCompany(models.Model):
                 and company.sdi_channel_id.channel_type == "evolve"
             ):
                 company.sdi_channel_id.verify_all_notifications()
+
+    @api.model
+    def acquire_all_einvoices(self):
+        for company in self.env["res.company"].search([]):
+            if (
+                company.sdi_channel_id
+                and company.sdi_channel_id.channel_type == "evolve"
+            ):
+                company.sdi_channel_id.acquire_all_einvoices()
