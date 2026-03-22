@@ -1,3 +1,9 @@
+10.0.0.1.15 (2026-03-22)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Manual weight in sale order / Peso manuale in righe ordini
+* [QUA] Test coverage 67% (508: 168+340) [23 TestPoints] - quality rating 43 (target 100)
+
 10.0.0.1.14 (2026-02-27)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

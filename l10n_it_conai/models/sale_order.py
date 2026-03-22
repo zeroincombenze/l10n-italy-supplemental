@@ -229,7 +229,7 @@ class SaleOrderLine(models.Model):
     @api.model
     def create(self, vals):
         if "conai_category_id" not in vals and "product_id" in vals:
-            weight = vals.get("weight", 0.0)
+            weight = 0.0
             conai_category_id = False
             product = self.env["product.product"].browse(vals["product_id"])
             if product.conai_category_id:
