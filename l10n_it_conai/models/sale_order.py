@@ -195,15 +195,6 @@ class SaleOrderLine(models.Model):
     conai_summary_line = fields.Boolean("CONAI summary line")
     conai_manual = fields.Boolean("Manual CONAI amount")
 
-    @api.depends("product_id", 'product_uom_qty')
-    def _compute_weight(self):
-        if self.product_id:
-            prod_weight = (self.product_id.weight
-                           or self.product_id.product_tmpl_id.weight)
-            line_weight = prod_weight * self.product_uom_qty
-            if (line_weight * 1.5) >= self.weight <= (line_weight * 0.7):
-                self.weight = line_weight
-
     @api.onchange("product_id")
     def _set_conai_category(self):
         if self.product_id:

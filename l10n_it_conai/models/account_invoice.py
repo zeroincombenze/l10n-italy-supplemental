@@ -207,17 +207,17 @@ class AccountInvoiceLine(models.Model):
     conai_summary_line = fields.Boolean("CONAI summary line")
     conai_manual = fields.Boolean("Manual CONAI amount")
 
+    @api.model
+    def weight_in_range(self, weight, prod_weight):
+        return prod_weight * 0.7 <= weight <= prod_weight * 1.5
+
     @api.depends("product_id", 'quantity')
     def _compute_weight(self):
         if self.product_id:
             prod_weight = (self.product_id.weight
-                           or self.product_id.product_tmpl_id.weight)
-            line_weight = prod_weight * self.quantity
-            if (
-                    line_weight
-                    and (line_weight * 1.5) >= self.weight <= (line_weight * 0.7)
-            ):
-                self.weight = line_weight
+                           or self.product_id.product_tmpl_id.weight) * self.quantity
+            if not self.weight_in_range(self.weight, prod_weight):
+                self.weight = prod_weight
 
     @api.multi
     @api.onchange("product_id")
@@ -244,23 +244,26 @@ class AccountInvoiceLine(models.Model):
     @api.model
     def create(self, vals):
         if "conai_category_id" not in vals and "product_id" in vals:
-            weight = vals.get("weight", 0.0)
+            line_weight = vals.get("weight", 0.0)
+            weight = line_weight / vals.get("quantity", 1.0)
             conai_category_id = False
             product = self.env["product.product"].browse(vals["product_id"])
             if product.conai_category_id:
                 conai_category_id = product.conai_category_id.id
-                if not weight:
+                if product.weight:
                     weight = product.weight
             else:
                 if (
-                    product.product_tmpl_id
-                    and product.product_tmpl_id.conai_category_id
+                        product.product_tmpl_id
+                        and product.product_tmpl_id.conai_category_id
                 ):
                     conai_category_id = product.product_tmpl_id.conai_category_id.id
-                    if not weight:
+                    if not product.weight:
                         weight = product.weight
             if conai_category_id:
                 vals["conai_category_id"] = conai_category_id
             if weight:
-                vals["weight"] = weight * vals.get("quantity", 1.0)
+                line_weight = weight * vals.get("quantity", 1.0)
+                if not self.weight_in_range(vals.get("weight", 0.0), line_weight):
+                    vals["weight"] = line_weight
         return super(AccountInvoiceLine, self).create(vals)
