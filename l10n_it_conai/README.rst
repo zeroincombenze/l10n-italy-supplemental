@@ -179,11 +179,11 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.0.1.15 (2026-03-22)
+10.0.0.1.15 (2026-05-29)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Manual weight in sale order / Peso manuale in righe ordini
-* [QUA] Test coverage 67% (508: 168+340) [23 TestPoints] - quality rating 43 (target 100)
+* [QUA] Test coverage 66% (506: 170+336) [23 TestPoints] - quality rating 43 (target 100)
 
 10.0.0.1.14 (2026-02-27)
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,12 +201,6 @@ ChangeLog History | Cronologia modifiche
 
 * [FIX] Conai excemtion 100% / Esenzione Conai 100%
 * [QUA] Test coverage 67% (508: 168+340) [23 TestPoints] - quality rating 48 (target 100)
-
-10.0.0.1.11 (2024-06-06)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Check for version of l10n_it_ddt to depend on
-* [QUA] Test coverage 67% (505: 166+339) [23 TestPoints] - quality rating 48 (target 100)
 
 
 
@@ -257,7 +251,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-05-25
+Last Update / Ultimo aggiornamento: 2026-05-29
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
