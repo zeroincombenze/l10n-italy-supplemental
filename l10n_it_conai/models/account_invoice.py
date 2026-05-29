@@ -209,14 +209,14 @@ class AccountInvoiceLine(models.Model):
 
     @api.model
     def weight_in_range(self, weight, prod_weight):
-        return prod_weight and (prod_weight * 0.7 <= weight <= prod_weight * 1.5)
+        return prod_weight * 0.7 <= weight <= prod_weight * 1.5
 
     @api.depends("product_id", 'quantity')
     def _compute_weight(self):
         if self.product_id:
             prod_weight = (self.product_id.weight
                            or self.product_id.product_tmpl_id.weight) * self.quantity
-            if not self.weight_in_range(self.weight, prod_weight):
+            if prod_weight and not self.weight_in_range(self.weight, prod_weight):
                 self.weight = prod_weight
 
     @api.multi
@@ -264,6 +264,7 @@ class AccountInvoiceLine(models.Model):
                 vals["conai_category_id"] = conai_category_id
             if weight:
                 line_weight = weight * vals.get("quantity", 1.0)
-                if not self.weight_in_range(vals.get("weight", 0.0), line_weight):
+                if line_weight and not self.weight_in_range(vals.get("weight", 0.0),
+                                                            line_weight):
                     vals["weight"] = line_weight
         return super(AccountInvoiceLine, self).create(vals)
