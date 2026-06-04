@@ -1,5 +1,5 @@
 ==================================================
-|icon| CONAI Management/Gestione CONAI 10.0.0.1.15
+|icon| CONAI Management/Gestione CONAI 10.0.0.1.16
 ==================================================
 
 **CONAI data and amount evalutation**
@@ -179,6 +179,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.16 (2026-06-04)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] CONAI values from sale order line / Valori CONAI da riga ordine
+* [QUA] Test coverage 67% (512: 170+342) [23 TestPoints] - quality rating 43 (target 100)
+
 10.0.0.1.15 (2026-05-29)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -251,7 +257,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-05-29
+Last Update / Ultimo aggiornamento: 2026-06-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

@@ -217,6 +217,15 @@ class SaleOrderLine(models.Model):
                 self.weight
             )
 
+    def _prepare_invoice_line(self, qty):
+        vals = super(SaleOrderLine, self)._prepare_invoice_line(qty)
+        vals["conai_category_id"] = (
+            self.conai_category_id.id if self.conai_category_id else False)
+        vals["conai_category2_id"] = (
+            self.conai_category_id2.id if self.conai_category2_id else False)
+        vals["weight2"] = self.weight2
+        return vals
+
     @api.model
     def create(self, vals):
         if "conai_category_id" not in vals and "product_id" in vals:

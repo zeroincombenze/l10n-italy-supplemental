@@ -1,3 +1,9 @@
+10.0.0.1.16 (2026-06-04)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] CONAI values from sale order line / Valori CONAI da riga ordine
+* [QUA] Test coverage 67% (512: 170+342) [23 TestPoints] - quality rating 43 (target 100)
+
 10.0.0.1.15 (2026-05-29)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
