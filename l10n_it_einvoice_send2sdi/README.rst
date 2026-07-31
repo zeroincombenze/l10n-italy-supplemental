@@ -1,5 +1,5 @@
 ============================================================
-|icon| Send E-Invoice to SdI/Invio fatture a SdI 10.0.1.0.61
+|icon| Send E-Invoice to SdI/Invio fatture a SdI 10.0.1.0.63
 ============================================================
 
 **Send E-Invoice to customer through SdI**
@@ -153,25 +153,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
-10.0.1.0.61 (2026-05-23)
+10.0.1.0.63 (2026-07-31)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Minor improvements
 * [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
 
 10.0.1.0.60 (2026-04-12)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor improvements
-* [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
-
-10.0.1.0.59 (2025-10-17)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor improvements
-* [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
-
-10.0.1.0.58 (2025-10-01)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Minor improvements
@@ -227,6 +215,17 @@ ChangeLog History | Cronologia modifiche
 * [FIX] New Evolve PA states / Nuovi stati fattura PA
 * [QUA] Test coverage 15% (821: 694+127) [1 TestPoints] - quality rating 10 (target 100)
 
+10.0.1.0.49 (2024-09-09)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [QUA] Test coverage 15% (817: 692+125) [0 TestPoints] - quality rating 10 (target 100)
+
+10.0.1.0.48 (2024-08-29)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Send by cron / Invio fatture schedulato
+* [QUA] Test coverage 15% (817: 692+125) [0 TestPoints] - quality rating 10 (target 100)
+
 
 
 Credits | Ringraziamenti
@@ -278,7 +277,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-05-24
+Last Update / Ultimo aggiornamento: 2026-07-31
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

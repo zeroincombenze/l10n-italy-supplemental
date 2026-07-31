@@ -1,22 +1,10 @@
-10.0.1.0.61 (2026-05-23)
+10.0.1.0.63 (2026-07-31)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Minor improvements
 * [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
 
 10.0.1.0.60 (2026-04-12)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor improvements
-* [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
-
-10.0.1.0.59 (2025-10-17)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Minor improvements
-* [QUA] Test coverage 15% (833: 707+126) [1 TestPoints] - quality rating 12 (target 100)
-
-10.0.1.0.58 (2025-10-01)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * [IMP] Minor improvements
