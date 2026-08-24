@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Rectify Negative Invoice / Refund",
-    "version": "10.0.0.1.1",
+    "version": "10.0.0.1.2",
     "category": "Accounting",
     "summary": "User can rectify negative invoice or negative refund",
     "author": "SHS-AV s.r.l.",

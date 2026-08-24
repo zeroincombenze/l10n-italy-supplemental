@@ -25,16 +25,26 @@ class AccountInvoice(models.Model):
             if "_invoice" in invoice.type:
                 new_invoice_type = invoice.type.replace("_invoice", "_refund")
             if invoice.state == "open":
-                saved_attachment_id = invoice.fatturapa_attachment_out_id
-                saved_fatturapa_state = invoice.fatturapa_state
+                if invoice.type.startswith("in_"):
+                    saved_attachment_id = invoice.fatturapa_attachment_in_id
+                    saved_fatturapa_state = invoice.fatturapa_state
+                else:
+                    saved_attachment_id = invoice.fatturapa_attachment_out_id
                 if saved_attachment_id:
                     # We use SQL because invoice is locked
-                    self.env.cr.execute(
-                        "UPDATE account_invoice"
-                        " SET fatturapa_attachment_out_id=null"
-                        ",fatturapa_state=null"
-                        " WHERE id=%d" % invoice.id
-                    )
+                    if invoice.type.startswith("in_"):
+                        self.env.cr.execute(
+                            "UPDATE account_invoice"
+                            " SET fatturapa_attachment_in_id=null"
+                            ",fatturapa_state=null"
+                            " WHERE id=%d" % invoice.id
+                        )
+                    else:
+                        self.env.cr.execute(
+                            "UPDATE account_invoice"
+                            " SET fatturapa_attachment_out_id=null"
+                            " WHERE id=%d" % invoice.id
+                        )
                     # Invalidate cache and reload invoice updated by SQL
                     self.invalidate_cache()
                     invoice = self.env["account.invoice"].browse(invoice.id)
@@ -52,13 +62,21 @@ class AccountInvoice(models.Model):
                 invoice.action_invoice_open()
                 if saved_attachment_id:
                     # Avoid account check, so we force restoring via SQL
-                    self.env.cr.execute(
-                        "UPDATE account_invoice"
-                        " SET fatturapa_attachment_out_id=%d"
-                        ",fatturapa_state='%s'"
-                        " WHERE id=%d" % (saved_attachment_id,
-                                          saved_fatturapa_state,
-                                          invoice.id)
-                    )
+                    if invoice.type.startswith("in_"):
+                        self.env.cr.execute(
+                            "UPDATE account_invoice"
+                            " SET fatturapa_attachment_in_id=%d"
+                            ",fatturapa_state='%s'"
+                            " WHERE id=%d" % (saved_attachment_id,
+                                              saved_fatturapa_state,
+                                              invoice.id)
+                        )
+                    else:
+                        self.env.cr.execute(
+                            "UPDATE account_invoice"
+                            " SET fatturapa_attachment_out_id=%d"
+                            " WHERE id=%d" % (saved_attachment_id,
+                                              invoice.id)
+                        )
         if ctr == 0:
             return False

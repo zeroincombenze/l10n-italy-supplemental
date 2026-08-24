@@ -1,7 +1,12 @@
+10.0.0.1.2 (2026-08-07)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Recognize negative customer invoice / riconoscimento NC attive negative
+
 10.0.0.1.1 (2023-11-22)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Recognize negativa self-invoice / Riconosciento auto-fatture negative
+* [IMP] Recognize negative self-invoice / Riconoscimento auto-fatture negative
 
 10.0.0.1.0 (2023-10-16)
 ~~~~~~~~~~~~~~~~~~~~~~~
