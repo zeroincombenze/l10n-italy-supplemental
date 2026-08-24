@@ -41,6 +41,18 @@ class ResCompany(models.Model):
         "\nfrom supplier invoice (warning payment term must be exist)"
         "\nuse assigned payment term in supplier record"
         )
+    supplier_product_search = fields.Selection(
+        [
+            ("s", "By supplier code"),
+            ("sd", "By supplier code or supplier product name"),
+            ("sc", "By supplier code or internal code"),
+            ("scn", "By code or exact name"),
+            ("scndx", "By code or similar name"),
+        ],
+        "Supplier product search",
+        default="s",
+        help="How to search for product from supplier e-invoice"
+        )
 
     def xml_get_company(self, DatiAnagrafici, wizard=None):
         """Get company data from xml file"""
@@ -99,6 +111,9 @@ class AccountConfigSettings(models.TransientModel):
     )
     supplier_payment_term = fields.Selection(
         related="company_id.supplier_payment_term",
+    )
+    supplier_product_search = fields.Selection(
+        related="company_id.supplier_product_search",
     )
 
     @api.onchange("company_id")

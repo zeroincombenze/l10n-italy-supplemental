@@ -12,6 +12,7 @@
                             string="Take this action, if you want import data from e-invoice xml file"
                         />
                         <field name="e_invoice_detail_level"/>
+                        <field name="supplier_product_search"/>
                         <footer>
                             <button
                                 name="importFatturaPA"

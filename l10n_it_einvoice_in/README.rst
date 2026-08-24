@@ -1,5 +1,5 @@
 ========================================================
-|icon| ITA - Fattura elettronica - Ricezione 10.0.1.3.60
+|icon| ITA - Fattura elettronica - Ricezione 10.0.1.3.61
 ========================================================
 
 **E-invoice receive**
@@ -219,6 +219,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.1.3.61 (2026-08-24)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Best round recognition
+* [IMP] Best search for supplier product
+* [QUA] Test coverage 73% (1536: 415+1121) [0 TestPoints] - quality rating 43 (target 100)
+
 10.0.1.3.60 (2026-02-19)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -254,46 +261,6 @@ ChangeLog History | Cronologia modifiche
 
 * [FIX] Error message if missing tax code / Segnalazione di errore se manca cod.IVA arrotondamento
 * [QUA] Test coverage 70% (1488: 445+1043) [0 TestPoints] - quality rating 43 (target 100)
-
-10.0.1.3.54 (2024-08-23)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Best evaluate for round lines / Miglioramento valutazione righe di arrotondamento
-* [QUA] Test coverage 70% (1486: 444+1042) [0 TestPoints] - quality rating 42 (target 100)
-
-10.0.1.3.53 (2024-08-14)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Rounding based on get_taxes_values()
-* [IMP] Delta rounding increased / Range di cattura arrotondamenti incrementato
-* [QUA] Test coverage 70% (1477: 444+1033) [0 TestPoints] - quality rating 42 (target 100)
-
-10.0.1.3.52 (2024-08-08)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Errore import fatture con N2.2
-* [QUA] Test coverage 70% (1480: 446+1034) [0 TestPoints] - quality rating 42 (target 100)
-
-10.0.1.3.51 (2024-08-02)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Errore DatiAnagrafici.DataIscrizioneAlbo, "%Y-%m-%d")
-* [QUA] Test coverage 70% (1480: 446+1034) [0 TestPoints] - quality rating 42 (target 100)
-
-10.0.1.3.50 (2024-07-29)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Sometime invoice address duplicated / A volte veniva creato un duplicato dell'indirizzo di fatturazione
-* [IMP] Revaluate amount_untaxed by e-invoice / Forza imponibile da e-fattura se diff < 1 cent
-* [IMP] Revaluate amount_tax by e-invoice / Forza IVA da e-fattura se diff < 1 cent
-* [IMP] Ingloba numero civico se separato
-* [QUA] Test coverage 70% (1479: 446+1033) [0 TestPoints] - quality rating 42 (target 100)
-
-10.0.1.3.49 (2024-07-23)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Force validation
-* [QUA] Test coverage 70% (1460: 444+1016) [0 TestPoints] - quality rating 42 (target 100)
 
 
 
@@ -360,7 +327,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-02-19
+Last Update / Ultimo aggiornamento: 2026-08-24
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

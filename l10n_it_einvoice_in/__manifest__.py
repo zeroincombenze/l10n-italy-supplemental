@@ -11,7 +11,7 @@
 #
 {
     "name": "ITA - Fattura elettronica - Ricezione",
-    "version": "10.0.1.3.60",
+    "version": "10.0.1.3.61",
     "category": "Localization/Italy",
     "summary": "E-invoice receive",
     "author": (
@@ -34,6 +34,7 @@
         "l10n_it_withholding_tax",
     ],
     "version_depends": ["l10n_it_einvoice_base>=10.0.2.1.26"],
+    "external_dependencies": {'python': ['pyxb', 'unidecode']},
     "data": [
         "security/ir.model.access.csv",
         "data/product.xml",

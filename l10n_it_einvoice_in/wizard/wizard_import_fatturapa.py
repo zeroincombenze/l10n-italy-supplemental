@@ -5,7 +5,10 @@ import base64
 import logging
 from datetime import datetime
 
+import re
+
 import pyxb
+from unidecode import unidecode
 
 from odoo import api, fields, models
 from odoo.exceptions import UserError
@@ -32,12 +35,22 @@ class WizardImportFatturapa(models.TransientModel):
         help="Minimum level: Bill is created with no lines; "
         "User will have to create them, according to what specified in "
         "the electronic bill.\n"
-        # "Livello Aliquote: viene creata una riga fattura per ogni "
-        # "aliquota presente nella fattura elettronica\n"
         "Maximum level: every line contained in the electronic bill "
         "will create a line in the bill.",
         required=True,
     )
+    supplier_product_search = fields.Selection(
+        [
+            ("s", "By supplier code"),
+            ("sd", "By supplier code or supplier product name"),
+            ("sc", "By supplier code or internal code"),
+            ("scn", "By code or exact name"),
+            ("scndx", "By code or similar name"),
+        ],
+        "Supplier product search",
+        default="s",
+        help="How to search for product from supplier e-invoice"
+        )
 
     def get_invoice_obj(self, fatturapa_attachment):
         xml_string = fatturapa_attachment.get_xml_string()
@@ -52,6 +65,8 @@ class WizardImportFatturapa(models.TransientModel):
     def default_get(self, fields):
         res = super(WizardImportFatturapa, self).default_get(fields)
         res["e_invoice_detail_level"] = "2"
+        res["supplier_product_search"] = (
+            self.env.user.company_id.supplier_product_search or "")
         fatturapa_attachment_ids = self.env.context.get("active_ids", False)
         fatturapa_attachment_model = self.env["fatturapa.attachment.in"]
         partners = self.env["res.partner"]
@@ -70,6 +85,10 @@ class WizardImportFatturapa(models.TransientModel):
             partners |= fatturapa_attachment.xml_supplier_id
             if len(partners) == 1:
                 res["e_invoice_detail_level"] = partners[0].e_invoice_detail_level
+                if partners[0].e_invoice_supplier_product_search:
+                    res["supplier_product_search"] = (
+                        partners[0].e_invoice_supplier_product_search
+                    )
         return res
 
     def log_inconsistency(self, message):
@@ -128,23 +147,96 @@ class WizardImportFatturapa(models.TransientModel):
             retLine["invoice_line_tax_ids"] = [(6, 0, [account_tax])]
         return retLine
 
-    def get_line_product(self, line, partner):
+    def get_hashname(self, text, maxctr=3, minlen=0, like=False):
+        # Generate an hash name from text
+        text = unidecode(text).strip()
+        items = []
+        while True:
+            x = re.search(r"[^\w]+", text)
+            if not x:
+                if len(text) > minlen:
+                    items.append(text.lower())
+                break
+            item = text[: x.start()].lower()
+            if len(item) > minlen:
+                items.append(item)
+            text = text[x.end():]
+        fragments = []
+        for item in items:
+            if len(fragments) < maxctr:
+                fragments.append(item)
+                continue
+            for i in range(len(fragments) - 1, -1, -1):
+                if len(fragments[i]) < len(item):
+                    del fragments[i]
+                    fragments.append(item)
+                    break
+        return ("%" if like else "").join(fragments)
+
+    def get_line_product(self, line, partner, company):
         product = None
         supplier_info = self.env["product.supplierinfo"]
-        if len(line.CodiceArticolo) == 1:
-            supplier_code = line.CodiceArticolo[0].CodiceValore
-            supplier_infos = supplier_info.search(
-                [("product_code", "=", supplier_code), ("name", "=", partner.id)]
-            )
+        hashname = ""
+        if "d" in self.supplier_product_search or "x" in self.supplier_product_search:
+            hashname = self.get_hashname(line.Descrizione, like=True)
+        if len(line.CodiceArticolo):
+            for CodiceArticolo in line.CodiceArticolo:
+                if "s" in self.supplier_product_search:
+                    supplier_code = CodiceArticolo.CodiceValore
+                    supplier_infos = supplier_info.search([
+                        ("name", "=", partner.id),
+                        ("product_code", "=", supplier_code),
+                        ("product_name", "ilike", hashname),
+                    ])
+                    if not supplier_infos:
+                        supplier_infos = supplier_info.search([
+                            ("name", "=", partner.id),
+                            ("product_code", "=", supplier_code),
+                        ])
+                    if supplier_infos:
+                        products = supplier_infos.mapped("product_id")
+                        if len(products) == 1:
+                            product = fields.first(products)
+                            break
+                        else:
+                            templates = supplier_infos.mapped("product_tmpl_id")
+                            if (
+                                    len(templates) == 1
+                                    and len(templates[0].product_variant_ids)
+                            ):
+                                product = templates[0].product_variant_ids[0]
+                                break
+                if "c" in self.supplier_product_search:
+                    products = self.env["product.product"].search(
+                        [("default_code", "=", supplier_code)])
+                    if len(products) == 1:
+                        product = fields.first(products)
+                        break
+        if "d" in self.supplier_product_search:
+            supplier_infos = supplier_info.search([
+                ("name", "=", partner.id),
+                ("product_name", "ilike", hashname),
+            ])
             if supplier_infos:
                 products = supplier_infos.mapped("product_id")
                 if len(products) == 1:
-                    product = products[0]
-                else:
-                    templates = supplier_infos.mapped("product_tmpl_id")
-                    if len(templates) == 1 and len(templates[0].product_variant_ids):
-                        product = templates[0].product_variant_ids[0]
-        if not product and partner.e_invoice_default_product_id:
+                    product = fields.first(products)
+        if not product and "n" in self.supplier_product_search:
+            products = self.env["product.product"].search(
+                [("name", "=", line.Descrizione)])
+            if len(products) == 1:
+                product = fields.first(products)
+        if not product and "x" in self.supplier_product_search:
+            products = self.env["product.product"].search(
+                [("name", "ilike", hashname)])
+            if len(products) == 1:
+                product = fields.first(products)
+        if (
+                not product
+                and line.PrezzoTotale
+                and eval(line.PrezzoTotale)
+                and partner.e_invoice_default_product_id
+        ):
             product = partner.e_invoice_default_product_id
         return product
 
@@ -648,14 +740,14 @@ class WizardImportFatturapa(models.TransientModel):
                 )
                 self.log_inconsistency(
                     _(
-                        "\nTermine di pagamento che mom soddisfa la fattura XML. "
+                        "\nTermine di pagamento che non soddisfa la fattura XML. "
                         "Verificare congruenza o inserire nuovo pagamento."
                     )
                 )
             else:
                 self.log_inconsistency(
                     _(
-                        "\nNessun termine di pagamento soddisfa alla fattura XML. "
+                        "\nNessun termine di pagamento soddisfa la fattura XML. "
                         "Verificare le scadenze!"
                     )
                 )
@@ -897,7 +989,7 @@ class WizardImportFatturapa(models.TransientModel):
                 invoice_line_data = self._prepareInvoiceLine(
                     credit_account.id, line, wt_found, partner_id=partner_id
                 )
-                product = self.get_line_product(line, partner)
+                product = self.get_line_product(line, partner, company)
                 if product:
                     invoice_line_data["product_id"] = product.id
                     self.adjust_accounting_data(product, invoice_line_data)
@@ -954,7 +1046,7 @@ class WizardImportFatturapa(models.TransientModel):
         if wt_found:
             invoice._onchange_invoice_line_wt_ids()
             # invoice._amount_withholding_tax()
-        invoice.write(invoice._convert_to_write(invoice._cache))
+        # invoice.write(invoice._convert_to_write(invoice._cache))
         invoice_id = invoice.id
 
         invoice.set_vendor_bill_date(FatturaBody)

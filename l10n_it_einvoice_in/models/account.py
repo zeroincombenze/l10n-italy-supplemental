@@ -168,32 +168,36 @@ class AccountInvoice(models.Model):
         for ln in self.fatturapa_summary_ids:
             kk = (ln.tax_rate, ln.non_taxable_nature)
             if kk not in summary_amounts:
-                summary_amounts[kk] = {"amt": 0.0, "tax": 0.0}
-            summary_amounts[kk]["amt"] += ln.amount_untaxed
+                summary_amounts[kk] = {
+                    "base": 0.0, "tax": 0.0,
+                    "tax_base": 0.0, "tax_amt": 0.0,
+                }
+            summary_amounts[kk]["base"] += ln.amount_untaxed
             summary_amounts[kk]["tax"] += ln.amount_tax
             if ln.rounding:
                 kk = (0.0, None)
                 if kk not in summary_amounts:
-                    summary_amounts[kk] = {"amt": 0.0, "tax": 0.0}
-                summary_amounts[kk]["amt"] -= ln.amount_untaxed
-        round_lines = []
-        for item in summary_amounts.items():
-            found_tax_line = False
+                    summary_amounts[kk] = {
+                        "base": 0.0, "tax": 0.0,
+                        "tax_base": 0.0, "tax_amt": 0.0,
+                    }
+                summary_amounts[kk]["base"] -= ln.amount_untaxed
+        for kk, item in summary_amounts.items():
             for inv_tax_line in self.tax_line_ids:
                 if (
-                    item[0][0] == inv_tax_line.tax_id.amount
-                    and item[0][1] == inv_tax_line.tax_id.kind_id
+                        kk[0] == inv_tax_line.tax_id.amount
+                        and kk[1] == inv_tax_line.tax_id.kind_id
                 ):
-                    found_tax_line = True
-                    break
-            if (
-                not found_tax_line
-                or round_curr(item[1]["amt"] - inv_tax_line.base)
-            ):
+                    item["tax_base"] += inv_tax_line.base
+                    item["tax_amt"] += inv_tax_line.amount
+
+        round_lines = []
+        for kk, item in summary_amounts.items():
+            if item["tax"] != item["tax_amt"] or item["base"] != item["tax_base"]:
                 vals = self.load_rounding_values(
-                    round_curr(item[1]["amt"] - inv_tax_line.base),
-                    tax_rate=item[0][0],
-                    tax_kind=item[0][1].code if item[0][1] else None)
+                    round_curr(item["base"] - item["tax_base"]),
+                    tax_rate=kk[0],
+                    tax_kind=kk[1].code if kk[1] else None)
                 round_lines.append(vals)
         if round_lines:
             for inv_line in self.invoice_line_ids:
@@ -703,7 +707,7 @@ class AccountInvoice(models.Model):
                 self.type = "in_refund"
             for line in self.invoice_line_ids:
                 line.price_unit = -line.price_unit
-        self.compute_taxes()
+            self.compute_taxes()
 
 
 class FatturapaArticleCode(models.Model):

@@ -1,3 +1,10 @@
+10.0.1.3.61 (2026-08-24)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Best round recognition
+* [IMP] Best search for supplier product
+* [QUA] Test coverage 73% (1536: 415+1121) [0 TestPoints] - quality rating 43 (target 100)
+
 10.0.1.3.60 (2026-02-19)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

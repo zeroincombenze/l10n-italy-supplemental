@@ -34,6 +34,10 @@
                     <label for="supplier_payment_term"/>
                     <field name="supplier_payment_term" class="oe_inline"/>
                 </div>
+                <div>
+                    <label for="supplier_product_search"/>
+                    <field name="supplier_product_search" class="oe_inline"/>
+                </div>
             </xpath>
         </field>
     </record>

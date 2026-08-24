@@ -14,6 +14,17 @@ _logger = logging.getLogger(__name__)
 class Partner(models.Model):
     _inherit = "res.partner"
 
+    e_invoice_supplier_product_search = fields.Selection(
+        [
+            ("s", "By supplier code"),
+            ("sd", "By supplier code or supplier product name"),
+            ("sc", "By supplier code or internal code"),
+            ("scn", "By code or exact name"),
+            ("scndx", "By code or similar name"),
+        ],
+        "Supplier product search",
+        help="How to search for product from supplier e-invoice"
+        )
     e_invoice_default_product_id = fields.Many2one(
         comodel_name="product.product",
         string="E-bill Default Product",

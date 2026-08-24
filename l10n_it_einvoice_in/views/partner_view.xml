@@ -13,6 +13,7 @@
                         string="Supplier data"
                     >
                             <field name="e_invoice_detail_level" />
+                            <field name="e_invoice_supplier_product_search" />
                             <field name="e_invoice_default_product_id" />
                             <field name="e_invoice_default_account_id" />
                             <field name="register" readonly="1" />
