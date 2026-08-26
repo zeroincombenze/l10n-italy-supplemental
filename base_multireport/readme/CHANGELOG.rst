@@ -1,3 +1,9 @@
+10.0.0.2.35 (2026-08-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Custom paperformat / Pagina personalizzata
+* [QUA] Test coverage 80% (518: 103+415) [13 TestPoints] - quality rating 47 (target 100)
+
 10.0.0.2.34 (2025-07-15)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,5 +1,5 @@
 ================================================================
-|icon| base_rule_multireport/Multi modelli di stampa 10.0.0.2.34
+|icon| base_rule_multireport/Multi modelli di stampa 10.0.0.2.35
 ================================================================
 
 **Manage document multiple reports**
@@ -440,6 +440,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.2.35 (2026-08-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Custom paperformat / Pagina personalizzata
+* [QUA] Test coverage 80% (518: 103+415) [13 TestPoints] - quality rating 47 (target 100)
+
 10.0.0.2.34 (2025-07-15)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -451,38 +457,6 @@ ChangeLog History | Cronologia modifiche
 
 * [IMP] Requested date in sale order line (requires sale_order_line_date)
 * [QUA] Test coverage 80% (524: 106+418) [13 TestPoints] - quality rating 47 (target 100)
-
-10.0.0.2.32 (2024-02-28)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Picking: no delivery note / No note consegna in prelievo
-* [QUA] Test coverage 39% (650: 395+255)
-
-10.0.0.2.31 (2024-02-27)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Picking: net weight, delivery note / Peso netto, note consegna in prelievo
-* [QUA] Test coverage 39% (650: 395+255)
-
-10.0.0.2.30 (2024-02-15)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] New custom report picking / Nuova stampa prelievo personalizzato
-* [QUA] Test coverage 39% (650: 395+255)
-
-10.0.0.2.29 (2024-01-15)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] New custom report picking slip
-* [QUA] Test coverage 39% (650: 395+255)
-
-10.0.0.2.29 (2024-01-15)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] Sometimes, some random reports fall in crash
-* [FIX] Purchase order, sometime status was not recognized
-* [IMP] New custom report delivery slip
-* [QUA] Test coverage 39% (650: 395+255)
 
 
 
@@ -533,9 +507,9 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-07-15
+Last Update / Ultimo aggiornamento: 2026-08-26
 
-.. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
+.. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: 
 .. |license gpl| image:: https://img.shields.io/badge/licence-LGPL--3-7379c3.svg

@@ -1,5 +1,5 @@
 =================================================================================
-|icon| Rectify Negative Invoice / Refund/Rettifica fatture/NC negative 10.0.0.1.1
+|icon| Rectify Negative Invoice / Refund/Rettifica fatture/NC negative 10.0.0.1.2
 =================================================================================
 
 **User can rectify negative invoice or negative refund**
@@ -153,21 +153,20 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.2 (2026-08-07)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Recognize negative customer invoice / riconoscimento NC attive negative
+
 10.0.0.1.1 (2023-11-22)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* [IMP] Recognize negativa self-invoice / Riconosciento auto-fatture negative
-
-10.0.0.1.0 (2023-10-16)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* [NEW] Initial implementation
-* [QUA] Test coverage 19% (42: 34+8) [0 TestPoints] - quality rating 5 (target 100)
+* [IMP] Recognize negative self-invoice / Riconoscimento auto-fatture negative
 
 
 
-Credits | Didascalie
-====================
+Credits | Ringraziamenti
+========================
 
 Copyright
 ---------
@@ -182,8 +181,8 @@ Authors | Autori
 
 
 
-Contributors | Contributi da
-----------------------------
+Contributors | Partecipanti
+---------------------------
 
 * `Antonio M. Vigliotti <info@shs-av.com>`__
 
@@ -213,7 +212,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2024-01-14
+Last Update / Ultimo aggiornamento: 2026-08-26
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

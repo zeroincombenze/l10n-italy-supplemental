@@ -6,13 +6,13 @@
 #
 {
     "name": "base_rule_multireport",
-    "version": "10.0.0.2.34",
+    "version": "10.0.0.2.35",
     "category": "Generic Modules/Accounting",
     "summary": "Manage document multiple reports",
     "author": "SHS-AV s.r.l.",
     "website": "https://github.com/OCA/l10n-italy",
-    "development_status": "Alpha",
-    "license": "LGPL-3",
+    "development_status": "Beta",
+    "license": "AGPL-3",
     "depends": [
         "base",
         "report",

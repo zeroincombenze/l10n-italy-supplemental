@@ -21,12 +21,6 @@
         </t>
     </template>
 
-    <!--
-    <record id="base_multireport.account_invoices" model="ir.actions.report.xml">
-        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
-    </record>
-    -->
-
     <report
         id="base_multireport.account_invoices"
         model="account.invoice"
@@ -37,6 +31,10 @@
         attachment_use="True"
         attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
     />
+
+    <record id="base_multireport.account_invoices" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
 
     <template id="account_invoice_report_duplicate_main">
         <t t-call="report.html_container">
@@ -59,12 +57,6 @@
         </t>
     </template>
 
-    <!--
-    <record id="base_multireport.account_invoice_action_report_duplicate" model="ir.actions.report.xml">
-        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
-    </record>
-    -->
-
     <report
         id="base_multireport.account_invoice_action_report_duplicate"
         model="account.invoice"
@@ -74,6 +66,10 @@
         file="base_multireport.account_invoice_report_duplicate_main"
         attachment_use="False"
     />
+
+    <record id="base_multireport.account_invoice_action_report_duplicate" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
 
     <template id="report_delivery_invoice">
         <t t-call="report.html_container">
@@ -91,12 +87,6 @@
         </t>
     </template>
 
-    <!--
-    <record id="base_multireport.delivery_invoice_action_report" model="ir.actions.report.xml">
-        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
-    </record>
-    -->
-
     <report
         id="base_multireport.delivery_invoice_action_report"
         model="account.invoice"
@@ -107,5 +97,9 @@
         attachment_use="True"
         attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
     />
+
+    <record id="base_multireport.delivery_invoice_action_report" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="base_multireport.paperformat_invoice"/>
+    </record>
 
 </odoo>
