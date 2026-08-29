@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_qty_policy" model="ir.ui.view">
+        <field name="name">product.template.form.qty.policy</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <page name="invoicing" position="inside">
+                <separator string="Quantity Policy"/>
+                <group name="qty_policy">
+                    <field name="delivered_threshold"/>
+                    <field name="auto_line_invoiced"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+    <record id="product_category_form_view_qty_policy" model="ir.ui.view">
+        <field name="name">product.category.form.qty.policy</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <group name="first" position="after">
+                <group name="qty_policy" col="4" string="Quantity Policy">
+                    <field name="delivered_threshold"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

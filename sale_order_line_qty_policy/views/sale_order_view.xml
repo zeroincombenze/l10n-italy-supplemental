@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_qty_policy" model="ir.ui.view">
+        <field name="name">sale.order.form.qty.policy</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='qty_invoiced']"
+                   position="after">
+                <field name="line_delivered" invisible="1"/>
+                <field name="force_delivered"
+                       groups="sales_team.group_sale_manager"/>
+                <field name="force_invoiced"
+                       groups="sales_team.group_sale_manager"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='qty_invoiced']"
+                   position="after">
+                <field name="line_delivered" invisible="1"/>
+                <field name="force_delivered"
+                       groups="sales_team.group_sale_manager"/>
+                <field name="force_invoiced"
+                       groups="sales_team.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_line_tree_qty_policy" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.qty.policy</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="qty_to_invoice" position="after">
+                <field name="line_delivered"/>
+                <field name="force_delivered"/>
+                <field name="force_invoiced"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sales_order_line_filter_qty_policy" model="ir.ui.view">
+        <field name="name">sale.order.line.select.qty.policy</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='salesman_id']" position="after">
+                <separator/>
+                <filter string="Fully Delivered"
+                        name="line_delivered"
+                        domain="[('line_delivered', '=', True)]"
+                        help="Sales Order Lines considered fully delivered"/>
+                <filter string="Declared Delivered"
+                        name="force_delivered"
+                        domain="[('force_delivered', '=', True)]"
+                        help="Sales Order Lines manually declared delivered"/>
+                <filter string="Declared Invoiced"
+                        name="force_invoiced"
+                        domain="[('force_invoiced', '=', True)]"
+                        help="Sales Order Lines manually declared invoiced"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
