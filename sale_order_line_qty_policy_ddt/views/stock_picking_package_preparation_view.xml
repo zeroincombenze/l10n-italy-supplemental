@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- DdT lines, inside the DdT form -->
+    <record id="ddt_form_qty_policy" model="ir.ui.view">
+        <field name="name">stock.picking.package.preparation.form.qty.policy</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field name="inherit_id"
+               ref="l10n_it_ddt.sppp_line_stock_picking_package_preparation_form_ddt"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='price_subtotal']"
+                   position="after">
+                <field name="line_invoiced"/>
+                <field name="force_invoiced"
+                       groups="sales_team.group_sale_manager"/>
+            </xpath>
+
+            <xpath expr="//field[@name='line_ids']/form//field[@name='invoice_line_id']"
+                   position="after">
+                <field name="line_invoiced"/>
+                <field name="force_invoiced"
+                       groups="sales_team.group_sale_manager"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Invoicing data of the DdT -->
+    <record id="ddt_invoicing_form_qty_policy" model="ir.ui.view">
+        <field name="name">stock.picking.package.preparation.invoicing.form.qty.policy</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field name="inherit_id"
+               ref="l10n_it_ddt.stock_picking_package_preparation_invoicing_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_id" position="after">
+                <field name="invoice_status"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="ddt_invoicing_tree_qty_policy" model="ir.ui.view">
+        <field name="name">stock.picking.package.preparation.invoicing.tree.qty.policy</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field name="inherit_id"
+               ref="l10n_it_ddt.stock_picking_package_preparation_invoicing_tree"/>
+        <field name="arch" type="xml">
+            <field name="invoice_id" position="after">
+                <field name="invoice_status"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Both filters now speak the language of the invoice status, so that a
+         DdT closed by the quantity policy is no more offered for invoicing -->
+    <record id="ddt_search_qty_policy" model="ir.ui.view">
+        <field name="name">ddt.stock.picking.package.preparation.search.qty.policy</field>
+        <field name="model">stock.picking.package.preparation</field>
+        <field name="inherit_id"
+               ref="l10n_it_ddt.ddt_stock_picking_package_preparation_search"/>
+        <field name="arch" type="xml">
+
+            <!-- The standard filters carry no name: they can only be
+                 selected by their domain, as Odoo forbids selecting a node
+                 by a translated attribute such as string -->
+            <xpath expr="//filter[@domain=&quot;[('to_be_invoiced','=', True), ('invoice_id','=', False)]&quot;]"
+                   position="attributes">
+                <attribute name="name">to_invoice</attribute>
+                <attribute name="domain">[('invoice_status','=','to invoice')]</attribute>
+            </xpath>
+
+            <xpath expr="//filter[@domain=&quot;[('invoice_id','!=', False)]&quot;]"
+                   position="attributes">
+                <attribute name="name">invoiced</attribute>
+                <attribute name="domain">[('invoice_status','=','invoiced')]</attribute>
+            </xpath>
+
+            <xpath expr="//search/group" position="inside">
+                <filter string="Invoice Status"
+                        name="group_by_invoice_status"
+                        domain="[]"
+                        context="{'group_by': 'invoice_status'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- DdT lines, standalone views -->
+    <record id="ddt_sppp_line_tree_qty_policy" model="ir.ui.view">
+        <field name="name">view.ddt.sppp.line.tree.qty.policy</field>
+        <field name="model">stock.picking.package.preparation.line</field>
+        <field name="inherit_id" ref="l10n_it_ddt.view_ddt_sppp_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="price_subtotal" position="after">
+                <field name="line_invoiced"/>
+                <field name="force_invoiced"
+                       groups="sales_team.group_sale_manager"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="ddt_sppp_line_search_qty_policy" model="ir.ui.view">
+        <field name="name">ddt.sppp.line.search.qty.policy</field>
+        <field name="model">stock.picking.package.preparation.line</field>
+        <field name="inherit_id" ref="l10n_it_ddt.ddt_sppp_line_search"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//filter[@domain=&quot;[('invoice_line_id','=', False)]&quot;]"
+                   position="attributes">
+                <attribute name="name">to_invoice</attribute>
+                <attribute name="domain">[('line_invoiced','=', False)]</attribute>
+            </xpath>
+
+            <xpath expr="//filter[@name='to_invoice']" position="after">
+                <filter string="Declared Invoiced"
+                        name="force_invoiced"
+                        domain="[('force_invoiced','=', True)]"
+                        help="Delivery note lines manually declared invoiced"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

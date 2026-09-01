@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_order_line_qty_policy_ddt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-01 19:22+0000\n"
+"PO-Revision-Date: 2026-09-01 19:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy_ddt.ddt_sppp_line_search_qty_policy
+msgid "Declared Invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_force_invoiced
+msgid "Declared invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy_ddt.ddt_sppp_line_search_qty_policy
+msgid "Delivery note lines manually declared invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: selection:stock.picking.package.preparation,invoice_status:0
+msgid "Fully invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model,name:sale_order_line_qty_policy_ddt.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model,name:sale_order_line_qty_policy_ddt.model_account_invoice_line
+msgid "Invoice Line"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy_ddt.ddt_search_qty_policy
+msgid "Invoice Status"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_invoice_status
+msgid "Invoice status"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_line_invoiced
+msgid "Invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_invoice_status
+msgid "Invoicing state of the delivery note, evaluated the same way Odoo evaluates the one of a sale order:\n"
+"* Nothing to invoice: the delivery note is not invoiceable yet, or its reason for transportation declares it is not to be invoiced;\n"
+"* To invoice: at least one line has still to be invoiced;\n"
+"* Fully invoiced: every line is invoiced or declared invoiced. A delivery note may be fully invoiced without carrying any invoice, when the quantity policy declares every line invoiced."
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: selection:stock.picking.package.preparation,invoice_status:0
+msgid "Nothing to invoice"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: code:addons/sale_order_line_qty_policy_ddt/models/stock_picking_package_preparation.py:133
+#, python-format
+msgid "Nothing to invoice: every line of %s is already invoiced or declared invoiced"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model,name:sale_order_line_qty_policy_ddt.model_stock_picking_package_preparation
+msgid "Package Preparation"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model,name:sale_order_line_qty_policy_ddt.model_stock_picking_package_preparation_line
+msgid "Package Preparation Line"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_line_invoiced
+msgid "Technical field: the line is invoiced, either because an invoice line was created from it, or because it was declared invoiced, or because the quantity policy of its product declares it invoiced, or because its sale order line was declared invoiced."
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: selection:stock.picking.package.preparation,invoice_status:0
+msgid "To invoice"
+msgstr ""
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_force_invoiced
+msgid "When set, this delivery note line is considered fully invoiced even if no invoice line was ever created from it; the line is no more selected to create an invoice from the delivery note.\n"
+"It is the very same declaration of the sale order line, taken at delivery note level: use it when the goods of this line must not be billed, i.e. a free replacement."
+msgstr ""
+
