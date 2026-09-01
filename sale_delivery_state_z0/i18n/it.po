@@ -22,7 +22,7 @@ msgid ""
 "Allow to enforce done state of delivery, for instance if some quantities were "
 "cancelled"
 msgstr ""
-"Permette di forzare lo sato di consegnato, per esempio per quantità annullate "
+"Permette di forzare lo stato di consegnato, per esempio per quantità annullate "
 "dal cliente"
 
 #. module: sale_delivery_state_z0
@@ -63,7 +63,7 @@ msgstr "Ordine di vendita"
 #. module: sale_delivery_state_z0
 #: model:ir.model,name:sale_delivery_state_z0.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Riga ordine di vendita"
+msgstr "Riga d'Ordine di Vendita"
 
 #. module: sale_delivery_state_z0
 #: model:ir.ui.view,arch_db:sale_delivery_state_z0.view_order_form_inherit_delivery_state
