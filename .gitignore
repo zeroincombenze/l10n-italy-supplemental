@@ -53,6 +53,9 @@ coverage.xml
 cover/
 logs/
 
+# AI
+.claude*
+
 # Node + Javascripts packages
 *.json
 
