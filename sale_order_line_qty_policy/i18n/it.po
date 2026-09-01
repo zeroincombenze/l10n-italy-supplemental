@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_order_line_qty_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-01 19:23+0000\n"
+"PO-Revision-Date: 2026-09-01 19:23+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_sale_order_force_delivery_state
+msgid "Allow to enforce done state of delivery, for instance if some quantities were cancelled"
+msgstr "Permette di forzare lo stato di consegnato, per esempio per quantità annullate dal cliente"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_delivery_carrier_auto_line_invoiced
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_product_product_auto_line_invoiced
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_product_template_auto_line_invoiced
+msgid "Auto declare invoiced"
+msgstr "Dichiara automaticamente fatturato"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Declared Delivered"
+msgstr "Dichiarate consegnate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Declared Invoiced"
+msgstr "Dichiarate fatturate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_sale_order_line_force_delivered
+msgid "Declared delivered"
+msgstr "Dichiarata consegnata"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_sale_order_line_force_invoiced
+msgid "Declared invoiced"
+msgstr "Dichiarata fatturata"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_category_delivered_threshold
+msgid "Default delivered threshold for every product of this category.\n"
+"It is used when the product itself does not declare its own threshold.\n"
+"Set 0 to disable this policy for the whole category."
+msgstr "Soglia di consegna predefinita per tutti i prodotti di questa categoria.\n"
+"È utilizzata quando il prodotto stesso non dichiara una propria soglia.\n"
+"Impostare 0 per disabilitare questa politica per l'intera categoria."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_delivery_carrier_delivered_threshold
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_product_category_delivered_threshold
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_product_product_delivered_threshold
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_product_template_delivered_threshold
+msgid "Delivered threshold (%)"
+msgstr "Soglia di consegna (%)"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_sale_order_force_delivery_state_manual
+msgid "Delivery state forced by hand"
+msgstr "Stato consegna forzato manualmente"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_sale_order_force_delivery_state
+msgid "Force delivery state"
+msgstr "Forzare stato consegnato"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Fully Delivered"
+msgstr "Interamente consegnate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy.field_sale_order_line_line_delivered
+msgid "Fully delivered"
+msgstr "Interamente consegnata"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_delivery_carrier_delivered_threshold
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_product_delivered_threshold
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_template_delivered_threshold
+msgid "Maximum accepted deviation, as a percentage of the ordered quantity, between ordered and delivered quantity.\n"
+"When the deviation of a sale order line is within this threshold, the line is declared fully delivered even if the delivered quantity does not match the ordered one.\n"
+"The deviation is evaluated on its absolute value, so both under and over delivery are covered.\n"
+"Delivered quantity is never altered: the customer is still invoiced for the quantity really delivered.\n"
+"Leave 0 to inherit the threshold declared on the product category."
+msgstr "Massimo scostamento ammesso, in percentuale sulla quantità ordinata, fra quantità ordinata e consegnata.\n"
+"Quando lo scostamento di una riga d'ordine di vendita rientra in questa soglia, la riga è dichiarata interamente consegnata anche se la quantità consegnata non coincide con quella ordinata.\n"
+"Lo scostamento è valutato in valore assoluto, quindi sono coperte sia le consegne in difetto sia quelle in eccesso.\n"
+"La quantità consegnata non viene mai alterata: al cliente è comunque fatturata la quantità realmente consegnata.\n"
+"Lasciare 0 per ereditare la soglia dichiarata sulla categoria del prodotto."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model,name:sale_order_line_qty_policy.model_product_category
+msgid "Product Category"
+msgstr "Categoria prodotto"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model,name:sale_order_line_qty_policy.model_product_template
+msgid "Product Template"
+msgstr "Template prodotto"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.product_category_form_view_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.product_template_form_view_qty_policy
+msgid "Quantity Policy"
+msgstr "Politica di quantità"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_delivery_carrier_auto_line_invoiced
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_product_auto_line_invoiced
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_template_auto_line_invoiced
+msgid "Sale order lines of this product are automatically declared fully invoiced, whatever the invoiced quantity is.\n"
+"Use this policy for products whose amount is evaluated again at invoice level, i.e. the environmental contribution (CONAI), so the order is not kept open waiting for an invoice which will never match the ordered quantity."
+msgstr "Le righe d'ordine di vendita di questo prodotto sono automaticamente dichiarate interamente fatturate, qualunque sia la quantità fatturata.\n"
+"Usare questa politica per i prodotti il cui importo viene rivalutato a livello di fattura, come il contributo ambientale (CONAI), in modo che l'ordine non resti aperto in attesa di una fattura che non coinciderà mai con la quantità ordinata."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model,name:sale_order_line_qty_policy.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model,name:sale_order_line_qty_policy.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga d'Ordine di Vendita"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Sales Order Lines considered fully delivered"
+msgstr "Righe d'ordine considerate interamente consegnate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Sales Order Lines manually declared delivered"
+msgstr "Righe d'ordine dichiarate manualmente consegnate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.ui.view,arch_db:sale_order_line_qty_policy.view_sales_order_line_filter_qty_policy
+msgid "Sales Order Lines manually declared invoiced"
+msgstr "Righe d'ordine dichiarate manualmente fatturate"
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_sale_order_force_delivery_state_manual
+msgid "Technical field: force_delivery_state was written by a user, so the quantity policy will no more manage it.\n"
+"When it is not set, the flag belongs to the quantity policy, which sets and clears it following the delivered quantities. An unknown value therefore never strands the flag: the policy simply takes it back."
+msgstr "Campo tecnico: force_delivery_state è stato scritto da un utente, quindi la politica di quantità non lo gestisce più.\n"
+"Quando non è impostato, il flag appartiene alla politica di quantità, che lo imposta e lo azzera in base alle quantità consegnate. Un valore sconosciuto quindi non blocca mai il flag: la politica semplicemente lo riprende in carico."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_sale_order_line_line_delivered
+msgid "Technical field: the line is delivered, either because the delivered quantity reached the ordered one, or because the deviation is within the product threshold, or because the line was manually declared delivered."
+msgstr "Campo tecnico: la riga è consegnata, perché la quantità consegnata ha raggiunto quella ordinata, oppure perché lo scostamento rientra nella soglia del prodotto, oppure perché la riga è stata dichiarata manualmente consegnata."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_sale_order_line_force_delivered
+msgid "When set, this line is considered fully delivered even if the delivered quantity is less than the ordered one.\n"
+"Delivered quantity is not altered by this flag."
+msgstr "Se impostato, questa riga è considerata interamente consegnata anche se la quantità consegnata è inferiore a quella ordinata.\n"
+"La quantità consegnata non viene alterata da questo flag."
+
+#. module: sale_order_line_qty_policy
+#: model:ir.model.fields,help:sale_order_line_qty_policy.field_sale_order_line_force_invoiced
+msgid "When set, this line is considered fully invoiced even if there are ordered or delivered quantities still to invoice; the line is no more selected to create an invoice."
+msgstr "Se impostato, questa riga è considerata interamente fatturata anche se ci sono quantità ordinate o consegnate ancora da fatturare; la riga non viene più selezionata per creare una fattura."
