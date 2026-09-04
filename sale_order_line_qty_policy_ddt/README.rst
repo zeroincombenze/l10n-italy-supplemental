@@ -1,5 +1,5 @@
 ===================================================================================================================
-|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.0
+|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.2
 ===================================================================================================================
 
 **Bridge module: quantity policy applied to DdT based invoices**
@@ -138,10 +138,42 @@ only when one single run invoices every line, so a line invoiced separately -
 or declared invoiced - used to leave the document open forever.
 
 A delivery note which has nothing left to invoice is skipped by the invoicing
-procedure instead of stopping it. Note that the mass invoicing wizard still
-selects it - its domain belongs to `l10n_it_ddt` - but the delivery note is
-now skipped instead of taking down the whole run. An error is raised only when
-none of the selected delivery notes has anything to invoice.
+procedure instead of stopping it. An error is raised only when none of the
+selected delivery notes has anything to invoice.
+
+The *To be Invoiced* flag of the delivery note is kept for compatibility -
+`l10n_it_ddt` selects on it, both in the mass invoicing wizard and in the
+standard list filter - and it is now reset as soon as the delivery note is
+fully invoiced. The standard module only copies it from the reason for
+transportation, so it stayed raised for ever: a document closed by the
+quantity policy, carrying an invoice or no invoice at all, kept being offered
+for invoicing. The flag is raised again whenever a line goes back to be
+invoiced - a declaration withdrawn, an invoice deleted - and **Invoice
+status** is the field to read instead: it tells the whole story, this one only
+answers whether something is still to be billed.
+
+Declaring a delivery note line invoiced also settles that much of the sale
+order line it delivered. Without it the order kept the whole quantity to
+invoice: the delivery note considered itself closed, the order did not, and
+invoicing the order billed the customer for the very goods the delivery note
+had declared not to be billed.
+
+A **quantity** is carried over, not a flag, because one delivery note is only
+one of several possible deliveries of an order line: declaring it invoiced
+closes exactly what that delivery note delivered and leaves the rest of the
+line to be invoiced. Four units declared on one delivery note and six
+invoiced on another close a line of ten, while four declared alone leave six
+open as soon as they are delivered.
+
+The quantity is shown on the order line as **Declared invoiced on delivery
+notes**, and it is taken off what is left to invoice. Only a line declared on
+the delivery note itself is counted: a line which reached an invoice is
+already counted as invoiced, and a line closed because the order line itself
+was declared invoiced is already settled by the order. Withdrawing the
+declaration gives the quantity back to be invoiced.
+
+Nothing is written on the sale order line by hand: the quantity is computed,
+so it follows the delivery notes on its own.
 
 
 
@@ -240,6 +272,36 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.2 (2026-09-04)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] The invoicing state of the delivery notes already in the database is
+  recomputed when the module is installed and when it is upgraded: Odoo
+  computes a stored field on existing records only when it creates its
+  column, so the whole history was left with the 'To be Invoiced' flag
+  raised and went on being offered for invoicing
+* [FIX] Installing the module on a database which still carries its columns,
+  after it had been uninstalled, left every delivery note written meanwhile
+  without any invoicing state at all: the policy was simply not applied to
+  the documents which predate the installation
+* [NEW] The quantity of a delivery note line declared invoiced is taken off
+  what is left to invoice on the sale order line it delivered, so the order
+  can no more be invoiced for goods a delivery note already settled; a
+  quantity is carried over and not a flag, so a partly declared order line
+  keeps the rest of it to invoice
+
+10.0.0.1.1 (2026-09-02)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] The 'To be Invoiced' flag of the delivery note is reset as soon as the
+  delivery note is fully invoiced, so the mass invoicing wizard and the
+  standard list filter no more offer for invoicing a document closed by the
+  quantity policy; the flag is raised again when a line goes back to be
+  invoiced
+* [IMP] The invoice status of the delivery note reads the reason for
+  transportation instead of the 'To be Invoiced' flag it mirrors, so that
+  resetting the flag does not alter the status
+
 10.0.0.1.0 (2026-09-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -307,7 +369,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-09-02
+Last Update / Ultimo aggiornamento: 2026-09-04
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

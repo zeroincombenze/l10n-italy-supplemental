@@ -90,6 +90,61 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
     def _line_of(self, ddt, product):
         return ddt.line_ids.filtered(lambda line: line.product_id == product)
 
+    def _ddt_from_pickings(self, pickings, reason=None):
+        """Build a DdT from pickings: the only way sale_line_id is set."""
+        return self.ddt_model.create(dict(
+            self._ddt_values([], reason=reason),
+            picking_ids=[(6, 0, pickings.ids)]))
+
+    def _deliver(self, order, qty):
+        """Deliver part of the order, and return that picking and its rest.
+
+        The move is really split, so the order line ends up with several
+        delivery notes each carrying its own quantity - which is the whole
+        point of counting a quantity rather than raising a flag.
+
+        do_new_transfer() does not transfer anything by itself when the
+        quantities do not match the demand: it returns the action of a
+        wizard - a backorder confirmation here, an immediate transfer when
+        no quantity was entered at all - and the transfer happens when that
+        wizard is processed.
+        """
+        picking = order.picking_ids.filtered(
+            lambda pick: pick.state not in ("done", "cancel"))[:1]
+        self.assertTrue(picking, "no picking left to deliver")
+        picking.force_assign()
+        if not picking.pack_operation_ids:
+            picking.do_prepare_partial()
+        picking.pack_operation_product_ids.write({"qty_done": qty})
+        action = picking.do_new_transfer()
+        if isinstance(action, dict) and action.get("res_id"):
+            self.env[action["res_model"]].browse(action["res_id"]).process()
+        self.assertEqual(picking.state, "done")
+        backorder = self.env["stock.picking"].search(
+            [("backorder_id", "=", picking.id)])
+        return picking, backorder
+
+    def _assert_product_cannot_be_reinvoiced(self, order, product):
+        """The order may no more bill this product, whatever else is left.
+
+        Transferring a picking makes the delivery module add a carriage
+        charge line to the order, so the order as a whole can still be
+        invoiceable; what must never happen again is an invoice line for the
+        goods a delivery note already settled.
+        """
+        try:
+            invoice = self.env["account.invoice"].browse(
+                order.action_invoice_create())
+        except UserError:
+            # Nothing invoiceable at all, which is stronger still
+            return
+        self.assertNotIn(
+            product, invoice.invoice_line_ids.mapped("product_id"))
+
+    def _order_line_of(self, order, product):
+        return order.order_line.filtered(
+            lambda line: line.product_id == product)
+
     def test_01_auto_line_invoiced(self):
         """A product flagged auto_line_invoiced closes the DdT line at once."""
         ddt = self._create_ddt([self.tax_product])
@@ -294,3 +349,190 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
         self.assertTrue(other.line_invoiced)
         self.assertFalse(ddt.invoice_id)
         self.assertEqual(ddt.invoice_status, "to invoice")
+
+    def test_14_invoiced_ddt_lowers_to_be_invoiced(self):
+        """Invoicing the delivery note lowers the compatibility flag."""
+        ddt = self._create_ddt([self.product])
+        ddt.set_done()
+        self.assertTrue(ddt.to_be_invoiced)
+
+        ddt.action_invoice_create()
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)
+
+    def test_15_declared_ddt_lowers_to_be_invoiced(self):
+        """A delivery note closed by a declaration lowers the flag too.
+
+        There is no invoice at all here, so the flag is the only thing which
+        can keep the mass invoicing wizard away from the document.
+        """
+        ddt = self._create_ddt([self.product])
+        ddt.set_done()
+        self.assertTrue(ddt.to_be_invoiced)
+
+        ddt.line_ids.action_declare_invoiced()
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)
+        # This is the domain of the mass invoicing wizard
+        self.assertNotIn(ddt, self.ddt_model.search([
+            ("to_be_invoiced", "=", True),
+            ("invoice_id", "=", False),
+            ("state", "=", "done"),
+        ]))
+
+        ddt.line_ids.action_undeclare_invoiced()
+        self.assertEqual(ddt.invoice_status, "to invoice")
+        self.assertTrue(ddt.to_be_invoiced)
+
+    def test_16_deleted_invoice_raises_to_be_invoiced(self):
+        """Deleting the invoice gives the delivery note back to be invoiced."""
+        ddt = self._create_ddt([self.product])
+        ddt.set_done()
+        invoice_ids = ddt.action_invoice_create()
+        invoice = self.env["account.invoice"].browse(invoice_ids)
+        self.assertFalse(ddt.to_be_invoiced)
+
+        invoice.unlink()
+        self.assertEqual(ddt.invoice_status, "to invoice")
+        self.assertTrue(ddt.to_be_invoiced)
+
+    def test_17_partially_invoiced_keeps_to_be_invoiced(self):
+        """The flag stays raised while one line is still to be invoiced."""
+        ddt = self._create_ddt([self.product, self.other_product])
+        ddt.set_done()
+
+        self._line_of(ddt, self.product).action_line_invoice_create()
+        self.assertEqual(ddt.invoice_status, "to invoice")
+        self.assertTrue(ddt.to_be_invoiced)
+
+        self._line_of(ddt, self.other_product).action_line_invoice_create()
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)
+
+    def test_18_ddt_declaration_closes_the_order_line(self):
+        """Declaring a DdT line invoiced settles that much of the order.
+
+        Without this the order kept the whole quantity to invoice, and
+        invoicing it billed the customer for goods the delivery note had
+        declared not to be billed.
+        """
+        order = self._create_order(self.product)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        line = ddt.line_ids
+        sol = self._order_line_of(order, self.product)
+        self.assertEqual(line.sale_line_id, sol)
+        self.assertEqual(sol.invoice_status, "to invoice")
+        self.assertEqual(sol.qty_to_invoice, 10.0)
+
+        line.action_declare_invoiced()
+        self.assertEqual(sol.qty_ddt_declared, 10.0)
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+        self.assertEqual(sol.invoice_status, "invoiced")
+        self._assert_product_cannot_be_reinvoiced(order, self.product)
+
+    def test_19_withdrawing_the_declaration_reopens_the_order_line(self):
+        """The order line goes back to be invoiced with the declaration."""
+        order = self._create_order(self.product)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        sol = self._order_line_of(order, self.product)
+
+        ddt.line_ids.action_declare_invoiced()
+        self.assertEqual(sol.invoice_status, "invoiced")
+
+        ddt.line_ids.action_undeclare_invoiced()
+        self.assertEqual(sol.qty_ddt_declared, 0.0)
+        self.assertEqual(sol.qty_to_invoice, 10.0)
+        self.assertEqual(sol.invoice_status, "to invoice")
+
+    def test_20_partial_declaration_leaves_the_rest_to_invoice(self):
+        """One declared delivery closes its own quantity and no more.
+
+        Two delivery notes of 4 and 6 on one order line of 10: declaring the
+        first invoiced must leave 6 to invoice, which a flag on the order
+        line could never express.
+        """
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        first, backorder = self._deliver(order, 4.0)
+        ddt_first = self._ddt_from_pickings(first)
+        ddt_first.set_done()
+        self.assertEqual(ddt_first.line_ids.product_uom_qty, 4.0)
+
+        ddt_first.line_ids.action_declare_invoiced()
+        self.assertEqual(sol.qty_ddt_declared, 4.0)
+        self.assertEqual(sol.qty_delivered, 4.0)
+        # Everything delivered so far is settled, and the rest of the line
+        # is not delivered yet: standard Odoo calls that nothing to invoice
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+        self.assertEqual(sol.invoice_status, "no")
+
+        self._deliver(order, 6.0)
+        ddt_second = self._ddt_from_pickings(backorder)
+        ddt_second.set_done()
+        self.assertEqual(ddt_second.line_ids.product_uom_qty, 6.0)
+        self.assertEqual(sol.qty_delivered, 10.0)
+        self.assertEqual(sol.qty_ddt_declared, 4.0)
+        self.assertEqual(sol.qty_to_invoice, 6.0)
+        self.assertEqual(sol.invoice_status, "to invoice")
+
+    def test_21_partial_declaration_and_partial_invoice(self):
+        """A declared delivery and an invoiced one together close the line.
+
+        4 declared on the first delivery note, 6 invoiced on the second: the
+        order line is settled, and nothing of it may be invoiced again.
+        """
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        first, backorder = self._deliver(order, 4.0)
+        ddt_first = self._ddt_from_pickings(first)
+        ddt_first.set_done()
+        ddt_first.line_ids.action_declare_invoiced()
+
+        self._deliver(order, 6.0)
+        ddt_second = self._ddt_from_pickings(backorder)
+        ddt_second.set_done()
+        ddt_second.action_invoice_create()
+
+        self.assertEqual(sol.qty_ddt_declared, 4.0)
+        self.assertEqual(sol.qty_invoiced, 6.0)
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+        self.assertEqual(sol.invoice_status, "invoiced")
+        self._assert_product_cannot_be_reinvoiced(order, self.product)
+
+    def test_22_invoiced_ddt_line_is_not_counted_twice(self):
+        """A line which reached the invoice is counted by qty_invoiced only.
+
+        force_invoiced set on a line which was invoiced anyway must not take
+        its quantity off a second time: _is_line_invoiced() checks the
+        invoice line first, and the declared quantity has to agree.
+        """
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        ddt.action_invoice_create()
+        self.assertEqual(sol.qty_invoiced, 10.0)
+
+        ddt.line_ids.write({"force_invoiced": True})
+        self.assertEqual(sol.qty_ddt_declared, 0.0)
+        self.assertEqual(sol.qty_invoiced, 10.0)
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+
+    def test_23_order_declaration_is_not_counted_twice(self):
+        """A DdT line closed by the order itself adds no declared quantity.
+
+        The order line already zeroes what is left to invoice, so counting
+        the delivery note again would take the same goods off twice.
+        """
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+
+        sol.action_declare_invoiced()
+        self.assertTrue(ddt.line_ids.line_invoiced)
+        self.assertEqual(sol.qty_ddt_declared, 0.0)
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+        self.assertEqual(sol.invoice_status, "invoiced")

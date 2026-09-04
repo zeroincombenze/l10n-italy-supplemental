@@ -49,7 +49,39 @@ only when one single run invoices every line, so a line invoiced separately -
 or declared invoiced - used to leave the document open forever.
 
 A delivery note which has nothing left to invoice is skipped by the invoicing
-procedure instead of stopping it. Note that the mass invoicing wizard still
-selects it - its domain belongs to `l10n_it_ddt` - but the delivery note is
-now skipped instead of taking down the whole run. An error is raised only when
-none of the selected delivery notes has anything to invoice.
+procedure instead of stopping it. An error is raised only when none of the
+selected delivery notes has anything to invoice.
+
+The *To be Invoiced* flag of the delivery note is kept for compatibility -
+`l10n_it_ddt` selects on it, both in the mass invoicing wizard and in the
+standard list filter - and it is now reset as soon as the delivery note is
+fully invoiced. The standard module only copies it from the reason for
+transportation, so it stayed raised for ever: a document closed by the
+quantity policy, carrying an invoice or no invoice at all, kept being offered
+for invoicing. The flag is raised again whenever a line goes back to be
+invoiced - a declaration withdrawn, an invoice deleted - and **Invoice
+status** is the field to read instead: it tells the whole story, this one only
+answers whether something is still to be billed.
+
+Declaring a delivery note line invoiced also settles that much of the sale
+order line it delivered. Without it the order kept the whole quantity to
+invoice: the delivery note considered itself closed, the order did not, and
+invoicing the order billed the customer for the very goods the delivery note
+had declared not to be billed.
+
+A **quantity** is carried over, not a flag, because one delivery note is only
+one of several possible deliveries of an order line: declaring it invoiced
+closes exactly what that delivery note delivered and leaves the rest of the
+line to be invoiced. Four units declared on one delivery note and six
+invoiced on another close a line of ten, while four declared alone leave six
+open as soon as they are delivered.
+
+The quantity is shown on the order line as **Declared invoiced on delivery
+notes**, and it is taken off what is left to invoice. Only a line declared on
+the delivery note itself is counted: a line which reached an invoice is
+already counted as invoiced, and a line closed because the order line itself
+was declared invoiced is already settled by the order. Withdrawing the
+declaration gives the quantity back to be invoiced.
+
+Nothing is written on the sale order line by hand: the quantity is computed,
+so it follows the delivery notes on its own.

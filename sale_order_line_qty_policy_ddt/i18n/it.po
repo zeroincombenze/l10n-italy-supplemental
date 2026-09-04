@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-01 19:22+0000\n"
-"PO-Revision-Date: 2026-09-01 19:22+0000\n"
+"POT-Creation-Date: 2026-09-04 06:04+0000\n"
+"PO-Revision-Date: 2026-09-04 06:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -25,6 +25,16 @@ msgstr "Dichiarata fatturata"
 #: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_force_invoiced
 msgid "Declared invoiced"
 msgstr "Dichiarata fatturata"
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_sale_order_line_qty_ddt_declared
+msgid "Declared invoiced on delivery notes"
+msgstr "Quantità dichiarata fatturata nei DdT"
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,field_description:sale_order_line_qty_policy_ddt.field_sale_order_line_ddt_line_ids
+msgid "Delivery note lines"
+msgstr "Righe DdT"
 
 #. module: sale_order_line_qty_policy_ddt
 #: model:ir.ui.view,arch_db:sale_order_line_qty_policy_ddt.ddt_sppp_line_search_qty_policy
@@ -78,7 +88,7 @@ msgid "Nothing to invoice"
 msgstr "Niente da fatturare"
 
 #. module: sale_order_line_qty_policy_ddt
-#: code:addons/sale_order_line_qty_policy_ddt/models/stock_picking_package_preparation.py:133
+#: code:addons/sale_order_line_qty_policy_ddt/models/stock_picking_package_preparation.py:181
 #, python-format
 msgid "Nothing to invoice: every line of %s is already invoiced or declared invoiced"
 msgstr "Niente da fatturare: tutte le righe di %s sono già fatturate o dichiarate fatturate"
@@ -94,9 +104,25 @@ msgid "Package Preparation Line"
 msgstr "Riga preparazione confezionamento"
 
 #. module: sale_order_line_qty_policy_ddt
+#: model:ir.model,name:sale_order_line_qty_policy_ddt.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga ordine di vendita"
+
+#. module: sale_order_line_qty_policy_ddt
 #: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_line_invoiced
 msgid "Technical field: the line is invoiced, either because an invoice line was created from it, or because it was declared invoiced, or because the quantity policy of its product declares it invoiced, or because its sale order line was declared invoiced."
 msgstr "Campo tecnico: la riga è fatturata perché da essa è stata creata una riga di fattura, oppure perché è stata dichiarata fatturata, oppure perché la politica di quantità del suo prodotto la dichiara fatturata, oppure perché la sua riga d'ordine di vendita è stata dichiarata fatturata."
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_sale_order_line_qty_ddt_declared
+msgid "Technical field: the quantity this order line delivered with delivery note lines which were declared invoiced, and which therefore will never produce an invoice line.\n"
+"It is counted beside the invoiced quantity, so that the order is not invoiced again for goods a delivery note already settled."
+msgstr "Campo tecnico: la quantità che questa riga d'ordine ha consegnato con righe di DdT dichiarate fatturate, e che quindi non produrranno mai una riga di fattura.\nViene contata accanto alla quantità fatturata, così che l'ordine non venga fatturato di nuovo per merce che un DdT ha già definito."
+
+#. module: sale_order_line_qty_policy_ddt
+#: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_sale_order_line_ddt_line_ids
+msgid "The delivery note lines which delivered this order line."
+msgstr "Le righe di DdT che hanno consegnato questa riga d'ordine."
 
 #. module: sale_order_line_qty_policy_ddt
 #: selection:stock.picking.package.preparation,invoice_status:0
@@ -109,3 +135,4 @@ msgid "When set, this delivery note line is considered fully invoiced even if no
 "It is the very same declaration of the sale order line, taken at delivery note level: use it when the goods of this line must not be billed, i.e. a free replacement."
 msgstr "Se impostato, questa riga di DdT è considerata interamente fatturata anche se da essa non è mai stata creata alcuna riga di fattura; la riga non viene più selezionata per creare una fattura dal DdT.\n"
 "È la stessa dichiarazione della riga d'ordine di vendita, presa a livello di DdT: usarla quando la merce di questa riga non deve essere addebitata, ad esempio una sostituzione in garanzia."
+

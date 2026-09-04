@@ -7,7 +7,7 @@
 {
     "name": "Sale Order Line Quantity Policy - DdT",
     "summary": "Bridge module: quantity policy applied to DdT based invoices",
-    "version": "10.0.0.1.0",
+    "version": "10.0.0.1.2",
     "category": "Hidden",
     "author": "SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it",
@@ -20,6 +20,8 @@
     "data": [
         "views/stock_picking_package_preparation_view.xml",
     ],
+    "pre_init_hook": "pre_init_hook",
+    "post_init_hook": "post_init_hook",
     "maintainer": "Antonio Maria Vigliotti",
     "installable": True,
     "application": False,
