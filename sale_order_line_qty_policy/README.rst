@@ -1,5 +1,5 @@
 =======================================================================================================
-|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.5
+|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.6
 =======================================================================================================
 
 **Declare sale order line delivered or invoiced by product policy**
@@ -235,6 +235,12 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.6 (2026-09-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [QUA] Test coverage 84% (148: 23+125) [0 TestPoints] - quality rating 48 (target 100)
+* [IMP] Tests rewritten on the z0bug_odoo TestEnv declarative harness
+
 10.0.0.1.5 (2026-09-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -328,7 +334,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-09-02
+Last Update / Ultimo aggiornamento: 2026-09-05
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

@@ -1,3 +1,9 @@
+10.0.0.1.6 (2026-09-05)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [QUA] Test coverage 84% (148: 23+125) [0 TestPoints] - quality rating 48 (target 100)
+* [IMP] Tests rewritten on the z0bug_odoo TestEnv declarative harness
+
 10.0.0.1.5 (2026-09-01)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -4,10 +4,232 @@
 #
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 #
-from odoo.tests.common import TransactionCase
+from .testenv import MainTest as SingleTransactionCase
+
+TEST_RES_PARTNER = {
+    "z0bug.customer": {
+        "name": "Test Qty Policy Customer",
+        "customer": True,
+    },
+}
+
+TEST_PRODUCT_CATEGORY = {
+    # No threshold declared on the product itself: it inherits this one
+    "z0bug.threshold_categ": {
+        "name": "Test threshold category",
+        "delivered_threshold": 3.0,
+    },
+}
+
+TEST_PRODUCT_TEMPLATE = {
+    # Product recomputed at invoice level, i.e. CONAI contribution
+    "z0bug.conai_template": {
+        "name": "Test CONAI product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "order",
+        "auto_line_invoiced": True,
+    },
+    # Product without any policy
+    "z0bug.plain_template": {
+        "name": "Test plain product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "delivery",
+    },
+    # Standard product, invoiced on delivered quantity
+    "z0bug.bulk_template": {
+        "name": "Test bulk product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "delivery",
+        "delivered_threshold": 2.0,
+    },
+    # Same threshold, but invoiced on ordered quantity
+    "z0bug.ordered_template": {
+        "name": "Test ordered product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "order",
+        "delivered_threshold": 2.0,
+    },
+    # Threshold declared on the category, not on the product
+    "z0bug.categ_template": {
+        "name": "Test category product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "delivery",
+        "categ_id": "z0bug.threshold_categ",
+    },
+    # Product overriding the threshold of its own category
+    "z0bug.override_template": {
+        "name": "Test override product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "delivery",
+        "categ_id": "z0bug.threshold_categ",
+        "delivered_threshold": 1.0,
+    },
+    # Stockable product, delivered quantity comes from stock moves
+    "z0bug.consu_template": {
+        "name": "Test consu product",
+        "type": "consu",
+        "invoice_policy": "order",
+        "categ_id": "z0bug.threshold_categ",
+    },
+}
+
+TEST_SALE_ORDER = {
+    "z0bug.order_01": {"partner_id": "z0bug.customer"},
+    "z0bug.order_02": {"partner_id": "z0bug.customer"},
+    "z0bug.order_03": {"partner_id": "z0bug.customer"},
+    "z0bug.order_04": {"partner_id": "z0bug.customer"},
+    "z0bug.order_05": {"partner_id": "z0bug.customer"},
+    "z0bug.order_06": {"partner_id": "z0bug.customer"},
+    "z0bug.order_07": {"partner_id": "z0bug.customer"},
+    "z0bug.order_08": {"partner_id": "z0bug.customer"},
+    "z0bug.order_09": {"partner_id": "z0bug.customer"},
+    "z0bug.order_10": {"partner_id": "z0bug.customer"},
+    "z0bug.order_11": {"partner_id": "z0bug.customer"},
+    "z0bug.order_12": {"partner_id": "z0bug.customer"},
+    "z0bug.order_13": {"partner_id": "z0bug.customer"},
+    "z0bug.order_14": {"partner_id": "z0bug.customer"},
+    "z0bug.order_15": {"partner_id": "z0bug.customer"},
+    "z0bug.order_16": {"partner_id": "z0bug.customer"},
+}
+
+TEST_SALE_ORDER_LINE = {
+    "z0bug.order_01_1": {
+        "product_id": "z0bug.conai_product",
+        "name": "Test CONAI product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_02_1": {
+        "product_id": "z0bug.plain_product",
+        "name": "Test plain product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_03_1": {
+        "product_id": "z0bug.plain_product",
+        "name": "Test plain product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_04_1": {
+        "product_id": "z0bug.bulk_product",
+        "name": "Test bulk product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_05_1": {
+        "product_id": "z0bug.bulk_product",
+        "name": "Test bulk product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_06_1": {
+        "product_id": "z0bug.bulk_product",
+        "name": "Test bulk product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_07_1": {
+        "product_id": "z0bug.ordered_product",
+        "name": "Test ordered product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_08_1": {
+        "product_id": "z0bug.categ_product",
+        "name": "Test category product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_09_1": {
+        "product_id": "z0bug.override_product",
+        "name": "Test override product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_10_1": {
+        "product_id": "z0bug.consu_product",
+        "name": "Test consu product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_11_1": {
+        "product_id": "z0bug.consu_product",
+        "name": "Test consu product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_12_1": {
+        "product_id": "z0bug.consu_product",
+        "name": "Test consu product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_12_2": {
+        "product_id": "z0bug.plain_product",
+        "name": "Test plain product",
+        "product_uom_qty": 1.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 5.0,
+    },
+    "z0bug.order_13_1": {
+        "product_id": "z0bug.consu_product",
+        "name": "Test consu product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_14_1": {
+        "product_id": "z0bug.consu_product",
+        "name": "Test consu product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_15_1": {
+        "product_id": "z0bug.plain_product",
+        "name": "Test plain product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+    "z0bug.order_16_1": {
+        "product_id": "z0bug.plain_product",
+        "name": "Test plain product",
+        "product_uom_qty": 100.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 10.0,
+    },
+}
+
+TEST_SETUP_LIST = [
+    "res.partner",
+    "product.category",
+    "product.template",
+    "sale.order",
+    "sale.order.line",
+]
 
 
-class TestSaleOrderLineQtyPolicy(TransactionCase):
+class TestSaleOrderLineQtyPolicy(SingleTransactionCase):
 
     # Sale order creation needs the fields declared by sale_stock, which is
     # not a dependency of this module: run once the whole registry is loaded.
@@ -16,84 +238,17 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def setUp(self):
         super(TestSaleOrderLineQtyPolicy, self).setUp()
-        self.order_model = self.env["sale.order"]
-        self.customer = self.env["res.partner"].create({
-            "name": "Test Qty Policy Customer",
-            "customer": True,
-        })
-        # Standard product, invoiced on delivered quantity
-        self.product = self._create_product("Test bulk product", {
-            "invoice_policy": "delivery",
-            "delivered_threshold": 2.0,
-        })
-        # Product without any policy
-        self.plain_product = self._create_product("Test plain product", {
-            "invoice_policy": "delivery",
-        })
-        # Product recomputed at invoice level, i.e. CONAI contribution
-        self.tax_product = self._create_product("Test CONAI product", {
-            "invoice_policy": "order",
-            "auto_line_invoiced": True,
-        })
-        # Same threshold, but invoiced on ordered quantity
-        self.ordered_product = self._create_product("Test ordered product", {
-            "invoice_policy": "order",
-            "delivered_threshold": 2.0,
-        })
-        # Threshold declared on the category, not on the product
-        self.categ = self.env["product.category"].create({
-            "name": "Test threshold category",
-            "delivered_threshold": 3.0,
-        })
-        self.categ_product = self._create_product("Test category product", {
-            "invoice_policy": "delivery",
-            "categ_id": self.categ.id,
-        })
-        # Product overriding the threshold of its own category
-        self.override_product = self._create_product("Test override product", {
-            "invoice_policy": "delivery",
-            "categ_id": self.categ.id,
-            "delivered_threshold": 1.0,
-        })
+        self.debug_level = 0
+        self.odoo_commit_test = True
+        self.setup_env()  # Create test environment
 
-    def _create_product(self, name, vals):
-        values = {
-            "name": name,
-            "type": "service",
-            "track_service": "manual",
-        }
-        values.update(vals)
-        return self.env["product.product"].create(values)
-
-    def _create_consu_product(self, name, vals):
-        values = {
-            "name": name,
-            "type": "consu",
-        }
-        values.update(vals)
-        return self.env["product.product"].create(values)
-
-    def _create_order(self, product, qty=100.0):
-        order = self.order_model.create({
-            "partner_id": self.customer.id,
-            "order_line": [(0, 0, {
-                "product_id": product.id,
-                "name": product.name,
-                "product_uom_qty": qty,
-                "product_uom": product.uom_id.id,
-                "price_unit": 10.0,
-            })],
-        })
-        order.action_confirm()
-        return order
-
-    def _invoice(self, order):
-        order.action_invoice_create()
-        return order.invoice_ids
+    def tearDown(self):
+        super(TestSaleOrderLineQtyPolicy, self).tearDown()
 
     def test_01_auto_line_invoiced(self):
         """A product flagged auto_line_invoiced closes the line at once."""
-        order = self._create_order(self.tax_product)
+        order = self.resource_browse("z0bug.order_01")
+        order.action_confirm()
         line = order.order_line
         self.assertTrue(line.product_id.auto_line_invoiced)
         self.assertEqual(line.qty_to_invoice, 0.0)
@@ -102,7 +257,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_02_force_invoiced(self):
         """A line manually declared invoiced is no more to invoice."""
-        order = self._create_order(self.plain_product)
+        order = self.resource_browse("z0bug.order_02")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 40.0
         self.assertEqual(line.qty_to_invoice, 40.0)
@@ -119,7 +275,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_03_force_delivered(self):
         """A line manually declared delivered is flagged as such."""
-        order = self._create_order(self.plain_product)
+        order = self.resource_browse("z0bug.order_03")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 40.0
         self.assertFalse(line.line_delivered)
@@ -134,7 +291,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_04_threshold_under_delivery(self):
         """Under delivery within threshold closes the line once invoiced."""
-        order = self._create_order(self.product)
+        order = self.resource_browse("z0bug.order_04")
+        order.action_confirm()
         line = order.order_line
         # 1% less than ordered, threshold is 2%
         line.qty_delivered = 99.0
@@ -143,7 +301,7 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
         self.assertEqual(line.qty_to_invoice, 99.0)
         self.assertEqual(line.invoice_status, "to invoice")
 
-        self._invoice(order)
+        order.action_invoice_create()
         # Customer is invoiced for the delivered quantity, not the ordered one
         self.assertEqual(line.qty_invoiced, 99.0)
         self.assertEqual(line.qty_to_invoice, 0.0)
@@ -152,24 +310,26 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_05_threshold_over_delivery(self):
         """Over delivery closes the line, whatever the threshold is."""
-        order = self._create_order(self.product)
+        order = self.resource_browse("z0bug.order_05")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 101.0
         self.assertTrue(line.line_delivered)
 
-        self._invoice(order)
+        order.action_invoice_create()
         self.assertEqual(line.qty_invoiced, 101.0)
         self.assertEqual(line.invoice_status, "invoiced")
 
     def test_06_threshold_exceeded(self):
         """Deviation greater than threshold keeps standard behaviour."""
-        order = self._create_order(self.product)
+        order = self.resource_browse("z0bug.order_06")
+        order.action_confirm()
         line = order.order_line
         # 5% less than ordered, threshold is 2%
         line.qty_delivered = 95.0
         self.assertFalse(line.line_delivered)
 
-        self._invoice(order)
+        order.action_invoice_create()
         self.assertEqual(line.qty_invoiced, 95.0)
         self.assertEqual(line.qty_to_invoice, 0.0)
         # Standard Odoo leaves the line open
@@ -177,9 +337,10 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_07_upselling_within_threshold(self):
         """Over delivery within threshold is not an upselling occasion."""
-        order = self._create_order(self.ordered_product)
+        order = self.resource_browse("z0bug.order_07")
+        order.action_confirm()
         line = order.order_line
-        self._invoice(order)
+        order.action_invoice_create()
         self.assertEqual(line.qty_invoiced, 100.0)
         self.assertEqual(line.invoice_status, "invoiced")
 
@@ -194,7 +355,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_08_threshold_from_category(self):
         """A product without threshold inherits the one of its category."""
-        order = self._create_order(self.categ_product)
+        order = self.resource_browse("z0bug.order_08")
+        order.action_confirm()
         line = order.order_line
         self.assertEqual(line._get_delivered_threshold(), 3.0)
 
@@ -208,7 +370,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_09_product_overrides_category(self):
         """The threshold of the product wins over the one of its category."""
-        order = self._create_order(self.override_product)
+        order = self.resource_browse("z0bug.order_09")
+        order.action_confirm()
         line = order.order_line
         self.assertEqual(line._get_delivered_threshold(), 1.0)
 
@@ -221,11 +384,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_10_force_delivery_state_set_by_policy(self):
         """The order flag is set when every relevant line is delivered."""
-        product = self._create_consu_product("Test consu product", {
-            "invoice_policy": "order",
-            "categ_id": self.categ.id,
-        })
-        order = self._create_order(product)
+        order = self.resource_browse("z0bug.order_10")
+        order.action_confirm()
         line = order.order_line
         self.assertFalse(order.force_delivery_state)
 
@@ -243,11 +403,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_11_force_delivery_state_manual_is_kept(self):
         """A flag set by hand is never cleared by the policy."""
-        product = self._create_consu_product("Test manual consu", {
-            "invoice_policy": "order",
-            "categ_id": self.categ.id,
-        })
-        order = self._create_order(product)
+        order = self.resource_browse("z0bug.order_11")
+        order.action_confirm()
         line = order.order_line
 
         order.write({"force_delivery_state": True})
@@ -260,25 +417,16 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_12_service_lines_are_skipped(self):
         """Services and lines without product do not block the order."""
-        product = self._create_consu_product("Test consu with service", {
-            "invoice_policy": "order",
-            "categ_id": self.categ.id,
-        })
-        order = self._create_order(product)
-        order.write({"order_line": [(0, 0, {
-            "product_id": self.plain_product.id,
-            "name": self.plain_product.name,
-            "product_uom_qty": 1.0,
-            "product_uom": self.plain_product.uom_id.id,
-            "price_unit": 5.0,
-        })]})
+        order = self.resource_browse("z0bug.order_12")
+        order.action_confirm()
         service_line = order.order_line.filtered(
-            lambda l: l.product_id == self.plain_product)
+            lambda l: l.product_id == self.resource_browse("z0bug.plain_product"))
         self.assertEqual(service_line.product_id.type, "service")
         self.assertFalse(service_line._is_qty_policy_line())
 
-        order.order_line.filtered(
-            lambda l: l.product_id == product).qty_delivered = 99.7
+        consu_line = order.order_line.filtered(
+            lambda l: l.product_id == self.resource_browse("z0bug.consu_product"))
+        consu_line.qty_delivered = 99.7
         self.assertTrue(order.force_delivery_state)
 
     def test_13_stale_flag_is_taken_back(self):
@@ -287,11 +435,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
         This is the situation left behind by a lost force_delivery_state_manual
         column: the flag must not stay stuck on an undelivered order.
         """
-        product = self._create_consu_product("Test stale consu", {
-            "invoice_policy": "order",
-            "categ_id": self.categ.id,
-        })
-        order = self._create_order(product)
+        order = self.resource_browse("z0bug.order_13")
+        order.action_confirm()
         # Simulate the stale value: flag set, ownership unknown
         order.write({
             "force_delivery_state": True,
@@ -304,11 +449,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_14_reset_to_draft_resyncs_delivered(self):
         """Reset to draft writes back the real delivered quantity."""
-        product = self._create_consu_product("Test draft consu", {
-            "invoice_policy": "order",
-            "categ_id": self.categ.id,
-        })
-        order = self._create_order(product)
+        order = self.resource_browse("z0bug.order_14")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 99.7
         self.assertTrue(line.line_delivered)
@@ -324,7 +466,8 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_15_reset_to_draft_keeps_service_qty(self):
         """A manually entered delivered quantity is not wiped."""
-        order = self._create_order(self.plain_product)
+        order = self.resource_browse("z0bug.order_15")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 40.0
 
@@ -335,11 +478,12 @@ class TestSaleOrderLineQtyPolicy(TransactionCase):
 
     def test_16_no_policy_no_change(self):
         """Without any policy the standard behaviour is untouched."""
-        order = self._create_order(self.plain_product)
+        order = self.resource_browse("z0bug.order_16")
+        order.action_confirm()
         line = order.order_line
         line.qty_delivered = 99.0
         self.assertFalse(line.line_delivered)
         self.assertEqual(line.invoice_status, "to invoice")
 
-        self._invoice(order)
+        order.action_invoice_create()
         self.assertEqual(line.invoice_status, "no")
