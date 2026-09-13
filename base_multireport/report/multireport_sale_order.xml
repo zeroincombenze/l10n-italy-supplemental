@@ -1,7 +1,7 @@
 <odoo>
 
     <template id="report_saleorder">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t
                     t-set="style"
@@ -21,13 +21,12 @@
         </t>
     </template>
 
-    <report
-        id="base_multireport.report_sale_order"
-        model="sale.order"
-        string="Preventivo / Ordine (personalizzato)"
-        report_type="qweb-pdf"
-        name="base_multireport.report_saleorder"
-        file="base_multireport.report_saleorder"
-    />
+    <record id="report_sale_order" model="ir.actions.report">
+        <field name="name">Preventivo / Ordine (personalizzato)</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">base_multireport.report_saleorder</field>
+        <field name="report_file">base_multireport.report_saleorder</field>
+    </record>
 
 </odoo>

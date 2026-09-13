@@ -22,7 +22,7 @@
                 position="before"
         >
             <t
-                    t-if="o.type == 'out_refund'"
+                    t-if="o.move_type == 'out_refund'"
                     t-set="doctype"
                     t-value="'NC di cortesia'"
             />
@@ -46,7 +46,7 @@
                 position="before"
         >
             <t
-                    t-if="o.type == 'out_refund'"
+                    t-if="o.move_type == 'out_refund'"
                     t-set="doctype"
                     t-value="'Nota Credito accompagnatoria'"
             />

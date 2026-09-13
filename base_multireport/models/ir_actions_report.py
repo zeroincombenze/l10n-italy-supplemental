@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-25 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -36,8 +35,9 @@ You can use following macro:
 %s(zip)    -> Company zip"""
 
 
-class IrActionsReportXml(models.Model):
-    _inherit = "ir.actions.report.xml"
+class IrActionsReport(models.Model):
+    # ir.actions.report.xml was renamed to ir.actions.report at 10.0.
+    _inherit = "ir.actions.report"
 
     header_mode = fields.Selection(
         [
@@ -178,6 +178,22 @@ class IrActionsReportXml(models.Model):
         "Html custom footer", help=_(HELP_HEAFOO), default=FOOTER_DEFAULT
     )
 
+    def _get_rendering_context(self, report, docids, data):
+        # This module's own QWeb templates (header/footer/lines
+        # fragments across sale order, invoice, purchase order, ddt and
+        # picking reports) call `report.get_report_attrib(...)` and read
+        # `doc_opts`, expecting a `report`/`doc_opts` variable in the
+        # rendering context -- both used to be injected by the old
+        # `report.get_html()` override (see models/report.py), which no
+        # longer exists in that shape at 18.0. The standard
+        # `_get_rendering_context` doesn't inject either one on its own,
+        # so it's added back here, generically, for every report action
+        # (not just this module's own custom actions).
+        data = super()._get_rendering_context(report, docids, data)
+        data.setdefault("report", report)
+        data.setdefault("doc_opts", report)
+        return data
+
 
 class View(models.Model):
     _inherit = "ir.ui.view"
@@ -187,7 +203,7 @@ class View(models.Model):
         for view in self:
             x = re.search("t-name *= *[\"'][^\"']*[\"']", view.arch)
             if x:
-                name = view.arch[x.start(): x.end()].split("=")[1][1:-1]
+                name = view.arch[x.start() : x.end()].split("=")[1][1:-1]
             else:
                 name = view.name
             view.display_name = name

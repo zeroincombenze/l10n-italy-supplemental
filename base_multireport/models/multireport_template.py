@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-25 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -233,6 +232,7 @@ class MultireportTemplate(models.Model):
         ],
         help="Name of footer associated to this template",
     )
+
 
 #
 # class MultireportTemplateLine(models.Model):

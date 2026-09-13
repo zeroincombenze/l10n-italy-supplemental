@@ -45,12 +45,24 @@
                             />
                         </td>
                     </tr>
-                    <t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+                    <!--
+                        `account.move._get_tax_amount_by_group()` no
+                        longer exists at 18.0: tax-by-group summaries now
+                        come from the `tax_totals` computed field
+                        (`account.tax._get_tax_totals_summary()`), a
+                        differently-shaped dict driven by the
+                        `account.tax_totals` recursive QWeb widget/
+                        template. Reproducing this compact
+                        one-line-per-tax-group summary against that new
+                        structure is a real redesign, not a mechanical
+                        rename; disabled (never iterates) rather than
+                        left calling a removed method that would raise
+                        at render time.
+                    -->
+                    <t t-foreach="[]" t-as="amount_by_group">
                         <tr>
                             <td>
-                                <span
-                                        t-esc="amount_by_group[0] if len(o.tax_line_ids) > 1 else (o.tax_line_ids.tax_id.description or o.tax_line_ids.tax_id.name)"
-                                />
+                                <span t-esc="amount_by_group[0]"/>
                             </td>
                             <td class="text-right">
                                 <span t-esc="amount_by_group[2]"/>
@@ -91,7 +103,7 @@
         </div>
 
         <!-- DO NOT REMOVE THIS TABLE. MANDATORY IN SOME COUNTRIES -->
-        <div class="row" t-if="len(o.tax_line_ids) > 0">
+        <div class="row" t-if="len(o.line_ids.filtered(lambda l: l.display_type == 'tax')) > 0">
             <div class="col-xs-6">
                 <table class="table table-condensed">
                     <thead>
@@ -103,22 +115,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="o.tax_line_ids" t-as="t">
+                        <!--
+                            account.invoice.tax (pre-13.0) had its own
+                            `base`/`amount`/`tax_id` fields for exactly
+                            this purpose; the equivalent data on a
+                            `display_type == 'tax'` account.move.line is
+                            `tax_line_id` (not `tax_id`), `tax_base_amount`
+                            (not `base`) and `amount_currency` (the
+                            line's own value in document currency,
+                            matching the old "amount", not `amount`
+                            which no longer exists here).
+                        -->
+                        <tr t-foreach="o.line_ids.filtered(lambda l: l.display_type == 'tax')" t-as="t">
                             <td>
-                                <span t-field="t.tax_id.description"/>
+                                <span t-field="t.tax_line_id.description"/>
                             </td>
                             <td>
-                                <span t-field="t.tax_id.name"/>
+                                <span t-field="t.tax_line_id.name"/>
                             </td>
                             <td class="text-right">
                                 <span
-                                        t-field="t.base"
+                                        t-field="t.tax_base_amount"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                                 />
                             </td>
                             <td class="text-right">
                                 <span
-                                        t-field="t.amount"
+                                        t-field="t.amount_currency"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                                 />
                             </td>
@@ -248,22 +271,22 @@
         />
         <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'"/>
         <t
-                t-if="o.payment_term_id and o.type != 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+                t-if="o.payment_term_id and o.move_type != 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
                 t-set="partner_bank"
                 t-value="'partner'"
         />
         <t
-                t-if="o.payment_term_id and o.type != 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+                t-if="o.payment_term_id and o.move_type != 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
                 t-set="partner_bank"
                 t-value="'company'"
         />
         <t
-                t-if="o.payment_term_id and o.type == 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+                t-if="o.payment_term_id and o.move_type == 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
                 t-set="partner_bank"
                 t-value="'company'"
         />
         <t
-                t-if="o.payment_term_id and o.type == 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+                t-if="o.payment_term_id and o.move_type == 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
                 t-set="partner_bank"
                 t-value="'partner'"
         />
@@ -319,12 +342,12 @@
                 </p>
             </div>
             <div class="col-xs-12">
-                <p t-if="o.type in ['in_refund', 'out_refund']">
+                <p t-if="o.move_type in ['in_refund', 'out_refund']">
                     <strong
                     >Rimborsi:
                     </strong>
                 </p>
-                <p t-if="o.type in ['in_invoice', 'out_invoice']">
+                <p t-if="o.move_type in ['in_invoice', 'out_invoice']">
                     <strong
                     >Scad.e pagamenti:
                     </strong>
@@ -350,13 +373,13 @@
                                     <span t-field="p.date_maturity"/>
                                 </td>
                                 <td
-                                        t-if="o.type in ['in_refund', 'out_invoice']"
+                                        t-if="o.move_type in ['in_refund', 'out_invoice']"
                                         class="text-right"
                                 >
                                     <span t-field="p.debit"/>
                                 </td>
                                 <td
-                                        t-if="o.type in ['in_invoice', 'out_refund']"
+                                        t-if="o.move_type in ['in_invoice', 'out_refund']"
                                         class="text-right"
                                 >
                                     <span t-field="p.credit"/>

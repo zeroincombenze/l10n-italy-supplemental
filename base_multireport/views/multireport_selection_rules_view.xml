@@ -5,12 +5,12 @@
         <field name="name">multireport.selection.rules.tree</field>
         <field name="model">multireport.selection.rules</field>
         <field name="arch" type="xml">
-            <tree string="Document report selection rules">
+            <list string="Document report selection rules">
                 <field name="sequence" />
                 <field name="name" />
                 <field name="model_id" />
                 <field name="action" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -55,7 +55,7 @@
         id="menu_multireport_selection_rules"
         name="Multi-Report Selection Rules"
         action="action_multireport_selection_rules"
-        parent="report.reporting_menuitem"
+        parent="base.reporting_menuitem"
         sequence="100"
         groups="base.group_no_one"
     />

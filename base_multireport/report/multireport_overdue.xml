@@ -2,20 +2,19 @@
 <odoo>
 
     <template id="report_overdue">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="base_multireport.report_overdue_document" t-lang="o.lang"/>
             </t>
         </t>
     </template>
 
-    <report
-        id="action_report_print_overdue"
-        model="res.partner"
-        report_type="qweb-pdf"
-        string="Due Payments (follow up)"
-        name="base_multireport.report_overdue"
-        file="base_multireport.report_overdue"
-    />
+    <record id="action_report_print_overdue" model="ir.actions.report">
+        <field name="name">Due Payments (follow up)</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">base_multireport.report_overdue</field>
+        <field name="report_file">base_multireport.report_overdue</field>
+    </record>
 
 </odoo>

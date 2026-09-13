@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-25 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -62,7 +61,7 @@ class WizardBuildReport(models.TransientModel):
             self.footer_mode = (
                 "standard" if ctx["active_model"] == "multireport.style" else ""
             )
-        if wizard.default_er:
+        if wizard.default_body_header:
             if ctx["active_model"] == "multireport.template":
                 if self.ir_model_id:
                     self.ir_model_id.model

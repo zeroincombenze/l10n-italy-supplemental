@@ -5,12 +5,12 @@
         <field name="name">view.multireport.template.tree</field>
         <field name="model">multireport.template</field>
         <field name="arch" type="xml">
-            <tree string="Report Template">
+            <list string="Report Template">
                 <field name="name" />
                 <field name="header_id" />
                 <field name="footer_id" />
                 <field name="ir_model_id" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -68,7 +68,7 @@
         id="menu_multireport_template"
         name="Multi-Report Template"
         action="action_multireport_template"
-        parent="report.reporting_menuitem"
+        parent="base.reporting_menuitem"
         sequence="80"
         groups="base.group_no_one"
     />

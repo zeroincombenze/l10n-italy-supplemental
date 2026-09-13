@@ -6,7 +6,7 @@
 #
 {
     "name": "base_rule_multireport",
-    "version": "10.0.0.2.34",
+    "version": "18.0.1.0.0",
     "category": "Generic Modules/Accounting",
     "summary": "Manage document multiple reports",
     "author": "SHS-AV s.r.l.",
@@ -15,21 +15,27 @@
     "license": "LGPL-3",
     "depends": [
         "base",
-        "report",
         "account",
         "sale",
         "purchase",
+        # NOTE (unresolved, out of this migration's scope): the four
+        # deps below have no confirmed 18.0 equivalent in this
+        # environment (they stop at 16.0 in the l10n-italy checkouts
+        # available here, likely superseded by the l10n_it_edi* core
+        # modules similarly to l10n_it_fatturapa -- see account_gopher's
+        # migration notes). l10n_it_ddt -> l10n_it_delivery_note is the
+        # one rename that *is* confirmed and applied throughout this
+        # module's code.
         "l10n_it_fiscalcode",
-        "l10n_it_ddt",
+        "l10n_it_delivery_note",
         "l10n_it_ade",
         "l10n_it_ricevute_bancarie",
         "l10n_it_einvoice_base",
     ],
     "external_dependencies": {
         "python": [
-            "PyPDF2",
+            "pypdf",
             "os0",
-            "past",
         ],
     },
     "data": [
@@ -43,7 +49,6 @@
         "views/multireport_template_view.xml",
         "views/multireport_selection_rules_view.xml",
         "views/config_view.xml",
-        "views/layout_templates.xml",
         "report/paper_format.xml",
         "report/header-footer.xml",
         "report/multireport_sale_order.xml",
@@ -72,6 +77,14 @@
         "report_picking/report_deliveryslip.xml",
         "report_picking/report_stockpicking_operations.xml",
     ],
+    # Was views/layout_templates.xml, inheriting the (now-removed)
+    # `report.assets_pdf` QWeb assets template (15.0 boundary: asset
+    # links move out of templates into the manifest).
+    "assets": {
+        "web.report_assets_pdf": [
+            "base_multireport/static/src/css/report_qweb_pdf_watermark.css",
+        ],
+    },
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
     "installable": True,
     "post_init_hook": "update_template_ref_post",

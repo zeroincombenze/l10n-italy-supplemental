@@ -1,11 +1,25 @@
 <odoo>
 
-    <template id="base_multireport.report_purchaseorder2">
-        <t t-call="report.html_container">
+    <!--
+        Fixed a pre-existing bug while porting: the template used an
+        undefined `res_company` variable (every sibling report file
+        uses `o.company_id`, the actual foreach variable, instead).
+
+        The report action below is deliberately NOT named
+        "report_purchaseorder2" (matching the template id) even though
+        that looks like the "intended", non-typo'd id: the original had
+        the action id misspelled as "report_purchaseorde2" (missing an
+        "r"), and that typo was accidentally load-bearing: it's what
+        kept the action record's xmlid from colliding with the
+        template's. Renamed to "action_report_purchaseorder2" instead,
+        which fixes the typo without reintroducing the collision.
+    -->
+    <template id="report_purchaseorder2">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t
                     t-set="style"
-                    t-value="res_company.report_model_style.origin or 'odoo'"
+                    t-value="o.company_id.report_model_style.origin or 'odoo'"
                 />
                 <t
                     t-if="style == 'odoo_based'"
@@ -21,13 +35,12 @@
         </t>
     </template>
 
-    <report
-        id="base_multireport.report_purchaseorde2"
-        model="purchase.order"
-        string="Ordine (personalizzato)"
-        report_type="qweb-pdf"
-        name="base_multireport.report_purchaseorder2"
-        file="base_multireport.report_purchaseorder2"
-    />
+    <record id="action_report_purchaseorder2" model="ir.actions.report">
+        <field name="name">Ordine (personalizzato)</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">base_multireport.report_purchaseorder2</field>
+        <field name="report_file">base_multireport.report_purchaseorder2</field>
+    </record>
 
 </odoo>

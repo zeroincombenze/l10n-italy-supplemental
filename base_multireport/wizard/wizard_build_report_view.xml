@@ -25,13 +25,11 @@
         </field>
     </record>
 
-    <act_window
-        id="action_wizard_build_report"
-        key2="client_action_multi"
-        name="Create or update a report"
-        res_model="wizard.build.report"
-        target="new"
-        view_id="wizard_build_report_view"
-        view_mode="form"
-    />
+    <record id="action_wizard_build_report" model="ir.actions.act_window">
+        <field name="name">Create or update a report</field>
+        <field name="res_model">wizard.build.report</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="wizard_build_report_view" />
+        <field name="view_mode">form</field>
+    </record>
 </odoo>

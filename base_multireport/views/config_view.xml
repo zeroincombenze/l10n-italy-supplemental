@@ -1,16 +1,24 @@
 <?xml version="1.0" ?>
 <odoo>
 
+    <!--
+        base.config.settings was replaced by res.config.settings well
+        before this module ever reached 18.0; base_setup's
+        view_general_configuration became the "General Settings" app
+        view, whose settings markup was itself modernized at 16.0
+        (o_setting_box/left+right pane divs -> <block>/<setting>).
+    -->
     <record id="view_multireport_config_settings" model="ir.ui.view">
         <field name="name">view_multireport_config_settings</field>
-        <field name="model">base.config.settings</field>
-        <field name="inherit_id" ref="base_setup.view_general_configuration" />
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//group[@name='report']" position="inside">
-                <label for="report_model_style" />
-                <div>
-                    <field name="report_model_style" class="oe_inline" />
-                </div>
+            <xpath expr="//block[@name='companies_setting_container']" position="after">
+                <block title="Document Report Style" id="multireport_style_setting_container">
+                    <setting id="report_model_style" string="Multi-report style">
+                        <field name="report_model_style" />
+                    </setting>
+                </block>
             </xpath>
         </field>
     </record>

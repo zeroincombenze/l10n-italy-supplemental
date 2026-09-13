@@ -20,17 +20,29 @@
             <t t-set="company" t-value="res_company" />
         </t>
         <t t-set="style" t-value="company.report_model_style.origin or 'odoo'" />
-        <t
-            t-if="style == 'odoo_based'"
-            t-call="base_multireport.external_layout_header"
-        />
-        <t t-if="style == 'odoo'" t-call="report.external_layout_header" />
-        <t t-raw="0" />
-        <t
-            t-if="style == 'odoo_based'"
-            t-call="base_multireport.external_layout_footer"
-        />
-        <t t-if="style == 'odoo'" t-call="report.external_layout_footer" />
+        <t t-if="style == 'odoo_based'">
+            <t t-call="base_multireport.external_layout_header" />
+            <t t-out="0" />
+            <t t-call="base_multireport.external_layout_footer" />
+        </t>
+        <t t-if="style == 'odoo'">
+            <!-- `web.external_layout_header`/`web.external_layout_footer`
+                 (separately callable header/footer fragments) no longer
+                 exist at 18.0: Odoo's report layout system was
+                 consolidated into monolithic per-layout templates
+                 (external_layout_striped/boxed/bold/standard/folder/
+                 wave/bubble), with no header-only/footer-only hook left
+                 to call independently. Falling back to the full core
+                 layout instead of guessing a piecewise replacement of
+                 the removed API; this changes the "odoo" style's visual
+                 composition (it now gets Odoo's real header+footer
+                 together, as core intends, rather than this module
+                 splicing them around the body); flagged rather than
+                 silently approximated further. -->
+            <t t-call="web.external_layout">
+                <t t-out="0" />
+            </t>
+        </t>
     </template>
 
     <template id="external_layout_header">
@@ -63,8 +75,13 @@
                         t-att-style="report.get_report_attrib('logo_style', o, doc_opts)"
                     />
                 </div>
+                <!-- `res.company.rml_header1` (a leftover RML-report-era
+                     text field) no longer exists at 18.0 and has no
+                     direct successor field; the 'standard'/'line-up'/
+                     'line-up2' header modes lose this specific line
+                     rather than guess a replacement field. -->
                 <div
-                    t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('standard', 'line-up', 'line-up2')"
+                    t-if="False and report.get_report_attrib('header_mode', o, doc_opts) in ('standard', 'line-up', 'line-up2')"
                     class="col-xs-9 text-right"
                     style="margin-top:20px;"
                     t-field="company.rml_header1"
@@ -83,7 +100,7 @@
                         t-set="rml_header"
                         t-value="report.get_report_attrib('custom_header', o, doc_opts)"
                     />
-                    <span t-raw="rml_header" />
+                    <span t-out="Markup(rml_header)" />
                 </div>
                 <div
                     t-if="report.get_report_attrib('header_mode', o, doc_opts) in ('line-up25', 'line-up26')"
@@ -93,7 +110,7 @@
                         t-set="rml_header"
                         t-value="report.get_report_attrib('custom_header', o, doc_opts)"
                     />
-                    <span t-raw="rml_header" />
+                    <span t-out="Markup(rml_header)" />
                 </div>
             </div>
             <div class="row zero_min_height">
@@ -172,7 +189,7 @@
                         t-set="rml_footer"
                         t-value="report.get_report_attrib('custom_footer', o, doc_opts)"
                     />
-                    <span t-raw="rml_footer" />
+                    <span t-out="Markup(rml_footer)" />
                 </t>
 
                 <ul class="list-inline" style="font-size: small;">

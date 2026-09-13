@@ -5,10 +5,10 @@
         <field name="name">view.multireport.style.tree</field>
         <field name="model">multireport.style</field>
         <field name="arch" type="xml">
-            <tree string="Report Style">
+            <list string="Report Style">
                 <field name="name" />
                 <field name="origin" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -35,66 +35,66 @@
                                 <group>
                                     <field
                                         name="header_mode"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="address_mode"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="logo_style"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="payment_term_position"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="footer_mode"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="bottom_text"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                 </group>
                                 <group>
                                     <field
                                         name="code_mode"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="description_mode"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                 </group>
                                 <group>
                                     <field
                                         name="pdf_watermark"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="pdf_watermark_expression"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="pdf_ending_page"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                     <field
                                         name="pdf_ending_page_expression"
-                                        attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                        readonly="origin == 'odoo'"
                                     />
                                 </group>
                             </group>
                             <group>
                                 <field
                                     name="custom_header"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                                 <field
                                     name="custom_footer"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -102,7 +102,7 @@
                             <group>
                                 <field
                                     name="template_sale_order"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -110,7 +110,7 @@
                             <group>
                                 <field
                                     name="template_stock_picking"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -118,7 +118,7 @@
                             <group>
                                 <field
                                     name="template_stock_picking_package_preparation"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -126,7 +126,7 @@
                             <group>
                                 <field
                                     name="template_account_invoice"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -134,7 +134,7 @@
                             <group>
                                 <field
                                     name="template_purchase_order"
-                                    attrs="{'readonly': [('origin', '=', 'odoo')]}"
+                                    readonly="origin == 'odoo'"
                                 />
                             </group>
                         </page>
@@ -154,7 +154,7 @@
         id="menu_multireport_style"
         name="Multi-Report Style"
         action="action_multireport_style"
-        parent="report.reporting_menuitem"
+        parent="base.reporting_menuitem"
         sequence="90"
         groups="base.group_no_one"
     />

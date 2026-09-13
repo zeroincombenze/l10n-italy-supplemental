@@ -70,11 +70,11 @@
                         <span t-esc="desdoc"/>
                         <span
                                 t-if="o.state not in ('draft','cancel', 'proforma', 'proforma2')"
-                                t-field="o.number"
+                                t-field="o.name"
                         />
                         <span
                                 t-if="o.state in ('draft','cancel')"
-                                t-field="o.move_name"
+                                t-field="o.name"
                         />
                         <span
                                 t-if="o.state in ('proforma', 'proforma2') and 'pro_forma_number' in o"
@@ -137,17 +137,17 @@
         />
         <t t-if="not o.payment_term_id" t-set="term_position" t-value="'none'"/>
         <t
-                t-if="not doctype and o.type == 'in_invoice'"
+                t-if="not doctype and o.move_type == 'in_invoice'"
                 t-set="doctype"
                 t-value="'Ft. fornitore'"
         />
         <t
-                t-if="not doctype and o.type == 'in_refund'"
+                t-if="not doctype and o.move_type == 'in_refund'"
                 t-set="doctype"
                 t-value="'NC fornitore'"
         />
         <t
-                t-if="not doctype and o.type == 'out_refund'"
+                t-if="not doctype and o.move_type == 'out_refund'"
                 t-set="doctype"
                 t-value="'Nota credito'"
         />
@@ -165,22 +165,22 @@
         />
         <t t-if="not desdoc" t-set="desdoc" t-value="doctype"/>
         <t
-                t-if="o.payment_term_id and o.type != 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+                t-if="o.payment_term_id and o.move_type != 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
                 t-set="partner_bank"
                 t-value="'partner'"
         />
         <t
-                t-if="o.payment_term_id and o.type != 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+                t-if="o.payment_term_id and o.move_type != 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
                 t-set="partner_bank"
                 t-value="'company'"
         />
         <t
-                t-if="o.payment_term_id and o.type == 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
+                t-if="o.payment_term_id and o.move_type == 'out_refund' and (o.payment_term_id.riba or o.payment_term_id.fatturapa_pm_id.code in ('MP11', 'MP12', 'MP16', 'MP17', 'MP19', 'MP20', 'MP21'))"
                 t-set="partner_bank"
                 t-value="'company'"
         />
         <t
-                t-if="o.payment_term_id and o.type == 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
+                t-if="o.payment_term_id and o.move_type == 'out_refund' and o.payment_term_id.fatturapa_pm_id.code in ('MP05', 'MP07', 'MP08', 'MP13', 'MP18')"
                 t-set="partner_bank"
                 t-value="'partner'"
         />
@@ -192,8 +192,8 @@
         <t t-if="not partner_bank" t-set="partner_bank" t-value="'none'"/>
         <h2 t-if="address_mode != 'docnum'">
             <span t-esc="desdoc"/>
-            <span t-if="o.state not in ('draft','cancel', 'proforma', 'proforma2')" t-field="o.number"/>
-            <span t-if="o.state in ('draft','cancel')" t-field="o.move_name"/>
+            <span t-if="o.state not in ('draft','cancel', 'proforma', 'proforma2')" t-field="o.name"/>
+            <span t-if="o.state in ('draft','cancel')" t-field="o.name"/>
             <span t-if="o.state in ('proforma', 'proforma2') and 'pro_forma_number' in o" t-field="o.pro_forma_number"/>
         </h2>
         <div class="row mt32 mb32">
@@ -207,7 +207,7 @@
             </div>
             <div
                     class="col-xs-2"
-                    t-if="term_position == 'odoo' and o.date_due and o.type == 'out_invoice' and o.state in ('open', 'paid')"
+                    t-if="term_position == 'odoo' and o.date_due and o.move_type == 'out_invoice' and o.state == 'posted'"
             >
                 <strong>Data scadenza:</strong>
                 <p t-field="o.date_due"/>
@@ -228,7 +228,7 @@
                 </p>
             </div>
             <div class="col-xs-2"
-                 t-if="address_mode != 'docnum' and  o.state in ('open', 'paid') and 'pro_forma_number' in o and o.pro_forma_number">
+                 t-if="address_mode != 'docnum' and  o.state == 'posted' and 'pro_forma_number' in o and o.pro_forma_number">
                 <strong>Ns. pro-forma:</strong>
                 <p t-field="o.pro_forma_number"/>
             </div>

@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="report_overdue_document">
-        <t t-call="report.external_layout">
+        <t t-call="web.external_layout">
             <t t-set="o" t-value="o.with_context({'lang':o.lang})"/>
             <div class="page">
 
@@ -14,7 +14,7 @@
                             <br/>
                         </span>
                         <span
-                            t-raw="o.contact_address.replace('\n\n', '\n').replace('\n', '&lt;br&gt;')"
+                            t-out="Markup(o.contact_address.replace('\n\n', '\n').replace('\n', '&lt;br&gt;'))"
                         />
                         <span t-field="o.vat"/>
                     </div>
@@ -33,7 +33,11 @@
 
                 <div class="row">
                     <t t-if="Lines[o.id]">
+                        <!-- `overdue_msg` no longer exists on res.company at 18.0
+                             (the feature it fed was reworked); guarded so a
+                             report without it still renders. -->
                         <span
+                            t-if="'overdue_msg' in res_company._fields"
                             t-field="res_company.with_context(lang=o.lang).overdue_msg"
                         />
                         <p>&amp;nbsp;</p>
@@ -133,14 +137,6 @@
                 </div>
             </div>
 
-        </t>
-    </template>
-
-    <template id="report_overdue">
-        <t t-call="report.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="base_multireport.report_overdue_document" t-lang="o.lang"/>
-            </t>
         </t>
     </template>
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-22 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -7,23 +6,36 @@
 #
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 #
-from base64 import b64decode
 from logging import getLogger
 
-# from PIL import PdfImagePlugin # flake8: noqa
 from os0 import os0
-from PIL import Image
-from pyPdf import PdfFileReader, PdfFileWriter
-from pyPdf.utils import PdfReadError
-from StringIO import StringIO
 
-from odoo import api, models, tools
+from odoo import api, models
 
 logger = getLogger(__name__)
 
 
-class Report(models.Model):
-    _inherit = "report"
+class IrActionsReport(models.Model):
+    # The old abstract `report` helper model these methods lived on was
+    # folded into `ir.actions.report` long before 18.0; the pure
+    # attribute-lookup/selection-rule logic below has no other
+    # version-specific dependency and is ported as-is (`@api.multi`
+    # dropped, `self.env.user.company_id` -> `self.env.company`).
+    #
+    # NOT ported (see below): `render()`/`get_html()`/`get_pdf()`. Those
+    # overrode the pre-14.0 report-rendering pipeline
+    # (`report.render/get_html/get_pdf(self, docids, report_name, data)`),
+    # which no longer exists in this shape -- rendering now goes through
+    # `ir.actions.report._render_qweb_html/_render_qweb_pdf(self,
+    # report_ref, res_ids, data=None)` classmethods with a materially
+    # different contract. They also depended on Python-2-only `StringIO`
+    # and the long-abandoned `pyPdf` library. Re-implementing the
+    # watermark/ending-page PDF overlay feature against the current
+    # rendering hooks is a real redesign, not a mechanical port; flagged
+    # here rather than guessed. `stock.delivery.note.get_docs_to_attach()`
+    # (a simpler, self-contained PDF merge) was however modernized to the
+    # current `pypdf` API in models/stock_delivery_note.py.
+    _inherit = "ir.actions.report"
 
     RPT_BY_MODEL = {
         "sale.order": "sale.report_saleorder",
@@ -42,7 +54,6 @@ class Report(models.Model):
 
     @api.model
     def select_reportname(self, document, force=True):
-        # model = document.__class__.__name__
         model_name = document._name
         rule_model = self.env["multireport.selection.rules"]
         ir_model_model = self.env["ir.model"]
@@ -59,7 +70,7 @@ class Report(models.Model):
             domain = [("active", "=", True)]
         reportname = self.RPT_BY_MODEL.get(model_name, None) if force else None
         for rule in rule_model.search(domain, order="sequence"):
-            if rule.action == "odoo":   # pragma: no cover
+            if rule.action == "odoo":
                 break
             elif rule.action == "report" and rule.report_id:
                 reportname = ir_ui_view_model.browse(rule.report_id.id).xml_id
@@ -72,9 +83,9 @@ class Report(models.Model):
         company = False
         report_model_style = False
         if hasattr(document, "company_id"):
-            company = document.company_id or self.env.user.company_id
+            company = document.company_id or self.env.company
             report_model_style = company.report_model_style or None
-        if hasattr(document, "pdf_report"):   # pragma: no cover
+        if hasattr(document, "pdf_report"):
             pdf_report = document.pdf_report
         else:
             pdf_report = False
@@ -96,12 +107,12 @@ class Report(models.Model):
                         value = getattr(object, param).name
                     else:
                         value = getattr(object, param)
-            if param == "custom_footer" and value == "<p><br></p>":   # pragma: no cover
+            if param == "custom_footer" and value == "<p><br></p>":
                 value = False
             return value
 
         reportname, company, report_model_style, pdf_report = self.env[
-            "report"
+            "ir.actions.report"
         ].get_doc_n_repo_params(doc, report)
         model = doc._name.replace(".", "_")
         # Fallback value path: report, template, style, partner, company
@@ -121,15 +132,15 @@ class Report(models.Model):
             elif hasattr(report, param):
                 value = getattr(report, param)
                 if param == "custom_footer" and value == "<p><br></p>":
-                    value = False   # pragma: no cover
+                    value = False
             if not value and template and hasattr(template, param):
                 value = getattr(template, param)
                 if param == "custom_footer" and value == "<p><br></p>":
-                    value = False  # pragma: no cover
+                    value = False
         if not value and report_model_style and hasattr(report_model_style, param):
             value = getattr(report_model_style, param)
             if param == "custom_footer" and value == "<p><br></p>":
-                value = False  # pragma: no cover
+                value = False
         if param in ("custom_header", "custom_footer") and not value:
             value = get_obj_value(param)
         if param == "footer_mode" and (not value or value == "standard"):
@@ -186,122 +197,3 @@ class Report(models.Model):
             if param == "custom_header":
                 value = 'div class="header">%s</div>' % value
         return value or None
-
-    @api.multi
-    def render(self, template, values=None):
-        if "report" not in values:  # pragma: no cover
-            values["report"] = self
-        return super(Report, self).render(template, values=values)
-
-    @api.model
-    def get_html(self, docids, report_name, data=None):
-        """This method generates and returns html version of a report."""
-        report_model_name = "report.%s" % report_name
-        report_model = self.env.get(report_model_name)
-        if report_model is not None:  # pragma: no cover
-            return super(Report, self).get_html(docids, report_name, data=data)
-        else:
-            report = self._get_report_from_name(report_name)
-            docs = self.env[report.model].browse(docids)
-            company = False
-            if "company_id" in docs[0]:
-                company = docs[0].company_id
-            if not company:  # pragma: no cover
-                company = self.env.user.company_id
-            docargs = {
-                "doc_ids": docids,
-                "doc_model": report.model,
-                "docs": docs,
-                "doc_opts": report,
-                "doc_style": company.report_model_style,
-                "res_company": company,
-                "report": self,
-            }
-            return self.render(report.report_name, docargs)
-
-    @api.model
-    def get_pdf(self, docids, report_name, html=None, data=None):  # pragma: no cover
-        result = super(Report, self).get_pdf(docids, report_name, html=html, data=data)
-        if not docids:
-            return result
-        report = self._get_report_from_name(report_name)
-        if report.model not in self.RPT_BY_MODEL:
-            return result
-        recs = self.env[report.model].browse(docids)
-        reportname, company, report_model_style, pdf_report = self.env[
-            "report"
-        ].get_doc_n_repo_params(recs[0], report)
-        if (
-            not report_model_style
-            or not report_model_style.origin
-            or report_model_style.origin == "odoo"
-        ) and not pdf_report:
-            return result
-        watermark = self.get_report_attrib("pdf_watermark", recs[0], report)
-        if not watermark:
-            watermark = tools.safe_eval(
-                self.get_report_attrib("pdf_watermark_expression", recs[0], report)
-                or "None",
-                dict(env=self.env, docs=recs),
-            )
-        if watermark:
-            watermark = b64decode(watermark)
-        ending_page = self.get_report_attrib("pdf_ending_page", recs[0], report)
-        if ending_page:
-            ending_page = b64decode(ending_page)
-        if not watermark and not ending_page:
-            return result
-
-        pdf = PdfFileWriter()
-        pdf_watermark = None
-        try:
-            pdf_watermark = PdfFileReader(StringIO(watermark))
-        except PdfReadError:
-            # let's see if we can convert this with pillow
-            try:
-                Image.init()
-                image = Image.open(StringIO(watermark))
-                pdf_buffer = StringIO()
-                if image.mode != "RGB":
-                    image = image.convert("RGB")
-                resolution = image.info.get("dpi", report.paperformat_id.dpi or 90)
-                if isinstance(resolution, tuple):
-                    resolution = resolution[0]
-                image.save(pdf_buffer, "pdf", resolution=resolution)
-                pdf_watermark = PdfFileReader(pdf_buffer)
-            except BaseException:
-                logger.exception("Failed to load watermark")
-
-        if not pdf_watermark:
-            logger.error("No usable watermark found, got %s...", watermark[:100])
-            return result
-
-        if pdf_watermark.numPages < 1:
-            logger.error("Your watermark pdf does not contain any pages")
-            return result
-        if pdf_watermark.numPages > 1:
-            logger.debug(
-                "Your watermark pdf contains more than one page, "
-                "all but the first one will be ignored"
-            )
-
-        doc = PdfFileReader(StringIO(result))
-        for page in doc.pages:
-            watermark_page = pdf.addBlankPage(
-                page.mediaBox.getWidth(), page.mediaBox.getHeight()
-            )
-            watermark_page.mergePage(pdf_watermark.getPage(0))
-            watermark_page.mergePage(page)
-
-        if ending_page:
-            pdf_last_page = PdfFileReader(StringIO(ending_page))
-            if not pdf_watermark and not recs:
-                for page in doc.pages:
-                    pdf.addPage(page)
-            for last in pdf_last_page.pages:
-                pdf.addPage(last)
-
-        pdf_content = StringIO()
-        pdf.write(pdf_content)
-
-        return pdf_content.getvalue()

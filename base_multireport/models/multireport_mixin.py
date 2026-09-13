@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-25 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -7,17 +6,16 @@
 #
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 #
-from odoo import api, models
+from datetime import date, datetime
+
+from odoo import models
+from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class MultireportMixin(models.AbstractModel):
     _name = "multireport.mixin"
     _description = "Multireport common functions"
 
-    # product_code = fields.Char("Code", compute="_set_code", copy=False)
-    # description = fields.Char("Description", compute="_set_description", copy=False)
-
-    @api.model
     def code_2_print(self, style_mode=None):
         if not style_mode:
             style_mode = self.company_id.report_model_style.description_mode
@@ -27,15 +25,6 @@ class MultireportMixin(models.AbstractModel):
             else ""
         )
 
-    # @api.depends("product_id")
-    # @api.multi
-    # def _set_code(self):
-    #     for line in self:
-    #         line.product_code = (
-    #             line.product_id.default_code if line.product_id else False
-    #         )
-
-    @api.model
     def description_2_print(self, style_mode=None):
         if not style_mode:
             style_mode = self.company_id.report_model_style.description_mode
@@ -45,10 +34,22 @@ class MultireportMixin(models.AbstractModel):
         if style_mode in ("nocode", "nocode1"):
             i = value.find("]")
             if value[0] == "[" and i >= 0:
-                value = value[i + 1:].lstrip()
+                value = value[i + 1 :].lstrip()
         return value
-    #
-    # @api.depends("product_id", "name")
-    # def _set_description(self):
-    #     for line in self:
-    #         line.description = line.description_2_print()
+
+    def _fmt_date_macro(self, value, date_format):
+        """Format a date/datetime value read from a Date/Datetime field
+        for use in one of the `%(...)s`-style report macros below.
+
+        The ORM returns real `date`/`datetime` objects (not strings) for
+        such fields; kept tolerant of a plain string too (in the
+        `DEFAULT_SERVER_DATETIME_FORMAT` shape the pre-13.0 code assumed)
+        in case a caller passes one through some other path.
+        """
+        if not value:
+            return ""
+        if isinstance(value, (date, datetime)):
+            return value.strftime(date_format)
+        return datetime.strptime(value, DEFAULT_SERVER_DATETIME_FORMAT).strftime(
+            date_format
+        )

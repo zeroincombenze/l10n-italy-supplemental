@@ -1,7 +1,7 @@
 <odoo>
 
     <template id="report_picking">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t
                         t-set="style"
@@ -21,17 +21,16 @@
         </t>
     </template>
 
-    <report
-            id="base_multireport.action_report_picking"
-            model="stock.picking"
-            string="Ordine di prelievo (personalizzato)"
-            report_type="qweb-pdf"
-            name="base_multireport.report_picking"
-            file="base_multireport.report_picking_operations"
-    />
+    <record id="action_report_picking" model="ir.actions.report">
+        <field name="name">Ordine di prelievo (personalizzato)</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">base_multireport.report_picking</field>
+        <field name="report_file">base_multireport.report_picking_operations</field>
+    </record>
 
     <template id="report_deliveryslip">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t
                         t-set="style"
@@ -51,13 +50,12 @@
         </t>
     </template>
 
-    <report
-            id="base_multireport.action_report_delivery"
-            model="stock.picking"
-            string="Ordine di consegna (personalizzato)"
-            report_type="qweb-pdf"
-            name="base_multireport.report_deliveryslip"
-            file="base_multireport.report_deliveryslip"
-    />
+    <record id="action_report_delivery" model="ir.actions.report">
+        <field name="name">Ordine di consegna (personalizzato)</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">base_multireport.report_deliveryslip</field>
+        <field name="report_file">base_multireport.report_deliveryslip</field>
+    </record>
 
 </odoo>

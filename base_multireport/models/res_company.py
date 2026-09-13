@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2016-25 - SHS-AV s.r.l. <https://www.zeroincombenze.it/>
 #
@@ -21,10 +20,13 @@ class ResCompany(models.Model):
 
 
 class ReportConfigSettings(models.TransientModel):
-    _inherit = ["base.config.settings"]
+    # `base.config.settings` (pre-10.0) was replaced by
+    # `res.config.settings` well before this module ever reached 18.0.
+    _inherit = "res.config.settings"
 
     report_model_style = fields.Many2one(
         related="company_id.report_model_style",
         string="Multi-report style",
+        readonly=False,
         help="Select multi-report style",
     )
