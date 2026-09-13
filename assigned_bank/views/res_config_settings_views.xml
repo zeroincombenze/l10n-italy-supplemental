@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!--
+        The original anchor, div#account_yodlee (Yodlee bank sync
+        integration), no longer exists at 18.0; anchored after the
+        "Bank &amp; Cash" block instead. Also modernized the settings
+        markup: o_settings_container/o_setting_box/o_setting_left_pane/
+        o_setting_right_pane divs replaced with <block>/<setting> (16.0
+        boundary).
+    -->
+    <record id="res_config_settings_view_form_accountt_extend" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.account.extend</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="bank_cash" position="after">
+                <block title="Default Assigned Banks" id="default_assigned_banks">
+                    <setting id="partner_assigned_bank_id" string="Assigned Bank for Payment">
+                        <field name="partner_assigned_bank_id"/>
+                    </setting>
+                    <setting id="partner_assigned_income_bank_id" string="Assigned Bank for Incoming">
+                        <field name="partner_assigned_income_bank_id"/>
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+
+</odoo>
