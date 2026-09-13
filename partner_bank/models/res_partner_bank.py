@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Copyright 2018-21 SHS-AV s.r.l. <https://www.zeroincombenze.it>
 #
@@ -7,27 +6,26 @@
 #
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 #
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class ResPartnerBank(models.Model):
-    _inherit = 'res.partner.bank'
+    _inherit = "res.partner.bank"
 
-    active = fields.Boolean(default=True)
-    acc_type = fields.Selection([
-        ('bank', 'Bank'),
-        ('iban', 'Iban'),
-        ('normal', 'Normal')],
-        string='Bank Account Type')
+    # `active` and `acc_type` used to be re-declared here to restore
+    # features Odoo core had dropped after 10.0; both are now native,
+    # computed core fields again (`acc_type` via `_compute_acc_type`,
+    # `active` with its own "Archived" ribbon on the form), so they are
+    # no longer redeclared here to avoid clashing with the core computed
+    # field definitions.
 
-    @api.multi
-    @api.depends('bank_id', 'acc_number')
-    def name_get(self):
-        result = []
+    @api.depends("bank_id.name", "acc_number")
+    def _compute_display_name(self):
         for bank in self:
             if bank.bank_id.name:
-                name = '%s *%s ' % (bank.bank_id.name, bank.acc_number[-4:])
+                bank.display_name = "%s *%s " % (
+                    bank.bank_id.name,
+                    bank.acc_number[-4:],
+                )
             else:
-                name = bank.acc_number
-            result.append((bank.id, name))
-        return result
+                bank.display_name = bank.acc_number
