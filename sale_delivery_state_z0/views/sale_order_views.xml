@@ -6,19 +6,18 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <field name="state" position="before">
-                <!-- states and attrs[invisible] must be combined with an extra & -->
-                <button name="action_force_delivery_state" type="object" string="Force delivery done" states="done" attrs="{'invisible': ['|', '|', ('force_delivery_state', '=', True), ('delivery_state', '=', 'done')]}"/>
-                <button name="action_unforce_delivery_state" type="object" string="Unforce delivery done" states="done" attrs="{'invisible': ['|', '|', ('force_delivery_state', '=', False)]}"/>
+                <button name="action_force_delivery_state" type="object" string="Force delivery done" invisible="state != 'done' or force_delivery_state or delivery_state == 'done'"/>
+                <button name="action_unforce_delivery_state" type="object" string="Unforce delivery done" invisible="state != 'done' or not force_delivery_state"/>
             </field>
-            <xpath expr="//field[@name='confirmation_date']" position="before">
-                <field name="delivery_state" readonly="True"/>
-                <field name="force_delivery_state" invisible="True"/>
+            <xpath expr="//field[@name='validity_date']" position="after">
+                <field name="delivery_state" readonly="1"/>
+                <field name="force_delivery_state" invisible="1"/>
             </xpath>
         </field>
     </record>
 
     <record id="view_order_tree_inherit_delivery_state" model="ir.ui.view">
-        <field name="name">sale.order.tree</field>
+        <field name="name">sale.order.list</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="model">sale.order</field>
         <field name="arch" type="xml">

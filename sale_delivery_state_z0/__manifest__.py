@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Akretion (http://www.akretion.com).
 # @author Pierrick BRUN <pierrick.brun@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Sale delivery State",
-    "version": "10.0.1.0.1",
+    "version": "18.0.1.0.0",
     "category": "Product",
     "summary": "Show the delivery state on the sale order",
     "author": "Akretion,Odoo Community Association (OCA),SHS-AV s.r.l.",
