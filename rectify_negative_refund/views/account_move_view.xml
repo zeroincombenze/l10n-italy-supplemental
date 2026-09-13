@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="view_move_form" model="ir.ui.view">
-        <field name="name">account.move.form</field>
+    <!--
+        Pre-13.0 this module had 3 separate buttons across 2 view files:
+        one "Rectify" on account.invoice_form (customer invoices), one on
+        account.invoice_supplier_form (vendor bills), and a no-op
+        "Rectify" on the generic journal entry form. account.invoice was
+        merged into account.move at 13.0, and all three forms are now the
+        single account.view_move_form, differentiated by move_type, so
+        all three buttons are consolidated here, each restricted to the
+        move types it used to apply to.
+
+        Along the way, fixed an invalid "not in in" domain operator
+        (a typo in the pre-13.0 attrs domains) while converting to plain
+        invisible= expressions.
+    -->
+    <record id="view_move_form_rectify" model="ir.ui.view">
+        <field name="name">account.move.form.rectify</field>
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
             <header>
-                <button name="rectify_entry" string="Rectify" type="object"/>
+                <button name="rectify_invoice" string="Rectify" type="object"
+                        invisible="move_type not in ('out_invoice', 'out_refund') or amount_total &gt;= 0.0 or state not in ('draft', 'posted')"/>
+                <button name="rectify_invoice" string="Rectify" type="object"
+                        invisible="move_type not in ('in_invoice', 'in_refund') or (check_total &gt;= 0.0 and amount_total &gt;= 0.0) or state not in ('draft', 'posted')"/>
+                <button name="rectify_entry" string="Rectify" type="object"
+                        invisible="move_type in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')"/>
             </header>
         </field>
     </record>
