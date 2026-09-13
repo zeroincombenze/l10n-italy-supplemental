@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--
+    As of 18.0 both `client_order_ref` and `amount_untaxed` already exist
+    natively on the Sales Orders / Quotations list views (as optional,
+    hidden-by-default columns). This module's original intent, always
+    showing them, is now achieved by flipping their `optional` attribute
+    to "show" instead of adding duplicate field nodes (which would raise
+    a "field defined twice" error).
+-->
+<record id="z0_view_order_tree_ref" model="ir.ui.view">
+    <field name="name">sale.order.list.z0 (orders)</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_tree"/>
+    <field name="arch" type="xml">
+        <field name="client_order_ref" position="attributes">
+            <attribute name="optional">show</attribute>
+        </field>
+        <field name="amount_untaxed" position="attributes">
+            <attribute name="optional">show</attribute>
+        </field>
+    </field>
+</record>
+
+<record id="z0_view_quotation_tree_ref" model="ir.ui.view">
+    <field name="name">sale.order.list.z0 (quotes)</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_quotation_tree"/>
+    <field name="arch" type="xml">
+        <field name="client_order_ref" position="attributes">
+            <attribute name="optional">show</attribute>
+        </field>
+        <field name="amount_untaxed" position="attributes">
+            <attribute name="optional">show</attribute>
+        </field>
+    </field>
+</record>
+
+</odoo>
