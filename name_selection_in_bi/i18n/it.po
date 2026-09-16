@@ -1,0 +1,25 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* name_selection_in_bi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-16 00:00+0000\n"
+"PO-Revision-Date: 2026-09-16 00:00+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: name_selection_in_bi
+#: model:ir.model.fields,field_description:name_selection_in_bi.field_account_invoice_report_line_name
+#: model:ir.model.fields,field_description:name_selection_in_bi.field_sale_report_line_name
+#: model:ir.ui.view,arch_db:name_selection_in_bi.view_account_invoice_report_search_line_name
+#: model:ir.ui.view,arch_db:name_selection_in_bi.view_order_product_search_line_name
+msgid "Line Description"
+msgstr "Descrizione riga"
