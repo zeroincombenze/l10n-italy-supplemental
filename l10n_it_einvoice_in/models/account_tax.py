@@ -6,26 +6,44 @@ from odoo import models, _
 class AccountTax(models.Model):
     _inherit = "account.tax"
 
-    def search_tax_by_code_kind(self, company_id, tax_rate_int, tax_kind, partner=None):
+    def search_tax_by_code_kind(
+        self,
+        company_id,
+        tax_rate_int,
+        tax_kind,
+        partner=None,
+        type_tax_use="purchase",
+    ):
+        """Tax matching rate and nature of an e-invoice line.
+
+        type_tax_use tells apart a received bill ("purchase", the default and
+        the historical behaviour) from an issued invoice ("sale"), imported by
+        l10n_it_einvoice_import.
+        """
         TaxNature = self.env["italy.ade.tax.nature"]
         IrValues = self.env["ir.values"]
         tax_rate = float(tax_rate_int)
-        supplier_taxes_ids = IrValues.get_default(
-            "product.product", "supplier_taxes_id", company_id=company_id
+        default_field = (
+            "taxes_id" if type_tax_use == "sale" else "supplier_taxes_id"
+        )
+        default_taxes_ids = IrValues.get_default(
+            "product.product", default_field, company_id=company_id
         )
         def_purchase_tax = False
-        is_rc = self.is_rc(nature=tax_kind)
+        # Reverse charge is a purchase-side mechanism: on a sale invoice the
+        # nature (N6) rides on an ordinary sale tax
+        is_rc = False if type_tax_use == "sale" else self.is_rc(nature=tax_kind)
         default_tax = self.search(
-            [("type_tax_use", "=", "purchase"),
+            [("type_tax_use", "=", type_tax_use),
              ("amount", "!=", 0.0)], limit=1, order="sequence,id")
-        if supplier_taxes_ids:
-            def_purchase_tax = self.browse(supplier_taxes_ids)[0]
+        if default_taxes_ids:
+            def_purchase_tax = self.browse(default_taxes_ids)[0]
         domain = []
         domain.append(("company_id", "=", company_id))
-        domain.append(("type_tax_use", "=", "purchase"))
+        domain.append(("type_tax_use", "=", type_tax_use))
         if tax_rate != 0.0:
             domain.append(("amount", "=", tax_rate))
-        elif is_rc:
+        elif is_rc and default_tax:
             # Some supplier use N6 w/o Vax rate!
             domain.append("|")
             domain.append(("amount", "=", default_tax[0].amount))

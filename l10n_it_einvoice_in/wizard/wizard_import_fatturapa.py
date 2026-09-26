@@ -109,10 +109,19 @@ class WizardImportFatturapa(models.TransientModel):
             return -1
         return self.env["res.partner"].getPartnerBase(Carrier, is_carrier=True)
 
+    def get_tax_type_use(self):
+        """Taxes to match the e-invoice lines against. Sale import overrides it."""
+        return "purchase"
+
     def get_tax(self, company_id, AliquotaIVA, Natura, partner=None):
         AccountTax = self.env["account.tax"]
         account_tax_id, errmsg = AccountTax.search_tax_by_code_kind(
-            company_id, AliquotaIVA, Natura, partner=partner)
+            company_id,
+            AliquotaIVA,
+            Natura,
+            partner=partner,
+            type_tax_use=self.get_tax_type_use(),
+        )
         if not account_tax_id:
             raise UserError(errmsg)
         if errmsg:
@@ -489,8 +498,8 @@ class WizardImportFatturapa(models.TransientModel):
                         discount -= float(DiscRise.Importo)
                     elif DiscRise.Tipo == "MG":
                         discount += float(DiscRise.Importo)
-            journal = self.get_purchase_journal(invoice.company_id)
-            credit_account = journal.default_credit_account_id
+            journal = self.get_invoice_journal(invoice.company_id)
+            credit_account = self.get_invoice_default_account(journal)
             line_vals = {
                 "invoice_id": invoice_id,
                 "name": _("Global bill discount from document general data"),
@@ -684,7 +693,7 @@ class WizardImportFatturapa(models.TransientModel):
                     due_date = date_invoice
                 totdue.append([due_date, eval(due_amt), num_days])
         if (
-            company.supplier_payment_term != "supplier"
+            not self.use_xml_payment_term(company)
             and invoice.partner_id.property_payment_term_id
         ):
             invoice.write(
@@ -791,6 +800,46 @@ class WizardImportFatturapa(models.TransientModel):
                 % (company.name, company.id)
             )
         return journals[0]
+
+    def get_sale_journal(self, company):
+        journal_model = self.env["account.journal"]
+        journals = journal_model.search(
+            [("type", "=", "sale"), ("company_id", "=", company.id)], limit=1
+        )
+        if not journals:
+            raise UserError(
+                _("Define a sale journal for this company: '%s' (id: %d).")
+                % (company.name, company.id)
+            )
+        return journals[0]
+
+    # Hooks below isolate what tells a received bill from an issued invoice,
+    # so that the sale import (l10n_it_einvoice_import) may reuse this wizard
+    # instead of duplicating it. Defaults are the purchase behaviour.
+
+    def get_invoice_journal(self, company):
+        return self.get_purchase_journal(company)
+
+    def get_invoice_default_account(self, journal):
+        """Account of the lines created from the xml file."""
+        return journal.default_credit_account_id
+
+    def get_invoice_partner_account(self, partner):
+        return partner.property_account_payable_id
+
+    def get_invoice_attachment_field(self):
+        return "fatturapa_attachment_in_id"
+
+    def get_invoice_header_data(
+        self, fatt, fatturapa_attachment, FatturaBody, partner_id
+    ):
+        return self.env["account.invoice"].xml_get_header_data(
+            self, fatt, fatturapa_attachment, FatturaBody, partner_id
+        )
+
+    def use_xml_payment_term(self, company):
+        """Payment term is read from the xml file rather than from the partner."""
+        return company.supplier_payment_term == "supplier"
 
     def create_e_invoice_line(self, line):
         vals = {
@@ -942,22 +991,21 @@ class WizardImportFatturapa(models.TransientModel):
             partner,
             wt_found,
             inconsistencies,
-        ) = invoice_model.xml_get_header_data(
-            self, fatt, fatturapa_attachment, FatturaBody, partner_id
+        ) = self.get_invoice_header_data(
+            fatt, fatturapa_attachment, FatturaBody, partner_id
         )
         if inconsistencies:
             self.log_inconsistency(inconsistencies)
-        purchase_journal = self.get_purchase_journal(company)
-        # purchase_journal = invoice_model._default_journal()
-        credit_account = purchase_journal.default_credit_account_id
+        journal = self.get_invoice_journal(company)
+        credit_account = self.get_invoice_default_account(journal)
         invoice_data.update(
             {
-                "account_id": partner.property_account_payable_id.id,
+                "account_id": self.get_invoice_partner_account(partner).id,
                 "partner_id": partner_id,
-                "journal_id": purchase_journal.id,
+                "journal_id": journal.id,
                 # 'origin': xmlData.datiOrdineAcquisto,
                 "company_id": company.id,
-                "fatturapa_attachment_in_id": fatturapa_attachment.id,
+                self.get_invoice_attachment_field(): fatturapa_attachment.id,
             }
         )
         if (

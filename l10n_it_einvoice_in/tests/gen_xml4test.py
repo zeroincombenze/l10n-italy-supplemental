@@ -8,7 +8,7 @@ from lxml import etree
 
 from python_plus import _b, _u, compute_date
 
-__version__ = "10.0.1.3.35"
+__version__ = "10.0.1.3.62"
 
 
 def progressivo(opt_args):

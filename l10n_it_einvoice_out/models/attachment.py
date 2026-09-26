@@ -50,10 +50,12 @@ class FatturaPAAttachment(models.Model):
     @api.multi
     @api.depends("out_invoice_ids")
     def _compute_xml_data(self):
-        wizard_model = self.env["wizard.export.fatturapa"]
+        # The xml file is deliberately NOT parsed here: every value below comes
+        # from the linked invoices. Parsing it would break on any attachment
+        # whose file is unreadable, e.g. a database restored without its
+        # filestore, and would cost one parse per row whenever the ORM
+        # recomputes the whole table.
         for att in self:
-            fatt = wizard_model.get_invoice_obj(att)
-            fatt.FatturaElettronicaHeader.CessionarioCommittente
             partners = att.mapped("out_invoice_ids.partner_id")
             if len(partners) == 1:
                 att.invoice_partner_id = partners.id

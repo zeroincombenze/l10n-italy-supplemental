@@ -122,6 +122,13 @@ class AccountInvoice(models.Model):
                             vals[1]["amount"] = ln.amount_tax
         return tax_grouped
 
+    def get_rounding_tax_type_use(self):
+        return "sale" if self.type in ("out_invoice", "out_refund") else "purchase"
+
+    def get_rounding_tax(self):
+        """Zero rate tax carrying the rounding line. Sale import overrides it."""
+        return self.env.user.company_id.arrotondamenti_tax_id
+
     def load_rounding_values(self, round_amount, tax_rate=None, tax_kind=None):
         if round_amount > 0:
             arrotondamenti_account_id = (
@@ -143,9 +150,13 @@ class AccountInvoice(models.Model):
             name = _("Rounding up")
         if tax_rate or tax_kind:
             tax_id, errmsg = self.env["account.tax"].search_tax_by_code_kind(
-                self.company_id.id, tax_rate, tax_kind)
+                self.company_id.id,
+                tax_rate,
+                tax_kind,
+                type_tax_use=self.get_rounding_tax_type_use(),
+            )
         else:
-            tax_id = self.env.user.company_id.arrotondamenti_tax_id.id
+            tax_id = self.get_rounding_tax().id
             if not tax_id:
                 raise UserError(
                     _("Round down tax code is not set in Accounting Settings")
@@ -704,7 +715,9 @@ class AccountInvoice(models.Model):
         # if total is negative, change lines sign, and change move type
         if self.amount_total < 0:
             if self.fiscal_document_type_id.code == "TD01":
-                self.type = "in_refund"
+                self.type = (
+                    "out_refund" if self.type == "out_invoice" else "in_refund"
+                )
             for line in self.invoice_line_ids:
                 line.price_unit = -line.price_unit
             self.compute_taxes()

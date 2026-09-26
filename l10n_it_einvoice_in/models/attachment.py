@@ -58,7 +58,89 @@ class FatturaPAAttachmentIn(models.Model):
     def get_xml_string(self):
         if not self.ir_attachment_id:
             return False
-        xml_string = self.ir_attachment_id.get_xml_string()
+        return self.ir_attachment_id.normalize_einvoice_xml(
+            self.ir_attachment_id.get_xml_string()
+        )
+
+    @api.multi
+    def get_invoice_obj(self):
+        self.ensure_one()
+        xml_string = self.get_xml_string()
+        if xml_string:
+            return fatturapa_v_1_2.CreateFromDocument(xml_string)
+        return False
+
+    @api.multi
+    @api.depends("ir_attachment_id.datas", "in_invoice_ids")
+    def _compute_xml_data(self):
+        partner_model = self.env["res.partner"]
+        for att in self:
+            inv_xml = att.get_invoice_obj()
+            if not inv_xml:
+                continue
+            xml_supplier_id = partner_model.getPartnerBase(
+                inv_xml.FatturaElettronicaHeader.CedentePrestatore
+            )
+            if xml_supplier_id < 0:
+                continue
+            partner_model.browse(xml_supplier_id)
+            # if partner.vat == self.env.user.company_id.vat:
+            #     continue
+            att.xml_supplier_id = xml_supplier_id
+            att.invoices_number = len(inv_xml.FatturaElettronicaBody)
+            att.registered = False
+            # Strange but there is some trouble during execution
+            if hasattr(att, "in_invoice_ids"):
+                try:
+                    if att.in_invoice_ids:
+                        att.date_invoice0 = att.in_invoice_ids[0].date_invoice
+                        if len(att.in_invoice_ids) == att.invoices_number:
+                            att.registered = True
+                    att.invoices_total = 0
+                    for invoice_body in inv_xml.FatturaElettronicaBody:
+                        att.invoices_total += float(
+                            invoice_body.DatiGenerali.DatiGeneraliDocumento.
+                            ImportoTotaleDocumento
+                            or 0
+                        )
+                        if not att.in_invoice_ids:
+                            att.date_invoice0 = (
+                                invoice_body.DatiGenerali.DatiGeneraliDocumento.Data
+                            )
+                except BaseException:
+                    _logger.error("Internal error in attachment id %d" % att.id)
+
+    @api.multi
+    @api.depends("ir_attachment_id.datas", "in_invoice_ids")
+    def revaluate_due_date(self):
+        wizard_model = self.env["wizard.import.fatturapa"]
+        for att in self:
+            fatt = wizard_model.get_invoice_obj(att)
+            if not fatt:
+                continue
+            for fattura in fatt.FatturaElettronicaBody:
+                # Strange but there is some trouble during execution
+                if hasattr(att, "in_invoice_ids") and att.in_invoice_ids:
+                    wizard_model.set_payment_term(
+                        att.in_invoice_ids[0],
+                        att.in_invoice_ids[0].company_id,
+                        fattura.DatiPagamento,
+                    )
+
+
+class IrAttachment(models.Model):
+    _inherit = "ir.attachment"
+
+    @api.model
+    def normalize_einvoice_xml(self, xml_string):
+        """Make a FatturaPA xml string parsable by the pyxb bindings.
+
+        Real world files, both received from SdI and issued by other software,
+        carry empty tags and loose formats the bindings reject: they are dropped
+        or fixed here. Shared by purchase and sale import.
+        """
+        if not xml_string:
+            return xml_string
         xml_string = re.sub(
             '<?xml version="1.0" encoding="utf-8"[^?]*?>',
             '<?xml version="1.0" encoding="utf-8"?>',
@@ -140,68 +222,3 @@ class FatturaPAAttachmentIn(models.Model):
             ofs = x.start() + 15
             x = pattern.search(xml_string, ofs)
         return xml_string
-
-    @api.multi
-    def get_invoice_obj(self):
-        self.ensure_one()
-        xml_string = self.get_xml_string()
-        if xml_string:
-            return fatturapa_v_1_2.CreateFromDocument(xml_string)
-        return False
-
-    @api.multi
-    @api.depends("ir_attachment_id.datas", "in_invoice_ids")
-    def _compute_xml_data(self):
-        partner_model = self.env["res.partner"]
-        for att in self:
-            inv_xml = att.get_invoice_obj()
-            if not inv_xml:
-                continue
-            xml_supplier_id = partner_model.getPartnerBase(
-                inv_xml.FatturaElettronicaHeader.CedentePrestatore
-            )
-            if xml_supplier_id < 0:
-                continue
-            partner_model.browse(xml_supplier_id)
-            # if partner.vat == self.env.user.company_id.vat:
-            #     continue
-            att.xml_supplier_id = xml_supplier_id
-            att.invoices_number = len(inv_xml.FatturaElettronicaBody)
-            att.registered = False
-            # Strange but there is some trouble during execution
-            if hasattr(att, "in_invoice_ids"):
-                try:
-                    if att.in_invoice_ids:
-                        att.date_invoice0 = att.in_invoice_ids[0].date_invoice
-                        if len(att.in_invoice_ids) == att.invoices_number:
-                            att.registered = True
-                    att.invoices_total = 0
-                    for invoice_body in inv_xml.FatturaElettronicaBody:
-                        att.invoices_total += float(
-                            invoice_body.DatiGenerali.DatiGeneraliDocumento.
-                            ImportoTotaleDocumento
-                            or 0
-                        )
-                        if not att.in_invoice_ids:
-                            att.date_invoice0 = (
-                                invoice_body.DatiGenerali.DatiGeneraliDocumento.Data
-                            )
-                except BaseException:
-                    _logger.error("Internal error in attachment id %d" % att.id)
-
-    @api.multi
-    @api.depends("ir_attachment_id.datas", "in_invoice_ids")
-    def revaluate_due_date(self):
-        wizard_model = self.env["wizard.import.fatturapa"]
-        for att in self:
-            fatt = wizard_model.get_invoice_obj(att)
-            if not fatt:
-                continue
-            for fattura in fatt.FatturaElettronicaBody:
-                # Strange but there is some trouble during execution
-                if hasattr(att, "in_invoice_ids") and att.in_invoice_ids:
-                    wizard_model.set_payment_term(
-                        att.in_invoice_ids[0],
-                        att.in_invoice_ids[0].company_id,
-                        fattura.DatiPagamento,
-                    )

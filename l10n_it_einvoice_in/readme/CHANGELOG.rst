@@ -1,3 +1,9 @@
+10.0.1.3.62 (2026-09-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [QUA] Test coverage 73% (1567: 422+1145) [0 TestPoints] - quality rating 43 (target 100)
+* [REF] Import hooks shared with sale import / Agganci di importazione condivisi con l'import vendite
+
 10.0.1.3.61 (2026-08-24)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

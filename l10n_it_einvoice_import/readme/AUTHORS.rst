@@ -1,4 +1,2 @@
-* Agile Business Group sagl <https://www.agilebg.com/>
-* Innoviu srl <http://www.innoviu.com>
-* Pointec s.r.l. <https://www.pointec.it/>
+* Zeroincombenze srls <https://www.zeroincombenze.it/>
 * SHS-AV s.r.l. <https://www.zeroincombenze.it/>

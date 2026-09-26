@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- The export module forbids creation, because it fills the model itself;
+         an imported file is instead uploaded by the user -->
+    <record id="view_fatturapa_out_attachment_tree_import" model="ir.ui.view">
+        <field name="name">fatturapa.attachment.out.tree.import</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field
+            name="inherit_id"
+            ref="l10n_it_einvoice_out.view_fatturapa_out_attachment_tree"
+        />
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="create">true</attribute>
+            </tree>
+            <field name="invoices_total" position="after">
+                <field name="invoices_count" />
+                <field name="imported" />
+                <field name="registered" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_fatturapa_out_attachment_form_import" model="ir.ui.view">
+        <field name="name">fatturapa.attachment.out.form.import</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field
+            name="inherit_id"
+            ref="l10n_it_einvoice_out.view_fatturapa_out_attachment_form"
+        />
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="create">true</attribute>
+            </form>
+            <field name="invoice_partner_id" position="after">
+                <field name="invoices_count" />
+                <field name="invoices_total" />
+                <field name="date_invoice0" />
+                <field name="imported" />
+                <field name="registered" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_fatturapa_out_attachment_search_import" model="ir.ui.view">
+        <field name="name">fatturapa.attachment.out.search.import</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field
+            name="inherit_id"
+            ref="l10n_it_einvoice_out.view_fatturapa_out_attachment_search"
+        />
+        <field name="arch" type="xml">
+            <field name="invoice_partner_id" position="after">
+                <filter
+                    name="imported"
+                    string="Imported"
+                    domain="[('imported','=',True)]"
+                />
+                <filter
+                    name="not_registered"
+                    string="Not registered"
+                    domain="[('registered','=',False)]"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_form_fatturapa_import" model="ir.ui.view">
+        <field name="name">account.invoice.fatturapa.import</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="l10n_it_einvoice_out.view_invoice_form_fatturapa" />
+        <field name="arch" type="xml">
+            <field name="fatturapa_attachment_out_id" position="after">
+                <button
+                    name="remove_attachment_out_link"
+                    string="Remove e-invoice file link"
+                    type="object"
+                    attrs="{'invisible': [('fatturapa_attachment_out_id', '=', False)]}"
+                />
+                <field
+                    name="inconsistencies"
+                    attrs="{'invisible': [('inconsistencies', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>

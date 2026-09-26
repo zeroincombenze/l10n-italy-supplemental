@@ -1,207 +1,341 @@
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#162832;">Import fatture elettroniche clienti / Fattura Elettronica in</h2>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">E-invoice sale import</h2>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify"><h2>Import fatture elettroniche clienti / Fattura Elettronica in</h2>
+            <h2 class="oe_slogan" style="color:#162832;">Importazione fatture di vendita da file XML</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module creates <b>customer invoices</b> out of electronic invoice XML files
+(FatturaPA version 1.2.1), the same job <code>l10n_it_einvoice_in</code> does for
+supplier bills.
 <p align="justify">
-This module allows to import Electronic Bill XML files version 1.2.1
+It is meant for sale invoices issued outside Odoo &#8212; produced by another
+program, or downloaded back from the Exchange System (SdI) or from an
+intermediary &#8212; which have to be registered in the accounting.
 </p><p align="justify">
-http://www.fatturapa.gov.it/export/fatturazione/en/normativa/f-2.htm
+In the XML file the company is the <i>CedentePrestatore</i> and the customer is the
+<i>CessionarioCommittente</i>: it is the other way round of a received bill. A file
+whose <i>CedentePrestatore</i> is not the current company is refused.
 </p><p align="justify">
-received through the Exchange System (SdI).
+For every customer it is possible to set the 'E-bills Detail Level':
 </p><p align="justify">
-http://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm
+ - Minimum level: invoice is created with no lines; user will have to create
+   them, according to what specified in the electronic invoice
+ - VAT code level: lines are cumulated by VAT code
+ - Maximum level: every line contained in the electronic invoice creates a
+   line in the invoice
 </p><p align="justify">
-For every supplier, it is possible to set the 'E-bills Detail Level':
+Products are looked up by internal code or by description, since a sale
+e-invoice carries the codes of the company itself. When no product is found,
+the 'E-bill Default Product' of the customer is used.
 </p><p align="justify">
- - Minimum level: Bill is created with no lines; User will have to create them, according to what specified in the electronic bill
- - VAT code level: Line are cumulated by VAT code
- - Maximum level: Every line contained in electronic bill will create a line in bill
+Self billing documents (<i>autofattura</i>, TipoDocumento TD16 to TD23) are
+imported too, but the roles in their header are swapped: the resulting invoice
+is reported as an inconsistency, so that it can be checked by hand.
 </p><p align="justify">
-Moreover, in supplier form you can set the 'E-bill Default Product': this product will be used, during generation of bills, when no other possible product is found. Tax and account of bill line will be set according to what configured in the product.
-</p><p align="justify">
-Every product code used by suppliers can be set, in product form, in
-</p><p align="justify">
-Inventory &#8594;  Products
-</p><p align="justify">
-If supplier specifies a known code in XML, the system will use it to retrieve the correct product to be used in bill line, setting the related tax and account.
-</p><p align="justify">
- * Go to Accounting &#8594;  Purchases &#8594;  Electronic Bill
- * Upload XML file
- * View bill content clicking on 'Show preview'
- * Run 'Import e-bill' wizard to create a draft bill or run 'Link to existing bill' to link the XML file to an already (automatically) created bill
-</p><p align="justify">
-In the incoming electronic bill files list you will see, by default, files to be registered. These are files not yet linked to one or more bills.
+A whole zip file of e-invoices can be loaded at once, the way
+<code>l10n_it_einvoice_import_zip</code> does for purchase files; that module is left
+to the purchase side, so neither has to depend on the other.
 </p></p>
         </div>
         <div class="oe_span6">
             <p align="center">
-                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
             </p>
-            <p class="oe_mt16" align="justify"><h2>Import fatture elettroniche clienti / Fattura Elettronica in</h2>
+            <p class="oe_mt16" align="justify">Questo modulo crea le <b>fatture di vendita</b> a partire dai file XML di fattura
+elettronica (FatturaPA versione 1.2.1), lo stesso lavoro che
+<code>l10n_it_einvoice_in</code> svolge per le fatture di acquisto.
 <p align="justify">
-Questo modulo consente di importare i file XML della fattura elettronica versione 1.2.1
+&#200; pensato per le fatture di vendita emesse fuori da Odoo &#8212; prodotte da un
+altro programma, oppure riscaricate dal Sistema di Interscambio (SdI) o
+dall'intermediario &#8212; che devono essere registrate in contabilit&#224;.
 </p><p align="justify">
-http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm
+Nel file XML l'azienda &#232; il <i>CedentePrestatore</i> e il cliente &#232; il
+<i>CessionarioCommittente</i>: esattamente l'opposto di una fattura ricevuta. Un
+file il cui <i>CedentePrestatore</i> non &#232; l'azienda corrente viene rifiutato.
 </p><p align="justify">
-ricevuti attraverso il Sistema di Interscambio (SdI).
+Per ogni cliente &#232; possibile impostare il 'Livello di dettaglio e-fattura':
 </p><p align="justify">
-http://www.fatturapa.gov.it/export/fatturazione/it/sdi.htm
+ - Livello minimo: la fattura &#232; creata senza righe; l'utente dovr&#224; crearle in
+   base a quanto indicato nella fattura elettronica
+ - Livello aliquote: le righe sono cumulate per codice IVA
+ - Livello massimo: ogni riga contenuta nella fattura elettronica genera una
+   riga di fattura
 </p><p align="justify">
+I prodotti sono ricercati per codice interno o per descrizione, dato che una
+e-fattura di vendita riporta i codici dell'azienda stessa. Se non viene
+trovato alcun prodotto si usa il 'Prodotto predefinito e-fattura' del cliente.
 </p><p align="justify">
-
-<code>
-    Destinatari:
-</code>
+Sono importate anche le autofatture (TipoDocumento da TD16 a TD23), ma i ruoli
+nella loro testata sono invertiti: la fattura risultante viene segnalata tra le
+incongruenze, cos&#236; da poter essere verificata a mano.
 </p><p align="justify">
-Il modulo &#232; destinato a tutte le aziende che dal 2019 dovranno emettere fattura elettronica
-</p><p align="justify">
-</p><p align="justify">
-
-<code>
-    Normativa e prassi:
-</code>
-</p><p align="justify">
-Le leggi inerenti la fattura elettronica sono numerose. Potete consultare la <a href="https://www.fatturapa.gov.it/export/fatturazione/it/normativa/norme.htm/">normativa fattura elettronica</a>
-</p><p align="justify">
-</p><p align="justify">
-Per ciascun fornitore &#232; possibile impostare il "Livello dettaglio e-fatture":
-</p><p align="justify">
- - Livello minimo: la fattura fornitore viene creata senza righe, che dovranno essere create dall'utente in base a quanto indicato nella fattura elettronica
- - Livello codice IVA: le righe sono cumulate per codice IVA
- - Livello massimo: le righe della fattura fornitore verranno generate a partire da tutte quelle presenti nella fattura elettronica
-</p><p align="justify">
-Nella scheda fornitore &#232; inoltre possibile impostare il "Prodotto predefinito per e-fattura": verr&#224; usato, durante la generazione delle fatture fornitore, quando non sono disponibili altri prodotti adeguati. Il conto e l'imposta della riga fattura verranno impostati in base a quelli configurati nel prodotto.
-</p><p align="justify">
-Tutti i codici prodotto usati dai fornitori possono essere impostati nella relativa scheda, in
-</p><p align="justify">
-Magazzino &#8594;  Prodotti
+&#200; possibile caricare in una sola volta un intero file ZIP di fatture
+elettroniche, come fa <code>l10n_it_einvoice_import_zip</code> per i file di acquisto;
+quel modulo resta dedicato agli acquisti, cos&#236; nessuno dei due deve dipendere
+dall'altro.
 </p></p>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">Features / Caratteristiche</h3>
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Features | Caratteristiche</h3>
         <div class="oe_span12">
 <table style="width:100%; padding:2px; border-spacing:2px; text-align:left;"><tr>
-<td>Descrizione</td><td>Stato</td><td>Note</td>
+<td>Descrizione</td><td>Stato</td><td>Note</td><td/>
 </tr><tr>
-<td>e-fattura da fornitore, righe con IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>e-fattura di vendita, righe con IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>e-fattura da fornitore, righe senza IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Non riconosce esatto codice IVA</td>
+<td>e-fattura di vendita, righe senza IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Non riconosce esatto codice IVA</td><td/>
 </tr><tr>
-<td>e-fattura da fornitori con ritenuta d'acconto</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>e-fattura di vendita con ritenuta d'acconto</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>e-fattura da fornitori da agenti (enasarco)</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>e-fattura di vendita con controllo su totale fattura</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>e-fattura da fornitori con controllo su totale fattura</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>E-Nota Credito di vendita</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>TD04 e TD08</td><td/>
 </tr><tr>
-<td>e-fattura da fornitori con split-payment</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/no_check.png"/></td><td/>
+<td>Autofattura (TD16-TD23)</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/info.png"/></td><td>Importata, ruoli da verificare</td><td/>
 </tr><tr>
-<td>e-fattura da fornitori con reverse charge</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/info.png"/></td><td>Non riconosce esatto codice IVA</td>
+<td>e-fattura di vendita con split-payment</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/no_check.png"/></td><td/><td/>
 </tr><tr>
-<td>E-Nota Credito da fornitore</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>Gestione multi-aziendale</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>Gestione multi-aziendale</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>Livello contabile solo testata senza dettagli</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Per collegare fatture manuali</td><td/>
 </tr><tr>
-<td>Validazione e-fattura per azienda</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>Livello righe contabili per aliquote IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Per fatture con troppe righe</td><td/>
 </tr><tr>
-<td>Generazione scadenzario passivo da e-fattura</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
+<td>Livelllo righe contabili in dettaglio</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>Livello contabile solo testata senza dettagli</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Per collegare fatture manuali</td>
+<td>Ricerca prodotto per codice interno o descrizione</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>Livello righe contabili per aliquote IVA</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td>Per fatture con troppe righe</td>
+<td>Generazione scadenzario attivo da e-fattura</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/><td/>
 </tr><tr>
-<td>Livelllo righe contabili in dettaglio</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/check.png"/></td><td/>
-</tr><tr>
-<td>e-fattura da stabile organizzazione estera</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/info.png"/></td><td/>
-</tr><tr>
-<td>e-fattura da rappresentante fiscale</td><td><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/info.png"/></td><td/>
 </tr></table>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">Usage / Utilizzo</h3>
-        <div class="oe_span12">
-Se il fornitore specifica un codice noto nell'XML, questo verr&#224; usato dal sistema per recuperare il prodotto corretto da usare nella riga fattura, impostando il conto e l'imposta collegati.
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">A sale journal must exist for the company, and the customer must have a
+receivable account: both are read when the invoice is created.
 <p align="justify">
-<img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Contabilit&#224; &gt; Acquisti &gt; Fattura elettronica
+<img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Accounting &gt; Configuration &gt; Settings
 </p><p align="justify">
-Caricare un file XML
-Visualizzare il contenuto della fattura facendo clic su "Mostra anteprima"
-Eseguire la procedura guidata "Importa e-fattura" per creare una fattura in bozza oppure "Collega a fattura esistente" per collegare il file XML a una fattura gi&#224; (automaticamente) creata
-</p>
+ - <i>Customer Payment Term</i>: whether the payment term of the imported invoice
+   comes from the XML file or from the one assigned in the customer record
+   (the default)
+ - <i>Customer product search</i>: how to look the product up &#8212; by internal code,
+   by exact name, or by similar name
+ - <i>Rounding Tax on sale</i>: zero rate sale tax carrying the rounding line, when
+   the totals of the XML file do not match the ones computed by Odoo. When not
+   set, the purchase rounding tax of <code>l10n_it_einvoice_in</code> is used
+</p><p align="justify">
+The same two settings can be overridden per customer, in the partner form.
+</p><p align="justify">
+To see the forced number on the invoice form, the user must belong to the
+<i>Allow to force invoice number</i> group of <code>account_invoice_force_number</code>:
+the number is written by the import in any case, the group only makes the
+field visible.
+</p><p align="justify">
+Beware that an invoice carrying a forced number cannot be deleted, not even
+while still in draft: this is standard Odoo behaviour for any invoice that has
+been given a number. Cancel it instead.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Devono esistere un sezionale di vendita per l'azienda e un conto credito per il
+cliente: entrambi sono letti al momento della creazione della fattura.
+<p align="justify">
+<img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Contabilit&#224; &gt; Configurazione &gt; Impostazioni
+</p><p align="justify">
+ - <i>Termine di pagamento cliente</i>: indica se il termine di pagamento della
+   fattura importata viene dal file XML oppure da quello assegnato
+   nell'anagrafica del cliente (predefinito)
+ - <i>Ricerca prodotto cliente</i>: come cercare il prodotto &#8212; per codice interno,
+   per nome esatto o per nome simile
+ - <i>Codice IVA arrotondamento vendite</i>: codice IVA di vendita ad aliquota zero
+   usato nella riga di arrotondamento, quando i totali del file XML non
+   coincidono con quelli calcolati da Odoo. Se non impostato si usa il codice
+   IVA di arrotondamento acquisti di <code>l10n_it_einvoice_in</code>
+</p><p align="justify">
+Le prime due impostazioni possono essere ridefinite per singolo cliente,
+nella scheda anagrafica.
+</p><p align="justify">
+Per vedere il numero forzato sulla scheda della fattura, l'utente deve
+appartenere al gruppo <i>Permetti di forzare il numero fattura</i> di
+<code>account_invoice_force_number</code>: il numero viene comunque scritto
+dall'importazione, il gruppo rende soltanto visibile il campo.
+</p><p align="justify">
+Attenzione: una fattura con numero forzato non pu&#242; essere cancellata, nemmeno
+se ancora in bozza; &#232; il comportamento standard di Odoo per ogni fattura a cui
+sia stato assegnato un numero. Va invece annullata.
+</p></p>
         </div>
     </div>
+</section>
+
+<section>
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color:#162832;">History / Cronologia</h3>
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Accounting &gt; Sales &gt; E-invoice Export Files
+<p align="justify">
+ - Upload the XML file, or load a whole ZIP of them from
+   <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Accounting &gt; Sales &gt; Electronic Invoice &gt; Import eInvoice from ZIP,
+   which is the sale counterpart of the same menu under Purchases
+ - View the file content clicking on 'Preview'
+ - Run the 'Import Sale Electronic Invoice' wizard to create the draft
+   customer invoices
+</p><p align="justify">
+The list shows, for every file, how many invoices it contains and whether they
+are already registered; the <i>Not registered</i> filter selects the files still to
+be imported. A file the wizard has imported is flagged <i>Imported</i>, to tell it apart
+from the ones this system generated out of its own invoices.
+</p><p align="justify">
+Whatever could not be matched &#8212; a tax code, a payment term, a product &#8212; is
+written in the 'Import Inconsistencies' field of the created invoice, which is
+left in draft state for review.
+</p><p align="justify">
+A file loaded here was already sent to the Exchange System by whoever produced
+it, so it is marked as <i>Sent</i> as soon as it is uploaded, not only once it is
+imported. Were it left in the <i>Ready to Send</i> state, the hourly send job of
+<code>l10n_it_einvoice_send2sdi</code> would send it to SdI a second time. Files this
+system generates are untouched and stay <i>Ready to Send</i>.
+</p><p align="justify">
+To send such a file anyway, use the <i>Reset to ready</i> button on the file.
+</p><p align="justify">
+The number of the imported invoice is the one written in the xml file, forced
+through the <i>Force Number</i> field of <code>account_invoice_force_number</code>: the
+document is already known to SdI and to the customer under that number, so the
+sale journal sequence must not renumber it.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Contabilit&#224; &gt; Vendite &gt; File e-fattura emesse
+<p align="justify">
+ - Caricare il file XML, oppure caricare un intero file ZIP da
+   <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/awesome/menu.png"/> Contabilit&#224; &gt; Vendite &gt; Fattura elettronica &gt; Import eInvoice from ZIP,
+   che &#232; il corrispondente per le vendite dello stesso menu sotto Acquisti
+ - Visualizzare il contenuto del file facendo clic su "Anteprima"
+ - Eseguire la procedura guidata "Importa e-fattura di vendita" per creare le
+   fatture cliente in bozza
+</p><p align="justify">
+L'elenco mostra, per ogni file, quante fatture contiene e se sono gi&#224;
+registrate; il filtro <i>Non registrate</i> seleziona i file ancora da importare. Un
+file importato dalla procedura viene contrassegnato come <i>Importato</i>, per
+distinguerlo da quelli generati da questo sistema a partire dalle proprie
+fatture.
+</p><p align="justify">
+Tutto ci&#242; che non &#232; stato possibile abbinare &#8212; un codice IVA, un termine di
+pagamento, un prodotto &#8212; viene scritto nel campo "Incongruenze di
+importazione" della fattura creata, che resta in stato bozza per la verifica.
+</p><p align="justify">
+Un file caricato qui &#232; gi&#224; stato inviato al Sistema di Interscambio da chi lo ha
+prodotto, perci&#242; viene contrassegnato come <i>Inviato</i> gi&#224; al momento del
+caricamento, non solo dopo l'importazione. Se restasse nello stato <i>Pronto per
+l'invio</i>, la procedura oraria di invio di <code>l10n_it_einvoice_send2sdi</code> lo
+invierebbe allo SdI una seconda volta. I file generati da questo sistema non
+sono toccati e restano <i>Pronti per l'invio</i>.
+</p><p align="justify">
+Per inviare comunque un file di questo tipo, usare il pulsante <i>Reimposta a
+pronto</i> sul file.
+</p><p align="justify">
+Il numero della fattura importata &#232; quello scritto nel file XML, forzato
+tramite il campo <i>Forza numero</i> di <code>account_invoice_force_number</code>: il
+documento &#232; gi&#224; noto allo SdI e al cliente con quel numero, perci&#242; il
+sezionale di vendita non deve rinumerarlo.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h3>10.0.1.3.30 (2022-06-20)</h3>
+<h4>10.0.1.3.31 (2026-09-26)</h4>
 <p align="justify">
 <ul>
-<li>[IMP] Fiscal document type renamed</li>
-<li>[IMP] Tax nature renamed</li>
-</ul>
-</p><p align="justify">
-<h3>10.0.1.3.29 (2022-05-21)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Wrong tax code / Errato rilevamento codici IVA</li>
-</ul>
-</p><p align="justify">
-<h3>10.0.1.3.28 (2022-01-26)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Link existent invoice / Collegamento a fattura esistente</li>
-</ul>
-</p><p align="justify">
-<h3>10.0.1.3.27 (2022-01-05)</h3>
-</p><p align="justify">
-<ul>
-<li>[FIX] Recognize withholding tax with wrong rate / Riconosce RA anche con base errata</li>
-<li>[IMP] Accept invoice with wrong currency / Registra fattura con Divisa errata</li>
-<li>[FIX] Import even if rea_code on no contact record / Importa anche se codice REA in recodr non contatto</li>
+<li>[NEW] Import sale invoices from e-invoice xml file / Importazione fatture di vendita da file XML</li>
+<li>[IMP] Invoice number forced from xml file / Numero fattura forzato dal file XML</li>
+<li>[QUA] Test coverage 75% (394: 97+297) [0 TestPoints] - quality rating 43 (target 100)</li>
+<li>[IMP] Load sale e-invoices from a zip file / Caricamento e-fatture di vendita da file ZIP</li>
+<li>[IMP] Imported file is flagged as already sent to SdI / Il file importato &#232; marcato come gi&#224; inviato allo SdI</li>
 </ul>
 </p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_separator"/>
-
 <section class="oe_container">
     <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
             <p class="oe_mt16"><ul>
-<li><a href="https://www.agilebg.com/">Agile Business Group sagl</a></li>
-<li><a href="http://www.innoviu.com/">Innoviu srl</a></li>
-<li><a href="https://www.pointec.it/">Pointec s.r.l.</a></li>
-<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+<li><a href="https://odoo-community.org">Odoo Community Association (OCA)</a></li>
 </ul></p>
         </div>
         <div class="oe_span6" align="left">
-            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
             <p class="oe_mt16"><ul>
-<li>Lorenzo Battistini &lt;lorenzo.battistini@agilebg.com&gt;</li>
-<li>Roberto Onnis &lt;roberto.onnis@innoviu.com&gt;</li>
-<li>Alessio Gerace &lt;alessio.gerace@agilebg.com&gt;</li>
-<li>Cesare Pellegrini &lt;cesare@pointec.it&gt;</li>
-<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
+<li><a href="mailto:lorenzo.battistini@agilebg.com">Lorenzo Battistini</a></li>
+<li><a href="mailto:roberto.onnis@innoviu.com">Roberto Onnis</a></li>
+<li><a href="mailto:alessio.gerace@agilebg.com">Alessio Gerace</a></li>
+<li><a href="mailto:cesare@pointec.it">Cesare Pellegrini</a></li>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
 </ul></p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <p>This module is maintained by the <b>SHS_AV s.r.l.</b>.</p>
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
         </div>
     </div>
     <div class="oe_row oe_spaced">
-        <p>This module is part of l10n-italy project.</p>
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-09-26</p>
     </div>
 </section>

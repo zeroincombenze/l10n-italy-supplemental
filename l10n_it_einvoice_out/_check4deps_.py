@@ -15,8 +15,8 @@ from odoo.exceptions import UserError   # pylint: disable=import-error
 _logger = logging.getLogger(__name__)
 
 
-def check_4_depending(cr):
-    """check_4_depending v2.0.24
+def check_4_depending(cr_or_env):
+    """check_4_depending v2.0.26
     This function check for valid modules which current module depends on.
     Usually Odoo checks for depending on, through "depends" field in the manifest, but
     Odoo does not check for the version range neither check for incompatibilities.
@@ -224,7 +224,12 @@ def check_4_depending(cr):
         if uninstallable_reason:
             raise UserError(uninstallable_reason)
 
-    env = api.Environment(cr, SUPERUSER_ID, {})
+    if isinstance(cr_or_env, api.Environment):
+        # Odoo >= 18: pre_init_hook(env) receives an Environment, not a cursor
+        env = cr_or_env
+    else:
+        # Odoo <= 17: pre_init_hook(cr) receives a bare cursor
+        env = api.Environment(cr_or_env, SUPERUSER_ID, {})
     path = __file__
     while path != "/":
         path = os.path.dirname(path)

@@ -1,3 +1,10 @@
+10.0.1.0.32 (2026-09-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Do not parse the xml file to compute attachment data / Dati allegato calcolati senza leggere il file XML
+* [QUA] Test coverage 64% (774: 277+497) [87 TestPoints] - quality rating 48 (target 100)
+* [IMP] Generated files are flagged, so imported ones are not sent again / I file generati sono contrassegnati, così quelli importati non vengono reinviati
+
 10.0.1.0.31 (2025-11-13)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

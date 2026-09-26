@@ -1,6 +1,6 @@
 # pylint: skip-file
 # -*- coding: utf-8 -*-
-"""Test Environment v2.0.24
+"""Test Environment v2.0.26
 
 You can locate the recent testenv.py in testenv directory of module
 https://github.com/zeroincombenze/tools/tree/master/z0bug_odoo/testenv
@@ -514,6 +514,7 @@ Examples:
 from __future__ import unicode_literals
 
 import base64
+import copy
 import inspect
 import json
 import logging
@@ -652,6 +653,15 @@ def is_iterable(obj):
 
 
 class MainTest(test_common.TransactionCase):
+    # Class attribute (not instance attribute): unittest creates a fresh MainTest
+    # instance per test method, so an instance attribute would reset to 0 on every
+    # setUp(). Keeping the counter on the class itself lets it accumulate across
+    # every test method and every test class that subclasses this MainTest, for
+    # the whole test run. All increments below deliberately write to
+    # "MainTest.assert_counter" (not "self." or "type(self)."), so a subclass's
+    # own assertion calls still add to this one shared total instead of
+    # shadowing it with a per-subclass counter.
+    assert_counter = 0
 
     def setUp(self):
         super(MainTest, self).setUp()
@@ -681,9 +691,7 @@ class MainTest(test_common.TransactionCase):
         self.uninstallable_modules = []
         self.convey_record = {}
         # Enable commit data
-        self.odoo_commit_test = True
-        if not hasattr(self, "assert_counter"):
-            self.assert_counter = 0
+        self.odoo_commit_test = False
         self.module = None
         for item in self.__module__.split("."):
             if item not in ("odoo", "openerp", "addons"):
@@ -714,7 +722,7 @@ class MainTest(test_common.TransactionCase):
             GREEN = ""
             CLEAR = ""
         self._logger.info(
-            ("🏆🥇 " + GREEN + "%d tests SUCCESSFULLY completed" + CLEAR)
+            ("🏆🥇 " + GREEN + "%d assertions SUCCESSFULLY completed so far" + CLEAR)
             % self.assert_counter)
 
     # ---------------------------------------
@@ -797,71 +805,71 @@ class MainTest(test_common.TransactionCase):
     # ----------------------------------
 
     def assertFalse(self, expr, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertFalse(expr, msg=msg)
 
     def assertTrue(self, expr, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertTrue(expr, msg=msg)
 
     def assertRaises(self, expected_exception, *args, **kwargs):  # pragma: no cover
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertRaises(expected_exception, *args, **kwargs)
 
     def assertEqual(self, first, second, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertEqual(first, second, msg=msg)
 
     def assertNotEqual(self, first, second, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertNotEqual(first, second, msg=msg)
 
     def assertIn(self, member, container, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIn(member, container, msg=msg)
 
     def assertNotIn(self, member, container, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertNotIn(member, container, msg=msg)
 
     def assertIs(self, expr1, expr2, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIs(expr1, expr2, msg=msg)
 
     def assertIsNot(self, expr1, expr2, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIsNot(expr1, expr2, msg=msg)
 
     def assertLess(self, a, b, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertLess(a, b, msg=msg)
 
     def assertLessEqual(self, a, b, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertLessEqual(a, b, msg=msg)
 
     def assertGreater(self, a, b, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertGreater(a, b, msg=msg)
 
     def assertGreaterEqual(self, a, b, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertGreaterEqual(a, b, msg=msg)
 
     def assertIsNone(self, obj, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIsNone(obj, msg=msg)
 
     def assertIsNotNone(self, obj, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIsNotNone(obj, msg=msg)
 
     def assertIsInstance(self, obj, cls, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertIsInstance(obj, cls, msg=msg)
 
     def assertNotIsInstance(self, obj, cls, msg=None):
-        self.assert_counter += 1
+        MainTest.assert_counter += 1
         return super(MainTest, self).assertNotIsInstance(obj, cls, msg=msg)
 
     # ----------------------------
@@ -995,10 +1003,11 @@ class MainTest(test_common.TransactionCase):
             return None
 
         def _get_default_data_dir17():
+            module_root = file_path(self.module.name)
             for data_dir in (
-                file_path(os.path.join(self.module.name, "tests", "data")),
-                file_path(os.path.join(self.module.name, "data")),
-                file_path(os.path.join(self.module.name, "tests",)),
+                os.path.join(module_root, "tests", "data"),
+                os.path.join(module_root, "data"),
+                os.path.join(module_root, "tests"),
             ):
                 if data_dir and os.path.isdir(data_dir):
                     return data_dir
@@ -2771,6 +2780,18 @@ class MainTest(test_common.TransactionCase):
         self.set_datadir(merge=merge)
         if not data and merge == "local":
             data = {k: {} for k in self.z0bug_lib.get_test_xrefs(resource)}
+        # Deep copy: "data" is the caller's module-level TEST_<MODEL> dict, held
+        # by reference (declare_all_data() reads it straight out of the calling
+        # frame's globals). cast_types(), called a few lines below via
+        # store_resource_data(), resolves xref strings (many2one, dates, ...)
+        # and rewrites them into the values dict IN PLACE. Without this copy,
+        # the very first setup_env() call would permanently bake resolved
+        # database ids into the shared TEST_<MODEL> globals; every later
+        # setup_env() call (a fresh setUp() on a fresh transaction, as with
+        # independent test_* methods) would then reuse those stale ids instead
+        # of re-resolving the xrefs against its own transaction, and fail with
+        # a foreign key violation once the original transaction is rolled back.
+        data = copy.deepcopy(data)
         data = self.unicodes(data)
         for xref in list(sorted(data.keys())):
             if merge in ("local", "zerobug"):
@@ -2952,21 +2973,52 @@ class MainTest(test_common.TransactionCase):
         Returns:
             default company for user
         """
+        # Odoo <15: account type is the stored model "account.account.type",
+        # referenced by "user_type_id"; the chart template is a stored
+        # "account.chart.template" record reachable via company.chart_template_id,
+        # exposing per-account-purpose fields (i.e. property_account_receivable_id)
+        # whose .code gives the account code prefix to search for.
+        # Odoo >=15: "account.account.type" is gone; account type is the plain
+        # "account_type" selection directly on account.account, so no chart
+        # template lookup is needed to know it.
+        # Odoo >=17: chart templates stopped being stored records altogether
+        # (account.chart.template is now an AbstractModel/Python registry, and
+        # res.company has no chart_template_id field any more), and
+        # account.account moved from a single "company_id" to a multi-company
+        # "company_ids". So for >=15 we just search account.account directly by
+        # account_type (+ whichever company field this version actually has)
+        # instead of deriving a code prefix from a chart template object.
+        acc_type_2_account_type = {
+            "account.data_account_type_receivable": "asset_receivable",
+            "account.data_account_type_payable": "liability_payable",
+            "account.data_account_type_liquidity": "asset_cash",
+        }
+
         def store_acc_alias(xref, acc_type, chart_name):
-            if chart_name.endswith("_prefix"):
-                acc_code = getattr(chart_template, chart_name)
-            else:
-                acc_code = getattr(chart_template, chart_name).code
-            acc_ids = self.env["account.account"].search(
-                [
-                    (
-                        "user_type_id",
-                        "=",
-                        self.env.ref(acc_type).id,
-                    ),
+            if self.odoo_major_version < 15:
+                if chart_name.endswith("_prefix"):
+                    acc_code = getattr(chart_template, chart_name)
+                else:
+                    acc_code = getattr(chart_template, chart_name).code
+                domain = [
+                    ("user_type_id", "=", self.env.ref(acc_type).id),
                     ("code", "like", acc_code),
                 ]
-            )
+            else:
+                company_field = (
+                    "company_ids"
+                    if "company_ids" in self.env["account.account"]._fields
+                    else "company_id"
+                )
+                domain = [
+                    ("account_type", "=", acc_type_2_account_type[acc_type]),
+                    (
+                        company_field,
+                        "in" if company_field == "company_ids" else "=",
+                        [company.id] if company_field == "company_ids" else company.id,
+                    ),
+                ]
+            acc_ids = self.env["account.account"].search(domain)
             self._add_xref(xref, acc_ids[0].id, "account.account")
 
         self.log_stack()
@@ -2978,8 +3030,12 @@ class MainTest(test_common.TransactionCase):
             add_alias = True
         elif values:
             company.write(self.cast_types(res_company, values, fmt="cmd"))
-        chart_template = self.env["account.chart.template"].search(
-            [("id", "=", company.chart_template_id.id)]
+        chart_template = (
+            self.env["account.chart.template"].search(
+                [("id", "=", company.chart_template_id.id)]
+            )
+            if self.odoo_major_version < 15
+            else None
         )
         if xref:
             if not add_alias:
@@ -3096,7 +3152,7 @@ class MainTest(test_common.TransactionCase):
         setup_list = setup_list or self.get_resource_list(group=group)
         if not self.title_logged:
             self._logger.info(
-                "🎺🎺🎺 Starting test v2.0.24 (debug_level=%s, commit=%s)"
+                "🎺🎺🎺 Starting test v2.0.26 (debug_level=%s, commit=%s)"
                 % (self.debug_level, getattr(self, "odoo_commit_test", False))
             )
             self._logger.info(

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_import_zip_sale_form_view">
+        <field name="name">Import sale eInvoice from zip file</field>
+        <field name="model">wizard.einvoice.import.zip.sale</field>
+        <field name="arch" type="xml">
+            <form string="Import Sale E-Invoices XML from a zip">
+                <group>
+                    <separator
+                        colspan="2"
+                        string="Load every sale e-invoice xml file contained in a zip file"
+                    />
+                    <field name="zip" />
+                </group>
+                <footer>
+                    <button
+                        string="Import zip"
+                        name="import_zip"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="action_wizard_import_zip_sale"
+        key2="client_action_multi"
+        name="Import Sale eInvoice from ZIP"
+        res_model="wizard.einvoice.import.zip.sale"
+        view_id="wizard_import_zip_sale_form_view"
+        view_mode="form"
+        target="new"
+    />
+
+    <menuitem
+        name="Import eInvoice from ZIP"
+        action="action_wizard_import_zip_sale"
+        id="menu_einvoice_import_zip_sale"
+        parent="l10n_it_einvoice_base.menu_fattura_pa_receivables"
+    />
+
+</odoo>

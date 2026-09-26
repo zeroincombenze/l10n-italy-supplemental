@@ -1,5 +1,5 @@
 =============================================================================================
-|icon| Italian Localization - FatturaPA - Emissione/Emissione fattura elettronica 10.0.1.0.31
+|icon| Italian Localization - FatturaPA - Emissione/Emissione fattura elettronica 10.0.1.0.32
 =============================================================================================
 
 **E-Invoice emission**
@@ -197,6 +197,13 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.1.0.32 (2026-09-26)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Do not parse the xml file to compute attachment data / Dati allegato calcolati senza leggere il file XML
+* [QUA] Test coverage 64% (774: 277+497) [87 TestPoints] - quality rating 48 (target 100)
+* [IMP] Generated files are flagged, so imported ones are not sent again / I file generati sono contrassegnati, così quelli importati non vengono reinviati
+
 10.0.1.0.31 (2025-11-13)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -214,18 +221,6 @@ ChangeLog History | Cronologia modifiche
 
 * [IMP] Predispozione emisisone ritenuta d'acconto (richiede modulo supplementare)
 * [QUA] Test coverage 64% (776: 279+497) [87 TestPoints] - quality rating 57 (target 100)
-
-10.0.1.0.28 (2024-06-28)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [FIX] SP Refund / Nota credito SP
-* [QUA] Test coverage 64% (767: 279+488) [87 TestPoints] - quality rating 57 (target 100)
-
-10.0.1.0.27 (2024-02-01)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* [IMP] Self e-invoice management - Emissione auto-fatture
-* [QUA] Test coverage 64% (762: 276+486) [87 TestPoints] - quality rating 57 (target 100)
 
 
 
@@ -297,7 +292,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2025-11-13
+Last Update / Ultimo aggiornamento: 2026-09-26
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status

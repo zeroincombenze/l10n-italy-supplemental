@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
 
-        <record id="wizard_import_fatturapa_form_view" model="ir.ui.view">
-            <field name="name">Electronic Invoice Import</field>
-            <field name="model">wizard.import.fatturapa</field>
-            <field name="arch" type="xml">
-                <form string="Electronic Invoice Import">
-                    <group>
-                        <separator
-                            colspan="2"
-                            string="Take this action, if you want import data from e-invoice xml file"
+    <record id="wizard_import_fatturapa_sale_form_view" model="ir.ui.view">
+        <field name="name">Sale Electronic Invoice Import</field>
+        <field name="model">wizard.import.fatturapa.sale</field>
+        <field name="arch" type="xml">
+            <form string="Sale Electronic Invoice Import">
+                <group>
+                    <separator
+                        colspan="2"
+                        string="Take this action, if you want import sale invoices from e-invoice xml file"
+                    />
+                    <field name="e_invoice_detail_level" />
+                    <field name="customer_product_search" />
+                    <footer>
+                        <button
+                            name="importFatturaPA"
+                            string="Import"
+                            type="object"
+                            class="oe_highlight"
                         />
-                        <field name="e_invoice_detail_level" />
-                        <footer>
-                            <button
-                                name="importFatturaPA"
-                                string="Import"
-                                type="object"
-                            />
-                            <button special="cancel" string="Cancel" />
-                        </footer>
-                    </group>
-                </form>
-            </field>
-        </record>
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </group>
+            </form>
+        </field>
+    </record>
 
-        <act_window
-            id="action_wizard_import_fatturapa"
-            key2="client_action_multi"
-            name="Import Electronic Invoice"
-            res_model="wizard.import.fatturapa"
-            src_model="fatturapa.attachment.out"
-            target="new"
-            view_id="wizard_import_fatturapa_form_view"
-            view_mode="form"
-        />
-    </data>
+    <act_window
+        id="action_wizard_import_fatturapa_sale"
+        key2="client_action_multi"
+        name="Import Sale Electronic Invoice"
+        res_model="wizard.import.fatturapa.sale"
+        src_model="fatturapa.attachment.out"
+        target="new"
+        view_id="wizard_import_fatturapa_sale_form_view"
+        view_mode="form"
+    />
+
 </odoo>

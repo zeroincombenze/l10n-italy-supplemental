@@ -1,31 +1,31 @@
-EInvoice in
------------
+This module creates **customer invoices** out of electronic invoice XML files
+(FatturaPA version 1.2.1), the same job ``l10n_it_einvoice_in`` does for
+supplier bills.
 
-This module allows to import Electronic Bill XML files version 1.2.1
+It is meant for sale invoices issued outside Odoo — produced by another
+program, or downloaded back from the Exchange System (SdI) or from an
+intermediary — which have to be registered in the accounting.
 
-http://www.fatturapa.gov.it/export/fatturazione/en/normativa/f-2.htm
+In the XML file the company is the *CedentePrestatore* and the customer is the
+*CessionarioCommittente*: it is the other way round of a received bill. A file
+whose *CedentePrestatore* is not the current company is refused.
 
-received through the Exchange System (SdI).
+For every customer it is possible to set the 'E-bills Detail Level':
 
-http://www.fatturapa.gov.it/export/fatturazione/en/sdi.htm
+ - Minimum level: invoice is created with no lines; user will have to create
+   them, according to what specified in the electronic invoice
+ - VAT code level: lines are cumulated by VAT code
+ - Maximum level: every line contained in the electronic invoice creates a
+   line in the invoice
 
-For every supplier, it is possible to set the 'E-bills Detail Level':
+Products are looked up by internal code or by description, since a sale
+e-invoice carries the codes of the company itself. When no product is found,
+the 'E-bill Default Product' of the customer is used.
 
- - Minimum level: Bill is created with no lines; User will have to create them, according to what specified in the electronic bill
- - VAT code level: Line are cumulated by VAT code
- - Maximum level: Every line contained in electronic bill will create a line in bill
+Self billing documents (*autofattura*, TipoDocumento TD16 to TD23) are
+imported too, but the roles in their header are swapped: the resulting invoice
+is reported as an inconsistency, so that it can be checked by hand.
 
-Moreover, in supplier form you can set the 'E-bill Default Product': this product will be used, during generation of bills, when no other possible product is found. Tax and account of bill line will be set according to what configured in the product.
-
-Every product code used by suppliers can be set, in product form, in
-
-Inventory →  Products
-
-If supplier specifies a known code in XML, the system will use it to retrieve the correct product to be used in bill line, setting the related tax and account.
-
- * Go to Accounting →  Purchases →  Electronic Bill
- * Upload XML file
- * View bill content clicking on 'Show preview'
- * Run 'Import e-bill' wizard to create a draft bill or run 'Link to existing bill' to link the XML file to an already (automatically) created bill
-
-In the incoming electronic bill files list you will see, by default, files to be registered. These are files not yet linked to one or more bills.
+A whole zip file of e-invoices can be loaded at once, the way
+``l10n_it_einvoice_import_zip`` does for purchase files; that module is left
+to the purchase side, so neither has to depend on the other.

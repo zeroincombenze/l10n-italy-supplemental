@@ -11,7 +11,7 @@
 #
 {
     "name": "ITA - Fattura elettronica - Ricezione",
-    "version": "10.0.1.3.61",
+    "version": "10.0.1.3.62",
     "category": "Localization/Italy",
     "summary": "E-invoice receive",
     "author": (

@@ -133,7 +133,9 @@ class WizardExportFatturapa(models.TransientModel):
             "datas_fname": "%s_%s.xml" % (vat, number),
             "datas": base64.encodestring(fatturapa.toxml("UTF-8")),
         }
-        return attach_model.create(attach_vals)
+        # The context tells this file apart from one loaded from outside:
+        # only a file generated here is still to be sent to SdI
+        return attach_model.with_context(einvoice_export=True).create(attach_vals)
 
     def setProgressivoInvio(self, fatturapa, attach=False):
         # if the attachment is given than we will reuse its file_id
