@@ -382,3 +382,25 @@ msgstr "File ZIP"
 #: model:ir.model,name:l10n_it_einvoice_import.model_account_config_settings
 msgid "account.config.settings"
 msgstr "account.config.settings"
+
+#. module: l10n_it_einvoice_import
+#: model:ir.model.fields,field_description:l10n_it_einvoice_import.field_wizard_import_fatturapa_sale_journal_id
+msgid "Journal"
+msgstr "Sezionale"
+
+#. module: l10n_it_einvoice_import
+#: model:ir.model.fields,help:l10n_it_einvoice_import.field_wizard_import_fatturapa_sale_journal_id
+msgid "Sale journal of the invoices created from the e-invoice files"
+msgstr "Sezionale di vendita delle fatture create dai file e-fattura"
+
+#. module: l10n_it_einvoice_import
+#: code:addons/l10n_it_einvoice_import/wizard/wizard_import_fatturapa.py:0
+#, python-format
+msgid "Journal %s is not a sale journal."
+msgstr "Il sezionale %s non è un sezionale di vendita."
+
+#. module: l10n_it_einvoice_import
+#: code:addons/l10n_it_einvoice_import/wizard/wizard_import_fatturapa.py:0
+#, python-format
+msgid "Journal %s does not belong to company %s."
+msgstr "Il sezionale %s non appartiene all'azienda %s."

@@ -5,7 +5,8 @@
    which is the sale counterpart of the same menu under Purchases
  - View the file content clicking on 'Preview'
  - Run the 'Import Sale Electronic Invoice' wizard to create the draft
-   customer invoices
+   customer invoices in the sale journal chosen in the wizard; the
+   journal is mandatory and must belong to the company issuing the invoice
 
 The list shows, for every file, how many invoices it contains and whether they
 are already registered; the *Not registered* filter selects the files still to

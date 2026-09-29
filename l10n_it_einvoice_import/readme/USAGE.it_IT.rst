@@ -5,7 +5,9 @@
    che è il corrispondente per le vendite dello stesso menu sotto Acquisti
  - Visualizzare il contenuto del file facendo clic su "Anteprima"
  - Eseguire la procedura guidata "Importa e-fattura di vendita" per creare le
-   fatture cliente in bozza
+   fatture cliente in bozza nel sezionale di vendita scelto nella procedura;
+   il sezionale è obbligatorio e deve appartenere all'azienda che emette la
+   fattura
 
 L'elenco mostra, per ogni file, quante fatture contiene e se sono già
 registrate; il filtro *Non registrate* seleziona i file ancora da importare. Un

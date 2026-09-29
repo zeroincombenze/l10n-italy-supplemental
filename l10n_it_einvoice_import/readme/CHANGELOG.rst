@@ -1,3 +1,8 @@
+10.0.1.3.32 (2026-09-29)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Wizard asks for sale journal / La procedura chiede il sezionale di vendita
+
 10.0.1.3.31 (2026-09-26)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

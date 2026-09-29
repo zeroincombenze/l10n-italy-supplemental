@@ -11,6 +11,7 @@
                         colspan="2"
                         string="Take this action, if you want import sale invoices from e-invoice xml file"
                     />
+                    <field name="journal_id" options="{'no_create': True}" />
                     <field name="e_invoice_detail_level" />
                     <field name="customer_product_search" />
                     <footer>

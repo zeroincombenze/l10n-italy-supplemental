@@ -14,7 +14,7 @@ import base64
 import logging
 import tempfile
 
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo.modules import get_module_resource
 from odoo.tests.common import SingleTransactionCase
 
@@ -186,6 +186,32 @@ class TestSaleFatturaPAXMLImport(SingleTransactionCase, CommonMixin):
         invoice.action_move_create()
         self.assertEqual(invoice.number, "2026/0001")
         self.assertEqual(invoice.move_id.name, "2026/0001")
+
+    def test_02c_invoice_in_chosen_journal(self):
+        """The invoice is created in the sale journal chosen in the wizard"""
+        journal = self.sale_journal.copy(
+            {"name": "E-invoice import", "code": "EIMP"}
+        )
+        attachment = self.create_attachment(SALE_XML, datas_fname="journal.xml")
+        wizard = self.wizard_model.with_context(
+            active_ids=[attachment.id], active_model="fatturapa.attachment.out"
+        ).create({"journal_id": journal.id})
+        action = wizard.importFatturaPA()
+        invoice = self.invoice_model.browse(action["domain"][0][2][0])
+        self.assertEqual(invoice.journal_id, journal)
+
+    def test_02d_journal_must_be_sale(self):
+        """Wizard refuses a journal other than a sale one"""
+        self.assertEqual(self.wizard_model.create({}).journal_id, self.sale_journal)
+        purchase_journal = self.env["account.journal"].search(
+            [
+                ("type", "=", "purchase"),
+                ("company_id", "=", self.env.user.company_id.id),
+            ],
+            limit=1,
+        )
+        with self.assertRaises(ValidationError):
+            self.wizard_model.create({"journal_id": purchase_journal.id})
 
     def test_03_already_imported(self):
         """A file already linked to invoices is not imported twice"""

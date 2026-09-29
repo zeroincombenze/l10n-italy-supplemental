@@ -6,7 +6,7 @@
 #
 {
     "name": "ITA - Fattura elettronica - Importazione fatture di vendita",
-    "version": "10.0.1.3.31",
+    "version": "10.0.1.3.32",
     "category": "Localization/Italy",
     "summary": "E-invoice sale import",
     "author": "SHS-AV s.r.l.,Odoo Community Association (OCA)",

@@ -9,7 +9,7 @@ import logging
 import pyxb
 
 from odoo import api, fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo.tools.translate import _
 
 from odoo.addons.l10n_it_ade.bindings import fatturapa_v_1_2
@@ -23,8 +23,8 @@ class WizardImportFatturapaSale(models.TransientModel):
     Everything but the few points telling a received bill from an issued
     invoice is inherited from wizard.import.fatturapa of l10n_it_einvoice_in:
     the company is read from CedentePrestatore instead of
-    CessionarioCommittente, the partner the other way round, the journal is a
-    sale one and products are looked up by internal code rather than by
+    CessionarioCommittente, the partner the other way round, the journal is
+    the sale one chosen by the user and products are looked up by internal code rather than by
     supplier code.
     """
 
@@ -43,6 +43,32 @@ class WizardImportFatturapaSale(models.TransientModel):
         default="c",
         help="How to search for product from sale e-invoice",
     )
+    journal_id = fields.Many2one(
+        "account.journal",
+        "Journal",
+        required=True,
+        domain=[("type", "=", "sale")],
+        default=lambda self: self._default_journal_id(),
+        help="Sale journal of the invoices created from the e-invoice files",
+    )
+
+    @api.model
+    def _default_journal_id(self):
+        return self.env["account.journal"].search(
+            [
+                ("type", "=", "sale"),
+                ("company_id", "=", self.env.user.company_id.id),
+            ],
+            limit=1,
+        )
+
+    @api.constrains("journal_id")
+    def _check_journal_id(self):
+        for wizard in self:
+            if wizard.journal_id.type != "sale":
+                raise ValidationError(
+                    _("Journal %s is not a sale journal.") % wizard.journal_id.name
+                )
 
     def get_invoice_obj(self, fatturapa_attachment):
         xml_string = fatturapa_attachment.get_normalized_xml_string()
@@ -93,7 +119,12 @@ class WizardImportFatturapaSale(models.TransientModel):
         return "sale"
 
     def get_invoice_journal(self, company):
-        return self.get_sale_journal(company)
+        if self.journal_id.company_id != company:
+            raise UserError(
+                _("Journal %s does not belong to company %s.")
+                % (self.journal_id.name, company.name)
+            )
+        return self.journal_id
 
     def get_invoice_default_account(self, journal):
         return journal.default_debit_account_id
