@@ -337,4 +337,3 @@ Last Update / Ultimo aggiornamento: 2021-08-31
    :target: https://github.com/zeroincombenze/grymb/blob/master/certificates/ade/scope/fatturapa.md
 .. |chat_with_us| image:: https://www.shs-av.com/wp-content/chat_with_us.gif
    :target: https://t.me/axitec_helpdesk
-

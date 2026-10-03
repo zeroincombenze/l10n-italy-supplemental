@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
         <!-- Full overriding standard report adding closing table -->
         <template id="account.report_invoice_document">
             <t t-call="web.external_layout">
-                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
                 <t t-set="address">
-                    <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                    <address t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
                     <div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></div>
                 </t>
                 <div class="page">
@@ -16,8 +16,8 @@
                         <span t-if="o.type == 'out_invoice' and o.state == 'draft'" style="color:'#b6b6b6';">Draft Invoice</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'cancel'" style="color:'#b6b6b6';">Cancelled Invoice</span>
                         <span t-if="o.type == 'out_refund'" style="color:'#b6b6b6';">Credit Note</span>
-                        <span t-if="o.type == 'in_refund'" style="color:'#b6b6b6';" >Vendor Credit Note</span>
-                        <span t-if="o.type == 'in_invoice'" style="color:'#b6b6b6';" >Vendor Bill</span>
+                        <span t-if="o.type == 'in_refund'" style="color:'#b6b6b6';">Vendor Credit Note</span>
+                        <span t-if="o.type == 'in_invoice'" style="color:'#b6b6b6';">Vendor Bill</span>
                         <div t-if="o.number">
                             <span t-field="o.number" style="color:'#b6b6b6';"/>
                             <span t-if="o.date_invoice"> - </span> <span t-field="o.date_invoice" style="color:'#b6b6b6';font-size: 20px;"/>
@@ -69,20 +69,20 @@
                                 <th name="th_product" class="text-left"><span>Product</span></th>
                                 <th name="th_description" class="text-left"><span>Description</span></th>
                                 <th name="th_source" class="text-left">
-                                	<t t-if="o.type in ['out_refund','out_invoice']">
-                                		<span>Source Document</span>
-                                	</t>
-                                	<t t-else="o.type in ['in_refund','in_invoice']">
-                                		<span> </span>
-                                	</t>
+                                    <t t-if="o.type in ['out_refund','out_invoice']">
+                                        <span>Source Document</span>
+                                    </t>
+                                    <t t-else="o.type in ['in_refund','in_invoice']">
+                                        <span> </span>
+                                    </t>
                                 </th>
                                 <th name="th_source_ref" class="text-left">
-                                	<t t-if="o.type in ['out_refund','out_invoice']">
-                                		<span>Customer Reference</span>
-                                	</t>
-                                 	<t t-else="o.type in ['in_refund','in_invoice']">
-                                		<span> </span>
-                                	</t>
+                                    <t t-if="o.type in ['out_refund','out_invoice']">
+                                        <span>Customer Reference</span>
+                                    </t>
+                                     <t t-else="o.type in ['in_refund','in_invoice']">
+                                        <span> </span>
+                                    </t>
                                 </th>
                                 <th name="th_quantity" class="text-right"><span>Quantity</span></th>
                                 <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Unit Price</span></th>
@@ -119,7 +119,8 @@
                                         </td>
                                         <td>
                                             <t t-if="o.type in ['out_refund','out_invoice']">
-                                                <span t-field="line.product_id.description_sale"/>
+                                                <t t-set="code_prefix" t-value="'[%s]' % line.product_id.default_code if line.product_id.default_code else ''"/>
+                                                <span t-esc="line.name[len(code_prefix):].lstrip() if code_prefix and (line.name or '').startswith(code_prefix) else line.name" t-options="{&quot;widget&quot;: &quot;text&quot;}"/>
                                             </t>
                                             <t t-else="o.type in ['in_refund','in_invoice']">
                                                 <span t-field="line.name"/>
@@ -143,15 +144,15 @@
                                                 </t>
                                             </t>
                                             <t t-else="o.type in ['in_refund','in_invoice']">
-                                                <span /> <span />
+                                                <span/> <span/>
                                             </t>
                                         </td>
                                         <td class="text-right">
                                             <span t-field="line.quantity"/>
-                                            <span t-field="line.uom_id"  groups="uom.group_uom"/>
+                                            <span t-field="line.uom_id" groups="uom.group_uom"/>
                                         </td>
                                         <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
-                                            <span t-field="line.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            <span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                         </td>
                                         <td t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                             <span t-field="line.discount"/>
@@ -166,8 +167,8 @@
 -->
 
                                          <td class="text-right o_price_total">
-                                            <span t-field="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}' groups="account.group_show_line_subtotals_tax_excluded"/>
-                                            <span t-field="line.price_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}' groups="account.group_show_line_subtotals_tax_included"/>
+                                            <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                            <span t-field="line.price_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}" groups="account.group_show_line_subtotals_tax_included"/>
                                         </td>
                                     </t>
                                     <t t-if="line.display_type == 'line_section'">
@@ -188,10 +189,7 @@
                                     <tr class="is-subtotal text-right">
                                         <td colspan="99">
                                             <strong class="mr16">Subtotal</strong>
-                                            <span
-                                                t-esc="current_subtotal"
-                                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
-                                            />
+                                            <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                         </td>
                                     </tr>
                                 </t>
@@ -200,7 +198,7 @@
                     </table>
 
                     <div class="clearfix" style="display: none;">
-                        <div id="total" class="row" >
+                        <div id="total" class="row">
                             <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
                                 <table class="table table-sm" name="subtotal" style="page-break-inside: avoid;">
                                     <tr class="border-black o_subtotal" style="">
@@ -214,7 +212,7 @@
                                             <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
                                                 <td><span t-esc="amount_by_group[0]"/></td>
                                                 <td class="text-right o_price_total">
-                                                    <span t-esc="amount_by_group[3]" />
+                                                    <span t-esc="amount_by_group[3]"/>
                                                 </td>
                                             </t>
                                             <t t-else="">
@@ -257,35 +255,35 @@
                     </p>
                     <div id="qrcode" t-if="(o.company_id.qr_code) and (o.currency_id.name == 'EUR') and (o.partner_bank_id.acc_number != False)">
                         <p t-if="(o.partner_bank_id.qr_code_valid)">
-                            <strong class="text-center">Scan me with your banking app.</strong><br /><br />
+                            <strong class="text-center">Scan me with your banking app.</strong><br/><br/>
                             <img class="border border-dark rounded" t-att-src="o.partner_bank_id.build_qr_code_url(o.residual,(o.reference) if (o.reference) else o.number)"/>
                         </p>
                         <p t-if="(o.partner_bank_id.qr_code_valid == False)">
-                            <strong class="text-center">The SEPA QR Code informations are not set correctly.</strong><br />
+                            <strong class="text-center">The SEPA QR Code informations are not set correctly.</strong><br/>
                         </p>
                     </div>
-                    <div style="display: inline-block; height: 100%; vertical-align: bottom; width: 0px;"></div>
+                    <div style="display: inline-block; height: 100%; vertical-align: bottom; width: 0px;"/>
                     <div style="page-break-inside: avoid;">
                         <table class="table table-bordered table-sm" name="summary" width="100%">
                             <tbody>
-                                <tr >
-                                    <td rowspan="2" class="text-right o_price_total summary_font" >
-                                      <span>Total Goods</span><br />
+                                <tr>
+                                    <td rowspan="2" class="text-right o_price_total summary_font">
+                                      <span>Total Goods</span><br/>
                                       <t t-if="o.amount_untaxed">
-                                        <span t-field="o.amount_untaxed_goods" />
+                                        <span t-field="o.amount_untaxed_goods"/>
                                       </t>
                                       <t t-else="">
                                       -
                                       </t>
                                     </td>
-                                    <td class="text-right summary_font" rowspan="2" >VAT Code
+                                    <td class="text-right summary_font" rowspan="2">VAT Code
                                         <div t-if="o.tax_line_ids">
                                             <t t-foreach="o.tax_line_ids" t-as="tax">
                                                 <span t-field="tax.tax_id.description"/><br/>
                                              </t>
                                         </div>
                                     </td>
-                                    <td class="text-left summary_font" rowspan="2" >VAT Description
+                                    <td class="text-left summary_font" rowspan="2">VAT Description
                                         <div t-if="o.tax_line_ids">
                                             <t t-foreach="o.tax_line_ids" t-as="tax">
                                                 <span t-field="tax.tax_id.name"/><br/>
@@ -293,83 +291,83 @@
                                         </div>
                                     </td>
 
-                                    <td class="text-left summary_font" rowspan="2" >Amounts
+                                    <td class="text-left summary_font" rowspan="2">Amounts
                                         <div t-if="o.tax_line_ids">
                                             <t t-foreach="o.tax_line_ids" t-as="tax">
-                                                <span t-esc="o.compute_amount_by_tax(tax)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/><br />
+                                                <span t-esc="o.compute_amount_by_tax(tax)" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/><br/>
                                             </t>
                                         </div>
                                     </td>
-                                    <td class="text-left summary_font" rowspan="2" >VAT Amounts
+                                    <td class="text-left summary_font" rowspan="2">VAT Amounts
                                         <div t-if="o.tax_line_ids">
                                             <t t-foreach="o.tax_line_ids" t-as="tax">
-                                                <span t-esc="o.compute_taxes_by_tax(tax)" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/><br />
+                                                <span t-esc="o.compute_taxes_by_tax(tax)" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/><br/>
                                             </t>
                                         </div>
                                     </td>
 
-                                    <td class="text-right summary_font" rowspan="2" >Total Amount<br />
+                                    <td class="text-right summary_font" rowspan="2">Total Amount<br/>
                                       <t t-if="o.amount_untaxed">
-                                        <span t-field="o.amount_untaxed" />
+                                        <span t-field="o.amount_untaxed"/>
                                       </t>
                                       <t t-else="">
                                       -
                                       </t>
                                     </td>
-                                    <td class="text-right o_price_total summary_font">Total Invoice<br />
+                                    <td class="text-right o_price_total summary_font">Total Invoice<br/>
                                         <div t-if="o.amount_total">
-                                            <span t-field="o.amount_total" />
+                                            <span t-field="o.amount_total"/>
                                         </div>
                                        <div t-if="o.amount_untaxed">
-                                          <span>VAT Total<br /></span>
+                                          <span>VAT Total<br/></span>
                                           <t t-if="o.amount_tax">
-                                              <span t-field="o.amount_tax" />
+                                              <span t-field="o.amount_tax"/>
                                            </t>
                                            <t t-else="">
                                            -
                                            </t>
                                        </div>
                                     </td>
-                                    <td class="text-right o_price_total summary_font" rowspan="2">Total<br />
+                                    <td class="text-right o_price_total summary_font" rowspan="2">Total<br/>
                                         <t t-if="o.split_payment">
                                             <div t-if="o.amount_untaxed">
-                                                <span t-field="o.amount_untaxed" style="font-weight: bold;" />
+                                                <span t-field="o.amount_untaxed" style="font-weight: bold;"/>
                                             </div>
                                         </t>
                                         <t t-else="">
                                             <div t-if="o.amount_total">
-                                                <span t-field="o.amount_total" style="font-weight: bold;" />
+                                                <span t-field="o.amount_total" style="font-weight: bold;"/>
                                             </div>
                                         </t>
                                     </td>
                                 </tr>
-                                <tr >
+                                <tr>
                                 </tr>
-                                <tr >
-                                     <td colspan="8" class="summary_font" >
-                                        <strong>Sale Terms</strong>: <span t-field="o.sale_conditions" />
+                                <tr t-if="'sale_conditions' in o._fields">
+                                     <td colspan="8" class="summary_font">
+                                        <strong>Sale Terms</strong>: <span t-field="o.sale_conditions"/>
                                     </td>
                                 </tr>
-                                <tr >
-                                    <td colspan="2" class="summary_font">Payment Terms<br />
+                                <tr>
+                                    <td colspan="2" class="summary_font">Payment Terms<br/>
                                       <t t-if="o.payment_term_id.name">
-                                        <span t-field="o.payment_term_id.name" />
+                                        <span t-field="o.payment_term_id.name"/>
                                       </t>
                                       <t t-else="">
                                       -
                                       </t>
                                     </td>
-                                    <td colspan="4" id="bank" class="summary_font">Bank:<br /><br />
+                                    <td colspan="4" id="bank" class="summary_font">Bank:<br/><br/>
                                       <t t-if="o.partner_bank_id">
-                                        <span t-field="o.partner_bank_id" /><br />
-                                        <span t-if="o.partner_bank_id.bank_name" t-field="o.partner_bank_id.bank_name" />
+                                        <span t-field="o.partner_bank_id"/><br/>
+                                        <span t-if="o.partner_bank_id.bank_name" t-field="o.partner_bank_id.bank_name"/>
 
                                       </t>
                                       <t t-else="">
                                       -
                                       </t>
                                     </td>
-                                    <td colspan="2" class="summary_font">Deadline<br />
+                                    <td colspan="2" class="summary_font">Deadline<br/>
                                       <t t-if="o.date_due">
                                           <span t-field="o.date_due" style="font-size: 10pt; font-weight: bold; text-decoration: underline;"/>
                                       </t>

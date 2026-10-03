@@ -1,0 +1,167 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Manage currency payment</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Gestione pagamento in valuta</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module extends the payment form (<code>account.payment</code>) to show the
+payment amount converted into the company's accounting currency, alongside
+the amount expressed in the payment's own currency.
+<p align="justify">
+It is useful when registering a payment in a currency that differs from the
+company's accounting currency: the module automatically looks up the
+exchange rate in effect on the payment date and computes the equivalent
+amount in the company currency, so the user can verify it at a glance
+without leaving the payment form.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo estende il form di pagamento (<code>account.payment</code>) per
+mostrare l'importo del pagamento convertito nella valuta contabile
+dell'azienda, accanto all'importo espresso nella valuta del pagamento
+stesso.
+<p align="justify">
+&#200; utile quando si registra un pagamento in una valuta diversa da quella
+contabile dell'azienda: il modulo cerca automaticamente il tasso di cambio
+in vigore alla data del pagamento e calcola l'importo equivalente nella
+valuta aziendale, in modo che l'utente possa verificarlo a colpo d'occhio
+senza uscire dal form di pagamento.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">When registering a payment (from an invoice or from the <i>Payments</i> menu),
+two extra fields appear next to the payment journal, visible only to users
+belonging to the <i>Multi-Currency</i> group:
+<p align="justify">
+<ul>
+<li><b>Company Currency Payment Amount</b>: the payment amount converted into
+  the company's accounting currency.</li>
+<li><b>Company Currency</b>: the company's accounting currency, shown for
+  reference.</li>
+</ul>
+</p><p align="justify">
+The converted amount is recalculated automatically whenever the payment
+amount, currency, payment date or journal changes:
+</p><p align="justify">
+<ul>
+<li>if the payment journal's currency matches the currency of the invoice(s)
+  being paid, the amount due in company currency is simply summed from the
+  invoices, with no conversion;</li>
+<li>otherwise, the amount is converted using the exchange rate in effect on
+  the payment date.</li>
+</ul>
+</p><p align="justify">
+Paying several invoices in different currencies with the same payment is
+not supported and raises an error.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Quando si registra un pagamento (da una fattura o dal menu <i>Pagamenti</i>),
+accanto al diario di pagamento compaiono due campi aggiuntivi, visibili solo
+agli utenti appartenenti al gruppo <i>Multi-valuta</i>:
+<p align="justify">
+<ul>
+<li><b>Importo Pagamento in Valuta Aziendale</b>: l'importo del pagamento
+  convertito nella valuta contabile dell'azienda.</li>
+<li><b>Valuta Aziendale</b>: la valuta contabile dell'azienda, mostrata per
+  riferimento.</li>
+</ul>
+</p><p align="justify">
+L'importo convertito viene ricalcolato automaticamente ogni volta che
+cambiano l'importo, la valuta, la data o il diario del pagamento:
+</p><p align="justify">
+<ul>
+<li>se la valuta del diario di pagamento coincide con quella delle fatture
+  pagate, l'importo dovuto in valuta aziendale viene semplicemente sommato
+  dalle fatture, senza alcuna conversione;</li>
+<li>in caso contrario, l'importo viene convertito utilizzando il tasso di
+  cambio in vigore alla data del pagamento.</li>
+</ul>
+</p><p align="justify">
+Pagare con un unico pagamento fatture con valute diverse tra loro non &#232;
+supportato e genera un errore.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>12.0.0.1.1 (2026-10-03)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Suite di test automatici per il calcolo e la conversione</li>
+<li>[QUA] Test coverage 93% (28: 2+26) [56 TestPoints] - quality rating 149 (target 100)
+  dell'importo in valuta aziendale / Automated test suite for the
+  company-currency amount computation and conversion</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16">Antonio M. Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-03</p>
+    </div>
+</section>

@@ -290,5 +290,3 @@ msgstr "Nota credito fornitore"
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "placeholder"
 msgstr ""
-
-

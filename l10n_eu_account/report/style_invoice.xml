@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="assets_common" name="l10n_eu_account assets" inherit_id="web.report_assets_pdf">
         <xpath expr="." position="inside">
@@ -6,4 +6,3 @@
         </xpath>
     </template>
 </odoo>
-    

@@ -5,6 +5,7 @@
 from past.builtins import basestring, long
 import os
 import logging
+from odoo.exceptions import UserError
 from .testenv import MainTest as SingleTransactionCase
 
 _logger = logging.getLogger(__name__)
@@ -262,11 +263,11 @@ class TestPaymentOrder(SingleTransactionCase):
     def set_config_param(self, xref):
         param = self.env.ref(xref)
         user_ids = [x.id for x in self.env["res.users"].search([])]
-        param.users = [6, 0, user_ids]
+        param.users = [(6, 0, user_ids)]
 
     def setUp(self):
         super().setUp()
-        self.debug_level = 3
+        self.debug_level = 0
         self.date_rate_0 = self.compute_date("####-<#-99")
         data = {"TEST_SETUP_LIST": TEST_SETUP_LIST}
         for resource in TEST_SETUP_LIST:
@@ -289,7 +290,6 @@ class TestPaymentOrder(SingleTransactionCase):
         self.set_config_param("base.group_multi_currency")
         model = "res.currency"
         self.resource_write(model, "base.EUR", {"active": True})
-        self.setup_env()  # Create test environment
         xref = "base.EUR_%s" % self.date_rate_0
         self.declare_resource_data(
             "res.currency.rate",
@@ -302,6 +302,7 @@ class TestPaymentOrder(SingleTransactionCase):
 
             }
         )
+        self.setup_env()  # Create test environment
 
     def tearDown(self):
         super().tearDown()
@@ -310,31 +311,88 @@ class TestPaymentOrder(SingleTransactionCase):
             self.env.cr.commit()  # pylint: disable=invalid-commit
             _logger.info("✨ Test data committed")
 
-    def test_payment(self):
+    def _open_invoice(self, xref):
+        invoice = self.resource_browse(xref)
+        self.resource_edit(resource=invoice, actions="action_invoice_open")
+        self.assertEqual(invoice.state, "open")
+        return invoice
+
+    def test_default_currency_amount(self):
         _logger.info(
-            "🎺 Starting test_payment()"
+            "🎺 Starting test_default_currency_amount()"
         )
-        template = []
-        record = self.env["account.move"]
-        for xref in TEST_ACCOUNT_INVOICE.keys():
-            invoice = self.resource_bind(xref)
-            self.resource_edit(resource=invoice, actions="action_invoice_open")
-            self.assertEqual(invoice.state, "open")
-            vals = {
-                "name": invoice.number,
-                "journal_id": invoice.journal_id,
-                "date": invoice.date,
-                "currency_id": invoice.currency_id,
-                "line_ids": []
-            }
-            line_vals = {
-                "account_id": invoice.account_id,
-                "debit": invoice.amount_total,
-                "credit": 0.0,
-            }
-            vals["line_ids"].append(line_vals)
-            record |= invoice.move_id
-        self.validate_records(template, record)
-        pass
+        invoice = self._open_invoice("z0bug.invoice_Z0_1")
+        payment = self.env["account.payment"].new(
+            {"invoice_ids": [(6, 0, [invoice.id])]}
+        )
+        self.assertEqual(
+            payment._default_currency_amount(), invoice.amount_total_company_signed
+        )
 
+    def test_onchange_same_currency(self):
+        _logger.info(
+            "🎺 Starting test_onchange_same_currency()"
+        )
+        company = self.default_company()
+        journal = self.resource_browse("external.BNK1")
+        journal.write({"currency_id": company.currency_id.id})
+        invoice = self._open_invoice("z0bug.invoice_Z0_1")
+        self.assertEqual(invoice.currency_id, company.currency_id)
+        payment = self.env["account.payment"].new(
+            {
+                "invoice_ids": [(6, 0, [invoice.id])],
+                "journal_id": journal.id,
+                "currency_id": company.currency_id.id,
+                "amount": invoice.residual,
+                "payment_date": self.date_rate_0,
+            }
+        )
+        payment._onchange_any_currency_amount()
+        self.assertEqual(
+            payment.company_currency_amount, invoice.residual_company_signed
+        )
 
+    def test_onchange_foreign_currency(self):
+        _logger.info(
+            "🎺 Starting test_onchange_foreign_currency()"
+        )
+        company = self.default_company()
+        eur = self.env.ref("base.EUR")
+        journal = self.resource_browse("external.BNK1")
+        invoice = self._open_invoice("z0bug.invoice_Z0_2")
+        self.assertEqual(invoice.currency_id, eur)
+        self.assertNotEqual(company.currency_id, eur)
+        amount = 100.0
+        payment = self.env["account.payment"].new(
+            {
+                "invoice_ids": [(6, 0, [invoice.id])],
+                "journal_id": journal.id,
+                "currency_id": eur.id,
+                "amount": amount,
+                "payment_date": self.date_rate_0,
+            }
+        )
+        payment._onchange_any_currency_amount()
+        expected = eur._convert(
+            amount, company.currency_id, company, payment.payment_date
+        )
+        self.assertEqual(payment.company_currency_amount, expected)
+        self.assertNotEqual(payment.company_currency_amount, amount)
+
+    def test_onchange_mixed_currency_raises_usererror(self):
+        _logger.info(
+            "🎺 Starting test_onchange_mixed_currency_raises_usererror()"
+        )
+        journal = self.resource_browse("external.BNK1")
+        invoice1 = self._open_invoice("z0bug.invoice_Z0_1")
+        invoice2 = self._open_invoice("z0bug.invoice_Z0_2")
+        payment = self.env["account.payment"].new(
+            {
+                "invoice_ids": [(6, 0, [invoice1.id, invoice2.id])],
+                "journal_id": journal.id,
+                "amount": 100.0,
+                "payment_date": self.date_rate_0,
+            }
+        )
+        with self.assertRaises(UserError):
+            payment._onchange_any_currency_amount()
