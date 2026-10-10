@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_ipa_form" model="ir.ui.view">
+        <field name="name">res.partner.ipa.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page
+                    name="fatturapa"
+                    string="Electronic Invoice"
+                    groups="account.group_account_invoice"
+                    attrs="{'invisible': [('is_company','=',False), ('type','!=','invoice')]}"
+                >
+                    <group>
+                        <field name="electronic_invoice_subjected" />
+                        <field
+                            name="codice_destinatario"
+                            placeholder="0000000"
+                            attrs="{'invisible': [('electronic_invoice_subjected', '=', False)]}"
+                        />
+                        <field
+                            name="pec_destinatario"
+                            placeholder="nome@pec.it"
+                            attrs="{'invisible': [('electronic_invoice_subjected', '=', False)]}"
+                        />
+                        <field name="is_pa" />
+                        <field
+                            name="ipa_code"
+                            placeholder="IPA123"
+                            attrs="{'invisible': [('is_pa','=', False)]}"
+                        />
+                         <field name="pa_partner_code" />
+                        <field name="eori_code" />
+                        <field name="license_number" />
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//form//group//field[@name='type']" position="after">
+                <field
+                    name="type_inv_addr"
+                    attrs="{'invisible': [('type','!=', 'invoice')]}"
+                />
+            </xpath>
+            <xpath
+                expr="//field[@name='child_ids']/form//div[@class='o_address_format']"
+                position="after"
+            >
+                <group>
+                    <field
+                        name="type_inv_addr"
+                        attrs="{'invisible': [('type','!=', 'invoice')]}"
+                    />
+                    <field
+                        name="electronic_invoice_subjected"
+                        attrs="{'invisible': [('type','!=', 'invoice')]}"
+                    />
+                    <field
+                        name="codice_destinatario"
+                        placeholder="0000000"
+                        attrs="{'invisible': ['|', ('type','!=','invoice'), ('electronic_invoice_subjected','=',False)]}"
+                    />
+                    <field
+                        name="is_pa"
+                        attrs="{'invisible': [('type','!=', 'invoice')]}"
+                    />
+                    <field
+                        name="ipa_code"
+                        placeholder="IPA123"
+                        attrs="{'invisible': ['|', ('type','!=','invoice'), ('is_pa','=',False)]}"
+                    />
+                </group>
+            </xpath>
+            <!--
+            <xpath expr="//page[@name='accounting'" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_company','=',False),('parent_id','!=',False),('type_inv_addr','!=','FR')]}</attribute>
+            </xpath>
+            -->
+        </field>
+    </record>
+
+    <record id="view_partner_address_ipa_form" model="ir.ui.view">
+        <field name="name">res.partner.address.ipa.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_address_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='o_address_format']" position="after">
+                <group>
+                    <field
+                        name="type_inv_addr"
+                        attrs="{'invisible': [('type','!=', 'invoice')]}"
+                    />
+                    <field
+                        name="electronic_invoice_subjected"
+                        attrs="{'invisible': [('type','!=', 'invoice')]}"
+                    />
+                    <field
+                        name="codice_destinatario"
+                        placeholder="0000000"
+                        attrs="{'invisible': ['|', ('type','!=','invoice'), ('electronic_invoice_subjected','=',False)]}"
+                    />
+                    <field name="is_pa" />
+                    <field
+                        name="ipa_code"
+                        placeholder="IPA123"
+                        attrs="{'invisible': ['|', ('type','!=','invoice'), ('is_pa','=',False)]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

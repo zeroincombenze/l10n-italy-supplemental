@@ -1,0 +1,2 @@
+- Create new statement
+- Inside "Quadro VP" add row selecting VAT statememnt

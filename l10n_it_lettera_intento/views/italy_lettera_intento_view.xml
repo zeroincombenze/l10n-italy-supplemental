@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <record model="ir.ui.view" id="lettera_intento_tree">
+            <field name="name">lettera.intento.tree</field>
+            <field name="model">italy.lettera.intento</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                 <tree string="Registro lettere d'intento">
+                     <field name="name"/>
+                     <field name="date"/>
+                     <field name="partner_id"/>
+                     <field name="customer_ref"/>
+                     <field name="customer_date"/>
+                     <field name="plafond_avaiable"/>
+                     <field name="company_id"/>
+                 </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lettera_intento_view">
+            <field name="name">lettera.intento.view</field>
+            <field name="model">italy.lettera.intento</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Registro lettere d'intento">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "active"}'/>
+                        </button>
+                    </div>
+                    <group colspan="2">
+                        <field name="name" readonly="1"/>
+                        <field name="date"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="company_id"/>
+                        <field name="currency_id"/>
+                    </group>
+                    <group colspan="2">
+                        <field name="partner_id"/>
+                        <field name="customer_ref"/>
+                        <field name="customer_date"/>
+                        <field name="customer_autmin"/>
+                        <field name="plafond"/>
+                        <field name="plafond_used"/>
+                        <field name="plafond_avaiable"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_lettera_intento" model="ir.actions.act_window">
+            <field name="name">Registro lettere d'intento</field>
+            <field name="res_model">italy.lettera.intento</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="lettera_intento_tree"/>
+        </record>
+
+        <menuitem id="menu_lettera_intento" name="Registro lettere d'intento" action="action_lettera_intento" parent="account.menu_finance_entries" sequence="90"/>
+
+</odoo>

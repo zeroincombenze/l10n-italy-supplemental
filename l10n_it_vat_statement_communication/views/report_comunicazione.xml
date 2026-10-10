@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="report_vat_communication_document">
+        <t t-call="l10n_it_account.internal_layout">
+            <div class="page">
+                <div class="centered-content col-xs-10" style="background-color: #D9F0F7; font-size: 16px;">
+                    <table width="100%" style="padding: 10px; border-spacing: 10px; border-collapse: collapse; border-bottom: 2px solid #26C0DB;">
+                        <tr style="border-bottom: 1px solid #26C0DB;">
+                            <td>Anno di imposta</td>
+                            <td>
+                                <span t-field="stmt.year"/>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #26C0DB !important;">
+                            <td>Partita IVA contribuente</td>
+                            <td>
+                                <span t-field="stmt.taxpayer_vat"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <t t-foreach="stmt.quadri_vp_ids" t-as="q">
+                        <table width="100%" style="padding: 10px; border-spacing: 10px; border-bottom: 2px solid #26C0DB;">
+                            <tr style="border-bottom: 1px solid #26C0DB;">
+                                <td>
+                                    <b>VP1</b>
+                                </td>
+                                <td> </td>
+                                <td> </td>
+                                <td>
+                                    <span t-field="q.period_type"/>
+                                </td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.quarter"/></b>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP2</b>
+                                </td>
+                                <td>Totale operazioni attive al netto dell'IVA</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.imponibile_operazioni_attive"/></b>
+                                </td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP3</b>
+                                </td>
+                                <td>Totale operazioni passive al netto dell'IVA</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.imponibile_operazioni_passive"/></b>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP4</b>
+                                </td>
+                                <td>IVA esigibile</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.iva_esigibile"/></b>
+                                </td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP5</b>
+                                </td>
+                                <td>IVA detratta</td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.iva_detratta"/></b>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP6</b>
+                                </td>
+                                <td>IVA dovuta</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.iva_dovuta_debito"/></b>
+                                </td>
+                                <td>&#160;</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.iva_dovuta_credito"/></b>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP7</b>
+                                </td>
+                                <td>Debito periodo precedente</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.debito_periodo_precedente"/></b>
+                                </td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #26C0DB !important;">
+                                <td>
+                                    <b>VP8</b>
+                                </td>
+                                <td>Credito periodo precedente</td>
+                                <td class="text-right" style="background-color: white;">
+                                    <b><span t-field="q.credito_periodo_precedente"/></b>
+                                </td>
+                                <td>&#160;</td>
+                                <td>&#160;</td>
+                            </tr>
+                        </table>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="vat_statement">
+        <t t-call="report.html_container">
+
+            <t t-set="title" t-value="LIPE"/>
+            <t t-foreach="docs" t-as="stmt">
+                <t t-call="l10n_it_vat_statement_communication.report_vat_communication_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

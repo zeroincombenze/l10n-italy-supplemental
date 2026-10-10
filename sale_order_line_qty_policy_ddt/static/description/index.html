@@ -1,0 +1,419 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Bridge module: quantity policy applied to DdT based invoices</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Modulo ponte: politiche di quantit&#224; nelle fatture da DdT</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">`l10n_it_ddt` creates invoices from delivery notes (DdT) instead of from sale
+orders, and it evaluates a delivery note from its lines only: the document is
+declared invoiced when every one of its lines was turned into an invoice line
+during one single run of the invoicing procedure.
+<p align="justify">
+`sale_order_line_qty_policy` makes it possible to declare a sale order line
+invoiced without any invoice line at all, either by hand or by a policy
+declared on the product, i.e. the environmental contribution (CONAI) whose
+amount is evaluated again at invoice level.
+</p><p align="justify">
+Without this bridge module the two behaviours contradict each other: a
+delivery note carrying a line the quantity policy declares invoiced can never
+be closed. The invoicing procedure skips that line, so the invoice reference
+of the delivery note is never written; the document keeps showing up as to be
+invoiced and every further attempt to invoice it ends with <i>There is no
+invoicable line</i>, which in the mass invoicing wizard takes down the invoicing
+of every other delivery note of the period.
+</p><p align="justify">
+This module introduces on the delivery note line the same concepts the
+quantity policy introduces on the sale order line, and it adds to the
+delivery note the invoice status Odoo gives to a sale order.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">`l10n_it_ddt` crea le fatture dai documenti di trasporto (DdT) anzich&#233; dagli
+ordini di vendita e valuta il DdT dalle sole righe: il documento &#232; dichiarato
+fatturato quando tutte le sue righe sono diventate righe di fattura in una
+singola esecuzione della procedura di fatturazione.
+<p align="justify">
+`sale_order_line_qty_policy` permette di dichiarare fatturata una riga
+d'ordine anche senza alcuna riga di fattura, manualmente oppure tramite una
+politica dichiarata sul prodotto, come il contributo ambientale (CONAI) il cui
+importo viene rivalutato a livello di fattura.
+</p><p align="justify">
+Senza questo modulo ponte i due comportamenti si contraddicono: un DdT che
+contiene una riga dichiarata fatturata dalla politica di quantit&#224; non pu&#242; mai
+essere chiuso. La procedura di fatturazione salta quella riga, quindi il
+riferimento alla fattura non viene mai scritto sul DdT; il documento continua
+a risultare da fatturare e ogni ulteriore tentativo di fatturarlo termina con
+<i>There is no invoicable line</i>, errore che nella procedura di fatturazione
+massiva blocca la fatturazione di tutti gli altri DdT del periodo.
+</p><p align="justify">
+Questo modulo introduce sulla riga del DdT gli stessi concetti che la politica
+di quantit&#224; introduce sulla riga d'ordine e aggiunge al DdT lo stato di
+fatturazione che Odoo attribuisce all'ordine di vendita.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">No configuration is needed: the module bridges two modules which are already
+configured.
+<p align="justify">
+The policies declared on the product by `sale_order_line_qty_policy` are the
+very same ones used here:
+</p><p align="justify">
+<ul>
+<li><b>Auto declare invoiced</b>: every delivery note line of this product is
+  considered invoiced, exactly as every sale order line of it is.</li>
+</ul>
+</p><p align="justify">
+The <b>Delivered threshold (%)</b> is not evaluated on the delivery note: the
+threshold compares the ordered quantity with the delivered one and the
+delivery note *is* the delivery, so it carries the delivered quantity only.
+The threshold keeps being evaluated on the sale order line.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Non &#232; necessaria alcuna configurazione: il modulo mette in comunicazione due
+moduli gi&#224; configurati.
+<p align="justify">
+Le politiche dichiarate sul prodotto da `sale_order_line_qty_policy` sono le
+medesime usate qui:
+</p><p align="justify">
+<ul>
+<li><b>Dichiara automaticamente fatturato</b>: ogni riga di DdT di questo prodotto
+  &#232; considerata fatturata, esattamente come lo &#232; ogni riga d'ordine.</li>
+</ul>
+</p><p align="justify">
+La <b>Soglia di consegna (%)</b> non &#232; valutata sul DdT: la soglia confronta la
+quantit&#224; ordinata con quella consegnata e il DdT *&#232;* la consegna, quindi
+riporta la sola quantit&#224; consegnata. La soglia continua ad essere valutata
+sulla riga d'ordine di vendita.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">On a delivery note, the manager can flag every line with:
+<p align="justify">
+<ul>
+<li><b>Declared invoiced</b>: the line is considered fully invoiced and it is no
+  more selected when an invoice is created from the delivery note. Use it when
+  the goods of that line must not be billed, i.e. a free replacement.</li>
+</ul>
+</p><p align="justify">
+The same result can be obtained from code with the methods
+<code>action_declare_invoiced()</code> and <code>action_undeclare_invoiced()</code> of
+<code>stock.picking.package.preparation.line</code>.
+</p><p align="justify">
+The technical field <code>line_invoiced</code> is stored and computed: it is true when
+an invoice line was created from the delivery note line, or the line was
+declared invoiced, or the product carries the <i>Auto declare invoiced</i> policy,
+or the <b>sale order line was declared invoiced</b>. That last case is the point
+of the bridge: a decision taken on the order is never contradicted by the
+delivery note, which would otherwise bill the customer for what the order
+declares already invoiced.
+</p><p align="justify">
+The declaration travels from the order to the delivery note and never the
+other way round: a delivery note line is one of the several deliveries of an
+order line, so it cannot decide for it. When the order has to be closed as
+well, declare its own line invoiced: `sale_order_line_qty_policy` handles it.
+</p><p align="justify">
+At delivery note level, <b>Invoice status</b> carries the same three values Odoo
+uses for a sale order:
+</p><p align="justify">
+<ul>
+<li><i>Nothing to invoice</i>: the delivery note is not invoiceable yet, or its
+  reason for transportation declares it is not to be invoiced;</li>
+<li><i>To invoice</i>: at least one line has still to be invoiced;</li>
+<li><i>Fully invoiced</i>: every line is invoiced or declared invoiced. A delivery
+  note can be fully invoiced without carrying any invoice, when the policy
+  declares every one of its lines invoiced.</li>
+</ul>
+</p><p align="justify">
+The <i>To Be Invoiced</i> and <i>Invoiced</i> filters of the delivery note list, and the
+<i>To invoice</i> filter of the delivery note line list, are restated in terms of
+these fields, so a document closed by the policy is no more offered for
+invoicing.
+</p><p align="justify">
+Deleting an invoice, or one of its lines, gives the delivery note lines it
+was holding back to be invoiced. Those references are dropped by the database
+itself, so nothing would otherwise tell the delivery note to evaluate its
+lines again: a line would stay invoiced forever, it could no more be billed,
+and its delivery note would keep showing as fully invoiced while carrying no
+invoice at all.
+</p><p align="justify">
+The invoice reference of the delivery note is written whenever every line is
+invoiced, whatever the run which invoiced it: the standard module writes it
+only when one single run invoices every line, so a line invoiced separately -
+or declared invoiced - used to leave the document open forever.
+</p><p align="justify">
+A delivery note which has nothing left to invoice is skipped by the invoicing
+procedure instead of stopping it. An error is raised only when none of the
+selected delivery notes has anything to invoice.
+</p><p align="justify">
+The <i>To be Invoiced</i> flag of the delivery note is kept for compatibility -
+`l10n_it_ddt` selects on it, both in the mass invoicing wizard and in the
+standard list filter - and it is now reset as soon as the delivery note is
+fully invoiced. The standard module only copies it from the reason for
+transportation, so it stayed raised for ever: a document closed by the
+quantity policy, carrying an invoice or no invoice at all, kept being offered
+for invoicing. The flag is raised again whenever a line goes back to be
+invoiced - a declaration withdrawn, an invoice deleted - and <b>Invoice
+status</b> is the field to read instead: it tells the whole story, this one only
+answers whether something is still to be billed.
+</p><p align="justify">
+Declaring a delivery note line invoiced also settles that much of the sale
+order line it delivered. Without it the order kept the whole quantity to
+invoice: the delivery note considered itself closed, the order did not, and
+invoicing the order billed the customer for the very goods the delivery note
+had declared not to be billed.
+</p><p align="justify">
+A <b>quantity</b> is carried over, not a flag, because one delivery note is only
+one of several possible deliveries of an order line: declaring it invoiced
+closes exactly what that delivery note delivered and leaves the rest of the
+line to be invoiced. Four units declared on one delivery note and six
+invoiced on another close a line of ten, while four declared alone leave six
+open as soon as they are delivered.
+</p><p align="justify">
+The quantity is shown on the order line as <b>Declared invoiced on delivery
+notes</b>, and it is taken off what is left to invoice. Only a line declared on
+the delivery note itself is counted: a line which reached an invoice is
+already counted as invoiced, and a line closed because the order line itself
+was declared invoiced is already settled by the order. Withdrawing the
+declaration gives the quantity back to be invoiced.
+</p><p align="justify">
+Nothing is written on the sale order line by hand: the quantity is computed,
+so it follows the delivery notes on its own.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Sul DdT il responsabile pu&#242; marcare ogni riga con:
+<p align="justify">
+<ul>
+<li><b>Dichiarata fatturata</b>: la riga &#232; considerata interamente fatturata e non
+  viene pi&#249; selezionata quando si crea una fattura dal DdT. Va usata quando la
+  merce di quella riga non deve essere addebitata, ad esempio una sostituzione
+  in garanzia.</li>
+</ul>
+</p><p align="justify">
+Lo stesso risultato si ottiene da codice con i metodi
+<code>action_declare_invoiced()</code> e <code>action_undeclare_invoiced()</code> di
+<code>stock.picking.package.preparation.line</code>.
+</p><p align="justify">
+Il campo tecnico <code>line_invoiced</code> &#232; memorizzato e calcolato: &#232; vero quando
+dalla riga di DdT &#232; stata creata una riga di fattura, oppure la riga &#232; stata
+dichiarata fatturata, oppure il prodotto ha la politica <i>Dichiara
+automaticamente fatturato</i>, oppure <b>la riga d'ordine di vendita &#232; stata
+dichiarata fatturata</b>. Quest'ultimo caso &#232; lo scopo del modulo ponte: una
+decisione presa sull'ordine non viene mai contraddetta dal DdT, che
+altrimenti addebiterebbe al cliente quanto l'ordine dichiara gi&#224; fatturato.
+</p><p align="justify">
+La dichiarazione viaggia dall'ordine al DdT e mai in senso inverso: una riga
+di DdT &#232; una delle possibili consegne di una riga d'ordine, quindi non pu&#242;
+decidere per essa. Quando anche l'ordine deve essere chiuso, si dichiari
+fatturata la sua riga: se ne occupa `sale_order_line_qty_policy`.
+</p><p align="justify">
+A livello di DdT, lo <b>Stato fatturazione</b> riporta gli stessi tre valori che
+Odoo usa per l'ordine di vendita:
+</p><p align="justify">
+<ul>
+<li><i>Niente da fatturare</i>: il DdT non &#232; ancora fatturabile, oppure la sua
+  causale di trasporto dichiara che non &#232; da fatturare;</li>
+<li><i>Da fatturare</i>: almeno una riga deve ancora essere fatturata;</li>
+<li><i>Interamente fatturato</i>: tutte le righe sono fatturate o dichiarate
+  fatturate. Un DdT pu&#242; essere interamente fatturato senza avere alcuna
+  fattura, quando la politica dichiara fatturate tutte le sue righe.</li>
+</ul>
+</p><p align="justify">
+I filtri <i>Da fatturare</i> e <i>Fatturato</i> dell'elenco dei DdT, e il filtro <i>Da
+fatturare</i> dell'elenco delle righe di DdT, sono riscritti in termini di questi
+campi, cos&#236; un documento chiuso dalla politica non viene pi&#249; proposto per la
+fatturazione.
+</p><p align="justify">
+L'eliminazione di una fattura, o di una sua riga, restituisce alla
+fatturazione le righe di DdT che vi erano collegate. Tali riferimenti vengono
+azzerati dal database stesso, quindi nulla indicherebbe al DdT di rivalutare
+le proprie righe: una riga resterebbe fatturata per sempre, non potrebbe pi&#249;
+essere addebitata e il suo DdT continuerebbe a risultare interamente
+fatturato pur non avendo alcuna fattura.
+</p><p align="justify">
+Il riferimento alla fattura del DdT viene scritto ogni volta che tutte le
+righe risultano fatturate, indipendentemente dall'esecuzione che le ha
+fatturate: il modulo standard lo scrive solo quando una singola esecuzione
+fattura tutte le righe, quindi una riga fatturata separatamente - o dichiarata
+fatturata - lasciava il documento aperto per sempre.
+</p><p align="justify">
+Un DdT che non ha pi&#249; nulla da fatturare viene saltato dalla procedura di
+fatturazione anzich&#233; bloccarla. L'errore &#232; sollevato solo quando nessuno dei
+DdT selezionati ha qualcosa da fatturare.
+</p><p align="justify">
+Il flag <i>Da fatturare</i> del DdT &#232; mantenuto per compatibilit&#224; - `l10n_it_ddt`
+lo usa sia nella procedura di fatturazione massiva sia nel filtro standard
+dell'elenco - e viene ora azzerato non appena il DdT risulta interamente
+fatturato. Il modulo standard lo copia dalla sola causale di trasporto, quindi
+restava alzato per sempre: un documento chiuso dalla politica di quantit&#224;, con
+o senza alcuna fattura, continuava ad essere proposto per la fatturazione. Il
+flag viene rialzato ogni volta che una riga torna da fatturare - una
+dichiarazione ritirata, una fattura eliminata - e il campo da leggere resta lo
+<b>Stato fatturazione</b>: quello racconta tutta la storia, questo risponde solo
+se ci sia ancora qualcosa da addebitare.
+</p><p align="justify">
+La dichiarazione di riga fatturata su un DdT chiude anche la corrispondente
+quantit&#224; della riga d'ordine che il DdT ha consegnato. Senza questo l'ordine
+manteneva da fatturare l'intera quantit&#224;: il DdT si considerava chiuso,
+l'ordine no, e fatturare l'ordine addebitava al cliente proprio la merce che
+il DdT aveva dichiarato di non dover fatturare.
+</p><p align="justify">
+Viene riportata una <b>quantit&#224;</b>, non un flag, perch&#233; un DdT &#232; solo una delle
+possibili consegne di una riga d'ordine: dichiararlo fatturato chiude
+esattamente quanto quel DdT ha consegnato e lascia da fatturare il resto
+della riga. Quattro unit&#224; dichiarate su un DdT e sei fatturate su un altro
+chiudono una riga di dieci, mentre quattro dichiarate da sole ne lasciano sei
+aperte non appena vengono consegnate.
+</p><p align="justify">
+La quantit&#224; &#232; esposta sulla riga d'ordine come <b>Quantit&#224; dichiarata
+fatturata nei DdT</b> e viene sottratta da quanto resta da fatturare. Viene
+contata solo la riga dichiarata sul DdT stesso: una riga arrivata in fattura
+&#232; gi&#224; conteggiata come fatturata, e una riga chiusa perch&#233; era la riga
+d'ordine ad essere dichiarata fatturata &#232; gi&#224; definita dall'ordine. Ritirando
+la dichiarazione la quantit&#224; torna da fatturare.
+</p><p align="justify">
+Nulla viene scritto a mano sulla riga d'ordine: la quantit&#224; &#232; calcolata,
+quindi segue da sola i DdT.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.1.2 (2026-09-04)</h4>
+<p align="justify">
+<ul>
+<li>[FIX] The invoicing state of the delivery notes already in the database is
+  recomputed when the module is installed and when it is upgraded: Odoo
+  computes a stored field on existing records only when it creates its
+  column, so the whole history was left with the 'To be Invoiced' flag
+  raised and went on being offered for invoicing</li>
+<li>[FIX] Installing the module on a database which still carries its columns,
+  after it had been uninstalled, left every delivery note written meanwhile
+  without any invoicing state at all: the policy was simply not applied to
+  the documents which predate the installation</li>
+<li>[NEW] The quantity of a delivery note line declared invoiced is taken off
+  what is left to invoice on the sale order line it delivered, so the order
+  can no more be invoiced for goods a delivery note already settled; a
+  quantity is carried over and not a flag, so a partly declared order line
+  keeps the rest of it to invoice</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.1 (2026-09-02)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] The 'To be Invoiced' flag of the delivery note is reset as soon as the
+  delivery note is fully invoiced, so the mass invoicing wizard and the
+  standard list filter no more offer for invoicing a document closed by the
+  quantity policy; the flag is raised again when a line goes back to be
+  invoiced</li>
+<li>[IMP] The invoice status of the delivery note reads the reason for
+  transportation instead of the 'To be Invoiced' flag it mirrors, so that
+  resetting the flag does not alter the status</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.0 (2026-09-01)</h4>
+</p><p align="justify">
+<ul>
+<li>[NEW] Initial implementation: bridge module between
+  sale_order_line_qty_policy and l10n_it_ddt</li>
+<li>[NEW] Delivery note line flag force_invoiced and technical field
+  line_invoiced</li>
+<li>[NEW] Delivery note field invoice_status</li>
+<li>[FIX] The invoice reference of the delivery note is written whenever every
+  line is invoiced, no more only when every line was invoiced by one single
+  run of the invoicing procedure</li>
+<li>[FIX] A delivery note with nothing to invoice is skipped by the invoicing
+  procedure, so it no more stops the invoicing of the other ones</li>
+<li>[FIX] Deleting an invoice, or one of its lines, gives the delivery note
+  lines back to be invoiced: the reference is dropped by the database, so the
+  stored invoicing state was left behind and the line stayed invoiced forever</li>
+<li>[NEW] Italian translation</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:info@shs-av.com">Antonio M. Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-09-04</p>
+    </div>
+</section>

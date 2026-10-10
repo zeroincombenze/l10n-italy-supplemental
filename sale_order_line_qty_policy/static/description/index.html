@@ -1,0 +1,354 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Declare sale order line delivered or invoiced by product policy</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Dichiara una riga d'ordine consegnata o fatturata</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Odoo evaluates the status of a sale order line from quantities only: a line is
+invoiced when the invoiced quantity reaches the ordered one (or the delivered
+one, depending on the invoicing policy of the product). There are however
+common cases where this rule keeps an order open forever.
+<p align="justify">
+This module makes it possible to declare a sale order line delivered or
+invoiced, either manually or by a policy declared on the product.
+</p><p align="justify">
+Two policies are available on the product:
+</p><p align="justify">
+<ul>
+<li><b>Auto declare invoiced</b>: every line of this product is considered fully
+  invoiced as soon as the order is confirmed. This is required by modules
+  managing tax products, i.e. the environmental contribution (CONAI), whose
+  amount is evaluated again at invoice level: the invoiced quantity will never
+  match the ordered one, so the order would be left in an incomplete or wrong
+  status.</li>
+</ul>
+</p><p align="justify">
+<ul>
+<li><b>Delivered threshold</b>: for some products it is not possible to deliver the
+  exact ordered quantity. When the deviation between ordered and delivered
+  quantity is within the declared percentage, the line is considered fully
+  delivered and the order is closed as soon as the delivered quantity has been
+  invoiced. The threshold can be declared on the product or, once for a whole
+  family of products, on the product category.</li>
+</ul>
+</p><p align="justify">
+The delivered quantity is never altered by this module: the customer is always
+invoiced for the quantity really delivered.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Odoo valuta lo stato di una riga d'ordine solo in base alle quantit&#224;: una riga
+&#232; fatturata quando la quantit&#224; fatturata raggiunge quella ordinata (o quella
+consegnata, in base alla politica di fatturazione del prodotto). Esistono per&#242;
+casi ricorrenti in cui questa regola lascia l'ordine aperto all'infinito.
+<p align="justify">
+Questo modulo permette di dichiarare una riga d'ordine consegnata o fatturata,
+manualmente oppure tramite una politica dichiarata sul prodotto.
+</p><p align="justify">
+Sul prodotto sono disponibili due politiche:
+</p><p align="justify">
+<ul>
+<li><b>Dichiara automaticamente fatturato</b>: ogni riga di questo prodotto &#232;
+  considerata interamente fatturata alla conferma dell'ordine. Questa funzione
+  &#232; richiesta dai moduli che gestiscono prodotti di tipo imposta, come il
+  contributo ambientale (CONAI), il cui importo viene rivalutato a livello di
+  fattura: la quantit&#224; fatturata non coincider&#224; mai con quella ordinata e
+  l'ordine resterebbe in uno stato incompleto o errato.</li>
+</ul>
+</p><p align="justify">
+<ul>
+<li><b>Soglia di consegna</b>: per alcuni prodotti non &#232; possibile consegnare
+  l'esatta quantit&#224; ordinata. Quando lo scostamento fra quantit&#224; ordinata e
+  consegnata rientra nella percentuale dichiarata, la riga &#232; considerata
+  interamente consegnata e l'ordine si chiude non appena la quantit&#224;
+  consegnata &#232; stata fatturata. La soglia pu&#242; essere dichiarata sul prodotto
+  oppure, una sola volta per un'intera famiglia di prodotti, sulla categoria
+  prodotto.</li>
+</ul>
+</p><p align="justify">
+La quantit&#224; consegnata non viene mai alterata dal modulo: al cliente &#232; sempre
+fatturata la quantit&#224; realmente consegnata.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">On the product form, tab <i>Invoicing</i>, section <i>Quantity Policy</i>:
+<p align="justify">
+<ul>
+<li><b>Delivered threshold (%)</b>: maximum accepted deviation, as a percentage of
+  the ordered quantity, between ordered and delivered quantity. The deviation
+  is evaluated on its absolute value, so both under and over delivery are
+  covered. Leave 0 to inherit the threshold of the product category.</li>
+</ul>
+</p><p align="justify">
+The same <b>Delivered threshold (%)</b> is available on the product category form,
+so it can be declared once for a whole family of products. The threshold of the
+product wins; the one of the category is used only when the product does not
+declare its own. Leave both to 0 to disable the policy.
+</p><p align="justify">
+<ul>
+<li><b>Auto declare invoiced</b>: check it to declare invoiced every sale order line
+  of this product.</li>
+</ul>
+</p><p align="justify">
+Both fields are declared on the product template, so the policy applies to all
+the variants of the product.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Sulla scheda prodotto, linguetta <i>Fatturazione</i>, sezione <i>Politiche di
+quantit&#224;</i>:
+<p align="justify">
+<ul>
+<li><b>Soglia di consegna (%)</b>: massimo scostamento ammesso, in percentuale
+  sulla quantit&#224; ordinata, fra quantit&#224; ordinata e consegnata. Lo scostamento
+  &#232; valutato in valore assoluto, quindi sono coperte sia le consegne in difetto
+  sia quelle in eccesso. Lasciare 0 per ereditare la soglia della categoria
+  prodotto.</li>
+</ul>
+</p><p align="justify">
+La stessa <b>Soglia di consegna (%)</b> &#232; disponibile sulla scheda della categoria
+prodotto, cos&#236; da poterla dichiarare una sola volta per un'intera famiglia di
+prodotti. Prevale la soglia del prodotto; quella della categoria &#232; usata solo
+quando il prodotto non dichiara la propria. Lasciare entrambe a 0 per
+disabilitare la politica.
+</p><p align="justify">
+<ul>
+<li><b>Dichiara automaticamente fatturato</b>: selezionare per dichiarare fatturata
+  ogni riga d'ordine di questo prodotto.</li>
+</ul>
+</p><p align="justify">
+Entrambi i campi sono dichiarati sul modello prodotto, quindi la politica vale
+per tutte le varianti del prodotto.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">On a confirmed sale order, the manager can flag every line with:
+<p align="justify">
+<ul>
+<li><b>Declared delivered</b>: the line is considered fully delivered whatever the
+  delivered quantity is. The delivered quantity is not altered, so the customer
+  is still invoiced for what has been really delivered.</li>
+</ul>
+</p><p align="justify">
+<ul>
+<li><b>Declared invoiced</b>: the line is considered fully invoiced and it is no
+  more selected when an invoice is created from the order.</li>
+</ul>
+</p><p align="justify">
+Both flags are available from the order line list and from the
+<i>Sales Order Lines</i> list, where the filters <i>Fully Delivered</i>,
+<i>Declared Delivered</i> and <i>Declared Invoiced</i> are added.
+</p><p align="justify">
+The same result can be obtained from code with the methods
+<code>action_declare_delivered()</code>, <code>action_undeclare_delivered()</code>,
+<code>action_declare_invoiced()</code> and <code>action_undeclare_invoiced()</code> of
+<code>sale.order.line</code>.
+</p><p align="justify">
+At order level, <code>force_delivery_state</code> is kept aligned with the lines: it
+is set when every relevant line is delivered and cleared when it is not. The
+field is shared with <code>sale_delivery_state_z0</code>, which shows the order as
+delivered, and neither module depends on the other one. As soon as a user
+writes the flag by hand, <code>force_delivery_state_manual</code> is set and the policy
+stops managing that order.
+</p><p align="justify">
+When the order is reset to draft, the delivered quantity of the stockable
+lines is written back from the stock moves still linked to them. Standard Odoo
+detaches every procurement from its line at that moment, so the delivered
+quantity is reset; without this, a line would keep forever the quantity of the
+last delivery, even when the goods were returned. Services keep the quantity
+entered by hand.
+</p><p align="justify">
+The technical field <code>line_delivered</code> is stored and computed: it is true when
+the line reached the ordered quantity, or the deviation is within the product
+threshold, or the line was declared delivered.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Su un ordine di vendita confermato, il responsabile pu&#242; marcare ogni riga con:
+<p align="justify">
+<ul>
+<li><b>Dichiarata consegnata</b>: la riga &#232; considerata interamente consegnata
+  qualunque sia la quantit&#224; consegnata. La quantit&#224; consegnata non viene
+  alterata, quindi al cliente &#232; fatturato quanto realmente consegnato.</li>
+</ul>
+</p><p align="justify">
+<ul>
+<li><b>Dichiarata fatturata</b>: la riga &#232; considerata interamente fatturata e non
+  viene pi&#249; selezionata quando si crea una fattura dall'ordine.</li>
+</ul>
+</p><p align="justify">
+Entrambi i flag sono disponibili nell'elenco delle righe d'ordine e nell'elenco
+<i>Righe ordine di vendita</i>, dove sono aggiunti i filtri <i>Interamente consegnate</i>,
+<i>Dichiarate consegnate</i> e <i>Dichiarate fatturate</i>.
+</p><p align="justify">
+Lo stesso risultato si ottiene da codice con i metodi
+<code>action_declare_delivered()</code>, <code>action_undeclare_delivered()</code>,
+<code>action_declare_invoiced()</code> e <code>action_undeclare_invoiced()</code> di
+<code>sale.order.line</code>.
+</p><p align="justify">
+A livello di ordine, <code>force_delivery_state</code> &#232; mantenuto allineato alle
+righe: &#232; impostato quando tutte le righe rilevanti sono consegnate ed &#232;
+azzerato quando non lo sono. Il campo &#232; condiviso con
+<code>sale_delivery_state_z0</code>, che mostra l'ordine come consegnato, e nessuno dei
+due moduli dipende dall'altro. Appena un utente scrive il flag manualmente
+viene impostato <code>force_delivery_state_manual</code> e la politica smette di
+gestire quell'ordine.
+</p><p align="justify">
+Quando l'ordine &#232; riportato in bozza, la quantit&#224; consegnata delle righe di
+prodotti stoccabili &#232; riscritta a partire dai movimenti di magazzino ancora
+collegati. Odoo standard scollega in quel momento ogni approvvigionamento dalla
+riga, quindi la quantit&#224; consegnata viene azzerata; senza questo intervento la
+riga manterrebbe per sempre la quantit&#224; dell'ultima consegna, anche se la merce
+&#232; stata resa. I servizi mantengono la quantit&#224; inserita manualmente.
+</p><p align="justify">
+Il campo tecnico <code>line_delivered</code> &#232; memorizzato e calcolato: &#232; vero quando la
+riga ha raggiunto la quantit&#224; ordinata, oppure lo scostamento rientra nella
+soglia del prodotto, oppure la riga &#232; stata dichiarata consegnata.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.0.1.6 (2026-09-05)</h4>
+<p align="justify">
+<ul>
+<li>[QUA] Test coverage 84% (148: 23+125) [0 TestPoints] - quality rating 48 (target 100)</li>
+<li>[IMP] Tests rewritten on the z0bug_odoo TestEnv declarative harness</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.5 (2026-09-01)</h4>
+</p><p align="justify">
+<ul>
+<li>[NEW] Italian translation</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.4 (2026-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[REM] Migration script removed: the orders confirmed before the installation
+  are evaluated when one of their lines changes, they are no more evaluated in
+  bulk during the upgrade</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.3 (2026-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] The migration script evaluates the orders by batches: on a production
+  database the previous version loaded every confirmed order in one shot and
+  died of MemoryError, making the whole upgrade fail</li>
+<li>[FIX] force_delivery_state_auto replaced by force_delivery_state_manual: the
+  flag now belongs to the quantity policy unless a user wrote it, so an unknown
+  value can no more leave an order stuck in delivered state</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.2 (2026-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] Reset to draft writes back the real delivered quantity of stockable
+  lines: standard Odoo detaches the procurements from the line and leaves
+  qty_delivered with the value of the last delivery, even after a return</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.1 (2026-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Shared field force_delivery_state on sale.order, automatically set
+  when every relevant line is delivered, so sale_delivery_state_z0 shows the
+  order as done without any dependency between the two modules</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.0 (2026-08-29)</h4>
+</p><p align="justify">
+<ul>
+<li>[NEW] Initial implementation</li>
+<li>[NEW] Product fields delivered_threshold and auto_line_invoiced</li>
+<li>[NEW] Product category field delivered_threshold, used as default</li>
+<li>[NEW] Sale order line flags force_delivered and force_invoiced</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:info@shs-av.com">Antonio M. Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-09-05</p>
+    </div>
+</section>

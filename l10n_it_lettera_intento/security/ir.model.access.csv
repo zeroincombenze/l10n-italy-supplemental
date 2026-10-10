@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ccess_italy_lettera_intento,access_italy_lettera_intento,model_italy_lettera_intento,base.group_user,1,1,1,1

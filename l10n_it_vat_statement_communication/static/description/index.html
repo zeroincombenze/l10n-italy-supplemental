@@ -1,0 +1,168 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#162832;">Esportazione file xml LIPE</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            <img src="description.png" alt="ITA - Comunicazione liquidazione IVA" style="width:98%;max-width:1140px"/>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Italian fiscal due.</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Comunicazione liquidazione IVA ed export file XML, conforme alle specifiche dell''Agenzia delle Entrate.
+<p align="justify">
+I dati possono essere caricati da liquidazioni IVA effettuate in odoo tramite `account_vat_period_end_statement`
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">In order to generate VAT statement's periods,
+open Accounting &gt; Configuration &gt; Date ranges &gt; Generate Date Ranges and select:
+<p align="justify">
+<ul>
+<li>range name prefix: prefix identifying the periods to be generated (usually the year)</li>
+<li>duration: 1 month</li>
+<li>number of ranges to generate: 12</li>
+<li>type: create a type or use an existing one, no specific configuration is required</li>
+<li>date start: first day of the first period to be generated (usually the first day of the year e.g. 01/01/2018)</li>
+</ul>
+</p><p align="justify">
+In order to load the correct amount from tax, the tax has to be
+associated to the account involved in the statement:
+</p><p align="justify">
+<ul>
+<li>open a tax in Accounting &gt; Configuration &gt; Accounting &gt; Taxes,</li>
+<li>in the tab 'Advanced Options' select the correct account (for instance the account debit VAT)
+  for the field 'Account used for VAT statement'.</li>
+</ul>
+</p><p align="justify">
+If you need to calculate interest, you can add default information in your
+company data (percentage and account), in the 'VAT statement' tab.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Per generare i periodi della dichiarazione IVA,
+aprire Impostazioni &gt; Fatturazione &gt; Configurazione &gt; Intervalli data &gt; Generazione intervalli data e selezionare:
+<p align="justify">
+<ul>
+<li>prefisso nome intervallo: prefisso identificativo per i periodi da generare (tipicamente l'anno)</li>
+<li>durata: 1 mese</li>
+<li>numero di intervalli da generare: 12</li>
+<li>tipo: creare un tipo o utilizzarne uno esistente, non &#232; richiesta una configurazione particolare</li>
+<li>data iniziale: primo giorno del primo periodo che sar&#224; generato (tipicamente il primo giorno dell'anno i.e. 01/01/2018)</li>
+</ul>
+</p><p align="justify">
+Per caricare l'importo corretto, un'imposta deve essere associata al conto utilizzato nella liquidazione:
+</p><p align="justify">
+<ul>
+<li>aprire l'imposta da Fatturazione &gt; Configurazione &gt; Contabilit&#224; &gt; Imposte,</li>
+<li>nella scheda 'Opzioni avanzate' selezionare il conto corretto (ad esempio IVA debito)
+  per il campo 'Conto utilizzato per la liquidazione IVA'.</li>
+</ul>
+</p><p align="justify">
+Per calcolare gli interessi, &#232; possibile aggiungere le informazioni da utilizzare (conto e percentuale)
+nei dati aziendali, nella scheda 'Liquidazione IVA'.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">- Create new statement
+- Inside "Quadro VP" add row selecting VAT statememnt</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">- Creare una nuova comunicazione.
+- Nel "Quadro VP" aggiungere una voce selezionando in alto la liquidazione, precedentemente creata, da inserire.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>10.0.1.5.5 (2025-05-31)</h4>
+<p align="justify">
+<ul>
+<li>[FIX] Wrong identitifier / Identitificatovo errato</li>
+<li>[QUA] Test coverage 28% (389: 282+107) [0 TestPoints] - quality rating 19 (target 100)</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.1.5.4 (2025-07-19)</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Report print</li>
+<li>[QUA] Test coverage 28% (389: 282+107) [0 TestPoints] - quality rating 19 (target 100)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li>Openforce di Camilli Alessandro &lt;False&gt;</li>
+<li><a href="https://odoo-community.org">Odoo Community Association (OCA)</a></li>
+<li><a href="https://www.zeroincombenze.it">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li>Alessandro Camilli &lt;False&gt;</li>
+<li>Lorenzo Battistini &lt;False&gt;</li>
+<li>Lara Baggio &lt;False&gt;</li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy">l10n-italy</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-05-31</p>
+    </div>
+</section>

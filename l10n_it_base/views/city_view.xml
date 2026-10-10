@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<odoo>
+<data>
+
+    <record id="view_res_city_tree" model="ir.ui.view">
+        <field name="name">res.city.tree</field>
+        <field name="model">res.city</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="City">
+                <field name="country_id" />
+                <field name="name" />
+                <field name="zip" />
+                <field name="state_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_city_form" model="ir.ui.view">
+        <field name="name">res.city.form</field>
+        <field name="model">res.city</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="City">
+                <group col="2">
+                    <field name="country_id" />
+                    <field name="name" select="1" colspan="2" />
+                    <field name="zip" />
+                    <field name="state_id" select="1" />
+                    <field name="phone_prefix" />
+                    <field name="istat_code" />
+                    <field name="cadaster_code" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_city" model="ir.actions.act_window">
+        <field name="name">Cities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.city</field>
+        <field name="view_type">form</field>
+    </record>
+
+    <menuitem
+            action="action_city"
+            id="menu_city_partner"
+            parent="sales_team.menu_localisation"
+        />
+
+</data>
+</odoo>

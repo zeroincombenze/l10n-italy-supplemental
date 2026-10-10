@@ -1,0 +1,6 @@
+Feature | Funzione,Status,Notes | Note
+City from ZIP | Città da CAP,✅,Propone città da CAP; città modificabile
+Multizone ZIP | CAP Multizona,✅,Riconoscimento CAP multizona
+District from ZIP | Provincia da CAP,✅,Compila la provincia dal CAP
+Check for ZIP & district | Controllo coerenza CAP e provincia,✅,Verifica coerenza di CAP e provincia
+Check for duplicate vat | Controllo partita IVA duplicata,✅,Controllo non bloccante

@@ -1,0 +1,5 @@
+Description | Descrizione,Z0incombenze(R),OCA,Note(s)
+Fiscal Invoice Type | Tipo fattura fiscale,✅,✅,Codifica tipo di fattura come da AdE
+N/A | Codice Carica,✅,✅,Codifica codice carica come da AdE
+Tax Nature | Natura fiscale dell'IVA,✅,✅,Codifica natura fiscale dell'IVA come da AdE
+N/A | Codici Assosoftware,✅,❌,Codifica per interscambio

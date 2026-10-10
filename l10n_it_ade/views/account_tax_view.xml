@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_tax_form" model="ir.ui.view">
+        <field name="name">account.tax.form</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Italy AdE">
+                    <group>
+                        <field name="kind_id" options="{'no_create': True}" />
+                        <field
+                            name="law_reference"
+                            attrs="{'required': [('kind_id', '!=', False),('type_tax_use', '!=', 'purchase')], 'invisible': ['|',('kind_id', '=', False),('type_tax_use', '=', 'purchase')]}"
+                        />
+                        <field name="payability" />
+                        <field name="rc_type"/>
+                        <field name="rc_sale_tax_id" attrs="{'invisible': [('type_tax_use', '=', 'sale')]}"/>
+                        <field name="rc_purchase_tax_id" attrs="{'invisible': [('type_tax_use', '=', 'purchase')]}"/>
+                        <field name="assosoftware_id" options="{'no_create': True}" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,1 @@
+Gestione lettere di intento

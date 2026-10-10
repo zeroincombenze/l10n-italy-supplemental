@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="seq_lettera_intento" model="ir.sequence">
+        <field name="name">Lettera d'intento</field>
+        <field name="code">italy.lettera.intento</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

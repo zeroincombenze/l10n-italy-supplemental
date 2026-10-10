@@ -1,0 +1,3 @@
+Logo | Logo,Certification | Certificazione,Date,Expiration date,Notes(s)
+|xml\_schema|,`ISO + Agenzia delle Entrate <http://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Strumenti/Specifiche+tecniche/Specifiche+tecniche+comunicazioni/Fatture+e+corrispettivi+ST/>`__,01-06-2017,31-12-2026,Validazione contro schema xml
+|FatturaPA|,`FatturaPA <https://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/?page=schedecomunicazioni/>`__,01-06-2017,31-12-2026,Controllo tramite sito Agenzia delle Entrate

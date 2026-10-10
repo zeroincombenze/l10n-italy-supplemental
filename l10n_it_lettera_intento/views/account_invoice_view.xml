@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="dichiarazione_intento_invoice_form" model="ir.ui.view">
+        <field name="name">dichiarazione.intento.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="fiscal_position_id" position="after">
+                <field name="lettera_intento_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_invoice_intento_search" model="ir.ui.view">
+        <field name="name">account.invoice.intento.search</field>
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <search string="Lettere di intento">
+                <filter string="Ft. con lettera d'intento" domain="[('lettera_intento','!=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

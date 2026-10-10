@@ -1,0 +1,192 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_it_lettera_intento
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (10.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-05 07:50+0000\n"
+"PO-Revision-Date: 2024-03-05 09:03+0100\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_customer_autmin
+msgid "Autorizzazione ministeriale"
+msgstr "Autorizzazione ministeriale"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_plafond_avaiable
+msgid "Avaiable Plafond"
+msgstr "Plafond disponibile"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model,name:l10n_it_lettera_intento.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.view_account_config_settings
+msgid "Configuration"
+msgstr "Configurazione"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_customer_date
+msgid "Customer Date"
+msgstr "Data cliente"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_customer_ref
+msgid "Customer Ref."
+msgstr "Protocollo cliente."
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_date
+msgid "Date"
+msgstr "Data"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model,name:l10n_it_lettera_intento.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Posizione fiscale"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.account_invoice_intento_search
+msgid "Ft. con lettera d'intento"
+msgstr "Ft. con lettera d'intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model,name:l10n_it_lettera_intento.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_account_fiscal_position_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_account_invoice_lettera_intento
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.view_account_config_settings
+msgid "Lettera di intento"
+msgstr "Lettea di intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.account_invoice_intento_search
+msgid "Lettere di intento"
+msgstr "Letter di intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_account_config_settings_text_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_res_company_text_lettera_intento
+msgid "Note lettera intento"
+msgstr "Nota lettera intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_account_invoice_lettera_intento_id
+msgid "Num. Lettera di intento"
+msgstr "Num. Lettea di intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_partner_id
+msgid "Partner"
+msgstr "Nominativo"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_plafond
+msgid "Plafond"
+msgstr "Plafond"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.actions.act_window,name:l10n_it_lettera_intento.action_lettera_intento
+#: model:ir.ui.menu,name:l10n_it_lettera_intento.menu_lettera_intento
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.lettera_intento_tree
+#: model:ir.ui.view,arch_db:l10n_it_lettera_intento.lettera_intento_view
+msgid "Registro lettere d'intento"
+msgstr "Registro lettere d'intento"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,help:l10n_it_lettera_intento.field_account_config_settings_text_lettera_intento
+#: model:ir.model.fields,help:l10n_it_lettera_intento.field_res_company_text_lettera_intento
+msgid ""
+"Testo da inserire in fattura; può essere completato con:\n"
+"%(ns.prot)s Protocollo interno\n"
+"%(ns.data)s Data interna\n"
+"%(vs.prot)s Protocollo cliente\n"
+"%(vs.data)s Data cliente\n"
+"%(aut.min)s Autorizzazione ministeriale\n"
+msgstr ""
+"Testo da inserire in fattura; può essere completato con:\n"
+"%(ns.prot)s Protocollo interno\n"
+"%(ns.data)s Dati interna\n"
+"%(vs.prot)s Protocollo cliente\n"
+"%(vs.data)s Dati cliente\n"
+"%(aut.min)s Autorizzazione ministeriale\n"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model.fields,field_description:l10n_it_lettera_intento.field_italy_lettera_intento_plafond_used
+msgid "Used Plafond"
+msgstr "Plafond utilizzato"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model,name:l10n_it_lettera_intento.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: l10n_it_lettera_intento
+#: model:ir.model,name:l10n_it_lettera_intento.model_italy_lettera_intento
+msgid "italy.lettera.intento"
+msgstr "italy.lettera.intento"
