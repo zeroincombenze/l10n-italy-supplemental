@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2019-23 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2019-26 Zeroincombenze srls <https://www.zeroincombenze.it>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -187,7 +187,9 @@ class ItalyConaiStatementLine(models.Model):
     conai_category_id = fields.Many2one(
         "italy.conai.product.category", string="CONAI Category"
     )
-    conai_exemption_id = fields.Many2one(string="CONAI Exemption")
+    conai_exemption_id = fields.Many2one(
+        "italy.conai.partner.category", string="CONAI Exemption"
+    )
     conai_amount = fields.Float(
         string="CONAI Amount", digits=dp.get_precision("Product Price")
     )
@@ -220,7 +222,9 @@ class ItalyConaiStatementCategory(models.Model):
     conai_category_id = fields.Many2one(
         "italy.conai.product.category", string="CONAI Category"
     )
-    conai_exemption_id = fields.Many2one(string="CONAI Exemption")
+    conai_exemption_id = fields.Many2one(
+        "italy.conai.partner.category", string="CONAI Exemption"
+    )
     conai_amount = fields.Float(
         string="CONAI Amount", digits=dp.get_precision("Product Price")
     )

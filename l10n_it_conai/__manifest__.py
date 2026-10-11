@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2019-24 SHS-AV s.r.l. <https://www.zeroincombenze.it>
+# Copyright 2019-26 Zeroincombenze srls <https://www.zeroincombenze.it>
 #
 # Contributions to development, thanks to:
 # * Antonio Maria Vigliotti <antoniomaria.vigliotti@gmail.com>
@@ -10,9 +10,9 @@
 {
     "name": "CONAI Management",
     "summary": "CONAI data and amount evalutation",
-    "version": "10.0.0.1.16",
+    "version": "10.0.0.1.17",
     "category": "Localization/Italy",
-    "author": "SHS-AV s.r.l.",
+    "author": "Zeroincombenze srls",
     "website": "https://github.com/OCA/l10n-italy",
     "license": "AGPL-3",
     "depends": [

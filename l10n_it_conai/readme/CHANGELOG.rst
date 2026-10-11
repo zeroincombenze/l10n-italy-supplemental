@@ -1,3 +1,8 @@
+10.0.0.1.17 (2026-10-11)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] CONAI statement: exemption field without comodel / Dichiarazione CONAI: campo esenzione senza modello
+
 10.0.0.1.16 (2026-06-04)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
