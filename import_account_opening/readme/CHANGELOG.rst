@@ -1,3 +1,8 @@
+10.0.0.1.8 (2026-10-11)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Missing dependency on account / Dipendenza mancante dal modulo account
+
 10.0.0.1.7 (2022-02-03)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
