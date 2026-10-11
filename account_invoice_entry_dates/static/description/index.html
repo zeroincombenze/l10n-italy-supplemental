@@ -1,0 +1,84 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#162832;">Registration, vat/balance application dates / Date di registrazione fatture</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/en_US.png" alt="English"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module allows to specify some fiscal dates on invoices.
+<p align="justify">
+Date field list:
+</p><p align="justify">
+<ul>
+<li>standard Odoo date is called registration date (both sale and purchase invoices)</li>
+<li>date_apply_vat is a new field to declare when vat is applied (only purchase invoices)</li>
+<li>date_apply_balance is new field to declare when record is evaluated in balance sheet</li>
+</ul>
+</p><p align="justify">
+Notes:
+</p><p align="justify">
+<ul>
+<li>This software is like account_invoice_entry_date module of Italian OCA group</li>
+<li>Italian OCA module use a new field called registration_date while this module uses tha standard Odoo "date" field</li>
+<li>On purchase journal, date is free, without checks</li>
+<li>On sale journal, date is the same of invoice_date and it is read-only</li>
+<li>Above rule may be disableb by journal configuration</li>
+<li>default value of date_apply_vat and date_apply_balance are the same of the date; end-user can update the field</li>
+</ul>
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="https://raw.githubusercontent.com/zeroincombenze/grymb/master/flags/it_IT.png" alt="Italiano"/>
+            </p>
+            <p class="oe_mt16" align="justify">Date di registrazione fatture
+<p align="justify">
+Questo modulo permette di registrare alcune date inerenti la registrazione fatture.
+</p><p align="justify">
+La lista delle date &#232; la seguente:
+</p><p align="justify">
+<ul>
+<li>la data contabile, standard Odoo &#232; chiamata di registrazione</li>
+<li>date_apply_vat &#232; un nuovo campo che dichiara la data di competenza dell'IVA</li>
+<li>date_apply_balance &#232; un nuovo cmapo che dichiara la data di competenza a bilancio</li>
+</ul>
+</p><p align="justify">
+Note:
+</p><p align="justify">
+<ul>
+<li>Questo software &#232; simile al modulo account_invoice_entry_date del gruppo italiano OCA</li>
+<li>Il modulo OCA italiano utiliza un nuovo campo chiamato registration_date (data di registrazione) menrte questo modulo rinomina il campo standard di Odoo</li>
+<li>Nel registro degli acquisti la data di registrazione &#232; libera, senza controlli</li>
+<li>Nel registro delle vendite la data di registrazione &#232; identica alla data fattura ed &#232; in sola lettura</li>
+<li>La regola precedente pu&#242; essere disabilita con una configurazione del registro</li>
+<li>I valori predefiniti delle date date_apply_vat e date_apply_balance sono quelli della data di registrazione; l'operatore ha facolt&#224; di modifica</li>
+</ul>
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator"/>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16">Authors / Autori:</p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it/">SHS-AV s.r.l.</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16">Contributors / Collaboratori:</p>
+            <p class="oe_mt16"><ul>
+<li>Antonio Maria Vigliotti &lt;antoniomaria.vigliotti@gmail.com&gt;</li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of l10n-italy project.</p>
+    </div>
+</section>
