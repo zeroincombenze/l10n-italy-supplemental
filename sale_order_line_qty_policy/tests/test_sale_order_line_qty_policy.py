@@ -28,7 +28,7 @@ TEST_PRODUCT_TEMPLATE = {
         "type": "service",
         "track_service": "manual",
         "invoice_policy": "order",
-        "auto_line_invoiced": True,
+        "auto_line_invoiced": "always",
     },
     # Product without any policy
     "z0bug.plain_template": {
@@ -250,7 +250,7 @@ class TestSaleOrderLineQtyPolicy(SingleTransactionCase):
         order = self.resource_browse("z0bug.order_01")
         order.action_confirm()
         line = order.order_line
-        self.assertTrue(line.product_id.auto_line_invoiced)
+        self.assertEqual(line.product_id.auto_line_invoiced, "always")
         self.assertEqual(line.qty_to_invoice, 0.0)
         self.assertEqual(line.invoice_status, "invoiced")
         self.assertEqual(order.invoice_status, "invoiced")

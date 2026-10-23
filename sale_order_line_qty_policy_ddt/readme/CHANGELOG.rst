@@ -1,3 +1,15 @@
+10.0.0.1.3 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Dropping a free line of a product whose policy is *Only if 0* - i.e.
+  the carriage charge of a free delivery - from a draft invoice declares its
+  delivery note line invoiced instead of giving it back to be invoiced: the
+  delivery note and the sale order were left to be invoiced for ever, with
+  nothing left to bill
+* [IMP] The *Auto declare invoiced* policy of the product is read as a
+* [QUA] Test coverage 75% (279: 69+210) [0 TestPoints] - quality rating 43 (target 100)
+  selection: only *Always* declares every line invoiced
+
 10.0.0.1.2 (2026-09-04)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -10,8 +10,15 @@ so it can be declared once for a whole family of products. The threshold of the
 product wins; the one of the category is used only when the product does not
 declare its own. Leave both to 0 to disable the policy.
 
-* **Auto declare invoiced**: check it to declare invoiced every sale order line
-  of this product.
+* **Auto declare invoiced**: when the lines of this product are declared
+  invoiced on their own:
+
+  * *Never* (default): usual Odoo behaviour;
+  * *Only if 0*: a line without price dropped from a draft invoice is declared
+    invoiced instead of going back to be invoiced, i.e. the carriage charge of
+    a free delivery. Applied by `sale_order_line_qty_policy_ddt` to the
+    delivery note lines;
+  * *Always*: every sale order line of this product is declared invoiced.
 
 Both fields are declared on the product template, so the policy applies to all
 the variants of the product.

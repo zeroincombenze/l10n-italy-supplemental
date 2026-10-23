@@ -12,7 +12,7 @@ Lo stesso risultato si ottiene da codice con i metodi
 Il campo tecnico ``line_invoiced`` è memorizzato e calcolato: è vero quando
 dalla riga di DdT è stata creata una riga di fattura, oppure la riga è stata
 dichiarata fatturata, oppure il prodotto ha la politica *Dichiara
-automaticamente fatturato*, oppure **la riga d'ordine di vendita è stata
+automaticamente fatturato* impostata a *Sempre*, oppure **la riga d'ordine di vendita è stata
 dichiarata fatturata**. Quest'ultimo caso è lo scopo del modulo ponte: una
 decisione presa sull'ordine non viene mai contraddetta dal DdT, che
 altrimenti addebiterebbe al cliente quanto l'ordine dichiara già fatturato.
@@ -87,3 +87,17 @@ la dichiarazione la quantità torna da fatturare.
 
 Nulla viene scritto a mano sulla riga d'ordine: la quantità è calcolata,
 quindi segue da sola i DdT.
+
+Fa eccezione una **riga gratuita** eliminata da una fattura in bozza, quando
+il suo prodotto ha la politica *Dichiara automaticamente fatturato* impostata
+a *Solo se 0*: quando sia la riga di DdT sia la riga di fattura non hanno
+prezzo - il caso tipico è la spedizione in porto franco - l'utente la rimuove
+perché non c'è nulla da addebitare, quindi la riga di DdT viene dichiarata
+fatturata anziché tornare da fatturare. Il DdT conserva la sua fattura e la
+riga d'ordine risulta definita, esattamente come se la riga fosse stata
+dichiarata fatturata a mano. Una riga con un prezzo su uno dei due documenti,
+o una riga di un prodotto con un'altra politica, torna invece da fatturare -
+un prezzo a 0 non prova che la riga sia gratuita, perché l'importo di un
+prodotto come il CONAI viene rivalutato in fattura - e l'eliminazione
+dell'intera fattura restituisce tutte le righe, comprese quelle gratuite,
+perché il DdT verrà fatturato di nuovo.

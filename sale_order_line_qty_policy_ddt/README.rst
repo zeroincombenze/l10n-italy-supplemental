@@ -1,5 +1,5 @@
 ===================================================================================================================
-|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.2
+|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.3
 ===================================================================================================================
 
 **Bridge module: quantity policy applied to DdT based invoices**
@@ -74,8 +74,10 @@ configured.
 The policies declared on the product by `sale_order_line_qty_policy` are the
 very same ones used here:
 
-* **Auto declare invoiced**: every delivery note line of this product is
-  considered invoiced, exactly as every sale order line of it is.
+* **Auto declare invoiced**: set to *Always*, every delivery note line of
+  this product is considered invoiced, exactly as every sale order line of it
+  is; set to *Only if 0*, a line without price dropped from a draft invoice is
+  declared invoiced instead of going back to be invoiced - see *Usage*.
 
 The **Delivered threshold (%)** is not evaluated on the delivery note: the
 threshold compares the ordered quantity with the delivered one and the
@@ -99,7 +101,8 @@ The same result can be obtained from code with the methods
 
 The technical field ``line_invoiced`` is stored and computed: it is true when
 an invoice line was created from the delivery note line, or the line was
-declared invoiced, or the product carries the *Auto declare invoiced* policy,
+declared invoiced, or the product carries the *Auto declare invoiced* policy
+set to *Always*,
 or the **sale order line was declared invoiced**. That last case is the point
 of the bridge: a decision taken on the order is never contradicted by the
 delivery note, which would otherwise bill the customer for what the order
@@ -174,6 +177,20 @@ declaration gives the quantity back to be invoiced.
 
 Nothing is written on the sale order line by hand: the quantity is computed,
 so it follows the delivery notes on its own.
+
+A **free line** dropped from a draft invoice is the exception, when its
+product carries the *Auto declare invoiced* policy set to *Only if 0*: when
+both the delivery note line and the invoice line carry no price - the carriage
+charge of a free delivery is the common case - the user removes it because
+there is nothing to bill, so the delivery note line is declared invoiced
+instead of going back to be invoiced. The delivery note keeps its invoice and
+the sale order line is settled, exactly as if the line had been declared
+invoiced by hand. A line carrying a price on either document, or a line of a
+product with any other policy, still goes back to be invoiced - a price of 0
+is no proof of a free line, the amount of a product such as CONAI being
+evaluated again at invoice level - and deleting the whole invoice gives every
+line back, free ones included, because the delivery note is going to be
+invoiced again.
 
 
 
@@ -272,6 +289,18 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.3 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] Dropping a free line of a product whose policy is *Only if 0* - i.e.
+  the carriage charge of a free delivery - from a draft invoice declares its
+  delivery note line invoiced instead of giving it back to be invoiced: the
+  delivery note and the sale order were left to be invoiced for ever, with
+  nothing left to bill
+* [IMP] The *Auto declare invoiced* policy of the product is read as a
+* [QUA] Test coverage 75% (279: 69+210) [0 TestPoints] - quality rating 43 (target 100)
+  selection: only *Always* declares every line invoiced
+
 10.0.0.1.2 (2026-09-04)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -369,7 +398,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-09-04
+Last Update / Ultimo aggiornamento: 2026-10-23
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

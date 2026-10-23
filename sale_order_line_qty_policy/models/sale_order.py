@@ -224,7 +224,8 @@ class SaleOrderLine(models.Model):
     def _is_line_invoiced(self):
         """Return True when the line has to be considered fully invoiced."""
         self.ensure_one()
-        return bool(self.force_invoiced or self.product_id.auto_line_invoiced)
+        return bool(self.force_invoiced
+                    or self.product_id.auto_line_invoiced == "always")
 
     @api.depends("force_delivered", "qty_delivered", "product_uom_qty",
                  "state", "product_id.delivered_threshold",

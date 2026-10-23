@@ -1,5 +1,5 @@
 =======================================================================================================
-|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.6
+|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.7
 =======================================================================================================
 
 **Declare sale order line delivered or invoiced by product policy**
@@ -24,8 +24,10 @@ invoiced, either manually or by a policy declared on the product.
 
 Two policies are available on the product:
 
-* **Auto declare invoiced**: every line of this product is considered fully
-  invoiced as soon as the order is confirmed. This is required by modules
+* **Auto declare invoiced**: set to *Always*, every line of this product is
+  considered fully invoiced as soon as the order is confirmed; set to *Only if
+  0*, only a line without price dropped from the invoice is, i.e. the carriage
+  charge of a free delivery. *Always* is required by modules
   managing tax products, i.e. the environmental contribution (CONAI), whose
   amount is evaluated again at invoice level: the invoiced quantity will never
   match the ordered one, so the order would be left in an incomplete or wrong
@@ -52,9 +54,11 @@ manualmente oppure tramite una politica dichiarata sul prodotto.
 
 Sul prodotto sono disponibili due politiche:
 
-* **Dichiara automaticamente fatturato**: ogni riga di questo prodotto è
-  considerata interamente fatturata alla conferma dell'ordine. Questa funzione
-  è richiesta dai moduli che gestiscono prodotti di tipo imposta, come il
+* **Dichiara automaticamente fatturato**: impostato a *Sempre*, ogni riga di
+  questo prodotto è considerata interamente fatturata alla conferma
+  dell'ordine; impostato a *Solo se 0*, lo è solo una riga senza prezzo
+  eliminata dalla fattura, ad esempio la spesa di spedizione di una consegna
+  gratuita. *Sempre* è richiesto dai moduli che gestiscono prodotti di tipo imposta, come il
   contributo ambientale (CONAI), il cui importo viene rivalutato a livello di
   fattura: la quantità fatturata non coinciderà mai con quella ordinata e
   l'ordine resterebbe in uno stato incompleto o errato.
@@ -91,8 +95,15 @@ so it can be declared once for a whole family of products. The threshold of the
 product wins; the one of the category is used only when the product does not
 declare its own. Leave both to 0 to disable the policy.
 
-* **Auto declare invoiced**: check it to declare invoiced every sale order line
-  of this product.
+* **Auto declare invoiced**: when the lines of this product are declared
+  invoiced on their own:
+
+  * *Never* (default): usual Odoo behaviour;
+  * *Only if 0*: a line without price dropped from a draft invoice is declared
+    invoiced instead of going back to be invoiced, i.e. the carriage charge of
+    a free delivery. Applied by `sale_order_line_qty_policy_ddt` to the
+    delivery note lines;
+  * *Always*: every sale order line of this product is declared invoiced.
 
 Both fields are declared on the product template, so the policy applies to all
 the variants of the product.
@@ -235,6 +246,14 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
 
+10.0.0.1.7 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Product policy auto_line_invoiced is now a selection: *Never*
+  (default), *Only if 0* and *Always*; the former flag set is migrated to
+* [QUA] Test coverage 84% (147: 23+124) [602 TestPoints] - quality rating 342 (target 100)
+  *Always*, which behaves as before
+
 10.0.0.1.6 (2026-09-05)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -334,7 +353,7 @@ La distribuzione `Zeroincombenze® <https://www.zeroincombenze.it/>`__ è proget
 
 This module is part of l10n-italy-supplemental project.
 
-Last Update / Ultimo aggiornamento: 2026-09-05
+Last Update / Ultimo aggiornamento: 2026-10-23
 
 .. |Maturity| image:: https://img.shields.io/badge/maturity-Alfa-black.png
     :target: https://odoo-community.org/page/development-status

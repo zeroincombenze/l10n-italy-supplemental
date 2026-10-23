@@ -4,8 +4,11 @@ moduli già configurati.
 Le politiche dichiarate sul prodotto da `sale_order_line_qty_policy` sono le
 medesime usate qui:
 
-* **Dichiara automaticamente fatturato**: ogni riga di DdT di questo prodotto
-  è considerata fatturata, esattamente come lo è ogni riga d'ordine.
+* **Dichiara automaticamente fatturato**: impostato a *Sempre*, ogni riga di
+  DdT di questo prodotto è considerata fatturata, esattamente come lo è ogni
+  riga d'ordine; impostato a *Solo se 0*, una riga senza prezzo eliminata da
+  una fattura in bozza viene dichiarata fatturata anziché tornare da
+  fatturare - vedere *Utilizzo*.
 
 La **Soglia di consegna (%)** non è valutata sul DdT: la soglia confronta la
 quantità ordinata con quella consegnata e il DdT *è* la consegna, quindi

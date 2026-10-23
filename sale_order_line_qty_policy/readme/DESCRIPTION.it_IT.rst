@@ -8,9 +8,11 @@ manualmente oppure tramite una politica dichiarata sul prodotto.
 
 Sul prodotto sono disponibili due politiche:
 
-* **Dichiara automaticamente fatturato**: ogni riga di questo prodotto è
-  considerata interamente fatturata alla conferma dell'ordine. Questa funzione
-  è richiesta dai moduli che gestiscono prodotti di tipo imposta, come il
+* **Dichiara automaticamente fatturato**: impostato a *Sempre*, ogni riga di
+  questo prodotto è considerata interamente fatturata alla conferma
+  dell'ordine; impostato a *Solo se 0*, lo è solo una riga senza prezzo
+  eliminata dalla fattura, ad esempio la spesa di spedizione di una consegna
+  gratuita. *Sempre* è richiesto dai moduli che gestiscono prodotti di tipo imposta, come il
   contributo ambientale (CONAI), il cui importo viene rivalutato a livello di
   fattura: la quantità fatturata non coinciderà mai con quella ordinata e
   l'ordine resterebbe in uno stato incompleto o errato.

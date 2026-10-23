@@ -37,7 +37,11 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
         self.other_product = self._create_product("Test DdT other product", {})
         # Product recomputed at invoice level, i.e. CONAI contribution
         self.tax_product = self._create_product("Test DdT CONAI product", {
-            "auto_line_invoiced": True,
+            "auto_line_invoiced": "always",
+        })
+        # Product whose free lines need no invoice, i.e. carriage charge
+        self.carriage_product = self._create_product("Test DdT carriage", {
+            "auto_line_invoiced": "only0",
         })
 
     def _create_product(self, name, vals):
@@ -73,7 +77,7 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
     def _create_ddt(self, products, reason=None):
         return self.ddt_model.create(self._ddt_values(products, reason=reason))
 
-    def _create_order(self, product, qty=10.0):
+    def _create_order(self, product, qty=10.0, price=5.0):
         order = self.env["sale.order"].create({
             "partner_id": self.customer.id,
             "order_line": [(0, 0, {
@@ -81,7 +85,7 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
                 "name": product.name,
                 "product_uom_qty": qty,
                 "product_uom": product.uom_id.id,
-                "price_unit": 5.0,
+                "price_unit": price,
             })],
         })
         order.action_confirm()
@@ -536,3 +540,108 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
         self.assertEqual(sol.qty_ddt_declared, 0.0)
         self.assertEqual(sol.qty_to_invoice, 0.0)
         self.assertEqual(sol.invoice_status, "invoiced")
+
+    def test_24_deleted_free_invoice_line_declares_its_line(self):
+        """Dropping a free line from the invoice settles its DdT line.
+
+        Nothing was to be billed, so giving the line back to be invoiced
+        would leave the delivery note open for ever; the line is declared
+        invoiced and the delivery note keeps its invoice.
+        """
+        ddt = self._create_ddt([self.carriage_product, self.other_product])
+        line = self._line_of(ddt, self.carriage_product)
+        other = self._line_of(ddt, self.other_product)
+        line.price_unit = 0.0
+        ddt.set_done()
+        ddt.action_invoice_create()
+        invoice = other.invoice_line_id.invoice_id
+        self.assertEqual(line.invoice_line_id.price_unit, 0.0)
+
+        line.invoice_line_id.unlink()
+        self.assertFalse(line.invoice_line_id)
+        self.assertTrue(line.force_invoiced)
+        self.assertTrue(line.line_invoiced)
+        self.assertFalse(line.allow_invoice_line())
+        self.assertEqual(ddt.invoice_id, invoice)
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)
+
+    def test_25_deleted_charged_invoice_line_reopens_its_line(self):
+        """A line charged on either document still goes back to be invoiced.
+
+        The DdT line is free but the invoice line was given a price: what
+        the user dropped is a charge, which has to be billed.
+        """
+        ddt = self._create_ddt([self.carriage_product, self.other_product])
+        line = self._line_of(ddt, self.carriage_product)
+        line.price_unit = 0.0
+        ddt.set_done()
+        ddt.action_invoice_create()
+        line.invoice_line_id.price_unit = 3.0
+
+        line.invoice_line_id.unlink()
+        self.assertFalse(line.force_invoiced)
+        self.assertFalse(line.line_invoiced)
+        self.assertFalse(ddt.invoice_id)
+        self.assertEqual(ddt.invoice_status, "to invoice")
+
+    def test_26_deleted_invoice_reopens_free_lines(self):
+        """Deleting the whole invoice gives back free lines as well.
+
+        The user is going to invoice the delivery note again, so nothing
+        may be declared on its behalf.
+        """
+        ddt = self._create_ddt([self.carriage_product])
+        ddt.line_ids.price_unit = 0.0
+        ddt.set_done()
+        invoice = self.env["account.invoice"].browse(
+            ddt.action_invoice_create())
+
+        invoice.unlink()
+        self.assertFalse(ddt.line_ids.force_invoiced)
+        self.assertFalse(ddt.line_ids.line_invoiced)
+        self.assertEqual(ddt.invoice_status, "to invoice")
+
+    def test_27_deleted_free_invoice_line_closes_the_order_line(self):
+        """The order line of a dropped free line is settled too."""
+        order = self._create_order(self.carriage_product, price=0.0)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        sol = self._order_line_of(order, self.carriage_product)
+        line = ddt.line_ids.filtered(lambda ddt_line: ddt_line.sale_line_id)
+        self.assertEqual(line.price_unit, 0.0)
+        ddt.action_invoice_create()
+        self.assertEqual(sol.qty_invoiced, 10.0)
+
+        line.invoice_line_id.unlink()
+        self.assertTrue(line.force_invoiced)
+        self.assertEqual(sol.qty_invoiced, 0.0)
+        self.assertEqual(sol.qty_ddt_declared, 10.0)
+        self.assertEqual(sol.qty_to_invoice, 0.0)
+        self.assertEqual(sol.invoice_status, "invoiced")
+
+    def test_28_free_line_of_a_plain_product_reopens(self):
+        """Without the "Only if 0" policy a free line goes back as usual.
+
+        A price of 0 is no proof that nothing has to be billed: the amount
+        of a product such as CONAI is evaluated again at invoice level.
+        """
+        ddt = self._create_ddt([self.product, self.other_product])
+        line = self._line_of(ddt, self.product)
+        line.price_unit = 0.0
+        ddt.set_done()
+        ddt.action_invoice_create()
+
+        line.invoice_line_id.unlink()
+        self.assertFalse(line.force_invoiced)
+        self.assertFalse(line.line_invoiced)
+        self.assertFalse(ddt.invoice_id)
+        self.assertEqual(ddt.invoice_status, "to invoice")
+
+    def test_29_only0_policy_is_not_auto_invoiced(self):
+        """"Only if 0" declares nothing until a line is dropped."""
+        ddt = self._create_ddt([self.carriage_product])
+        ddt.line_ids.price_unit = 0.0
+        ddt.set_done()
+        self.assertFalse(ddt.line_ids.line_invoiced)
+        self.assertEqual(ddt.invoice_status, "to invoice")

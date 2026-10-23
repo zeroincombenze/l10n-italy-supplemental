@@ -46,7 +46,7 @@ class StockPickingPackagePreparationLine(models.Model):
             return True
         if self.force_invoiced:
             return True
-        if self.product_id.auto_line_invoiced:
+        if self.product_id.auto_line_invoiced == "always":
             return True
         return (bool(self.sale_line_id)
                 and self.sale_line_id._is_line_invoiced())

@@ -28,13 +28,25 @@ class ProductTemplate(models.Model):
              "Leave 0 to inherit the threshold declared on the product"
              " category.",
     )
-    auto_line_invoiced = fields.Boolean(
+    auto_line_invoiced = fields.Selection(
+        [
+            ("never", "Never"),
+            ("only0", "Only if 0"),
+            ("always", "Always"),
+        ],
         string="Auto declare invoiced",
-        default=False,
-        help="Sale order lines of this product are automatically declared fully"
-             " invoiced, whatever the invoiced quantity is.\n"
-             "Use this policy for products whose amount is evaluated again at"
-             " invoice level, i.e. the environmental contribution (CONAI), so"
-             " the order is not kept open waiting for an invoice which will"
-             " never match the ordered quantity.",
+        default="never",
+        help="When sale order lines of this product are automatically"
+             " declared fully invoiced, whatever the invoiced quantity is.\n"
+             "* Never: usual Odoo behaviour;\n"
+             "* Only if 0: a line without price dropped from a draft invoice"
+             " is declared invoiced instead of going back to be invoiced,"
+             " i.e. the carriage charge of a free delivery; it needs a"
+             " module which applies it, such as"
+             " sale_order_line_qty_policy_ddt;\n"
+             "* Always: every line is declared invoiced at once. Use this"
+             " policy for products whose amount is evaluated again at invoice"
+             " level, i.e. the environmental contribution (CONAI), so the"
+             " order is not kept open waiting for an invoice which will never"
+             " match the ordered quantity.",
     )

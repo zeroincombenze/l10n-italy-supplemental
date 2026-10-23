@@ -1,3 +1,11 @@
+10.0.0.1.7 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [IMP] Product policy auto_line_invoiced is now a selection: *Never*
+  (default), *Only if 0* and *Always*; the former flag set is migrated to
+* [QUA] Test coverage 84% (147: 23+124) [602 TestPoints] - quality rating 342 (target 100)
+  *Always*, which behaves as before
+
 10.0.0.1.6 (2026-09-05)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

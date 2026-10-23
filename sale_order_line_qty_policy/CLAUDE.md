@@ -26,7 +26,7 @@ no wizard, no data, no demo, no `i18n/`.
 | Model | Field | Kind | Role |
 |---|---|---|---|
 | `product.template` | `delivered_threshold` | Float (`Discount` precision) | max accepted %-deviation ordered↔delivered; `0` = inherit the category |
-| `product.template` | `auto_line_invoiced` | Boolean | every line of this product counts as fully invoiced |
+| `product.template` | `auto_line_invoiced` | Selection `never`/`only0`/`always`, default `never` | `always`: every line counts as fully invoiced; `only0`: read only by `sale_order_line_qty_policy_ddt` (a €0 DdT line dropped from a draft invoice is declared invoiced); `never`/NULL: plain Odoo. Boolean until 10.0.0.1.7, converted in place by `migrations/10.0.0.1.7/pre-migration.py` (`true`→`always`, else `never`) |
 | `product.category` | `delivered_threshold` | Float | default threshold for the whole family; `0` = policy off |
 | `sale.order.line` | `force_delivered` | Boolean, `copy=False` | "declared delivered" by hand |
 | `sale.order.line` | `force_invoiced` | Boolean, `copy=False` | "declared invoiced" by hand → line drops out of invoicing |
@@ -57,7 +57,7 @@ raises that precision.
 
 ### 2. Invoice status (`_get_to_invoice_qty` / `_compute_invoice_status` overrides)
 
-`_is_line_invoiced()` = `force_invoiced or product_id.auto_line_invoiced`, and it zeroes
+`_is_line_invoiced()` = `force_invoiced or product_id.auto_line_invoiced == "always"` (never test the field for truth: `"never"` is a truthy string), and it zeroes
 `qty_to_invoice`, which is what makes `action_invoice_create` skip the line. `_compute_invoice_status`
 then fixes three verdicts standard Odoo would get wrong, **in this order**:
 
@@ -201,7 +201,7 @@ Strike an item when you fix it rather than leaving it to be rediscovered.
    confirmed lines; that path is untested — verify before relying on it, and consider a small
    `write()` override on the two carriers if it turns out not to propagate.
 3. **CONAI integration is configuration, not code.** Nothing sets `auto_line_invoiced`
-   automatically; `l10n_it_conai`'s product (`l10n_it_conai.product_conai`, referenced as
+   automatically (it must be `always`); `l10n_it_conai`'s product (`l10n_it_conai.product_conai`, referenced as
    `company.conai_product_id`) must be flagged by hand. It is a `service`, so it is skipped by
    `_is_qty_policy_line()` on the delivery side — the two halves are coherent, but a user who forgets
    the flag gets the exact symptom the module was written to cure.

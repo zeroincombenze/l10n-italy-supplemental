@@ -38,8 +38,10 @@ invoiced, either manually or by a policy declared on the product.
 Two policies are available on the product:
 </p><p align="justify">
 <ul>
-<li><b>Auto declare invoiced</b>: every line of this product is considered fully
-  invoiced as soon as the order is confirmed. This is required by modules
+<li><b>Auto declare invoiced</b>: set to <i>Always</i>, every line of this product is
+  considered fully invoiced as soon as the order is confirmed; set to <i>Only if
+  0</i>, only a line without price dropped from the invoice is, i.e. the carriage
+  charge of a free delivery. <i>Always</i> is required by modules
   managing tax products, i.e. the environmental contribution (CONAI), whose
   amount is evaluated again at invoice level: the invoiced quantity will never
   match the ordered one, so the order would be left in an incomplete or wrong
@@ -74,9 +76,11 @@ manualmente oppure tramite una politica dichiarata sul prodotto.
 Sul prodotto sono disponibili due politiche:
 </p><p align="justify">
 <ul>
-<li><b>Dichiara automaticamente fatturato</b>: ogni riga di questo prodotto &#232;
-  considerata interamente fatturata alla conferma dell'ordine. Questa funzione
-  &#232; richiesta dai moduli che gestiscono prodotti di tipo imposta, come il
+<li><b>Dichiara automaticamente fatturato</b>: impostato a <i>Sempre</i>, ogni riga di
+  questo prodotto &#232; considerata interamente fatturata alla conferma
+  dell'ordine; impostato a <i>Solo se 0</i>, lo &#232; solo una riga senza prezzo
+  eliminata dalla fattura, ad esempio la spesa di spedizione di una consegna
+  gratuita. <i>Sempre</i> &#232; richiesto dai moduli che gestiscono prodotti di tipo imposta, come il
   contributo ambientale (CONAI), il cui importo viene rivalutato a livello di
   fattura: la quantit&#224; fatturata non coincider&#224; mai con quella ordinata e
   l'ordine resterebbe in uno stato incompleto o errato.</li>
@@ -122,9 +126,16 @@ product wins; the one of the category is used only when the product does not
 declare its own. Leave both to 0 to disable the policy.
 </p><p align="justify">
 <ul>
-<li><b>Auto declare invoiced</b>: check it to declare invoiced every sale order line
-  of this product.</li>
+<li><b>Auto declare invoiced</b>: when the lines of this product are declared
+  invoiced on their own:</li>
 </ul>
+</p><p align="justify">
+  * <i>Never</i> (default): usual Odoo behaviour;
+  * <i>Only if 0</i>: a line without price dropped from a draft invoice is declared
+    invoiced instead of going back to be invoiced, i.e. the carriage charge of
+    a free delivery. Applied by `sale_order_line_qty_policy_ddt` to the
+    delivery note lines;
+  * <i>Always</i>: every sale order line of this product is declared invoiced.
 </p><p align="justify">
 Both fields are declared on the product template, so the policy applies to all
 the variants of the product.
@@ -152,9 +163,16 @@ quando il prodotto non dichiara la propria. Lasciare entrambe a 0 per
 disabilitare la politica.
 </p><p align="justify">
 <ul>
-<li><b>Dichiara automaticamente fatturato</b>: selezionare per dichiarare fatturata
-  ogni riga d'ordine di questo prodotto.</li>
+<li><b>Dichiara automaticamente fatturato</b>: quando le righe di questo prodotto
+  sono dichiarate fatturate in automatico:</li>
 </ul>
+</p><p align="justify">
+  * <i>Mai</i> (predefinito): comportamento standard di Odoo;
+  * <i>Solo se 0</i>: una riga senza prezzo eliminata da una fattura in bozza viene
+    dichiarata fatturata anzich&#233; tornare da fatturare, ad esempio la spesa di
+    spedizione di una consegna gratuita. Applicato da
+    `sale_order_line_qty_policy_ddt` alle righe di DdT;
+  * <i>Sempre</i>: ogni riga d'ordine di questo prodotto &#232; dichiarata fatturata.
 </p><p align="justify">
 Entrambi i campi sono dichiarati sul modello prodotto, quindi la politica vale
 per tutte le varianti del prodotto.
@@ -265,8 +283,17 @@ soglia del prodotto, oppure la riga &#232; stata dichiarata consegnata.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.6 (2026-09-05)</h4>
+<h4>10.0.0.1.7 (2026-10-23)</h4>
 <p align="justify">
+<ul>
+<li>[IMP] Product policy auto_line_invoiced is now a selection: <i>Never</i>
+  (default), <i>Only if 0</i> and <i>Always</i>; the former flag set is migrated to</li>
+<li>[QUA] Test coverage 84% (147: 23+124) [602 TestPoints] - quality rating 342 (target 100)
+  <i>Always</i>, which behaves as before</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.6 (2026-09-05)</h4>
+</p><p align="justify">
 <ul>
 <li>[QUA] Test coverage 84% (148: 23+125) [0 TestPoints] - quality rating 48 (target 100)</li>
 <li>[IMP] Tests rewritten on the z0bug_odoo TestEnv declarative harness</li>
@@ -349,6 +376,6 @@ soglia del prodotto, oppure la riga &#232; stata dichiarata consegnata.
     </div>
     <div class="oe_row oe_spaced">
         <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
-        <p>Published information on | Informazioni pubblicate: 2026-09-05</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-23</p>
     </div>
 </section>

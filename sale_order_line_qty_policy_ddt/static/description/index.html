@@ -95,8 +95,10 @@ The policies declared on the product by `sale_order_line_qty_policy` are the
 very same ones used here:
 </p><p align="justify">
 <ul>
-<li><b>Auto declare invoiced</b>: every delivery note line of this product is
-  considered invoiced, exactly as every sale order line of it is.</li>
+<li><b>Auto declare invoiced</b>: set to <i>Always</i>, every delivery note line of
+  this product is considered invoiced, exactly as every sale order line of it
+  is; set to <i>Only if 0</i>, a line without price dropped from a draft invoice is
+  declared invoiced instead of going back to be invoiced - see <i>Usage</i>.</li>
 </ul>
 </p><p align="justify">
 The <b>Delivered threshold (%)</b> is not evaluated on the delivery note: the
@@ -116,8 +118,11 @@ Le politiche dichiarate sul prodotto da `sale_order_line_qty_policy` sono le
 medesime usate qui:
 </p><p align="justify">
 <ul>
-<li><b>Dichiara automaticamente fatturato</b>: ogni riga di DdT di questo prodotto
-  &#232; considerata fatturata, esattamente come lo &#232; ogni riga d'ordine.</li>
+<li><b>Dichiara automaticamente fatturato</b>: impostato a <i>Sempre</i>, ogni riga di
+  DdT di questo prodotto &#232; considerata fatturata, esattamente come lo &#232; ogni
+  riga d'ordine; impostato a <i>Solo se 0</i>, una riga senza prezzo eliminata da
+  una fattura in bozza viene dichiarata fatturata anzich&#233; tornare da
+  fatturare - vedere <i>Utilizzo</i>.</li>
 </ul>
 </p><p align="justify">
 La <b>Soglia di consegna (%)</b> non &#232; valutata sul DdT: la soglia confronta la
@@ -151,7 +156,8 @@ The same result can be obtained from code with the methods
 </p><p align="justify">
 The technical field <code>line_invoiced</code> is stored and computed: it is true when
 an invoice line was created from the delivery note line, or the line was
-declared invoiced, or the product carries the <i>Auto declare invoiced</i> policy,
+declared invoiced, or the product carries the <i>Auto declare invoiced</i> policy
+set to <i>Always</i>,
 or the <b>sale order line was declared invoiced</b>. That last case is the point
 of the bridge: a decision taken on the order is never contradicted by the
 delivery note, which would otherwise bill the customer for what the order
@@ -228,6 +234,20 @@ declaration gives the quantity back to be invoiced.
 </p><p align="justify">
 Nothing is written on the sale order line by hand: the quantity is computed,
 so it follows the delivery notes on its own.
+</p><p align="justify">
+A <b>free line</b> dropped from a draft invoice is the exception, when its
+product carries the <i>Auto declare invoiced</i> policy set to <i>Only if 0</i>: when
+both the delivery note line and the invoice line carry no price - the carriage
+charge of a free delivery is the common case - the user removes it because
+there is nothing to bill, so the delivery note line is declared invoiced
+instead of going back to be invoiced. The delivery note keeps its invoice and
+the sale order line is settled, exactly as if the line had been declared
+invoiced by hand. A line carrying a price on either document, or a line of a
+product with any other policy, still goes back to be invoiced - a price of 0
+is no proof of a free line, the amount of a product such as CONAI being
+evaluated again at invoice level - and deleting the whole invoice gives every
+line back, free ones included, because the delivery note is going to be
+invoiced again.
 </p></p>
         </div>
         <div class="oe_span6">
@@ -250,7 +270,7 @@ Lo stesso risultato si ottiene da codice con i metodi
 Il campo tecnico <code>line_invoiced</code> &#232; memorizzato e calcolato: &#232; vero quando
 dalla riga di DdT &#232; stata creata una riga di fattura, oppure la riga &#232; stata
 dichiarata fatturata, oppure il prodotto ha la politica <i>Dichiara
-automaticamente fatturato</i>, oppure <b>la riga d'ordine di vendita &#232; stata
+automaticamente fatturato</i> impostata a <i>Sempre</i>, oppure <b>la riga d'ordine di vendita &#232; stata
 dichiarata fatturata</b>. Quest'ultimo caso &#232; lo scopo del modulo ponte: una
 decisione presa sull'ordine non viene mai contraddetta dal DdT, che
 altrimenti addebiterebbe al cliente quanto l'ordine dichiara gi&#224; fatturato.
@@ -327,6 +347,20 @@ la dichiarazione la quantit&#224; torna da fatturare.
 </p><p align="justify">
 Nulla viene scritto a mano sulla riga d'ordine: la quantit&#224; &#232; calcolata,
 quindi segue da sola i DdT.
+</p><p align="justify">
+Fa eccezione una <b>riga gratuita</b> eliminata da una fattura in bozza, quando
+il suo prodotto ha la politica <i>Dichiara automaticamente fatturato</i> impostata
+a <i>Solo se 0</i>: quando sia la riga di DdT sia la riga di fattura non hanno
+prezzo - il caso tipico &#232; la spedizione in porto franco - l'utente la rimuove
+perch&#233; non c'&#232; nulla da addebitare, quindi la riga di DdT viene dichiarata
+fatturata anzich&#233; tornare da fatturare. Il DdT conserva la sua fattura e la
+riga d'ordine risulta definita, esattamente come se la riga fosse stata
+dichiarata fatturata a mano. Una riga con un prezzo su uno dei due documenti,
+o una riga di un prodotto con un'altra politica, torna invece da fatturare -
+un prezzo a 0 non prova che la riga sia gratuita, perch&#233; l'importo di un
+prodotto come il CONAI viene rivalutato in fattura - e l'eliminazione
+dell'intera fattura restituisce tutte le righe, comprese quelle gratuite,
+perch&#233; il DdT verr&#224; fatturato di nuovo.
 </p></p>
         </div>
     </div>
@@ -336,8 +370,21 @@ quindi segue da sola i DdT.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.2 (2026-09-04)</h4>
+<h4>10.0.0.1.3 (2026-10-23)</h4>
 <p align="justify">
+<ul>
+<li>[FIX] Dropping a free line of a product whose policy is <i>Only if 0</i> - i.e.
+  the carriage charge of a free delivery - from a draft invoice declares its
+  delivery note line invoiced instead of giving it back to be invoiced: the
+  delivery note and the sale order were left to be invoiced for ever, with
+  nothing left to bill</li>
+<li>[IMP] The <i>Auto declare invoiced</i> policy of the product is read as a</li>
+<li>[QUA] Test coverage 75% (279: 69+210) [0 TestPoints] - quality rating 43 (target 100)
+  selection: only <i>Always</i> declares every line invoiced</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.2 (2026-09-04)</h4>
+</p><p align="justify">
 <ul>
 <li>[FIX] The invoicing state of the delivery notes already in the database is
   recomputed when the module is installed and when it is upgraded: Odoo
@@ -414,6 +461,6 @@ quindi segue da sola i DdT.
     </div>
     <div class="oe_row oe_spaced">
         <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
-        <p>Published information on | Informazioni pubblicate: 2026-09-04</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-23</p>
     </div>
 </section>

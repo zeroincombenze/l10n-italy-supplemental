@@ -10,7 +10,8 @@ The same result can be obtained from code with the methods
 
 The technical field ``line_invoiced`` is stored and computed: it is true when
 an invoice line was created from the delivery note line, or the line was
-declared invoiced, or the product carries the *Auto declare invoiced* policy,
+declared invoiced, or the product carries the *Auto declare invoiced* policy
+set to *Always*,
 or the **sale order line was declared invoiced**. That last case is the point
 of the bridge: a decision taken on the order is never contradicted by the
 delivery note, which would otherwise bill the customer for what the order
@@ -85,3 +86,17 @@ declaration gives the quantity back to be invoiced.
 
 Nothing is written on the sale order line by hand: the quantity is computed,
 so it follows the delivery notes on its own.
+
+A **free line** dropped from a draft invoice is the exception, when its
+product carries the *Auto declare invoiced* policy set to *Only if 0*: when
+both the delivery note line and the invoice line carry no price - the carriage
+charge of a free delivery is the common case - the user removes it because
+there is nothing to bill, so the delivery note line is declared invoiced
+instead of going back to be invoiced. The delivery note keeps its invoice and
+the sale order line is settled, exactly as if the line had been declared
+invoiced by hand. A line carrying a price on either document, or a line of a
+product with any other policy, still goes back to be invoiced - a price of 0
+is no proof of a free line, the amount of a product such as CONAI being
+evaluated again at invoice level - and deleting the whole invoice gives every
+line back, free ones included, because the delivery note is going to be
+invoiced again.
