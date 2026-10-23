@@ -88,16 +88,19 @@ la dichiarazione la quantità torna da fatturare.
 Nulla viene scritto a mano sulla riga d'ordine: la quantità è calcolata,
 quindi segue da sola i DdT.
 
-Fa eccezione una **riga gratuita** eliminata da una fattura in bozza, quando
-il suo prodotto ha la politica *Dichiara automaticamente fatturato* impostata
-a *Solo se 0*: quando sia la riga di DdT sia la riga di fattura non hanno
-prezzo - il caso tipico è la spedizione in porto franco - l'utente la rimuove
-perché non c'è nulla da addebitare, quindi la riga di DdT viene dichiarata
-fatturata anziché tornare da fatturare. Il DdT conserva la sua fattura e la
-riga d'ordine risulta definita, esattamente come se la riga fosse stata
-dichiarata fatturata a mano. Una riga con un prezzo su uno dei due documenti,
-o una riga di un prodotto con un'altra politica, torna invece da fatturare -
-un prezzo a 0 non prova che la riga sia gratuita, perché l'importo di un
-prodotto come il CONAI viene rivalutato in fattura - e l'eliminazione
-dell'intera fattura restituisce tutte le righe, comprese quelle gratuite,
-perché il DdT verrà fatturato di nuovo.
+Una **riga gratuita** di un prodotto con la politica *Dichiara
+automaticamente fatturato* impostata a *Solo se 0* - il caso tipico è la
+spedizione in porto franco - è considerata subito fatturata, quindi non viene
+mai aggiunta in fattura. Il prezzo è letto sulla riga d'ordine di vendita,
+oppure sulla riga di DdT quando questa non proviene da un ordine. Vale anche
+per una riga di servizio gratuita dell'ordine che non si trova sul DdT, ad
+esempio una spedizione rimossa dal DdT: `l10n_it_ddt` aggiunge tali righe
+alla fattura, ma solo quando resta qualcosa da fatturare. Una riga con un
+prezzo, o una riga di un prodotto con un'altra politica, viene fatturata
+normalmente: un prezzo a 0 non prova che la riga sia gratuita, perché
+l'importo di un prodotto come il CONAI viene rivalutato in fattura.
+
+Una riga gratuita ancora presente in una fattura in bozza, ad esempio creata
+prima che la politica fosse applicata, può esserne eliminata: quando sia la
+riga di DdT sia la riga di fattura non hanno prezzo, la riga di DdT viene
+dichiarata fatturata anziché tornare da fatturare.

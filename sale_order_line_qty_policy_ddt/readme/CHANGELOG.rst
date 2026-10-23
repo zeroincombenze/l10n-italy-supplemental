@@ -1,3 +1,12 @@
+10.0.0.1.4 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] *Only if 0*: a delivery note line without price - the price of its
+  sale order line, when it has one - is invoiced at once and never added to
+  an invoice, even when it was removed from the delivery note; existing
+* [QUA] Test coverage 76% (284: 69+215) [0 TestPoints] - quality rating 43 (target 100)
+  lines are settled on upgrade
+
 10.0.0.1.3 (2026-10-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,3 +1,11 @@
+10.0.0.1.8 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] *Only if 0*: a sale order line without price is declared invoiced at
+  once, so it is never added to an invoice; existing lines are settled on
+* [QUA] Test coverage 85% (152: 23+129) [673 TestPoints] - quality rating 369 (target 100)
+  upgrade
+
 10.0.0.1.7 (2026-10-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

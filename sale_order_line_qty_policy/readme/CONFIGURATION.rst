@@ -14,10 +14,10 @@ declare its own. Leave both to 0 to disable the policy.
   invoiced on their own:
 
   * *Never* (default): usual Odoo behaviour;
-  * *Only if 0*: a line without price dropped from a draft invoice is declared
-    invoiced instead of going back to be invoiced, i.e. the carriage charge of
-    a free delivery. Applied by `sale_order_line_qty_policy_ddt` to the
-    delivery note lines;
+  * *Only if 0*: a line without price is declared invoiced at once, i.e. the
+    carriage charge of a free delivery: it is never added to an invoice.
+    Applied by `sale_order_line_qty_policy_ddt` to the delivery note lines
+    too;
   * *Always*: every sale order line of this product is declared invoiced.
 
 Both fields are declared on the product template, so the policy applies to all

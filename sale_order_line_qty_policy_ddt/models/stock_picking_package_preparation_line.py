@@ -5,6 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 #
 from odoo import api, fields, models
+from odoo.tools.float_utils import float_is_zero
 
 
 class StockPickingPackagePreparationLine(models.Model):
@@ -36,10 +37,14 @@ class StockPickingPackagePreparationLine(models.Model):
     def _is_line_invoiced(self):
         """Return True when the line has to be considered invoiced.
 
-        The three declarations of sale_order_line_qty_policy are honoured
-        here, so that a decision taken on the order is never contradicted by
-        the delivery note: invoicing again what the order declared invoiced
+        The declarations of sale_order_line_qty_policy are honoured here,
+        so that a decision taken on the order is never contradicted by the
+        delivery note: invoicing again what the order declared invoiced
         would bill the customer twice.
+
+        "Only if 0" reads the price of the order line, or the one of the
+        delivery note line when it comes from no order: a free line has
+        nothing to bill.
         """
         self.ensure_one()
         if self.invoice_line_id:
@@ -48,12 +53,20 @@ class StockPickingPackagePreparationLine(models.Model):
             return True
         if self.product_id.auto_line_invoiced == "always":
             return True
-        return (bool(self.sale_line_id)
-                and self.sale_line_id._is_line_invoiced())
+        if self.sale_line_id:
+            # The order decides, "Only if 0" reads the price of the order
+            return self.sale_line_id._is_line_invoiced()
+        if self.product_id.auto_line_invoiced != "only0":
+            return False
+        return float_is_zero(
+            self.price_unit,
+            precision_digits=self.env["decimal.precision"].precision_get(
+                "Product Price"))
 
-    @api.depends("invoice_line_id", "force_invoiced",
+    @api.depends("invoice_line_id", "force_invoiced", "price_unit",
                  "product_id.auto_line_invoiced",
                  "sale_line_id.force_invoiced",
+                 "sale_line_id.price_unit",
                  "sale_line_id.product_id.auto_line_invoiced")
     def _compute_line_invoiced(self):
         for line in self:

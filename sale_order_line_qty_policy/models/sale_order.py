@@ -222,10 +222,22 @@ class SaleOrderLine(models.Model):
 
     @api.multi
     def _is_line_invoiced(self):
-        """Return True when the line has to be considered fully invoiced."""
+        """Return True when the line has to be considered fully invoiced.
+
+        A line of an "Only if 0" product without price, i.e. the carriage
+        charge of a free delivery, has nothing to bill: it is settled at
+        once, so no invoice ever picks it up.
+        """
         self.ensure_one()
-        return bool(self.force_invoiced
-                    or self.product_id.auto_line_invoiced == "always")
+        if self.force_invoiced:
+            return True
+        policy = self.product_id.auto_line_invoiced
+        if policy == "always":
+            return True
+        return policy == "only0" and float_is_zero(
+            self.price_unit,
+            precision_digits=self.env["decimal.precision"].precision_get(
+                "Product Price"))
 
     @api.depends("force_delivered", "qty_delivered", "product_uom_qty",
                  "state", "product_id.delivered_threshold",
@@ -234,7 +246,8 @@ class SaleOrderLine(models.Model):
         for line in self:
             line.line_delivered = line._is_line_delivered()
 
-    @api.depends("force_invoiced", "product_id.auto_line_invoiced")
+    @api.depends("force_invoiced", "product_id.auto_line_invoiced",
+                 "price_unit")
     def _get_to_invoice_qty(self):
         super(SaleOrderLine, self)._get_to_invoice_qty()
         for line in self:
@@ -242,7 +255,7 @@ class SaleOrderLine(models.Model):
                 line.qty_to_invoice = 0.0
 
     @api.depends("force_invoiced", "force_delivered",
-                 "product_id.auto_line_invoiced",
+                 "product_id.auto_line_invoiced", "price_unit",
                  "product_id.delivered_threshold",
                  "product_id.categ_id.delivered_threshold")
     def _compute_invoice_status(self):

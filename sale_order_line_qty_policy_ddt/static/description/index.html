@@ -97,8 +97,8 @@ very same ones used here:
 <ul>
 <li><b>Auto declare invoiced</b>: set to <i>Always</i>, every delivery note line of
   this product is considered invoiced, exactly as every sale order line of it
-  is; set to <i>Only if 0</i>, a line without price dropped from a draft invoice is
-  declared invoiced instead of going back to be invoiced - see <i>Usage</i>.</li>
+  is; set to <i>Only if 0</i>, a line without price is considered invoiced and never
+  added to an invoice - see <i>Usage</i>.</li>
 </ul>
 </p><p align="justify">
 The <b>Delivered threshold (%)</b> is not evaluated on the delivery note: the
@@ -120,9 +120,8 @@ medesime usate qui:
 <ul>
 <li><b>Dichiara automaticamente fatturato</b>: impostato a <i>Sempre</i>, ogni riga di
   DdT di questo prodotto &#232; considerata fatturata, esattamente come lo &#232; ogni
-  riga d'ordine; impostato a <i>Solo se 0</i>, una riga senza prezzo eliminata da
-  una fattura in bozza viene dichiarata fatturata anzich&#233; tornare da
-  fatturare - vedere <i>Utilizzo</i>.</li>
+  riga d'ordine; impostato a <i>Solo se 0</i>, una riga senza prezzo &#232; considerata
+  fatturata e non viene mai aggiunta in fattura - vedere <i>Utilizzo</i>.</li>
 </ul>
 </p><p align="justify">
 La <b>Soglia di consegna (%)</b> non &#232; valutata sul DdT: la soglia confronta la
@@ -235,19 +234,21 @@ declaration gives the quantity back to be invoiced.
 Nothing is written on the sale order line by hand: the quantity is computed,
 so it follows the delivery notes on its own.
 </p><p align="justify">
-A <b>free line</b> dropped from a draft invoice is the exception, when its
-product carries the <i>Auto declare invoiced</i> policy set to <i>Only if 0</i>: when
-both the delivery note line and the invoice line carry no price - the carriage
-charge of a free delivery is the common case - the user removes it because
-there is nothing to bill, so the delivery note line is declared invoiced
-instead of going back to be invoiced. The delivery note keeps its invoice and
-the sale order line is settled, exactly as if the line had been declared
-invoiced by hand. A line carrying a price on either document, or a line of a
-product with any other policy, still goes back to be invoiced - a price of 0
-is no proof of a free line, the amount of a product such as CONAI being
-evaluated again at invoice level - and deleting the whole invoice gives every
-line back, free ones included, because the delivery note is going to be
-invoiced again.
+A <b>free line</b> of a product whose <i>Auto declare invoiced</i> policy is set to
+<i>Only if 0</i> - the carriage charge of a free delivery is the common case - is
+considered invoiced at once, so it is never added to an invoice. The price is
+read on the sale order line, or on the delivery note line when it comes from
+no order. This holds as well for a free service line of the order which is
+not on the delivery note, i.e. a carriage line removed from it: `l10n_it_ddt`
+adds such lines to the invoice, but only when something is left to invoice.
+A line with a price, or a line of a product with any other policy, is
+invoiced as usual: a price of 0 is no proof of a free line, the amount of a
+product such as CONAI being evaluated again at invoice level.
+</p><p align="justify">
+A free line still found on a draft invoice, i.e. one drafted before the
+policy applied, can be dropped from it: when both the delivery note line and
+the invoice line carry no price, the delivery note line is declared invoiced
+instead of going back to be invoiced.
 </p></p>
         </div>
         <div class="oe_span6">
@@ -348,19 +349,22 @@ la dichiarazione la quantit&#224; torna da fatturare.
 Nulla viene scritto a mano sulla riga d'ordine: la quantit&#224; &#232; calcolata,
 quindi segue da sola i DdT.
 </p><p align="justify">
-Fa eccezione una <b>riga gratuita</b> eliminata da una fattura in bozza, quando
-il suo prodotto ha la politica <i>Dichiara automaticamente fatturato</i> impostata
-a <i>Solo se 0</i>: quando sia la riga di DdT sia la riga di fattura non hanno
-prezzo - il caso tipico &#232; la spedizione in porto franco - l'utente la rimuove
-perch&#233; non c'&#232; nulla da addebitare, quindi la riga di DdT viene dichiarata
-fatturata anzich&#233; tornare da fatturare. Il DdT conserva la sua fattura e la
-riga d'ordine risulta definita, esattamente come se la riga fosse stata
-dichiarata fatturata a mano. Una riga con un prezzo su uno dei due documenti,
-o una riga di un prodotto con un'altra politica, torna invece da fatturare -
-un prezzo a 0 non prova che la riga sia gratuita, perch&#233; l'importo di un
-prodotto come il CONAI viene rivalutato in fattura - e l'eliminazione
-dell'intera fattura restituisce tutte le righe, comprese quelle gratuite,
-perch&#233; il DdT verr&#224; fatturato di nuovo.
+Una <b>riga gratuita</b> di un prodotto con la politica <i>Dichiara
+automaticamente fatturato</i> impostata a <i>Solo se 0</i> - il caso tipico &#232; la
+spedizione in porto franco - &#232; considerata subito fatturata, quindi non viene
+mai aggiunta in fattura. Il prezzo &#232; letto sulla riga d'ordine di vendita,
+oppure sulla riga di DdT quando questa non proviene da un ordine. Vale anche
+per una riga di servizio gratuita dell'ordine che non si trova sul DdT, ad
+esempio una spedizione rimossa dal DdT: `l10n_it_ddt` aggiunge tali righe
+alla fattura, ma solo quando resta qualcosa da fatturare. Una riga con un
+prezzo, o una riga di un prodotto con un'altra politica, viene fatturata
+normalmente: un prezzo a 0 non prova che la riga sia gratuita, perch&#233;
+l'importo di un prodotto come il CONAI viene rivalutato in fattura.
+</p><p align="justify">
+Una riga gratuita ancora presente in una fattura in bozza, ad esempio creata
+prima che la politica fosse applicata, pu&#242; esserne eliminata: quando sia la
+riga di DdT sia la riga di fattura non hanno prezzo, la riga di DdT viene
+dichiarata fatturata anzich&#233; tornare da fatturare.
 </p></p>
         </div>
     </div>
@@ -370,8 +374,18 @@ perch&#233; il DdT verr&#224; fatturato di nuovo.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.3 (2026-10-23)</h4>
+<h4>10.0.0.1.4 (2026-10-23)</h4>
 <p align="justify">
+<ul>
+<li>[FIX] <i>Only if 0</i>: a delivery note line without price - the price of its
+  sale order line, when it has one - is invoiced at once and never added to
+  an invoice, even when it was removed from the delivery note; existing</li>
+<li>[QUA] Test coverage 76% (284: 69+215) [0 TestPoints] - quality rating 43 (target 100)
+  lines are settled on upgrade</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.3 (2026-10-23)</h4>
+</p><p align="justify">
 <ul>
 <li>[FIX] Dropping a free line of a product whose policy is <i>Only if 0</i> - i.e.
   the carriage charge of a free delivery - from a draft invoice declares its

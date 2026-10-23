@@ -7,7 +7,7 @@
 {
     "name": "Sale Order Line Quantity Policy",
     "summary": "Declare sale order line delivered or invoiced by product policy",
-    "version": "10.0.0.1.7",
+    "version": "10.0.0.1.8",
     "category": "Sales",
     "author": "SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it",

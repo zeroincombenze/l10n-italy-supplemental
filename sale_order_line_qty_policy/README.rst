@@ -1,5 +1,5 @@
 =======================================================================================================
-|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.7
+|icon| Sale Order Line Quantity Policy/Politiche di quantità delle righe d'ordine di vendita 10.0.0.1.8
 =======================================================================================================
 
 **Declare sale order line delivered or invoiced by product policy**
@@ -26,8 +26,8 @@ Two policies are available on the product:
 
 * **Auto declare invoiced**: set to *Always*, every line of this product is
   considered fully invoiced as soon as the order is confirmed; set to *Only if
-  0*, only a line without price dropped from the invoice is, i.e. the carriage
-  charge of a free delivery. *Always* is required by modules
+  0*, only a line without price is, i.e. the carriage charge of a free
+  delivery, which is never added to an invoice. *Always* is required by modules
   managing tax products, i.e. the environmental contribution (CONAI), whose
   amount is evaluated again at invoice level: the invoiced quantity will never
   match the ordered one, so the order would be left in an incomplete or wrong
@@ -56,9 +56,9 @@ Sul prodotto sono disponibili due politiche:
 
 * **Dichiara automaticamente fatturato**: impostato a *Sempre*, ogni riga di
   questo prodotto è considerata interamente fatturata alla conferma
-  dell'ordine; impostato a *Solo se 0*, lo è solo una riga senza prezzo
-  eliminata dalla fattura, ad esempio la spesa di spedizione di una consegna
-  gratuita. *Sempre* è richiesto dai moduli che gestiscono prodotti di tipo imposta, come il
+  dell'ordine; impostato a *Solo se 0*, lo è solo una riga senza prezzo,
+  ad esempio la spesa di spedizione di una consegna gratuita, che non viene
+  mai aggiunta in fattura. *Sempre* è richiesto dai moduli che gestiscono prodotti di tipo imposta, come il
   contributo ambientale (CONAI), il cui importo viene rivalutato a livello di
   fattura: la quantità fatturata non coinciderà mai con quella ordinata e
   l'ordine resterebbe in uno stato incompleto o errato.
@@ -99,10 +99,10 @@ declare its own. Leave both to 0 to disable the policy.
   invoiced on their own:
 
   * *Never* (default): usual Odoo behaviour;
-  * *Only if 0*: a line without price dropped from a draft invoice is declared
-    invoiced instead of going back to be invoiced, i.e. the carriage charge of
-    a free delivery. Applied by `sale_order_line_qty_policy_ddt` to the
-    delivery note lines;
+  * *Only if 0*: a line without price is declared invoiced at once, i.e. the
+    carriage charge of a free delivery: it is never added to an invoice.
+    Applied by `sale_order_line_qty_policy_ddt` to the delivery note lines
+    too;
   * *Always*: every sale order line of this product is declared invoiced.
 
 Both fields are declared on the product template, so the policy applies to all
@@ -245,6 +245,14 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
+
+10.0.0.1.8 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] *Only if 0*: a sale order line without price is declared invoiced at
+  once, so it is never added to an invoice; existing lines are settled on
+* [QUA] Test coverage 85% (152: 23+129) [673 TestPoints] - quality rating 369 (target 100)
+  upgrade
 
 10.0.0.1.7 (2026-10-23)
 ~~~~~~~~~~~~~~~~~~~~~~~

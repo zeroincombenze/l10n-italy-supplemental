@@ -87,16 +87,18 @@ declaration gives the quantity back to be invoiced.
 Nothing is written on the sale order line by hand: the quantity is computed,
 so it follows the delivery notes on its own.
 
-A **free line** dropped from a draft invoice is the exception, when its
-product carries the *Auto declare invoiced* policy set to *Only if 0*: when
-both the delivery note line and the invoice line carry no price - the carriage
-charge of a free delivery is the common case - the user removes it because
-there is nothing to bill, so the delivery note line is declared invoiced
-instead of going back to be invoiced. The delivery note keeps its invoice and
-the sale order line is settled, exactly as if the line had been declared
-invoiced by hand. A line carrying a price on either document, or a line of a
-product with any other policy, still goes back to be invoiced - a price of 0
-is no proof of a free line, the amount of a product such as CONAI being
-evaluated again at invoice level - and deleting the whole invoice gives every
-line back, free ones included, because the delivery note is going to be
-invoiced again.
+A **free line** of a product whose *Auto declare invoiced* policy is set to
+*Only if 0* - the carriage charge of a free delivery is the common case - is
+considered invoiced at once, so it is never added to an invoice. The price is
+read on the sale order line, or on the delivery note line when it comes from
+no order. This holds as well for a free service line of the order which is
+not on the delivery note, i.e. a carriage line removed from it: `l10n_it_ddt`
+adds such lines to the invoice, but only when something is left to invoice.
+A line with a price, or a line of a product with any other policy, is
+invoiced as usual: a price of 0 is no proof of a free line, the amount of a
+product such as CONAI being evaluated again at invoice level.
+
+A free line still found on a draft invoice, i.e. one drafted before the
+policy applied, can be dropped from it: when both the delivery note line and
+the invoice line carry no price, the delivery note line is declared invoiced
+instead of going back to be invoiced.

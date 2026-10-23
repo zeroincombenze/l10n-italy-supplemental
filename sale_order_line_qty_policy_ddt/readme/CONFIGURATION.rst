@@ -6,8 +6,8 @@ very same ones used here:
 
 * **Auto declare invoiced**: set to *Always*, every delivery note line of
   this product is considered invoiced, exactly as every sale order line of it
-  is; set to *Only if 0*, a line without price dropped from a draft invoice is
-  declared invoiced instead of going back to be invoiced - see *Usage*.
+  is; set to *Only if 0*, a line without price is considered invoiced and never
+  added to an invoice - see *Usage*.
 
 The **Delivered threshold (%)** is not evaluated on the delivery note: the
 threshold compares the ordered quantity with the delivered one and the

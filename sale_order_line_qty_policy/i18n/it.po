@@ -137,11 +137,11 @@ msgstr "Politica di quantità"
 #: model:ir.model.fields,help:sale_order_line_qty_policy.field_product_template_auto_line_invoiced
 msgid "When sale order lines of this product are automatically declared fully invoiced, whatever the invoiced quantity is.\n"
 "* Never: usual Odoo behaviour;\n"
-"* Only if 0: a line without price dropped from a draft invoice is declared invoiced instead of going back to be invoiced, i.e. the carriage charge of a free delivery; it needs a module which applies it, such as sale_order_line_qty_policy_ddt;\n"
+"* Only if 0: a line without price is declared invoiced at once, i.e. the carriage charge of a free delivery: it is never added to an invoice;\n"
 "* Always: every line is declared invoiced at once. Use this policy for products whose amount is evaluated again at invoice level, i.e. the environmental contribution (CONAI), so the order is not kept open waiting for an invoice which will never match the ordered quantity."
 msgstr "Quando le righe d'ordine di vendita di questo prodotto sono automaticamente dichiarate interamente fatturate, qualunque sia la quantità fatturata.\n"
 "* Mai: comportamento standard di Odoo;\n"
-"* Solo se 0: una riga senza prezzo eliminata da una fattura in bozza viene dichiarata fatturata anziché tornare da fatturare, ad esempio la spesa di spedizione di una consegna gratuita; richiede un modulo che la applichi, come sale_order_line_qty_policy_ddt;\n"
+"* Solo se 0: una riga senza prezzo è dichiarata subito fatturata, ad esempio la spesa di spedizione di una consegna gratuita: non viene mai aggiunta in fattura;\n"
 "* Sempre: ogni riga è dichiarata fatturata da subito. Usare questa politica per i prodotti il cui importo viene rivalutato a livello di fattura, come il contributo ambientale (CONAI), così che l'ordine non resti aperto in attesa di una fattura che non coinciderà mai con la quantità ordinata."
 
 #. module: sale_order_line_qty_policy

@@ -10,8 +10,8 @@ Two policies are available on the product:
 
 * **Auto declare invoiced**: set to *Always*, every line of this product is
   considered fully invoiced as soon as the order is confirmed; set to *Only if
-  0*, only a line without price dropped from the invoice is, i.e. the carriage
-  charge of a free delivery. *Always* is required by modules
+  0*, only a line without price is, i.e. the carriage charge of a free
+  delivery, which is never added to an invoice. *Always* is required by modules
   managing tax products, i.e. the environmental contribution (CONAI), whose
   amount is evaluated again at invoice level: the invoiced quantity will never
   match the ordered one, so the order would be left in an incomplete or wrong

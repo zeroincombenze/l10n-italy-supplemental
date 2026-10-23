@@ -30,6 +30,14 @@ TEST_PRODUCT_TEMPLATE = {
         "invoice_policy": "order",
         "auto_line_invoiced": "always",
     },
+    # Product whose free lines need no invoice, i.e. carriage charge
+    "z0bug.carriage_template": {
+        "name": "Test carriage product",
+        "type": "service",
+        "track_service": "manual",
+        "invoice_policy": "order",
+        "auto_line_invoiced": "only0",
+    },
     # Product without any policy
     "z0bug.plain_template": {
         "name": "Test plain product",
@@ -96,6 +104,7 @@ TEST_SALE_ORDER = {
     "z0bug.order_14": {"partner_id": "z0bug.customer"},
     "z0bug.order_15": {"partner_id": "z0bug.customer"},
     "z0bug.order_16": {"partner_id": "z0bug.customer"},
+    "z0bug.order_17": {"partner_id": "z0bug.customer"},
 }
 
 TEST_SALE_ORDER_LINE = {
@@ -217,6 +226,20 @@ TEST_SALE_ORDER_LINE = {
         "product_uom_qty": 100.0,
         "product_uom": "product.product_uom_unit",
         "price_unit": 10.0,
+    },
+    "z0bug.order_17_1": {
+        "product_id": "z0bug.carriage_product",
+        "name": "Test carriage product",
+        "product_uom_qty": 1.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 0.0,
+    },
+    "z0bug.order_17_2": {
+        "product_id": "z0bug.carriage_product",
+        "name": "Test carriage product",
+        "product_uom_qty": 1.0,
+        "product_uom": "product.product_uom_unit",
+        "price_unit": 5.0,
     },
 }
 
@@ -487,3 +510,20 @@ class TestSaleOrderLineQtyPolicy(SingleTransactionCase):
 
         order.action_invoice_create()
         self.assertEqual(line.invoice_status, "no")
+
+    def test_17_only0_settles_free_lines(self):
+        """"Only if 0" closes a free line at once, never a charged one."""
+        order = self.resource_browse("z0bug.order_17")
+        order.action_confirm()
+        free = order.order_line.filtered(lambda line: not line.price_unit)
+        charged = order.order_line - free
+        self.assertEqual(free.qty_to_invoice, 0.0)
+        self.assertEqual(free.invoice_status, "invoiced")
+        self.assertEqual(charged.qty_to_invoice, 1.0)
+        self.assertEqual(charged.invoice_status, "to invoice")
+
+        invoice = self.env["account.invoice"].browse(
+            order.action_invoice_create())
+        self.assertEqual(invoice.invoice_line_ids.mapped("sale_line_ids"),
+                         charged)
+        self.assertEqual(order.invoice_status, "invoiced")

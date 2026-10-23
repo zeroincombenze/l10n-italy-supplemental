@@ -17,10 +17,10 @@ disabilitare la politica.
   sono dichiarate fatturate in automatico:
 
   * *Mai* (predefinito): comportamento standard di Odoo;
-  * *Solo se 0*: una riga senza prezzo eliminata da una fattura in bozza viene
-    dichiarata fatturata anziché tornare da fatturare, ad esempio la spesa di
-    spedizione di una consegna gratuita. Applicato da
-    `sale_order_line_qty_policy_ddt` alle righe di DdT;
+  * *Solo se 0*: una riga senza prezzo è dichiarata subito fatturata, ad
+    esempio la spesa di spedizione di una consegna gratuita: non viene mai
+    aggiunta in fattura. Applicato anche alle righe di DdT da
+    `sale_order_line_qty_policy_ddt`;
   * *Sempre*: ogni riga d'ordine di questo prodotto è dichiarata fatturata.
 
 Entrambi i campi sono dichiarati sul modello prodotto, quindi la politica vale
