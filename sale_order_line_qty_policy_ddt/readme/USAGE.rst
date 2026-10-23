@@ -102,3 +102,13 @@ A free line still found on a draft invoice, i.e. one drafted before the
 policy applied, can be dropped from it: when both the delivery note line and
 the invoice line carry no price, the delivery note line is declared invoiced
 instead of going back to be invoiced.
+
+A delivery note line is invoiced as well when its **sale order line already
+billed what it shipped**: what the order line invoiced, plus what its delivery
+notes declared invoiced, covers everything it shipped on delivery notes not
+cancelled. This is the case of an order invoiced on ordered quantities before
+the delivery: the invoice lines point at the order and at no delivery note,
+so the delivery note issued afterwards stayed to be invoiced, and invoicing it
+billed the goods a second time. When the order billed only part of what was
+shipped, there is no telling which delivery note the invoice covers, so every
+one of them stays to be invoiced.

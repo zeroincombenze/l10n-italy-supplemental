@@ -7,7 +7,7 @@
 {
     "name": "Sale Order Line Quantity Policy - DdT",
     "summary": "Bridge module: quantity policy applied to DdT based invoices",
-    "version": "10.0.0.1.4",
+    "version": "10.0.0.1.5",
     "category": "Hidden",
     "author": "SHS-AV s.r.l.",
     "website": "https://www.zeroincombenze.it",

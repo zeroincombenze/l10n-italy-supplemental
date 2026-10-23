@@ -5,7 +5,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 #
 from odoo import api, fields, models
-from odoo.tools.float_utils import float_is_zero
+from odoo.tools.float_utils import float_compare, float_is_zero
 
 
 class StockPickingPackagePreparationLine(models.Model):
@@ -30,7 +30,7 @@ class StockPickingPackagePreparationLine(models.Model):
              " invoice line was created from it, or because it was declared"
              " invoiced, or because the quantity policy of its product"
              " declares it invoiced, or because its sale order line was"
-             " declared invoiced.",
+             " declared invoiced or already invoiced what it delivered.",
     )
 
     @api.multi
@@ -55,7 +55,8 @@ class StockPickingPackagePreparationLine(models.Model):
             return True
         if self.sale_line_id:
             # The order decides, "Only if 0" reads the price of the order
-            return self.sale_line_id._is_line_invoiced()
+            return (self.sale_line_id._is_line_invoiced()
+                    or self._is_billed_by_order())
         if self.product_id.auto_line_invoiced != "only0":
             return False
         return float_is_zero(
@@ -63,11 +64,62 @@ class StockPickingPackagePreparationLine(models.Model):
             precision_digits=self.env["decimal.precision"].precision_get(
                 "Product Price"))
 
+    @api.multi
+    def _qty_in_order_uom(self):
+        """Return the quantity of the line in the unit of its order line."""
+        self.ensure_one()
+        order_uom = self.sale_line_id.product_uom
+        if self.product_uom_id and order_uom:
+            return self.product_uom_id._compute_quantity(
+                self.product_uom_qty, order_uom)
+        return self.product_uom_qty
+
+    @api.multi
+    def _is_billed_by_order(self):
+        """Return True when the order line already billed this delivery.
+
+        With the invoicing policy "Ordered quantities" the order is invoiced
+        from the order itself, often before anything is delivered: the
+        invoice lines are linked to the order line and to no delivery note
+        line, so the delivery note issued afterwards stays to be invoiced,
+        and invoicing it bills the customer a second time - l10n_it_ddt
+        invoices the quantity of the delivery note line, whatever the order
+        already billed.
+
+        The delivery is billed when what the order line invoiced, plus what
+        the delivery notes declared invoiced, covers everything it shipped
+        on delivery notes not cancelled. The shipped quantity is read from
+        the delivery notes, not from qty_delivered, which ignores a delivery
+        note still in pack: its picking is not transferred yet.
+
+        When the order billed only part of what was shipped there is no
+        telling which delivery note the invoice covers, so every one of them
+        stays to be invoiced.
+        """
+        self.ensure_one()
+        order_line = self.sale_line_id
+        if not order_line:
+            return False
+        precision = order_line._qty_precision()
+        billed = order_line.qty_invoiced + order_line.qty_ddt_declared
+        if float_compare(billed, 0.0, precision_digits=precision) <= 0:
+            return False
+        shipped = sum(
+            line._qty_in_order_uom() for line in order_line.ddt_line_ids
+            if line.package_preparation_id.state != "cancel")
+        return float_compare(
+            billed, shipped, precision_digits=precision) >= 0
+
     @api.depends("invoice_line_id", "force_invoiced", "price_unit",
                  "product_id.auto_line_invoiced",
                  "sale_line_id.force_invoiced",
                  "sale_line_id.price_unit",
-                 "sale_line_id.product_id.auto_line_invoiced")
+                 "sale_line_id.product_id.auto_line_invoiced",
+                 "sale_line_id.qty_invoiced",
+                 "sale_line_id.qty_ddt_declared",
+                 "sale_line_id.ddt_line_ids.product_uom_qty",
+                 "sale_line_id.ddt_line_ids.product_uom_id",
+                 "sale_line_id.ddt_line_ids.package_preparation_id.state")
     def _compute_line_invoiced(self):
         for line in self:
             line.line_invoiced = line._is_line_invoiced()

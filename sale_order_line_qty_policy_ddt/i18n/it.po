@@ -110,8 +110,8 @@ msgstr "Riga ordine di vendita"
 
 #. module: sale_order_line_qty_policy_ddt
 #: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_stock_picking_package_preparation_line_line_invoiced
-msgid "Technical field: the line is invoiced, either because an invoice line was created from it, or because it was declared invoiced, or because the quantity policy of its product declares it invoiced, or because its sale order line was declared invoiced."
-msgstr "Campo tecnico: la riga è fatturata perché da essa è stata creata una riga di fattura, oppure perché è stata dichiarata fatturata, oppure perché la politica di quantità del suo prodotto la dichiara fatturata, oppure perché la sua riga d'ordine di vendita è stata dichiarata fatturata."
+msgid "Technical field: the line is invoiced, either because an invoice line was created from it, or because it was declared invoiced, or because the quantity policy of its product declares it invoiced, or because its sale order line was declared invoiced or already invoiced what it delivered."
+msgstr "Campo tecnico: la riga è fatturata perché da essa è stata creata una riga di fattura, oppure perché è stata dichiarata fatturata, oppure perché la politica di quantità del suo prodotto la dichiara fatturata, oppure perché la sua riga d'ordine di vendita è stata dichiarata fatturata o ha già fatturato quanto consegnato."
 
 #. module: sale_order_line_qty_policy_ddt
 #: model:ir.model.fields,help:sale_order_line_qty_policy_ddt.field_sale_order_line_qty_ddt_declared

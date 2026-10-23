@@ -104,3 +104,13 @@ Una riga gratuita ancora presente in una fattura in bozza, ad esempio creata
 prima che la politica fosse applicata, può esserne eliminata: quando sia la
 riga di DdT sia la riga di fattura non hanno prezzo, la riga di DdT viene
 dichiarata fatturata anziché tornare da fatturare.
+
+Una riga di DdT è fatturata anche quando la sua **riga d'ordine di vendita ha
+già fatturato quanto ha spedito**: quanto la riga d'ordine ha fatturato, più
+quanto i suoi DdT hanno dichiarato fatturato, copre tutto ciò che ha spedito
+con DdT non annullati. È il caso di un ordine fatturato sulle quantità
+ordinate prima della consegna: le righe di fattura puntano all'ordine e a
+nessun DdT, quindi il DdT emesso dopo restava da fatturare, e fatturarlo
+addebitava la merce una seconda volta. Quando l'ordine ha fatturato solo una
+parte di quanto spedito non si può sapere quale DdT la fattura copra, quindi
+restano tutti da fatturare.

@@ -249,6 +249,16 @@ A free line still found on a draft invoice, i.e. one drafted before the
 policy applied, can be dropped from it: when both the delivery note line and
 the invoice line carry no price, the delivery note line is declared invoiced
 instead of going back to be invoiced.
+</p><p align="justify">
+A delivery note line is invoiced as well when its <b>sale order line already
+billed what it shipped</b>: what the order line invoiced, plus what its delivery
+notes declared invoiced, covers everything it shipped on delivery notes not
+cancelled. This is the case of an order invoiced on ordered quantities before
+the delivery: the invoice lines point at the order and at no delivery note,
+so the delivery note issued afterwards stayed to be invoiced, and invoicing it
+billed the goods a second time. When the order billed only part of what was
+shipped, there is no telling which delivery note the invoice covers, so every
+one of them stays to be invoiced.
 </p></p>
         </div>
         <div class="oe_span6">
@@ -365,6 +375,16 @@ Una riga gratuita ancora presente in una fattura in bozza, ad esempio creata
 prima che la politica fosse applicata, pu&#242; esserne eliminata: quando sia la
 riga di DdT sia la riga di fattura non hanno prezzo, la riga di DdT viene
 dichiarata fatturata anzich&#233; tornare da fatturare.
+</p><p align="justify">
+Una riga di DdT &#232; fatturata anche quando la sua <b>riga d'ordine di vendita ha
+gi&#224; fatturato quanto ha spedito</b>: quanto la riga d'ordine ha fatturato, pi&#249;
+quanto i suoi DdT hanno dichiarato fatturato, copre tutto ci&#242; che ha spedito
+con DdT non annullati. &#200; il caso di un ordine fatturato sulle quantit&#224;
+ordinate prima della consegna: le righe di fattura puntano all'ordine e a
+nessun DdT, quindi il DdT emesso dopo restava da fatturare, e fatturarlo
+addebitava la merce una seconda volta. Quando l'ordine ha fatturato solo una
+parte di quanto spedito non si pu&#242; sapere quale DdT la fattura copra, quindi
+restano tutti da fatturare.
 </p></p>
         </div>
     </div>
@@ -374,8 +394,19 @@ dichiarata fatturata anzich&#233; tornare da fatturare.
     <div class="oe_row oe_spaced">
         <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
         <div class="oe_span12">
-<h4>10.0.0.1.4 (2026-10-23)</h4>
+<h4>10.0.0.1.5 (2026-10-23)</h4>
 <p align="justify">
+<ul>
+<li>[FIX] A delivery note line whose sale order line already invoiced
+  everything it shipped - i.e. an order invoiced on ordered quantities before
+  the delivery - is invoiced: the delivery note stayed to be invoiced, and
+  invoicing it billed the goods a second time; existing delivery notes are</li>
+<li>[QUA] Test coverage 76% (301: 71+230) [0 TestPoints] - quality rating 44 (target 100)
+  settled on upgrade</li>
+</ul>
+</p><p align="justify">
+<h4>10.0.0.1.4 (2026-10-23)</h4>
+</p><p align="justify">
 <ul>
 <li>[FIX] <i>Only if 0</i>: a delivery note line without price - the price of its
   sale order line, when it has one - is invoiced at once and never added to

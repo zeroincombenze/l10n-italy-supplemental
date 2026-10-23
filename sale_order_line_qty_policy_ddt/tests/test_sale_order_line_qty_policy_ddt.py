@@ -696,3 +696,102 @@ class TestSaleOrderLineQtyPolicyDdt(TransactionCase):
                          invoice.invoice_line_ids.mapped("product_id"))
         self.assertEqual(
             self._order_line_of(order, carriage).invoice_status, "invoiced")
+
+    def _order_invoiced_upfront(self, qty=10.0):
+        """Confirm an order on ordered quantities and invoice it at once."""
+        product = self._create_product("Test DdT product on order", {
+            "invoice_policy": "order",
+        })
+        order = self._create_order(product, qty=qty)
+        invoice = self.env["account.invoice"].browse(
+            order.action_invoice_create())
+        sol = self._order_line_of(order, product)
+        self.assertEqual(sol.qty_invoiced, qty)
+        return order, sol, invoice
+
+    def test_31_order_invoiced_before_delivery_closes_the_ddt(self):
+        """A DdT issued after the order was invoiced has nothing to bill.
+
+        The invoice lines point at the order line and at no DdT line, so
+        the DdT stayed to be invoiced, and invoicing it billed the goods a
+        second time.
+        """
+        order, sol, invoice = self._order_invoiced_upfront()
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        self.assertEqual(ddt.line_ids.sale_line_id, sol)
+        self.assertFalse(ddt.line_ids.invoice_line_id)
+        self.assertTrue(ddt.line_ids.line_invoiced)
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)
+        self.assertFalse(ddt.line_ids.allow_invoice_line())
+        with self.assertRaises(UserError):
+            ddt.action_invoice_create()
+        # The order declaration counter is left alone
+        self.assertEqual(sol.qty_ddt_declared, 0.0)
+
+    def test_32_order_invoiced_upfront_closes_every_delivery(self):
+        """Every DdT of an order invoiced upfront is closed, split or not."""
+        order, sol, invoice = self._order_invoiced_upfront()
+        first, backorder = self._deliver(order, 4.0)
+        ddt_first = self._ddt_from_pickings(first)
+        ddt_first.set_done()
+        self.assertEqual(ddt_first.invoice_status, "invoiced")
+
+        self._deliver(order, 6.0)
+        ddt_second = self._ddt_from_pickings(backorder)
+        ddt_second.set_done()
+        self.assertEqual(ddt_second.invoice_status, "invoiced")
+        self.assertEqual(ddt_first.invoice_status, "invoiced")
+
+    def test_33_deleted_upfront_invoice_reopens_the_ddt(self):
+        """The DdT goes back to be invoiced with the invoice of the order."""
+        order, sol, invoice = self._order_invoiced_upfront()
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        self.assertEqual(ddt.invoice_status, "invoiced")
+
+        invoice.unlink()
+        self.assertEqual(sol.qty_invoiced, 0.0)
+        self.assertFalse(ddt.line_ids.line_invoiced)
+        self.assertEqual(ddt.invoice_status, "to invoice")
+        self.assertTrue(ddt.to_be_invoiced)
+
+    def test_34_ddt_in_pack_is_not_closed_by_the_previous_one(self):
+        """The invoice of one delivery does not close the next one.
+
+        qty_delivered ignores a DdT whose picking is not transferred yet,
+        so comparing the invoiced quantity against it would close the
+        second DdT with the invoice of the first.
+        """
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        first, backorder = self._deliver(order, 4.0)
+        ddt_first = self._ddt_from_pickings(first)
+        ddt_first.set_done()
+        ddt_first.action_invoice_create()
+        self.assertEqual(sol.qty_invoiced, 4.0)
+        self.assertEqual(sol.qty_delivered, 4.0)
+
+        ddt_second = self._ddt_from_pickings(backorder)
+        self.assertEqual(ddt_second.line_ids.product_uom_qty, 6.0)
+        self.assertFalse(ddt_second.line_ids.line_invoiced)
+        self.assertTrue(ddt_second.line_ids.allow_invoice_line())
+        self.assertEqual(ddt_first.invoice_status, "invoiced")
+
+    def test_35_order_invoiced_after_the_ddt_closes_it(self):
+        """Invoicing the order once the DdT exists closes the DdT."""
+        order = self._create_order(self.product)
+        sol = self._order_line_of(order, self.product)
+        ddt = self._ddt_from_pickings(order.picking_ids)
+        ddt.set_done()
+        self.assertEqual(ddt.invoice_status, "to invoice")
+
+        invoice = self.env["account.invoice"].browse(
+            order.action_invoice_create())
+        self.assertIn(self.product,
+                      invoice.invoice_line_ids.mapped("product_id"))
+        self.assertEqual(sol.qty_invoiced, 10.0)
+        self.assertTrue(ddt.line_ids.line_invoiced)
+        self.assertEqual(ddt.invoice_status, "invoiced")
+        self.assertFalse(ddt.to_be_invoiced)

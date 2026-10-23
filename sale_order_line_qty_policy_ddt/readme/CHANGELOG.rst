@@ -1,3 +1,13 @@
+10.0.0.1.5 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] A delivery note line whose sale order line already invoiced
+  everything it shipped - i.e. an order invoiced on ordered quantities before
+  the delivery - is invoiced: the delivery note stayed to be invoiced, and
+  invoicing it billed the goods a second time; existing delivery notes are
+* [QUA] Test coverage 76% (301: 71+230) [0 TestPoints] - quality rating 44 (target 100)
+  settled on upgrade
+
 10.0.0.1.4 (2026-10-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
 

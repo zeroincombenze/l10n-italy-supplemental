@@ -63,11 +63,7 @@ class SaleOrderLine(models.Model):
         for line in self:
             qty = 0.0
             for ddt_line in line._ddt_declared_lines():
-                if ddt_line.product_uom_id and line.product_uom:
-                    qty += ddt_line.product_uom_id._compute_quantity(
-                        ddt_line.product_uom_qty, line.product_uom)
-                else:
-                    qty += ddt_line.product_uom_qty
+                qty += ddt_line._qty_in_order_uom()
             line.qty_ddt_declared = qty
 
     @api.depends("qty_ddt_declared")

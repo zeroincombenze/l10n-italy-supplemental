@@ -1,5 +1,5 @@
 ===================================================================================================================
-|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.4
+|icon| Sale Order Line Quantity Policy - DdT/Politiche di quantità delle righe d'ordine di vendita - DdT 10.0.0.1.5
 ===================================================================================================================
 
 **Bridge module: quantity policy applied to DdT based invoices**
@@ -194,6 +194,16 @@ policy applied, can be dropped from it: when both the delivery note line and
 the invoice line carry no price, the delivery note line is declared invoiced
 instead of going back to be invoiced.
 
+A delivery note line is invoiced as well when its **sale order line already
+billed what it shipped**: what the order line invoiced, plus what its delivery
+notes declared invoiced, covers everything it shipped on delivery notes not
+cancelled. This is the case of an order invoiced on ordered quantities before
+the delivery: the invoice lines point at the order and at no delivery note,
+so the delivery note issued afterwards stayed to be invoiced, and invoicing it
+billed the goods a second time. When the order billed only part of what was
+shipped, there is no telling which delivery note the invoice covers, so every
+one of them stays to be invoiced.
+
 
 
 Getting started | Primi passi
@@ -290,6 +300,16 @@ An Enhancement Proposal may be submitted if your idea gains ground.
 
 ChangeLog History | Cronologia modifiche
 ----------------------------------------
+
+10.0.0.1.5 (2026-10-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* [FIX] A delivery note line whose sale order line already invoiced
+  everything it shipped - i.e. an order invoiced on ordered quantities before
+  the delivery - is invoiced: the delivery note stayed to be invoiced, and
+  invoicing it billed the goods a second time; existing delivery notes are
+* [QUA] Test coverage 76% (301: 71+230) [0 TestPoints] - quality rating 44 (target 100)
+  settled on upgrade
 
 10.0.0.1.4 (2026-10-23)
 ~~~~~~~~~~~~~~~~~~~~~~~
