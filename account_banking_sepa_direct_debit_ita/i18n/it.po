@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_banking_sepa_direct_debit_ita
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 06:18+0000\n"
+"PO-Revision-Date: 2026-10-26 06:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: \n"
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "BIC code of bank account %s is not set."
+msgstr "Il codice BIC del conto bancario %s non è impostato."
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "Bank account %(iban)s / BIC %(bic)s of %(partner)s: %(err)s"
+msgstr "Conto bancario %(iban)s / BIC %(bic)s di %(partner)s: %(err)s"
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "CBI Unique Code (CUC) %s is not valid: 8 letters or digits."
+msgstr "Il Codice Univoco CBI (CUC) %s non è valido: 8 lettere o cifre."
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "CBI Unique Code (CUC) is not set."
+msgstr "Il Codice Univoco CBI (CUC) non è impostato."
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "Creditor IBAN %s is not valid."
+msgstr "L'IBAN del creditore %s non è valido."
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "IBAN %(iban)s of %(partner)s is not valid."
+msgstr "L'IBAN %(iban)s di %(partner)s non è valido."
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "No valid %(type)s mandate for partner %(partner)s."
+msgstr "Nessun mandato %(type)s valido per il partner %(partner)s."
+
+#. module: account_banking_sepa_direct_debit_ita
+#: model:ir.model,name:account_banking_sepa_direct_debit_ita.model_account_payment_order
+msgid "Payment Order"
+msgstr "Ordine di pagamento"
+
+#. module: account_banking_sepa_direct_debit_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_direct_debit_ita/models/account_payment_order.py:0
+msgid "SEPA Creditor Identifier is not set."
+msgstr "Il Codice Identificativo del Creditore SEPA non è impostato."
+
+#. module: account_banking_sepa_direct_debit_ita
+#: model:account.payment.method,name:account_banking_sepa_direct_debit_ita.sdd_b2b_cbi
+msgid "Sepa Direct Debit B2B ITA-CBI"
+msgstr "Sepa Direct Debit B2B ITA-CBI"
+
+#. module: account_banking_sepa_direct_debit_ita
+#: model:account.payment.method,name:account_banking_sepa_direct_debit_ita.sdd_core_cbi
+msgid "Sepa Direct Debit CORE ITA-CBI"
+msgstr "Sepa Direct Debit CORE ITA-CBI"

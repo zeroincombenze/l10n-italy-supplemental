@@ -1,0 +1,200 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">SEPA Direct Debit CBI file (Italy) for payment orders</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">File SDD CBI (Italia) per le distinte di incasso</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Italian banks accept SEPA Direct Debit collections in the CBI format
+(<code>CBISDDReqLogMsg</code>) instead of the standard ISO 20022 pain.008 file.
+This module adds two payment methods to the OCA payment orders:
+<p align="justify">
+<ul>
+<li><b>Sepa Direct Debit CORE ITA-CBI</b>: debits to consumers (CORE scheme)</li>
+<li><b>Sepa Direct Debit B2B ITA-CBI</b>: debits to businesses (B2B scheme)</li>
+</ul>
+</p><p align="justify">
+A debit payment order using one of these methods generates the CBI file,
+ready to be uploaded to the home banking.
+</p><p align="justify">
+The file is created by the Python library <code>fintech</code>.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Le banche italiane accettano gli incassi SEPA Direct Debit nel formato CBI
+(<code>CBISDDReqLogMsg</code>) invece del file standard ISO 20022 pain.008.
+Questo modulo aggiunge due metodi di pagamento alle distinte OCA:
+<p align="justify">
+<ul>
+<li><b>Sepa Direct Debit CORE ITA-CBI</b>: addebiti a consumatori (schema CORE)</li>
+<li><b>Sepa Direct Debit B2B ITA-CBI</b>: addebiti a imprese (schema B2B)</li>
+</ul>
+</p><p align="justify">
+Una distinta di incasso con uno di questi metodi genera il file CBI,
+pronto per essere caricato sull'home banking.
+</p><p align="justify">
+Il file &#232; creato dalla libreria Python <code>fintech</code>.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Company: set the <b>SEPA Creditor Identifier</b> and the <b>Initiating Party
+  Identifier</b>, which is the CBI unique code (CUC, 8 letters or digits).
+  Both can be overridden on the payment mode.</li>
+<li>Bank journal: add the payment method <i>Sepa Direct Debit CORE ITA-CBI</i>
+  or <i>Sepa Direct Debit B2B ITA-CBI</i> to the incoming payments.</li>
+<li>Payment mode: create a mode with one of the methods above and the bank journal.</li>
+<li>Customer: the bank account needs a valid IBAN and the bank a BIC code;
+  create a valid mandate with the same scheme (CORE or B2B) as the method.</li>
+</ul>
+<p align="justify">
+If a module providing wallet accounts ("conto di portafoglio") is installed,
+the main bank account of the wallet is written in the file as creditor.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Azienda: impostare il <b>Codice Identificativo del Creditore</b> e
+  l'<b>Identificativo della parte iniziante</b>, cio&#232; il codice univoco CBI
+  (CUC, 8 lettere o cifre). Entrambi possono essere ridefiniti nel modo di pagamento.</li>
+<li>Registro banca: aggiungere il metodo <i>Sepa Direct Debit CORE ITA-CBI</i>
+  o <i>Sepa Direct Debit B2B ITA-CBI</i> ai pagamenti in entrata.</li>
+<li>Modo di pagamento: creare un modo con uno dei metodi sopra e il registro banca.</li>
+<li>Cliente: il conto bancario deve avere un IBAN valido e la banca il codice BIC;
+  creare un mandato valido con lo stesso schema (CORE o B2B) del metodo.</li>
+</ul>
+<p align="justify">
+Se &#232; installato un modulo che gestisce i conti di portafoglio, nel file viene
+scritto come creditore il conto principale del portafoglio.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Validate the customer invoices with the SDD CBI payment mode.</li>
+<li><i>Accounting &#8250; Payments &#8250; Debit Orders</i>: create the order, or use
+  <span style="color:white;background-color:#7C7BAD">Add&#160;to&#160;Debit&#160;Order</span> on the invoices.</li>
+<li>Confirm the order and press <span style="color:white;background-color:#7C7BAD">Generate&#160;Payment&#160;File</span>: the CBI XML file is
+  attached to the order.</li>
+<li>Upload the file to the home banking, then press <span style="color:white;background-color:#7C7BAD">File&#160;Successfully&#160;Uploaded</span>.</li>
+</ul></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Validare le fatture cliente con il modo di pagamento SDD CBI.</li>
+<li><i>Contabilit&#224; &#8250; Pagamenti &#8250; Ordini di addebito</i>: creare l'ordine, oppure usare
+  <span style="color:white;background-color:#7C7BAD">Aggiungi&#160;a&#160;ordine&#160;di&#160;addebito</span> dalle fatture.</li>
+<li>Confermare l'ordine e premere <span style="color:white;background-color:#7C7BAD">Genera&#160;file&#160;di&#160;pagamento</span>: il file XML CBI
+  viene allegato all'ordine.</li>
+<li>Caricare il file sull'home banking, quindi premere <span style="color:white;background-color:#7C7BAD">File&#160;caricato&#160;con&#160;successo</span>.</li>
+</ul></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>18.0.1.0.0 (2026-10-26)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Migrated to Odoo 18.0 / Migrazione a Odoo 18.0</li>
+<li>[IMP] Mandate taken from the payment line / Mandato preso dalla riga di pagamento</li>
+<li>[IMP] Creditor id and CUC can be set on the payment mode / Codice creditore e CUC impostabili nel modo di pagamento</li>
+<li>[IMP] No more dependency on account_banking_common and account_banking_fintech_initializer / Non pi&#249; dipendente da account_banking_common e account_banking_fintech_initializer</li>
+<li>[FIX] CUC code is really validated / Il codice CUC viene effettivamente validato</li>
+<li>[FIX] Missing BIC code is detected / Codice BIC mancante rilevato</li>
+<li>[FIX] Mandate scheme must match the payment method / Lo schema del mandato deve corrispondere al metodo di pagamento</li>
+<li>[IMP] IBAN/BIC country mismatch reported as readable error / Discordanza nazione IBAN/BIC segnalata con errore leggibile</li>
+</ul>
+</p><p align="justify">
+<h4>18.0.0</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] Initial commit</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">Zeroincombenze srls</a></li>
+<li>LibrErp enterprise network and other partners &lt;False&gt;</li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+<li><a href="mailto:marco.tosato@didotech.com">Marco Tosato</a></li>
+<li><a href="mailto:fabio.giovannelli@didotech.com">Fabio Giovannelli</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-26</p>
+    </div>
+</section>
