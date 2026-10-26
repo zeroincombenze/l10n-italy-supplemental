@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_banking_sepa_credit_trasfer_ita
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 06:22+0000\n"
+"PO-Revision-Date: 2026-10-26 06:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: it\n"
+"Plural-Forms: \n"
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "Bank account %(iban)s of %(partner)s: %(err)s"
+msgstr "Conto bancario %(iban)s di %(partner)s: %(err)s"
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "CBI Unique Code (CUC) %s is not valid: 8 letters or digits."
+msgstr "Il Codice Univoco CBI (CUC) %s non è valido: 8 lettere o cifre."
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "CBI Unique Code (CUC) is not set."
+msgstr "Il Codice Univoco CBI (CUC) non è impostato."
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "Company IBAN %s is not valid."
+msgstr "L'IBAN dell'azienda %s non è valido."
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "IBAN %(iban)s of %(partner)s is not valid."
+msgstr "L'IBAN %(iban)s di %(partner)s non è valido."
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#: model:ir.model,name:account_banking_sepa_credit_trasfer_ita.model_account_payment_order
+msgid "Payment Order"
+msgstr "Ordine di pagamento"
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#: model:account.payment.method,name:account_banking_sepa_credit_trasfer_ita.sct_cbi
+msgid "Sepa Credit Transfer ITA CBI"
+msgstr "Sepa Credit Transfer ITA CBI"
+
+#. module: account_banking_sepa_credit_trasfer_ita
+#. odoo-python
+#: code:addons/account_banking_sepa_credit_trasfer_ita/models/account_payment_order.py:0
+msgid "The company bank account must be an Italian IBAN."
+msgstr "Il conto bancario dell'azienda deve essere un IBAN italiano."

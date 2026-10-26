@@ -1,0 +1,183 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">SEPA Credit Transfer CBI file (Italy) for payment orders</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">File bonifici SEPA CBI (Italia) per le distinte di pagamento</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Italian banks accept SEPA Credit Transfers in the CBI format
+(<code>CBIPaymentRequest.00.04.00</code>) instead of the standard ISO 20022 pain.001 file.
+This module adds the payment method <b>Sepa Credit Transfer ITA CBI</b> to the OCA
+payment orders: a payment order using it generates the CBI file, ready to be
+uploaded to the home banking.
+<p align="justify">
+The file is created by the Python library <code>fintech</code>.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Le banche italiane accettano i bonifici SEPA nel formato CBI
+(<code>CBIPaymentRequest.00.04.00</code>) invece del file standard ISO 20022 pain.001.
+Questo modulo aggiunge il metodo di pagamento <b>Sepa Credit Transfer ITA CBI</b>
+alle distinte di pagamento OCA: una distinta con questo metodo genera il file CBI,
+pronto per essere caricato sull'home banking.
+<p align="justify">
+Il file &#232; creato dalla libreria Python <code>fintech</code>.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Company: set the <b>Initiating Party Identifier</b>, which is the CBI unique code
+  (CUC, 8 letters or digits). It can be overridden on the payment mode.</li>
+<li>Bank journal: the bank account must be an Italian IBAN; add the payment method
+  <i>Sepa Credit Transfer ITA CBI</i> to the outgoing payments.</li>
+<li>Payment mode: create a mode with this method and the bank journal.</li>
+<li>Supplier: the bank account needs a valid IBAN.</li>
+</ul>
+<p align="justify">
+If a module providing wallet accounts ("conto di portafoglio") is installed,
+the main bank account of the wallet is written in the file as debtor.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Azienda: impostare l'<b>Identificativo della parte iniziante</b>, cio&#232; il codice
+  univoco CBI (CUC, 8 lettere o cifre). Pu&#242; essere ridefinito nel modo di pagamento.</li>
+<li>Registro banca: il conto bancario deve avere un IBAN italiano; aggiungere il
+  metodo <i>Sepa Credit Transfer ITA CBI</i> ai pagamenti in uscita.</li>
+<li>Modo di pagamento: creare un modo con questo metodo e il registro banca.</li>
+<li>Fornitore: il conto bancario deve avere un IBAN valido.</li>
+</ul>
+<p align="justify">
+Se &#232; installato un modulo che gestisce i conti di portafoglio, nel file viene
+scritto come ordinante il conto principale del portafoglio.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Validate the vendor bills with the SCT CBI payment mode.</li>
+<li><i>Accounting &#8250; Payments &#8250; Payment Orders</i>: create the order, or use
+  <span style="color:white;background-color:#7C7BAD">Add&#160;to&#160;Payment&#160;Order</span> on the bills.</li>
+<li>Confirm the order and press <span style="color:white;background-color:#7C7BAD">Generate&#160;Payment&#160;File</span>: the CBI XML file is
+  attached to the order.</li>
+<li>Upload the file to the home banking, then press <span style="color:white;background-color:#7C7BAD">File&#160;Successfully&#160;Uploaded</span>.</li>
+</ul></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Validare le fatture fornitore con il modo di pagamento SCT CBI.</li>
+<li><i>Contabilit&#224; &#8250; Pagamenti &#8250; Ordini di pagamento</i>: creare l'ordine, oppure usare
+  <span style="color:white;background-color:#7C7BAD">Aggiungi&#160;a&#160;ordine&#160;di&#160;pagamento</span> dalle fatture.</li>
+<li>Confermare l'ordine e premere <span style="color:white;background-color:#7C7BAD">Genera&#160;file&#160;di&#160;pagamento</span>: il file XML CBI
+  viene allegato all'ordine.</li>
+<li>Caricare il file sull'home banking, quindi premere <span style="color:white;background-color:#7C7BAD">File&#160;caricato&#160;con&#160;successo</span>.</li>
+</ul></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>18.0.1.0.0 (2026-10-26)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Migrated to Odoo 18.0 / Migrazione a Odoo 18.0</li>
+<li>[IMP] CUC can be set on the payment mode / CUC impostabile nel modo di pagamento</li>
+<li>[IMP] SEPA creditor id no more required / Codice identificativo creditore non pi&#249; obbligatorio</li>
+<li>[IMP] No more dependency on account_banking_common and account_banking_fintech_initializer / Non pi&#249; dipendente da account_banking_common e account_banking_fintech_initializer</li>
+<li>[FIX] File was not generated with a wallet bank account / Il file non veniva generato con un conto di portafoglio</li>
+<li>[FIX] CUC code is really validated / Il codice CUC viene effettivamente validato</li>
+<li>[FIX] Requested payment date written in the file / Data di esecuzione richiesta scritta nel file</li>
+</ul>
+</p><p align="justify">
+<h4>18.0.0</h4>
+</p><p align="justify">
+<ul>
+<li>[IMP] First release of the module: CBI files generation</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">Zeroincombenze srls</a></li>
+<li>Librerp and other partners &lt;False&gt;</li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+<li><a href="mailto:marco.tosato@didotech.com">Marco Tosato</a></li>
+<li><a href="mailto:fabio.giovannelli@didotech.com">Fabio Giovannelli</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-26</p>
+    </div>
+</section>
