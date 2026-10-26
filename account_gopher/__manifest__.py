@@ -29,5 +29,5 @@
         "data/italy_ade_tax_assosoftware.xml",
     ],
     "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
-    "installable": True,
+    "installable": False,
 }
