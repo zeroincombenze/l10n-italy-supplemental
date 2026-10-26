@@ -1,0 +1,220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_import_xlsx
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo (18.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-25 20:53+0000\n"
+"PO-Revision-Date: 2026-10-25 21:00+0000\n"
+"Last-Translator: Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>\n"
+"Language-Team: Zeroincombenze (https://www.zeroincombenze.it)\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_invoice_import_file_xlsx
+msgid "Cancel"
+msgstr "Annullare"
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_invoice_import_file_xlsx
+msgid "Choose a file to import..."
+msgstr "Seleziona un file da importare..."
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_import_invoice_result
+msgid "Close"
+msgstr "Chiudere"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__display_name
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__dry_run
+msgid "Dry-run"
+msgstr "Dry-run"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__data_file
+msgid "Excel Data File"
+msgstr "File dati Excel"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__filename
+msgid "Filename"
+msgstr "Nome file"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Found multiple records."
+msgstr "Rilevati più record."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Generic product"
+msgstr "Prodotto generico"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_invoice_import_file_xlsx
+msgid "Import"
+msgstr "Importazione"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.actions.act_window,name:account_invoice_import_xlsx.action_import_account_invoice
+#: model:ir.ui.menu,name:account_invoice_import_xlsx.menu_account_invoice_import
+msgid "Import Account Invoice"
+msgstr "Importare fattura contabile"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.actions.act_window,name:account_invoice_import_xlsx.action_import_file
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_invoice_import_file_xlsx
+msgid "Import invoice from file xlsx"
+msgstr "Importare fattura da file xlsx"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model,name:account_invoice_import_xlsx.model_wizard_import_invoice_file_xlsx
+msgid "Import invoice lines from xlsx"
+msgstr "Importare righe fattura da xlsx"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Import invoices"
+msgstr "Importare fatture"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Import result"
+msgstr "Risultato importazione"
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.view_move_form_import_xlsx
+msgid "Import xlsx"
+msgstr "Importare xlsx"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Invalid number %s"
+msgstr "Numero non valido %s"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__invoice_date
+msgid "Invoice Date"
+msgstr "Data fattura"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Invoice will be created."
+msgstr "La fattura sarà creata."
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__journal_id
+msgid "Journal"
+msgstr "Sezionale"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__write_uid
+msgid "Last Updated by"
+msgstr "Autore ultimo aggiornamento"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__write_date
+msgid "Last Updated on"
+msgstr "Data ultimo aggiornamento"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Line will be created."
+msgstr "La riga sarà creata."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Lines can be imported only into draft invoices."
+msgstr "Le righe possono essere importate solo in fatture in bozza."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Name"
+msgstr "Descrizione"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "No Excel file supplied."
+msgstr "Nessun file Excel fornito."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "No partner found."
+msgstr "Nessun partner trovato."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "No product found."
+msgstr "Nessun prodotto trovato."
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Note"
+msgstr "Nota"
+
+#. module: account_invoice_import_xlsx
+#: model:ir.model.fields,field_description:account_invoice_import_xlsx.field_wizard_import_invoice_file_xlsx__tracelog
+msgid "Result History"
+msgstr "Cronologia dei risultati"
+
+#. module: account_invoice_import_xlsx
+#: model_terms:ir.ui.view,arch_db:account_invoice_import_xlsx.wizard_import_invoice_result
+msgid "Result of Import invoices"
+msgstr "Risultato dell'importazione fatture"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Row"
+msgstr "Riga"
+
+#. module: account_invoice_import_xlsx
+#. odoo-python
+#: code:addons/account_invoice_import_xlsx/wizard/import_file.py:0
+msgid "Vat"
+msgstr "Iva"

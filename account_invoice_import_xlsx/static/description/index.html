@@ -1,0 +1,185 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Import invoice from Excel file</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Importa fatture da file Excel</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">This module imports invoice data from an Excel (.xlsx) file in two ways:
+<p align="justify">
+<ul>
+<li><b>Import lines into an invoice</b>: the button <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;xlsx&#160;</span> on a draft invoice or
+  vendor bill adds one line per row of the file. Products are searched by code and
+  name; price, account and taxes come from the product unless the file supplies them.</li>
+<li><b>Create invoices</b>: the menu <i>Accounting &#8250; Configuration &#8250; Import Account Invoice</i>
+  creates draft invoices. A row with customer data starts a new invoice; rows
+  without customer data add lines to it.</li>
+</ul>
+</p><p align="justify">
+Recognized column titles:
+</p><p align="justify">
+<ul>
+<li><code>Denominazione Cliente</code>: Partner name</li>
+<li><code>Partita Iva</code>: Partner VAT number (<code>IT</code> is added to digits only)</li>
+<li><code>Codice Fiscale</code>: Partner fiscal code</li>
+<li><code>Codice</code>: Product code</li>
+<li><code>Nome</code>: Line description</li>
+<li><code>Quantita</code>: Quantity</li>
+<li><code>Imponibile</code>: Taxable amount (line with quantity 1)</li>
+<li><code>Iva</code>: Tax amount; nearest rate among 0, 4, 5, 10, 22% is used</li>
+<li><code>Numero</code>: Invoice number</li>
+<li><code>Data</code>: Invoice date (dd/mm/yyyy or Excel date)</li>
+</ul>
+</p><p align="justify">
+Numbers can be written in Italian format (<code>2.049,18</code>).
+You can find Excel examples in the example directory.
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Questo modulo importa dati di fattura da un file Excel (.xlsx) in due modi:
+<p align="justify">
+<ul>
+<li><b>Importa righe in una fattura</b>: il bottone <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;xlsx&#160;</span> su una fattura o fattura
+  fornitore in bozza aggiunge una riga per ogni riga del file. I prodotti sono cercati
+  per codice e nome; prezzo, conto e imposte derivano dal prodotto, se il file non li
+  indica.</li>
+<li><b>Crea fatture</b>: il men&#249; <i>Contabilit&#224; &#8250; Configurazione &#8250; Import Account Invoice</i>
+  crea fatture in bozza. Una riga con i dati del cliente apre una nuova fattura; le
+  righe senza dati del cliente vi aggiungono righe.</li>
+</ul>
+</p><p align="justify">
+Titoli di colonna riconosciuti:
+</p><p align="justify">
+<ul>
+<li><code>Denominazione Cliente</code>: Nome del soggetto</li>
+<li><code>Partita Iva</code>: Partita IVA (alle sole cifre viene anteposto <code>IT</code>)</li>
+<li><code>Codice Fiscale</code>: Codice fiscale</li>
+<li><code>Codice</code>: Codice prodotto</li>
+<li><code>Nome</code>: Descrizione della riga</li>
+<li><code>Quantita</code>: Quantit&#224;</li>
+<li><code>Imponibile</code>: Imponibile (riga con quantit&#224; 1)</li>
+<li><code>Iva</code>: Importo IVA; aliquota pi&#249; vicina tra 0, 4, 5, 10, 22%</li>
+<li><code>Numero</code>: Numero fattura</li>
+<li><code>Data</code>: Data fattura (gg/mm/aaaa o data Excel)</li>
+</ul>
+</p><p align="justify">
+I numeri possono essere scritti in formato italiano (<code>2.049,18</code>).
+Si possono vedere esempi nella cartella example.
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Open a draft invoice or vendor bill and click <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;xlsx&#160;</span>; choose the file and
+  click <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;</span>. Tick <i>Dry-run</i> to check the file without creating anything.</li>
+<li>To create invoices, open <i>Accounting &#8250; Configuration &#8250; Import Account Invoice</i>,
+  choose the file, the journal (sale or purchase) and the default invoice date. The
+  result window lists the rows with problems (partner or product not found, more
+  than one match).</li>
+<li>Invoices are always created in draft: check and confirm them as usual.</li>
+</ul></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify"><ul>
+<li>Aprire una fattura o fattura fornitore in bozza e premere <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;xlsx&#160;</span>; scegliere il
+  file e premere <span style="color:white;background-color:#7C7BAD">&#160;Import&#160;</span>. Selezionare <i>Dry-run</i> per controllare il file senza creare
+  nulla.</li>
+<li>Per creare fatture, aprire <i>Contabilit&#224; &#8250; Configurazione &#8250; Import Account Invoice</i>,
+  scegliere il file, il registro (vendite o acquisti) e la data fattura predefinita.
+  La finestra di risultato elenca le righe con problemi (soggetto o prodotto non
+  trovato, pi&#249; corrispondenze).</li>
+<li>Le fatture sono sempre create in bozza: controllarle e confermarle come di consueto.</li>
+</ul></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>18.0.1.0.0 (2026-10-25)</h4>
+<p align="justify">
+<ul>
+<li>[IMP] Migrated to Odoo 18.0 / Migrazione a Odoo 18.0</li>
+<li>[FIX] Date read from file: no more padding with spaces / Data da file: niente pi&#249; spazi</li>
+<li>[FIX] Tax rate: nearest rate is used / Aliquota IVA: viene usata l'aliquota pi&#249; vicina</li>
+<li>[FIX] Numbers are not evaluated as Python code anymore / I numeri non sono pi&#249; valutati come codice Python</li>
+<li>[IMP] Lines can be imported only into draft invoices / Le righe si importano solo in fatture in bozza</li>
+</ul>
+</p><p align="justify">
+<h4>18.0.0</h4>
+</p><p align="justify">
+<ul>
+<li>[FIX] User no admin can import / Utenti non admin possono importare</li>
+<li>[FIX] Evaluate early total tax / Calcolo totale IVA immediato</li>
+<li>[IMP] Use listprice, if present / Utilizza listino se presente (richiede modulo aggiuntivo)</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">Zeroincombenze srls</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio Maria Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-10-26</p>
+    </div>
+</section>
