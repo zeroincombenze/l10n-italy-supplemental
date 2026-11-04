@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2023-26 Zeroincombenze srls <https://www.zeroincombenze.it>
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<odoo>
+    <template id="assets_common" inherit_id="web.assets_common">
+        <xpath expr="//script[@src='/web/static/lib/jquery/jquery.js']" position="attributes">
+            <attribute name="src">/web_jquery_click_fix/static/lib/jquery/jquery.js</attribute>
+        </xpath>
+    </template>
+</odoo>

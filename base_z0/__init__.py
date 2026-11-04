@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright 2018-26 Zeroincombenze srls <https://www.zeroincombenze.it>
+#
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+#
+from . import models
+from .hooks import post_init_hook, uninstall_hook

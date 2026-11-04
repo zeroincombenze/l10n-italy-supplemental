@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # © 2021-2022 SHS-AV srl (www.shs-av.com)
 
-from datetime import datetime
+# from datetime import datetime
 import base64
 from io import BytesIO
 from openpyxl import load_workbook

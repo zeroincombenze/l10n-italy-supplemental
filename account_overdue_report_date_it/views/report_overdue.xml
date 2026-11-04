@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2026 Zeroincombenze srls <https://www.zeroincombenze.it>
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<odoo>
+    <!-- Date is a datetime.date (stock Odoo) or already 'dd-mm-yyyy' (OCB patch);
+         line dates are formatted by the report model. -->
+    <template id="report_overdue_document_date_it"
+              inherit_id="account.report_overdue_document">
+        <xpath expr="//span[@t-esc='Date']" position="before">
+            <t t-set="date_parts" t-value="str(Date).split('-')"/>
+        </xpath>
+        <xpath expr="//span[@t-esc='Date']" position="attributes">
+            <attribute name="t-esc">'-'.join([date_parts[2], date_parts[1], date_parts[0]]) if len(date_parts[0]) == 4 else Date</attribute>
+        </xpath>
+    </template>
+</odoo>
