@@ -142,7 +142,7 @@ class SdIChannel(models.Model):
         header = {
             "Content-Type": "application/json",
             "From": self.client_id,
-            "Authorization": b"Bearer " + b64encode(aes.encrypt(pad_text)),
+            "Authorization": b"Bearer " + b64encode(aes.encrypt(_b(pad_text))),
         }
         return header
 
@@ -216,13 +216,14 @@ class SdIChannel(models.Model):
             else:
                 request[key] = val
         url = os.path.join(self.sender_url, action)
+        response = None
         try:
             response = requests.post(
                 url, headers=header, data=json.dumps(request, ensure_ascii=False)
             )
         except requests.exceptions.RequestException as e:
-            errmsg = e.message
-        if not (200 <= response.status_code < 300):
+            errmsg = str(e)
+        if response is not None and not (200 <= response.status_code < 300):
             errmsg = "http error %s: '%s'" % (response.status_code, response.text)
         if not errmsg:
             data = response.json()
@@ -306,13 +307,14 @@ class SdIChannel(models.Model):
                     continue
                 to_send = True
             if to_send:
-                sts = self.evolve_send_invoice(att.out_invoice_ids, att)
-                att_state = "sender_error" if sts else "sent"
+                ok = self.evolve_send_invoice(att.out_invoice_ids, att)
+                att_state = "sent" if ok else "sender_error"
             if att.state != att_state:
                 att.state = att_state
                 att.sending_date = fields.Datetime.now()
                 att.sending_user = self.env.user.id
-            if to_send and sts:
+            if to_send and not ok:
+                # Stop on error: remaining attachments stay ready to send
                 break
         return True
 
