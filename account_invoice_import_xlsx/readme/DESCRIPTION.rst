@@ -3,7 +3,7 @@ Import invoices from Excel
 
 This module imports invoice data from an Excel (.xlsx) file in two ways:
 
-* **Import lines into an invoice**: the button [Import xlsx] on a draft invoice or
+* **Import lines into an invoice**: the button [`Import xlsx`] on a draft invoice or
   vendor bill adds one line per row of the file. Products are searched by code and
   name; price, account and taxes come from the product unless the file supplies them.
 * **Create invoices**: the menu *Accounting › Configuration › Import Account Invoice*

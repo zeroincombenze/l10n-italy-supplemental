@@ -1,5 +1,5 @@
-* Aprire una fattura o fattura fornitore in bozza e premere [Import xlsx]; scegliere il
-  file e premere [Import]. Selezionare *Dry-run* per controllare il file senza creare
+* Aprire una fattura o fattura fornitore in bozza e premere [`Import xlsx`]; scegliere il
+  file e premere [`Import`]. Selezionare *Dry-run* per controllare il file senza creare
   nulla.
 * Per creare fatture, aprire *Contabilità › Configurazione › Import Account Invoice*,
   scegliere il file, il registro (vendite o acquisti) e la data fattura predefinita.

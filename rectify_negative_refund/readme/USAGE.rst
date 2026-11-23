@@ -1,5 +1,5 @@
 When open a form of a negative invoice o negative refund, you can see the
-button [Rectify] on form header.
+button [`Rectify`] on form header.
 
-Click on button [Rectify] and the invoice / refund is rectified.
+Click on button [`Rectify`] and the invoice / refund is rectified.
 No message is displayed.

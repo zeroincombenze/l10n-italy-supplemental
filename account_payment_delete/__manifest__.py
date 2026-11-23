@@ -1,0 +1,23 @@
+{
+    "name": "Account payment delete",
+    "version": "18.0.1.0.0",
+    "category": "Account",
+    "summary": "User can delete account payment",
+    "author": "SHS-AV s.r.l.",
+    "website": "https://www.zeroincombenze.it/crm",
+    "development_status": "Production/Stable",
+    "license": "LGPL-3",
+    "depends": ["account_cancel"],
+    "maintainer": "Antonio M. Vigliotti <antoniomaria.vigliotti@gmail.com>",
+    "images": [
+        "static/description/banner.png",
+        "static/description/description.png",
+        "static/description/l10n_it.png",
+        "static/description/l10n_us.png",
+        "static/description/l10n_uk.png",
+    ],
+    "currency": "EUR",
+    "price": "0.0",
+    "support": "cc@shs-av.com",
+    "application": True,
+}

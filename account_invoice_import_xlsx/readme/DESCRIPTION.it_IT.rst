@@ -3,7 +3,7 @@ Importa fatture da Excel
 
 Questo modulo importa dati di fattura da un file Excel (.xlsx) in due modi:
 
-* **Importa righe in una fattura**: il bottone [Import xlsx] su una fattura o fattura
+* **Importa righe in una fattura**: il bottone [`Import xlsx`] su una fattura o fattura
   fornitore in bozza aggiunge una riga per ogni riga del file. I prodotti sono cercati
   per codice e nome; prezzo, conto e imposte derivano dal prodotto, se il file non li
   indica.
