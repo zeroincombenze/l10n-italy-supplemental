@@ -48,7 +48,7 @@ Il metodo di raggruppamento si imposta sul cliente e viene copiato nell'ordine:
 Configuration | Configurazione
 ------------------------------
 
-Set *DDT invoicing group* in the partner form, tab *Invoicing*. For *Code group* fill
+Set *DDT invoicing group* in the partner form, tab *Sales & Purchase*, group *Sales*. For *Code group* fill
 also *DDT code group* in the shipping partners. The sale order can override the value.
 
 
@@ -155,6 +155,7 @@ ChangeLog History | Cronologia modifiche
 
 18.0.1.0.0 (2026-11-25)
 ~~~~~~~~~~~~~~~~~~~~~~~
+* [QUA] Test coverage 94% (50: 3+47) [0 TestPoints] - quality rating 53 (target 100)
 
 * [MIG] Port of the grouping feature of l10n_it_ddt 10.0 as add-on of l10n_it_delivery_note
 

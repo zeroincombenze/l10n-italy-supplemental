@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_it_ddt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-25 21:08+0000\n"
+"PO-Revision-Date: 2026-11-25 21:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__res_partner__ddt_invoicing_group__billing_partner
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__sale_order__ddt_invoicing_group__billing_partner
+msgid "Billing Partner"
+msgstr "Partner di fatturazione"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__res_partner__ddt_invoicing_group__sale_order
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__sale_order__ddt_invoicing_group__sale_order
+msgid "By Sale Order"
+msgstr "Per ordine di vendita"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__res_partner__ddt_invoicing_group__code_group
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__sale_order__ddt_invoicing_group__code_group
+msgid "Code group"
+msgstr "Gruppo codice"
+
+#. module: l10n_it_ddt
+#: model:ir.model,name:l10n_it_ddt.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields,field_description:l10n_it_ddt.field_res_partner__ddt_code_group
+#: model:ir.model.fields,field_description:l10n_it_ddt.field_res_users__ddt_code_group
+msgid "DDT code group"
+msgstr "Gruppo codice DDT"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields,field_description:l10n_it_ddt.field_res_partner__ddt_invoicing_group
+#: model:ir.model.fields,field_description:l10n_it_ddt.field_res_users__ddt_invoicing_group
+#: model:ir.model.fields,field_description:l10n_it_ddt.field_sale_order__ddt_invoicing_group
+msgid "DDT invoicing group"
+msgstr "Gruppo di fatturazione DDT"
+
+#. module: l10n_it_ddt
+#: model:ir.model,name:l10n_it_ddt.model_stock_delivery_note
+msgid "Delivery Note"
+msgstr "Documento di trasporto"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields,help:l10n_it_ddt.field_res_partner__ddt_code_group
+#: model:ir.model.fields,help:l10n_it_ddt.field_res_users__ddt_code_group
+msgid ""
+"Delivery notes shipped to partners with the same code (and the same billing "
+"partner) are invoiced together when the invoicing group is 'Code group'."
+msgstr ""
+"I documenti di trasporto spediti a partner con lo stesso codice (e lo stesso"
+" partner di fatturazione) vengono fatturati insieme quando il gruppo di "
+"fatturazione è 'Gruppo codice'."
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields,help:l10n_it_ddt.field_res_partner__ddt_invoicing_group
+#: model:ir.model.fields,help:l10n_it_ddt.field_res_users__ddt_invoicing_group
+msgid "How the delivery notes of this customer are grouped into invoices."
+msgstr ""
+"Modo in cui i documenti di trasporto di questo cliente sono raggruppati in "
+"fattura."
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__res_partner__ddt_invoicing_group__nothing
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__sale_order__ddt_invoicing_group__nothing
+msgid "One DDT - One Invoice"
+msgstr "Un DDT - Una fattura"
+
+#. module: l10n_it_ddt
+#: model:ir.model,name:l10n_it_ddt.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: l10n_it_ddt
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__res_partner__ddt_invoicing_group__shipping_partner
+#: model:ir.model.fields.selection,name:l10n_it_ddt.selection__sale_order__ddt_invoicing_group__shipping_partner
+msgid "Shipping Partner"
+msgstr "Partner di spedizione"

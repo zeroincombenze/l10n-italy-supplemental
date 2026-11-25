@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_it_coa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-25 21:08+0000\n"
+"PO-Revision-Date: 2026-11-25 21:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_it_coa
+#. odoo-python
+#: code:addons/l10n_it_coa/wizard/l10n_it_coa_tax_config.py:0
+msgid "%s taxes configured."
+msgstr "%s imposte configurate."
+
+#. module: l10n_it_coa
+#: model:ir.model,name:l10n_it_coa.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Modello piano dei conti"
+
+#. module: l10n_it_coa
+#: model_terms:ir.ui.view,arch_db:l10n_it_coa.l10n_it_coa_tax_config_form
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: l10n_it_coa
+#: model_terms:ir.ui.view,arch_db:l10n_it_coa.l10n_it_coa_tax_config_form
+msgid "Close"
+msgstr "Chiudi"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__company_id
+msgid "Company"
+msgstr "Azienda"
+
+#. module: l10n_it_coa
+#: model_terms:ir.ui.view,arch_db:l10n_it_coa.l10n_it_coa_tax_config_form
+msgid "Configure"
+msgstr "Configura"
+
+#. module: l10n_it_coa
+#: model:ir.actions.act_window,name:l10n_it_coa.l10n_it_coa_tax_config_action
+#: model:ir.ui.menu,name:l10n_it_coa.l10n_it_coa_tax_config_menu
+#: model_terms:ir.ui.view,arch_db:l10n_it_coa.l10n_it_coa_tax_config_form
+msgid "Configure Italian taxes"
+msgstr "Configura imposte italiane"
+
+#. module: l10n_it_coa
+#: model:ir.model,name:l10n_it_coa.model_l10n_it_coa_tax_config
+msgid "Configure Italian taxes (tax grids, accounts, exemptions)"
+msgstr "Configura imposte italiane (griglie fiscali, conti, esenzioni)"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: l10n_it_coa
+#. odoo-python
+#: code:addons/l10n_it_coa/wizard/l10n_it_coa_tax_config.py:0
+msgid "None of the selected taxes comes from the it_coa chart."
+msgstr ""
+"Nessuna delle imposte selezionate proviene dal piano dei conti it_coa."
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__result
+msgid "Result"
+msgstr "Risultato"
+
+#. module: l10n_it_coa
+#: model_terms:ir.ui.view,arch_db:l10n_it_coa.l10n_it_coa_tax_config_form
+msgid ""
+"Sets tax grids, VAT accounts, cash basis and exemption data of the\n"
+"                    selected it_coa taxes. With no tax selected all it_coa taxes are\n"
+"                    configured."
+msgstr ""
+"Imposta griglie fiscali, conti IVA, esigibilità per cassa ed esenzioni delle"
+" imposte it_coa selezionate. Senza imposte selezionate vengono configurate "
+"tutte le imposte it_coa."
+
+#. module: l10n_it_coa
+#. odoo-python
+#: code:addons/l10n_it_coa/wizard/l10n_it_coa_tax_config.py:0
+msgid "Skipped (not it_coa taxes): %s"
+msgstr "Saltate (non sono imposte it_coa): %s"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,field_description:l10n_it_coa.field_l10n_it_coa_tax_config__tax_ids
+msgid "Taxes"
+msgstr "Imposte"
+
+#. module: l10n_it_coa
+#: model:ir.model.fields,help:l10n_it_coa.field_l10n_it_coa_tax_config__tax_ids
+msgid "Taxes to configure. Leave empty to configure all it_coa taxes."
+msgstr ""
+"Imposte da configurare. Lasciare vuoto per configurare tutte le imposte "
+"it_coa."

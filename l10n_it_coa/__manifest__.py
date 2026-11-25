@@ -33,7 +33,10 @@ Odoo 18.0 basata su `type_tax_use` e `repartition_line_ids`.
         # OCA module providing extended account group features used by this CoA.
         'account_usability',
     ],
-    'data': [],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/l10n_it_coa_tax_config_views.xml',
+    ],
     'license': 'LGPL-3',
     'installable': True,
 }
