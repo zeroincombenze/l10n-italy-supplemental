@@ -1,0 +1,149 @@
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Choose how delivery notes (DDT) are grouped into invoices</h2>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <h2 class="oe_slogan" style="color:#162832;">Sceglie come raggruppare i DDT in fattura</h2>
+        </div>
+        <div class="oe_demo oe_screenshot">
+            Unknown description_img
+        </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Add to OCA <i>l10n_it_delivery_note</i> the choice of how delivery notes (DDT) are
+grouped together to make invoices, as in the former Odoo 10.0 <i>l10n_it_ddt</i>.
+<p align="justify">
+The grouping method is set on the customer and copied to the sale order:
+</p><p align="justify">
+<ul>
+<li>One DDT - One Invoice: every delivery note has its own invoice</li>
+<li>Billing Partner: delivery notes with the same invoice partner share the invoice</li>
+<li>Shipping Partner: one invoice for each shipping address</li>
+<li>By Sale Order: one invoice for each sale order</li>
+<li>Code group: delivery notes shipped to partners with the same <i>code group</i> share
+  the invoice</li>
+</ul>
+</p></p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Aggiunge a <i>l10n_it_delivery_note</i> OCA la scelta di come raggruppare i DDT per
+fatturarli insieme, come nel vecchio <i>l10n_it_ddt</i> di Odoo 10.0.
+<p align="justify">
+Il metodo di raggruppamento si imposta sul cliente e viene copiato nell'ordine:
+</p><p align="justify">
+<ul>
+<li>Un DDT - Una fattura: ogni DDT ha la sua fattura</li>
+<li>Cliente fatturazione: i DDT con lo stesso intestatario fattura condividono la fattura</li>
+<li>Destinazione: una fattura per ogni destinazione merci</li>
+<li>Per ordine di vendita: una fattura per ogni ordine di vendita</li>
+<li>Gruppo codice: i DDT con destinazione dello stesso <i>codice gruppo</i> condividono la
+  fattura</li>
+</ul>
+</p></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Configuration | Configurazione</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Set <i>DDT invoicing group</i> in the partner form, tab <i>Invoicing</i>. For <i>Code group</i> fill
+also <i>DDT code group</i> in the shipping partners. The sale order can override the value.</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Impostare <i>Gruppo fatturazione DDT</i> nella scheda partner, tab <i>Fatturazione</i>. Per
+<i>Gruppo codice</i> compilare anche <i>Codice gruppo DDT</i> nelle destinazioni. L'ordine di
+vendita pu&#242; modificare il valore.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Usage | Utilizzo</h3>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_uk.png" alt="English" style="width:28px;height:16px;"/>
+                <img src="l10n_us.png" alt="English" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Select the delivery notes to invoice in the list view and run <i>Create invoices</i>:
+the invoices are made following the <i>DDT invoicing group</i> of each sale order.</p>
+        </div>
+        <div class="oe_span6">
+            <p align="center">
+                <img src="l10n_it.png" alt="Italiano" style="width:28px;height:16px;"/>
+            </p>
+            <p class="oe_mt16" align="justify">Selezionare i DDT da fatturare nella vista elenco ed eseguire <i>Crea fatture</i>:
+le fatture sono create secondo il <i>Gruppo fatturazione DDT</i> di ogni ordine di vendita.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">ChangeLog History | Cronologia modifiche</h3>
+        <div class="oe_span12">
+<h4>18.0.1.0.0 (2026-11-25)</h4>
+<p align="justify">
+<ul>
+<li>[MIG] Port of the grouping feature of l10n_it_ddt 10.0 as add-on of l10n_it_delivery_note</li>
+</ul>
+</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 align="center" style="color:#162832;font-size: 26px;font-weight: 300;">Credits | Ringraziamenti</h3>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Authors | Autori:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="https://www.zeroincombenze.it">Zeroincombenze srls</a></li>
+</ul></p>
+        </div>
+        <div class="oe_span6" align="left">
+            <p class="oe_mt16"><b>Contributors | Partecipanti:</b></p>
+            <p class="oe_mt16"><ul>
+<li><a href="mailto:antoniomaria.vigliotti@gmail.com">Antonio M. Vigliotti</a></li>
+</ul></p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <p>This module is maintained by the <b><a href="https://www.shs-av.com">SHS_AV s.r.l.</a></b>.</p>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <p>This module is part of <a href="https://github.com/zeroincombenze/l10n-italy-supplemental">l10n-italy-supplemental</a> project.</p>
+        <p>Published information on | Informazioni pubblicate: 2026-11-25</p>
+    </div>
+</section>

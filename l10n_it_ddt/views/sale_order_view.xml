@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_order_form_ddt_group" model="ir.ui.view">
+        <field name="name">sale.order.form.ddt.group</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_info']" position="inside">
+                <field name="ddt_invoicing_group" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
